@@ -1,1 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariba Media - Technology Media Holding Company</title>
+    <meta name="description" content="Mariba Media: Your partner in innovative solutions across Energy, Water, Technology, Skills Development, Commodities, and Investments.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Luxurious Black and White Theme */
+            --bg-color-dark: #0a0a0a;
+            --text-color-light: #f0f0f0;
+            --accent-gold: #d4af37;
+            --border-color: #333333;
+            --card-bg: #1a1a1a;
+            --hover-bg: #2a2a2a;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lato', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color-dark);
+            color: var(--text-color-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background-color: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .site-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-color-light);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-gold);
+        }
+
+        /* --- Mobile Menu Button --- */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--text-color-light);
+        }
+
+        /* --- Sidebar Menu --- */
+        .sidebar-menu {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100%;
+            background-color: rgba(20, 20, 20, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            padding: 2rem;
+            transition: right 0.3s ease;
+            overflow-y: auto;
+        }
+
+        .sidebar-menu.active {
+            right: 0;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-color-light);
+        }
+
+        .sidebar-menu nav ul {
+            list-style: none;
+            margin-top: 3rem;
+        }
+
+        .sidebar-menu nav ul li {
+            margin-bottom: 1.5rem;
+        }
+
+        .sidebar-menu nav ul li a {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--text-color-light);
+            display: block;
+            padding: 0.5rem 0;
+            transition: color 0.3s ease;
+        }
+
+        .sidebar-menu nav ul li a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0 10%;
+            position: relative;
+            overflow: hidden;
+            margin-top: 80px; /* Account for fixed header */
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 20%),
+                        radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 20%);
+            z-index: -1;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.2s forwards;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            max-width: 650px;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.4s forwards;
+        }
+
+        .hero-cta {
+            padding: 1rem 2rem;
+            background-color: transparent;
+            color: var(--text-color-light);
+            border: 1px solid var(--text-color-light);
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out 0.6s forwards;
+            font-weight: 400;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .hero-cta:hover {
+            background-color: var(--accent-gold);
+            color: var(--bg-color-dark);
+            border-color: var(--accent-gold);
+        }
+
+        /* --- About Section --- */
+        .about {
+            padding: 5rem 10%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: rgba(26, 26, 26, 0.5);
+        }
+
+        .about-content {
+            max-width: 800px;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .about-content.visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-color-light);
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .mission-vision {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .mission, .vision {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: left;
+            border: 1px solid var(--border-color);
+        }
+        
+        .mission h3, .vision h3 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        /* --- Featured Offers Section --- */
+        .featured-offers {
+            padding: 5rem 10%;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--text-color-light);
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-gold);
+        }
+
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .offer-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: left;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            border: 1px solid var(--border-color);
+        }
+        .offer-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .offer-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-color: var(--accent-gold);
+        }
+
+        .offer-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        .offer-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-color-light);
+        }
+        .offer-card p {
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+        .offer-link {
+            font-weight: 400;
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-color-light);
+            transition: color 0.3s ease;
+            text-decoration: none;
+            margin-right: 1.5rem;
+        }
+        .offer-link:hover {
+            color: var(--accent-gold);
+        }
+        .offer-link::after {
+             content: '\2192';
+             margin-left: 0.5rem;
+             transition: transform 0.3s ease;
+        }
+        .offer-link:hover::after {
+            transform: translateX(5px);
+        }
+
+        .request-proposal-link {
+            font-weight: 400;
+            display: inline-flex;
+            align-items: center;
+            color: var(--accent-gold);
+            transition: color 0.3s ease;
+            text-decoration: none;
+            margin-top: 1rem;
+        }
+        .request-proposal-link:hover {
+            color: var(--text-color-light);
+        }
+        .request-proposal-link::after {
+             content: '\2192';
+             margin-left: 0.5rem;
+             transition: transform 0.3s ease;
+        }
+        .request-proposal-link:hover::after {
+            transform: translateX(5px);
+        }
+
+        .request-website-link {
+            font-weight: 400;
+            display: inline-flex;
+            align-items: center;
+            color: var(--accent-gold);
+            transition: color 0.3s ease;
+            text-decoration: none;
+            margin-top: 1rem;
+        }
+        .request-website-link:hover {
+            color: var(--text-color-light);
+        }
+        .request-website-link::after {
+             content: '\2192';
+             margin-left: 0.5rem;
+             transition: transform 0.3s ease;
+        }
+        .request-website-link:hover::after {
+            transform: translateX(5px);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--bg-color-dark);
+            color: #aaaaaa;
+            padding: 3rem 10%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--text-color-light);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        .footer-links a {
+            color: #aaaaaa;
+            transition: color 0.3s ease;
+            text-decoration: none;
+        }
+        .footer-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        .social-icon {
+            font-size: 1.5rem;
+            color: #aaaaaa;
+            transition: color 0.3s ease;
+            text-decoration: none;
+        }
+        .social-icon:hover {
+            color: var(--accent-gold);
+        }
+
+        .copyright {
+            width: 100%;
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(168, 178, 209, 0.1);
+            font-size: 0.9rem;
+        }
+
+        /* --- WhatsApp Widget --- */
+        .whatsapp-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .whatsapp-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            outline: none;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .whatsapp-svg {
+            width: 36px;
+            height: 36px;
+        }
+
+        .whatsapp-svg path {
+            fill: white;
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .logo {
+                margin-bottom: 1rem;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .hero {
+                padding: 0 5%;
+                align-items: center;
+                text-align: center;
+                margin-top: 100px;
+            }
+            .hero p {
+                max-width: 100%;
+            }
+            footer {
+                flex-direction: column;
+                align-items: center;
+            }
+            .footer-section {
+                text-align: center;
+            }
+            .mission-vision {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo-container">
+            <div class="logo">Mariba<span>Media</span></div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#offers">Offers</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+        </div>
+    </header>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar-menu" id="sidebarMenu">
+        <button class="close-btn" id="closeMenu">×</button>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#offers">Offers</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Innovating Across Sectors</h1>
+        <p>Mariba Media is a technology media holding company presenting a diverse portfolio of cutting-edge offers in Energy, Water, Technology Infrastructure, Skills Development, Commodities, and Investments.</p>
+        <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="hero-cta">Book a Call</a>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-content">
+            <h2>About Mariba Media</h2>
+            <p>Mariba Media is a dynamic technology media holding company, dedicated to driving innovation and growth across multiple critical sectors. Our mission is to connect partners, clients, and stakeholders with transformative solutions.</p>
+            
+            <div class="mission-vision">
+                <div class="mission">
+                    <h3>Our Mission</h3>
+                    <p>To empower businesses and communities through innovative solutions in energy, water, technology, skills development, commodities, and investments, fostering sustainable growth and prosperity.</p>
+                </div>
+                <div class="vision">
+                    <h3>Our Vision</h3>
+                    <p>To be the leading technology media holding company in Africa, recognized for our excellence in delivering integrated solutions that create value for our stakeholders and contribute to the continent's development.</p>
+                </div>
+            </div>
+            
+            <h3 style="margin-top: 2rem; color: var(--text-color-light);">Our Objectives</h3>
+            <ul style="text-align: left; max-width: 600px; margin: 0 auto; padding-left: 1.5rem;">
+                <li style="margin-bottom: 0.5rem;">Provide innovative and sustainable solutions across all our sectors</li>
+                <li style="margin-bottom: 0.5rem;">Build strategic partnerships with industry leaders and stakeholders</li>
+                <li style="margin-bottom: 0.5rem;">Empower communities through skills development and capacity building</li>
+                <li style="margin-bottom: 0.5rem;">Drive economic growth through responsible investment practices</li>
+                <li style="margin-bottom: 0.5rem;">Establish Mariba Media as a trusted brand in the African market</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Featured Offers Section -->
+    <section class="featured-offers" id="offers">
+        <h2 class="section-title">Our Offers</h2>
+        <div class="offers-grid">
+            <div class="offer-card">
+                <div class="offer-icon">🏢</div>
+                <h3>LBSD Agent</h3>
+                <p>Transform your business with our exclusive LBSD Agent service. We create a new website, handle lead capture and nurturing leads into qualified book appointments 24/7 and save on staffing and training costs. On the backend we take your old aged leads and reactivate them via SMS & WhatsApp to book into new sales appointment. We handle the Ad Campaigns, Ad Creatives along with compliance and Google My Business Optimization to dominate local service areas with a 27/7 Sales Agent that can take calls, provide customer support and book appointments. Pay Per Appointment or 30% Revenue Share with 30 new sales appointments in 30 days. You choose a pay per appointment or revenue share. We also conduct AI database reactivation to turn old leads into cash.</p>
+                <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="offer-link">Book a Call</a>
+                <a href="https://forms.gle/ZG52kZ1P6u25x1Nz7" class="request-website-link" target="_blank">Request Website</a>
+            </div>
+            <div class="offer-card">
+                <div class="offer-icon">☀️</div>
+                <h3>Solar Solutions</h3>
+                <p>Harness the power of the sun with our commercial, industrial, residential, and agricultural solar solutions. Slash energy costs by up to 70% with our customized solar energy solutions designed specifically for your needs. Partner with accredited EPC and installation providers.</p>
+                <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="offer-link">Book a Call</a>
+                <a href="https://form.typeform.com/to/kSJtterE" class="request-proposal-link" target="_blank">Request Solar Proposal</a>
+            </div>
+            <div class="offer-card">
+                <div class="offer-icon">💧</div>
+                <h3>Borehole Solutions</h3>
+                <p>Secure your water future with our efficient and sustainable borehole drilling and management services. Get a sustainable water source with zero upfront cost through our turnkey, fully funded borehole solution. Pay only for the water you use with our shared savings model.</p>
+                <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="offer-link">Book a Call</a>
+                <a href="https://form.typeform.com/to/kSJtterE" class="request-proposal-link" target="_blank">Request Borehole Proposal</a>
+            </div>
+            <div class="offer-card">
+                <div class="offer-icon">🔌</div>
+                <h3>Smart Metering</h3>
+                <p>Optimize energy consumption and reduce costs with our advanced smart metering solutions. Take control of your energy and water usage with real-time monitoring and actionable insights. Enable clean energy distribution across shared grids.</p>
+                <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="offer-link">Book a Call</a>
+                <a href="https://form.typeform.com/to/kSJtterE" class="request-proposal-link" target="_blank">Request Smart Metering Proposal</a>
+            </div>
+            <div class="offer-card">
+                <div class="offer-icon">🎓</div>
+                <h3>Skills Development</h3>
+                <p>Partner with us to empower your workforce through our comprehensive skills development programs. Save 80% on training costs with our AI-powered training partnership and exclusive territory rights. Choose between a one-time Build Fee or ongoing Licensing Fee per Learner.</p>
+                <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="offer-link">Book a Call</a>
+                <a href="https://app.colossyan.com/share/zwc3q15j" class="request-proposal-link" target="_blank">Watch Video Hub Sample</a>
+                <a href="https://elevenlabs.io/app/talk-to?agent_id=LYmBkvaGxZNzGD3MHdq7" class="request-proposal-link" target="_blank">Speak to our 24/7 Trainer Avatar</a>
+            </div>
+            <div class="offer-card">
+                <div class="offer-icon">💼</div>
+                <h3>Commodity Curated Portfolio</h3>
+                <p>Access our exclusive portfolio of high-value commodities including Manganese Ore, Emerald Clusters, Rhodium-Containing Materials, and Copper Cathodes. Each commodity is sourced from verified suppliers with full documentation and international certification.</p>
+                <a href="https://drive.google.com/drive/folders/1XvC4SM_ze-FY5KtrYEp5AXOF2d-VDon2?usp=sharing" class="offer-link" target="_blank">View Portfolio</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-section">
+            <h3>Mariba Media</h3>
+            <p>Innovating across Energy, Water, Technology, Skills, Commodities, and Investments.</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=61576915266105" aria-label="Facebook" class="social-icon">f</a>
+                <a href="https://youtube.com/%40TV-Mariba" aria-label="YouTube" class="social-icon">▶️</a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#offers">Our Offers</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <ul class="footer-links">
+                <li>Email: maribamedia@gmail.com</li>
+                <li>Phone: +27 (0) 76 647 3499</li>
+                <li>Address: Bronkhorstspruit, Gauteng, South Africa</li>
+            </ul>
+        </div>
+        <div class="copyright">
+            &copy; <span id="current-year"></span> Mariba Media. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- WhatsApp Widget -->
+    <div class="whatsapp-widget">
+        <a href="https://wa.me/27766473499" target="_blank" rel="noopener noreferrer">
+            <button class="whatsapp-button" aria-label="Contact us on WhatsApp">
+                <svg class="whatsapp-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+            </button>
+        </a>
+    </div>
+
+    <script>
+        // --- Sidebar Menu Functionality ---
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('menuToggle');
+            const closeMenu = document.getElementById('closeMenu');
+            const sidebarMenu = document.getElementById('sidebarMenu');
+
+            menuToggle.addEventListener('click', function () {
+                sidebarMenu.classList.add('active');
+            });
+
+            closeMenu.addEventListener('click', function () {
+                sidebarMenu.classList.remove('active');
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function (event) {
+                if (!sidebarMenu.contains(event.target) && !menuToggle.contains(event.target) && sidebarMenu.classList.contains('active')) {
+                    sidebarMenu.classList.remove('active');
+                }
+            });
+
+            // --- Simple Intersection Observer for Scroll Animations ---
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            // Observe about content
+            const aboutContent = document.querySelector('.about-content');
+            if (aboutContent) {
+                observer.observe(aboutContent);
+            }
+
+            // Observe offer cards
+            document.querySelectorAll('.offer-card').forEach(card => {
+                observer.observe(card);
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('nav a, .footer-links a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                        // Close sidebar after clicking a link on mobile
+                        if (window.innerWidth <= 768) {
+                            sidebarMenu.classList.remove('active');
+                        }
+                    }
+                });
+            });
+
+            // --- Set current year in footer ---
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
