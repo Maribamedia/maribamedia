@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -315,6 +316,7 @@
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: var(--text-color-light);
+            font-weight: 700;
         }
         .offer-card p {
             margin-bottom: 1.5rem;
@@ -341,6 +343,27 @@
             transform: translateX(5px);
         }
 
+        .request-website-link {
+            font-weight: 400;
+            display: inline-flex;
+            align-items: center;
+            color: var(--accent-gold);
+            transition: color 0.3s ease;
+            text-decoration: none;
+            margin-top: 1rem;
+        }
+        .request-website-link:hover {
+            color: var(--text-color-light);
+        }
+        .request-website-link::after {
+             content: '\2192';
+             margin-left: 0.5rem;
+             transition: transform 0.3s ease;
+        }
+        .request-website-link:hover::after {
+            transform: translateX(5px);
+        }
+
         .request-proposal-link {
             font-weight: 400;
             display: inline-flex;
@@ -362,25 +385,46 @@
             transform: translateX(5px);
         }
 
-        .request-website-link {
-            font-weight: 400;
-            display: inline-flex;
-            align-items: center;
-            color: var(--accent-gold);
-            transition: color 0.3s ease;
-            text-decoration: none;
-            margin-top: 1rem;
+        /* Pain Points & Benefits Lists */
+        .pain-points, .benefits-outcomes {
+            margin: 1.5rem 0;
         }
-        .request-website-link:hover {
+
+        .pain-points h4, .benefits-outcomes h4 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .pain-points ul, .benefits-outcomes ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .pain-points li, .benefits-outcomes li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* --- Cal Booking Section --- */
+        .cal-booking {
+            padding: 5rem 10%;
+            background-color: rgba(26, 26, 26, 0.5);
+            text-align: center;
+        }
+
+        .cal-booking h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
             color: var(--text-color-light);
         }
-        .request-website-link::after {
-             content: '\2192';
-             margin-left: 0.5rem;
-             transition: transform 0.3s ease;
-        }
-        .request-website-link:hover::after {
-            transform: translateX(5px);
+
+        #my-cal-inline-south-africa {
+            width: 100%;
+            height: 600px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
         }
 
         /* --- Footer --- */
@@ -510,11 +554,17 @@
                 display: none;
             }
             
+            .menu-toggle {
+                display: block;
+                position: absolute;
+                top: 1.5rem;
+                right: 1.5rem;
+            }
+            
             .hero {
                 padding: 0 5%;
                 align-items: center;
                 text-align: center;
-                margin-top: 100px;
             }
             .hero p {
                 max-width: 100%;
@@ -528,6 +578,10 @@
             }
             .mission-vision {
                 flex-direction: column;
+            }
+            
+            #my-cal-inline-south-africa {
+                height: 500px;
             }
         }
     </style>
@@ -543,6 +597,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#offers">Offers</a></li>
+                <li><a href="#booking">Book a Call</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -559,6 +614,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#offers">Offers</a></li>
+                <li><a href="#booking">Book a Call</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -606,13 +662,61 @@
             <div class="offer-card">
                 <div class="offer-icon">🏢</div>
                 <h3>LBSD Agent</h3>
-                <p>Transform your business with our exclusive LBSD Agent service. We create a new website, handle lead capture and nurturing leads into qualified book appointments 24/7 and save on staffing and training costs. On the backend we take your old aged leads and reactivate them via SMS & WhatsApp to book into new sales appointment. We handle the Ad Campaigns, Ad Creatives along with compliance and Google My Business Optimization to dominate local service areas with a 27/7 Sales Agent that can take calls, provide customer support and book appointments. Pay Per Appointment or 30% Revenue Share with 30 new sales appointments in 30 days. You choose a pay per appointment or revenue share. We also conduct AI database reactivation to turn old leads into cash.</p>
+                
+                <div class="pain-points">
+                    <h4>Pain Points We Solve:</h4>
+                    <ul>
+                        <li>High staffing costs and inefficient sales teams</li>
+                        <li>Missed leads and poor conversion rates</li>
+                        <li>Lack of 24/7 customer engagement and support</li>
+                    </ul>
+                </div>
+                
+                <div class="benefits-outcomes">
+                    <h4>Benefits & Outcomes:</h4>
+                    <ul>
+                        <li>Slash staffing costs by up to 80% with automated systems</li>
+                        <li>Generate qualified appointments with 100% ROI guarantee in 30 days</li>
+                        <li>24/7 live sales agent and receptionist coverage</li>
+                        <li>Interactive website with lead capture and nurturing capabilities</li>
+                        <li>Google My Business optimization for local market dominance</li>
+                        <li>Sales video commercial production for enhanced conversions</li>
+                        <li>WhatsApp sales appointment setter for instant lead engagement</li>
+                        <li>AI database reactivation to turn old leads into cash</li>
+                    </ul>
+                </div>
+                
+                <p>Transform your business with our exclusive Partner Network. We deliver Interactive Website + 24/7 Live Sales Agent, Google My Business Optimization, Sales Video Commercial Production, and WhatsApp Sales Appointment Setter + 24/7 Live Receptionist. Pay Per Appointment or 30% Revenue Share with 30 new sales appointments in 30 days. You choose a pay per appointment or revenue share. We also conduct AI database reactivation to turn old leads into cash.</p>
                 <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="offer-link">Book a Call</a>
                 <a href="https://forms.gle/ZG52kZ1P6u25x1Nz7" class="request-website-link" target="_blank">Request Website</a>
             </div>
             <div class="offer-card">
                 <div class="offer-icon">☀️</div>
                 <h3>Solar Solutions</h3>
+                
+                <div class="pain-points">
+                    <h4>Pain Points We Solve:</h4>
+                    <ul>
+                        <li>Soaring energy costs from Eskom and grid dependence</li>
+                        <li>Unreliable power supply disrupting business operations</li>
+                        <li>Environmental impact from fossil fuel dependency</li>
+                    </ul>
+                </div>
+                
+                <div class="benefits-outcomes">
+                    <h4>Benefits & Outcomes:</h4>
+                    <ul>
+                        <li>Slash energy costs by up to 70% with solar solutions</li>
+                        <li>Achieve energy independence from unreliable grid supply</li>
+                        <li>Reduce carbon footprint with clean, renewable energy</li>
+                        <li>Eliminate diesel generator costs and maintenance</li>
+                        <li>Off-balance sheet financing options available</li>
+                        <li>Fast deployment with minimal business disruption</li>
+                        <li>Full-service support from site assessment to maintenance</li>
+                        <li>Scalable solutions for commercial, industrial, and residential needs</li>
+                    </ul>
+                </div>
+                
                 <p>Harness the power of the sun with our commercial, industrial, residential, and agricultural solar solutions. Slash energy costs by up to 70% with our customized solar energy solutions designed specifically for your needs. Partner with accredited EPC and installation providers.</p>
                 <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="offer-link">Book a Call</a>
                 <a href="https://form.typeform.com/to/kSJtterE" class="request-proposal-link" target="_blank">Request Solar Proposal</a>
@@ -620,6 +724,30 @@
             <div class="offer-card">
                 <div class="offer-icon">💧</div>
                 <h3>Borehole Solutions</h3>
+                
+                <div class="pain-points">
+                    <h4>Pain Points We Solve:</h4>
+                    <ul>
+                        <li>Water scarcity and unreliable municipal supply</li>
+                        <li>High water costs impacting operational expenses</li>
+                        <li>Dependence on external water sources</li>
+                    </ul>
+                </div>
+                
+                <div class="benefits-outcomes">
+                    <h4>Benefits & Outcomes:</h4>
+                    <ul>
+                        <li>Secure sustainable water source with zero upfront cost</li>
+                        <li>Pay only for the water you use with shared savings model</li>
+                        <li>Turnkey, fully funded borehole solution</li>
+                        <li>Reliable water supply for business continuity</li>
+                        <li>Reduced operational costs through self-sufficiency</li>
+                        <li>Environmentally sustainable water management</li>
+                        <li>Expert drilling and management services</li>
+                        <li>Ongoing maintenance and support included</li>
+                    </ul>
+                </div>
+                
                 <p>Secure your water future with our efficient and sustainable borehole drilling and management services. Get a sustainable water source with zero upfront cost through our turnkey, fully funded borehole solution. Pay only for the water you use with our shared savings model.</p>
                 <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="offer-link">Book a Call</a>
                 <a href="https://form.typeform.com/to/kSJtterE" class="request-proposal-link" target="_blank">Request Borehole Proposal</a>
@@ -627,6 +755,30 @@
             <div class="offer-card">
                 <div class="offer-icon">🔌</div>
                 <h3>Smart Metering</h3>
+                
+                <div class="pain-points">
+                    <h4>Pain Points We Solve:</h4>
+                    <ul>
+                        <li>Inefficient energy and water consumption tracking</li>
+                        <li>High utility costs due to wastage and overuse</li>
+                        <li>Lack of real-time data for informed decision-making</li>
+                    </ul>
+                </div>
+                
+                <div class="benefits-outcomes">
+                    <h4>Benefits & Outcomes:</h4>
+                    <ul>
+                        <li>Real-time monitoring of energy and water usage</li>
+                        <li>Reduce utility costs by identifying inefficiencies</li>
+                        <li>Actionable insights for optimized resource management</li>
+                        <li>Enable clean energy distribution across shared grids</li>
+                        <li>Automated data collection and reporting</li>
+                        <li>Enhanced infrastructure performance tracking</li>
+                        <li>Third-party energy wheeling capabilities</li>
+                        <li>Energy aggregation models for maximum savings</li>
+                    </ul>
+                </div>
+                
                 <p>Optimize energy consumption and reduce costs with our advanced smart metering solutions. Take control of your energy and water usage with real-time monitoring and actionable insights. Enable clean energy distribution across shared grids.</p>
                 <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="offer-link">Book a Call</a>
                 <a href="https://form.typeform.com/to/kSJtterE" class="request-proposal-link" target="_blank">Request Smart Metering Proposal</a>
@@ -634,6 +786,30 @@
             <div class="offer-card">
                 <div class="offer-icon">🎓</div>
                 <h3>Skills Development</h3>
+                
+                <div class="pain-points">
+                    <h4>Pain Points We Solve:</h4>
+                    <ul>
+                        <li>High training costs and inconsistent learning outcomes</li>
+                        <li>Limited access to specialized skills development programs</li>
+                        <li>Inefficient traditional training methods and scheduling</li>
+                    </ul>
+                </div>
+                
+                <div class="benefits-outcomes">
+                    <h4>Benefits & Outcomes:</h4>
+                    <ul>
+                        <li>Save 80% on training costs with AI-powered solutions</li>
+                        <li>24/7 multimodal training instructor access via chat, voice, and video</li>
+                        <li>Custom video training modules tailored to your niche</li>
+                        <li>Exclusive territory rights for partner programs</li>
+                        <li>Flexible investment model: Build Fee or Licensing Fee per Learner</li>
+                        <li>Professional course development and curriculum design</li>
+                        <li>Measurable learning outcomes and performance tracking</li>
+                        <li>Scalable solutions for organizations of all sizes</li>
+                    </ul>
+                </div>
+                
                 <p>Partner with us to empower your workforce through our comprehensive skills development programs. Save 80% on training costs with our AI-powered training partnership and exclusive territory rights. Choose between a one-time Build Fee or ongoing Licensing Fee per Learner.</p>
                 <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="offer-link">Book a Call</a>
                 <a href="https://app.colossyan.com/share/zwc3q15j" class="request-proposal-link" target="_blank">Watch Video Hub Sample</a>
@@ -642,10 +818,40 @@
             <div class="offer-card">
                 <div class="offer-icon">💼</div>
                 <h3>Commodity Curated Portfolio</h3>
+                
+                <div class="pain-points">
+                    <h4>Pain Points We Solve:</h4>
+                    <ul>
+                        <li>Difficulty accessing high-quality, verified commodities</li>
+                        <li>Risk of fraud and lack of proper documentation</li>
+                        <li>Complex international trading and logistics</li>
+                    </ul>
+                </div>
+                
+                <div class="benefits-outcomes">
+                    <h4>Benefits & Outcomes:</h4>
+                    <ul>
+                        <li>Access to high-value, verified commodities from trusted sources</li>
+                        <li>Full documentation and international certification guaranteed</li>
+                        <li>Competitive pricing with transparent terms</li>
+                        <li>Secure payment methods including SBLC and LC options</li>
+                        <li>Expert guidance through international trading processes</li>
+                        <li>Reliable supply chain and logistics management</li>
+                        <li>Compliance with international trade standards</li>
+                        <li>Exclusive access to rare and valuable commodity lots</li>
+                    </ul>
+                </div>
+                
                 <p>Access our exclusive portfolio of high-value commodities including Manganese Ore, Emerald Clusters, Rhodium-Containing Materials, and Copper Cathodes. Each commodity is sourced from verified suppliers with full documentation and international certification.</p>
                 <a href="https://drive.google.com/drive/folders/1XvC4SM_ze-FY5KtrYEp5AXOF2d-VDon2?usp=sharing" class="offer-link" target="_blank">View Portfolio</a>
             </div>
         </div>
+    </section>
+
+    <!-- Cal Booking Section -->
+    <section class="cal-booking" id="booking">
+        <h2>Book a Discovery Call</h2>
+        <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-south-africa"></div>
     </section>
 
     <!-- Footer -->
@@ -664,6 +870,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#offers">Our Offers</a></li>
+                <li><a href="#booking">Book a Call</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -743,24 +950,58 @@
             });
 
             // Smooth scrolling for navigation links
-            document.querySelectorAll('nav a, .footer-links a').forEach(anchor => {
+            document.querySelectorAll('nav a').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
                     const targetId = this.getAttribute('href');
                     const targetElement = document.querySelector(targetId);
                     if (targetElement) {
                         targetElement.scrollIntoView({ behavior: 'smooth' });
-                        // Close sidebar after clicking a link on mobile
-                        if (window.innerWidth <= 768) {
-                            sidebarMenu.classList.remove('active');
-                        }
                     }
                 });
             });
 
             // --- Set current year in footer ---
             document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // --- Cal.com Embed Script ---
+            (function (C, A, L) { 
+                let p = function (a, ar) { a.q.push(ar); }; 
+                let d = C.document; 
+                C.Cal = C.Cal || function () { 
+                    let cal = C.Cal; 
+                    let ar = arguments; 
+                    if (!cal.loaded) { 
+                        cal.ns = {}; 
+                        cal.q = cal.q || []; 
+                        d.head.appendChild(d.createElement("script")).src = A; 
+                        cal.loaded = true; 
+                    } 
+                    if (ar[0] === L) { 
+                        const api = function () { p(api, arguments); }; 
+                        const namespace = ar[1]; 
+                        api.q = api.q || []; 
+                        if(typeof namespace === "string"){
+                            cal.ns[namespace] = cal.ns[namespace] || api;
+                            p(cal.ns[namespace], ar);
+                            p(cal, ["initNamespace", namespace]);
+                        } else p(cal, ar); 
+                        return;}
+                    p(cal, ar); 
+                }; 
+            })(window, "https://app.cal.com/embed/embed.js", "init");
+            
+            Cal("init", "south-africa", {origin:"https://app.cal.com"});
+            
+            Cal.ns["south-africa"]("inline", {
+                elementOrSelector:"#my-cal-inline-south-africa",
+                config: {"layout":"month_view"},
+                calLink: "partner-discovery/south-africa",
+            });
+
+            Cal.ns["south-africa"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
         });
     </script>
 </body>
 </html>
+```
