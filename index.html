@@ -3,346 +3,230 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mariba Media - Technology Media Holding Company</title>
-  <meta name="description" content="Mariba Media: Your partner in innovative solutions across Energy, Water, Technology, Skills Development, Commodities, and Investments.">
+  <title>Mariba Media – Exclusive Technology Media Holding</title>
+  <meta name="description" content="Mariba Media: high-value, low-friction solutions across Energy, Water, Technology, Skills, Commodities and Investments.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #000000;
-      --text: #FFFFFF;
-      --accent: #C0C0C0;
-      --subtle: #1A1A1A;
-      --border: #333333;
-      --dur-fast: .25s;
-      --dur-slow: .6s;
-      --max-width: 1440px;
-      --gutter: 80px;
+    :root{
+      --bg:#000000;
+      --text:#ffffff;
+      --accent:#d4af37;
+      --subtle:#0d0d0d;
+      --border:#1a1a1a;
+      --gutter:clamp(20px,5vw,80px);
+      --dur:.6s cubic-bezier(.23,1,.32,1);
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-    body{font-family:"Inter",sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-weight:400;-webkit-font-smoothing:antialiased}
-    h1,h2,h3,h4{font-weight:600;letter-spacing:-0.01em;line-height:1.2}
-    a{color:var(--text);text-decoration:none;transition:color var(--dur-fast)}
+    body{
+      font-family:'Lato',sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      font-weight:300;
+      line-height:1.6;
+      letter-spacing:.02em;
+    }
+    h1,h2,h3{font-weight:700;letter-spacing:.03em;line-height:1.2}
+    a{color:inherit;text-decoration:none}
     ul{list-style:none}
 
-    header{position:fixed;top:0;left:0;right:0;height:80px;padding:0 var(--gutter);display:flex;align-items:center;justify-content:space-between;z-index:999;backdrop-filter:blur(32px) saturate(180%);background:rgba(0,0,0,.8);border-bottom:1px solid var(--border)}
-    .logo{font-weight:600;font-size:1.5rem;letter-spacing:-0.02em}
-    nav a{margin-left:2rem;font-size:.875rem;text-transform:uppercase;letter-spacing:.05em;position:relative}
-    nav a::after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:1px;background:var(--accent);transition:width var(--dur-fast)}
+    header{
+      position:fixed;top:0;left:0;right:0;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:.75rem var(--gutter);
+      z-index:999;
+      backdrop-filter:blur(24px);
+      background:rgba(0,0,0,.75);
+      border-bottom:1px solid var(--border);
+    }
+    .logo{font-size:1.25rem;font-weight:700;letter-spacing:.08em}
+    nav a{margin-left:2.5rem;font-size:.75rem;letter-spacing:.15em;position:relative}
+    nav a::after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:1px;background:var(--accent);transition:width var(--dur)}
     nav a:hover::after{width:100%}
-    .menu-toggle{display:none;font-size:1.5rem;background:none;border:none;color:var(--text);cursor:pointer}
+    .menu-toggle{display:none;font-size:1.25rem;background:none;border:none;color:var(--text);cursor:pointer}
 
-    .hero{height:100vh;padding:0 var(--gutter);display:flex;flex-direction:column;justify-content:center;max-width:var(--max-width);margin:0 auto}
-    .hero h1{font-size:clamp(3rem,5vw,5.5rem);max-width:12ch;margin-bottom:1.5rem;clip-path:inset(0 100% 0 0);animation:reveal 1s ease-out forwards}
-    .hero p{font-size:1.25rem;max-width:45ch;margin-bottom:2.5rem;opacity:0;animation:fadeUp 1s ease-out .4s forwards}
-    .hero-cta{padding:1rem 2.25rem;border:1px solid var(--text);border-radius:4px;font-size:1rem;font-weight:500;position:relative;overflow:hidden;transition:color var(--dur-fast);opacity:0;animation:fadeUp 1s ease-out .8s forwards}
-    .hero-cta::before{content:'';position:absolute;inset:0;background:var(--accent);transform:translateY(100%);transition:transform var(--dur-fast);z-index:-1}
-    .hero-cta:hover{color:var(--bg)}.hero-cta:hover::before{transform:translateY(0)}
+    .hero{
+      height:100vh;display:flex;flex-direction:column;justify-content:center;
+      padding:0 var(--gutter);max-width:1400px;margin:auto;
+    }
+    .hero h1{
+      font-size:clamp(3rem,7vw,6rem);
+      width:min-content;
+      clip-path:inset(0 100% 0 0);
+      animation:reveal var(--dur) forwards;
+    }
+    .hero p{
+      max-width:40ch;margin:1.5rem 0 2.5rem;
+      opacity:0;animation:fadeUp var(--dur) .4s forwards;
+    }
+    .hero-cta{
+      font-size:.875rem;letter-spacing:.1em;
+      padding:.8rem 2.4rem;border:1px solid var(--text);
+      border-radius:2px;position:relative;overflow:hidden;
+      opacity:0;animation:fadeUp var(--dur) .8s forwards;
+    }
+    .hero-cta::before{
+      content:'';position:absolute;inset:0;
+      background:var(--accent);transform:translateY(100%);
+      transition:transform var(--dur);z-index:-1;
+    }
+    .hero-cta:hover{color:var(--bg)}
+    .hero-cta:hover::before{transform:translateY(0)}
 
-    section{padding:8rem var(--gutter);max-width:var(--max-width);margin:0 auto}
-    .section-title{font-size:3rem;text-align:center;margin-bottom:4rem;position:relative}
-    .section-title::after{content:'';position:absolute;left:50%;bottom:-1rem;transform:translateX(-50%);width:50px;height:2px;background:var(--accent)}
+    section{padding:8rem var(--gutter);max-width:1400px;margin:auto}
+    .section-title{font-size:clamp(2rem,4vw,3.5rem);text-align:center;margin-bottom:4rem;letter-spacing:.05em}
 
-    .about-content{text-align:center;max-width:800px;margin:0 auto}
-    .about-content>p{font-size:1.125rem;margin-bottom:2rem}
-    .mission-vision{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2.5rem;margin-top:3rem;text-align:left}
-    .mission,.vision{background:var(--subtle);padding:2rem;border:1px solid var(--border);border-radius:8px;transition:transform var(--dur-fast),border-color var(--dur-fast)}
-    .mission:hover,.vision:hover{transform:translateY(-4px);border-color:var(--accent)}
-    .mission h3,.vision h3{color:var(--accent);margin-bottom:1rem}
+    .about-content{text-align:center;max-width:680px;margin:auto}
+    .about-content>p{font-size:1.125rem;margin-bottom:2.5rem}
+    .mission-vision{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:4rem;margin-top:4rem;text-align:left}
+    .mission,.vision{background:var(--subtle);padding:3rem;border:1px solid var(--border);border-radius:1px}
+    .mission h3,.vision h3{color:var(--accent);margin-bottom:1rem;font-size:1rem;letter-spacing:.08em}
 
-    .offers-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:2.5rem}
-    .offer-card{background:var(--subtle);padding:2.5rem;border:1px solid var(--border);border-radius:8px;opacity:0;transform:translateY(40px);transition:transform var(--dur-fast),box-shadow var(--dur-fast),border-color var(--dur-fast)}
+    .offers-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:4rem}
+    .offer-card{background:var(--subtle);padding:3rem;border:1px solid var(--border);border-radius:1px;opacity:0;transform:translateY(40px);transition:transform var(--dur),border-color var(--dur)}
     .offer-card.visible{opacity:1;transform:translateY(0)}
-    .offer-card:hover{transform:translateY(-8px);box-shadow:0 12px 32px rgba(192,192,192,.15);border-color:var(--accent)}
-    .offer-icon{font-size:2.5rem;margin-bottom:1rem}
-    .offer-card h3{font-size:1.5rem;margin-bottom:1rem}
-    .pain-points,.benefits-outcomes{margin:1.5rem 0}
-    .pain-points h4,.benefits-outcomes h4{color:var(--accent);margin-bottom:.75rem;font-size:1.125rem}
-    .pain-points ul,.benefits-outcomes ul{padding-left:1.5rem;list-style:disc}
-    .pain-points li,.benefits-outcomes li{margin-bottom:.5rem;font-size:.9375rem}
-    .offer-link,.request-demo-link,.request-proposal-link{font-weight:500;color:var(--accent);display:inline-flex;align-items:center;margin-top:1rem;transition:color var(--dur-fast)}
+    .offer-card:hover{transform:translateY(-10px);border-color:var(--accent)}
+    .offer-icon{font-size:2rem;margin-bottom:1rem}
+    .offer-card h3{font-size:1.25rem;margin-bottom:1.25rem;letter-spacing:.05em}
+    .pain-points,.benefits-outcomes{margin:2rem 0}
+    .pain-points h4,.benefits-outcomes h4{font-size:.875rem;color:var(--accent);letter-spacing:.08em;margin-bottom:.75rem}
+    .pain-points ul,.benefits-outcomes ul{padding-left:1.5rem;list-style:disc;font-size:.875rem}
+    .pain-points li,.benefits-outcomes li{margin-bottom:.4rem}
+    .offer-link,.request-demo-link,.request-proposal-link{display:inline-block;font-size:.75rem;letter-spacing:.1em;color:var(--accent);margin-top:1.5rem;margin-right:1.5rem;transition:color var(--dur)}
     .offer-link:hover,.request-demo-link:hover,.request-proposal-link:hover{color:var(--text)}
-    .offer-link::after,.request-demo-link::after,.request-proposal-link::after{content:'→';margin-left:.5rem;transition:transform var(--dur-fast)}
+    .offer-link::after,.request-demo-link::after,.request-proposal-link::after{content:'→';margin-left:.4rem;transition:transform var(--dur)}
     .offer-link:hover::after,.request-demo-link:hover::after,.request-proposal-link:hover::after{transform:translateX(4px)}
 
     .cal-booking{background:var(--subtle)}
-    #my-cal-inline-south-africa{width:100%;height:760px;border:1px solid var(--border);border-radius:12px;overflow:hidden}
+    #my-cal-inline-south-africa{width:100%;height:700px;border:1px solid var(--border);border-radius:1px}
 
-    footer{padding:4rem var(--gutter);display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2.5rem;border-top:1px solid var(--border);font-size:.9375rem}
-    .footer-section h3{font-size:1.125rem;margin-bottom:1.25rem}
-    .footer-links li{margin-bottom:.75rem}
+    footer{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:4rem;padding:4rem var(--gutter);font-size:.75rem;border-top:1px solid var(--border)}
+    .footer-section h3{font-size:1rem;letter-spacing:.08em;margin-bottom:1rem}
+    .footer-links li{margin-bottom:.5rem}
     .footer-links a:hover{color:var(--accent)}
-    .social-links{display:flex;gap:1.25rem;margin-top:1.25rem}
-    .social-icon{font-size:1.25rem;color:var(--text);transition:color var(--dur-fast)}
-    .social-icon:hover{color:var(--accent)}
-    .copyright{grid-column:1/-1;text-align:center;margin-top:2rem;font-size:.875rem;color:var(--accent)}
+    .social-links{display:flex;gap:1.5rem;margin-top:1rem}
+    .copyright{grid-column:1/-1;text-align:center;margin-top:3rem;font-size:.75rem;color:var(--accent)}
 
-    .whatsapp-widget{position:fixed;bottom:1.5rem;right:1.5rem;z-index:1000}
-    .whatsapp-button{width:60px;height:60px;background:#25D366;border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform var(--dur-fast),box-shadow var(--dur-fast);box-shadow:0 4px 12px rgba(0,0,0,.3)}
-    .whatsapp-button:hover{transform:scale(1.1);box-shadow:0 6px 20px rgba(0,0,0,.4)}
-    .whatsapp-svg{width:30px;height:30px;fill:#fff}
+    .whatsapp-widget{position:fixed;bottom:1rem;right:1rem;z-index:1000}
+    .whatsapp-button{width:50px;height:50px;background:#25D366;border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform var(--dur)}
+    .whatsapp-button:hover{transform:scale(1.1)}
+    .whatsapp-svg{width:24px;height:24px;fill:#fff}
 
     @keyframes reveal{to{clip-path:inset(0 0 0 0)}}
     @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
 
     @media(max-width:768px){
-      :root{--gutter:20px}
-      header{padding:0 20px}
       nav{display:none}
-      .menu-toggle{display:block}
-      .hero{align-items:center;text-align:center}
-      .section-title{font-size:2.25rem}
-      #my-cal-inline-south-africa{height:600px}
+      .menu-toggle{display:block;font-size:1.25rem}
     }
   </style>
 </head>
 
 <body>
   <header>
-    <div class="logo">Mariba<span style="color:var(--accent)">Media</span></div>
+    <div class="logo">MARIBA<span style="color:var(--accent)">MEDIA</span></div>
     <nav>
-      <a href="#home">Home</a><a href="#about">About</a><a href="#offers">Offers</a><a href="#booking">Book&nbsp;a&nbsp;Call</a><a href="#contact">Contact</a>
+      <a href="#home">HOME</a><a href="#about">ABOUT</a><a href="#offers">OFFERS</a><a href="#booking">BOOK</a><a href="#contact">CONTACT</a>
     </nav>
     <button class="menu-toggle" aria-label="Open menu">☰</button>
   </header>
 
   <section class="hero" id="home">
     <h1>Innovating Across Sectors</h1>
-    <p>Mariba Media is a technology media holding company presenting a diverse portfolio of cutting-edge offers in Energy, Water, Technology Infrastructure, Skills Development, Commodities, and Investments.</p>
-    <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="hero-cta">Book a Call</a>
+    <p>High-value, low-friction solutions in Energy, Water, Technology, Skills, Commodities & Investments.</p>
+    <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="hero-cta">BOOK A CALL</a>
   </section>
 
   <section id="about">
+    <h2 class="section-title">ABOUT MARIBA MEDIA</h2>
     <div class="about-content">
-      <h2 class="section-title">About Mariba Media</h2>
-      <p>Mariba Media is a dynamic technology media holding company dedicated to driving innovation and growth across multiple critical sectors. Our mission is to connect partners, clients, and stakeholders with transformative solutions.</p>
+      <p>A technology-media holding company engineered to deliver transformative, scalable solutions across Africa.</p>
       <div class="mission-vision">
-        <div class="mission">
-          <h3>Our Mission</h3>
-          <p>To empower businesses and communities through innovative solutions in energy, water, technology, skills development, commodities, and investments, fostering sustainable growth and prosperity.</p>
-        </div>
-        <div class="vision">
-          <h3>Our Vision</h3>
-          <p>To be the leading technology media holding company in Africa, recognized for excellence in delivering integrated solutions that create value for stakeholders and contribute to the continent’s development.</p>
-        </div>
+        <div class="mission"><h3>MISSION</h3><p>Empower businesses and communities through innovation.</p></div>
+        <div class="vision"><h3>VISION</h3><p>Become Africa’s premier technology-media holding company.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="featured-offers" id="offers">
-    <h2 class="section-title">Our Offers</h2>
+  <section id="offers">
+    <h2 class="section-title">OUR OFFERS</h2>
     <div class="offers-grid">
       <!-- Karabo Sales Agent -->
       <div class="offer-card">
         <div class="offer-icon">🏢</div>
         <h3>Karabo Sales Agent</h3>
-        <div class="pain-points">
-          <h4>Pain Points We Solve:</h4>
-          <ul>
-            <li>High staffing costs and inefficient sales teams</li>
-            <li>Missed leads and poor conversion rates</li>
-            <li>Lack of 24/7 customer engagement and support</li>
-          </ul>
-        </div>
-        <div class="benefits-outcomes">
-          <h4>Benefits & Outcomes:</h4>
-          <ul>
-            <li>Slash staffing costs by up to 80% with automated systems</li>
-            <li>Generate qualified appointments with 100% ROI guarantee in 90 days</li>
-            <li>24/7 live sales agent and receptionist coverage</li>
-            <li>Interactive website with lead capture & nurturing</li>
-            <li>Google My Business optimization</li>
-            <li>Sales video commercial production</li>
-            <li>WhatsApp sales appointment setter</li>
-            <li>AI database reactivation</li>
-          </ul>
-        </div>
-        <p>Transform your business with our exclusive Partner Network. Choose pay-per-appointment or 35 % revenue share. We also conduct AI database reactivation to turn old leads into cash.</p>
-        <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="offer-link">Book a Call</a>
-        <a href="https://forms.gle/ZG52kZ1P6u25x1Nz7" class="request-demo-link" target="_blank">Request Demo</a>
+        <div class="pain-points"><h4>PAIN POINTS</h4><ul><li>High staffing costs</li><li>Missed leads</li><li>No 24/7 engagement</li></ul></div>
+        <div class="benefits-outcomes"><h4>BENEFITS</h4><ul><li>80 % cost cut</li><li>100 % ROI guarantee</li><li>24/7 live agent</li></ul></div>
+        <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="offer-link">BOOK A CALL</a>
       </div>
 
       <!-- Solar Solutions -->
       <div class="offer-card">
         <div class="offer-icon">☀️</div>
         <h3>Solar Solutions</h3>
-        <div class="pain-points">
-          <h4>Pain Points We Solve:</h4>
-          <ul>
-            <li>Soaring energy costs from Eskom and grid dependence</li>
-            <li>Unreliable power supply disrupting operations</li>
-            <li>Environmental impact from fossil-fuel dependency</li>
-          </ul>
-        </div>
-        <div class="benefits-outcomes">
-          <h4>Benefits & Outcomes:</h4>
-          <ul>
-            <li>Slash energy costs by up to 70%</li>
-            <li>Energy independence from unreliable grid</li>
-            <li>Reduced carbon footprint</li>
-            <li>Eliminate diesel-generator costs</li>
-            <li>Off-balance-sheet financing</li>
-            <li>Fast deployment & full-service support</li>
-          </ul>
-        </div>
-        <p>Commercial, industrial, residential & agricultural solar—customized to your needs. Partner with accredited EPC providers.</p>
-        <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="offer-link">Book a Call</a>
-        <a href="https://form.typeform.com/to/kSJtterE" class="request-proposal-link" target="_blank">Request Proposal</a>
+        <div class="pain-points"><h4>PAIN POINTS</h4><ul><li>Eskom tariffs</li><li>Power outages</li></ul></div>
+        <div class="benefits-outcomes"><h4>BENEFITS</h4><ul><li>Up to 70 % savings</li><li>Energy independence</li></ul></div>
+        <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="offer-link">BOOK A CALL</a>
       </div>
 
       <!-- Borehole Solutions -->
       <div class="offer-card">
         <div class="offer-icon">💧</div>
         <h3>Borehole Solutions</h3>
-        <div class="pain-points">
-          <h4>Pain Points We Solve:</h4>
-          <ul>
-            <li>Water scarcity & unreliable municipal supply</li>
-            <li>High water costs impacting operations</li>
-            <li>Dependence on external water sources</li>
-          </ul>
-        </div>
-        <div class="benefits-outcomes">
-          <h4>Benefits & Outcomes:</h4>
-          <ul>
-            <li>Zero upfront cost, turnkey solution</li>
-            <li>Pay only for the water you use</li>
-            <li>Reliable supply & reduced costs</li>
-            <li>Environmentally sustainable management</li>
-            <li>Ongoing maintenance included</li>
-          </ul>
-        </div>
-        <p>Secure your water future with our turnkey, fully-funded borehole solution. Pay-as-you-use via shared-savings model.</p>
-        <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="offer-link">Book a Call</a>
-        <a href="https://form.typeform.com/to/kSJtterE" class="request-proposal-link" target="_blank">Request Proposal</a>
+        <div class="pain-points"><h4>PAIN POINTS</h4><ul><li>Water scarcity</li><li>High municipal fees</li></ul></div>
+        <div class="benefits-outcomes"><h4>BENEFITS</h4><ul><li>Zero upfront cost</li><li>Pay-per-use</li></ul></div>
+        <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="offer-link">BOOK A CALL</a>
       </div>
 
       <!-- Smart Metering -->
       <div class="offer-card">
         <div class="offer-icon">🔌</div>
         <h3>Smart Metering</h3>
-        <div class="pain-points">
-          <h4>Pain Points We Solve:</h4>
-          <ul>
-            <li>Inefficient energy & water tracking</li>
-            <li>High utility costs due to wastage</li>
-            <li>Lack of real-time data for decisions</li>
-          </ul>
-        </div>
-        <div class="benefits-outcomes">
-          <h4>Benefits & Outcomes:</h4>
-          <ul>
-            <li>Real-time monitoring & reporting</li>
-            <li>Reduce utilities by identifying inefficiencies</li>
-            <li>Clean-energy distribution across grids</li>
-            <li>Automated data collection & insights</li>
-          </ul>
-        </div>
-        <p>Take control with real-time monitoring and actionable insights. Enable clean energy distribution and third-party wheeling.</p>
-        <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="offer-link">Book a Call</a>
-        <a href="https://form.typeform.com/to/kSJtterE" class="request-proposal-link" target="_blank">Request Proposal</a>
+        <div class="pain-points"><h4>PAIN POINTS</h4><ul><li>Inefficient tracking</li><li>Utility wastage</li></ul></div>
+        <div class="benefits-outcomes"><h4>BENEFITS</h4><ul><li>Real-time data</li><li>Cost reduction</li></ul></div>
+        <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="offer-link">BOOK A CALL</a>
       </div>
 
-      <!-- Skills Development – Bohlale Instructor Agent -->
+      <!-- Skills Development — Bohlale Instructor Agent -->
       <div class="offer-card">
         <div class="offer-icon">🎓</div>
         <h3>Skills Development – Bohlale Instructor Agent</h3>
-        <div class="pain-points">
-          <h4>Pain Points We Solve:</h4>
-          <ul>
-            <li>High training costs and inconsistent learning outcomes</li>
-            <li>Limited access to specialized skills-development programs</li>
-            <li>Inefficient traditional training methods and scheduling</li>
-          </ul>
-        </div>
-        <div class="benefits-outcomes">
-          <h4>Benefits & Outcomes:</h4>
-          <ul>
-            <li>Save 80 % on training costs with AI-powered solutions</li>
-            <li>24/7 multimodal instructor via chat, voice & video</li>
-            <li>Custom video modules tailored to your niche</li>
-            <li>Exclusive territory rights for partner programs</li>
-            <li>Flexible model: Build Fee or Licensing Fee per Learner</li>
-            <li>Professional course design & measurable outcomes</li>
-            <li>Scalable for any organization size</li>
-          </ul>
-        </div>
-        <p>Partner with us to empower your workforce. Save 80 % on training costs with our AI-powered Bohlale Instructor Agent and exclusive territory rights. Choose a one-time Build Fee or ongoing Licensing Fee per Learner.</p>
-        <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="offer-link">Book a Call</a>
-        <a href="https://app.colossyan.com/share/zwc3q15j" class="request-proposal-link" target="_blank">Watch Video Hub Sample</a>
-        <a href="https://elevenlabs.io/app/talk-to?agent_id=LYmBkvaGxZNzGD3MHdq7" class="request-proposal-link" target="_blank">Meet the 24/7 Bohlale Trainer Avatar</a>
+        <div class="pain-points"><h4>PAIN POINTS</h4><ul><li>High training costs</li><li>Inconsistent outcomes</li><li>Outdated methods</li></ul></div>
+        <div class="benefits-outcomes"><h4>BENEFITS</h4><ul><li>80 % cost savings</li><li>24/7 AI instructor</li><li>Exclusive territory</li></ul></div>
+        <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="offer-link">BOOK A CALL</a>
+        <a href="https://app.colossyan.com/share/zwc3q15j" class="request-proposal-link" target="_blank">WATCH HUB</a>
+        <a href="https://elevenlabs.io/app/talk-to?agent_id=LYmBkvaGxZNzGD3MHdq7" class="request-proposal-link" target="_blank">TALK TO AGENT</a>
       </div>
 
       <!-- Commodity Curated Portfolio -->
       <div class="offer-card">
         <div class="offer-icon">💼</div>
-        <h3>Commodity Curated Portfolio</h3>
-        <div class="pain-points">
-          <h4>Pain Points We Solve:</h4>
-          <ul>
-            <li>Difficulty accessing verified, high-quality commodities</li>
-            <li>Risk of fraud & lack of documentation</li>
-            <li>Complex international trading & logistics</li>
-          </ul>
-        </div>
-        <div class="benefits-outcomes">
-          <h4>Benefits & Outcomes:</h4>
-          <ul>
-            <li>Verified high-value commodities & full certification</li>
-            <li>Competitive pricing & transparent terms</li>
-            <li>Secure payment (SBLC / LC)</li>
-            <li>Expert logistics & compliance support</li>
-          </ul>
-        </div>
-        <p>Exclusive portfolio: Manganese Ore, Emerald Clusters, Rhodium-Containing Materials, Copper Cathodes—fully certified & documented.</p>
-        <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="offer-link">Book a Call</a>
-        <a href="https://drive.google.com/drive/folders/1XvC4SM_ze-FY5KtrYEp5AXOF2d-VDon2?usp=sharing" class="request-proposal-link" target="_blank">View Portfolio</a>
+        <h3>Commodity Portfolio</h3>
+        <div class="pain-points"><h4>PAIN POINTS</h4><ul><li>Verification risk</li><li>Opaque pricing</li></ul></div>
+        <div class="benefits-outcomes"><h4>BENEFITS</h4><ul><li>Certified lots</li><li>Secure payment</li></ul></div>
+        <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="offer-link">BOOK A CALL</a>
+        <a href="https://drive.google.com/drive/folders/1XvC4SM_ze-FY5KtrYEp5AXOF2d-VDon2?usp=sharing" class="request-proposal-link" target="_blank">VIEW PORTFOLIO</a>
       </div>
     </div>
   </section>
 
   <section class="cal-booking" id="booking">
-    <h2 class="section-title">Book a Discovery Call</h2>
+    <h2 class="section-title">BOOK A DISCOVERY CALL</h2>
     <div id="my-cal-inline-south-africa"></div>
   </section>
 
   <footer id="contact">
-    <div class="footer-section">
-      <h3>Mariba Media</h3>
-      <p>Innovating across Energy, Water, Technology, Skills, Commodities, and Investments.</p>
-      <div class="social-links">
-        <a href="https://www.facebook.com/profile.php?id=61576915266105" class="social-icon" aria-label="Facebook">f</a>
-        <a href="https://youtube.com/@TV-Mariba" class="social-icon" aria-label="YouTube">▶</a>
-      </div>
-    </div>
-    <div class="footer-section">
-      <h3>Quick Links</h3>
-      <ul class="footer-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#offers">Our Offers</a></li>
-        <li><a href="#booking">Book a Call</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-section">
-      <h3>Contact Us</h3>
-      <ul class="footer-links">
-        <li>Email: maribamedia@gmail.com</li>
-        <li>Phone: +27 (0) 76 647 3499</li>
-        <li>Address: Bronkhorstspruit, Gauteng, South Africa</li>
-      </ul>
-    </div>
-    <div class="copyright">
-      &copy; <span id="current-year"></span> Mariba Media. All rights reserved.
-    </div>
+    <div class="footer-section"><h3>MARIBA MEDIA</h3><p>High-value, low-friction innovation.</p></div>
+    <div class="footer-section"><h3>QUICK LINKS</h3><ul class="footer-links"><li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#offers">Offers</a></li><li><a href="#booking">Book</a></li></ul></div>
+    <div class="footer-section"><h3>CONTACT</h3><ul class="footer-links"><li>maribamedia@gmail.com</li><li>+27 (0) 76 647 3499</li><li>Bronkhorstspruit, Gauteng, SA</li></ul></div>
+    <div class="copyright">&copy; <span id="current-year"></span> MARIBA MEDIA. ALL RIGHTS RESERVED.</div>
   </footer>
 
   <div class="whatsapp-widget">
     <a href="https://wa.me/27766473499" target="_blank" rel="noopener">
-      <button class="whatsapp-button" aria-label="Contact us on WhatsApp">
+      <button class="whatsapp-button" aria-label="WhatsApp">
         <svg class="whatsapp-svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       </button>
     </a>
@@ -353,8 +237,7 @@
     Cal("init","south-africa",{origin:"https://app.cal.com"});
     Cal.ns["south-africa"]("inline",{elementOrSelector:"#my-cal-inline-south-africa",config:{layout:"month_view"},calLink:"partner-discovery/south-africa"});
     Cal.ns["south-africa"]("ui",{hideEventTypeDetails:false,layout:"month_view"});
-
-    const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target)}})},{threshold:0.15});
+    const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target)}})},{threshold:0.2});
     document.querySelectorAll(".offer-card").forEach(card=>observer.observe(card));
     document.getElementById("current-year").textContent=new Date().getFullYear();
   </script>
