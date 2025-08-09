@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mariba Media - Performance Marketing Agency (Pay Only After Results)</title>
-  <meta name="description" content="Mariba Media: A performance marketing agency. We only get paid when we generate real, upfront cash for your business. No risk. No upfront cost. 100% results-based.">
-  
-  <!-- Fallback to local or standard font since Google Fonts is 404 -->
+  <title>Mariba Media - Performance Marketing & Product Development</title>
+  <meta name="description" content="Mariba Media: We only get paid when we generate real, upfront revenue. No risk. 100% results-based. Performance marketing & product development for high-growth African enterprises.">
+
+  <!-- Fallback to local Inter font since Google Fonts is down -->
   <style>
     @font-face {
       font-family: 'Inter';
@@ -41,7 +41,7 @@
     html{scroll-behavior:smooth}
     body{font-family:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-weight:400;-webkit-font-smoothing:antialiased}
     h1,h2,h3,h4{font-weight:600;letter-spacing:-0.01em;line-height:1.2}
-    a{color:var(--text);text-decoration:none;transition:color var(--dur-fast)}
+    a{color:var(--accent);text-decoration:none;transition:color var(--dur-fast)}
     ul{list-style:none}
 
     header{position:fixed;top:0;left:0;right:0;height:80px;padding:0 var(--gutter);display:flex;align-items:center;justify-content:space-between;z-index:999;backdrop-filter:blur(32px) saturate(180%);background:rgba(0,0,0,.8);border-bottom:1px solid var(--border)}
@@ -69,20 +69,20 @@
     .mission:hover,.vision:hover{transform:translateY(-4px);border-color:var(--accent)}
     .mission h3,.vision h3{color:var(--accent);margin-bottom:1rem}
 
-    .offers-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:2.5rem}
-    .offer-card{background:var(--subtle);padding:2.5rem;border:1px solid var(--border);border-radius:8px;opacity:0;transform:translateY(40px);transition:transform var(--dur-fast),box-shadow var(--dur-fast),border-color var(--dur-fast)}
-    .offer-card.visible{opacity:1;transform:translateY(0)}
-    .offer-card:hover{transform:translateY(-8px);box-shadow:0 12px 32px rgba(0,255,133,.15);border-color:var(--accent)}
-    .offer-icon{font-size:2.5rem;margin-bottom:1rem}
-    .offer-card h3{font-size:1.5rem;margin-bottom:1rem;color:var(--accent)}
-    .results{font-size:1.125rem;color:var(--accent);margin:1rem 0;font-weight:500}
-    .benefits-outcomes h4{color:var(--accent);margin-bottom:.75rem;font-size:1.125rem}
-    .benefits-outcomes ul{padding-left:1.5rem;list-style:disc;color:#ccc}
-    .benefits-outcomes li{margin-bottom:.5rem;font-size:.9375rem}
-    .offer-link{font-weight:600;color:var(--accent);display:inline-flex;align-items:center;margin-top:1.25rem;transition:color var(--dur-fast)}
-    .offer-link::after{content:'→';margin-left:.5rem;transition:transform var(--dur-fast)}
-    .offer-link:hover{color:var(--text)}
-    .offer-link:hover::after{transform:translateX(4px)}
+    .offers-accordion{max-width:var(--max-width);margin:0 auto}
+    .accordion-item{margin-bottom:1.5rem;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--subtle)}
+    .accordion-header{padding:1.5rem 1.75rem;font-size:1.25rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background var(--dur-fast)}
+    .accordion-header:hover{background:rgba(255,255,255,0.05)}
+    .accordion-button{background:none;border:none;font:inherit;color:inherit;cursor:pointer}
+    .accordion-content{padding:0;max-height:0;overflow:hidden;transition:max-height var(--dur-fast) ease-out;background:var(--bg);color:#ccc}
+    .accordion-content-inner{padding:1.75rem}
+    .offer-icon{font-size:1.8rem;margin-right:0.75rem}
+    .offer-header{display:flex;align-items:center;margin-bottom:1rem}
+    .offer-subtitle{font-size:1rem;color:var(--accent);font-weight:500}
+    .pain-points, .outcomes, .revenue-model{margin:1rem 0}
+    .pain-points h4, .outcomes h4, .revenue-model h4{color:var(--accent);margin-bottom:0.75rem;font-size:1.125rem}
+    .lead-magnet{margin-top:1.5rem;font-weight:600;color:var(--accent);display:inline-block}
+    .lead-magnet:hover{color:var(--text);text-decoration:underline}
 
     .cal-booking{background:var(--subtle)}
     #my-cal-inline-south-africa{width:100%;height:760px;border:1px solid var(--border);border-radius:12px;overflow:hidden}
@@ -90,6 +90,7 @@
     footer{padding:4rem var(--gutter);display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2.5rem;border-top:1px solid var(--border);font-size:.9375rem}
     .footer-section h3{font-size:1.125rem;margin-bottom:1.25rem;color:var(--accent)}
     .footer-links li{margin-bottom:.75rem}
+    .footer-links a{color:var(--text)}
     .footer-links a:hover{color:var(--accent)}
     .social-links{display:flex;gap:1.25rem;margin-top:1.25rem}
     .social-icon{font-size:1.25rem;color:var(--text);transition:color var(--dur-fast)}
@@ -112,6 +113,8 @@
       .hero{align-items:center;text-align:center}
       .section-title{font-size:2.25rem}
       #my-cal-inline-south-africa{height:600px}
+      .accordion-header{font-size:1.1rem;padding:1.25rem}
+      .accordion-content-inner{padding:1.25rem}
     }
   </style>
 </head>
@@ -131,22 +134,22 @@
 
   <section class="hero" id="home">
     <h1>We Generate Cash. You Pay After.</h1>
-    <p>Mariba Media is a performance marketing agency. We only get paid when we generate real, upfront revenue for your business. No upfront cost. No risk. 100% results-based.</p>
+    <p>Mariba Media is a performance marketing & product development agency. We only get paid when we generate real, upfront revenue for your business. No upfront cost. No risk. 100% results-based.</p>
     <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="hero-cta">Start Risk-Free</a>
   </section>
 
   <section id="about">
     <div class="about-content">
       <h2 class="section-title">Our Performance Promise</h2>
-      <p>We don’t sell services. We sell results. Mariba Media operates on a pure performance model: we invest our technology, time, and expertise to generate cash for your business — and only invoice you <strong>after</strong> verified results are delivered.</p>
+      <p>We don’t sell services. We build systems that generate revenue — and only get paid when they do. Mariba Media funds, develops, and markets high-impact solutions across Africa’s most critical sectors.</p>
       <div class="mission-vision">
         <div class="mission">
           <h3>No Results, No Fee</h3>
           <p>If we don’t generate measurable revenue, you don’t pay. Our income is 100% tied to your success.</p>
         </div>
         <div class="vision">
-          <h3>Cash-First Marketing</h3>
-          <p>We focus only on offers that drive immediate cash flow — not vanity metrics.</p>
+          <h3>Minimal Effort, Maximum Impact</h3>
+          <p>We handle development, marketing, and execution. You approve. We scale. You profit.</p>
         </div>
       </div>
     </div>
@@ -154,117 +157,251 @@
 
   <section class="featured-offers" id="offers">
     <h2 class="section-title">Performance Offers</h2>
-    <div class="offers-grid">
-      <!-- Karabo Sales Agent -->
-      <div class="offer-card">
-        <div class="offer-icon">💰</div>
-        <h3>Karabo Sales Agent</h3>
-        <div class="results">We generate qualified appointments → You close deals → We get paid per result.</div>
-        <div class="benefits-outcomes">
-          <h4>How We Deliver Cash:</h4>
-          <ul>
-            <li>We reactivate your old leads using AI — you get new sales, we get paid only on conversions</li>
-            <li>We book qualified appointments via WhatsApp, calls, and web — you pay only when you get a meeting</li>
-            <li>24/7 AI-powered sales agent handles inquiries — you keep 100% of the revenue</li>
-          </ul>
+    <div class="offers-accordion">
+      <!-- ENERGY -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>⚡ Energy: C&I Solar & Borehole Africa</span>
+          <span>+</span>
+        </button>
+        <div class="accordion-content">
+          <div class="accordion-content-inner">
+            <!-- C&I Solar -->
+            <div class="offer-header">
+              <div class="offer-icon">☀️</div>
+              <div>
+                <h3>C&I Solar Solutions</h3>
+                <div class="offer-subtitle">Zero upfront cost. Pay only when energy savings are realized.</div>
+              </div>
+            </div>
+            <div class="pain-points">
+              <h4>Pain Points:</h4>
+              <p>Soaring energy costs, unreliable grid, high diesel spend, capital constraints for solar CAPEX.</p>
+            </div>
+            <div class="outcomes">
+              <h4>Transformative Outcome:</h4>
+              <p>Slash energy costs by 70% with off-balance-sheet solar. We fund, install, and maintain — you pay from savings.</p>
+            </div>
+            <div class="revenue-model">
+              <h4>Revenue Generation:</h4>
+              <p>We earn a share of the first 12 months of savings. No cash from you. No risk.</p>
+            </div>
+            <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="lead-magnet">→ Partner With Us (Zero Upfront)</a>
+
+            <hr style="border:0;border-top:1px solid var(--border);margin:2rem 0">
+
+            <!-- Borehole Africa -->
+            <div class="offer-header">
+              <div class="offer-icon">💧</div>
+              <div>
+                <h3>Borehole Africa</h3>
+                <div class="offer-subtitle">Pay-per-use water. We fund the borehole.</div>
+              </div>
+            </div>
+            <div class="pain-points">
+              <h4>Pain Points:</h4>
+              <p>Water scarcity, municipal unreliability, high water costs, drilling risk.</p>
+            </div>
+            <div class="outcomes">
+              <h4>Transformative Outcome:</h4>
+              <p>Secure, zero-upfront borehole solution. Client pays only for water used — shared savings model.</p>
+            </div>
+            <div class="revenue-model">
+              <h4>Revenue Generation:</h4>
+              <p>We earn recurring revenue from water usage. You get new clients. We earn when water flows.</p>
+            </div>
+            <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="lead-magnet">→ Launch Your Pipeline</a>
+          </div>
         </div>
-        <p>No salaries. No training. No risk. We handle lead generation and qualification. You only pay for <strong>real appointments or closed deals</strong>.</p>
-        <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="offer-link">Book Risk-Free Call</a>
       </div>
 
-      <!-- Solar Solutions -->
-      <div class="offer-card">
-        <div class="offer-icon">☀️</div>
-        <h3>Solar Solutions</h3>
-        <div class="results">We secure clients → You install systems → We earn commission on cash collected.</div>
-        <div class="benefits-outcomes">
-          <h4>Revenue Model:</h4>
-          <ul>
-            <li>We market your solar services to commercial clients — you pay us only when the customer pays you</li>
-            <li>Zero upfront cost for clients (off-balance-sheet) — we earn on successful installations</li>
-            <li>Performance-based lead generation: pay per signed contract</li>
-          </ul>
+      <!-- COMMODITY TRADING -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>💼 Commodity Trading: Request Portfolio Access</span>
+          <span>+</span>
+        </button>
+        <div class="accordion-content">
+          <div class="accordion-content-inner">
+            <div class="offer-header">
+              <div class="offer-icon">📦</div>
+              <div>
+                <h3>Commodity Procurement Center</h3>
+                <div class="offer-subtitle">Verified offers: Manganese, Copper, Emeralds, Rhodium</div>
+              </div>
+            </div>
+            <div class="pain-points">
+              <h4>Pain Points:</h4>
+              <p>Fraud risk, lack of documentation, complex logistics, SBLC/LC delays.</p>
+            </div>
+            <div class="outcomes">
+              <h4>Transformative Outcome:</h4>
+              <p>Access fully certified, bankable commodity offers with secure payment terms (SBLC/LC).</p>
+            </div>
+            <div class="revenue-model">
+              <h4>Revenue Generation:</h4>
+              <p>We earn commission only on closed deals. No upfront fees. No risk.</p>
+            </div>
+            <a href="https://drive.google.com/drive/folders/1XvC4SM_ze-FY5KtrYEp5AXOF2d-VDon2" target="_blank" class="lead-magnet">→ Access Verified Portfolio</a>
+            <p style="font-size:0.85rem;margin-top:0.5rem;color:#aaa">Includes: SCO - CIF - COPPER CATHODES, EMERALD - Canga de Esmeralda.pdf, Manganese Ore offers</p>
+          </div>
         </div>
-        <p>We become your sales engine. You scale installations. We only get paid when cash hits your account.</p>
-        <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="offer-link">Partner With Us</a>
       </div>
 
-      <!-- Borehole Solutions -->
-      <div class="offer-card">
-        <div class="offer-icon">💧</div>
-        <h3>Borehole Solutions</h3>
-        <div class="results">We bring clients → You drill → We earn on water revenue share.</div>
-        <div class="benefits-outcomes">
-          <h4>Performance Structure:</h4>
-          <ul>
-            <li>We market turnkey borehole systems with zero upfront cost to clients</li>
-            <li>Client pays only for water used — we share in the recurring revenue</li>
-            <li>You get guaranteed projects — we get paid from the cash flow generated</li>
-          </ul>
+      <!-- ARTIFICIAL INTELLIGENCE -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>🤖 Artificial Intelligence: Karabo & Bohlale AI</span>
+          <span>+</span>
+        </button>
+        <div class="accordion-content">
+          <div class="accordion-content-inner">
+            <!-- Karabo AI -->
+            <div class="offer-header">
+              <div class="offer-icon">🏢</div>
+              <div>
+                <h3>Karabo AI: Sales Operating System</h3>
+                <div class="offer-subtitle">AI sales agent. Pay per appointment or 35% revenue share.</div>
+              </div>
+            </div>
+            <div class="pain-points">
+              <h4>Pain Points:</h4>
+              <p>High sales team costs, missed leads, poor conversion, 9-to-5 limitations.</p>
+            </div>
+            <div class="outcomes">
+              <h4>Transformative Outcome:</h4>
+              <p>24/7 AI-powered sales agent that books appointments, nurtures leads, and reactivates old databases.</p>
+            </div>
+            <div class="revenue-model">
+              <h4>Revenue Generation:</h4>
+              <p>You pay only for qualified appointments or closed deals. We guarantee ROI in 90 days.</p>
+            </div>
+            <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="lead-magnet">→ Start Risk-Free Trial</a>
+
+            <hr style="border:0;border-top:1px solid var(--border);margin:2rem 0">
+
+            <!-- Bohlale AI -->
+            <div class="offer-header">
+              <div class="offer-icon">🎓</div>
+              <div>
+                <h3>Bohlale AI: Training & Skills Development System</h3>
+                <div class="offer-subtitle">AI instructor. Save 80% on training costs.</div>
+              </div>
+            </div>
+            <div class="pain-points">
+              <h4>Pain Points:</h4>
+              <p>High training costs, inconsistent outcomes, scheduling conflicts, scalability issues.</p>
+            </div>
+            <div class="outcomes">
+              <h4>Transformative Outcome:</h4>
+              <p>24/7 AI trainer via chat, voice, and video. Custom courses. Measurable upskilling.</p>
+            </div>
+            <div class="revenue-model">
+              <h4>Revenue Generation:</h4>
+              <p>You pay per certified learner or via licensing fee. We front the development.</p>
+            </div>
+            <a href="https://app.colossyan.com/share/zwc3q15j" target="_blank" class="lead-magnet">→ Watch Sample Training Hub</a>
+          </div>
         </div>
-        <p>No client acquisition cost for you. We front the marketing. You get new projects. We earn when water flows.</p>
-        <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="offer-link">Launch Your Pipeline</a>
       </div>
 
-      <!-- Smart Metering -->
-      <div class="offer-card">
-        <div class="offer-icon">📊</div>
-        <h3>Smart Metering</h3>
-        <div class="results">We identify savings → You deploy → We earn on shared utility reduction.</div>
-        <div class="benefits-outcomes">
-          <h4>How It Works:</h4>
-          <ul>
-            <li>We audit energy/water use and prove savings potential</li>
-            <li>Install smart meters — reduce waste by 20–40%</li>
-            <li>We earn a percentage of the first 6 months of savings</li>
-          </ul>
+      <!-- ECOMMERCE -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>🛍️ E-commerce: ISONEM & Sedimo</span>
+          <span>+</span>
+        </button>
+        <div class="accordion-content">
+          <div class="accordion-content-inner">
+            <div class="offer-header">
+              <div class="offer-icon">🇿🇦</div>
+              <div>
+                <h3>ISONEM South Africa</h3>
+                <div class="offer-subtitle">Premium home & lifestyle brand. Partner for distribution.</div>
+              </div>
+            </div>
+            <div class="pain-points">
+              <h4>Pain Points:</h4>
+              <p>Limited access to premium African brands, low-margin imports, weak local supply chains.</p>
+            </div>
+            <div class="outcomes">
+              <h4>Transformative Outcome:</h4>
+              <p>Carry a high-margin, locally rooted brand with full marketing support and logistics.</p>
+            </div>
+            <div class="revenue-model">
+              <h4>Revenue Generation:</h4>
+              <p>We earn from wholesale margins. You earn from retail markup. Win-win.</p>
+            </div>
+            <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="lead-magnet">→ Become a Distributor</a>
+
+            <hr style="border:0;border-top:1px solid var(--border);margin:2rem 0">
+
+            <div class="offer-header">
+              <div class="offer-icon">🛒</div>
+              <div>
+                <h3>Sedimo</h3>
+                <div class="offer-subtitle">Digital marketplace for African commodities & products.</div>
+              </div>
+            </div>
+            <div class="pain-points">
+              <h4>Pain Points:</h4>
+              <p>Fragmented markets, lack of trust, poor discoverability for African goods.</p>
+            </div>
+            <div class="outcomes">
+              <h4>Transformative Outcome:</h4>
+              <p>Join a trusted digital marketplace connecting African producers with global buyers.</p>
+            </div>
+            <div class="revenue-model">
+              <h4>Revenue Generation:</h4>
+              <p>We earn commission on verified transactions. You get exposure and sales.</p>
+            </div>
+            <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="lead-magnet">→ List Your Products</a>
+          </div>
         </div>
-        <p>You keep most of the savings. We only get paid if we deliver measurable reductions.</p>
-        <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="offer-link">Audit Your Savings</a>
       </div>
 
-      <!-- Skills Development – Bohlale Instructor Agent -->
-      <div class="offer-card">
-        <div class="offer-icon">🎓</div>
-        <h3>Bohlale Trainer (Skills)</h3>
-        <div class="results">We train your team → You boost productivity → We earn per learner outcome.</div>
-        <div class="benefits-outcomes">
-          <h4>Revenue-Linked Training:</h4>
-          <ul>
-            <li>We deploy AI trainers to upskill your staff — you pay only per certified learner</li>
-            <li>Training cost covered by performance gains (e.g., sales increase, efficiency)</li>
-            <li>We guarantee measurable improvement — or no charge</li>
-          </ul>
+      <!-- BLOCKCHAIN -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>🔗 Blockchain: Crypto Smart Contract Generator (R&D)</span>
+          <span>+</span>
+        </button>
+        <div class="accordion-content">
+          <div class="accordion-content-inner">
+            <div class="offer-header">
+              <div class="offer-icon">🔐</div>
+              <div>
+                <h3>Crypto Smart Contract Generator (ISO 20222 Standard)</h3>
+                <div class="offer-subtitle">In R&D. Coming soon for secure, compliant DeFi transactions.</div>
+              </div>
+            </div>
+            <div class="pain-points">
+              <h4>Pain Points:</h4>
+              <p>Smart contract vulnerabilities, lack of regulatory compliance, high audit costs.</p>
+            </div>
+            <div class="outcomes">
+              <h4>Transformative Outcome:</h4>
+              <p>Generate audited, ISO 20222-compliant smart contracts for payments, escrow, and settlements.</p>
+            </div>
+            <div class="revenue-model">
+              <h4>Revenue Generation:</h4>
+              <p>Pay-per-use model upon launch. No upfront cost. Enterprise-grade security.</p>
+            </div>
+            <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="lead-magnet">→ Get Early Access (Coming Soon)</a>
+          </div>
         </div>
-        <p>Turn training into a profit center. We invest. You grow. We earn when results show.</p>
-        <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="offer-link">Boost Your Team</a>
-      </div>
-
-      <!-- Commodity Curated Portfolio -->
-      <div class="offer-card">
-        <div class="offer-icon">💼</div>
-        <h3>Commodity Procurement</h3>
-        <div class="results">We source buyers → You transact → We earn commission on closed deals.</div>
-        <div class="benefits-outcomes">
-          <h4>Deal-Based Model:</h4>
-          <ul>
-            <li>We connect verified sellers of Manganese, Copper, Emeralds, Rhodium to serious buyers</li>
-            <li>No upfront fees — we earn only on successful transactions</li>
-            <li>Secure SBLC/LC-backed deals — we get paid when you get paid</li>
-          </ul>
-        </div>
-        <p>Access high-value commodities. We handle matchmaking. You close. We earn on results. View real offers:</p>
-        <a href="https://drive.google.com/drive/folders/1XvC4SM_ze-FY5KtrYEp5AXOF2d-VDon2" target="_blank" class="offer-link">View Verified Portfolio</a>
-        <small style="display:block;margin-top:8px;color:#aaa;font-size:.85rem">Includes: SCO for Copper Cathodes, Emerald Clusters, Manganese Ore, Professional Export Offers</small>
       </div>
     </div>
   </section>
 
   <section class="cal-booking" id="booking">
     <h2 class="section-title">Book a Risk-Free Discovery Call</h2>
-    <p style="text-align:center;margin-bottom:2rem;color:#ccc;max-width:600px;margin-left:auto;margin-right:auto">
-      In this 30-minute call, we’ll audit your operations and discuss implementation of:
-      <br><strong>Sales Center • Skills Development • Commodity Procurement • Solar Solutions</strong>
+    <p style="text-align:center;margin-bottom:2rem;color:#ccc;max-width:700px;margin-left:auto;margin-right:auto">
+      In this 30-minute call, we will:<br>
+      <strong>• Audit your operations</strong><br>
+      <strong>• Generate a recommendation report</strong><br>
+      <strong>• Discuss implementation of:</strong><br>
+      Sales Center • Skills Development • Commodity Procurement • Solar Solutions
     </p>
     <div id="my-cal-inline-south-africa"></div>
   </section>
@@ -272,7 +409,7 @@
   <footer id="contact">
     <div class="footer-section">
       <h3>Mariba<span style="color:var(--accent)">Media</span></h3>
-      <p>Performance marketing that pays for itself. No upfront cost. No risk. You pay only after we generate cash.</p>
+      <p>Performance marketing & product development. Pay only after we generate real revenue.</p>
       <div class="social-links">
         <a href="https://www.facebook.com/profile.php?id=61576915266105" class="social-icon" aria-label="Facebook">f</a>
         <a href="https://youtube.com/@TV-Mariba" class="social-icon" aria-label="YouTube">▶</a>
@@ -297,7 +434,7 @@
       </ul>
     </div>
     <div class="copyright">
-      &copy; <span id="current-year"></span> Mariba Media. Performance marketing. Pay only after results.
+      &copy; <span id="current-year"></span> Mariba Media. Performance marketing & product development. Pay only after results.
     </div>
   </footer>
 
@@ -310,7 +447,25 @@
   </div>
 
   <script>
-    // Load Cal.com only if script is available
+    // Accordion functionality
+    document.querySelectorAll('.accordion-header').forEach(button => {
+      button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        const isOpen = content.style.maxHeight;
+
+        document.querySelectorAll('.accordion-content').forEach(c => {
+          c.style.maxHeight = null;
+          c.previousElementSibling.querySelector('span:last-child').textContent = '+';
+        });
+
+        if (!isOpen) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          button.querySelector('span:last-child').textContent = '−';
+        }
+      });
+    });
+
+    // Load Cal.com
     (function(C,A,L){let p=function(a,ar){a.q.push(ar)};let d=C.document;C.Cal=C.Cal||function(){let cal=C.Cal;let ar=arguments;if(!cal.loaded){cal.ns={};cal.q=cal.q||[];let script=d.createElement("script");script.async=1;script.src=A;d.head.appendChild(script);cal.loaded=true}if(ar[0]===L){const api=function(){p(api,arguments)};const namespace=ar[1];api.q=api.q||[];if(typeof namespace==="string"){cal.ns[namespace]=cal.ns[namespace]||api;p(cal.ns[namespace],ar);p(cal,["initNamespace",namespace])}else p(cal,ar);return}p(cal,ar)}})(window,"https://app.cal.com/embed/embed.js","init");
     
     Cal("init", "south-africa", { origin: "https://app.cal.com" });
@@ -319,17 +474,6 @@
       calLink: "partner-discovery/south-africa"
     });
     Cal.ns["south-africa"]("ui", { layout: "month_view" });
-
-    // Scroll reveal animation
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-    document.querySelectorAll(".offer-card").forEach(card => observer.observe(card));
 
     // Update year
     document.getElementById("current-year").textContent = new Date().getFullYear();
