@@ -6,22 +6,16 @@
   <title>Mariba Media - Performance Marketing & Product Development</title>
   <meta name="description" content="Mariba Media: We only get paid when we generate real, upfront revenue. No risk. 100% results-based. Performance marketing & product development for high-growth African enterprises.">
 
-  <!-- Fallback Inter Font -->
+  <!-- Fallback Inter Font (since Google Fonts is 404) -->
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
-  <!-- Google Analytics 4 (gtag.js) -->
-  <!-- Replace G-XXXXXXXXXX with your actual Measurement ID -->
+  <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX', {
-      page_title: document.title,
-      page_location: window.location.href,
-      page_path: window.location.pathname,
-      send_page_view: true
-    });
+    gtag('config', 'G-XXXXXXXXXX');
   </script>
 
   <style>
@@ -55,7 +49,7 @@
     a:hover{color:var(--electric-blue)}
     ul{list-style:none}
 
-    /* BUTTON STYLE (MATCHES HERO CTA) */
+    /* BUTTON STYLE */
     .btn{padding:1rem 2.25rem;border:1px solid var(--verdigris);background:var(--verdigris);color:var(--rich-black);border-radius:6px;font-size:1rem;font-weight:500;transition:all var(--dur);display:inline-block}
     .btn:hover{background:transparent;color:var(--verdigris);box-shadow:0 0 0 2px var(--verdigris), 0 0 15px rgba(100, 233, 238, 0.3)}
     .btn::after{content:'→';margin-left:0.5rem;opacity:0;transition:transform var(--dur)}
@@ -537,27 +531,39 @@
       }
     });
 
-    // DOM Ready
+    // DOM Ready + Accordion Fix
     document.addEventListener("DOMContentLoaded", function () {
-      // Accordion
-      document.querySelectorAll('.accordion-button').forEach(button => {
-        button.addEventListener('click', () => {
+      console.log("DOM fully loaded and parsed");
+
+      // 🔹 Accordion Logic
+      const buttons = document.querySelectorAll('.accordion-button');
+      buttons.forEach(button => {
+        button.addEventListener('click', function () {
           const item = button.closest('.accordion-item');
-          const isActive = item.classList.contains('active');
-          document.querySelectorAll('.accordion-item').forEach(i => {
-            i.classList.remove('active');
-            const icon = i.querySelector('.accordion-icon');
+          const content = item.querySelector('.accordion-content');
+          const icon = item.querySelector('.accordion-icon');
+
+          if (item.classList.contains('active')) {
+            item.classList.remove('active');
+            content.style.maxHeight = null;
             if (icon) icon.style.transform = 'rotate(0deg)';
-          });
-          if (!isActive) {
+          } else {
+            // Close all
+            document.querySelectorAll('.accordion-item').forEach(i => {
+              i.classList.remove('active');
+              i.querySelector('.accordion-content').style.maxHeight = null;
+              const ic = i.querySelector('.accordion-icon');
+              if (ic) ic.style.transform = 'rotate(0deg)';
+            });
+            // Open this
             item.classList.add('active');
-            const icon = item.querySelector('.accordion-icon');
+            content.style.maxHeight = content.scrollHeight + "px";
             if (icon) icon.style.transform = 'rotate(180deg)';
           }
         });
       });
 
-      // Cal.com
+      // 🔹 Cal.com Embed
       const calDiv = document.getElementById('my-cal-inline-south-africa');
       if (calDiv) {
         (function (C, A, L) {
@@ -600,17 +606,21 @@
         Cal.ns["south-africa"]("ui", { layout: "month_view" });
       }
 
-      // Update Year
+      // 🔹 Update Year
       const yearEl = document.getElementById("current-year");
       if (yearEl) yearEl.textContent = new Date().getFullYear();
     });
 
-    // Optional: Track button clicks
-    document.querySelectorAll('.btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        gtag('event', 'click', {
-          event_category: 'CTA',
-          event_label: btn.textContent.trim()
+    // Track CTA clicks
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll('.btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          if (typeof gtag === 'function') {
+            gtag('event', 'click', {
+              event_category: 'CTA',
+              event_label: btn.textContent.trim()
+            });
+          }
         });
       });
     });
