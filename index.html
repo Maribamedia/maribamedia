@@ -28,82 +28,89 @@
 
   <style>
     :root {
-      --bg: #000000;
-      --text: #FFFFFF;
-      --accent: #00FF85;
-      --subtle: #1A1A1A;
-      --border: #333333;
+      /* Color Palette */
+      --rich-black: #001011;
+      --midnight-green: #093a3e;
+      --verdigris: #3aafb9;
+      --electric-blue: #64e9ee;
+      --light-sky-blue: #97c8eb;
+      --text: #ffffff;
+      --border: #2a4a4e;
+      --subtle: #0a1f23;
       --dur-fast: .25s;
       --dur-slow: .4s;
       --max-width: 1440px;
       --gutter: 80px;
     }
+
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-    body{font-family:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-weight:400;-webkit-font-smoothing:antialiased}
+    body{font-family:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;background:var(--rich-black);color:var(--text);line-height:1.7;font-weight:400;-webkit-font-smoothing:antialiased}
     h1,h2,h3,h4{font-weight:600;letter-spacing:-0.01em;line-height:1.2}
-    a{color:var(--accent);text-decoration:none;transition:color var(--dur-fast)}
+    a{color:var(--verdigris);text-decoration:none;transition:color var(--dur-fast), transform var(--dur-fast)}
+    a:hover{color:var(--electric-blue);transform:translateY(-1px)}
     ul{list-style:none}
 
-    header{position:fixed;top:0;left:0;right:0;height:80px;padding:0 var(--gutter);display:flex;align-items:center;justify-content:space-between;z-index:999;backdrop-filter:blur(32px) saturate(180%);background:rgba(0,0,0,.8);border-bottom:1px solid var(--border)}
+    header{position:fixed;top:0;left:0;right:0;height:80px;padding:0 var(--gutter);display:flex;align-items:center;justify-content:space-between;z-index:999;backdrop-filter:blur(32px) saturate(180%);background:rgba(0,16,17,0.9);border-bottom:1px solid var(--midnight-green)}
     .logo{font-weight:600;font-size:1.5rem;letter-spacing:-0.02em}
-    .logo span{color:var(--accent);font-weight:500}
+    .logo span{color:var(--verdigris);font-weight:500}
     nav a{margin-left:2rem;font-size:.875rem;text-transform:uppercase;letter-spacing:.05em;position:relative}
-    nav a::after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:1px;background:var(--accent);transition:width var(--dur-fast)}
+    nav a::after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:1px;background:var(--verdigris);transition:width var(--dur-fast)}
     nav a:hover::after{width:100%}
     .menu-toggle{display:none;font-size:1.5rem;background:none;border:none;color:var(--text);cursor:pointer}
 
     .hero{height:100vh;padding:0 var(--gutter);display:flex;flex-direction:column;justify-content:center;max-width:var(--max-width);margin:0 auto}
     .hero h1{font-size:clamp(3rem,5vw,5.5rem);max-width:14ch;margin-bottom:1.5rem;clip-path:inset(0 100% 0 0);animation:reveal 1s ease-out forwards}
     .hero p{font-size:1.25rem;max-width:50ch;margin-bottom:2.5rem;opacity:0;animation:fadeUp 1s ease-out .4s forwards}
-    .hero-cta{padding:1rem 2.25rem;border:1px solid var(--accent);background:var(--accent);color:var(--bg);border-radius:4px;font-size:1rem;font-weight:500;position:relative;overflow:hidden;transition:all var(--dur-fast);opacity:0;animation:fadeUp 1s ease-out .8s forwards}
-    .hero-cta:hover{background:transparent;color:var(--accent);box-shadow:0 0 0 2px var(--accent)}
+    .hero-cta{padding:1rem 2.25rem;border:1px solid var(--verdigris);background:var(--verdigris);color:var(--rich-black);border-radius:6px;font-size:1rem;font-weight:500;position:relative;overflow:hidden;transition:all var(--dur-fast);opacity:0;animation:fadeUp 1s ease-out .8s forwards}
+    .hero-cta:hover{background:transparent;color:var(--verdigris);box-shadow:0 0 0 2px var(--verdigris), 0 0 15px rgba(100, 233, 238, 0.4)}
 
     section{padding:8rem var(--gutter);max-width:var(--max-width);margin:0 auto}
-    .section-title{font-size:3rem;text-align:center;margin-bottom:4rem;position:relative;color:var(--accent)}
-    .section-title::after{content:'';position:absolute;left:50%;bottom:-1rem;transform:translateX(-50%);width:60px;height:3px;background:var(--accent);border-radius:2px}
+    .section-title{font-size:3rem;text-align:center;margin-bottom:4rem;position:relative;color:var(--verdigris);font-weight:600}
+    .section-title::after{content:'';position:absolute;left:50%;bottom:-1rem;transform:translateX(-50%);width:60px;height:3px;background:var(--electric-blue);border-radius:2px}
 
     .about-content{text-align:center;max-width:800px;margin:0 auto}
-    .about-content>p{font-size:1.125rem;margin-bottom:2rem}
+    .about-content>p{font-size:1.125rem;margin-bottom:2rem;color:#ccc}
     .mission-vision{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2.5rem;margin-top:3rem;text-align:left}
-    .mission,.vision{background:var(--subtle);padding:2rem;border:1px solid var(--accent);border-radius:8px;transition:transform var(--dur-fast),border-color var(--dur-fast)}
-    .mission:hover,.vision:hover{transform:translateY(-4px);border-color:var(--accent)}
-    .mission h3,.vision h3{color:var(--accent);margin-bottom:1rem}
+    .mission,.vision{background:var(--subtle);padding:2rem;border:1px solid var(--border);border-radius:12px;transition:transform var(--dur-fast),box-shadow var(--dur-fast)}
+    .mission:hover,.vision:hover{transform:translateY(-6px);box-shadow:0 8px 24px rgba(58, 175, 185, 0.15)}
+    .mission h3,.vision h3{color:var(--verdigris);margin-bottom:1rem;font-size:1.3rem}
 
-    /* Modern Animated Accordion */
+    /* Modern Minimalist Accordion */
     .offers-accordion{max-width:var(--max-width);margin:0 auto}
-    .accordion-item{margin-bottom:1.5rem;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--subtle);transition:box-shadow var(--dur-fast)}
-    .accordion-item:hover{box-shadow:0 8px 24px rgba(0,255,133,0.1)}
-    .accordion-header{padding:1.5rem 1.75rem;font-size:1.25rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background var(--dur-fast), color var(--dur-fast);color:var(--text)}
-    .accordion-header:hover{color:var(--accent)}
+    .accordion-item{margin-bottom:1.5rem;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--subtle);transition:box-shadow var(--dur-fast), transform var(--dur-fast)}
+    .accordion-item:hover{box-shadow:0 12px 32px rgba(58, 175, 185, 0.1);transform:translateY(-2px)}
+    .accordion-header{padding:1.5rem 1.75rem;font-size:1.25rem;font-weight:500;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background var(--dur-fast), color var(--dur-fast);color:var(--text);background:rgba(9, 58, 62, 0.3)}
+    .accordion-header:hover{color:var(--electric-blue);background:rgba(9, 58, 62, 0.5)}
     .accordion-button{background:none;border:none;font:inherit;color:inherit;cursor:pointer}
-    .accordion-content{padding:0;max-height:0;overflow:hidden;transition:max-height var(--dur-slow) cubic-bezier(0.4, 0, 0.2, 1);background:var(--bg);color:#ccc}
+    .accordion-content{padding:0;max-height:0;overflow:hidden;transition:max-height var(--dur-slow) cubic-bezier(0.4, 0, 0.2, 1);background:var(--rich-black);color:#ccc}
     .accordion-content-inner{padding:1.75rem;opacity:0;transform:translateY(10px);transition:opacity var(--dur-slow), transform var(--dur-slow)}
     .accordion-item.active .accordion-content{max-height:800px}
     .accordion-item.active .accordion-content-inner{opacity:1;transform:translateY(0)}
 
     .offer-icon{font-size:1.8rem;margin-right:0.75rem}
     .offer-header{display:flex;align-items:center;margin-bottom:1rem}
-    .offer-subtitle{font-size:1rem;color:var(--accent);font-weight:500}
+    .offer-subtitle{font-size:1rem;color:var(--light-sky-blue);font-weight:500}
     .pain-points, .outcomes, .revenue-model{margin:1rem 0}
-    .pain-points h4, .outcomes h4, .revenue-model h4{color:var(--accent);margin-bottom:0.75rem;font-size:1.125rem}
-    .lead-magnet{margin-top:1.5rem;font-weight:600;color:var(--accent);display:inline-block;position:relative;padding-right:1rem}
+    .pain-points h4, .outcomes h4, .revenue-model h4{color:var(--verdigris);margin-bottom:0.75rem;font-size:1.125rem}
+    .lead-magnet{margin-top:1.5rem;font-weight:600;color:var(--verdigris);display:inline-block;position:relative;padding-right:1.5rem;transition:all var(--dur-fast)}
     .lead-magnet::after{content:'→';position:absolute;right:0;opacity:0;transition:transform var(--dur-fast), opacity var(--dur-fast)}
-    .lead-magnet:hover{color:var(--text)}
+    .lead-magnet:hover{color:var(--electric-blue);transform:translateY(-2px)}
     .lead-magnet:hover::after{opacity:1;transform:translateX(4px)}
+    .separator{border:0;border-top:1px solid var(--border);margin:2rem 0}
 
     .cal-booking{background:var(--subtle)}
-    #my-cal-inline-south-africa{width:100%;height:760px;border:1px solid var(--border);border-radius:12px;overflow:hidden}
+    #my-cal-inline-south-africa{width:100%;height:760px;border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0, 0, 0, 0.3)}
 
     footer{padding:4rem var(--gutter);display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2.5rem;border-top:1px solid var(--border);font-size:.9375rem}
-    .footer-section h3{font-size:1.125rem;margin-bottom:1.25rem;color:var(--accent)}
+    .footer-section h3{font-size:1.125rem;margin-bottom:1.25rem;color:var(--verdigris)}
     .footer-links li{margin-bottom:.75rem}
     .footer-links a{color:var(--text)}
-    .footer-links a:hover{color:var(--accent)}
+    .footer-links a:hover{color:var(--electric-blue)}
     .social-links{display:flex;gap:1.25rem;margin-top:1.25rem}
-    .social-icon{font-size:1.25rem;color:var(--text);transition:color var(--dur-fast)}
-    .social-icon:hover{color:var(--accent)}
-    .copyright{grid-column:1/-1;text-align:center;margin-top:2rem;font-size:.875rem;color:var(--accent)}
+    .social-icon{font-size:1.25rem;color:var(--text);transition:color var(--dur-fast), transform var(--dur-fast)}
+    .social-icon:hover{color:var(--verdigris);transform:scale(1.1)}
+    .copyright{grid-column:1/-1;text-align:center;margin-top:2rem;font-size:.875rem;color:var(--light-sky-blue)}
 
     .whatsapp-widget{position:fixed;bottom:1.5rem;right:1.5rem;z-index:1000}
     .whatsapp-button{width:60px;height:60px;background:#25D366;border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform var(--dur-fast),box-shadow var(--dur-fast);box-shadow:0 4px 12px rgba(0,0,0,.3)}
@@ -199,7 +206,7 @@
             </div>
             <a href="https://form.typeform.com/to/kSJtterE" target="_blank" class="lead-magnet">Request Free Site Assessment</a>
 
-            <hr style="border:0;border-top:1px solid var(--border);margin:2rem 0">
+            <div class="separator"></div>
 
             <!-- Borehole Africa -->
             <div class="offer-header">
@@ -295,7 +302,7 @@
             </div>
             <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="lead-magnet">Start Risk-Free Trial</a>
 
-            <hr style="border:0;border-top:1px solid var(--border);margin:2rem 0">
+            <div class="separator"></div>
 
             <!-- Bohlale AI -->
             <div class="offer-header">
@@ -351,7 +358,7 @@
             <p><strong>ROI:</strong> 12–18 months. ESG-aligned. Scalable nationwide.</p>
             <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="lead-magnet">Book Investment Briefing</a>
 
-            <hr style="border:0;border-top:1px solid var(--border);margin:2rem 0">
+            <div class="separator"></div>
 
             <!-- Sedimo -->
             <div class="offer-header">
@@ -430,7 +437,7 @@
 
   <footer id="contact">
     <div class="footer-section">
-      <h3>Mariba<span style="color:var(--accent)">Media</span></h3>
+      <h3>Mariba<span style="color:var(--verdigris)">Media</span></h3>
       <p>Performance marketing & product development. Pay only after we generate real revenue.</p>
       <div class="social-links">
         <a href="https://www.facebook.com/profile.php?id=61576915266105" class="social-icon" aria-label="Facebook">f</a>
@@ -469,7 +476,7 @@
   </div>
 
   <script>
-    // Modern Accordion with Animation
+    // Modern Accordion with Micro-Interactions
     document.querySelectorAll('.accordion-header').forEach(button => {
       button.addEventListener('click', () => {
         const item = button.closest('.accordion-item');
