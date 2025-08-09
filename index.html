@@ -34,6 +34,7 @@
       --subtle: #1A1A1A;
       --border: #333333;
       --dur-fast: .25s;
+      --dur-slow: .4s;
       --max-width: 1440px;
       --gutter: 80px;
     }
@@ -69,20 +70,27 @@
     .mission:hover,.vision:hover{transform:translateY(-4px);border-color:var(--accent)}
     .mission h3,.vision h3{color:var(--accent);margin-bottom:1rem}
 
+    /* Modern Animated Accordion */
     .offers-accordion{max-width:var(--max-width);margin:0 auto}
-    .accordion-item{margin-bottom:1.5rem;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--subtle)}
-    .accordion-header{padding:1.5rem 1.75rem;font-size:1.25rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background var(--dur-fast)}
-    .accordion-header:hover{background:rgba(255,255,255,0.05)}
+    .accordion-item{margin-bottom:1.5rem;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--subtle);transition:box-shadow var(--dur-fast)}
+    .accordion-item:hover{box-shadow:0 8px 24px rgba(0,255,133,0.1)}
+    .accordion-header{padding:1.5rem 1.75rem;font-size:1.25rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background var(--dur-fast), color var(--dur-fast);color:var(--text)}
+    .accordion-header:hover{color:var(--accent)}
     .accordion-button{background:none;border:none;font:inherit;color:inherit;cursor:pointer}
-    .accordion-content{padding:0;max-height:0;overflow:hidden;transition:max-height var(--dur-fast) ease-out;background:var(--bg);color:#ccc}
-    .accordion-content-inner{padding:1.75rem}
+    .accordion-content{padding:0;max-height:0;overflow:hidden;transition:max-height var(--dur-slow) cubic-bezier(0.4, 0, 0.2, 1);background:var(--bg);color:#ccc}
+    .accordion-content-inner{padding:1.75rem;opacity:0;transform:translateY(10px);transition:opacity var(--dur-slow), transform var(--dur-slow)}
+    .accordion-item.active .accordion-content{max-height:800px}
+    .accordion-item.active .accordion-content-inner{opacity:1;transform:translateY(0)}
+
     .offer-icon{font-size:1.8rem;margin-right:0.75rem}
     .offer-header{display:flex;align-items:center;margin-bottom:1rem}
     .offer-subtitle{font-size:1rem;color:var(--accent);font-weight:500}
     .pain-points, .outcomes, .revenue-model{margin:1rem 0}
     .pain-points h4, .outcomes h4, .revenue-model h4{color:var(--accent);margin-bottom:0.75rem;font-size:1.125rem}
-    .lead-magnet{margin-top:1.5rem;font-weight:600;color:var(--accent);display:inline-block}
-    .lead-magnet:hover{color:var(--text);text-decoration:underline}
+    .lead-magnet{margin-top:1.5rem;font-weight:600;color:var(--accent);display:inline-block;position:relative;padding-right:1rem}
+    .lead-magnet::after{content:'→';position:absolute;right:0;opacity:0;transition:transform var(--dur-fast), opacity var(--dur-fast)}
+    .lead-magnet:hover{color:var(--text)}
+    .lead-magnet:hover::after{opacity:1;transform:translateX(4px)}
 
     .cal-booking{background:var(--subtle)}
     #my-cal-inline-south-africa{width:100%;height:760px;border:1px solid var(--border);border-radius:12px;overflow:hidden}
@@ -162,7 +170,10 @@
       <div class="accordion-item">
         <button class="accordion-header">
           <span>⚡ Energy: C&I Solar & Borehole Africa</span>
-          <span>+</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="transition:transform var(--dur-fast);"> 
+            <polyline points="7 13 12 18 17 13"></polyline>
+            <polyline points="7 6 12 11 17 6"></polyline>
+          </svg>
         </button>
         <div class="accordion-content">
           <div class="accordion-content-inner">
@@ -186,7 +197,7 @@
               <h4>Revenue Generation:</h4>
               <p>We earn a share of the energy savings. No cash from you. We only get paid when savings are realized.</p>
             </div>
-            <a href="https://form.typeform.com/to/kSJtterE" target="_blank" class="lead-magnet">→ Request Free Site Assessment</a>
+            <a href="https://form.typeform.com/to/kSJtterE" target="_blank" class="lead-magnet">Request Free Site Assessment</a>
 
             <hr style="border:0;border-top:1px solid var(--border);margin:2rem 0">
 
@@ -210,7 +221,7 @@
               <h4>Revenue Generation:</h4>
               <p>We earn recurring revenue from water usage. You get new clients. We earn when water flows.</p>
             </div>
-            <a href="https://form.typeform.com/to/kSJtterE" target="_blank" class="lead-magnet">→ Launch Your Pipeline</a>
+            <a href="https://form.typeform.com/to/kSJtterE" target="_blank" class="lead-magnet">Launch Your Pipeline</a>
           </div>
         </div>
       </div>
@@ -219,7 +230,10 @@
       <div class="accordion-item">
         <button class="accordion-header">
           <span>💼 Commodity Trading: Request Portfolio Access</span>
-          <span>+</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <polyline points="7 13 12 18 17 13"></polyline>
+            <polyline points="7 6 12 11 17 6"></polyline>
+          </svg>
         </button>
         <div class="accordion-content">
           <div class="accordion-content-inner">
@@ -242,7 +256,7 @@
               <h4>Revenue Generation:</h4>
               <p>We earn commission only on closed deals. No upfront fees. No risk.</p>
             </div>
-            <a href="https://drive.google.com/drive/folders/1XvC4SM_ze-FY5KtrYEp5AXOF2d-VDon2" target="_blank" class="lead-magnet">→ Access Verified Portfolio</a>
+            <a href="https://drive.google.com/drive/folders/1XvC4SM_ze-FY5KtrYEp5AXOF2d-VDon2" target="_blank" class="lead-magnet">Access Verified Portfolio</a>
             <p style="font-size:0.85rem;margin-top:0.5rem;color:#aaa">Includes: SCO - CIF - COPPER CATHODES, EMERALD - Canga de Esmeralda.pdf, Manganese Ore offers</p>
           </div>
         </div>
@@ -252,7 +266,10 @@
       <div class="accordion-item">
         <button class="accordion-header">
           <span>🤖 Artificial Intelligence: Karabo & Bohlale AI</span>
-          <span>+</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <polyline points="7 13 12 18 17 13"></polyline>
+            <polyline points="7 6 12 11 17 6"></polyline>
+          </svg>
         </button>
         <div class="accordion-content">
           <div class="accordion-content-inner">
@@ -276,7 +293,7 @@
               <h4>Revenue Generation:</h4>
               <p>You pay only for qualified appointments or closed deals. We guarantee ROI in 90 days.</p>
             </div>
-            <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="lead-magnet">→ Start Risk-Free Trial</a>
+            <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="lead-magnet">Start Risk-Free Trial</a>
 
             <hr style="border:0;border-top:1px solid var(--border);margin:2rem 0">
 
@@ -300,7 +317,7 @@
               <h4>Revenue Generation:</h4>
               <p>You pay per certified learner or via licensing fee. We front the development.</p>
             </div>
-            <a href="https://app.colossyan.com/share/zwc3q15j" target="_blank" class="lead-magnet">→ Watch Sample Training Hub</a>
+            <a href="https://app.colossyan.com/share/zwc3q15j" target="_blank" class="lead-magnet">Watch Sample Training Hub</a>
           </div>
         </div>
       </div>
@@ -309,7 +326,10 @@
       <div class="accordion-item">
         <button class="accordion-header">
           <span>🛍️ E-commerce: ISONEM & Sedimo</span>
-          <span>+</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <polyline points="7 13 12 18 17 13"></polyline>
+            <polyline points="7 6 12 11 17 6"></polyline>
+          </svg>
         </button>
         <div class="accordion-content">
           <div class="accordion-content-inner">
@@ -329,7 +349,7 @@
             </ul>
             <p><strong>Target Industries:</strong> Agriculture, Mining, Construction, Municipalities, Commercial Real Estate.</p>
             <p><strong>ROI:</strong> 12–18 months. ESG-aligned. Scalable nationwide.</p>
-            <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="lead-magnet">→ Book Investment Briefing</a>
+            <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="lead-magnet">Book Investment Briefing</a>
 
             <hr style="border:0;border-top:1px solid var(--border);margin:2rem 0">
 
@@ -353,7 +373,7 @@
               <h4>Revenue Generation:</h4>
               <p>We earn commission on every sale. You get global exposure. We grow together.</p>
             </div>
-            <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="lead-magnet">→ View Products & Apply as Artist</a>
+            <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="lead-magnet">View Products & Apply as Artist</a>
           </div>
         </div>
       </div>
@@ -362,7 +382,10 @@
       <div class="accordion-item">
         <button class="accordion-header">
           <span>🔗 Blockchain: Crypto Smart Contract Generator (R&D)</span>
-          <span>+</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <polyline points="7 13 12 18 17 13"></polyline>
+            <polyline points="7 6 12 11 17 6"></polyline>
+          </svg>
         </button>
         <div class="accordion-content">
           <div class="accordion-content-inner">
@@ -385,7 +408,7 @@
               <h4>Revenue Generation:</h4>
               <p>Pay-per-use model upon launch. No upfront cost. Enterprise-grade security.</p>
             </div>
-            <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="lead-magnet">→ Get Early Access (Coming Soon)</a>
+            <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="lead-magnet">Get Early Access (Coming Soon)</a>
           </div>
         </div>
       </div>
@@ -446,20 +469,22 @@
   </div>
 
   <script>
-    // Accordion functionality
+    // Modern Accordion with Animation
     document.querySelectorAll('.accordion-header').forEach(button => {
       button.addEventListener('click', () => {
-        const content = button.nextElementSibling;
-        const isOpen = content.style.maxHeight;
+        const item = button.closest('.accordion-item');
+        const isActive = item.classList.contains('active');
 
-        document.querySelectorAll('.accordion-content').forEach(c => {
-          c.style.maxHeight = null;
-          c.previousElementSibling.querySelector('span:last-child').textContent = '+';
+        // Close all
+        document.querySelectorAll('.accordion-item').forEach(i => {
+          i.classList.remove('active');
+          i.querySelector('svg').style.transform = 'rotate(0deg)';
         });
 
-        if (!isOpen) {
-          content.style.maxHeight = content.scrollHeight + 'px';
-          button.querySelector('span:last-child').textContent = '−';
+        // Open clicked
+        if (!isActive) {
+          item.classList.add('active');
+          button.querySelector('svg').style.transform = 'rotate(180deg)';
         }
       });
     });
