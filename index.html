@@ -9,6 +9,21 @@
   <!-- Fallback Inter Font -->
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
+  <!-- Google Analytics 4 (gtag.js) -->
+  <!-- Replace G-XXXXXXXXXX with your actual Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX', {
+      page_title: document.title,
+      page_location: window.location.href,
+      page_path: window.location.pathname,
+      send_page_view: true
+    });
+  </script>
+
   <style>
     :root {
       --rich-black: #001011;
@@ -98,9 +113,6 @@
     .cal-booking{background:var(--subtle);border-radius:12px;overflow:hidden;padding:2rem 0}
     #my-cal-inline-south-africa{width:100%;height:600px;border:none;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.2)}
 
-    /* TYPEFORM EMBED */
-    .typeform-embed{height:600px;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.2);margin-top:2rem}
-
     /* FOOTER */
     footer{padding:3rem 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;border-top:1px solid var(--border);font-size:.9rem}
     .footer-section h3{font-size:1.1rem;margin-bottom:1.25rem;color:var(--verdigris)}
@@ -133,7 +145,6 @@
       .hero p{font-size:1.25rem}
       .accordion-header{font-size:1.2rem;padding:1.25rem 1.5rem}
       .accordion-content-inner{padding:1.75rem}
-      .typeform-embed{height:700px}
       #my-cal-inline-south-africa{height:760px}
     }
   </style>
@@ -212,7 +223,7 @@
               <h4>Revenue Generation:</h4>
               <p>We earn a share of the energy savings. No cash from you. We only get paid when savings are realized.</p>
             </div>
-            <a href="#typeform-assessment" class="btn">Request Free Site Assessment</a>
+            <a href="#booking" class="btn">Request Free Site Assessment</a>
 
             <div class="separator"></div>
 
@@ -236,7 +247,7 @@
               <h4>Revenue Generation:</h4>
               <p>We earn recurring revenue from water usage. You get new clients. We earn when water flows.</p>
             </div>
-            <a href="https://form.typeform.com/to/kSJtterE" target="_blank" class="btn">Launch Your Pipeline</a>
+            <a href="#booking" class="btn">Launch Your Pipeline</a>
           </div>
         </div>
       </div>
@@ -440,12 +451,6 @@
     </div>
   </section>
 
-  <!-- TYPEFORM EMBED -->
-  <section id="typeform-assessment">
-    <h2 class="section-title">Request Free Site Assessment</h2>
-    <div class="typeform-widget" data-tf-live="kSJtterE" style="width:100%;height:600px"></div>
-  </section>
-
   <!-- CAL BOOKING -->
   <section class="cal-booking" id="booking">
     <h2 class="section-title">Book a Risk-Free Discovery Call</h2>
@@ -595,28 +600,19 @@
         Cal.ns["south-africa"]("ui", { layout: "month_view" });
       }
 
-      // Typeform
-      if (document.querySelector('[data-tf-live]')) {
-        (function () {
-          var qs, js, q, s, d = document,
-            gi = d.getElementById,
-            ce = d.createElement,
-            gt = d.getElementsByTagName,
-            id = 'typef_orm',
-            b = 'https://embed.typeform.com/';
-          if (!gi.call(d, id)) {
-            js = ce.call(d, 'script');
-            js.id = id;
-            js.src = b + 'embed.js';
-            q = gt.call(d, 'script')[0];
-            q.parentNode.insertBefore(js, q);
-          }
-        })();
-      }
-
       // Update Year
       const yearEl = document.getElementById("current-year");
       if (yearEl) yearEl.textContent = new Date().getFullYear();
+    });
+
+    // Optional: Track button clicks
+    document.querySelectorAll('.btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        gtag('event', 'click', {
+          event_category: 'CTA',
+          event_label: btn.textContent.trim()
+        });
+      });
     });
   </script>
 </body>
