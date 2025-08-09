@@ -1,34 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mariba Media - Performance Marketing & Product Development</title>
   <meta name="description" content="Mariba Media: We only get paid when we generate real, upfront revenue. No risk. 100% results-based. Performance marketing & product development for high-growth African enterprises.">
 
-  <!-- Fallback to local Inter font since Google Fonts is down -->
-  <style>
-    @font-face {
-      font-family: 'Inter';
-      src: url('https://rsms.me/inter/font-files/Inter-Regular.woff2') format('woff2');
-      font-weight: 400;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Inter';
-      src: url('https://rsms.me/inter/font-files/Inter-Medium.woff2') format('woff2');
-      font-weight: 500;
-    }
-    @font-face {
-      font-family: 'Inter';
-      src: url('https://rsms.me/inter/font-files/Inter-SemiBold.woff2') format('woff2');
-      font-weight: 600;
-    }
-  </style>
+  <!-- Fallback Inter Font -->
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
   <style>
     :root {
-      /* Color Palette */
       --rich-black: #001011;
       --midnight-green: #093a3e;
       --verdigris: #3aafb9;
@@ -37,99 +19,122 @@
       --text: #ffffff;
       --border: #2a4a4e;
       --subtle: #0a1f23;
-      --dur-fast: .25s;
-      --dur-slow: .4s;
+      --bg: var(--rich-black);
+      --dur: 0.3s;
       --max-width: 1440px;
-      --gutter: 80px;
+      --gutter: 20px;
+    }
+
+    [data-theme="light"] {
+      --bg: #f8f9fa;
+      --text: #001011;
+      --border: #dee2e6;
+      --subtle: #e9ecef;
     }
 
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;background:var(--rich-black);color:var(--text);line-height:1.7;font-weight:400;-webkit-font-smoothing:antialiased}
+    html{scroll-behavior:smooth;font-family:'Inter', sans-serif}
+    body{background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;transition:background var(--dur),color var(--dur)}
     h1,h2,h3,h4{font-weight:600;letter-spacing:-0.01em;line-height:1.2}
-    a{color:var(--verdigris);text-decoration:none;transition:color var(--dur-fast), transform var(--dur-fast)}
-    a:hover{color:var(--electric-blue);transform:translateY(-1px)}
+    a{color:var(--verdigris);text-decoration:none;transition:color var(--dur)}
+    a:hover{color:var(--electric-blue)}
     ul{list-style:none}
 
-    header{position:fixed;top:0;left:0;right:0;height:80px;padding:0 var(--gutter);display:flex;align-items:center;justify-content:space-between;z-index:999;backdrop-filter:blur(32px) saturate(180%);background:rgba(0,16,17,0.9);border-bottom:1px solid var(--midnight-green)}
-    .logo{font-weight:600;font-size:1.5rem;letter-spacing:-0.02em}
+    /* BUTTON STYLE (MATCHES HERO CTA) */
+    .btn{padding:1rem 2.25rem;border:1px solid var(--verdigris);background:var(--verdigris);color:var(--rich-black);border-radius:6px;font-size:1rem;font-weight:500;transition:all var(--dur);display:inline-block}
+    .btn:hover{background:transparent;color:var(--verdigris);box-shadow:0 0 0 2px var(--verdigris), 0 0 15px rgba(100, 233, 238, 0.3)}
+    .btn::after{content:'→';margin-left:0.5rem;opacity:0;transition:transform var(--dur)}
+    .btn:hover::after{opacity:1;transform:translateX(3px)}
+
+    /* HEADER */
+    header{position:sticky;top:0;left:0;right:0;z-index:999;backdrop-filter:blur(12px);background:rgba(0,16,17,0.9);border-bottom:1px solid var(--midnight-green);padding:1rem var(--gutter);display:flex;align-items:center;justify-content:space-between}
+    .logo{font-weight:600;font-size:1.3rem;letter-spacing:-0.02em}
     .logo span{color:var(--verdigris);font-weight:500}
-    nav a{margin-left:2rem;font-size:.875rem;text-transform:uppercase;letter-spacing:.05em;position:relative}
-    nav a::after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:1px;background:var(--verdigris);transition:width var(--dur-fast)}
+    nav{display:flex;gap:1.5rem}
+    nav a{font-size:.9rem;text-transform:uppercase;letter-spacing:.05em;position:relative}
+    nav a::after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:1px;background:var(--verdigris);transition:width var(--dur)}
     nav a:hover::after{width:100%}
-    .menu-toggle{display:none;font-size:1.5rem;background:none;border:none;color:var(--text);cursor:pointer}
+    .menu-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
 
-    .hero{height:100vh;padding:0 var(--gutter);display:flex;flex-direction:column;justify-content:center;max-width:var(--max-width);margin:0 auto}
-    .hero h1{font-size:clamp(3rem,5vw,5.5rem);max-width:14ch;margin-bottom:1.5rem;clip-path:inset(0 100% 0 0);animation:reveal 1s ease-out forwards}
-    .hero p{font-size:1.25rem;max-width:50ch;margin-bottom:2.5rem;opacity:0;animation:fadeUp 1s ease-out .4s forwards}
-    .hero-cta{padding:1rem 2.25rem;border:1px solid var(--verdigris);background:var(--verdigris);color:var(--rich-black);border-radius:6px;font-size:1rem;font-weight:500;position:relative;overflow:hidden;transition:all var(--dur-fast);opacity:0;animation:fadeUp 1s ease-out .8s forwards}
-    .hero-cta:hover{background:transparent;color:var(--verdigris);box-shadow:0 0 0 2px var(--verdigris), 0 0 15px rgba(100, 233, 238, 0.4)}
+    /* HERO */
+    .hero{padding:6rem 20px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:90vh;gap:1.5rem}
+    .hero h1{font-size:clamp(2.5rem,6vw,5.5rem);max-width:14ch;margin:0 0 1rem;clip-path:inset(0 100% 0 0);animation:reveal 1s ease-out forwards}
+    .hero p{font-size:1.125rem;max-width:50ch;margin:0 auto 1.5rem;opacity:0;animation:fadeUp 1s ease-out .4s forwards}
+    .hero-cta{margin:0 auto}
 
-    section{padding:8rem var(--gutter);max-width:var(--max-width);margin:0 auto}
-    .section-title{font-size:3rem;text-align:center;margin-bottom:4rem;position:relative;color:var(--verdigris);font-weight:600}
+    /* SECTIONS */
+    section{padding:6rem 20px;max-width:var(--max-width);margin:0 auto}
+    .section-title{font-size:2.5rem;text-align:center;margin-bottom:3rem;position:relative;color:var(--verdigris)}
     .section-title::after{content:'';position:absolute;left:50%;bottom:-1rem;transform:translateX(-50%);width:60px;height:3px;background:var(--electric-blue);border-radius:2px}
 
     .about-content{text-align:center;max-width:800px;margin:0 auto}
-    .about-content>p{font-size:1.125rem;margin-bottom:2rem;color:#ccc}
-    .mission-vision{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2.5rem;margin-top:3rem;text-align:left}
-    .mission,.vision{background:var(--subtle);padding:2rem;border:1px solid var(--border);border-radius:12px;transition:transform var(--dur-fast),box-shadow var(--dur-fast)}
-    .mission:hover,.vision:hover{transform:translateY(-6px);box-shadow:0 8px 24px rgba(58, 175, 185, 0.15)}
-    .mission h3,.vision h3{color:var(--verdigris);margin-bottom:1rem;font-size:1.3rem}
+    .about-content>p{font-size:1.05rem;margin-bottom:2rem;color:#ccc}
+    .mission-vision{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:2rem;text-align:left}
+    .mission,.vision{background:var(--subtle);padding:1.5rem;border:1px solid var(--border);border-radius:12px;transition:transform var(--dur),box-shadow var(--dur)}
+    .mission:hover,.vision:hover{transform:translateY(-4px);box-shadow:0 6px 16px rgba(58,175,185,0.1)}
+    .mission h3,.vision h3{color:var(--verdigris);margin-bottom:1rem;font-size:1.2rem}
 
-    /* Modern Minimalist Accordion */
+    /* MODERN ACCORDION */
     .offers-accordion{max-width:var(--max-width);margin:0 auto}
-    .accordion-item{margin-bottom:1.5rem;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--subtle);transition:box-shadow var(--dur-fast), transform var(--dur-fast)}
-    .accordion-item:hover{box-shadow:0 12px 32px rgba(58, 175, 185, 0.1);transform:translateY(-2px)}
-    .accordion-header{padding:1.5rem 1.75rem;font-size:1.25rem;font-weight:500;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background var(--dur-fast), color var(--dur-fast);color:var(--text);background:rgba(9, 58, 62, 0.3)}
-    .accordion-header:hover{color:var(--electric-blue);background:rgba(9, 58, 62, 0.5)}
-    .accordion-button{background:none;border:none;font:inherit;color:inherit;cursor:pointer}
-    .accordion-content{padding:0;max-height:0;overflow:hidden;transition:max-height var(--dur-slow) cubic-bezier(0.4, 0, 0.2, 1);background:var(--rich-black);color:#ccc}
-    .accordion-content-inner{padding:1.75rem;opacity:0;transform:translateY(10px);transition:opacity var(--dur-slow), transform var(--dur-slow)}
-    .accordion-item.active .accordion-content{max-height:800px}
-    .accordion-item.active .accordion-content-inner{opacity:1;transform:translateY(0)}
+    .accordion-item{margin-bottom:1rem;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--subtle);transition:box-shadow var(--dur)}
+    .accordion-item:hover{box-shadow:0 6px 16px rgba(58,175,185,0.1)}
+    .accordion-header{padding:1rem 1.25rem;font-size:1.1rem;font-weight:500;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:var(--text);background:var(--midnight-green);transition:background var(--dur), color var(--dur)}
+    .accordion-header:hover{color:var(--electric-blue)}
+    .accordion-button{background:none;border:none;font:inherit;color:inherit;cursor:pointer;width:100%;text-align:left}
+    .accordion-content{padding:0;max-height:0;overflow:hidden;transition:max-height var(--dur) cubic-bezier(0, 0, 0.2, 1);background:var(--bg)}
+    .accordion-content-inner{padding:1.5rem;color:#ccc;font-size:0.95rem}
+    .accordion-icon{transition:transform var(--dur)}
+    .accordion-item.active .accordion-header{color:var(--electric-blue);background:rgba(9,58,62,0.7)}
+    .accordion-item.active .accordion-icon{transform:rotate(180deg)}
 
-    .offer-icon{font-size:1.8rem;margin-right:0.75rem}
+    .offer-icon{font-size:1.6rem;margin-right:0.75rem}
     .offer-header{display:flex;align-items:center;margin-bottom:1rem}
-    .offer-subtitle{font-size:1rem;color:var(--light-sky-blue);font-weight:500}
+    .offer-subtitle{font-size:0.95rem;color:var(--light-sky-blue);font-weight:500}
     .pain-points, .outcomes, .revenue-model{margin:1rem 0}
     .pain-points h4, .outcomes h4, .revenue-model h4{color:var(--verdigris);margin-bottom:0.75rem;font-size:1.125rem}
-    .lead-magnet{margin-top:1.5rem;font-weight:600;color:var(--verdigris);display:inline-block;position:relative;padding-right:1.5rem;transition:all var(--dur-fast)}
-    .lead-magnet::after{content:'→';position:absolute;right:0;opacity:0;transition:transform var(--dur-fast), opacity var(--dur-fast)}
-    .lead-magnet:hover{color:var(--electric-blue);transform:translateY(-2px)}
-    .lead-magnet:hover::after{opacity:1;transform:translateX(4px)}
-    .separator{border:0;border-top:1px solid var(--border);margin:2rem 0}
+    .separator{border:0;border-top:1px solid var(--border);margin:1.5rem 0}
 
-    .cal-booking{background:var(--subtle)}
-    #my-cal-inline-south-africa{width:100%;height:760px;border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0, 0, 0, 0.3)}
+    /* CAL BOOKING */
+    .cal-booking{background:var(--subtle);border-radius:12px;overflow:hidden;padding:2rem 0}
+    #my-cal-inline-south-africa{width:100%;height:600px;border:none;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.2)}
 
-    footer{padding:4rem var(--gutter);display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2.5rem;border-top:1px solid var(--border);font-size:.9375rem}
-    .footer-section h3{font-size:1.125rem;margin-bottom:1.25rem;color:var(--verdigris)}
+    /* TYPEFORM EMBED */
+    .typeform-embed{height:600px;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.2);margin-top:2rem}
+
+    /* FOOTER */
+    footer{padding:3rem 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;border-top:1px solid var(--border);font-size:.9rem}
+    .footer-section h3{font-size:1.1rem;margin-bottom:1.25rem;color:var(--verdigris)}
     .footer-links li{margin-bottom:.75rem}
     .footer-links a{color:var(--text)}
-    .footer-links a:hover{color:var(--electric-blue)}
-    .social-links{display:flex;gap:1.25rem;margin-top:1.25rem}
-    .social-icon{font-size:1.25rem;color:var(--text);transition:color var(--dur-fast), transform var(--dur-fast)}
+    .footer-links a:hover{color:var(--verdigris)}
+    .social-links{display:flex;gap:1.25rem;margin-top:1rem}
+    .social-icon{font-size:1.25rem;color:var(--text);transition:color var(--dur), transform var(--dur)}
     .social-icon:hover{color:var(--verdigris);transform:scale(1.1)}
-    .copyright{grid-column:1/-1;text-align:center;margin-top:2rem;font-size:.875rem;color:var(--light-sky-blue)}
+    .copyright{grid-column:1/-1;text-align:center;margin-top:2rem;font-size:.85rem;color:var(--light-sky-blue)}
 
+    /* DARK MODE TOGGLE */
+    .theme-toggle{background:var(--verdigris);color:var(--rich-black);border:none;padding:0.5rem 1rem;border-radius:6px;font-size:0.9rem;cursor:pointer;transition:all var(--dur)}
+    .theme-toggle:hover{background:var(--electric-blue);transform:scale(1.05)}
+
+    /* WHATSAPP */
     .whatsapp-widget{position:fixed;bottom:1.5rem;right:1.5rem;z-index:1000}
-    .whatsapp-button{width:60px;height:60px;background:#25D366;border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform var(--dur-fast),box-shadow var(--dur-fast);box-shadow:0 4px 12px rgba(0,0,0,.3)}
+    .whatsapp-button{width:56px;height:56px;background:#25D366;border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform var(--dur),box-shadow var(--dur);box-shadow:0 4px 12px rgba(0,0,0,.3)}
     .whatsapp-button:hover{transform:scale(1.1);box-shadow:0 6px 20px rgba(0,0,0,.4)}
-    .whatsapp-svg{width:30px;height:30px;fill:#fff}
+    .whatsapp-svg{width:28px;height:28px;fill:#fff}
 
+    /* ANIMATIONS */
     @keyframes reveal{to{clip-path:inset(0 0 0 0)}}
     @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
 
-    @media(max-width:768px){
-      :root{--gutter:20px}
-      header{padding:0 20px}
-      nav{display:none}
-      .menu-toggle{display:block}
-      .hero{align-items:center;text-align:center}
-      .section-title{font-size:2.25rem}
-      #my-cal-inline-south-africa{height:600px}
-      .accordion-header{font-size:1.1rem;padding:1.25rem}
-      .accordion-content-inner{padding:1.25rem}
+    @media(min-width:768px){
+      :root{--gutter:80px}
+      .hero{min-height:100vh;padding:8rem 0}
+      .section-title{font-size:3rem;margin-bottom:4rem}
+      .hero p{font-size:1.25rem}
+      .accordion-header{font-size:1.2rem;padding:1.25rem 1.5rem}
+      .accordion-content-inner{padding:1.75rem}
+      .typeform-embed{height:700px}
+      #my-cal-inline-south-africa{height:760px}
     }
   </style>
 </head>
@@ -144,13 +149,14 @@
       <a href="#booking">Book Call</a>
       <a href="#contact">Contact</a>
     </nav>
+    <button class="theme-toggle" id="theme-toggle">🌞 / 🌙</button>
     <button class="menu-toggle" aria-label="Open menu">☰</button>
   </header>
 
   <section class="hero" id="home">
     <h1>We Generate Cash. You Pay After.</h1>
     <p>Mariba Media is a performance marketing & product development agency. We only get paid when we generate real, upfront revenue for your business. No upfront cost. No risk. 100% results-based.</p>
-    <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="hero-cta">Start Risk-Free</a>
+    <a href="#booking" class="btn">Start Risk-Free</a>
   </section>
 
   <section id="about">
@@ -175,12 +181,14 @@
     <div class="offers-accordion">
       <!-- ENERGY -->
       <div class="accordion-item">
-        <button class="accordion-header">
-          <span>⚡ Energy: C&I Solar & Borehole Africa</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="transition:transform var(--dur-fast);"> 
-            <polyline points="7 13 12 18 17 13"></polyline>
-            <polyline points="7 6 12 11 17 6"></polyline>
-          </svg>
+        <button class="accordion-button">
+          <div class="accordion-header">
+            <span>⚡ Energy: C&I Solar & Borehole Africa</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="accordion-icon">
+              <polyline points="7 13 12 18 17 13"></polyline>
+              <polyline points="7 6 12 11 17 6"></polyline>
+            </svg>
+          </div>
         </button>
         <div class="accordion-content">
           <div class="accordion-content-inner">
@@ -204,7 +212,7 @@
               <h4>Revenue Generation:</h4>
               <p>We earn a share of the energy savings. No cash from you. We only get paid when savings are realized.</p>
             </div>
-            <a href="https://form.typeform.com/to/kSJtterE" target="_blank" class="lead-magnet">Request Free Site Assessment</a>
+            <a href="#typeform-assessment" class="btn">Request Free Site Assessment</a>
 
             <div class="separator"></div>
 
@@ -228,19 +236,21 @@
               <h4>Revenue Generation:</h4>
               <p>We earn recurring revenue from water usage. You get new clients. We earn when water flows.</p>
             </div>
-            <a href="https://form.typeform.com/to/kSJtterE" target="_blank" class="lead-magnet">Launch Your Pipeline</a>
+            <a href="https://form.typeform.com/to/kSJtterE" target="_blank" class="btn">Launch Your Pipeline</a>
           </div>
         </div>
       </div>
 
       <!-- COMMODITY TRADING -->
       <div class="accordion-item">
-        <button class="accordion-header">
-          <span>💼 Commodity Trading: Request Portfolio Access</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <polyline points="7 13 12 18 17 13"></polyline>
-            <polyline points="7 6 12 11 17 6"></polyline>
-          </svg>
+        <button class="accordion-button">
+          <div class="accordion-header">
+            <span>💼 Commodity Trading: Download Portfolio</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="accordion-icon">
+              <polyline points="7 13 12 18 17 13"></polyline>
+              <polyline points="7 6 12 11 17 6"></polyline>
+            </svg>
+          </div>
         </button>
         <div class="accordion-content">
           <div class="accordion-content-inner">
@@ -263,20 +273,24 @@
               <h4>Revenue Generation:</h4>
               <p>We earn commission only on closed deals. No upfront fees. No risk.</p>
             </div>
-            <a href="https://drive.google.com/drive/folders/1XvC4SM_ze-FY5KtrYEp5AXOF2d-VDon2" target="_blank" class="lead-magnet">Access Verified Portfolio</a>
-            <p style="font-size:0.85rem;margin-top:0.5rem;color:#aaa">Includes: SCO - CIF - COPPER CATHODES, EMERALD - Canga de Esmeralda.pdf, Manganese Ore offers</p>
+            <a href="https://drive.google.com/uc?export=download&id=1XvC4SM_ze-FY5KtrYEp5AXOF2d-VDon2" class="btn">Download Portfolio (PDF)</a>
+            <p style="font-size:0.85rem;margin-top:0.5rem;color:#aaa">
+              Includes: SCO - CIF - COPPER CATHODES, EMERALD - Canga de Esmeralda.pdf, Manganese Ore offers
+            </p>
           </div>
         </div>
       </div>
 
       <!-- ARTIFICIAL INTELLIGENCE -->
       <div class="accordion-item">
-        <button class="accordion-header">
-          <span>🤖 Artificial Intelligence: Karabo & Bohlale AI</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <polyline points="7 13 12 18 17 13"></polyline>
-            <polyline points="7 6 12 11 17 6"></polyline>
-          </svg>
+        <button class="accordion-button">
+          <div class="accordion-header">
+            <span>🤖 Artificial Intelligence: Karabo & Bohlale AI</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="accordion-icon">
+              <polyline points="7 13 12 18 17 13"></polyline>
+              <polyline points="7 6 12 11 17 6"></polyline>
+            </svg>
+          </div>
         </button>
         <div class="accordion-content">
           <div class="accordion-content-inner">
@@ -300,7 +314,7 @@
               <h4>Revenue Generation:</h4>
               <p>You pay only for qualified appointments or closed deals. We guarantee ROI in 90 days.</p>
             </div>
-            <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="lead-magnet">Start Risk-Free Trial</a>
+            <a href="#booking" class="btn">Start Risk-Free Trial</a>
 
             <div class="separator"></div>
 
@@ -324,19 +338,21 @@
               <h4>Revenue Generation:</h4>
               <p>You pay per certified learner or via licensing fee. We front the development.</p>
             </div>
-            <a href="https://app.colossyan.com/share/zwc3q15j" target="_blank" class="lead-magnet">Watch Sample Training Hub</a>
+            <a href="https://app.colossyan.com/share/zwc3q15j" target="_blank" class="btn">Watch Sample Training Hub</a>
           </div>
         </div>
       </div>
 
       <!-- ECOMMERCE -->
       <div class="accordion-item">
-        <button class="accordion-header">
-          <span>🛍️ E-commerce: ISONEM & Sedimo</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <polyline points="7 13 12 18 17 13"></polyline>
-            <polyline points="7 6 12 11 17 6"></polyline>
-          </svg>
+        <button class="accordion-button">
+          <div class="accordion-header">
+            <span>🛍️ E-commerce: ISONEM & Sedimo</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="accordion-icon">
+              <polyline points="7 13 12 18 17 13"></polyline>
+              <polyline points="7 6 12 11 17 6"></polyline>
+            </svg>
+          </div>
         </button>
         <div class="accordion-content">
           <div class="accordion-content-inner">
@@ -356,7 +372,7 @@
             </ul>
             <p><strong>Target Industries:</strong> Agriculture, Mining, Construction, Municipalities, Commercial Real Estate.</p>
             <p><strong>ROI:</strong> 12–18 months. ESG-aligned. Scalable nationwide.</p>
-            <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="lead-magnet">Book Investment Briefing</a>
+            <a href="#booking" class="btn">Book Investment Briefing</a>
 
             <div class="separator"></div>
 
@@ -380,19 +396,21 @@
               <h4>Revenue Generation:</h4>
               <p>We earn commission on every sale. You get global exposure. We grow together.</p>
             </div>
-            <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="lead-magnet">View Products & Apply as Artist</a>
+            <a href="#booking" class="btn">View Products & Apply as Artist</a>
           </div>
         </div>
       </div>
 
       <!-- BLOCKCHAIN -->
       <div class="accordion-item">
-        <button class="accordion-header">
-          <span>🔗 Blockchain: Crypto Smart Contract Generator (R&D)</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <polyline points="7 13 12 18 17 13"></polyline>
-            <polyline points="7 6 12 11 17 6"></polyline>
-          </svg>
+        <button class="accordion-button">
+          <div class="accordion-header">
+            <span>🔗 Blockchain: Crypto Smart Contract Generator (R&D)</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="accordion-icon">
+              <polyline points="7 13 12 18 17 13"></polyline>
+              <polyline points="7 6 12 11 17 6"></polyline>
+            </svg>
+          </div>
         </button>
         <div class="accordion-content">
           <div class="accordion-content-inner">
@@ -415,13 +433,20 @@
               <h4>Revenue Generation:</h4>
               <p>Pay-per-use model upon launch. No upfront cost. Enterprise-grade security.</p>
             </div>
-            <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="lead-magnet">Get Early Access (Coming Soon)</a>
+            <a href="#booking" class="btn">Get Early Access (Coming Soon)</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- TYPEFORM EMBED -->
+  <section id="typeform-assessment">
+    <h2 class="section-title">Request Free Site Assessment</h2>
+    <div class="typeform-widget" data-tf-live="kSJtterE" style="width:100%;height:600px"></div>
+  </section>
+
+  <!-- CAL BOOKING -->
   <section class="cal-booking" id="booking">
     <h2 class="section-title">Book a Risk-Free Discovery Call</h2>
     <p style="text-align:center;margin-bottom:2rem;color:#ccc;max-width:700px;margin-left:auto;margin-right:auto">
@@ -476,38 +501,123 @@
   </div>
 
   <script>
-    // Modern Accordion with Micro-Interactions
-    document.querySelectorAll('.accordion-header').forEach(button => {
-      button.addEventListener('click', () => {
-        const item = button.closest('.accordion-item');
-        const isActive = item.classList.contains('active');
+    // Safe Dark Mode Toggle
+    const toggle = document.getElementById('theme-toggle');
+    const body = document.body;
 
-        // Close all
-        document.querySelectorAll('.accordion-item').forEach(i => {
-          i.classList.remove('active');
-          i.querySelector('svg').style.transform = 'rotate(0deg)';
+    function supportsLocalStorage() {
+      try {
+        const test = '__storage_test__';
+        localStorage.setItem(test, test);
+        localStorage.removeItem(test);
+        return true;
+      } catch (e) {
+        return false;
+      }
+    }
+
+    const saved = supportsLocalStorage() ? localStorage.getItem('theme') : null;
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = saved ? saved : (prefersDark ? 'dark' : 'light');
+
+    body.setAttribute('data-theme', theme);
+    toggle.textContent = theme === 'dark' ? '🌞' : '🌙';
+
+    toggle.addEventListener('click', () => {
+      const next = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      body.setAttribute('data-theme', next);
+      toggle.textContent = next === 'dark' ? '🌞' : '🌙';
+      if (supportsLocalStorage()) {
+        localStorage.setItem('theme', next);
+      }
+    });
+
+    // DOM Ready
+    document.addEventListener("DOMContentLoaded", function () {
+      // Accordion
+      document.querySelectorAll('.accordion-button').forEach(button => {
+        button.addEventListener('click', () => {
+          const item = button.closest('.accordion-item');
+          const isActive = item.classList.contains('active');
+          document.querySelectorAll('.accordion-item').forEach(i => {
+            i.classList.remove('active');
+            const icon = i.querySelector('.accordion-icon');
+            if (icon) icon.style.transform = 'rotate(0deg)';
+          });
+          if (!isActive) {
+            item.classList.add('active');
+            const icon = item.querySelector('.accordion-icon');
+            if (icon) icon.style.transform = 'rotate(180deg)';
+          }
         });
-
-        // Open clicked
-        if (!isActive) {
-          item.classList.add('active');
-          button.querySelector('svg').style.transform = 'rotate(180deg)';
-        }
       });
-    });
 
-    // Load Cal.com
-    (function(C,A,L){let p=function(a,ar){a.q.push(ar)};let d=C.document;C.Cal=C.Cal||function(){let cal=C.Cal;let ar=arguments;if(!cal.loaded){cal.ns={};cal.q=cal.q||[];let script=d.createElement("script");script.async=1;script.src=A;d.head.appendChild(script);cal.loaded=true}if(ar[0]===L){const api=function(){p(api,arguments)};const namespace=ar[1];api.q=api.q||[];if(typeof namespace==="string"){cal.ns[namespace]=cal.ns[namespace]||api;p(cal.ns[namespace],ar);p(cal,["initNamespace",namespace])}else p(cal,ar);return}p(cal,ar)}})(window,"https://app.cal.com/embed/embed.js","init");
-    
-    Cal("init", "south-africa", { origin: "https://app.cal.com" });
-    Cal.ns["south-africa"]("inline", {
-      elementOrSelector: "#my-cal-inline-south-africa",
-      calLink: "partner-discovery/south-africa"
-    });
-    Cal.ns["south-africa"]("ui", { layout: "month_view" });
+      // Cal.com
+      const calDiv = document.getElementById('my-cal-inline-south-africa');
+      if (calDiv) {
+        (function (C, A, L) {
+          let p = function (a, ar) { a.q.push(ar); };
+          let d = C.document;
+          C.Cal = C.Cal || function () {
+            let cal = C.Cal;
+            let ar = arguments;
+            if (!cal.loaded) {
+              cal.ns = {};
+              cal.q = cal.q || [];
+              let script = d.createElement("script");
+              script.async = 1;
+              script.src = A;
+              d.head.appendChild(script);
+              cal.loaded = true;
+            }
+            if (ar[0] === L) {
+              const api = function () { p(api, arguments); };
+              const namespace = ar[1];
+              api.q = api.q || [];
+              if (typeof namespace === "string") {
+                cal.ns[namespace] = cal.ns[namespace] || api;
+                p(cal.ns[namespace], ar);
+                p(cal, ["initNamespace", namespace]);
+              } else {
+                p(cal, ar);
+              }
+              return;
+            }
+            p(cal, ar);
+          };
+        })(window, "https://app.cal.com/embed/embed.js", "init");
 
-    // Update year
-    document.getElementById("current-year").textContent = new Date().getFullYear();
+        Cal("init", "south-africa", { origin: "https://app.cal.com" });
+        Cal.ns["south-africa"]("inline", {
+          elementOrSelector: "#my-cal-inline-south-africa",
+          calLink: "partner-discovery/south-africa"
+        });
+        Cal.ns["south-africa"]("ui", { layout: "month_view" });
+      }
+
+      // Typeform
+      if (document.querySelector('[data-tf-live]')) {
+        (function () {
+          var qs, js, q, s, d = document,
+            gi = d.getElementById,
+            ce = d.createElement,
+            gt = d.getElementsByTagName,
+            id = 'typef_orm',
+            b = 'https://embed.typeform.com/';
+          if (!gi.call(d, id)) {
+            js = ce.call(d, 'script');
+            js.id = id;
+            js.src = b + 'embed.js';
+            q = gt.call(d, 'script')[0];
+            q.parentNode.insertBefore(js, q);
+          }
+        })();
+      }
+
+      // Update Year
+      const yearEl = document.getElementById("current-year");
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+    });
   </script>
 </body>
 </html>
