@@ -6,7 +6,7 @@
   <title>Mariba Media – Performance Marketing & Product Development</title>
   <meta name="description" content="Pay only after we generate cash. No risk. 100 % results-based performance marketing & product development for high-growth African enterprises.">
 
-  <!-- Inter variable font -->
+  <!-- Inter Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap">
 
   <!-- Google Analytics 4 -->
@@ -20,7 +20,7 @@
 
   <style>
     /* ——————————————————————————————————————
-       Modern Fluid Typography & Layout
+       Modern Fluid Typography & Design System
        —————————————————————————————————————— */
     :root {
       --step--2: clamp(0.70rem, 0.68rem + 0.09vw, 0.75rem);
@@ -34,7 +34,7 @@
       --step-6: clamp(2.99rem, 2.74rem + 1.22vw, 4.52rem);
       --step-7: clamp(3.58rem, 3.26rem + 1.60vw, 5.65rem);
 
-      /* Palette */
+      /* Color Palette */
       --bg: #05070f;
       --bg-soft: #0d1117;
       --bg-softer: #161b22;
@@ -68,25 +68,24 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Typography & Vertical Rhythm */
+    /* Typography */
     h1, h2, h3, h4 {
       line-height: 1.1;
       font-weight: 700;
       letter-spacing: -0.02em;
-      margin-top: 0;
     }
 
     h1 {
       font-size: var(--step-7);
-      margin-bottom: 1rem;
-      max-width: 16ch;
-      text-align: center;
+      max-width: 18ch;
+      margin: 0 auto;
     }
 
     h2 {
       font-size: var(--step-6);
-      margin-bottom: 1.25rem;
       text-align: center;
+      margin-bottom: 1.25rem;
+      color: var(--accent);
     }
 
     h3 {
@@ -103,22 +102,22 @@
 
     p {
       font-size: var(--step-0);
-      line-height: 1.7;
-      margin-bottom: 1rem;
       color: var(--text-muted);
+      max-width: 60ch;
+      margin: 0 auto 1rem;
     }
 
     a {
       color: var(--accent);
       text-decoration: none;
-      transition: color var(--dur) var(--ease);
+      transition: color var(--dur);
     }
 
     a:hover {
       color: #fff;
     }
 
-    /* Button (Modern, Aligned, Elegant) */
+    /* Button */
     .btn {
       font-size: var(--step-0);
       font-weight: 600;
@@ -132,10 +131,9 @@
       align-items: center;
       justify-content: center;
       gap: 0.75em;
-      transition: all var(--dur) var(--ease);
+      transition: all var(--dur);
       box-shadow: 0 4px 20px rgba(0, 212, 255, 0.2);
       min-width: 220px;
-      text-align: center;
     }
 
     .btn:hover {
@@ -205,37 +203,24 @@
       display: none;
     }
 
-    /* Hero Section */
+    /* Hero Section - Centered */
     .hero {
-      padding: clamp(6rem, 14vh, 10rem) 20px;
-      text-align: center;
-      min-height: 90vh;
+      padding: 0 20px;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 2rem;
+      align-items: center;
+      text-align: center;
       background: radial-gradient(circle at 50% 50%, #0a192f 0%, var(--bg) 80%);
+      gap: 1.5rem;
     }
 
-    .hero p {
-      max-width: 60ch;
-      margin: 0 auto 1.5rem;
-      font-size: var(--step-0);
-    }
-
-    /* Section Base */
+    /* Sections */
     section {
       padding: clamp(5rem, 12vh, 8rem) 20px;
       max-width: 1440px;
       margin: 0 auto;
-    }
-
-    /* Section Title */
-    .section-title {
-      font-size: var(--step-6);
-      color: var(--accent);
-      text-align: center;
-      margin-bottom: 2rem;
     }
 
     .section-title::after {
@@ -254,7 +239,7 @@
       to { box-shadow: 0 0 16px var(--accent), 0 0 24px var(--accent); }
     }
 
-    /* About Section */
+    /* About */
     .about-content {
       text-align: center;
       max-width: 700px;
@@ -328,8 +313,9 @@
 
     .accordion-content-inner {
       padding: 2.5rem;
-      line-height: 1.7;
+      color: var(--text-muted);
       font-size: var(--step-0);
+      line-height: 1.7;
     }
 
     .offer-header {
@@ -393,10 +379,6 @@
       margin-bottom: 1rem;
     }
 
-    footer p, footer li {
-      color: var(--text-muted);
-    }
-
     .social-links {
       display: flex;
       gap: 1.25rem;
@@ -425,7 +407,6 @@
       text-align: center;
       margin-top: 2.5rem;
       color: var(--text-muted);
-      font-size: var(--step--1);
     }
 
     /* WhatsApp */
@@ -477,10 +458,6 @@
       h1 {
         font-size: var(--step-6);
         max-width: 20ch;
-      }
-
-      h2 {
-        font-size: var(--step-5);
       }
 
       .btn {
@@ -809,7 +786,7 @@
       <p>Performance marketing & product development. Pay only after we generate real revenue.</p>
       <div class="social-links">
         <a href="https://www.facebook.com/profile.php?id=61576915266105" class="social-icon" aria-label="Facebook">f</a>
-        <a href="https://youtube.com/@TV-Mariba" class="social-icon" aria-label="YouTube">▶</a>
+        <a href="https://youtube.com/@TV-Mariba" target="_blank" class="social-icon" aria-label="YouTube">▶</a>
       </div>
     </div>
     <div class="footer-section">
@@ -844,6 +821,7 @@
   </div>
 
   <script>
+    // Accordion Logic
     document.addEventListener("DOMContentLoaded", function () {
       const buttons = document.querySelectorAll('.accordion-button');
       buttons.forEach(button => {
@@ -870,6 +848,7 @@
         });
       });
 
+      // Cal.com Embed
       const calDiv = document.getElementById('my-cal-inline-south-africa');
       if (calDiv) {
         (function (C, A, L) {
@@ -912,9 +891,11 @@
         Cal.ns["south-africa"]("ui", { layout: "month_view" });
       }
 
+      // Update Year
       const yearEl = document.getElementById("current-year");
       if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+      // Track CTA Clicks
       document.querySelectorAll('.btn').forEach(btn => {
         btn.addEventListener('click', () => {
           if (typeof gtag === 'function') {
