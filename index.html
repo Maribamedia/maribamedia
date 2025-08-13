@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mariba Media - Performance Marketing & Product Development</title>
-  <meta name="description" content="Mariba Media: We only get paid when we generate real, upfront revenue. No risk. 100% results-based. Performance marketing & product development for high-growth African enterprises.">
+  <title>Mariba Media – Performance Marketing & Product Development</title>
+  <meta name="description" content="Pay only after we generate cash. No risk. 100 % results-based performance marketing & product development for high-growth African enterprises.">
 
-  <!-- Fallback Inter Font -->
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <!-- Inter variable font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap">
 
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -20,12 +20,22 @@
 
   <style>
     /* ——————————————————————————————————————
-       Modern, Animated, Professional Re-skin
+       Modern Fluid Type + Micro-Interactions
        —————————————————————————————————————— */
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap');
+    :root{
+      /* Fluid type scale (major third) */
+      --step--2: clamp(.70rem, .68rem + .09vw, .75rem);
+      --step--1: clamp(.84rem, .81rem + .14vw, .94rem);
+      --step-0 : clamp(1.00rem, .96rem + .20vw, 1.18rem);
+      --step-1 : clamp(1.20rem, 1.15rem + .28vw, 1.48rem);
+      --step-2 : clamp(1.44rem, 1.37rem + .38vw, 1.85rem);
+      --step-3 : clamp(1.73rem, 1.63rem + .52vw, 2.31rem);
+      --step-4 : clamp(2.07rem, 1.94rem + .70vw, 2.89rem);
+      --step-5 : clamp(2.49rem, 2.31rem + .93vw, 3.61rem);
+      --step-6 : clamp(2.99rem, 2.74rem + 1.22vw, 4.52rem);
+      --step-7 : clamp(3.58rem, 3.26rem + 1.60vw, 5.65rem);
 
-    :root {
-      /* Palette – subtle, high-contrast, cool-toned */
+      /* Palette */
       --bg: #05070f;
       --bg-soft: #0d1117;
       --bg-softer: #161b22;
@@ -36,33 +46,40 @@
       --border: #21262d;
 
       /* Motion */
-      --dur: .5s;
+      --dur: .45s;
       --ease: cubic-bezier(.4,0,.2,1);
     }
 
-    /* —— Global —— */
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-    body{background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+    body{background:var(--bg);color:var(--text);line-height:1.65;font-size:var(--step-0);-webkit-font-smoothing:antialiased}
 
-    /* —— Typography —— */
-    h1,h2,h3,h4{font-weight:700;letter-spacing:-.02em;line-height:1.15}
-    a{color:var(--accent);text-decoration:none}
+    /* Typography */
+    h1,h2,h3,h4{line-height:1.1;font-weight:700;letter-spacing:-.02em}
+    h1{font-size:var(--step-7)}
+    h2{font-size:var(--step-6)}
+    h3{font-size:var(--step-5)}
+    h4{font-size:var(--step-4)}
+    a{color:var(--accent);text-decoration:none;transition:color var(--dur) var(--ease)}
+    a:hover{color:#fff}
 
-    /* —— Animated Button —— */
+    /* Button */
     .btn{
       position:relative;
-      padding:1rem 2.25rem;
+      font-size:var(--step-0);
+      font-weight:600;
+      padding:.85em 2em;
       border:none;
+      border-radius:.5em;
       background:linear-gradient(135deg,var(--accent),#0099cc);
       color:var(--bg);
-      border-radius:8px;
-      font-size:1rem;
-      font-weight:600;
       cursor:pointer;
       overflow:hidden;
+      transform:translateY(0);
       transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease);
-      display:inline-block;
+      display:inline-flex;
+      align-items:center;
+      gap:.5em;
     }
     .btn::after{
       content:'';
@@ -73,12 +90,12 @@
       transition:opacity var(--dur);
     }
     .btn:hover{
-      transform:translateY(-2px);
+      transform:translateY(-3px);
       box-shadow:var(--accent-glow);
     }
-    .btn:hover::after{opacity:.15}
+    .btn:hover::after{opacity:.2}
 
-    /* —— Sticky Header —— */
+    /* Sticky Header */
     header{
       position:sticky;
       top:0;
@@ -86,19 +103,19 @@
       backdrop-filter:blur(18px) saturate(180%);
       background:rgba(5,7,15,.7);
       border-bottom:1px solid var(--border);
-      padding:1rem 20px;
+      padding:.75rem 20px;
       display:flex;
       align-items:center;
       justify-content:space-between;
       animation:slideDown .8s var(--ease) forwards;
     }
     @keyframes slideDown{from{transform:translateY(-100%)}}
-    .logo{font-weight:700;font-size:1.4rem}
+    .logo{font-weight:800;font-size:var(--step-2);letter-spacing:-.03em}
     .logo span{color:var(--accent)}
     nav{display:flex;gap:1.5rem}
     nav a{
-      font-size:.875rem;
-      font-weight:500;
+      font-size:var(--step--1);
+      font-weight:600;
       text-transform:uppercase;
       letter-spacing:.05em;
       position:relative;
@@ -114,9 +131,9 @@
     nav a:hover::after{width:100%}
     .menu-toggle{display:none}
 
-    /* —— Hero —— */
+    /* Hero */
     .hero{
-      padding:6rem 20px;
+      padding:clamp(4rem,12vh,8rem) 20px;
       text-align:center;
       min-height:90vh;
       display:flex;
@@ -126,13 +143,11 @@
       background:radial-gradient(circle at 50% 50%,#0a192f 0%,var(--bg) 80%);
     }
     .hero h1{
-      font-size:clamp(2.5rem,6vw,5.5rem);
       max-width:14ch;
-      margin:0 auto 1rem;
+      margin:0 auto .5em;
       animation:fadeInUp 1.2s var(--ease) forwards;
     }
     .hero p{
-      font-size:1.125rem;
       max-width:50ch;
       margin:0 auto 1.5rem;
       color:var(--text-muted);
@@ -140,18 +155,17 @@
     }
     @keyframes fadeInUp{from{opacity:0;transform:translateY(40px)}}
 
-    /* —— Section —— */
-    section{padding:6rem 20px;max-width:1440px;margin:0 auto}
+    /* Sections */
+    section{padding:clamp(4rem,10vh,7rem) 20px;max-width:1440px;margin:0 auto}
     .section-title{
-      font-size:clamp(2rem,5vw,3rem);
       text-align:center;
-      margin-bottom:3rem;
+      margin-bottom:2rem;
       color:var(--accent);
     }
     .section-title::after{
       content:'';
       display:block;
-      width:80px;height:3px;
+      width:clamp(60px,6vw,80px);height:3px;
       margin:.75rem auto 0;
       background:var(--accent);
       border-radius:2px;
@@ -159,19 +173,23 @@
     }
     @keyframes glow{from{box-shadow:0 0 4px var(--accent)}to{box-shadow:0 0 16px var(--accent),0 0 24px var(--accent)}}
 
-    /* —— About —— */
-    .about-content{text-align:center;max-width:800px;margin:0 auto}
+    /* About */
+    .about-content{
+      text-align:center;
+      max-width:clamp(600px,60vw,800px);
+      margin:0 auto;
+    }
     .mission-vision{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:1.5rem;
-      margin-top:2rem;
+      gap:2rem;
+      margin-top:2.5rem;
     }
     .mission,.vision{
       background:var(--bg-soft);
-      padding:2rem;
+      padding:2.5rem;
       border:1px solid var(--border);
-      border-radius:12px;
+      border-radius:.75rem;
       transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease);
     }
     .mission:hover,.vision:hover{
@@ -179,20 +197,20 @@
       box-shadow:0 12px 28px rgba(0,212,255,.15);
     }
 
-    /* —— Accordion —— */
+    /* Accordion */
     .offers-accordion{max-width:1440px;margin:0 auto}
     .accordion-item{
-      margin-bottom:1rem;
+      margin-bottom:1.25rem;
       border:1px solid var(--border);
-      border-radius:12px;
+      border-radius:.75rem;
       overflow:hidden;
       background:var(--bg-soft);
       transition:box-shadow var(--dur) var(--ease);
     }
     .accordion-item:hover{box-shadow:0 8px 32px rgba(0,212,255,.1)}
     .accordion-header{
-      padding:1.25rem 1.5rem;
-      font-size:1.1rem;
+      padding:1.75rem 2rem;
+      font-size:var(--step-1);
       font-weight:600;
       cursor:pointer;
       display:flex;
@@ -210,31 +228,31 @@
       transition:max-height var(--dur) var(--ease);
       background:var(--bg);
     }
-    .accordion-content-inner{padding:1.5rem;color:var(--text-muted);font-size:.95rem;line-height:1.7}
+    .accordion-content-inner{padding:2rem;color:var(--text-muted);font-size:var(--step-0);line-height:1.7}
 
-    /* —— Cal embed —— */
-    .cal-booking{background:var(--bg-soft);border-radius:12px;overflow:hidden;padding:2rem 0}
+    /* Cal embed */
+    .cal-booking{background:var(--bg-soft);border-radius:.75rem;overflow:hidden;padding:2rem 0}
     #my-cal-inline-south-africa{
       width:100%;
-      height:600px;
+      height:clamp(600px,65vh,760px);
       border:none;
-      border-radius:12px;
+      border-radius:.75rem;
       box-shadow:0 4px 24px rgba(0,212,255,.15);
     }
 
-    /* —— Footer —— */
+    /* Footer */
     footer{
-      padding:3rem 20px;
+      padding:clamp(2.5rem,6vh,4rem) 20px;
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:2rem;
+      gap:2.5rem;
       border-top:1px solid var(--border);
-      font-size:.9rem;
+      font-size:var(--step--1);
     }
-    footer h3{color:var(--accent)}
+    footer h3{color:var(--accent);font-size:var(--step-2);margin-bottom:.75rem}
     .social-links{display:flex;gap:1.25rem;margin-top:1rem}
     .social-icon{
-      width:36px;height:36px;
+      width:40px;height:40px;
       display:grid;place-items:center;
       border-radius:50%;
       background:var(--bg-soft);
@@ -244,14 +262,14 @@
     .social-icon:hover{background:var(--accent);color:var(--bg);transform:scale(1.15)}
     .copyright{grid-column:1/-1;text-align:center;margin-top:2rem;color:var(--text-muted)}
 
-    /* —— WhatsApp —— */
+    /* WhatsApp */
     .whatsapp-widget{
       position:fixed;
       bottom:1.5rem;right:1.5rem;
       z-index:1000;
     }
     .whatsapp-button{
-      width:60px;height:60px;
+      width:64px;height:64px;
       border:none;
       border-radius:50%;
       background:#25D366;
@@ -261,19 +279,15 @@
       box-shadow:0 4px 16px rgba(37,211,102,.4);
     }
     .whatsapp-button:hover{
-      transform:scale(1.1);
+      transform:scale(1.15);
       box-shadow:0 8px 24px rgba(37,211,102,.6);
     }
-    .whatsapp-svg{width:28px;height:28px;fill:#fff}
+    .whatsapp-svg{width:32px;height:32px;fill:#fff}
 
-    /* —— Responsive —— */
-    @media(min-width:768px){
-      :root{--gutter:80px}
-      .hero{min-height:100vh;padding:8rem 0}
-      .section-title{font-size:3rem;margin-bottom:4rem}
-      .hero p{font-size:1.25rem}
-      .accordion-header{font-size:1.2rem;padding:1.5rem}
-      #my-cal-inline-south-africa{height:760px}
+    /* Responsive nav */
+    @media(max-width:768px){
+      nav{display:none}
+      .menu-toggle{display:block;font-size:var(--step-3);background:none;border:none;color:var(--text)}
     }
   </style>
 </head>
@@ -293,7 +307,7 @@
 
   <section class="hero" id="home">
     <h1>We Generate Cash. You Pay After.</h1>
-    <p>Mariba Media is a performance marketing & product development agency. We only get paid when we generate real, upfront revenue for your business. No upfront cost. No risk. 100% results-based.</p>
+    <p>Mariba Media is a performance marketing & product development agency. We only get paid when we generate real, upfront revenue for your business. No upfront cost. No risk. 100 % results-based.</p>
     <a href="https://cal.com/partner-discovery/south-africa" class="btn" target="_blank" rel="noopener">Start Risk-Free</a>
   </section>
 
@@ -304,7 +318,7 @@
       <div class="mission-vision">
         <div class="mission">
           <h3>No Results, No Fee</h3>
-          <p>If we don’t generate measurable revenue, you don’t pay. Our income is 100% tied to your success.</p>
+          <p>If we don’t generate measurable revenue, you don’t pay. Our income is 100 % tied to your success.</p>
         </div>
         <div class="vision">
           <h3>Minimal Effort, Maximum Impact</h3>
@@ -328,7 +342,6 @@
       </button>
       <div class="accordion-content">
         <div class="accordion-content-inner">
-          <!-- C&I Solar -->
           <div class="offer-header">
             <div class="offer-icon">☀️</div>
             <div>
@@ -342,7 +355,7 @@
           </div>
           <div class="outcomes">
             <h4>Transformative Outcome:</h4>
-            <p>Slash energy costs by 70% with off-balance-sheet solar. We provide full-service: financing, insurance, carbon credit monetization, and third-party wheeling agreements.</p>
+            <p>Slash energy costs by 70 % with off-balance-sheet solar. We provide full-service: financing, insurance, carbon credit monetization, and third-party wheeling agreements.</p>
           </div>
           <div class="revenue-model">
             <h4>Revenue Generation:</h4>
@@ -352,7 +365,6 @@
 
           <div class="separator"></div>
 
-          <!-- Borehole Africa -->
           <div class="offer-header">
             <div class="offer-icon">💧</div>
             <div>
@@ -410,7 +422,7 @@
             <p>We earn commission only on closed deals. No upfront fees. No risk.</p>
           </div>
           <a href="https://drive.google.com/drive/folders/1XvC4SM_ze-FY5KtrYEp5AXOF2d-VDon2?usp=sharing">Download Portfolio (PDF)</a>
-          <p style="font-size:0.85rem;margin-top:0.5rem;color:#aaa">
+          <p style="font-size:var(--step--2);margin-top:.5rem;color:var(--text-muted)">
             Includes: SCO - CIF - COPPER CATHODES, EMERALD - Canga de Esmeralda.pdf, Manganese Ore offers
           </p>
         </div>
@@ -430,12 +442,11 @@
       </button>
       <div class="accordion-content">
         <div class="accordion-content-inner">
-          <!-- Karabo AI -->
           <div class="offer-header">
             <div class="offer-icon">🏢</div>
             <div>
               <h3>Karabo AI: Sales Operating System</h3>
-              <div class="offer-subtitle">AI sales agent. Pay per appointment or 35% revenue share.</div>
+              <div class="offer-subtitle">AI sales agent. Pay per appointment or 35 % revenue share.</div>
             </div>
           </div>
           <div class="pain-points">
@@ -454,12 +465,11 @@
 
           <div class="separator"></div>
 
-          <!-- Bohlale AI -->
           <div class="offer-header">
             <div class="offer-icon">🎓</div>
             <div>
               <h3>Bohlale AI: Training & Skills Development System</h3>
-              <div class="offer-subtitle">AI instructor. Save 80% on training costs.</div>
+              <div class="offer-subtitle">AI instructor. Save 80 % on training costs.</div>
             </div>
           </div>
           <div class="pain-points">
@@ -492,7 +502,6 @@
       </button>
       <div class="accordion-content">
         <div class="accordion-content-inner">
-          <!-- ISONEM -->
           <div class="offer-header">
             <div class="offer-icon">🌱</div>
             <div>
@@ -502,9 +511,9 @@
           </div>
           <p><strong>South Africa faces severe water scarcity, crumbling infrastructure, and escalating energy costs.</strong> Annual water losses amount to R9.9 billion, while infrastructure repair demands exceed R90 billion yearly.</p>
           <ul>
-            <li><strong>Soil Water Trap:</strong> Absorbs water up to 600x its weight. Reduces irrigation use by 40%.</li>
-            <li><strong>SS Soil Hardener:</strong> Non-toxic soil stabilizer. Cuts road maintenance by 30%.</li>
-            <li><strong>Thermal Paint:</strong> Reflects heat. Lowers cooling costs by 30%.</li>
+            <li><strong>Soil Water Trap:</strong> Absorbs water up to 600× its weight. Reduces irrigation use by 40 %.</li>
+            <li><strong>SS Soil Hardener:</strong> Non-toxic soil stabilizer. Cuts road maintenance by 30 %.</li>
+            <li><strong>Thermal Paint:</strong> Reflects heat. Lowers cooling costs by 30 %.</li>
           </ul>
           <p><strong>Target Industries:</strong> Agriculture, Mining, Construction, Municipalities, Commercial Real Estate.</p>
           <p><strong>ROI:</strong> 12–18 months. ESG-aligned. Scalable nationwide.</p>
@@ -512,7 +521,6 @@
 
           <div class="separator"></div>
 
-          <!-- Sedimo -->
           <div class="offer-header">
             <div class="offer-icon">🎨</div>
             <div>
@@ -578,7 +586,7 @@
   <!-- CAL BOOKING -->
   <section class="cal-booking" id="booking">
     <h2 class="section-title">Book a Risk-Free Discovery Call</h2>
-    <p style="text-align:center;margin-bottom:2rem;color:#ccc;max-width:700px;margin-left:auto;margin-right:auto">
+    <p style="text-align:center;margin-bottom:2rem;color:var(--text-muted);max-width:700px;margin-left:auto;margin-right:auto">
       In this 30-minute call, we will:<br>
       <strong>• Audit your operations</strong><br>
       <strong>• Generate a recommendation report</strong><br>
@@ -630,11 +638,9 @@
   </div>
 
   <script>
-    // DOM Ready + Accordion Logic
+    /* DOM Ready + Accordion Logic */
     document.addEventListener("DOMContentLoaded", function () {
-      console.log("DOM fully loaded and parsed");
-
-      // 🔹 Accordion Logic
+      /* Accordion Logic */
       const buttons = document.querySelectorAll('.accordion-button');
       buttons.forEach(button => {
         button.addEventListener('click', function () {
@@ -647,14 +653,12 @@
             content.style.maxHeight = null;
             if (icon) icon.style.transform = 'rotate(0deg)';
           } else {
-            // Close all
             document.querySelectorAll('.accordion-item').forEach(i => {
               i.classList.remove('active');
               i.querySelector('.accordion-content').style.maxHeight = null;
               const ic = i.querySelector('.accordion-icon');
               if (ic) ic.style.transform = 'rotate(0deg)';
             });
-            // Open this
             item.classList.add('active');
             content.style.maxHeight = content.scrollHeight + "px";
             if (icon) icon.style.transform = 'rotate(180deg)';
@@ -662,7 +666,7 @@
         });
       });
 
-      // 🔹 Cal.com Embed
+      /* Cal.com Embed */
       const calDiv = document.getElementById('my-cal-inline-south-africa');
       if (calDiv) {
         (function (C, A, L) {
@@ -705,12 +709,12 @@
         Cal.ns["south-africa"]("ui", { layout: "month_view" });
       }
 
-      // 🔹 Update Year
+      /* Update Year */
       const yearEl = document.getElementById("current-year");
       if (yearEl) yearEl.textContent = new Date().getFullYear();
     });
 
-    // Track CTA clicks
+    /* Track CTA clicks */
     document.addEventListener("DOMContentLoaded", function () {
       document.querySelectorAll('.btn').forEach(btn => {
         btn.addEventListener('click', () => {
