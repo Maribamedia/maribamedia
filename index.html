@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mariba Media – Performance Marketing & Product Development</title>
-  <meta name="description" content="Pay only after we generate cash. No risk. 100 % results-based performance marketing & product development for high-growth African enterprises.">
+  <meta name="description" content="Pay only after we generate cash. No risk. 100% results-based performance marketing & product development for high-growth African enterprises.">
 
   <!-- Inter Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap">
@@ -23,25 +23,25 @@
        Modern Fluid Typography & Design System
        —————————————————————————————————————— */
     :root {
-      --step--2: clamp(0.70rem, 0.68rem + 0.09vw, 0.75rem);
-      --step--1: clamp(0.84rem, 0.81rem + 0.14vw, 0.94rem);
-      --step-0: clamp(1.00rem, 0.96rem + 0.20vw, 1.18rem);
-      --step-1: clamp(1.20rem, 1.15rem + 0.28vw, 1.48rem);
-      --step-2: clamp(1.44rem, 1.37rem + 0.38vw, 1.85rem);
-      --step-3: clamp(1.73rem, 1.63rem + 0.52vw, 2.31rem);
-      --step-4: clamp(2.07rem, 1.94rem + 0.70vw, 2.89rem);
-      --step-5: clamp(2.49rem, 2.31rem + 0.93vw, 3.61rem);
-      --step-6: clamp(2.99rem, 2.74rem + 1.22vw, 4.52rem);
-      --step-7: clamp(3.58rem, 3.26rem + 1.60vw, 5.65rem);
+      --step--2: clamp(0.75rem, 0.7rem + 0.15vw, 0.85rem);
+      --step--1: clamp(0.85rem, 0.8rem + 0.22vw, 1rem);
+      --step-0: clamp(1rem, 0.95rem + 0.25vw, 1.15rem);
+      --step-1: clamp(1.2rem, 1.15rem + 0.3vw, 1.5rem);
+      --step-2: clamp(1.44rem, 1.35rem + 0.45vw, 1.85rem);
+      --step-3: clamp(1.73rem, 1.6rem + 0.65vw, 2.3rem);
+      --step-4: clamp(2.07rem, 1.9rem + 0.85vw, 2.9rem);
+      --step-5: clamp(2.49rem, 2.25rem + 1.1vw, 3.6rem);
+      --step-6: clamp(2.99rem, 2.7rem + 1.45vw, 4.5rem);
+      --step-7: clamp(3.58rem, 3.2rem + 1.9vw, 5.6rem);
 
-      /* Color Palette */
+      /* Palette */
       --bg: #05070f;
       --bg-soft: #0d1117;
       --bg-softer: #161b22;
       --accent: #00d4ff;
       --accent-glow: 0 0 24px rgba(0, 212, 255, 0.45);
       --text: #ffffff;
-      --text-muted: #8b949e;
+      --text-muted: #a0aec0;
       --border: #21262d;
 
       /* Motion */
@@ -63,22 +63,24 @@
     body {
       background: var(--bg);
       color: var(--text);
-      line-height: 1.65;
+      line-height: 1.7;
       font-size: var(--step-0);
       -webkit-font-smoothing: antialiased;
     }
 
     /* Typography */
     h1, h2, h3, h4 {
-      line-height: 1.1;
+      line-height: 1.15;
       font-weight: 700;
       letter-spacing: -0.02em;
+      margin-top: 0;
     }
 
     h1 {
       font-size: var(--step-7);
       max-width: 18ch;
-      margin: 0 auto;
+      margin: 0 auto 1rem;
+      color: #ffffff;
     }
 
     h2 {
@@ -103,8 +105,12 @@
     p {
       font-size: var(--step-0);
       color: var(--text-muted);
-      max-width: 60ch;
-      margin: 0 auto 1rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    strong {
+      color: #ffffff;
     }
 
     a {
@@ -134,6 +140,7 @@
       transition: all var(--dur);
       box-shadow: 0 4px 20px rgba(0, 212, 255, 0.2);
       min-width: 220px;
+      text-align: center;
     }
 
     .btn:hover {
@@ -203,7 +210,7 @@
       display: none;
     }
 
-    /* Hero Section - Centered */
+    /* Hero Section */
     .hero {
       padding: 0 20px;
       min-height: 100vh;
@@ -213,7 +220,7 @@
       align-items: center;
       text-align: center;
       background: radial-gradient(circle at 50% 50%, #0a192f 0%, var(--bg) 80%);
-      gap: 1.5rem;
+      gap: 1.75rem;
     }
 
     /* Sections */
@@ -268,7 +275,7 @@
 
     /* Accordion */
     .accordion-item {
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.75rem;
       border: 1px solid var(--border);
       border-radius: 1rem;
       overflow: hidden;
@@ -315,7 +322,7 @@
       padding: 2.5rem;
       color: var(--text-muted);
       font-size: var(--step-0);
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
     .offer-header {
@@ -473,6 +480,10 @@
       .hero {
         padding: 6rem 20px;
       }
+
+      .accordion-content-inner {
+        padding: 1.5rem;
+      }
     }
   </style>
 </head>
@@ -492,7 +503,7 @@
 
   <section class="hero" id="home">
     <h1>We Generate Cash. You Pay After.</h1>
-    <p>Mariba Media is a performance marketing & product development agency. We only get paid when we generate real, upfront revenue for your business. No upfront cost. No risk. 100 % results-based.</p>
+    <p>Mariba Media is a performance marketing & product development agency. We only get paid when we generate real, upfront revenue for your business. No upfront cost. No risk. 100% results-based.</p>
     <a href="https://cal.com/partner-discovery/south-africa" class="btn" target="_blank" rel="noopener">Start Risk-Free</a>
   </section>
 
@@ -503,7 +514,7 @@
       <div class="mission-vision">
         <div class="mission">
           <h3>No Results, No Fee</h3>
-          <p>If we don’t generate measurable revenue, you don’t pay. Our income is 100 % tied to your success.</p>
+          <p>If we don’t generate measurable revenue, you don’t pay. Our income is 100% tied to your success.</p>
         </div>
         <div class="vision">
           <h3>Minimal Effort, Maximum Impact</h3>
@@ -535,16 +546,16 @@
             </div>
           </div>
           <div class="pain-points">
-            <h4>Pain Points:</h4>
+            <h4>Challenges:</h4>
             <p>Soaring energy costs, unreliable grid, diesel dependency, capital constraints, ESG compliance pressure.</p>
           </div>
           <div class="outcomes">
-            <h4>Transformative Outcome:</h4>
-            <p>Slash energy costs by 70 % with off-balance-sheet solar. We provide full-service: financing, insurance, carbon credit monetization, and third-party wheeling agreements.</p>
+            <h4>Solution:</h4>
+            <p>Slash energy costs by up to 70% with off-balance-sheet solar. We deliver full-service: project financing, insurance, carbon credit monetization, and third-party wheeling agreements — all zero upfront.</p>
           </div>
           <div class="revenue-model">
-            <h4>Revenue Generation:</h4>
-            <p>We earn a share of the energy savings. No cash from you. We only get paid when savings are realized.</p>
+            <h4>Revenue Model:</h4>
+            <p>We earn a share of the energy savings. No cost to you. We only get paid when your business realizes savings.</p>
           </div>
           <a href="https://form.typeform.com/to/kSJtterE" target="_blank" class="btn">Request Free Site Assessment</a>
 
@@ -558,16 +569,16 @@
             </div>
           </div>
           <div class="pain-points">
-            <h4>Pain Points:</h4>
+            <h4>Challenges:</h4>
             <p>Water scarcity, municipal unreliability, high water costs, drilling risk.</p>
           </div>
           <div class="outcomes">
-            <h4>Transformative Outcome:</h4>
-            <p>Secure, zero-upfront borehole solution. Client pays only for water used — shared savings model.</p>
+            <h4>Solution:</h4>
+            <p>Secure, zero-upfront borehole solution. Your business pays only for the water used — under a shared savings model.</p>
           </div>
           <div class="revenue-model">
-            <h4>Revenue Generation:</h4>
-            <p>We earn recurring revenue from water usage. You get new clients. We earn when water flows.</p>
+            <h4>Revenue Model:</h4>
+            <p>We earn recurring revenue from water usage. You gain water independence. We earn when water flows.</p>
           </div>
           <a href="https://form.typeform.com/to/kSJtterE" target="_blank" class="btn">Launch Your Pipeline</a>
         </div>
@@ -578,7 +589,7 @@
     <div class="accordion-item">
       <button class="accordion-button">
         <div class="accordion-header">
-          <span>💼 Commodity Trading: Download Portfolio</span>
+          <span>💼 Commodity Trading: Verified & Bankable Offers</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="accordion-icon">
             <polyline points="7 13 12 18 17 13"></polyline>
             <polyline points="7 6 12 11 17 6"></polyline>
@@ -595,15 +606,15 @@
             </div>
           </div>
           <div class="pain-points">
-            <h4>Pain Points:</h4>
+            <h4>Challenges:</h4>
             <p>Fraud risk, lack of documentation, complex logistics, SBLC/LC delays.</p>
           </div>
           <div class="outcomes">
-            <h4>Transformative Outcome:</h4>
-            <p>Access fully certified, bankable commodity offers with secure payment terms (SBLC/LC).</p>
+            <h4>Solution:</h4>
+            <p>Access fully certified, bankable commodity offers with secure payment terms (SBLC/LC). We connect you to trusted suppliers and facilitate compliant transactions.</p>
           </div>
           <div class="revenue-model">
-            <h4>Revenue Generation:</h4>
+            <h4>Revenue Model:</h4>
             <p>We earn commission only on closed deals. No upfront fees. No risk.</p>
           </div>
           <a href="https://drive.google.com/drive/folders/1XvC4SM_ze-FY5KtrYEp5AXOF2d-VDon2?usp=sharing" target="_blank" class="btn">Download Portfolio (PDF)</a>
@@ -618,7 +629,7 @@
     <div class="accordion-item">
       <button class="accordion-button">
         <div class="accordion-header">
-          <span>🤖 Artificial Intelligence: Karabo & Bohlale AI</span>
+          <span>🤖 AI: Karabo & Bohlale AI Systems</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="accordion-icon">
             <polyline points="7 13 12 18 17 13"></polyline>
             <polyline points="7 6 12 11 17 6"></polyline>
@@ -631,20 +642,20 @@
             <div class="offer-icon">🏢</div>
             <div>
               <h3>Karabo AI: Sales Operating System</h3>
-              <div class="offer-subtitle">AI sales agent. Pay per appointment or 35 % revenue share.</div>
+              <div class="offer-subtitle">AI sales agent. Pay per appointment or 35% revenue share.</div>
             </div>
           </div>
           <div class="pain-points">
-            <h4>Pain Points:</h4>
+            <h4>Challenges:</h4>
             <p>High sales team costs, missed leads, poor conversion, 9-to-5 limitations.</p>
           </div>
           <div class="outcomes">
-            <h4>Transformative Outcome:</h4>
-            <p>24/7 AI-powered sales agent that books appointments, nurtures leads, and reactivates old databases.</p>
+            <h4>Solution:</h4>
+            <p>24/7 AI-powered sales agent that books appointments, nurtures leads, and reactivates old databases. Fully automated, measurable, and scalable.</p>
           </div>
           <div class="revenue-model">
-            <h4>Revenue Generation:</h4>
-            <p>You pay only for qualified appointments or closed deals. We guarantee ROI in 90 days.</p>
+            <h4>Revenue Model:</h4>
+            <p>You pay only for qualified appointments or closed deals. We guarantee ROI within 90 days.</p>
           </div>
           <a href="https://forms.gle/ZucpPSGH32dZ4oDt5" target="_blank" class="btn">Start Risk-Free Trial</a>
 
@@ -654,20 +665,20 @@
             <div class="offer-icon">🎓</div>
             <div>
               <h3>Bohlale AI: Training & Skills Development System</h3>
-              <div class="offer-subtitle">AI instructor. Save 80 % on training costs.</div>
+              <div class="offer-subtitle">AI instructor. Save 80% on training costs.</div>
             </div>
           </div>
           <div class="pain-points">
-            <h4>Pain Points:</h4>
+            <h4>Challenges:</h4>
             <p>High training costs, inconsistent outcomes, scheduling conflicts, scalability issues.</p>
           </div>
           <div class="outcomes">
-            <h4>Transformative Outcome:</h4>
-            <p>24/7 AI trainer via chat, voice, and video. Custom courses. Measurable upskilling.</p>
+            <h4>Solution:</h4>
+            <p>24/7 AI trainer via chat, voice, and video. Custom courses, real-time feedback, and measurable upskilling — all at 80% lower cost.</p>
           </div>
           <div class="revenue-model">
-            <h4>Revenue Generation:</h4>
-            <p>You pay per certified learner or via licensing fee. We front the development.</p>
+            <h4>Revenue Model:</h4>
+            <p>You pay per certified learner or via licensing. We cover all development costs upfront.</p>
           </div>
           <a href="https://app.colossyan.com/share/zwc3q15j" target="_blank" class="btn">Watch Sample Training Hub</a>
         </div>
@@ -676,237 +687,4 @@
 
     <!-- ECOMMERCE -->
     <div class="accordion-item">
-      <button class="accordion-button">
-        <div class="accordion-header">
-          <span>🛍️ E-commerce: ISONEM & Sedimo</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="accordion-icon">
-            <polyline points="7 13 12 18 17 13"></polyline>
-            <polyline points="7 6 12 11 17 6"></polyline>
-          </svg>
-        </div>
-      </button>
-      <div class="accordion-content">
-        <div class="accordion-content-inner">
-          <div class="offer-header">
-            <div class="offer-icon">🌱</div>
-            <div>
-              <h3>ISONEM South Africa</h3>
-              <div class="offer-subtitle">Climate-resilient infrastructure for water, soil & energy challenges.</div>
-            </div>
-          </div>
-          <p><strong>South Africa faces severe water scarcity, crumbling infrastructure, and escalating energy costs.</strong> Annual water losses amount to R9.9 billion, while infrastructure repair demands exceed R90 billion yearly.</p>
-          <ul style="margin:1.25rem 0; padding-left:1.5rem; line-height:1.7;">
-            <li><strong>Soil Water Trap:</strong> Absorbs water up to 600× its weight. Reduces irrigation use by 40 %.</li>
-            <li><strong>SS Soil Hardener:</strong> Non-toxic soil stabilizer. Cuts road maintenance by 30 %.</li>
-            <li><strong>Thermal Paint:</strong> Reflects heat. Lowers cooling costs by 30 %.</li>
-          </ul>
-          <p><strong>Target Industries:</strong> Agriculture, Mining, Construction, Municipalities, Commercial Real Estate.</p>
-          <p><strong>ROI:</strong> 12–18 months. ESG-aligned. Scalable nationwide.</p>
-          <a href="https://gamma.app/docs/Strategic-Investment-Opportunity-ISONEM-Product-Suite-in-South-Af-fmno51e3p62gjig" target="_blank" class="btn">View ISONEM Product Suite</a>
-
-          <div class="separator"></div>
-
-          <div class="offer-header">
-            <div class="offer-icon">🎨</div>
-            <div>
-              <h3>Sedimo</h3>
-              <div class="offer-subtitle">Contemporary Digital Arts & Crafts Shop</div>
-            </div>
-          </div>
-          <div class="pain-points">
-            <h4>Pain Points:</h4>
-            <p>Underrepresentation of African artists, fragmented digital marketplaces, lack of trust in authenticity.</p>
-          </div>
-          <div class="outcomes">
-            <h4>Transformative Outcome:</h4>
-            <p>A curated digital platform showcasing contemporary African art and crafts with verified provenance.</p>
-          </div>
-          <div class="revenue-model">
-            <h4>Revenue Generation:</h4>
-            <p>We earn commission on every sale. You get global exposure. We grow together.</p>
-          </div>
-          <a href="#booking" class="btn">View Products & Apply as Artist</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- BLOCKCHAIN -->
-    <div class="accordion-item">
-      <button class="accordion-button">
-        <div class="accordion-header">
-          <span>🔗 Blockchain: Crypto Smart Contract Generator (R&D)</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="accordion-icon">
-            <polyline points="7 13 12 18 17 13"></polyline>
-            <polyline points="7 6 12 11 17 6"></polyline>
-          </svg>
-        </div>
-      </button>
-      <div class="accordion-content">
-        <div class="accordion-content-inner">
-          <div class="offer-header">
-            <div class="offer-icon">🔐</div>
-            <div>
-              <h3>Crypto Smart Contract Generator (ISO 20222 Standard)</h3>
-              <div class="offer-subtitle">In R&D. Coming soon for secure, compliant DeFi transactions.</div>
-            </div>
-          </div>
-          <div class="pain-points">
-            <h4>Pain Points:</h4>
-            <p>Smart contract vulnerabilities, lack of regulatory compliance, high audit costs.</p>
-          </div>
-          <div class="outcomes">
-            <h4>Transformative Outcome:</h4>
-            <p>Generate audited, ISO 20222-compliant smart contracts for payments, escrow, and settlements.</p>
-          </div>
-          <div class="revenue-model">
-            <h4>Revenue Generation:</h4>
-            <p>Pay-per-use model upon launch. No upfront cost. Enterprise-grade security.</p>
-          </div>
-          <a href="#booking" class="btn">Get Early Access (Coming Soon)</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="cal-booking" id="booking">
-    <h2 class="section-title">Book a Risk-Free Discovery Call</h2>
-    <p>In this 30-minute call, we will:<br>
-      <strong>• Audit your operations</strong><br>
-      <strong>• Generate a recommendation report</strong><br>
-      <strong>• Discuss implementation of:</strong><br>
-      Sales Development Center • Training & Skills Development<br>
-      Commodity Procurement • Solar Solutions
-    </p>
-    <div id="my-cal-inline-south-africa"></div>
-  </section>
-
-  <footer id="contact">
-    <div class="footer-section">
-      <h3>Mariba<span style="color:var(--accent)">Media</span></h3>
-      <p>Performance marketing & product development. Pay only after we generate real revenue.</p>
-      <div class="social-links">
-        <a href="https://www.facebook.com/profile.php?id=61576915266105" class="social-icon" aria-label="Facebook">f</a>
-        <a href="https://youtube.com/@TV-Mariba" target="_blank" class="social-icon" aria-label="YouTube">▶</a>
-      </div>
-    </div>
-    <div class="footer-section">
-      <h3>Quick Links</h3>
-      <ul style="list-style:none; padding:0; gap:0.75rem; display:flex; flex-direction:column;">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#offers">Performance Offers</a></li>
-        <li><a href="#booking">Book a Call</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-section">
-      <h3>Contact Us</h3>
-      <ul style="list-style:none; padding:0; gap:0.75rem; display:flex; flex-direction:column; color:var(--text-muted);">
-        <li>Email: maribamedia@gmail.com</li>
-        <li>Phone: +27 (0) 76 647 3499</li>
-        <li>Location: Bronkhorstspruit, South Africa</li>
-      </ul>
-    </div>
-    <div class="copyright">
-      &copy; <span id="current-year"></span> Mariba Media. Performance marketing & product development. Pay only after results.
-    </div>
-  </footer>
-
-  <div class="whatsapp-widget">
-    <a href="https://wa.me/27766473499" target="_blank" rel="noopener">
-      <button class="whatsapp-button" aria-label="Chat on WhatsApp">
-        <svg class="whatsapp-svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      </button>
-    </a>
-  </div>
-
-  <script>
-    // Accordion Logic
-    document.addEventListener("DOMContentLoaded", function () {
-      const buttons = document.querySelectorAll('.accordion-button');
-      buttons.forEach(button => {
-        button.addEventListener('click', function () {
-          const item = this.closest('.accordion-item');
-          const content = item.querySelector('.accordion-content');
-          const icon = item.querySelector('.accordion-icon');
-
-          if (item.classList.contains('active')) {
-            item.classList.remove('active');
-            content.style.maxHeight = null;
-            if (icon) icon.style.transform = 'rotate(0deg)';
-          } else {
-            document.querySelectorAll('.accordion-item').forEach(i => {
-              i.classList.remove('active');
-              i.querySelector('.accordion-content').style.maxHeight = null;
-              const ic = i.querySelector('.accordion-icon');
-              if (ic) ic.style.transform = 'rotate(0deg)';
-            });
-            item.classList.add('active');
-            content.style.maxHeight = content.scrollHeight + "px";
-            if (icon) icon.style.transform = 'rotate(180deg)';
-          }
-        });
-      });
-
-      // Cal.com Embed
-      const calDiv = document.getElementById('my-cal-inline-south-africa');
-      if (calDiv) {
-        (function (C, A, L) {
-          let p = function (a, ar) { a.q.push(ar); };
-          let d = C.document;
-          C.Cal = C.Cal || function () {
-            let cal = C.Cal;
-            let ar = arguments;
-            if (!cal.loaded) {
-              cal.ns = {};
-              cal.q = cal.q || [];
-              let script = d.createElement("script");
-              script.async = 1;
-              script.src = A;
-              d.head.appendChild(script);
-              cal.loaded = true;
-            }
-            if (ar[0] === L) {
-              const api = function () { p(api, arguments); };
-              const namespace = ar[1];
-              api.q = api.q || [];
-              if (typeof namespace === "string") {
-                cal.ns[namespace] = cal.ns[namespace] || api;
-                p(cal.ns[namespace], ar);
-                p(cal, ["initNamespace", namespace]);
-              } else {
-                p(cal, ar);
-              }
-              return;
-            }
-            p(cal, ar);
-          };
-        })(window, "https://app.cal.com/embed/embed.js", "init");
-
-        Cal("init", "south-africa", { origin: "https://app.cal.com" });
-        Cal.ns["south-africa"]("inline", {
-          elementOrSelector: "#my-cal-inline-south-africa",
-          calLink: "partner-discovery/south-africa"
-        });
-        Cal.ns["south-africa"]("ui", { layout: "month_view" });
-      }
-
-      // Update Year
-      const yearEl = document.getElementById("current-year");
-      if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-      // Track CTA Clicks
-      document.querySelectorAll('.btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          if (typeof gtag === 'function') {
-            gtag('event', 'click', {
-              event_category: 'CTA',
-              event_label: btn.textContent.trim()
-            });
-          }
-        });
-      });
-    });
-  </script>
-</body>
-</html>
+      <button class="accordion
