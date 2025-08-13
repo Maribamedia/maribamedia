@@ -19,115 +19,260 @@
   </script>
 
   <style>
+    /* ——————————————————————————————————————
+       Modern, Animated, Professional Re-skin
+       —————————————————————————————————————— */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap');
+
     :root {
-      --rich-black: #001011;
-      --midnight-green: #093a3e;
-      --verdigris: #3aafb9;
-      --electric-blue: #64e9ee;
-      --light-sky-blue: #97c8eb;
+      /* Palette – subtle, high-contrast, cool-toned */
+      --bg: #05070f;
+      --bg-soft: #0d1117;
+      --bg-softer: #161b22;
+      --accent: #00d4ff;
+      --accent-glow: 0 0 24px rgba(0,212,255,.45);
       --text: #ffffff;
-      --border: #2a4a4e;
-      --subtle: #0a1f23;
-      --bg: var(--rich-black);
-      --dur: 0.3s;
-      --max-width: 1440px;
-      --gutter: 20px;
+      --text-muted: #8b949e;
+      --border: #21262d;
+
+      /* Motion */
+      --dur: .5s;
+      --ease: cubic-bezier(.4,0,.2,1);
     }
 
+    /* —— Global —— */
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth;font-family:'Inter', sans-serif}
+    html{scroll-behavior:smooth;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
     body{background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
-    h1,h2,h3,h4{font-weight:600;letter-spacing:-0.01em;line-height:1.2}
-    a{color:var(--verdigris);text-decoration:none;transition:color var(--dur)}
-    a:hover{color:var(--electric-blue)}
-    ul{list-style:none}
 
-    /* BUTTON STYLE */
-    .btn{padding:1rem 2.25rem;border:1px solid var(--verdigris);background:var(--verdigris);color:var(--rich-black);border-radius:6px;font-size:1rem;font-weight:500;transition:all var(--dur);display:inline-block}
-    .btn:hover{background:transparent;color:var(--verdigris);box-shadow:0 0 0 2px var(--verdigris), 0 0 15px rgba(100, 233, 238, 0.3)}
-    .btn::after{content:'→';margin-left:0.5rem;opacity:0;transition:transform var(--dur)}
-    .btn:hover::after{opacity:1;transform:translateX(3px)}
+    /* —— Typography —— */
+    h1,h2,h3,h4{font-weight:700;letter-spacing:-.02em;line-height:1.15}
+    a{color:var(--accent);text-decoration:none}
 
-    /* HEADER */
-    header{position:sticky;top:0;left:0;right:0;z-index:999;backdrop-filter:blur(12px);background:rgba(0,16,17,0.9);border-bottom:1px solid var(--midnight-green);padding:1rem var(--gutter);display:flex;align-items:center;justify-content:space-between}
-    .logo{font-weight:600;font-size:1.3rem;letter-spacing:-0.02em}
-    .logo span{color:var(--verdigris);font-weight:500}
+    /* —— Animated Button —— */
+    .btn{
+      position:relative;
+      padding:1rem 2.25rem;
+      border:none;
+      background:linear-gradient(135deg,var(--accent),#0099cc);
+      color:var(--bg);
+      border-radius:8px;
+      font-size:1rem;
+      font-weight:600;
+      cursor:pointer;
+      overflow:hidden;
+      transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease);
+      display:inline-block;
+    }
+    .btn::after{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:#fff;
+      opacity:0;
+      transition:opacity var(--dur);
+    }
+    .btn:hover{
+      transform:translateY(-2px);
+      box-shadow:var(--accent-glow);
+    }
+    .btn:hover::after{opacity:.15}
+
+    /* —— Sticky Header —— */
+    header{
+      position:sticky;
+      top:0;
+      z-index:999;
+      backdrop-filter:blur(18px) saturate(180%);
+      background:rgba(5,7,15,.7);
+      border-bottom:1px solid var(--border);
+      padding:1rem 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      animation:slideDown .8s var(--ease) forwards;
+    }
+    @keyframes slideDown{from{transform:translateY(-100%)}}
+    .logo{font-weight:700;font-size:1.4rem}
+    .logo span{color:var(--accent)}
     nav{display:flex;gap:1.5rem}
-    nav a{font-size:.9rem;text-transform:uppercase;letter-spacing:.05em;position:relative}
-    nav a::after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:1px;background:var(--verdigris);transition:width var(--dur)}
+    nav a{
+      font-size:.875rem;
+      font-weight:500;
+      text-transform:uppercase;
+      letter-spacing:.05em;
+      position:relative;
+    }
+    nav a::after{
+      content:'';
+      position:absolute;
+      bottom:-4px;left:0;
+      width:0;height:2px;
+      background:var(--accent);
+      transition:width var(--dur) var(--ease);
+    }
     nav a:hover::after{width:100%}
-    .menu-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+    .menu-toggle{display:none}
 
-    /* HERO */
-    .hero{padding:6rem 20px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:90vh;gap:1.5rem}
-    .hero h1{font-size:clamp(2.5rem,6vw,5.5rem);max-width:14ch;margin:0 0 1rem;clip-path:inset(0 100% 0 0);animation:reveal 1s ease-out forwards}
-    .hero p{font-size:1.125rem;max-width:50ch;margin:0 auto 1.5rem;opacity:0;animation:fadeUp 1s ease-out .4s forwards}
-    .hero-cta{margin:0 auto}
+    /* —— Hero —— */
+    .hero{
+      padding:6rem 20px;
+      text-align:center;
+      min-height:90vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:1.5rem;
+      background:radial-gradient(circle at 50% 50%,#0a192f 0%,var(--bg) 80%);
+    }
+    .hero h1{
+      font-size:clamp(2.5rem,6vw,5.5rem);
+      max-width:14ch;
+      margin:0 auto 1rem;
+      animation:fadeInUp 1.2s var(--ease) forwards;
+    }
+    .hero p{
+      font-size:1.125rem;
+      max-width:50ch;
+      margin:0 auto 1.5rem;
+      color:var(--text-muted);
+      animation:fadeInUp 1.2s var(--ease) .2s backwards;
+    }
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(40px)}}
 
-    /* SECTIONS */
-    section{padding:6rem 20px;max-width:var(--max-width);margin:0 auto}
-    .section-title{font-size:2.5rem;text-align:center;margin-bottom:3rem;position:relative;color:var(--verdigris)}
-    .section-title::after{content:'';position:absolute;left:50%;bottom:-1rem;transform:translateX(-50%);width:60px;height:3px;background:var(--electric-blue);border-radius:2px}
+    /* —— Section —— */
+    section{padding:6rem 20px;max-width:1440px;margin:0 auto}
+    .section-title{
+      font-size:clamp(2rem,5vw,3rem);
+      text-align:center;
+      margin-bottom:3rem;
+      color:var(--accent);
+    }
+    .section-title::after{
+      content:'';
+      display:block;
+      width:80px;height:3px;
+      margin:.75rem auto 0;
+      background:var(--accent);
+      border-radius:2px;
+      animation:glow 2s infinite alternate;
+    }
+    @keyframes glow{from{box-shadow:0 0 4px var(--accent)}to{box-shadow:0 0 16px var(--accent),0 0 24px var(--accent)}}
 
+    /* —— About —— */
     .about-content{text-align:center;max-width:800px;margin:0 auto}
-    .about-content>p{font-size:1.05rem;margin-bottom:2rem;color:#ccc}
-    .mission-vision{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:2rem;text-align:left}
-    .mission,.vision{background:var(--subtle);padding:1.5rem;border:1px solid var(--border);border-radius:12px;transition:transform var(--dur),box-shadow var(--dur)}
-    .mission:hover,.vision:hover{transform:translateY(-4px);box-shadow:0 6px 16px rgba(58,175,185,0.1)}
-    .mission h3,.vision h3{color:var(--verdigris);margin-bottom:1rem;font-size:1.2rem}
+    .mission-vision{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:1.5rem;
+      margin-top:2rem;
+    }
+    .mission,.vision{
+      background:var(--bg-soft);
+      padding:2rem;
+      border:1px solid var(--border);
+      border-radius:12px;
+      transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease);
+    }
+    .mission:hover,.vision:hover{
+      transform:translateY(-6px);
+      box-shadow:0 12px 28px rgba(0,212,255,.15);
+    }
 
-    /* MODERN ACCORDION */
-    .offers-accordion{max-width:var(--max-width);margin:0 auto}
-    .accordion-item{margin-bottom:1rem;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--subtle);transition:box-shadow var(--dur)}
-    .accordion-item:hover{box-shadow:0 6px 16px rgba(58,175,185,0.1)}
-    .accordion-header{padding:1rem 1.25rem;font-size:1.1rem;font-weight:500;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:var(--text);background:var(--midnight-green);transition:background var(--dur), color var(--dur)}
-    .accordion-header:hover{color:var(--electric-blue)}
-    .accordion-button{background:none;border:none;font:inherit;color:inherit;cursor:pointer;width:100%;text-align:left}
-    .accordion-content{padding:0;max-height:0;overflow:hidden;transition:max-height var(--dur) cubic-bezier(0, 0, 0.2, 1);background:var(--bg)}
-    .accordion-content-inner{padding:1.5rem;color:#ccc;font-size:0.95rem}
-    .accordion-icon{transition:transform var(--dur)}
-    .accordion-item.active .accordion-header{color:var(--electric-blue);background:rgba(9,58,62,0.7)}
+    /* —— Accordion —— */
+    .offers-accordion{max-width:1440px;margin:0 auto}
+    .accordion-item{
+      margin-bottom:1rem;
+      border:1px solid var(--border);
+      border-radius:12px;
+      overflow:hidden;
+      background:var(--bg-soft);
+      transition:box-shadow var(--dur) var(--ease);
+    }
+    .accordion-item:hover{box-shadow:0 8px 32px rgba(0,212,255,.1)}
+    .accordion-header{
+      padding:1.25rem 1.5rem;
+      font-size:1.1rem;
+      font-weight:600;
+      cursor:pointer;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:var(--bg-softer);
+      transition:background var(--dur);
+    }
+    .accordion-item.active .accordion-header{background:var(--accent);color:var(--bg)}
+    .accordion-icon{transition:transform var(--dur) var(--ease)}
     .accordion-item.active .accordion-icon{transform:rotate(180deg)}
+    .accordion-content{
+      max-height:0;
+      overflow:hidden;
+      transition:max-height var(--dur) var(--ease);
+      background:var(--bg);
+    }
+    .accordion-content-inner{padding:1.5rem;color:var(--text-muted);font-size:.95rem;line-height:1.7}
 
-    .offer-icon{font-size:1.6rem;margin-right:0.75rem}
-    .offer-header{display:flex;align-items:center;margin-bottom:1rem}
-    .offer-subtitle{font-size:0.95rem;color:var(--light-sky-blue);font-weight:500}
-    .pain-points, .outcomes, .revenue-model{margin:1rem 0}
-    .pain-points h4, .outcomes h4, .revenue-model h4{color:var(--verdigris);margin-bottom:0.75rem;font-size:1.125rem}
-    .separator{border:0;border-top:1px solid var(--border);margin:1.5rem 0}
+    /* —— Cal embed —— */
+    .cal-booking{background:var(--bg-soft);border-radius:12px;overflow:hidden;padding:2rem 0}
+    #my-cal-inline-south-africa{
+      width:100%;
+      height:600px;
+      border:none;
+      border-radius:12px;
+      box-shadow:0 4px 24px rgba(0,212,255,.15);
+    }
 
-    /* CAL BOOKING */
-    .cal-booking{background:var(--subtle);border-radius:12px;overflow:hidden;padding:2rem 0}
-    #my-cal-inline-south-africa{width:100%;height:600px;border:none;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.2)}
-
-    /* FOOTER */
-    footer{padding:3rem 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;border-top:1px solid var(--border);font-size:.9rem}
-    .footer-section h3{font-size:1.1rem;margin-bottom:1.25rem;color:var(--verdigris)}
-    .footer-links li{margin-bottom:.75rem}
-    .footer-links a{color:var(--text)}
-    .footer-links a:hover{color:var(--verdigris)}
+    /* —— Footer —— */
+    footer{
+      padding:3rem 20px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:2rem;
+      border-top:1px solid var(--border);
+      font-size:.9rem;
+    }
+    footer h3{color:var(--accent)}
     .social-links{display:flex;gap:1.25rem;margin-top:1rem}
-    .social-icon{font-size:1.25rem;color:var(--text);transition:color var(--dur), transform var(--dur)}
-    .social-icon:hover{color:var(--verdigris);transform:scale(1.1)}
-    .copyright{grid-column:1/-1;text-align:center;margin-top:2rem;font-size:.85rem;color:var(--light-sky-blue)}
+    .social-icon{
+      width:36px;height:36px;
+      display:grid;place-items:center;
+      border-radius:50%;
+      background:var(--bg-soft);
+      color:var(--text-muted);
+      transition:background var(--dur),transform var(--dur);
+    }
+    .social-icon:hover{background:var(--accent);color:var(--bg);transform:scale(1.15)}
+    .copyright{grid-column:1/-1;text-align:center;margin-top:2rem;color:var(--text-muted)}
 
-    /* WHATSAPP */
-    .whatsapp-widget{position:fixed;bottom:1.5rem;right:1.5rem;z-index:1000}
-    .whatsapp-button{width:56px;height:56px;background:#25D366;border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform var(--dur),box-shadow var(--dur);box-shadow:0 4px 12px rgba(0,0,0,.3)}
-    .whatsapp-button:hover{transform:scale(1.1);box-shadow:0 6px 20px rgba(0,0,0,.4)}
+    /* —— WhatsApp —— */
+    .whatsapp-widget{
+      position:fixed;
+      bottom:1.5rem;right:1.5rem;
+      z-index:1000;
+    }
+    .whatsapp-button{
+      width:60px;height:60px;
+      border:none;
+      border-radius:50%;
+      background:#25D366;
+      display:grid;place-items:center;
+      cursor:pointer;
+      transition:transform var(--dur),box-shadow var(--dur);
+      box-shadow:0 4px 16px rgba(37,211,102,.4);
+    }
+    .whatsapp-button:hover{
+      transform:scale(1.1);
+      box-shadow:0 8px 24px rgba(37,211,102,.6);
+    }
     .whatsapp-svg{width:28px;height:28px;fill:#fff}
 
-    /* ANIMATIONS */
-    @keyframes reveal{to{clip-path:inset(0 0 0 0)}}
-    @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
-
+    /* —— Responsive —— */
     @media(min-width:768px){
       :root{--gutter:80px}
       .hero{min-height:100vh;padding:8rem 0}
       .section-title{font-size:3rem;margin-bottom:4rem}
       .hero p{font-size:1.25rem}
-      .accordion-header{font-size:1.2rem;padding:1.25rem 1.5rem}
-      .accordion-content-inner{padding:1.75rem}
+      .accordion-header{font-size:1.2rem;padding:1.5rem}
       #my-cal-inline-south-africa{height:760px}
     }
   </style>
@@ -446,7 +591,7 @@
 
   <footer id="contact">
     <div class="footer-section">
-      <h3>Mariba<span style="color:var(--verdigris)">Media</span></h3>
+      <h3>Mariba<span style="color:var(--accent)">Media</span></h3>
       <p>Performance marketing & product development. Pay only after we generate real revenue.</p>
       <div class="social-links">
         <a href="https://www.facebook.com/profile.php?id=61576915266105" class="social-icon" aria-label="Facebook">f</a>
