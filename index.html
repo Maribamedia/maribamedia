@@ -43,10 +43,9 @@
       --text: #ffffff;
       --text-muted: #a0aec0;
       --border: #21262d;
-      --gold: #fbbf24;
 
       /* Motion */
-      --dur: 0.45s;
+      --dur: 0.6s;
       --ease: cubic-bezier(0.4, 0, 0.2, 1);
     }
 
@@ -67,6 +66,7 @@
       font-size: var(--step-0);
       font-family: 'Lato', sans-serif;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
     /* Typography */
@@ -79,10 +79,11 @@
 
     h1 {
       font-size: var(--step-7);
-      max-width: 22ch;
+      max-width: 24ch;
       margin: 0 auto 1rem;
       color: #ffffff;
       font-weight: 900;
+      text-align: center;
     }
 
     h2 {
@@ -227,11 +228,28 @@
       text-align: center;
       background: radial-gradient(circle at 50% 50%, #0a192f 0%, var(--bg) 80%);
       gap: 1.75rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .hero p {
       max-width: 700px;
       font-size: var(--step-0);
+      opacity: 0;
+      animation: fadeInUp 1s ease 0.3s forwards;
+    }
+
+    .hero .btn {
+      opacity: 0;
+      animation: fadeInUp 1s ease 0.6s forwards;
     }
 
     /* Sections */
@@ -239,8 +257,14 @@
       padding: clamp(5rem, 12vh, 8rem) 20px;
       max-width: 1440px;
       margin: 0 auto;
-      position: relative;
-      z-index: 1;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s, transform 0.8s;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .section-title {
@@ -266,34 +290,35 @@
       to { box-shadow: 0 0 16px var(--accent), 0 0 24px var(--accent); }
     }
 
-    /* About */
-    .about-content {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .mission-vision {
+    /* Value Drivers */
+    .value-drivers {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
       margin-top: 3rem;
     }
 
-    .mission, .vision {
+    .value-item {
       background: var(--bg-soft);
-      padding: 3rem;
+      padding: 2.5rem;
       border: 1px solid var(--border);
       border-radius: 1rem;
       transition: transform var(--dur), box-shadow var(--dur);
+      opacity: 0;
+      transform: translateY(20px);
     }
 
-    .mission:hover, .vision:hover {
+    .value-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .value-item:hover {
       transform: translateY(-8px);
       box-shadow: 0 16px 32px rgba(0, 212, 255, 0.18);
     }
 
-    .metric {
+    .value-number {
       font-size: var(--step-4);
       font-weight: 800;
       color: var(--accent);
@@ -308,6 +333,13 @@
       overflow: hidden;
       background: var(--bg-soft);
       transition: box-shadow var(--dur);
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .accordion-item.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .accordion-item:hover {
@@ -422,6 +454,13 @@
       border-radius: 1rem;
       overflow: hidden;
       padding: 3rem 0;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .cal-booking.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .cal-booking p {
@@ -446,6 +485,13 @@
       gap: 3rem;
       border-top: 1px solid var(--border);
       font-size: var(--step--1);
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    footer.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     footer h3 {
@@ -490,6 +536,12 @@
       bottom: 1.5rem;
       right: 1.5rem;
       z-index: 1000;
+      opacity: 0;
+      animation: fadeIn 1s ease 2s forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
     }
 
     .whatsapp-button {
@@ -561,7 +613,7 @@
     <div class="logo">Mariba<span>Media</span></div>
     <nav>
       <a href="#home">Home</a>
-      <a href="#about">Advisory Model</a>
+      <a href="#value">Value Drivers</a>
       <a href="#offers">Performance Offers</a>
       <a href="#booking">Book Consultation</a>
       <a href="#contact">Contact</a>
@@ -575,27 +627,50 @@
     <a href="https://cal.com/partner-discovery/south-africa" class="btn" target="_blank" rel="noopener">Start Performance Partnership</a>
   </section>
 
-  <section id="about">
-    <div class="about-content">
-      <h2 class="section-title">Our Performance Advisory Model</h2>
-      <p>We don’t sell services. We act as a strategic capital partner, deploying AI and solar infrastructure to drive enterprise transformation — with zero upfront cost. Our income is 100% tied to your success.</p>
+  <section id="value" class="value-section">
+    <h2 class="section-title">8 Unique Value Drivers</h2>
+    <p style="text-align:center; max-width:800px; margin:0 auto;">We don’t just deliver results — we transform business models. Here’s how we ensure <strong>Enterprise Transformation</strong> with zero risk.</p>
 
-      <div class="mission-vision">
-        <div class="mission">
-          <div class="metric">80% Cost Savings</div>
-          <h3>Radical Efficiency</h3>
-          <p>From AI automation to off-balance-sheet solar, we eliminate operational waste and deliver 80%+ savings in training and energy costs.</p>
-        </div>
-        <div class="vision">
-          <div class="metric">Pay-for-Performance</div>
-          <h3>No Results, No Fee</h3>
-          <p>We only earn when you achieve outcomes: qualified sales, accredited learners, or kWh saved. Your risk is zero.</p>
-        </div>
-        <div class="mission">
-          <div class="metric">3–5x Valuation Uplift</div>
-          <h3>Enterprise Transformation</h3>
-          <p>By embedding scalable AI and sustainable energy, we enhance EBITDA, ESG compliance, and long-term business value.</p>
-        </div>
+    <div class="value-drivers">
+      <div class="value-item">
+        <div class="value-number">01</div>
+        <h3>Pay-for-Performance</h3>
+        <p>No upfront cost. We only earn when you achieve measurable outcomes.</p>
+      </div>
+      <div class="value-item">
+        <div class="value-number">02</div>
+        <h3>80%+ Cost Savings</h3>
+        <p>AI automation and off-balance-sheet solar slash operational costs.</p>
+      </div>
+      <div class="value-item">
+        <div class="value-number">03</div>
+        <h3>Revenue Uplift Guaranteed</h3>
+        <p>We guarantee ROI within 90 days on AI sales and training.</p>
+      </div>
+      <div class="value-item">
+        <div class="value-number">04</div>
+        <h3>Zero Operational Burden</h3>
+        <p>We fund, deploy, and manage everything. You approve. We scale.</p>
+      </div>
+      <div class="value-item">
+        <div class="value-number">05</div>
+        <h3>Scalable AI Infrastructure</h3>
+        <p>Automate training, sales, and support at enterprise scale.</p>
+      </div>
+      <div class="value-item">
+        <div class="value-number">06</div>
+        <h3>Carbon Monetization</h3>
+        <p>Generate revenue from carbon credits on solar installations.</p>
+      </div>
+      <div class="value-item">
+        <div class="value-number">07</div>
+        <h3>ESG-Compliant Growth</h3>
+        <p>Enhance sustainability and investor appeal.</p>
+      </div>
+      <div class="value-item">
+        <div class="value-number">08</div>
+        <h3>Valuation Multiplier</h3>
+        <p>Embed scalable systems that increase EBITDA and long-term value.</p>
       </div>
     </div>
   </section>
@@ -751,7 +826,7 @@
           <div class="partners">
             <p><strong>Installation & Funding Partner:</strong></p>
             <div class="partner-links">
-              <a href="https://urbanholdingssolar.com" target="_blank" rel="noopener">Urban Holdings Solar</a>
+              <a href="https://urbanholdingssolar.co.za" target="_blank" rel="noopener">Urban Holdings Solar</a>
             </div>
           </div>
         </div>
@@ -783,7 +858,7 @@
       <h3>Quick Links</h3>
       <ul style="list-style:none; padding:0; gap:0.75rem; display:flex; flex-direction:column;">
         <li><a href="#home">Home</a></li>
-        <li><a href="#about">Advisory Model</a></li>
+        <li><a href="#value">Value Drivers</a></li>
         <li><a href="#offers">Performance Offers</a></li>
         <li><a href="#booking">Book Consultation</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -812,6 +887,23 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
+      // Animate sections on scroll
+      const observerOptions = { threshold: 0.1 };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('section, .value-item, .accordion-item').forEach(el => {
+        observer.observe(el);
+      });
+
+      // Accordion
       const buttons = document.querySelectorAll('.accordion-button');
       buttons.forEach(button => {
         button.addEventListener('click', function () {
@@ -837,6 +929,7 @@
         });
       });
 
+      // Cal.com
       const calDiv = document.getElementById('my-cal-inline-south-africa');
       if (calDiv) {
         (function (C, A, L) {
@@ -879,9 +972,11 @@
         Cal.ns["south-africa"]("ui", { layout: "month_view" });
       }
 
+      // Year
       const yearEl = document.getElementById("current-year");
       if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+      // GA tracking
       document.querySelectorAll('.btn').forEach(btn => {
         btn.addEventListener('click', () => {
           if (typeof gtag === 'function') {
