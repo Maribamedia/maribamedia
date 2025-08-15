@@ -290,44 +290,6 @@
       to { box-shadow: 0 0 16px var(--accent), 0 0 24px var(--accent); }
     }
 
-    /* Client Logos */
-    .clients {
-      text-align: center;
-      margin: 2rem 0 4rem;
-    }
-
-    .clients p {
-      margin-bottom: 2rem;
-      color: var(--text-muted);
-    }
-
-    .logo-grid {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 4rem;
-      opacity: 0;
-      animation: fadeIn 1s ease 0.8s forwards;
-    }
-
-    .client-logo {
-      filter: grayscale(100%) opacity(0.6);
-      transition: all var(--dur);
-      width: 120px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      color: var(--text-muted);
-    }
-
-    .client-logo:hover {
-      filter: grayscale(0%) opacity(1);
-      transform: scale(1.1);
-    }
-
     /* Value Drivers */
     .value-drivers {
       display: grid;
@@ -672,10 +634,6 @@
       .value-item p {
         font-size: var(--step--1);
       }
-
-      .logo-grid {
-        gap: 2rem;
-      }
     }
   </style>
 </head>
@@ -697,18 +655,6 @@
     <h1>Pay Only For Savings, Revenue and Transformation.</h1>
     <p>Mariba Media is a performance-driven capital partner. We fund and deploy <strong>AI training systems</strong> and <strong>commercial solar infrastructure</strong> to deliver measurable outcomes — with zero upfront cost. You pay only for: <span class="highlight">accreditations, sales, energy savings</span>.</p>
     <a href="https://cal.com/partner-discovery/south-africa" class="btn" target="_blank" rel="noopener">Start Performance Partnership</a>
-  </section>
-
-  <!-- Client Logos -->
-  <section class="clients">
-    <p><strong>Trusted by leading institutions and enterprises across Africa</strong></p>
-    <div class="logo-grid">
-      <div class="client-logo">Client 1</div>
-      <div class="client-logo">Client 2</div>
-      <div class="client-logo">Client 3</div>
-      <div class="client-logo">Client 4</div>
-      <div class="client-logo">Client 5</div>
-    </div>
   </section>
 
   <section id="value" class="value-section">
@@ -992,7 +938,7 @@
         });
       }, observerOptions);
 
-      document.querySelectorAll('section, .value-item, .accordion-item, .clients').forEach(el => {
+      document.querySelectorAll('section, .value-item, .accordion-item').forEach(el => {
         observer.observe(el);
       });
 
