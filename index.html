@@ -106,7 +106,7 @@
     }
 
     h5 {
-      font-size: var(--step-1);
+      font-size: var(--step--1);
       color: var(--accent);
       margin-bottom: 0.5rem;
     }
@@ -288,6 +288,44 @@
     @keyframes glow {
       from { box-shadow: 0 0 4px var(--accent); }
       to { box-shadow: 0 0 16px var(--accent), 0 0 24px var(--accent); }
+    }
+
+    /* Client Logos */
+    .clients {
+      text-align: center;
+      margin: 2rem 0 4rem;
+    }
+
+    .clients p {
+      margin-bottom: 2rem;
+      color: var(--text-muted);
+    }
+
+    .logo-grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 4rem;
+      opacity: 0;
+      animation: fadeIn 1s ease 0.8s forwards;
+    }
+
+    .client-logo {
+      filter: grayscale(100%) opacity(0.6);
+      transition: all var(--dur);
+      width: 120px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: var(--text-muted);
+    }
+
+    .client-logo:hover {
+      filter: grayscale(0%) opacity(1);
+      transform: scale(1.1);
     }
 
     /* Value Drivers */
@@ -568,6 +606,19 @@
       fill: #fff;
     }
 
+    /* Animated Icons */
+    .animated-icon {
+      font-size: 2.5rem;
+      display: inline-block;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
       nav {
@@ -608,6 +659,10 @@
       .value-drivers {
         grid-template-columns: 1fr;
       }
+
+      .logo-grid {
+        gap: 2rem;
+      }
     }
   </style>
 </head>
@@ -629,6 +684,18 @@
     <h1>Pay Only For Savings, Revenue and Transformation.</h1>
     <p>Mariba Media is a performance-driven capital partner. We fund and deploy <strong>AI training systems</strong> and <strong>commercial solar infrastructure</strong> to deliver measurable outcomes — with zero upfront cost. You pay only for: <span class="highlight">accreditations, sales, energy savings</span>.</p>
     <a href="https://cal.com/partner-discovery/south-africa" class="btn" target="_blank" rel="noopener">Start Performance Partnership</a>
+  </section>
+
+  <!-- Client Logos -->
+  <section class="clients">
+    <p><strong>Trusted by leading institutions and enterprises across Africa</strong></p>
+    <div class="logo-grid">
+      <div class="client-logo">Client 1</div>
+      <div class="client-logo">Client 2</div>
+      <div class="client-logo">Client 3</div>
+      <div class="client-logo">Client 4</div>
+      <div class="client-logo">Client 5</div>
+    </div>
   </section>
 
   <section id="value" class="value-section">
@@ -684,7 +751,10 @@
     <div class="accordion-item">
       <button class="accordion-button">
         <div class="accordion-header">
-          <span>🎓 Bohlale AI: Enterprise Training & Skills Development</span>
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <span class="animated-icon">🎓</span>
+            <span>Bohlale AI: Enterprise Training & Skills Development</span>
+          </div>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="accordion-icon">
             <polyline points="7 13 12 18 17 13"></polyline>
             <polyline points="7 6 12 11 17 6"></polyline>
@@ -737,7 +807,10 @@
     <div class="accordion-item">
       <button class="accordion-button">
         <div class="accordion-header">
-          <span>💼 Karabo AI: Sales Intelligence System</span>
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <span class="animated-icon">💼</span>
+            <span>Karabo AI: Sales Intelligence System</span>
+          </div>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="accordion-icon">
             <polyline points="7 13 12 18 17 13"></polyline>
             <polyline points="7 6 12 11 17 6"></polyline>
@@ -790,7 +863,10 @@
     <div class="accordion-item">
       <button class="accordion-button">
         <div class="accordion-header">
-          <span>⚡ Commercial & Industrial Solar Advisory</span>
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <span class="animated-icon">☀️</span>
+            <span>Commercial & Industrial Solar Advisory</span>
+          </div>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="accordion-icon">
             <polyline points="7 13 12 18 17 13"></polyline>
             <polyline points="7 6 12 11 17 6"></polyline>
@@ -903,7 +979,7 @@
         });
       }, observerOptions);
 
-      document.querySelectorAll('section, .value-item, .accordion-item').forEach(el => {
+      document.querySelectorAll('section, .value-item, .accordion-item, .clients').forEach(el => {
         observer.observe(el);
       });
 
