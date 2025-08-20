@@ -541,6 +541,25 @@
       margin-top: 0.5rem;
     }
 
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: var(--step--1);
+      transition: color var(--dur);
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
     .copyright {
       grid-column: 1 / -1;
       text-align: center;
@@ -610,6 +629,11 @@
         padding: 0.9em 2em;
         font-size: var(--step--1);
         min-width: 180px;
+      }
+
+      .btn-container {
+        flex-direction: column;
+        align-items: center;
       }
 
       section {
@@ -747,14 +771,17 @@
               <li><strong>Real-time learner support</strong> via <strong>Interactive Multimodal AI Teachers</strong> trained on your course content</li>
               <li><strong>Automated grading and certification</strong> — no manual intervention</li>
               <li><strong>Scalable delivery</strong> across campuses, franchises, or remote learners</li>
-              <li><strong>Measurable accreditations</strong> — you only pay per certified learner</li>
+              <li><strong>Measurable accreditations</strong> — you only pay per certified learner or an annual licensing fee</li>
             </ul>
           </div>
           <div class="revenue-model">
             <h4>Revenue Model:</h4>
             <p>You pay only for <strong>accredited learners</strong> or via a licensing model. We cover all AI development, integration, and maintenance.</p>
           </div>
-          <a href="https://app.colossyan.com/share/zwc3q15j" target="_blank" class="btn">Watch AI Training Demo</a>
+          <div class="btn-container">
+            <a href="https://app.colossyan.com/share/zwc3q15j" target="_blank" class="btn">Watch AI Training Demo</a>
+            <a href="#" class="btn">Multimodal Instructor Demo</a>
+          </div>
 
           <div class="partners">
             <p><strong>Technology Partners:</strong></p>
@@ -787,7 +814,7 @@
           <div class="offer-header">
             <div class="offer-icon">🏢</div>
             <div>
-              <h3>Karabo AI: Performance Sales for Car Dealerships & E-commerce</h3>
+              <h3>Karabo AI: Performance Sales for Ecommerce</h3>
               <div class="offer-subtitle">Pay per appointment or performance fee. Zero upfront cost.</div>
             </div>
           </div>
@@ -913,8 +940,12 @@
       </ul>
     </div>
     <div class="footer-section">
-      <h3>Contact Us</h3>
-      <ul style="list-style:none; padding:0; gap:0.75rem; display:flex; flex-direction:column; color:var(--text-muted);">
+      <h3>Legal & Compliance</h3>
+      <div class="footer-links">
+        <a href="https://www.freeprivacypolicy.com/live/19ac9e12-2d32-49e8-b611-a103aaec0171" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://popia.co.za/" target="_blank" rel="noopener">POPIA Compliance Policy</a>
+      </div>
+      <ul style="list-style:none; padding:0; gap:0.75rem; display:flex; flex-direction:column; color:var(--text-muted); margin-top:1rem;">
         <li>Email: maribamedia@gmail.com</li>
         <li>Phone: +27 (0) 76 647 3499</li>
         <li>Location: Bronkhorstspruit, South Africa</li>
