@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mariba Media | AI Infrastructure & Systems Development Partner</title>
-  <meta name="description" content="We build and deploy AI training systems for institutions. Pay only per accredited learner. Zero upfront. 100% performance-based.">
+  <title>Mariba Media – AI & Energy Capital Partner | Pay Only for Results</title>
+  <meta name="description" content="Mariba Media funds and deploys AI training systems and commercial solar infrastructure. You pay only for outcomes: accreditations, sales, kWh saved. Zero upfront. 100% performance-based.">
 
   <!-- Open Lato Font -->
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
@@ -79,9 +79,10 @@
 
     h1 {
       font-size: var(--step-7);
-      max-width: 40ch;
+      max-width: 30ch;
       margin: 0 auto 1rem;
       color: #ffffff;
+      font-weight: 900;
       text-align: center;
     }
 
@@ -102,6 +103,12 @@
       font-size: var(--step-4);
       margin-bottom: 0.75rem;
       color: #e0f7ff;
+    }
+
+    h5 {
+      font-size: var(--step--1);
+      color: var(--accent);
+      margin-bottom: 0.5rem;
     }
 
     p {
@@ -206,6 +213,10 @@
       width: 100%;
     }
 
+    .menu-toggle {
+      display: none;
+    }
+
     /* Hero Section */
     .hero {
       padding: 0 20px;
@@ -279,11 +290,137 @@
       to { box-shadow: 0 0 16px var(--accent), 0 0 24px var(--accent); }
     }
 
-    /* Offer Section */
-    .offer-content {
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
+    /* Value Drivers */
+    .value-drivers {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .value-item {
+      background: var(--bg-soft);
+      padding: 2rem;
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      transition: transform var(--dur), box-shadow var(--dur);
+      opacity: 0;
+      transform: translateY(20px);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .value-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .value-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 32px rgba(0, 212, 255, 0.18);
+    }
+
+    .value-number {
+      font-size: var(--step-4);
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .value-item h3 {
+      font-size: var(--step-1);
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+    }
+
+    .value-item p {
+      font-size: var(--step--1);
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Accordion */
+    .accordion-item {
+      margin-bottom: 2rem;
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      overflow: hidden;
+      background: var(--bg-soft);
+      transition: box-shadow var(--dur);
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .accordion-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .accordion-item:hover {
+      box-shadow: 0 10px 36px rgba(0, 212, 255, 0.12);
+    }
+
+    .accordion-header {
+      padding: 1.75rem 2rem;
+      font-size: var(--step-1);
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-softer);
+      transition: background var(--dur), color var(--dur);
+    }
+
+    .accordion-item.active .accordion-header {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    .accordion-icon {
+      transition: transform var(--dur);
+    }
+
+    .accordion-item.active .accordion-icon {
+      transform: rotate(180deg);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height var(--dur);
+    }
+
+    .accordion-content-inner {
+      padding: 2.5rem;
+      color: var(--text-muted);
+      font-size: var(--step-0);
+      line-height: 1.8;
+    }
+
+    .offer-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .offer-icon {
+      font-size: 1.75rem;
+    }
+
+    .offer-subtitle {
+      font-size: var(--step--1);
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .separator {
+      height: 1px;
+      background: var(--border);
+      margin: 2.5rem 0;
     }
 
     .benefits-list {
@@ -296,35 +433,35 @@
       margin-bottom: 0.5rem;
     }
 
-    .offer-features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
+    /* Partners Section */
+    .partners {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
     }
 
-    .feature {
-      background: var(--bg-soft);
-      padding: 2rem;
-      border: 1px solid var(--border);
-      border-radius: 1rem;
-      transition: transform var(--dur), box-shadow var(--dur);
-    }
-
-    .feature:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 16px 32px rgba(0, 212, 255, 0.18);
-    }
-
-    .feature h3 {
-      font-size: var(--step-1);
+    .partners p {
       margin-bottom: 0.75rem;
-      color: var(--accent);
     }
 
-    .feature p {
+    .partner-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .partner-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
       font-size: var(--step--1);
-      color: var(--text-muted);
+      transition: color var(--dur);
+    }
+
+    .partner-links a:hover {
+      color: #fff;
+      text-decoration: underline;
     }
 
     /* Cal Booking */
@@ -472,7 +609,15 @@
     /* Responsive */
     @media (max-width: 768px) {
       nav {
-        gap: 1.5rem;
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+        font-size: var(--step-3);
+        background: none;
+        border: none;
+        color: var(--text);
       }
 
       h1 {
@@ -486,12 +631,38 @@
         min-width: 180px;
       }
 
+      .btn-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
       section {
         padding: 4rem 20px;
       }
 
       .hero {
         padding: 6rem 20px;
+      }
+
+      .accordion-content-inner {
+        padding: 1.5rem;
+      }
+
+      .value-drivers {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .value-item {
+        padding: 1.75rem;
+      }
+
+      .value-item h3 {
+        font-size: var(--step-0);
+      }
+
+      .value-item p {
+        font-size: var(--step--1);
       }
     }
   </style>
@@ -502,84 +673,426 @@
     <div class="logo">Mariba<span>Media</span></div>
     <nav>
       <a href="#home">Home</a>
-      <a href="#offer">Bohlale AI</a>
-      <a href="#proof">Proof</a>
-      <a href="#booking">Book Call</a>
+      <a href="#value">Value Drivers</a>
+      <a href="#offers">Performance Offers</a>
+      <a href="#booking">Book Consultation</a>
+      <a href="#contact">Contact</a>
     </nav>
+    <button class="menu-toggle" aria-label="Open menu">☰</button>
   </header>
 
   <section class="hero" id="home">
-    <h1>AI Infrastructure & Systems Development Partner</h1>
-    <p>Mariba Media builds and deploys enterprise-grade AI training systems. You pay only when learners are accredited — zero upfront cost, 100% performance-based.</p>
-    <a href="#booking" class="btn">Start Performance Partnership</a>
+    <h1>Pay Only For Savings, Revenue and Transformation.</h1>
+    <p>Mariba Media is a performance-driven capital partner. We fund and deploy <strong>AI training systems</strong> and <strong>commercial solar infrastructure</strong> to deliver measurable outcomes — with zero upfront cost. You pay only for: <span class="highlight">accreditations, sales, energy savings</span>.</p>
+    <a href="https://cal.com/partner-discovery/south-africa" class="btn" target="_blank" rel="noopener">Start Performance Partnership</a>
   </section>
 
-  <section id="offer">
-    <h2 class="section-title">🎓 Bohlale AI: Performance-Driven Training Infrastructure</h2>
-    <div class="offer-content">
-      <p><strong>Problem:</strong> High training costs, inconsistent delivery, and low engagement limit scalability and ROI.</p>
-      <p>We build and deploy <strong>Bohlale AI</strong> — a fully automated, multimodal AI teaching system trained on your curriculum. Think of it as your <strong>AI-powered training infrastructure</strong> that never sleeps.</p>
+  <section id="value" class="value-section">
+    <h2 class="section-title">8 Unique Value Drivers</h2>
+    <p style="text-align:center; max-width:800px; margin:0 auto;">We don’t just deliver results — we transform business models. Here’s how we ensure <strong>Enterprise Transformation</strong>.</p>
 
-      <div class="offer-features">
-        <div class="feature">
-          <h3>Automated Teaching</h3>
-          <p>Interactive video, chat, and adaptive learning paths — 24/7 learner support.</p>
-        </div>
-        <div class="feature">
-          <h3>Auto-Grading & Certification</h3>
-          <p>No manual marking. Instant certification. Full audit trail.</p>
-        </div>
-        <div class="feature">
-          <h3>100+ Language Support</h3>
-          <p>Translate, transcribe, caption — deliver training globally.</p>
-        </div>
+    <div class="value-drivers">
+      <div class="value-item">
+        <div class="value-number">01</div>
+        <h3>Pay-for-Performance</h3>
+        <p>No upfront cost. We only earn when you achieve measurable outcomes.</p>
       </div>
-
-      <h3 style="margin: 2.5rem 0 1rem; text-align: center;">📈 Performance Outcomes</h3>
-      <ul class="benefits-list" style="max-width: 800px; margin: 0 auto;">
-        <li><strong>80% reduction</strong> in training delivery costs</li>
-        <li><strong>60% faster</strong> time-to-certification</li>
-        <li><strong>95% learner retention</strong> via interactive AI video</li>
-        <li><strong>75% engagement boost</strong> with gamified learning</li>
-        <li><strong>Zero manual grading</strong> — all automated</li>
-      </ul>
+      <div class="value-item">
+        <div class="value-number">02</div>
+        <h3>80%+ Cost Savings</h3>
+        <p>AI automation and off-balance-sheet solar slash operational costs.</p>
+      </div>
+      <div class="value-item">
+        <div class="value-number">03</div>
+        <h3>Revenue Uplift Guaranteed</h3>
+        <p>We guarantee ROI within 90 days on AI sales and training.</p>
+      </div>
+      <div class="value-item">
+        <div class="value-number">04</div>
+        <h3>Zero Operational Burden</h3>
+        <p>We fund, deploy, and manage everything. You approve. We scale.</p>
+      </div>
+      <div class="value-item">
+        <div class="value-number">05</div>
+        <h3>Scalable AI Infrastructure</h3>
+        <p>Automate training, sales, and support at enterprise scale.</p>
+      </div>
+      <div class="value-item">
+        <div class="value-number">06</div>
+        <h3>Carbon Monetization</h3>
+        <p>Generate revenue from carbon credits on solar installations.</p>
+      </div>
+      <div class="value-item">
+        <div class="value-number">07</div>
+        <h3>ESG-Compliant Growth</h3>
+        <p>Enhance sustainability and investor appeal.</p>
+      </div>
+      <div class="value-item">
+        <div class="value-number">08</div>
+        <h3>Valuation Multiplier</h3>
+        <p>Embed scalable systems that increase EBITDA and long-term value.</p>
+      </div>
     </div>
   </section>
 
-  <section id="proof">
-    <h2 class="section-title">🎯 Flexible Revenue Model</h2>
-    <div class="offer-content">
-      <p>You choose how you pay — based on your growth strategy.</p>
-
-      <div class="offer-features">
-        <div class="feature">
-          <h3>One-Time Setup Fee</h3>
-          <ul class="benefits-list">
-            <li>Licensing the full Bohlale AI platform</li>
-            <li>Includes curriculum training, integration & 12 months of updates</li>
-            <li>Own your AI infrastructure outright</li>
-          </ul>
+  <section class="featured-offers" id="offers">
+    <!-- BOHLALE AI -->
+    <div class="accordion-item">
+      <button class="accordion-button">
+        <div class="accordion-header">
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <span class="animated-icon">🎓</span>
+            <span>Bohlale AI: Enterprise Training & Skills Development</span>
+          </div>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="accordion-icon">
+            <polyline points="7 13 12 18 17 13"></polyline>
+            <polyline points="7 6 12 11 17 6"></polyline>
+          </svg>
         </div>
-        <div class="feature">
-          <h3>Pay-Per-Accreditation</h3>
-          <ul class="benefits-list">
-            <li><strong>Only pay when a learner is accredited</strong></li>
-            <li><strong>R3,500 – R8,000 per learner</strong> (based on programme complexity)</li>
-            <li>No learners accredited = no fees</li>
-          </ul>
+      </button>
+      <div class="accordion-content">
+        <div class="accordion-content-inner">
+          <div class="offer-header">
+            <div class="offer-icon">🎓</div>
+            <div>
+              <h3>Bohlale AI: Performance-Driven Training for Higher Education & Industry</h3>
+              <div class="offer-subtitle">Two models: One-time setup or pay-per-accreditation.</div>
+            </div>
+          </div>
+
+          <!-- New Bohlale AI Content -->
+          <div class="outcomes">
+            <h4>🚨 The Problem</h4>
+            <ul class="benefits-list">
+              <li>📈 Training costs are too high and <strong>scale linearly</strong> with more learners.</li>
+              <li>🛠️ <strong>Inconsistent delivery</strong> lowers quality across campuses and franchises.</li>
+              <li>🗂️ <strong>Administrative overload</strong>: grading, certification, reporting drain resources.</li>
+              <li>😴 <strong>Low learner engagement</strong> → poor pass rates, wasted budgets.</li>
+            </ul>
+          </div>
+
+          <div class="outcomes">
+            <h4>💡 The Solution — Bohlale AI</h4>
+            <p><strong>Bohlale AI</strong> is a <strong>24/7 multimodal AI Teaching & Assessment system</strong> trained on your curriculum.</p>
+            <p>It delivers:</p>
+            <ul class="benefits-list">
+              <li>✅ <strong>Automated interactive training</strong> in video, chat, and adaptive learning paths</li>
+              <li>✅ <strong>Auto-grading & instant certification</strong> — zero manual marking</li>
+              <li>✅ <strong>100+ language support</strong> (translate, transcribe, caption instantly)</li>
+              <li>✅ <strong>Gamified engagement</strong> → up to <strong>95% retention</strong></li>
+              <li>✅ <strong>Scalable delivery</strong> across remote learners, campuses, or global sites</li>
+              <li>✅ <strong>Audit-ready reporting</strong> for compliance and accreditation</li>
+            </ul>
+            <p><strong>👉 One AI-powered teaching workforce that never sleeps.</strong></p>
+          </div>
+
+          <div class="outcomes">
+            <h4>📈 Revenue Model (Choose One)</h4>
+            <ol class="benefits-list" style="list-style: decimal; padding-left: 1.8rem;">
+              <li><strong>One-Time Setup Fee</strong>
+                <ul style="margin-top: 0.5rem;">
+                  <li>Institution licenses the full Bohlale AI platform.</li>
+                  <li>Flat once-off fee covers <strong>curriculum training, integration, and AI deployment</strong>.</li>
+                  <li>Includes 12 months of maintenance + updates.</li>
+                </ul>
+              </li>
+              <li><strong>Pay-Per-Accreditation</strong>
+                <ul style="margin-top: 0.5rem;">
+                  <li><strong>Only pay per certified learner</strong>.</li>
+                  <li><strong>Typical range: R3,500 – R8,000 per learner</strong> (depending on programme complexity).</li>
+                  <li>No learners accredited = no fees.</li>
+                </ul>
+              </li>
+            </ol>
+          </div>
+
+          <div class="outcomes">
+            <h4>🎯 Performance Outcomes</h4>
+            <ul class="benefits-list">
+              <li><strong>80% reduction</strong> in training delivery costs</li>
+              <li><strong>60% faster</strong> time-to-certification</li>
+              <li><strong>95% learner retention</strong> with interactive AI video</li>
+              <li><strong>75% engagement boost</strong> via gamified learning</li>
+              <li><strong>Zero manual grading or admin</strong> — all automated</li>
+            </ul>
+          </div>
+
+          <div class="outcomes">
+            <h4>🛠️ How It Works</h4>
+            <ol class="benefits-list" style="list-style: decimal; padding-left: 1.8rem;">
+              <li>Upload curriculum, rubrics, assessments.</li>
+              <li>Bohlale AI builds interactive lessons + auto-grading engines.</li>
+              <li>Integration with LMS/HR systems in 2–4 weeks.</li>
+              <li>Start delivering — <strong>we track and report accreditations in real time</strong>.</li>
+            </ol>
+          </div>
+
+          <div class="outcomes">
+            <h4>🔒 Why Choose Bohlale AI?</h4>
+            <ul class="benefits-list">
+              <li>✔ <strong>Flexible model</strong> — pay once (own it) or per accreditation (scale with growth).</li>
+              <li>✔ <strong>Risk-free scaling</strong> — no ballooning instructor costs.</li>
+              <li>✔ <strong>Compliance built-in</strong> — audit logs, certificates, QA trails.</li>
+              <li>✔ <strong>Future-proof</strong> — 100+ languages, AI video, global-ready.</li>
+            </ul>
+          </div>
+
+          <div class="revenue-model">
+            <h4>📞 Start your 90-day pilot today.</h4>
+            <p><strong>👉 Choose One-Time Setup Fee or Pay-Per-Accreditation</strong> — and let Bohlale AI deliver scalable, performance-based training.</p>
+          </div>
+
+          <div class="btn-container">
+            <a href="https://app.colossyan.com/share/zwc3q15j" target="_blank" class="btn">Watch AI Training Demo</a>
+            <a href="#" class="btn">Multimodal Instructor Demo</a>
+          </div>
+
+          <div class="partners">
+            <p><strong>Technology Partners:</strong></p>
+            <div class="partner-links">
+              <a href="https://tavus.io" target="_blank" rel="noopener">Tavus.io</a>
+              <a href="https://heygen.com" target="_blank" rel="noopener">HeyGen.com</a>
+              <a href="https://coursebox.ai" target="_blank" rel="noopener">Coursebox.ai</a>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
 
-      <p style="text-align: center; margin-top: 2.5rem;"><strong>👉 You scale. We perform. You pay.</strong></p>
+    <!-- KARABO AI -->
+    <div class="accordion-item">
+      <button class="accordion-button">
+        <div class="accordion-header">
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <span class="animated-icon">💼</span>
+            <span>Karabo AI: Sales Intelligence System</span>
+          </div>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="accordion-icon">
+            <polyline points="7 13 12 18 17 13"></polyline>
+            <polyline points="7 6 12 11 17 6"></polyline>
+          </svg>
+        </div>
+      </button>
+      <div class="accordion-content">
+        <div class="accordion-content-inner">
+          <div class="offer-header">
+            <div class="offer-icon">🏢</div>
+            <div>
+              <h3>Karabo AI: Performance Sales for B2B Ecommerce & High-Ticket Industries</h3>
+              <div class="offer-subtitle">100% performance-based. Pay only when deals close.</div>
+            </div>
+          </div>
+
+          <!-- New Karabo AI Content -->
+          <div class="outcomes">
+            <h4>🚨 The Problem</h4>
+            <ul class="benefits-list">
+              <li>📈 <strong>Rising CAC</strong> — ad spend keeps climbing, but lead quality drops.</li>
+              <li>⏳ <strong>Long, complex sales cycles</strong> — manual follow-up leads to stalled deals.</li>
+              <li>🤦 <strong>Inconsistent sales execution</strong> — missed calls, poor qualification, no-shows.</li>
+              <li>💸 <strong>Revenue leakage</strong> from abandoned inquiries, dormant databases, and low conversion.</li>
+            </ul>
+            <p><strong>For B2B ecommerce and high-ticket industries, every lost lead = millions in missed revenue.</strong></p>
+          </div>
+
+          <div class="outcomes">
+            <h4>💡 The Solution — Karabo AI</h4>
+            <p>Karabo AI is your <strong>always-on B2B sales operating system</strong>, built to close <strong>high-value deals</strong>:</p>
+            <ul class="benefits-list">
+              <li>✅ <strong>Qualifies & nurtures leads</strong> across long sales cycles.</li>
+              <li>✅ <strong>Books decision-maker appointments</strong> with verified intent.</li>
+              <li>✅ <strong>Automates follow-up</strong> via WhatsApp, Email & LinkedIn — no deal slips through the cracks.</li>
+              <li>✅ <strong>Reactivates dormant databases</strong> into warm, sales-ready leads.</li>
+              <li>✅ <strong>End-to-end reporting</strong> — full visibility from inquiry → closed sale.</li>
+            </ul>
+            <p><strong>👉 Think of it as your virtual B2B sales team, paid only when deals close.</strong></p>
+          </div>
+
+          <div class="outcomes">
+            <h4>📈 100% Performance Model — Pay Per Sale</h4>
+            <p><strong>💰 No retainers. No setup fees. No risk.</strong></p>
+            <ul class="benefits-list">
+              <li><strong>Revenue Share Only:</strong> We earn <strong>a % of every closed sale</strong> generated through Karabo AI.</li>
+              <li><strong>Aligned Incentives:</strong> If you don’t close deals, we don’t earn.</li>
+              <li><strong>Scalable:</strong> Works whether you sell R50,000 equipment or R5m industrial solutions.</li>
+            </ul>
+            <p><strong>Your growth is our paycheck.</strong></p>
+          </div>
+
+          <div class="outcomes">
+            <h4>📊 Proof & Track Record</h4>
+            <ul class="benefits-list">
+              <li>🚀 Helped <strong>Commercial Solar LLC generate R1.7m in 90 days</strong> using performance-driven AI sales automation.</li>
+              <li>🛠️ We cover <strong>all AI development, integration & deployment costs</strong> upfront.</li>
+              <li>🔍 <strong>Real-time dashboards</strong> — track every lead, touchpoint, and closed deal transparently.</li>
+            </ul>
+          </div>
+
+          <div class="outcomes">
+            <h4>🎯 Who This Is For</h4>
+            <p>B2B ecommerce brands & industries with <strong>high-ticket products or services</strong>:</p>
+            <ul class="benefits-list">
+              <li>🏭 Industrial & manufacturing equipment</li>
+              <li>🔋 Renewable energy & solar solutions</li>
+              <li>📦 Logistics, SaaS & B2B platforms</li>
+              <li>⚙️ Machinery, tools, & technical products</li>
+              <li>💻 High-value professional services</li>
+            </ul>
+          </div>
+
+          <div class="outcomes">
+            <h4>🛠️ How It Works</h4>
+            <ol class="benefits-list" style="list-style: decimal; padding-left: 1.8rem;">
+              <li><strong>Risk-Free Pilot (30 Days):</strong> We deploy AI sales funnels on your existing CRM/marketing stack.</li>
+              <li><strong>Lead-to-Sale Engine:</strong> We nurture, qualify & book ready-to-buy decision-makers.</li>
+              <li><strong>Pay Per Sale:</strong> You only share revenue when deals close.</li>
+            </ol>
+          </div>
+
+          <div class="outcomes">
+            <h4>🔒 Why Choose Karabo AI?</h4>
+            <ul class="benefits-list">
+              <li>✔ <strong>Zero upfront costs</strong> — we carry the risk.</li>
+              <li>✔ <strong>100% performance-based</strong> — no sale, no fee.</li>
+              <li>✔ <strong>Built for B2B</strong> — long-cycle nurturing, decision-maker targeting, high-ticket ROI.</li>
+              <li>✔ <strong>South Africa-focused</strong> — WhatsApp-first, price-sensitive markets, trust-led engagement.</li>
+            </ul>
+          </div>
+
+          <div class="revenue-model">
+            <h4>📞 Ready to scale your B2B revenue without upfront risk?</h4>
+            <p><strong>👉 Start your performance-only pilot today.</strong></p>
+          </div>
+
+          <a href="https://forms.gle/ZucpPSGH32dZ4oDt5" target="_blank" class="btn">Start Performance-Only Pilot</a>
+
+          <div class="partners">
+            <p><strong>Technology Partners:</strong></p>
+            <div class="partner-links">
+              <a href="https://telenyx.com" target="_blank" rel="noopener">Telenyx.com</a>
+              <a href="https://n8n.io" target="_blank" rel="noopener">n8n</a>
+              <a href="https://www.whatsapp.com/business/api" target="_blank" rel="noopener">WhatsApp API</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ENERGY -->
+    <div class="accordion-item">
+      <button class="accordion-button">
+        <div class="accordion-header">
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <span class="animated-icon">☀️</span>
+            <span>Urban Holdings Solar — Free Site Assessment</span>
+          </div>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="accordion-icon">
+            <polyline points="7 13 12 18 17 13"></polyline>
+            <polyline points="7 6 12 11 17 6"></polyline>
+          </svg>
+        </div>
+      </button>
+      <div class="accordion-content">
+        <div class="accordion-content-inner">
+          <div class="offer-header">
+            <div class="offer-icon">☀️</div>
+            <div>
+              <h3>Urban Holdings Solar — Free Site Assessment</h3>
+              <div class="offer-subtitle">Off-Balance-Sheet Energy Infrastructure for South African Businesses</div>
+            </div>
+          </div>
+
+          <!-- New Solar Content -->
+          <div class="outcomes">
+            <h4>🚨 The Problem</h4>
+            <ul class="benefits-list">
+              <li>📈 <strong>Soaring energy costs</strong> are crushing margins.</li>
+              <li>⚡ <strong>Eskom dependency</strong> = load-shedding risk + diesel reliance.</li>
+              <li>🌍 <strong>Carbon compliance pressure</strong> is driving investor & client scrutiny.</li>
+              <li>💸 <strong>Capex constraints</strong> prevent large-scale solar adoption.</li>
+            </ul>
+            <p><strong>Result: Profitability erodes, valuations drop, and growth stalls.</strong></p>
+          </div>
+
+          <div class="outcomes">
+            <h4>💡 The Solution — Funded C&I Solar</h4>
+            <p>We act as your energy capital partner:</p>
+            <ul class="benefits-list">
+              <li>✅ We fund, insure, and operate your full commercial solar system.</li>
+              <li>✅ You get guaranteed energy savings of up to <strong>70%</strong>, starting Day 1.</li>
+              <li>✅ All <strong>off-balance-sheet</strong> — no debt, no capex, no operational burden.</li>
+              <li>✅ Carbon credits add new revenue streams, strengthening ESG scorecards.</li>
+              <li>✅ Third-party wheeling & insurance included for risk-free operations.</li>
+            </ul>
+            <p><strong>👉 One decision today = decades of cheaper, cleaner, guaranteed energy.</strong></p>
+          </div>
+
+          <div class="outcomes">
+            <h4>📈 Performance Outcomes</h4>
+            <ul class="benefits-list">
+              <li><strong>Up to 70% reduction</strong> in electricity costs — immediate EBITDA lift.</li>
+              <li><strong>12–18 month ROI</strong> improves company valuation.</li>
+              <li><strong>No risk</strong> — we only profit when your business saves.</li>
+              <li><strong>Carbon credit monetisation</strong> offsets ESG compliance costs.</li>
+            </ul>
+          </div>
+
+          <div class="outcomes">
+            <h4>🛠️ Revenue Model</h4>
+            <ul class="benefits-list">
+              <li>Zero upfront cost.</li>
+              <li>Zero debt.</li>
+              <li>We earn a share of the energy savings we generate for you.</li>
+              <li>If you don’t save, we don’t earn.</li>
+            </ul>
+          </div>
+
+          <div class="outcomes">
+            <h4>🎯 Who This Is For</h4>
+            <ul class="benefits-list">
+              <li>Large C&I facilities: warehouses, factories, retail, logistics, office parks.</li>
+              <li>CFOs, COOs, ESG officers, and private equity portfolio managers.</li>
+              <li>Businesses seeking savings, resilience, and sustainability without capital strain.</li>
+            </ul>
+          </div>
+
+          <div class="outcomes">
+            <h4>🔍 Free Site Assessment — Your Next Step</h4>
+            <p>Our engineers conduct a no-cost, no-obligation assessment of your site:</p>
+            <ul class="benefits-list">
+              <li>📊 Energy audit of current consumption.</li>
+              <li>☀️ Solar generation potential & financial model.</li>
+              <li>💰 Projected 10–20 year savings forecast.</li>
+              <li>📝 Compliance, insurance, and financing roadmap.</li>
+            </ul>
+            <p><strong>⚡ Get your Free Site Assessment today — discover how much you can save before you spend a cent.</strong></p>
+          </div>
+
+          <div class="revenue-model">
+            <h4>📞 Urban Holdings Solar — Your Installation & Funding Partner.</h4>
+            <p><strong>👉 Book your Free Site Assessment now.</strong></p>
+          </div>
+
+          <a href="https://form.typeform.com/to/kSJtterE" target="_blank" class="btn">Request Free Site Assessment</a>
+
+          <div class="partners">
+            <p><strong>Installation & Funding Partner:</strong></p>
+            <div class="partner-links">
+              <a href="https://urbanholdingssolar.co.za" target="_blank" rel="noopener">Urban Holdings Solar</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="cal-booking" id="booking">
-    <h2 class="section-title">Book a Performance Advisory Call</h2>
+    <h2 class="section-title">Book a Performance Advisory Consultation</h2>
     <p>In this 30-minute session, we will:<br>
-      <strong>• Audit your training costs & delivery model</strong><br>
-      <strong>• Build a custom Bohlale AI deployment plan</strong><br>
-      <strong>• Present your revenue model options</strong>
+      <strong>• Audit your training & energy costs</strong><br>
+      <strong>• Identify performance uplift opportunities</strong><br>
+      <strong>• Present a tailored plan for:</strong><br>
+      AI Training Automation • Sales Pipeline Growth • Solar Energy Savings
     </p>
     <div id="my-cal-inline-south-africa"></div>
   </section>
@@ -587,7 +1100,7 @@
   <footer id="contact">
     <div class="footer-section">
       <h3>Mariba<span style="color:var(--accent)">Media</span></h3>
-      <p>AI Infrastructure & Systems Development Partner. Pay only for accredited learners.</p>
+      <p>Performance-driven capital advisory for AI training and sustainable energy. Pay only for results.</p>
       <div class="footer-meta">
         <strong>Company Registration No:</strong> 2024 / 132788 / 07
       </div>
@@ -600,9 +1113,10 @@
       <h3>Quick Links</h3>
       <ul style="list-style:none; padding:0; gap:0.75rem; display:flex; flex-direction:column;">
         <li><a href="#home">Home</a></li>
-        <li><a href="#offer">Bohlale AI</a></li>
-        <li><a href="#proof">Revenue Model</a></li>
+        <li><a href="#value">Value Drivers</a></li>
+        <li><a href="#offers">Performance Offers</a></li>
         <li><a href="#booking">Book Consultation</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
     <div class="footer-section">
@@ -618,7 +1132,7 @@
       </ul>
     </div>
     <div class="copyright">
-      &copy; <span id="current-year"></span> Mariba Media. AI Infrastructure Partner. Pay only for performance.
+      &copy; <span id="current-year"></span> Mariba Media. Training & Energy Capital Partner. Pay only for performance.
     </div>
   </footer>
 
@@ -634,6 +1148,7 @@
     document.addEventListener("DOMContentLoaded", function () {
       // Animate sections on scroll
       const observerOptions = { threshold: 0.1 };
+
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -642,7 +1157,36 @@
           }
         });
       }, observerOptions);
-      document.querySelectorAll('section').forEach(el => observer.observe(el));
+
+      document.querySelectorAll('section, .value-item, .accordion-item').forEach(el => {
+        observer.observe(el);
+      });
+
+      // Accordion
+      const buttons = document.querySelectorAll('.accordion-button');
+      buttons.forEach(button => {
+        button.addEventListener('click', function () {
+          const item = this.closest('.accordion-item');
+          const content = item.querySelector('.accordion-content');
+          const icon = item.querySelector('.accordion-icon');
+
+          if (item.classList.contains('active')) {
+            item.classList.remove('active');
+            content.style.maxHeight = null;
+            if (icon) icon.style.transform = 'rotate(0deg)';
+          } else {
+            document.querySelectorAll('.accordion-item').forEach(i => {
+              i.classList.remove('active');
+              i.querySelector('.accordion-content').style.maxHeight = null;
+              const ic = i.querySelector('.accordion-icon');
+              if (ic) ic.style.transform = 'rotate(0deg)';
+            });
+            item.classList.add('active');
+            content.style.maxHeight = content.scrollHeight + "px";
+            if (icon) icon.style.transform = 'rotate(180deg)';
+          }
+        });
+      });
 
       // Cal.com
       const calDiv = document.getElementById('my-cal-inline-south-africa');
