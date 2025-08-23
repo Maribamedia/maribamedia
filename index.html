@@ -6,8 +6,8 @@
   <title>Mariba Media – AI-Powered Enterprise Training Solutions</title>
   <meta name="description" content="Mariba Media delivers performance-driven AI teaching & assessment systems, expertly trained on your curriculum for scalable, certifiable learning with zero manual effort.">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Open Lato Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Google Analytics 4 -->
@@ -68,7 +68,7 @@
 
     html {
       scroll-behavior: smooth;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     body {
@@ -86,6 +86,7 @@
       font-weight: 700;
       letter-spacing: -0.02em;
       margin-top: 0;
+      text-align: center;
     }
 
     h1 {
@@ -93,7 +94,6 @@
       max-width: 32ch;
       margin: 0 auto 1.5rem;
       color: #ffffff;
-      text-align: center;
       background: linear-gradient(135deg, #ffffff 0%, var(--accent) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -102,7 +102,6 @@
 
     h2 {
       font-size: var(--step-6);
-      text-align: center;
       margin-bottom: 1.5rem;
       color: var(--accent);
       position: relative;
@@ -113,12 +112,14 @@
       font-size: var(--step-5);
       margin-bottom: 1rem;
       color: #e0f7ff;
+      text-align: center;
     }
 
     h4 {
       font-size: var(--step-4);
       margin-bottom: 0.75rem;
       color: #e0f7ff;
+      text-align: center;
     }
 
     p {
@@ -126,17 +127,19 @@
       color: var(--text-muted);
       line-height: 1.7;
       margin-bottom: 1.5rem;
+      text-align: center;
     }
 
     strong {
       color: #ffffff;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     ul.benefits-list {
       margin: 1.5rem 0;
       padding-left: 1.5rem;
       line-height: 1.8;
+      text-align: left;
     }
 
     ul.benefits-list li {
@@ -174,6 +177,7 @@
       position: relative;
       overflow: hidden;
       z-index: 1;
+      text-decoration: none;
     }
 
     .btn::before {
@@ -236,30 +240,12 @@
       letter-spacing: -0.03em;
       display: flex;
       align-items: center;
+      color: var(--text);
+      text-decoration: none;
     }
 
     .logo span {
       color: var(--accent);
-    }
-
-    .logo::before {
-      content: "";
-      display: inline-block;
-      width: 32px;
-      height: 32px;
-      background: var(--accent);
-      border-radius: 8px;
-      margin-right: 10px;
-      position: relative;
-    }
-
-    .logo::after {
-      content: "M";
-      position: absolute;
-      left: 2.3rem;
-      color: var(--bg);
-      font-weight: 800;
-      z-index: 2;
     }
 
     nav {
@@ -422,6 +408,8 @@
       height: 100%;
       position: relative;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
 
     .card::before {
@@ -446,6 +434,7 @@
       margin-bottom: 1.25rem;
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 0.75rem;
     }
 
@@ -455,6 +444,7 @@
 
     .card ul {
       text-align: left;
+      flex-grow: 1;
     }
 
     /* Enhanced Grid Layouts */
@@ -556,6 +546,7 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      text-align: left;
     }
 
     .use-case h4 i {
@@ -667,6 +658,7 @@
       margin-bottom: 1.5rem;
       display: flex;
       align-items: center;
+      justify-content: flex-start;
       gap: 0.5rem;
     }
 
@@ -869,6 +861,10 @@
       .stats-container {
         grid-template-columns: 1fr;
       }
+      
+      .footer-section h3 {
+        justify-content: center;
+      }
     }
 
     /* Mobile Navigation */
@@ -919,7 +915,7 @@
 <body>
 
   <header>
-    <div class="logo">Mariba<span>Media</span></div>
+    <a href="#" class="logo">Mariba<span>Media</span></a>
     <nav>
       <a href="#home">Home</a>
       <a href="#solution">Solution</a>
@@ -927,7 +923,7 @@
       <a href="#proof">Proof</a>
       <a href="#booking">Get Started</a>
       <div class="nav-cta">
-        <a href="#booking" class="btn btn-secondary">Schedule Demo</a>
+        <a href="https://cal.com/partner-discovery/south-africa" class="btn btn-secondary">Schedule Demo</a>
       </div>
     </nav>
     <button class="mobile-menu-btn">
@@ -942,6 +938,7 @@
       <a href="#use-cases">Use Cases</a>
       <a href="#proof">Proof</a>
       <a href="#booking">Get Started</a>
+      <a href="https://cal.com/partner-discovery/south-africa" class="btn">Schedule Demo</a>
     </div>
   </div>
 
@@ -960,10 +957,10 @@
       </div>
 
       <div class="hero-cta">
-        <a href="https://cal.com/partner-discovery/south-africa?overlayCalendar=true" class="btn" target="_blank" rel="noopener">
-          <i class="fas fa-calendar-check"></i> Get Started
+        <a href="https://cal.com/partner-discovery/south-africa" class="btn" target="_blank" rel="noopener">
+          <i class="fas fa-calendar-check"></i> Schedule Demo
         </a>
-        <a href="#demo" class="btn btn-secondary">
+        <a href="https://app.colossyan.com/videos/86851529-f9e2-4c93-b7f7-30ad7e3d5a04" class="btn btn-secondary" target="_blank">
           <i class="fas fa-play-circle"></i> Watch Demo
         </a>
       </div>
@@ -997,24 +994,32 @@
         <h3><i class="fas fa-chart-line"></i> High & Linear Training Costs</h3>
         <ul class="benefits-list">
           <li>Budgets balloon as learner numbers grow.</li>
+          <li>Instructor costs increase linearly with scale.</li>
+          <li>Physical materials and venues add significant expenses.</li>
         </ul>
       </div>
       <div class="card">
         <h3><i class="fas fa-tachometer-alt"></i> Inconsistent Quality</h3>
         <ul class="benefits-list">
           <li>Delivery varies across campuses and franchises, compromising quality.</li>
+          <li>Different instructors deliver content with varying effectiveness.</li>
+          <li>Lack of standardization leads to knowledge gaps.</li>
         </ul>
       </div>
       <div class="card">
         <h3><i class="fas fa-tasks"></i> Administrative Overload</h3>
         <ul class="benefits-list">
           <li>Manual grading, certification, and reporting drain valuable resources.</li>
+          <li>Paper-based processes create bottlenecks and errors.</li>
+          <li>Tracking learner progress becomes increasingly complex.</li>
         </ul>
       </div>
       <div class="card">
         <h3><i class="fas fa-user-check"></i> Low Learner Engagement</h3>
         <ul class="benefits-list">
           <li>Poor engagement leads to low pass rates and wasted training budgets.</li>
+          <li>Traditional methods fail to capture attention of modern learners.</li>
+          <li>Lack of interactivity reduces knowledge retention.</li>
         </ul>
       </div>
     </div>
@@ -1028,36 +1033,48 @@
         <h3><i class="fas fa-robot"></i> Automated Interactive Training</h3>
         <ul class="benefits-list">
           <li>Engage learners with dynamic content in video, chat, and adaptive learning paths.</li>
+          <li>AI-powered simulations create realistic training scenarios.</li>
+          <li>Personalized learning journeys for each student.</li>
         </ul>
       </div>
       <div class="card">
         <h3><i class="fas fa-check-circle"></i> Auto-Grading & Instant Certification</h3>
         <ul class="benefits-list">
-          <li>Eliminate manual marking entirely.</li>
+          <li>Eliminate manual marking entirely with AI assessment.</li>
+          <li>Instant feedback and certification upon completion.</li>
+          <li>Detailed analytics on learner performance and knowledge gaps.</li>
         </ul>
       </div>
       <div class="card">
         <h3><i class="fas fa-globe"></i> Global Reach & Accessibility</h3>
         <ul class="benefits-list">
           <li>Support 100+ languages with instant translation, transcription, and captioning.</li>
+          <li>Accessible on any device, anywhere in the world.</li>
+          <li>24/7 availability for learners in different time zones.</li>
         </ul>
       </div>
       <div class="card">
         <h3><i class="fas fa-gamepad"></i> Gamified Engagement</h3>
         <ul class="benefits-list">
           <li>Achieve up to <strong>95% learner retention</strong> through interactive, gamified learning experiences.</li>
+          <li>Points, badges, and leaderboards motivate continuous learning.</li>
+          <li>Micro-learning modules fit into busy schedules.</li>
         </ul>
       </div>
       <div class="card">
         <h3><i class="fas fa-expand-arrows-alt"></i> Scalable Delivery</h3>
         <ul class="benefits-list">
           <li>Seamlessly expand training across remote learners, multiple campuses, or global sites.</li>
+          <li>Handle thousands of concurrent learners without additional resources.</li>
+          <li>Cloud-based infrastructure grows with your needs.</li>
         </ul>
       </div>
       <div class="card">
         <h3><i class="fas fa-clipboard-list"></i> Audit-Ready Reporting</h3>
         <ul class="benefits-list">
           <li>Ensure compliance and accreditation with robust, auditable reports.</li>
+          <li>Track every interaction and assessment for complete transparency.</li>
+          <li>Export customized reports for different stakeholders.</li>
         </ul>
       </div>
     </div>
@@ -1070,22 +1087,22 @@
       <div class="step">
         <div class="step-number">1</div>
         <h3>Upload Your Content</h3>
-        <p>Provide your curriculum, rubrics, and assessments.</p>
+        <p>Provide your curriculum, rubrics, and assessments through our secure portal.</p>
       </div>
       <div class="step">
         <div class="step-number">2</div>
         <h3>AI Builds & Integrates</h3>
-        <p>Mariba Media constructs interactive lessons and auto-grading engines.</p>
+        <p>Our system constructs interactive lessons and auto-grading engines tailored to your content.</p>
       </div>
       <div class="step">
         <div class="step-number">3</div>
         <h3>Quick Integration</h3>
-        <p>We integrate with your LMS/HR systems in just 2–4 weeks.</p>
+        <p>We integrate with your LMS/HR systems in just 2–4 weeks with minimal disruption.</p>
       </div>
       <div class="step">
         <div class="step-number">4</div>
         <h3>Start Delivering</h3>
-        <p>Begin training and let us track accreditations in real time.</p>
+        <p>Begin training immediately and track accreditations in real time through our dashboard.</p>
       </div>
     </div>
   </section>
@@ -1096,39 +1113,39 @@
     <div class="use-cases">
       <div class="use-case">
         <h4><i class="fas fa-user-plus"></i> Employee Onboarding</h4>
-        <p>Automate and standardize onboarding for company policies, software, and safety protocols.</p>
+        <p>Automate and standardize onboarding for company policies, software, and safety protocols across all locations.</p>
       </div>
       <div class="use-case">
         <h4><i class="fas fa-graduation-cap"></i> Continuing Professional Development</h4>
-        <p>Deliver ongoing training and certification to maintain licenses and update skills.</p>
+        <p>Deliver ongoing training and certification to maintain licenses and update skills with automatic renewal reminders.</p>
       </div>
       <div class="use-case">
         <h4><i class="fas fa-balance-scale"></i> Compliance & Regulatory Training</h4>
-        <p>Ensure staff complete mandatory training with audit-ready reporting and certification.</p>
+        <p>Ensure staff complete mandatory training with audit-ready reporting and certification for compliance officers.</p>
       </div>
       <div class="use-case">
         <h4><i class="fas fa-award"></i> Mass Certification Programs</h4>
-        <p>Scale standardized testing with auto-grading and instant results.</p>
+        <p>Scale standardized testing with auto-grading and instant results for large groups of learners.</p>
       </div>
       <div class="use-case">
         <h4><i class="fas fa-university"></i> Multi-Campus & Global Training</h4>
-        <p>Deliver consistent training across locations and in 100+ languages.</p>
+        <p>Deliver consistent training across locations and in 100+ languages with localized content.</p>
       </div>
       <div class="use-case">
         <h4><i class="fas fa-book-open"></i> Academic Course Delivery</h4>
-        <p>Enhance university courses with 24/7 interactive learning and automated assessment.</p>
+        <p>Enhance university courses with 24/7 interactive learning and automated assessment for remote students.</p>
       </div>
       <div class="use-case">
         <h4><i class="fas fa-store"></i> Franchise Training</h4>
-        <p>Ensure consistent quality and brand standards across all franchise locations.</p>
+        <p>Ensure consistent quality and brand standards across all franchise locations with standardized training.</p>
       </div>
       <div class="use-case">
         <h4><i class="fas fa-chart-line"></i> Sales & Product Training</h4>
-        <p>Train teams on new products with engaging, gamified content.</p>
+        <p>Train teams on new products with engaging, gamified content that improves knowledge retention.</p>
       </div>
       <div class="use-case">
         <h4><i class="fas fa-check-double"></i> Internal Skill Validation</h4>
-        <p>Rapidly assess and certify employee proficiency in new tools or processes.</p>
+        <p>Rapidly assess and certify employee proficiency in new tools or processes with objective AI evaluation.</p>
       </div>
     </div>
   </section>
@@ -1140,19 +1157,21 @@
       <div class="model">
         <h3><i class="fas fa-crown"></i> One-Time Setup Fee</h3>
         <ul class="benefits-list">
-          <li>License the full Mariba Media platform</li>
+          <li>License the full Mariba Media platform with perpetual rights</li>
           <li>Flat once-off fee covers curriculum training, integration, and deployment</li>
-          <li>Includes 12 months of maintenance + updates</li>
-          <li>Own the platform and scale without limits</li>
+          <li>Includes 12 months of maintenance + updates with optional extended support</li>
+          <li>Own the platform and scale without limits or additional per-learner costs</li>
+          <li>Ideal for organizations with predictable, high-volume training needs</li>
         </ul>
       </div>
       <div class="model">
         <h3><i class="fas fa-credit-card"></i> Pay-Per-Accreditation</h3>
         <ul class="benefits-list">
-          <li>Only pay per certified learner</li>
+          <li>Only pay per certified learner with no upfront costs</li>
           <li><strong>R3,500 – R8,000 per learner</strong> (based on program complexity)</li>
-          <li>No learners accredited = no fees</li>
-          <li>Scale with growth in a risk-free model</li>
+          <li>No learners accredited = no fees, completely risk-free</li>
+          <li>Scale with growth in a flexible model that matches your budget</li>
+          <li>Perfect for organizations with variable training volumes</li>
         </ul>
       </div>
     </div>
@@ -1162,12 +1181,12 @@
     <h2 class="section-title">Performance Outcomes</h2>
     <p class="section-intro">With Mariba Media, you will achieve unprecedented results and ROI</p>
     <div class="outcomes-grid">
-      <div class="outcome"><strong>80% reduction</strong> in training costs</div>
-      <div class="outcome"><strong>60% faster</strong> time-to-certification</div>
-      <div class="outcome"><strong>95% learner retention</strong> with AI video</div>
-      <div class="outcome"><strong>75% engagement boost</strong> via gamification</div>
-      <div class="outcome"><strong>Zero manual grading</strong> — all automated</div>
-      <div class="outcome"><strong>Real-time accreditation tracking</strong></div>
+      <div class="outcome"><strong>80% reduction</strong> in training costs through automation</div>
+      <div class="outcome"><strong>60% faster</strong> time-to-certification with instant assessment</div>
+      <div class="outcome"><strong>95% learner retention</strong> with AI video and interactive content</div>
+      <div class="outcome"><strong>75% engagement boost</strong> via gamification and micro-learning</div>
+      <div class="outcome"><strong>Zero manual grading</strong> — all automated with AI precision</div>
+      <div class="outcome"><strong>Real-time accreditation tracking</strong> with audit-ready reporting</div>
     </div>
   </section>
 
@@ -1177,19 +1196,19 @@
     <div class="problem-solution">
       <div class="card">
         <h3><i class="fas fa-sync-alt"></i> Flexible Model</h3>
-        <p>Pay once to own it, or pay per accreditation to scale with growth.</p>
+        <p>Pay once to own it, or pay per accreditation to scale with growth. Switch between models as your needs change.</p>
       </div>
       <div class="card">
         <h3><i class="fas fa-shield-alt"></i> Risk-Free Scaling</h3>
-        <p>Eliminate ballooning instructor costs and scale with confidence.</p>
+        <p>Eliminate ballooning instructor costs and scale with confidence. Only pay for successful certifications.</p>
       </div>
       <div class="card">
         <h3><i class="fas fa-file-contract"></i> Compliance Built-In</h3>
-        <p>Audit logs, certificates, and QA trails for peace of mind.</p>
+        <p>Audit logs, certificates, and QA trails for peace of mind. Meet regulatory requirements effortlessly.</p>
       </div>
       <div class="card">
         <h3><i class="fas fa-rocket"></i> Future-Proof Technology</h3>
-        <p>100+ languages, advanced AI video, global-ready capabilities.</p>
+        <p>100+ languages, advanced AI video, global-ready capabilities. Regular updates keep you ahead of the curve.</p>
       </div>
     </div>
   </section>
@@ -1198,11 +1217,11 @@
     <h2 class="section-title">See Mariba Media in Action</h2>
     <p class="section-intro">Experience the future of AI-driven training with our interactive demos</p>
     <div class="demo-buttons">
-      <a href="https://app.colossyan.com/share/zwc3q15j" target="_blank" class="btn">
+      <a href="https://app.colossyan.com/videos/86851529-f9e2-4c93-b7f7-30ad7e3d5a04" target="_blank" class="btn">
         <i class="fas fa-play-circle"></i> Watch AI Training Demo
       </a>
-      <a href="#" class="btn btn-secondary">
-        <i class="fas fa-video"></i> Multimodal Instructor Demo
+      <a href="https://cal.com/partner-discovery/south-africa" class="btn btn-secondary">
+        <i class="fas fa-calendar-check"></i> Schedule Live Demo
       </a>
     </div>
     <div class="partners">
@@ -1278,7 +1297,7 @@
   <div class="whatsapp-widget">
     <a href="https://wa.me/27766473499" target="_blank" rel="noopener">
       <button class="whatsapp-button" aria-label="Chat on WhatsApp">
-        <svg class="whatsapp-svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <svg class="whatsapp-svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335 .157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       </button>
     </a>
   </div>
