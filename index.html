@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mariba Media – AI Infrastructure & Systems Development Partner</title>
-  <meta name="description" content="Mariba Media builds and deploys AI training and sales systems. Pay only for accredited learners and closed deals. Zero upfront. 100% performance-based.">
+  <title>Bohlale AI – The Ultimate AI Training Infrastructure for Enterprise</title>
+  <meta name="description" content="Bohlale AI delivers automated, scalable, and compliant AI training with pay-per-accreditation or one-time setup. 80% cost reduction. 95% retention. Zero manual grading.">
 
   <!-- Open Lato Font -->
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
@@ -78,7 +78,7 @@
 
     h1 {
       font-size: var(--step-7);
-      max-width: 18ch;
+      max-width: 32ch;
       margin: 0 auto 1rem;
       color: #ffffff;
       text-align: center;
@@ -114,14 +114,14 @@
       color: #ffffff;
     }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      transition: color var(--dur);
+    ul.benefits-list {
+      margin: 1.25rem 0;
+      padding-left: 1.5rem;
+      line-height: 1.8;
     }
 
-    a:hover {
-      color: #fff;
+    ul.benefits-list li {
+      margin-bottom: 0.5rem;
     }
 
     /* Button */
@@ -159,7 +159,7 @@
       top: 0;
       z-index: 999;
       backdrop-filter: blur(18px) saturate(180%);
-      background: rgba(5, 7, 15, 0.85);
+      background: rgba(5, 7, 15, 0.9);
       border-bottom: 1px solid var(--border);
       padding: 1rem 20px;
       display: flex;
@@ -189,6 +189,8 @@
       letter-spacing: 0.05em;
       padding: 0.5rem 0;
       position: relative;
+      color: var(--text);
+      text-decoration: none;
     }
 
     nav a::after {
@@ -205,10 +207,6 @@
 
     nav a:hover::after {
       width: 100%;
-    }
-
-    .menu-toggle {
-      display: none;
     }
 
     /* Hero Section */
@@ -254,45 +252,158 @@
       text-align: center;
     }
 
-    .benefits-list {
-      margin: 1.25rem 0;
-      padding-left: 1.5rem;
-      line-height: 1.8;
+    .problem-solution {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-top: 2.5rem;
     }
 
-    .benefits-list li {
-      margin-bottom: 0.5rem;
+    .card {
+      background: var(--bg-soft);
+      padding: 2.5rem;
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      transition: transform var(--dur), box-shadow var(--dur);
     }
 
-    .offer-features {
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 32px rgba(0, 212, 255, 0.18);
+    }
+
+    .card h3 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .card ul {
+      text-align: left;
+    }
+
+    /* How It Works */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .step {
+      background: var(--bg-soft);
+      padding: 1.75rem;
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      text-align: center;
+    }
+
+    .step-number {
+      font-size: var(--step-4);
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    /* Revenue Model */
+    .revenue-models {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
       margin-top: 2.5rem;
     }
 
-    .feature {
+    .model {
       background: var(--bg-soft);
-      padding: 2rem;
+      padding: 2.5rem;
       border: 1px solid var(--border);
       border-radius: 1rem;
-      transition: transform var(--dur), box-shadow var(--dur);
+      text-align: center;
     }
 
-    .feature:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 16px 32px rgba(0, 212, 255, 0.18);
+    .model h3 {
+      color: var(--accent);
+      margin-bottom: 1rem;
     }
 
-    .feature h3 {
-      font-size: var(--step-1);
+    .model ul {
+      text-align: left;
+      margin: 1.25rem 0;
+    }
+
+    /* Use Cases */
+    .use-cases {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.75rem;
+      margin-top: 2.5rem;
+    }
+
+    .use-case {
+      background: var(--bg-soft);
+      padding: 1.75rem;
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      text-align: left;
+    }
+
+    .use-case h4 {
+      color: var(--accent);
       margin-bottom: 0.75rem;
+    }
+
+    /* Outcomes & Why Choose */
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.75rem;
+      margin-top: 2.5rem;
+    }
+
+    .outcome {
+      background: var(--bg-soft);
+      padding: 1.75rem;
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      text-align: center;
+    }
+
+    .outcome strong {
       color: var(--accent);
     }
 
-    .feature p {
+    /* Demo Buttons */
+    .demo-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 2.5rem 0;
+      flex-wrap: wrap;
+    }
+
+    /* Partners */
+    .partners {
+      margin-top: 2.5rem;
+      text-align: center;
+    }
+
+    .partner-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .partner-links a {
+      color: var(--accent);
+      font-weight: 600;
       font-size: var(--step--1);
-      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .partner-links a:hover {
+      color: #fff;
+      text-decoration: underline;
     }
 
     /* Cal Booking */
@@ -401,17 +512,9 @@
         display: none;
       }
 
-      .menu-toggle {
-        display: block;
-        font-size: var(--step-3);
-        background: none;
-        border: none;
-        color: var(--text);
-      }
-
       h1 {
         font-size: var(--step-6);
-        max-width: 20ch;
+        max-width: 22ch;
       }
 
       .btn {
@@ -427,144 +530,284 @@
       .hero {
         padding: 6rem 20px;
       }
+
+      .demo-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="logo">Mariba<span>Media</span></div>
+    <div class="logo">Bohlale<span>AI</span></div>
     <nav>
       <a href="#home">Home</a>
-      <a href="#bohlale">Bohlale AI</a>
-      <a href="#karabo">Karabo AI</a>
+      <a href="#solution">Solution</a>
+      <a href="#use-cases">Use Cases</a>
+      <a href="#proof">Proof</a>
       <a href="#booking">Book Call</a>
     </nav>
   </header>
 
   <section class="hero" id="home">
-    <h1>We Build AI Infrastructure That Pays for Itself</h1>
-    <p>Mariba Media is an AI Infrastructure & Systems Development Partner. We fund and deploy enterprise-grade AI systems — you only pay for accredited learners and closed deals. Zero upfront. 100% performance-based.</p>
-    <a href="#booking" class="btn">Start Performance Partnership</a>
+    <h1>The Ultimate AI Training Infrastructure for Enterprise</h1>
+    <p><strong>Bohlale AI</strong> is a performance-driven AI teaching & assessment system, expertly trained on your curriculum to deliver scalable, high-quality, and certifiable learning — with zero manual effort.</p>
+    <a href="#booking" class="btn">Start Your 90-Day Pilot</a>
   </section>
 
-  <!-- BOHLALE AI -->
-  <section id="bohlale">
-    <h2 class="section-title">🎓 Bohlale AI: Enterprise Training Infrastructure</h2>
+  <section id="solution">
+    <h2 class="section-title">🚨 The Problem: Why Traditional Training Fails</h2>
     <div class="offer-content">
-      <p><strong>Problem:</strong> High training costs, inconsistent delivery, and administrative overload limit scalability and ROI.</p>
-      <p><strong>Solution:</strong> We deploy <strong>Bohlale AI</strong> — a 24/7 multimodal AI Teaching & Assessment system trained on your curriculum. Automated training, grading, and certification — zero manual effort.</p>
-
-      <div class="offer-features">
-        <div class="feature">
-          <h3>Automated Training</h3>
-          <p>Interactive video, chat, and adaptive learning paths — available 24/7.</p>
+      <p>Are you facing these challenges?</p>
+      <div class="problem-solution">
+        <div class="card">
+          <h3>High & Linear Training Costs</h3>
+          <ul class="benefits-list">
+            <li>Budgets balloon as learner numbers grow.</li>
+          </ul>
         </div>
-        <div class="feature">
-          <h3>Auto-Grading & Certification</h3>
-          <p>Instant certification with audit-ready reporting — no manual marking.</p>
+        <div class="card">
+          <h3>Inconsistent Quality</h3>
+          <ul class="benefits-list">
+            <li>Delivery varies across campuses and franchises, compromising quality.</li>
+          </ul>
         </div>
-        <div class="feature">
-          <h3>100+ Language Support</h3>
-          <p>Translate, transcribe, and deliver training globally — instantly.</p>
+        <div class="card">
+          <h3>Administrative Overload</h3>
+          <ul class="benefits-list">
+            <li>Manual grading, certification, and reporting drain valuable resources.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Low Learner Engagement</h3>
+          <ul class="benefits-list">
+            <li>Poor engagement leads to low pass rates and wasted training budgets.</li>
+          </ul>
         </div>
       </div>
+    </div>
+  </section>
 
-      <h3 style="margin: 2.5rem 0 1rem;">📈 Performance Outcomes</h3>
-      <ul class="benefits-list">
-        <li><strong>80% reduction</strong> in training delivery costs</li>
-        <li><strong>60% faster</strong> time-to-certification</li>
-        <li><strong>95% learner retention</strong> with interactive AI video</li>
-        <li><strong>75% engagement boost</strong> via gamified learning</li>
-        <li><strong>Zero manual grading or admin</strong> — all automated</li>
-      </ul>
+  <section id="solution">
+    <h2 class="section-title">💡 The Solution: Bohlale AI – Your Intelligent Teaching Workforce</h2>
+    <div class="offer-content">
+      <p>Bohlale AI is designed to solve these pain points by providing <strong>one AI-powered teaching workforce that never sleeps</strong>.</p>
+      <div class="problem-solution">
+        <div class="card">
+          <h3>Automated Interactive Training</h3>
+          <ul class="benefits-list">
+            <li>Engage learners with dynamic content in video, chat, and adaptive learning paths.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Auto-Grading & Instant Certification</h3>
+          <ul class="benefits-list">
+            <li>Eliminate manual marking entirely.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Global Reach & Accessibility</h3>
+          <ul class="benefits-list">
+            <li>Support 100+ languages with instant translation, transcription, and captioning.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Gamified Engagement</h3>
+          <ul class="benefits-list">
+            <li>Achieve up to <strong>95% learner retention</strong> through interactive, gamified learning experiences.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Scalable Delivery</h3>
+          <ul class="benefits-list">
+            <li>Seamlessly expand training across remote learners, multiple campuses, or global sites.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Audit-Ready Reporting</h3>
+          <ul class="benefits-list">
+            <li>Ensure compliance and accreditation with robust, auditable reports.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <h3 style="margin: 2.5rem 0 1rem;">💰 Revenue Model (Choose One)</h3>
-      <div class="offer-features">
-        <div class="feature">
+  <section id="how-it-works">
+    <h2 class="section-title">🛠️ How It Works: Simple & Efficient Deployment</h2>
+    <div class="offer-content">
+      <p>Getting started with Bohlale AI is straightforward:</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Upload Your Content</h3>
+          <p>Provide your curriculum, rubrics, and assessments.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>AI Builds & Integrates</h3>
+          <p>Bohlale AI constructs interactive lessons and auto-grading engines.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Quick Integration</h3>
+          <p>We integrate with your LMS/HR systems in just 2–4 weeks.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>Start Delivering</h3>
+          <p>Begin training and let us track accreditations in real time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="use-cases">
+    <h2 class="section-title">🎯 Key Use Cases</h2>
+    <div class="offer-content">
+      <p>Bohlale AI is ideal for any scenario requiring scalable, certifiable training:</p>
+      <div class="use-cases">
+        <div class="use-case">
+          <h4>Employee Onboarding</h4>
+          <p>Automate and standardize onboarding for company policies, software, and safety protocols.</p>
+        </div>
+        <div class="use-case">
+          <h4>Continuing Professional Development</h4>
+          <p>Deliver ongoing training and certification to maintain licenses and update skills.</p>
+        </div>
+        <div class="use-case">
+          <h4>Compliance & Regulatory Training</h4>
+          <p>Ensure staff complete mandatory training with audit-ready reporting and certification.</p>
+        </div>
+        <div class="use-case">
+          <h4>Mass Certification Programs</h4>
+          <p>Scale standardized testing with auto-grading and instant results.</p>
+        </div>
+        <div class="use-case">
+          <h4>Multi-Campus & Global Training</h4>
+          <p>Deliver consistent training across locations and in 100+ languages.</p>
+        </div>
+        <div class="use-case">
+          <h4>Academic Course Delivery</h4>
+          <p>Enhance university courses with 24/7 interactive learning and automated assessment.</p>
+        </div>
+        <div class="use-case">
+          <h4>Franchise Training</h4>
+          <p>Ensure consistent quality and brand standards across all franchise locations.</p>
+        </div>
+        <div class="use-case">
+          <h4>Sales & Product Training</h4>
+          <p>Train teams on new products with engaging, gamified content.</p>
+        </div>
+        <div class="use-case">
+          <h4>Internal Skill Validation</h4>
+          <p>Rapidly assess and certify employee proficiency in new tools or processes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="proof">
+    <h2 class="section-title">📈 Flexible Revenue Models</h2>
+    <div class="offer-content">
+      <p>Choose the model that fits your institutional needs:</p>
+      <div class="revenue-models">
+        <div class="model">
           <h3>One-Time Setup Fee</h3>
           <ul class="benefits-list">
-            <li>Licensing the full Bohlale AI platform</li>
-            <li>Includes curriculum training, integration & 12 months of updates</li>
-            <li>Own your AI infrastructure outright</li>
+            <li>License the full Bohlale AI platform</li>
+            <li>Flat once-off fee covers curriculum training, integration, and deployment</li>
+            <li>Includes 12 months of maintenance + updates</li>
+            <li>Own the platform and scale without limits</li>
           </ul>
         </div>
-        <div class="feature">
+        <div class="model">
           <h3>Pay-Per-Accreditation</h3>
           <ul class="benefits-list">
-            <li><strong>Only pay when a learner is accredited</strong></li>
-            <li><strong>R3,500 – R8,000 per learner</strong> (based on programme complexity)</li>
+            <li>Only pay per certified learner</li>
+            <li><strong>R3,500 – R8,000 per learner</strong> (based on program complexity)</li>
             <li>No learners accredited = no fees</li>
+            <li>Scale with growth in a risk-free model</li>
           </ul>
         </div>
       </div>
-
-      <div style="margin-top: 2.5rem;">
-        <a href="https://app.colossyan.com/share/zwc3q15j" target="_blank" class="btn">Watch AI Training Demo</a>
-      </div>
     </div>
   </section>
 
-  <!-- KARABO AI -->
-  <section id="karabo">
-    <h2 class="section-title">💼 Karabo AI: B2B Sales Infrastructure</h2>
+  <section id="outcomes">
+    <h2 class="section-title">📊 Performance Outcomes</h2>
     <div class="offer-content">
-      <p><strong>Problem:</strong> Rising CAC, long sales cycles, and inconsistent follow-up lead to lost high-value deals.</p>
-      <p><strong>Solution:</strong> Karabo AI is your <strong>always-on B2B sales operating system</strong> that qualifies leads, books decision-maker appointments, and nurtures prospects — until they close.</p>
-
-      <div class="offer-features">
-        <div class="feature">
-          <h3>Deal Qualification</h3>
-          <p>AI-driven lead scoring and intent detection — no more wasted time.</p>
-        </div>
-        <div class="feature">
-          <h3>Appointment Booking</h3>
-          <p>Books verified decision-makers with real buying intent.</p>
-        </div>
-        <div class="feature">
-          <h3>Automated Nurturing</h3>
-          <p>Follows up via WhatsApp, Email & LinkedIn — no deal slips through.</p>
-        </div>
-      </div>
-
-      <h3 style="margin: 2.5rem 0 1rem;">📈 100% Performance Model — Pay Per Sale</h3>
-      <ul class="benefits-list">
-        <li><strong>Revenue Share Only:</strong> We earn a % of every closed sale.</li>
-        <li><strong>No retainers. No setup fees. No risk.</strong></li>
-        <li><strong>If you don’t close deals, we don’t earn.</strong></li>
-      </ul>
-
-      <h3 style="margin: 2.5rem 0 1rem;">🎯 Who This Is For</h3>
-      <ul class="benefits-list">
-        <li>🏭 Industrial & manufacturing equipment</li>
-        <li>🔋 Renewable energy & solar solutions</li>
-        <li>📦 Logistics, SaaS & B2B platforms</li>
-        <li>⚙️ Machinery, tools, & technical products</li>
-        <li>💻 High-value professional services</li>
-      </ul>
-
-      <div style="margin-top: 2.5rem;">
-        <a href="https://forms.gle/ZucpPSGH32dZ4oDt5" target="_blank" class="btn">Start Performance-Only Pilot</a>
+      <p>With Bohlale AI, you will achieve unprecedented results:</p>
+      <div class="outcomes-grid">
+        <div class="outcome"><strong>80% reduction</strong> in training costs</div>
+        <div class="outcome"><strong>60% faster</strong> time-to-certification</div>
+        <div class="outcome"><strong>95% learner retention</strong> with AI video</div>
+        <div class="outcome"><strong>75% engagement boost</strong> via gamification</div>
+        <div class="outcome"><strong>Zero manual grading</strong> — all automated</div>
+        <div class="outcome"><strong>Real-time accreditation tracking</strong></div>
       </div>
     </div>
   </section>
 
-  <!-- Cal Booking -->
+  <section id="why">
+    <h2 class="section-title">🔒 Why Choose Bohlale AI?</h2>
+    <div class="offer-content">
+      <div class="problem-solution">
+        <div class="card">
+          <h3>Flexible Model</h3>
+          <p>Pay once to own it, or pay per accreditation to scale with growth.</p>
+        </div>
+        <div class="card">
+          <h3>Risk-Free Scaling</h3>
+          <p>Eliminate ballooning instructor costs and scale with confidence.</p>
+        </div>
+        <div class="card">
+          <h3>Compliance Built-In</h3>
+          <p>Audit logs, certificates, and QA trails for peace of mind.</p>
+        </div>
+        <div class="card">
+          <h3>Future-Proof Technology</h3>
+          <p>100+ languages, advanced AI video, global-ready capabilities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="demo">
+    <h2 class="section-title">🎥 See Bohlale AI in Action</h2>
+    <div class="offer-content">
+      <p>Experience the future of AI-driven training:</p>
+      <div class="demo-buttons">
+        <a href="https://app.colossyan.com/share/zwc3q15j" target="_blank" class="btn">Watch AI Training Demo</a>
+        <a href="#" class="btn">Multimodal Instructor Demo</a>
+      </div>
+      <div class="partners">
+        <p><strong>Technology Partners:</strong></p>
+        <div class="partner-links">
+          <a href="https://tavus.io" target="_blank" rel="noopener">Tavus.io</a>
+          <a href="https://heygen.com" target="_blank" rel="noopener">HeyGen.com</a>
+          <a href="https://coursebox.ai" target="_blank" rel="noopener">Coursebox.ai</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="cal-booking" id="booking">
-    <h2 class="section-title">Book a Performance Advisory Consultation</h2>
+    <h2 class="section-title">📞 Ready to Transform Your Training?</h2>
     <p>In this 30-minute session, we will:<br>
-      <strong>• Audit your training & sales costs</strong><br>
-      <strong>• Identify performance uplift opportunities</strong><br>
-      <strong>• Present a tailored AI infrastructure plan</strong>
+      <strong>• Audit your training costs & delivery model</strong><br>
+      <strong>• Build a custom Bohlale AI deployment plan</strong><br>
+      <strong>• Present your revenue model options</strong>
     </p>
     <div id="my-cal-inline-south-africa"></div>
   </section>
 
-  <!-- Footer -->
-  <footer id="contact">
+  <footer>
     <div class="footer-section">
-      <h3>Mariba<span style="color:var(--accent)">Media</span></h3>
-      <p>AI Infrastructure & Systems Development Partner. Pay only for results.</p>
+      <h3>Bohlale<span style="color:var(--accent)">AI</span></h3>
+      <p>Performance-Driven Training for Higher Education & Industry. Pay only for accredited learners.</p>
       <div class="footer-meta">
         <strong>Company Registration No:</strong> 2024 / 132788 / 07
       </div>
@@ -577,8 +820,9 @@
       <h3>Quick Links</h3>
       <ul style="list-style:none; padding:0; gap:0.75rem; display:flex; flex-direction:column;">
         <li><a href="#home">Home</a></li>
-        <li><a href="#bohlale">Bohlale AI</a></li>
-        <li><a href="#karabo">Karabo AI</a></li>
+        <li><a href="#solution">Solution</a></li>
+        <li><a href="#use-cases">Use Cases</a></li>
+        <li><a href="#proof">Revenue Model</a></li>
         <li><a href="#booking">Book Consultation</a></li>
       </ul>
     </div>
@@ -595,11 +839,10 @@
       </ul>
     </div>
     <div class="copyright">
-      &copy; <span id="current-year"></span> Mariba Media. AI Infrastructure Partner. Pay only for performance.
+      &copy; <span id="current-year"></span> Bohlale AI. AI Infrastructure Partner. Pay only for performance.
     </div>
   </footer>
 
-  <!-- WhatsApp -->
   <div class="whatsapp-widget">
     <a href="https://wa.me/27766473499" target="_blank" rel="noopener">
       <button class="whatsapp-button" aria-label="Chat on WhatsApp">
@@ -608,7 +851,6 @@
     </a>
   </div>
 
-  <!-- Scripts -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       // Cal.com
