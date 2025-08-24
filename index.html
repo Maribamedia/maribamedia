@@ -15,19 +15,19 @@
        Modern Enterprise Design System
        —————————————————————————————————————— */
     :root {
-      /* Enhanced Color Palette */
-      --bg: #05070f;
-      --bg-soft: #0d1117;
-      --bg-softer: #161b22;
-      --accent: #00d4ff;
-      --accent-dark: #0099cc;
-      --accent-glow: 0 0 24px rgba(0, 212, 255, 0.45);
+      /* Grayscale Color Palette */
+      --bg: #000000;
+      --bg-soft: #0a0a0a;
+      --bg-softer: #141414;
+      --accent: #ffffff;
+      --accent-dark: #cccccc;
+      --accent-glow: 0 0 24px rgba(255, 255, 255, 0.25);
       --text: #ffffff;
-      --text-muted: #a0aec0;
-      --border: #21262d;
-      --success: #10b981;
-      --warning: #f59e0b;
-      --error: #ef4444;
+      --text-muted: #a0a0a0;
+      --border: #333333;
+      --success: #888888;
+      --warning: #aaaaaa;
+      --error: #999999;
 
       /* Motion */
       --dur: 0.3s;
@@ -35,8 +35,8 @@
       
       /* Design variables */
       --radius: 8px;
-      --shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-      --card-bg: linear-gradient(145deg, rgba(18, 24, 38, 0.8), rgba(16, 23, 36, 0.8));
+      --shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      --card-bg: linear-gradient(145deg, rgba(30, 30, 30, 0.9), rgba(20, 20, 20, 0.9));
       --header-height: 80px;
     }
 
@@ -75,7 +75,7 @@
       max-width: 32ch;
       margin: 0 auto 1.5rem;
       color: #ffffff;
-      background: linear-gradient(135deg, #ffffff 0%, var(--accent) 100%);
+      background: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -93,14 +93,14 @@
     h3 {
       font-size: 1.8rem;
       margin-bottom: 1rem;
-      color: #e0f7ff;
+      color: #f0f0f0;
       text-align: center;
     }
 
     h4 {
       font-size: 1.4rem;
       margin-bottom: 0.75rem;
-      color: #e0f7ff;
+      color: #f0f0f0;
       text-align: left;
     }
 
@@ -145,7 +145,7 @@
       padding: 1em 2.5em;
       border: none;
       border-radius: var(--radius);
-      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      background: linear-gradient(135deg, #ffffff, #cccccc);
       color: var(--bg);
       cursor: pointer;
       display: inline-flex;
@@ -153,7 +153,7 @@
       justify-content: center;
       gap: 0.75em;
       transition: all var(--dur) var(--ease);
-      box-shadow: 0 4px 20px rgba(0, 212, 255, 0.2);
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
       min-width: 220px;
       text-align: center;
       position: relative;
@@ -169,14 +169,14 @@
       left: 0;
       width: 0%;
       height: 100%;
-      background: linear-gradient(135deg, var(--accent-dark), var(--accent));
+      background: linear-gradient(135deg, #cccccc, #ffffff);
       transition: all var(--dur) var(--ease);
       z-index: -1;
     }
 
     .btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(0, 212, 255, 0.35), var(--accent-glow);
+      box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3), var(--accent-glow);
     }
 
     .btn:hover::before {
@@ -207,7 +207,7 @@
       top: 0;
       z-index: 999;
       backdrop-filter: blur(18px) saturate(180%);
-      background: rgba(5, 7, 15, 0.95);
+      background: rgba(0, 0, 0, 0.95);
       border-bottom: 1px solid var(--border);
       padding: 1rem 2rem;
       display: flex;
@@ -240,7 +240,7 @@
       font-size: 0.95rem;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 极.05em;
+      letter-spacing: 0.05em;
       padding: 0.5rem 0;
       position: relative;
       color: var(--text);
@@ -268,7 +268,7 @@
       width: 100%;
     }
 
-    .nav-cta {
+    .nav-极ta {
       margin-left: 1.5rem;
     }
 
@@ -281,7 +281,7 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      background: radial-gradient(ellipse at 50% 50%, #0a192f 0%, var(--极g) 80%);
+      background: radial-gradient(ellipse at 50% 50%, #0a0a0a 0%, var(--bg) 80%);
       gap: 2rem;
       position: relative;
       overflow: hidden;
@@ -295,8 +295,8 @@
       width: 100%;
       height: 100%;
       background: 
-        radial-gradient(circle at 20% 30%, rgba(0, 212, 255, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(0, 212, 255, 0.1) 0%, transparent 50%);
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
       z-index: -1;
     }
 
@@ -326,7 +326,7 @@
 
     .youtube-embed:hover {
       transform: translateY(-5px);
-      box-shadow: 0 20px 40px rgba(0, 212, 255, 0.25);
+      box-shadow: 0 20px 40px rgba(255, 255, 255, 0.2);
     }
 
     .youtube-embed iframe {
@@ -357,7 +357,7 @@
       text-align: center;
       margin-bottom: 3rem;
       position: relative;
-      width: 极00%;
+      width: 100%;
     }
 
     .section-title::after {
@@ -406,14 +406,14 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, transparent 70%);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
       z-index: -1;
     }
 
     .card:hover {
-      transform: translateY(-5极x);
-      box-shadow: 0 12px 28px rgba(0, 212, 255, 0.18);
-      border-color: rgba(0, 212, 255, 0.3);
+      transform: translateY(-5px);
+      box-shadow: 0 12px 28px rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.3);
     }
 
     .card h3 {
@@ -449,7 +449,7 @@
     }
 
     .use-cases {
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 极fr));
     }
 
     .revenue-models {
@@ -463,7 +463,7 @@
     /* Steps */
     .steps {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250极x, 1fr));
       gap: 2rem;
       margin-top: 3rem;
       width: 100%;
@@ -489,7 +489,7 @@
       height: 60px;
       line-height: 60px;
       border-radius: 50%;
-      background: rgba(0, 212, 255, 0.1);
+      background: rgba(255, 255, 255, 0.1);
     }
 
     /* Enhanced Models */
@@ -544,7 +544,7 @@
 
     /* Outcomes */
     .outcome {
-      background: var(--card-bg);
+      background: var(--card极g);
       padding: 2rem;
       border: 1px solid var(--border);
       border-radius: var(--radius);
@@ -555,7 +555,7 @@
 
     .outcome:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 212, 255, 0.15);
+      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
     }
 
     .outcome strong {
@@ -569,7 +569,7 @@
     .demo-buttons {
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
+     极ap: 1.5rem;
       margin: 3rem 0;
       flex-wrap: wrap;
       width: 100%;
@@ -602,9 +602,9 @@
     }
 
     .partner-links a:hover {
-      color: #fff;
+      color: #000;
       border-color: var(--accent);
-      background: rgba(0, 212, 255, 0.1);
+      background: rgba(255, 255, 255, 0.1);
     }
 
     /* Cal Booking */
@@ -625,7 +625,7 @@
       font-size: 1.2rem;
     }
 
-    #my-cal-in极ine-south-africa {
+    #my-cal-inline-south-africa {
       width: 100%;
       height: 600px;
       border: none;
@@ -742,7 +742,7 @@
       color: var(--text-muted);
       font-size: 0.95rem;
       text-transform: uppercase;
-      letter-spacing: 0.1极m;
+      letter-spacing: 0.1em;
     }
 
     /* Responsive Design */
@@ -816,7 +816,7 @@
       }
       
       .stats-container {
-        grid-template-columns: 1fr;
+        grid-template-column极: 1fr;
       }
       
       .footer-section h3 {
@@ -844,7 +844,7 @@
     </button>
   </header>
 
-  <section class="hero" id="home">
+  <section class="hero"极id="home">
     <div class="hero-content">
       <h1>AI-Powered Enterprise Training Solutions</h1>
       <p><strong>Mariba Media</strong> delivers performance-driven AI teaching & assessment systems, expertly trained on your curriculum for scalable, high-quality, and certifiable learning — with zero manual effort.</p>
@@ -923,7 +923,7 @@
           <li>Traditional methods fail to capture attention of modern learners.</li>
           <li>Lack of interactivity reduces knowledge retention.</li>
         </ul>
-      </极iv>
+      </div>
     </div>
   </section>
 
@@ -957,9 +957,9 @@
       </div>
       <div class="card">
         <h3><i class="fas fa-gamepad"></i> Gamified Engagement</h3>
-        <ul class="benefits极ist">
+        <ul class="benefits-list">
           <li>Achieve up to <strong>95% learner retention</strong> through interactive, gamified learning experiences.</li>
-          <li>Points, badges, and leaderboards motivate continuous learning.</li>
+          <li>Points, badges, and leaderboards motivate continuous learning.</极>
           <li>Micro-learning modules fit into busy schedules.</li>
         </ul>
       </div>
@@ -971,11 +971,11 @@
           <li>Cloud-based infrastructure grows with your needs.</li>
         </ul>
       </div>
-      <div class="极ard">
+      <div class="card">
         <h3><i class="fas fa-clipboard-list"></i> Audit-Ready Reporting</h3>
         <ul class="benefits-list">
           <li>Ensure compliance and accreditation with robust, auditable reports.</li>
-          <li极Track every interaction and assessment for complete transparency.</li>
+          <li>Track every interaction and assessment for complete transparency.</li>
           <li>Export customized reports for different stakeholders.</li>
         </ul>
       </div>
@@ -984,10 +984,10 @@
 
   <section id="how-it-works">
     <h2 class="section-title">How It Works: Simple & Efficient Deployment</h2>
-    <p class="section-intro">Getting started with Mariba Media is straightforward and hassle-free</极>
+    <p class="section-intro">Getting started with Mariba Media is straightforward and hassle-free</p>
     <div class="steps">
       <div class="step">
-        <div class="step-number">1</div>
+        <div class="极tep-number">1</div>
         <h3>Upload Your Content</h3>
         <p>Provide your curriculum, rubrics, and assessments through our secure portal.</p>
       </div>
@@ -1000,7 +1000,7 @@
         <div class="step-number">3</div>
         <h3>Quick Integration</h3>
         <p>We integrate with your LMS/HR systems in just 2–4 weeks with minimal disruption.</p>
-      </div>
+      </极iv>
       <div class="step">
         <div class="step-number">4</div>
         <h3>Start Delivering</h3>
@@ -1021,7 +1021,7 @@
         <h4><i class="fas fa-graduation-cap"></i> Continuing Professional Development</h4>
         <p>Deliver ongoing training and certification to maintain licenses and update skills with automatic renewal reminders.</p>
       </div>
-      <div class极="use-case">
+      <div class="use-case">
         <h4><i class="fas fa-balance-scale"></i> Compliance & Regulatory Training</h4>
         <p>Ensure staff complete mandatory training with audit-ready reporting and certification for compliance officers.</p>
       </div>
@@ -1038,12 +1038,12 @@
         <p>Enhance university courses with 24/7 interactive learning and automated assessment for remote students.</p>
       </div>
       <div class="use-case">
-        <h4><i class="fas极fa-store"></i> Franchise Training</h4>
+        <h4><i class="fas fa-store"></i> Franchise Training</h4>
         <p>Ensure consistent quality and brand standards across all franchise locations with standardized training.</p>
       </div>
       <div class="use-case">
-        <h极><i class="fas fa-chart-line"></i> Sales & Product Training</h4>
-        <p>Train teams on new products with engaging, gamified content that improves knowledge retention.</p>
+        <h4><i class="fas fa-chart-line"></i> Sales & Product Training</h4>
+        <p极Train teams on new products with engaging, gamified content that improves knowledge retention.</p>
       </div>
       <div class="use-case">
         <h4><i class="fas fa-check-double"></i> Internal Skill Validation</h4>
@@ -1109,7 +1109,7 @@
         <p>Audit logs, certificates, and QA trails for peace of mind. Meet regulatory requirements effortlessly.</p>
       </div>
       <div class="card">
-        <h3><i class="fas fa-rocket"></i> Future-Proof Technology极</h3>
+        <h3><i class="fas fa-rocket"></i> Future-Proof Technology</h3>
         <p>100+ languages, advanced AI video, global-ready capabilities. Regular updates keep you ahead of the curve.</p>
       </div>
     </div>
@@ -1119,8 +1119,8 @@
     <h2 class="section-title">See Mariba Media in Action</h2>
     <p class="section-intro">Experience the future of AI-driven training with our interactive demos</p>
     <div class="demo-buttons">
-      <a href="https://app.colossyan.com/videos/86851529-f9e2-4c93-b7f7-30ad7e3d5a04" target="_blank" class="btn">
-        <i class="fas fa-play-circle"></i> Watch AI Training Demo
+      <a href="https://app.colossyan.com/videos/86851529-f9e2-4c93-b7极7-30ad7e3d5a04" target="_blank" class="btn">
+        <i class="fas fa-play-circle"></极> Watch AI Training Demo
       </a>
       <a href="https://cal.com/partner-discovery/south-africa" class="btn btn-secondary">
         <i class="fas fa-calendar-check"></i> Schedule Live Demo
@@ -1129,7 +1129,7 @@
     <div class="partners">
       <p><strong>Technology Partners:</strong></p>
       <div class="partner-links">
-        <a href="https://tavus.io" target="_blank" rel="noopener">Tavus.io</a>
+        <a href="https://tavus.io" target="_blank" rel="noopener">Tavus极io</a>
         <a href="https://heygen.com" target="_blank" rel="noopener">HeyGen.com</a>
         <a href="https://coursebox.ai" target="_blank" rel="noopener">Coursebox.ai</a>
       </div>
@@ -1171,7 +1171,7 @@
         <a href="#home"><i class="fas fa-home"></i> Home</a>
         <a href="#solution"><i class="fas fa-puzzle-piece"></i> Solution</a>
         <a href="#use-cases"><i class="fas fa-briefcase"></i> Use Cases</a>
-        <a href="#proof"><i class="fas fa极hart-bar"></i> Revenue Model</a>
+        <a href="#proof"><i class="fas fa-chart-bar"></i> Revenue Model</a>
         <a href="#booking"><i class="fas fa-calendar-check"></i> Get Started</a>
       </div>
     </div>
@@ -1180,14 +1180,14 @@
       <div class="footer-links">
         <a href="https://www.freeprivacypolicy.com/live/19ac9e12-2d32-49e8-b611-a103aaec0171" target="_blank" rel="noopener">
           <i class="fas fa-lock"></i> Privacy Policy
-        </极>
+        </a>
         <a href="https://popia.co.za/" target="_blank" rel="noopener">
           <i class="fas fa-gavel"></i> POPIA Compliance Policy
         </a>
       </div>
       <div class="footer-links" style="margin-top: 1.5rem;">
         <a href="mailto:maribamedia@gmail.com"><i class="fas fa-envelope"></i> maribamedia@gmail.com</a>
-        <a href="tel:+27766473499"><i class="fas fa-phone"></i> +27 (0) 76 647 3499</a>
+        <a href="tel:+27766473499"><i class="fas fa-phone"></i> +27 (0) 76 极47 3499</a>
         <a href="#"><i class="fas fa-map-marker-alt"></i> Bronkhorstspruit, South Africa</a>
       </div>
     </div>
@@ -1199,7 +1199,7 @@
   <div class="whatsapp-widget">
     <a href="https://wa.me/27766473499" target="_blank" rel="noopener">
       <button class="whatsapp-button" aria-label="Chat on WhatsApp">
-        <svg class="whatsapp-svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.极2-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 极.462 1.065 2.875 1.213 3.极74.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335 .157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <svg class="whatsapp-svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.极9-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335 .157 11.892c极0 2.096.547 4.142 1.588 5.945L.057 24l极.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       </button>
     </a>
   </div>
@@ -1241,7 +1241,7 @@
           };
         })(window, "https://app.cal.com/embed/embed.js", "init");
 
-        Cal("init", "south-africa", { origin: "极ttps://app.cal.com" });
+        Cal("init", "south-africa", { origin: "https://app.cal.com" });
         Cal.ns["south-africa"]("inline", {
           elementOrSelector: "#my-cal-inline-south-africa",
           calLink: "partner-discovery/south-africa"
@@ -1278,7 +1278,7 @@
         const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
-              update极ount();
+              updateCount();
               observer.unobserve(entry.target);
             }
           });
