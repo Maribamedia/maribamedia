@@ -14,7 +14,7 @@
        Modern Enterprise Design System (Black & White with Dark Mode Toggle)
        —————————————————————————————————————— */
     :root {
-      /* Default: Dark Mode (Black & White) */
+      /* Default: Dark Mode */
       --bg: #000000;
       --bg-soft: #0a0a0a;
       --bg-softer: #141414;
@@ -33,7 +33,7 @@
       --header-height: 80px;
     }
 
-    /* Light Mode (Inverted) */
+    /* Light Mode */
     .light-mode {
       --bg: #ffffff;
       --bg-soft: #f5f5f5;
@@ -69,7 +69,7 @@
       transition: background var(--dur), color var(--dur);
     }
 
-    /* Enhanced Typography */
+    /* Typography */
     h1, h2, h3, h4 {
       line-height: 1.2;
       font-weight: 700;
@@ -139,7 +139,7 @@
       margin-left: -1em;
     }
 
-    /* Enhanced Button */
+    /* Button */
     .btn {
       font-size: 1.1rem;
       font-weight: 600;
@@ -195,7 +195,7 @@
       color: var(--bg);
     }
 
-    /* Enhanced Sticky Header */
+    /* Header */
     header {
       position: sticky;
       top: 0;
@@ -259,7 +259,7 @@
       margin-left: 1.5rem;
     }
 
-    /* Dark Mode Toggle Button */
+    /* Dark Mode Toggle */
     .theme-toggle-btn {
       background: none;
       border: none;
@@ -279,11 +279,8 @@
       background: rgba(255, 255, 255, 0.1);
       transform: scale(1.1);
     }
-    .light-mode .theme-toggle-btn {
-      color: #000;
-    }
 
-    /* Enhanced Hero Section */
+    /* Hero */
     .hero {
       padding: calc(var(--header-height) + 2rem) 2rem 4rem;
       min-height: 100vh;
@@ -309,7 +306,6 @@
         radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
       z-index: -1;
-      opacity: 0.6;
     }
     .light-mode .hero::before {
       background: 
@@ -398,7 +394,7 @@
       padding: 2.5rem;
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      transition: transform var(--dur), box-shadow var(--dur), border-color var(--dur);
+      transition: transform var(--dur), box-shadow var(--dur);
       backdrop-filter: blur(10px);
       height: 100%;
       position: relative;
@@ -440,7 +436,7 @@
       flex-grow: 1;
     }
 
-    /* Grid Layouts */
+    /* Grids */
     .problem-solution,
     .use-cases,
     .revenue-models,
@@ -675,7 +671,6 @@
       color: var(--bg);
       transform: translateY(-3px);
     }
-
     .copyright {
       grid-column: 1 / -1;
       text-align: center;
@@ -685,7 +680,6 @@
       border-top: 1px solid var(--border);
       font-size: 0.9rem;
     }
-
     .footer-links {
       display: flex;
       flex-direction: column;
@@ -708,7 +702,7 @@
       font-size: 0.9rem;
     }
 
-    /* Stats Counter */
+    /* Stats */
     .stats-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -736,7 +730,7 @@
       letter-spacing: 0.1em;
     }
 
-    /* Responsive Design */
+    /* Responsive */
     @media (max-width: 1024px) {
       h1 {
         font-size: 2.8rem;
@@ -914,7 +908,224 @@
     </div>
   </section>
 
-  <!-- Other sections remain unchanged... -->
+  <section id="solution">
+    <h2 class="section-title">The Solution: Your Intelligent Teaching Workforce</h2>
+    <p class="section-intro">Mariba Media is designed to solve these pain points by providing <strong>your own AI-powered teaching workforce that never sleeps</strong>.</p>
+    <div class="problem-solution">
+      <div class="card">
+        <h3><i class="fas fa-robot"></i> Automated Interactive Training</h3>
+        <ul class="benefits-list">
+          <li>Engage learners with dynamic content in video, chat, and adaptive learning paths.</li>
+          <li>AI-powered simulations create realistic training scenarios.</li>
+          <li>Personalized learning journeys for each student.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-check-circle"></i> Auto-Grading & Instant Certification</h3>
+        <ul class="benefits-list">
+          <li>Eliminate manual marking entirely with AI assessment.</li>
+          <li>Instant feedback and certification upon completion.</li>
+          <li>Detailed analytics on learner performance and knowledge gaps.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-globe"></i> Global Reach & Accessibility</h3>
+        <ul class="benefits-list">
+          <li>Support 100+ languages with instant translation, transcription, and captioning.</li>
+          <li>Accessible on any device, anywhere in the world.</li>
+          <li>24/7 availability for learners in different time zones.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-gamepad"></i> Gamified Engagement</h3>
+        <ul class="benefits-list">
+          <li>Achieve up to <strong>95% learner retention</strong> through interactive, gamified learning experiences.</li>
+          <li>Points, badges, and leaderboards motivate continuous learning.</li>
+          <li>Micro-learning modules fit into busy schedules.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-expand-arrows-alt"></i> Scalable Delivery</h3>
+        <ul class="benefits-list">
+          <li>Seamlessly expand training across remote learners, multiple campuses, or global sites.</li>
+          <li>Handle thousands of concurrent learners without additional resources.</li>
+          <li>Cloud-based infrastructure grows with your needs.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-clipboard-list"></i> Audit-Ready Reporting</h3>
+        <ul class="benefits-list">
+          <li>Ensure compliance and accreditation with robust, auditable reports.</li>
+          <li>Track every interaction and assessment for complete transparency.</li>
+          <li>Export customized reports for different stakeholders.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="how-it-works">
+    <h2 class="section-title">How It Works: Simple & Efficient Deployment</h2>
+    <p class="section-intro">Getting started with Mariba Media is straightforward and hassle-free</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Upload Your Content</h3>
+        <p>Provide your curriculum, rubrics, and assessments through our secure portal.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>AI Builds & Integrates</h3>
+        <p>Our system constructs interactive lessons and auto-grading engines tailored to your content.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Quick Integration</h3>
+        <p>We integrate with your LMS/HR systems in just 2–4 weeks with minimal disruption.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <h3>Start Delivering</h3>
+        <p>Begin training immediately and track accreditations in real time through our dashboard.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="use-cases">
+    <h2 class="section-title">Key Use Cases</h2>
+    <p class="section-intro">Mariba Media is ideal for any scenario requiring scalable, certifiable training</p>
+    <div class="use-cases">
+      <div class="use-case">
+        <h4><i class="fas fa-user-plus"></i> Employee Onboarding</h4>
+        <p>Automate and standardize onboarding for company policies, software, and safety protocols across all locations.</p>
+      </div>
+      <div class="use-case">
+        <h4><i class="fas fa-graduation-cap"></i> Continuing Professional Development</h4>
+        <p>Deliver ongoing training and certification to maintain licenses and update skills with automatic renewal reminders.</p>
+      </div>
+      <div class="use-case">
+        <h4><i class="fas fa-balance-scale"></i> Compliance & Regulatory Training</h4>
+        <p>Ensure staff complete mandatory training with audit-ready reporting and certification for compliance officers.</p>
+      </div>
+      <div class="use-case">
+        <h4><i class="fas fa-award"></i> Mass Certification Programs</h4>
+        <p>Scale standardized testing with auto-grading and instant results for large groups of learners.</p>
+      </div>
+      <div class="use-case">
+        <h4><i class="fas fa-university"></i> Multi-Campus & Global Training</h4>
+        <p>Deliver consistent training across locations and in 100+ languages with localized content.</p>
+      </div>
+      <div class="use-case">
+        <h4><i class="fas fa-book-open"></i> Academic Course Delivery</h4>
+        <p>Enhance university courses with 24/7 interactive learning and automated assessment for remote students.</p>
+      </div>
+      <div class="use-case">
+        <h4><i class="fas fa-store"></i> Franchise Training</h4>
+        <p>Ensure consistent quality and brand standards across all franchise locations with standardized training.</p>
+      </div>
+      <div class="use-case">
+        <h4><i class="fas fa-chart-line"></i> Sales & Product Training</h4>
+        <p>Train teams on new products with engaging, gamified content that improves knowledge retention.</p>
+      </div>
+      <div class="use-case">
+        <h4><i class="fas fa-check-double"></i> Internal Skill Validation</h4>
+        <p>Rapidly assess and certify employee proficiency in new tools or processes with objective AI evaluation.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="proof">
+    <h2 class="section-title">Flexible Revenue Models</h2>
+    <p class="section-intro">Choose the model that fits your institutional needs and budget</p>
+    <div class="revenue-models">
+      <div class="model">
+        <h3><i class="fas fa-crown"></i> One-Time Setup Fee</h3>
+        <ul class="benefits-list">
+          <li>License the full Mariba Media platform with perpetual rights</li>
+          <li>Flat once-off fee covers curriculum training, integration, and deployment</li>
+          <li>Includes 12 months of maintenance + updates with optional extended support</li>
+          <li>Own the platform and scale without limits or additional per-learner costs</li>
+          <li>Ideal for organizations with predictable, high-volume training needs</li>
+        </ul>
+      </div>
+      <div class="model">
+        <h3><i class="fas fa-credit-card"></i> Pay-Per-Accreditation</h3>
+        <ul class="benefits-list">
+          <li>Only pay per certified learner with no upfront costs</li>
+          <li><strong>R3,500 – R8,000 per learner</strong> (based on program complexity)</li>
+          <li>No learners accredited = no fees, completely risk-free</li>
+          <li>Scale with growth in a flexible model that matches your budget</li>
+          <li>Perfect for organizations with variable training volumes</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="outcomes">
+    <h2 class="section-title">Performance Outcomes</h2>
+    <p class="section-intro">With Mariba Media, you will achieve unprecedented results and ROI</p>
+    <div class="outcomes-grid">
+      <div class="outcome"><strong>80% reduction</strong> in training costs through automation</div>
+      <div class="outcome"><strong>60% faster</strong> time-to-certification with instant assessment</div>
+      <div class="outcome"><strong>95% learner retention</strong> with AI video and interactive content</div>
+      <div class="outcome"><strong>75% engagement boost</strong> via gamification and micro-learning</div>
+      <div class="outcome"><strong>Zero manual grading</strong> — all automated with AI precision</div>
+      <div class="outcome"><strong>Real-time accreditation tracking</strong> with audit-ready reporting</div>
+    </div>
+  </section>
+
+  <section id="why">
+    <h2 class="section-title">Why Choose Mariba Media?</h2>
+    <p class="section-intro">Discover the competitive advantages of our enterprise training solution</p>
+    <div class="problem-solution">
+      <div class="card">
+        <h3><i class="fas fa-sync-alt"></i> Flexible Model</h3>
+        <p>Pay once to own it, or pay per accreditation to scale with growth. Switch between models as your needs change.</p>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-shield-alt"></i> Risk-Free Scaling</h3>
+        <p>Eliminate ballooning instructor costs and scale with confidence. Only pay for successful certifications.</p>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-file-contract"></i> Compliance Built-In</h3>
+        <p>Audit logs, certificates, and QA trails for peace of mind. Meet regulatory requirements effortlessly.</p>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-rocket"></i> Future-Proof Technology</h3>
+        <p>100+ languages, advanced AI video, global-ready capabilities. Regular updates keep you ahead of the curve.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="demo">
+    <h2 class="section-title">See Mariba Media in Action</h2>
+    <p class="section-intro">Experience the future of AI-driven training with our interactive demos</p>
+    <div class="demo-buttons">
+      <a href="https://app.colossyan.com/videos/86851529-f9e2-4c93-b7f7-30ad7e3d5a04" target="_blank" class="btn">
+        <i class="fas fa-play-circle"></i> Watch AI Training Demo
+      </a>
+      <a href="https://cal.com/partner-discovery/south-africa" class="btn btn-secondary">
+        <i class="fas fa-calendar-check"></i> Schedule Live Demo
+      </a>
+    </div>
+    <div class="partners">
+      <p><strong>Technology Partners:</strong></p>
+      <div class="partner-links">
+        <a href="https://tavus.io" target="_blank" rel="noopener">Tavus.io</a>
+        <a href="https://heygen.com" target="_blank" rel="noopener">HeyGen.com</a>
+        <a href="https://coursebox.ai" target="_blank" rel="noopener">Coursebox.ai</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cal-booking" id="booking">
+    <h2 class="section-title">Ready to Transform Your Training?</h2>
+    <p>In this 30-minute session, we will:<br>
+      <strong>• Audit your training costs & delivery model</strong><br>
+      <strong>• Build a custom Mariba Media deployment plan</strong><br>
+      <strong>• Present your revenue model options</strong>
+    </p>
+    <div id="my-cal-inline-south-africa"></div>
+  </section>
 
   <footer>
     <div class="footer-section">
@@ -965,6 +1176,14 @@
       &copy; <span id="current-year"></span> Mariba Media. AI Infrastructure Partner. Pay only for performance.
     </div>
   </footer>
+
+  <div class="whatsapp-widget">
+    <a href="https://wa.me/27766473499" target="_blank" rel="noopener">
+      <button class="whatsapp-button" aria-label="Chat on WhatsApp">
+        <svg class="whatsapp-svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.05-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.71-5.26c.001-5.45 4.436-9.884 9.888-9.884 5.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335 .157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </button>
+    </a>
+  </div>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
