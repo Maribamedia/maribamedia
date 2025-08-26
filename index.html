@@ -29,7 +29,6 @@
       --dur: 0.3s;
       --ease: cubic-bezier(0.4, 0, 0.2, 1);
       --header-height: 70px;
-      --font-scale: 1rem;
     }
 
     /* Light Mode */
@@ -490,6 +489,185 @@
       }
     }
 
+    /* ROI Calculator Styles */
+    .roi-calculator {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+    }
+    .calculator-header {
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: var(--bg);
+      padding: 24px;
+      text-align: center;
+    }
+    .calculator-header h1 {
+      font-size: 28px;
+      margin-bottom: 8px;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--bg), var(--text-muted));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .calculator-header p {
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 16px;
+    }
+    .calculator-body {
+      padding: 24px;
+    }
+    .input-section {
+      margin-bottom: 30px;
+    }
+    .section-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+    }
+    .section-title::before {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 20px;
+      background: var(--accent);
+      margin-right: 10px;
+      border-radius: 2px;
+    }
+    .input-group {
+      margin-bottom: 16px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 500;
+      color: var(--text);
+    }
+    input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--bg-soft);
+      color: var(--accent);
+      font-size: 16px;
+      transition: all var(--dur);
+    }
+    input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+    }
+    .input-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+    }
+    .results-section {
+      background: var(--bg-soft);
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    .result-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .result-item:last-child {
+      border-bottom: none;
+    }
+    .result-label {
+      font-weight: 500;
+      color: var(--text);
+    }
+    .result-value {
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .highlight {
+      background: rgba(255, 255, 255, 0.1);
+      border-left: 4px solid var(--accent);
+      padding: 16px;
+      border-radius: 0 6px 6px 0;
+      margin: 20px 0;
+    }
+    .highlight-value {
+      font-size: 28px;
+      font-weight: 800;
+      color: #ff6b6b;
+      margin: 10px 0;
+    }
+    .risk-reversal {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 8px;
+      padding: 16px;
+      margin-top: 15px;
+      text-align: center;
+    }
+    .risk-reversal strong {
+      color: var(--accent);
+    }
+    .cta-section {
+      text-align: center;
+      padding: 24px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+    .cta-title {
+      font-size: 22px;
+      margin-bottom: 12px;
+      color: var(--accent);
+    }
+    .cta-description {
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .button {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--bg);
+      padding: 14px 28px;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all var(--dur);
+      cursor: pointer;
+      border: none;
+      font-size: 16px;
+      width: 100%;
+      max-width: 400px;
+    }
+    .button:hover {
+      background: var(--accent-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+    }
+    .disclaimer {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 20px;
+      padding-top: 15px;
+      border-top: 1px solid var(--border);
+    }
+
     /* Footer */
     footer {
       padding: 4rem 1.5rem 2rem;
@@ -708,10 +886,6 @@
     </div>
   </div>
 
-  <!-- All sections remain exactly as in original content -->
-  <!-- (Problem, Solution, Use Cases, Proof, Outcomes, Why, Demo, Cal, Footer) -->
-  <!-- Inserted here for brevity — full code includes all -->
-
   <section id="solution">
     <h2 class="section-title">The Problem: Why Traditional Training Fails</h2>
     <p class="section-intro">Are you facing these challenges in your current training approach?</p>
@@ -833,6 +1007,86 @@
     </div>
   </section>
 
+  <!-- ROI Calculator -->
+  <section id="roi-calculator">
+    <h2 class="section-title">Calculate Your Training ROI</h2>
+    <p class="section-intro">See your exact Rands saved with our pay-per-accreditation model — 60 seconds, no email</p>
+    <div class="roi-calculator">
+      <div class="calculator-header">
+        <h1>Mariba Media ROI Calculator</h1>
+        <p>See your exact Rands saved with our pay-per-accreditation model - 60 seconds, no email</p>
+      </div>
+      <div class="calculator-body">
+        <div class="input-section">
+          <h2 class="section-title">Your Current Training Data</h2>
+          <div class="input-grid">
+            <div class="input-group">
+              <label for="learners">Learners trained per month</label>
+              <input type="number" id="learners" value="500" min="1">
+            </div>
+            <div class="input-group">
+              <label for="cost">Current cost per learner (R)</label>
+              <input type="number" id="cost" value="1200" min="1">
+            </div>
+            <div class="input-group">
+              <label for="passRate">Current pass rate (%)</label>
+              <input type="number" id="passRate" value="65" min="1" max="100">
+            </div>
+          </div>
+        </div>
+
+        <div class="results-section">
+          <h2 class="section-title">Your Training Cost Analysis</h2>
+          <div class="result-item">
+            <span class="result-label">Current monthly training cost</span>
+            <span class="result-value" id="currentCost">R600,000</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Wasted on failed training</span>
+            <span class="result-value" id="wasteAmount">R210,000</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Lost productivity cost</span>
+            <span class="result-value" id="productivityLoss">R3,201,250</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">POPIA compliance risk score</span>
+            <span class="result-value" id="complianceRisk">52.5%</span>
+          </div>
+          <div class="highlight">
+            <div class="result-label">Your total monthly waste</div>
+            <div class="highlight-value" id="totalWaste">R3,411,250</div>
+            <div class="result-label" style="font-weight: 500; color: #aaa;">(This is what Mariba fixes)</div>
+          </div>
+          <div class="result-item" style="font-weight: 700; color: #0f9;">
+            <span class="result-label">Mariba Media monthly savings</span>
+            <span class="result-value" id="savingsAmount">R168,000</span>
+          </div>
+        </div>
+
+        <div class="risk-reversal">
+          <strong>Our Risk Reversal Guarantee:</strong> We only get paid when your learners pass. 
+          <br><strong>No passes = no fees. Period.</strong>
+        </div>
+
+        <div class="cta-section">
+          <h2 class="cta-title">Your Free Compliance Audit</h2>
+          <p class="cta-description">
+            First 5 people to share their results get a FREE 30-minute audit with our team.
+            We'll show exactly how to fix your biggest training leak.
+          </p>
+          <button class="button" onclick="shareResults()">Share My Results → Get Free Audit</button>
+          <div class="disclaimer">
+            *Calculations based on South African enterprise training data. 
+            Lost productivity cost = R18,500/day per untrained hire. 
+            Compliance risk score = (100 - pass rate) × 1.5
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Use Cases Section -->
   <section id="use-cases">
     <h2 class="section-title">Key Use Cases</h2>
     <p class="section-intro">Mariba Media is ideal for any scenario requiring scalable, certifiable training</p>
@@ -875,6 +1129,9 @@
       </div>
     </div>
   </section>
+
+  <!-- All other sections remain unchanged -->
+  <!-- (Proof, Outcomes, Why, Demo, Cal, Footer) -->
 
   <section id="proof">
     <h2 class="section-title">Flexible Revenue Models</h2>
@@ -1056,6 +1313,64 @@
           themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
         }
       });
+
+      // ROI Calculator
+      const learnersInput = document.getElementById('learners');
+      const costInput = document.getElementById('cost');
+      const passRateInput = document.getElementById('passRate');
+      const currentCostEl = document.getElementById('currentCost');
+      const wasteAmountEl = document.getElementById('wasteAmount');
+      const productivityLossEl = document.getElementById('productivityLoss');
+      const complianceRiskEl = document.getElementById('complianceRisk');
+      const totalWasteEl = document.getElementById('totalWaste');
+      const savingsAmountEl = document.getElementById('savingsAmount');
+
+      function calculateROI() {
+        const learners = parseInt(learnersInput.value) || 500;
+        const cost = parseInt(costInput.value) || 1200;
+        const passRate = parseInt(passRateInput.value) || 65;
+
+        const currentCost = learners * cost;
+        const wasteAmount = currentCost * (1 - passRate/100);
+        const productivityLoss = (learners * (1 - passRate/100)) * 18500;
+        const complianceRisk = (100 - passRate) * 1.5;
+        const totalWaste = wasteAmount + productivityLoss;
+        const savingsAmount = wasteAmount * 0.8;
+
+        const formatCurrency = (num) => 'R' + num.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        currentCostEl.textContent = formatCurrency(currentCost);
+        wasteAmountEl.textContent = formatCurrency(wasteAmount);
+        productivityLossEl.textContent = formatCurrency(productivityLoss);
+        complianceRiskEl.textContent = complianceRisk.toFixed(1) + '%';
+        totalWasteEl.textContent = formatCurrency(totalWaste);
+        savingsAmountEl.textContent = formatCurrency(savingsAmount);
+      }
+
+      function shareResults() {
+        const learners = parseInt(learnersInput.value) || 500;
+        const cost = parseInt(costInput.value) || 1200;
+        const passRate = parseInt(passRateInput.value) || 65;
+        const totalWaste = document.getElementById('totalWaste').textContent;
+        const savingsAmount = document.getElementById('savingsAmount').textContent;
+
+        const message = `I just used Mariba Media's ROI Calculator:\n` +
+                       `• ${learners} learners/month\n` +
+                       `• Current cost: R${cost}\n` +
+                       `• Pass rate: ${passRate}%\n\n` +
+                       `My results:\n` +
+                       `• Total monthly waste: ${totalWaste}\n` +
+                       `• Potential savings: ${savingsAmount}\n\n` +
+                       `I'd like to claim my FREE 30-minute compliance audit.`;
+
+        const encodedMessage = encodeURIComponent(message);
+        window.open(`https://wa.me/27766473499?text=${encodedMessage}`, '_blank');
+      }
+
+      learnersInput.addEventListener('input', calculateROI);
+      costInput.addEventListener('input', calculateROI);
+      passRateInput.addEventListener('input', calculateROI);
+      calculateROI();
 
       // Cal.com
       const calDiv = document.getElementById('my-cal-inline-south-africa');
