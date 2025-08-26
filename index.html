@@ -5,14 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mariba Media – Enterprise AI Training Solutions</title>
   <meta name="description" content="Mariba Media delivers performance-driven AI teaching & assessment systems for scalable, certifiable enterprise learning.">
+  
   <!-- Google Fonts: Lato -->
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
+  
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <style>
-    /* ——————————————————————————————————————
-       Modern Enterprise Design System
-       —————————————————————————————————————— */
+    /* =====================================================
+       DESIGN SYSTEM - BASE STYLES
+       ===================================================== */
     :root {
       /* Grayscale Color Palette */
       --bg: #000000;
@@ -24,30 +27,16 @@
       --text: #ffffff;
       --text-muted: #a0a0a0;
       --border: #333333;
-      --success: #888888;
-      --warning: #aaaaaa;
-      --error: #999999;
+      
       /* Motion */
       --dur: 0.3s;
       --ease: cubic-bezier(0.4, 0, 0.2, 1);
+      
       /* Design variables */
       --radius: 8px;
       --shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
       --card-bg: linear-gradient(145deg, rgba(30, 30, 30, 0.9), rgba(20, 20, 20, 0.9));
       --header-height: 80px;
-    }
-    
-    /* Light Mode */
-    .light-mode {
-      --bg: #ffffff;
-      --bg-soft: #f5f5f5;
-      --bg-softer: #eeeeee;
-      --accent: #000000;
-      --accent-dark: #333333;
-      --text: #000000;
-      --text-muted: #666666;
-      --border: #cccccc;
-      --card-bg: linear-gradient(145deg, rgba(240, 240, 240, 0.9), rgba(230, 230, 230, 0.9));
     }
 
     *, *::before, *::after {
@@ -55,10 +44,12 @@
       margin: 0;
       padding: 0;
     }
+
     html {
       scroll-behavior: smooth;
       font-family: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
+
     body {
       background: var(--bg);
       color: var(--text);
@@ -67,9 +58,11 @@
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
       font-family: 'Lato', sans-serif;
-      transition: background var(--dur), color var(--dur);
     }
-    /* Enhanced Typography */
+
+    /* =====================================================
+       TYPOGRAPHY
+       ===================================================== */
     h1, h2, h3, h4 {
       line-height: 1.2;
       font-weight: 700;
@@ -79,6 +72,7 @@
       letter-spacing: -0.02em;
       font-family: 'Lato', sans-serif;
     }
+
     h1 {
       font-size: 3.5rem;
       max-width: 32ch;
@@ -89,6 +83,7 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
+
     h2 {
       font-size: 2.5rem;
       margin-bottom: 1.5rem;
@@ -97,18 +92,37 @@
       display: block;
       text-align: center;
     }
+    
+    h2::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      margin: 1rem auto 0;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      border-radius: 2px;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { box-shadow: 0 0 4px var(--accent); }
+      to { box-shadow: 0 0 16px var(--accent), 0 0 24px var(--accent); }
+    }
+
     h3 {
       font-size: 1.8rem;
       margin-bottom: 1rem;
       color: #f0f0f0;
       text-align: center;
     }
+
     h4 {
       font-size: 1.4rem;
       margin-bottom: 0.75rem;
       color: #f0f0f0;
       text-align: left;
     }
+
     p {
       font-size: 1.1rem;
       color: var(--text-muted);
@@ -116,20 +130,27 @@
       margin-bottom: 1.5rem;
       text-align: center;
     }
+
     strong {
       color: #ffffff;
       font-weight: 700;
     }
+
+    /* =====================================================
+       LISTS
+       ===================================================== */
     ul.benefits-list {
       margin: 1.5rem 0;
       padding-left: 1.5rem;
       line-height: 1.8;
       text-align: left;
     }
+
     ul.benefits-list li {
       margin-bottom: 0.75rem;
       position: relative;
     }
+
     ul.benefits-list li::before {
       content: "•";
       color: var(--accent);
@@ -138,7 +159,10 @@
       width: 1em;
       margin-left: -1em;
     }
-    /* Enhanced Button */
+
+    /* =====================================================
+       BUTTONS
+       ===================================================== */
     .btn {
       font-size: 1.1rem;
       font-weight: 600;
@@ -161,6 +185,7 @@
       z-index: 1;
       text-decoration: none;
     }
+
     .btn::before {
       content: '';
       position: absolute;
@@ -172,28 +197,37 @@
       transition: all var(--dur) var(--ease);
       z-index: -1;
     }
+
     .btn:hover {
       transform: translateY(-3px);
       box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3), var(--accent-glow);
     }
+
     .btn:hover::before {
       width: 100%;
     }
+
     .btn:active {
       transform: translateY(-1px);
     }
+
     .btn-secondary {
       background: transparent;
       color: var(--accent);
       border: 2px solid var(--accent);
     }
+
     .btn-secondary::before {
       background: var(--accent);
     }
+
     .btn-secondary:hover {
       color: var(--bg);
     }
-    /* Enhanced Sticky Header */
+
+    /* =====================================================
+       HEADER
+       ===================================================== */
     header {
       position: sticky;
       top: 0;
@@ -206,11 +240,8 @@
       align-items: center;
       justify-content: space-between;
       height: var(--header-height);
-      transition: background var(--dur);
     }
-    .light-mode header {
-      background: rgba(255, 255, 255, 0.95);
-    }
+
     .logo {
       font-weight: 800;
       font-size: 1.8rem;
@@ -220,14 +251,17 @@
       color: var(--text);
       text-decoration: none;
     }
+
     .logo span {
       color: var(--accent);
     }
+
     nav {
       display: flex;
       gap: 2.5rem;
       align-items: center;
     }
+
     nav a {
       font-size: 0.95rem;
       font-weight: 600;
@@ -239,6 +273,7 @@
       text-decoration: none;
       transition: color var(--dur);
     }
+
     nav a::after {
       content: '';
       position: absolute;
@@ -250,34 +285,31 @@
       border-radius: 1px;
       transition: width var(--dur);
     }
+
     nav a:hover {
       color: var(--accent);
     }
+
     nav a:hover::after {
       width: 100%;
     }
+
     .nav-cta {
       margin-left: 1.5rem;
     }
-    /* Dark Mode Toggle Button */
-    .theme-toggle-btn {
+
+    .mobile-menu-btn {
+      display: none;
       background: none;
       border: none;
       color: var(--text);
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       cursor: pointer;
-      padding: 0.5rem;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
-    .theme-toggle-btn:hover {
-      background: rgba(255, 255, 255, 0.1);
-    }
-    /* Enhanced Hero Section */
+
+    /* =====================================================
+       HERO SECTION
+       ===================================================== */
     .hero {
       padding: calc(var(--header-height) + 2rem) 2rem 4rem;
       min-height: 100vh;
@@ -291,6 +323,7 @@
       position: relative;
       overflow: hidden;
     }
+
     .hero::before {
       content: "";
       position: absolute;
@@ -303,16 +336,19 @@
         radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
       z-index: -1;
     }
+
     .hero-content {
       max-width: 1000px;
       margin: 0 auto;
       width: 100%;
     }
+
     .hero p {
       font-size: 1.3rem;
       max-width: 65ch;
       margin: 0 auto 2.5rem;
     }
+
     .youtube-embed {
       width: 100%;
       max-width: 900px;
@@ -324,15 +360,18 @@
       border: 1px solid var(--border);
       transition: transform var(--dur), box-shadow var(--dur);
     }
+
     .youtube-embed:hover {
       transform: translateY(-5px);
       box-shadow: 0 20px 40px rgba(255, 255, 255, 0.2);
     }
+
     .youtube-embed iframe {
       width: 100%;
       height: 100%;
       border: none;
     }
+
     .hero-cta {
       display: flex;
       gap: 1.5rem;
@@ -341,7 +380,10 @@
       flex-wrap: wrap;
       width: 100%;
     }
-    /* Enhanced Sections */
+
+    /* =====================================================
+       SECTIONS
+       ===================================================== */
     section {
       padding: 6rem 2rem;
       max-width: 1440px;
@@ -349,26 +391,14 @@
       position: relative;
       width: 100%;
     }
+
     .section-title {
       text-align: center;
       margin-bottom: 3rem;
       position: relative;
       width: 100%;
     }
-    .section-title::after {
-      content: '';
-      display: block;
-      width: 80px;
-      height: 4px;
-      margin: 1rem auto 0;
-      background: linear-gradient(90deg, transparent, var(--accent), transparent);
-      border-radius: 2px;
-      animation: glow 2s infinite alternate;
-    }
-    @keyframes glow {
-      from { box-shadow: 0 0 4px var(--accent); }
-      to { box-shadow: 0 0 16px var(--accent), 0 0 24px var(--accent); }
-    }
+
     .section-intro {
       text-align: center;
       max-width: 800px;
@@ -376,7 +406,10 @@
       font-size: 1.2rem;
       width: 100%;
     }
-    /* Enhanced Cards */
+
+    /* =====================================================
+       CARDS
+       ===================================================== */
     .card {
       background: var(--card-bg);
       padding: 2.5rem;
@@ -390,6 +423,7 @@
       display: flex;
       flex-direction: column;
     }
+
     .card::before {
       content: "";
       position: absolute;
@@ -400,11 +434,13 @@
       background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
       z-index: -1;
     }
+
     .card:hover {
       transform: translateY(-5px);
       box-shadow: 0 12px 28px rgba(255, 255, 255, 0.15);
       border-color: rgba(255, 255, 255, 0.3);
     }
+
     .card h3 {
       color: var(--accent);
       margin-bottom: 1.25rem;
@@ -413,14 +449,19 @@
       justify-content: center;
       gap: 0.75rem;
     }
+
     .card h3 i {
       font-size: 1.5rem;
     }
+
     .card ul {
       text-align: left;
       flex-grow: 1;
     }
-    /* Enhanced Grid Layouts */
+
+    /* =====================================================
+       GRID LAYOUTS
+       ===================================================== */
     .problem-solution,
     .use-cases,
     .revenue-models,
@@ -429,18 +470,23 @@
       gap: 2rem;
       width: 100%;
     }
+
     .problem-solution {
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
+
     .use-cases {
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     }
+
     .revenue-models {
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     }
+
     .outcomes-grid {
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
+
     /* Steps */
     .steps {
       display: grid;
@@ -449,6 +495,7 @@
       margin-top: 3rem;
       width: 100%;
     }
+
     .step {
       background: var(--card-bg);
       padding: 2rem;
@@ -458,6 +505,7 @@
       position: relative;
       backdrop-filter: blur(10px);
     }
+
     .step-number {
       font-size: 2.5rem;
       font-weight: 800;
@@ -470,7 +518,8 @@
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.1);
     }
-    /* Enhanced Models */
+
+    /* Models */
     .model {
       background: var(--card-bg);
       padding: 2.5rem;
@@ -480,14 +529,17 @@
       backdrop-filter: blur(10px);
       height: 100%;
     }
+
     .model h3 {
       color: var(--accent);
       margin-bottom: 1.5rem;
     }
+
     .model ul {
       text-align: left;
       margin: 1.5rem 0;
     }
+
     /* Use Cases */
     .use-case {
       background: var(--card-bg);
@@ -499,9 +551,11 @@
       height: 100%;
       transition: all var(--dur);
     }
+
     .use-case:hover {
       border-color: var(--accent);
     }
+
     .use-case h4 {
       color: var(--accent);
       margin-bottom: 1rem;
@@ -510,9 +564,11 @@
       gap: 0.5rem;
       text-align: left;
     }
+
     .use-case h4 i {
       font-size: 1.25rem;
     }
+
     /* Outcomes */
     .outcome {
       background: var(--card-bg);
@@ -523,16 +579,22 @@
       backdrop-filter: blur(10px);
       transition: all var(--dur);
     }
+
     .outcome:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
     }
+
     .outcome strong {
       color: var(--accent);
       font-size: 1.8rem;
       display: block;
       margin-bottom: 0.5rem;
     }
+
+    /* =====================================================
+       OTHER COMPONENTS
+       ===================================================== */
     /* Demo Buttons */
     .demo-buttons {
       display: flex;
@@ -542,12 +604,14 @@
       flex-wrap: wrap;
       width: 100%;
     }
+
     /* Partners */
     .partners {
       margin-top: 3rem;
       text-align: center;
       width: 100%;
     }
+
     .partner-links {
       display: flex;
       justify-content: center;
@@ -555,6 +619,7 @@
       margin-top: 1rem;
       flex-wrap: wrap;
     }
+
     .partner-links a {
       color: var(--accent);
       font-weight: 600;
@@ -565,11 +630,13 @@
       border-radius: 30px;
       transition: all var(--dur);
     }
+
     .partner-links a:hover {
       color: #000;
       border-color: var(--accent);
       background: rgba(255, 255, 255, 0.1);
     }
+
     /* Cal Booking */
     .cal-booking {
       background: var(--card-bg);
@@ -581,12 +648,14 @@
       width: 100%;
       text-align: center;
     }
+
     .cal-booking p {
       text-align: center;
       max-width: 700px;
       margin: 0 auto 3rem;
       font-size: 1.2rem;
     }
+
     #my-cal-inline-south-africa {
       width: 100%;
       height: 600px;
@@ -596,7 +665,8 @@
       margin: 0 auto;
       display: block;
     }
-    /* Enhanced Footer */
+
+    /* Footer */
     footer {
       padding: 5rem 2rem 2rem;
       display: grid;
@@ -608,9 +678,11 @@
       width: 100%;
       text-align: center;
     }
+
     .footer-section {
       text-align: center;
     }
+
     .footer-section h3 {
       color: var(--accent);
       font-size: 1.4rem;
@@ -620,12 +692,14 @@
       justify-content: center;
       gap: 0.5rem;
     }
+
     .social-links {
       display: flex;
       gap: 1rem;
       margin-top: 1.5rem;
       justify-content: center;
     }
+
     .social-icon {
       width: 44px;
       height: 44px;
@@ -637,11 +711,13 @@
       transition: all var(--dur);
       text-decoration: none;
     }
+
     .social-icon:hover {
       background: var(--accent);
       color: var(--bg);
       transform: translateY(-3px);
     }
+
     .copyright {
       grid-column: 1 / -1;
       text-align: center;
@@ -651,12 +727,14 @@
       border-top: 1px solid var(--border);
       font-size: 0.9rem;
     }
+
     .footer-links {
       display: flex;
       flex-direction: column;
       gap: 0.75rem;
       align-items: center;
     }
+
     .footer-links a {
       color: var(--text-muted);
       text-decoration: none;
@@ -666,12 +744,15 @@
       gap: 0.5rem;
       font-size: 0.95rem;
     }
+
     .footer-links a:hover {
       color: var(--accent);
     }
+
     .footer-links a i {
       font-size: 0.9rem;
     }
+
     /* Stats Counter */
     .stats-container {
       display: grid;
@@ -680,6 +761,7 @@
       margin: 4rem 0;
       width: 100%;
     }
+
     .stat {
       text-align: center;
       padding: 2rem;
@@ -687,19 +769,24 @@
       border-radius: var(--radius);
       border: 1px solid var(--border);
     }
+
     .stat-number {
       font-size: 2.8rem;
       font-weight: 800;
       color: var(--accent);
       margin-bottom: 0.5rem;
     }
+
     .stat-label {
       color: var(--text-muted);
       font-size: 0.95rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
     }
-    /* Responsive Design */
+
+    /* =====================================================
+       RESPONSIVE DESIGN
+       ===================================================== */
     @media (max-width: 1024px) {
       h1 {
         font-size: 2.8rem;
@@ -711,6 +798,7 @@
         padding: calc(var(--header-height) + 1rem) 1.5rem 3rem;
       }
     }
+
     @media (max-width: 768px) {
       header {
         padding: 1rem;
@@ -720,11 +808,6 @@
       }
       .mobile-menu-btn {
         display: block;
-        background: none;
-        border: none;
-        color: var(--text);
-        font-size: 1.5rem;
-        cursor: pointer;
       }
       h1 {
         font-size: 2.2rem;
@@ -784,13 +867,11 @@
         <a href="https://cal.com/partner-discovery/south-africa" class="btn btn-secondary">Schedule Demo</a>
       </div>
     </nav>
-    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Dark Mode">
-      <i class="fas fa-moon"></i>
-    </button>
     <button class="mobile-menu-btn">
       <i class="fas fa-bars"></i>
     </button>
   </header>
+  
   <section class="hero" id="home">
     <div class="hero-content">
       <h1>AI-Powered Enterprise Training Solutions</h1>
@@ -813,6 +894,7 @@
       </div>
     </div>
   </section>
+
   <div class="stats-container">
     <div class="stat">
       <div class="stat-number" data-target="80">0</div>
@@ -831,6 +913,7 @@
       <div class="stat-label">Manual Grading</div>
     </div>
   </div>
+
   <section id="solution">
     <h2 class="section-title">The Problem: Why Traditional Training Fails</h2>
     <p class="section-intro">Are you facing these challenges in your current training approach?</p>
@@ -869,6 +952,7 @@
       </div>
     </div>
   </section>
+
   <section id="solution">
     <h2 class="section-title">The Solution: Your Intelligent Teaching Workforce</h2>
     <p class="section-intro">Mariba Media is designed to solve these pain points by providing <strong>your own AI-powered teaching workforce that never sleeps</strong>.</p>
@@ -923,6 +1007,7 @@
       </div>
     </div>
   </section>
+
   <section id="how-it-works">
     <h2 class="section-title">How It Works: Simple & Efficient Deployment</h2>
     <p class="section-intro">Getting started with Mariba Media is straightforward and hassle-free</p>
@@ -949,6 +1034,7 @@
       </div>
     </div>
   </section>
+
   <section id="use-cases">
     <h2 class="section-title">Key Use Cases</h2>
     <p class="section-intro">Mariba Media is ideal for any scenario requiring scalable, certifiable training</p>
@@ -991,6 +1077,7 @@
       </div>
     </div>
   </section>
+
   <section id="proof">
     <h2 class="section-title">Flexible Revenue Models</h2>
     <p class="section-intro">Choose the model that fits your institutional needs and budget</p>
@@ -1017,6 +1104,7 @@
       </div>
     </div>
   </section>
+
   <section id="outcomes">
     <h2 class="section-title">Performance Outcomes</h2>
     <p class="section-intro">With Mariba Media, you will achieve unprecedented results and ROI</p>
@@ -1029,6 +1117,7 @@
       <div class="outcome"><strong>Real-time accreditation tracking</strong> with audit-ready reporting</div>
     </div>
   </section>
+
   <section id="why">
     <h2 class="section-title">Why Choose Mariba Media?</h2>
     <p class="section-intro">Discover the competitive advantages of our enterprise training solution</p>
@@ -1051,6 +1140,7 @@
       </div>
     </div>
   </section>
+
   <section id="demo">
     <h2 class="section-title">See Mariba Media in Action</h2>
     <p class="section-intro">Experience the future of AI-driven training with our interactive demos</p>
@@ -1071,6 +1161,7 @@
       </div>
     </div>
   </section>
+
   <section class="cal-booking" id="booking">
     <h2 class="section-title">Ready to Transform Your Training?</h2>
     <p>In this 30-minute session, we will:<br>
@@ -1080,6 +1171,7 @@
     </p>
     <div id="my-cal-inline-south-africa"></div>
   </section>
+
   <footer>
     <div class="footer-section">
       <h3><i class="fas fa-rocket"></i> Mariba<span style="color:var(--accent)">Media</span></h3>
@@ -1129,6 +1221,7 @@
       &copy; <span id="current-year"></span> Mariba Media. AI Infrastructure Partner. Pay only for performance.
     </div>
   </footer>
+
   <div class="whatsapp-widget">
     <a href="https://wa.me/27766473499" target="_blank" rel="noopener">
       <button class="whatsapp-button" aria-label="Chat on WhatsApp">
@@ -1136,26 +1229,28 @@
       </button>
     </a>
   </div>
+
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      // Dark Mode Toggle
-      const themeToggle = document.getElementById('theme-toggle');
-      const currentTheme = localStorage.getItem('theme') || 'dark';
-      if (currentTheme === 'light') {
-        document.body.classList.add('light-mode');
-        if (themeToggle) themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-      }
-      if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-          if (document.body.classList.contains('light-mode')) {
-            document.body.classList.remove('light-mode');
-            localStorage.setItem('theme', 'dark');
-            themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-          } else {
-            document.body.classList.add('light-mode');
-            localStorage.setItem('theme', 'light');
-            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-          }
+      // Mobile Menu Toggle
+      const mobileBtn = document.querySelector('.mobile-menu-btn');
+      if (mobileBtn) {
+        mobileBtn.addEventListener('click', function() {
+          const nav = document.createElement('nav');
+          nav.className = 'mobile-nav';
+          nav.innerHTML = `
+            <a href="#home">Home</a>
+            <a href="#solution">Solution</a>
+            <a href="#use-cases">Use Cases</a>
+            <a href="#proof">Proof</a>
+            <a href="#booking">Get Started</a>
+            <a href="https://cal.com/partner-discovery/south-africa" class="btn btn-secondary">Schedule Demo</a>
+          `;
+          document.body.appendChild(nav);
+          
+          nav.classList.toggle('active');
+          mobileBtn.innerHTML = nav.classList.contains('active') ? 
+            '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
         });
       }
 
@@ -1200,9 +1295,11 @@
         });
         Cal.ns["south-africa"]("ui", { layout: "month_view" });
       }
+      
       // Year
       const yearEl = document.getElementById("current-year");
       if (yearEl) yearEl.textContent = new Date().getFullYear();
+      
       // Stats counter animation
       const stats = document.querySelectorAll('.stat-number');
       const speed = 200;
