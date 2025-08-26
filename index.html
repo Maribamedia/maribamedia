@@ -36,6 +36,20 @@
       --card-bg: linear-gradient(145deg, rgba(30, 30, 30, 0.9), rgba(20, 20, 20, 0.9));
       --header-height: 80px;
     }
+    
+    /* Light Mode */
+    .light-mode {
+      --bg: #ffffff;
+      --bg-soft: #f5f5f5;
+      --bg-softer: #eeeeee;
+      --accent: #000000;
+      --accent-dark: #333333;
+      --text: #000000;
+      --text-muted: #666666;
+      --border: #cccccc;
+      --card-bg: linear-gradient(145deg, rgba(240, 240, 240, 0.9), rgba(230, 230, 230, 0.9));
+    }
+
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
@@ -53,6 +67,7 @@
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
       font-family: 'Lato', sans-serif;
+      transition: background var(--dur), color var(--dur);
     }
     /* Enhanced Typography */
     h1, h2, h3, h4 {
@@ -191,6 +206,10 @@
       align-items: center;
       justify-content: space-between;
       height: var(--header-height);
+      transition: background var(--dur);
+    }
+    .light-mode header {
+      background: rgba(255, 255, 255, 0.95);
     }
     .logo {
       font-weight: 800;
@@ -239,6 +258,24 @@
     }
     .nav-cta {
       margin-left: 1.5rem;
+    }
+    /* Dark Mode Toggle Button */
+    .theme-toggle-btn {
+      background: none;
+      border: none;
+      color: var(--text);
+      font-size: 1.2rem;
+      cursor: pointer;
+      padding: 0.5rem;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .theme-toggle-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
     }
     /* Enhanced Hero Section */
     .hero {
@@ -313,7 +350,7 @@
       width: 100%;
     }
     .section-title {
-      text-align: center !important;
+      text-align: center;
       margin-bottom: 3rem;
       position: relative;
       width: 100%;
@@ -747,6 +784,9 @@
         <a href="https://cal.com/partner-discovery/south-africa" class="btn btn-secondary">Schedule Demo</a>
       </div>
     </nav>
+    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Dark Mode">
+      <i class="fas fa-moon"></i>
+    </button>
     <button class="mobile-menu-btn">
       <i class="fas fa-bars"></i>
     </button>
@@ -1098,6 +1138,27 @@
   </div>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
+      // Dark Mode Toggle
+      const themeToggle = document.getElementById('theme-toggle');
+      const currentTheme = localStorage.getItem('theme') || 'dark';
+      if (currentTheme === 'light') {
+        document.body.classList.add('light-mode');
+        if (themeToggle) themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+      }
+      if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+          if (document.body.classList.contains('light-mode')) {
+            document.body.classList.remove('light-mode');
+            localStorage.setItem('theme', 'dark');
+            themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+          } else {
+            document.body.classList.add('light-mode');
+            localStorage.setItem('theme', 'light');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+          }
+        });
+      }
+
       // Cal.com
       const calDiv = document.getElementById('my-cal-inline-south-africa');
       if (calDiv) {
