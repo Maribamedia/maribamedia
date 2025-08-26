@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mariba Media – Enterprise AI Training Solutions</title>
   <meta name="description" content="Mariba Media delivers performance-driven AI teaching & assessment systems for scalable, certifiable enterprise learning.">
   <!-- Google Fonts: Lato -->
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     /* ——————————————————————————————————————
-       Modern Enterprise Design System (Black & White)
+       Modern Enterprise Design System (Restored Layout)
        —————————————————————————————————————— */
     :root {
+      /* Grayscale Color Palette */
       --bg: #000000;
       --bg-soft: #0a0a0a;
       --bg-softer: #141414;
@@ -23,74 +24,59 @@
       --text: #ffffff;
       --text-muted: #a0a0a0;
       --border: #333333;
-      --card-bg: linear-gradient(145deg, rgba(30, 30, 30, 0.9), rgba(20, 20, 20, 0.9));
-      --shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      /* Design variables */
       --dur: 0.3s;
       --ease: cubic-bezier(0.4, 0, 0.2, 1);
       --radius: 8px;
+      --shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      --card-bg: linear-gradient(145deg, rgba(30, 30, 30, 0.9), rgba(20, 20, 20, 0.9));
       --header-height: 80px;
     }
-
-    /* Light Mode */
-    .light-mode {
-      --bg: #ffffff;
-      --bg-soft: #f5f5f5;
-      --bg-softer: #eeeeee;
-      --accent: #000000;
-      --accent-dark: #333333;
-      --accent-glow: 0 0 24px rgba(0, 0, 0, 0.25);
-      --text: #000000;
-      --text-muted: #666666;
-      --border: #cccccc;
-      --card-bg: linear-gradient(145deg, rgba(240, 240, 240, 0.9), rgba(230, 230, 230, 0.9));
-      --shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    }
-
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-
     html {
       scroll-behavior: smooth;
-      font-family: 'Lato', sans-serif;
-      -webkit-font-smoothing: antialiased;
+      font-family: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
-
     body {
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
       font-size: 16px;
+      -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
-      transition: background var(--dur), color var(--dur);
+      font-family: 'Lato', sans-serif;
     }
-
     /* Typography */
     h1, h2, h3, h4 {
       line-height: 1.2;
       font-weight: 700;
-      margin: 0;
+      margin-top: 0;
       text-align: center;
+      width: 100%;
       letter-spacing: -0.02em;
       font-family: 'Lato', sans-serif;
     }
     h1 {
-      font-size: clamp(2.2rem, 6vw, 3.5rem);
+      font-size: 3.5rem;
       max-width: 32ch;
       margin: 0 auto 1.5rem;
+      color: #ffffff;
       background: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
     h2 {
-      font-size: clamp(2rem, 5vw, 2.5rem);
+      font-size: 2.5rem;
       margin-bottom: 1.5rem;
       color: var(--accent);
       position: relative;
       display: block;
+      text-align: center;
     }
     h2::after {
       content: '';
@@ -147,7 +133,6 @@
       width: 1em;
       margin-left: -1em;
     }
-
     /* Button */
     .btn {
       font-size: 1.1rem;
@@ -197,10 +182,12 @@
       color: var(--accent);
       border: 2px solid var(--accent);
     }
+    .btn-secondary::before {
+      background: var(--accent);
+    }
     .btn-secondary:hover {
       color: var(--bg);
     }
-
     /* Header */
     header {
       position: sticky;
@@ -214,10 +201,6 @@
       align-items: center;
       justify-content: space-between;
       height: var(--header-height);
-      transition: background var(--dur);
-    }
-    .light-mode header {
-      background: rgba(255, 255, 255, 0.95);
     }
     .logo {
       font-weight: 800;
@@ -267,8 +250,6 @@
     .nav-cta {
       margin-left: 1.5rem;
     }
-
-    /* Mobile Menu Button */
     .mobile-menu-btn {
       display: none;
       background: none;
@@ -277,53 +258,6 @@
       font-size: 1.5rem;
       cursor: pointer;
     }
-
-    /* Dark Mode Toggle */
-    .theme-toggle-btn {
-      background: none;
-      border: none;
-      color: var(--text);
-      font-size: 1.2rem;
-      cursor: pointer;
-      padding: 0.5rem;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .theme-toggle-btn:hover {
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    /* Mobile Nav */
-    .mobile-nav {
-      position: fixed;
-      top: var(--header-height);
-      left: 0;
-      width: 100%;
-      background: var(--bg);
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem 0;
-      gap: 1.5rem;
-      z-index: 998;
-      transform: translateY(-100%);
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.4s var(--ease);
-    }
-    .mobile-nav.active {
-      transform: translateY(0);
-      opacity: 1;
-      visibility: visible;
-    }
-    .mobile-nav a {
-      font-size: 1.1rem;
-      padding: 0.5rem 2rem;
-    }
-
     /* Hero */
     .hero {
       padding: calc(var(--header-height) + 2rem) 2rem 4rem;
@@ -388,7 +322,6 @@
       flex-wrap: wrap;
       width: 100%;
     }
-
     /* Sections */
     section {
       padding: 6rem 2rem;
@@ -418,8 +351,8 @@
       max-width: 800px;
       margin: 0 auto 4rem;
       font-size: 1.2rem;
+      width: 100%;
     }
-
     /* Cards */
     .card {
       background: var(--card-bg);
@@ -464,7 +397,6 @@
       text-align: left;
       flex-grow: 1;
     }
-
     /* Grid Layouts */
     .problem-solution,
     .use-cases,
@@ -486,7 +418,6 @@
     .outcomes-grid {
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
-
     /* Steps */
     .steps {
       display: grid;
@@ -516,7 +447,6 @@
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.1);
     }
-
     /* Models */
     .model {
       background: var(--card-bg);
@@ -535,7 +465,6 @@
       text-align: left;
       margin: 1.5rem 0;
     }
-
     /* Use Cases */
     .use-case {
       background: var(--card-bg);
@@ -561,7 +490,6 @@
     .use-case h4 i {
       font-size: 1.25rem;
     }
-
     /* Outcomes */
     .outcome {
       background: var(--card-bg);
@@ -582,186 +510,43 @@
       display: block;
       margin-bottom: 0.5rem;
     }
-
-    /* ROI Calculator */
-    .roi-calculator {
-      max-width: 800px;
-      margin: 0 auto 4rem;
-      background: var(--card-bg);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      border: 1px solid var(--border);
-      backdrop-filter: blur(10px);
-    }
-    .calculator-header {
-      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-      color: var(--bg);
-      padding: 24px;
-      text-align: center;
-    }
-    .calculator-header h1 {
-      font-size: 28px;
-      margin-bottom: 8px;
-      font-weight: 700;
-      background: linear-gradient(135deg, var(--bg), var(--text-muted));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .calculator-header p {
-      opacity: 0.9;
-      max-width: 600px;
-      margin: 0 auto;
-      font-size: 16px;
-    }
-    .calculator-body {
-      padding: 24px;
-    }
-    .input-section {
-      margin-bottom: 30px;
-    }
-    .section-title {
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 16px;
-      color: var(--accent);
+    /* Demo Buttons */
+    .demo-buttons {
       display: flex;
-      align-items: center;
-    }
-    .section-title::before {
-      content: "";
-      display: inline-block;
-      width: 4px;
-      height: 20px;
-      background: var(--accent);
-      margin-right: 10px;
-      border-radius: 2px;
-    }
-    .input-group {
-      margin-bottom: 16px;
-    }
-    label {
-      display: block;
-      margin-bottom: 6px;
-      font-weight: 500;
-      color: var(--text);
-    }
-    input {
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 3rem 0;
+      flex-wrap: wrap;
       width: 100%;
-      padding: 12px 16px;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      background: var(--bg-soft);
-      color: var(--accent);
-      font-size: 16px;
-      transition: all var(--dur);
     }
-    input:focus {
-      outline: none;
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+    /* Partners */
+    .partners {
+      margin-top: 3rem;
+      text-align: center;
+      width: 100%;
     }
-    .input-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 16px;
-    }
-    .results-section {
-      background: var(--bg-soft);
-      border-radius: 8px;
-      padding: 20px;
-      margin-top: 20px;
-    }
-    .result-item {
+    .partner-links {
       display: flex;
-      justify-content: space-between;
-      padding: 12px 0;
-      border-bottom: 1px solid var(--border);
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
     }
-    .result-item:last-child {
-      border-bottom: none;
-    }
-    .result-label {
-      font-weight: 500;
-      color: var(--text);
-    }
-    .result-value {
-      font-weight: 700;
+    .partner-links a {
       color: var(--accent);
-    }
-    .highlight {
-      background: rgba(255, 255, 255, 0.1);
-      border-left: 4px solid var(--accent);
-      padding: 16px;
-      border-radius: 0 6px 6px 0;
-      margin: 20px 0;
-    }
-    .highlight-value {
-      font-size: 28px;
-      font-weight: 800;
-      color: #ff6b6b;
-      margin: 10px 0;
-    }
-    .risk-reversal {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      border-radius: 8px;
-      padding: 16px;
-      margin-top: 15px;
-      text-align: center;
-    }
-    .risk-reversal strong {
-      color: var(--accent);
-    }
-    .cta-section {
-      text-align: center;
-      padding: 24px;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 8px;
-      margin-top: 20px;
-    }
-    .cta-title {
-      font-size: 22px;
-      margin-bottom: 12px;
-      color: var(--accent);
-    }
-    .cta-description {
-      color: var(--text-muted);
-      margin-bottom: 20px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .button {
-      display: inline-block;
-      background: var(--accent);
-      color: var(--bg);
-      padding: 14px 28px;
-      border-radius: 6px;
       font-weight: 600;
+      font-size: 0.95rem;
       text-decoration: none;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 30px;
       transition: all var(--dur);
-      cursor: pointer;
-      border: none;
-      font-size: 16px;
-      width: 100%;
-      max-width: 400px;
     }
-    .button:hover {
-      background: var(--accent-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+    .partner-links a:hover {
+      color: #000;
+      border-color: var(--accent);
+      background: rgba(255, 255, 255, 0.1);
     }
-    .disclaimer {
-      font-size: 12px;
-      color: var(--text-muted);
-      text-align: center;
-      margin-top: 20px;
-      padding-top: 15px;
-      border-top: 1px solid var(--border);
-    }
-
     /* Cal Booking */
     .cal-booking {
       background: var(--card-bg);
@@ -788,7 +573,6 @@
       margin: 0 auto;
       display: block;
     }
-
     /* Footer */
     footer {
       padding: 5rem 2rem 2rem;
@@ -865,7 +649,33 @@
     .footer-links a i {
       font-size: 0.9rem;
     }
-
+    /* Stats Counter */
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin: 4rem 0;
+      width: 100%;
+    }
+    .stat {
+      text-align: center;
+      padding: 2rem;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+    .stat-number {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .stat-label {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
     /* Responsive Design */
     @media (max-width: 1024px) {
       h1 {
@@ -909,7 +719,11 @@
       .hero {
         padding: calc(var(--header-height) + 1rem) 1.5rem 3rem;
       }
-      .demo-buttons, .hero-cta {
+      .demo-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      .hero-cta {
         flex-direction: column;
         align-items: center;
       }
@@ -925,9 +739,6 @@
       }
       .footer-links {
         align-items: center;
-      }
-      .roi-calculator {
-        margin: 0 1rem 4rem;
       }
     }
   </style>
@@ -945,23 +756,11 @@
         <a href="https://cal.com/partner-discovery/south-africa" class="btn btn-secondary">Schedule Demo</a>
       </div>
     </nav>
-    <button class="mobile-menu-btn" aria-label="Toggle Menu">
+    <button class="mobile-menu-btn">
       <i class="fas fa-bars"></i>
     </button>
-    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Dark Mode">
-      <i class="fas fa-moon"></i>
-    </button>
   </header>
-
-  <nav class="mobile-nav">
-    <a href="#home">Home</a>
-    <a href="#solution">Solution</a>
-    <a href="#use-cases">Use Cases</a>
-    <a href="#proof">Proof</a>
-    <a href="#booking">Get Started</a>
-    <a href="https://cal.com/partner-discovery/south-africa" class="btn btn-secondary">Schedule Demo</a>
-  </nav>
-
+  
   <section class="hero" id="home">
     <div class="hero-content">
       <h1>AI-Powered Enterprise Training Solutions</h1>
@@ -1248,8 +1047,6 @@
     </div>
   </section>
 
-  <!-- All remaining sections unchanged -->
-
   <section id="proof">
     <h2 class="section-title">Flexible Revenue Models</h2>
     <p class="section-intro">Choose the model that fits your institutional needs and budget</p>
@@ -1406,34 +1203,23 @@
     document.addEventListener("DOMContentLoaded", function () {
       // Mobile Menu Toggle
       const mobileBtn = document.querySelector('.mobile-menu-btn');
-      const mobileNav = document.querySelector('.mobile-nav');
-      if (mobileBtn && mobileNav) {
-        mobileBtn.addEventListener('click', () => {
-          mobileNav.classList.toggle('active');
-          mobileBtn.innerHTML = mobileNav.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-        });
-      }
-
-      // Dark Mode Toggle
-      const themeToggle = document.getElementById('theme-toggle');
-      const currentTheme = localStorage.getItem('theme') || 'dark';
-      if (currentTheme === 'light') {
-        document.body.classList.add('light-mode');
-        if (themeToggle) themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-      }
-      if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-          if (document.body.classList.contains('light-mode')) {
-            document.body.classList.remove('light-mode');
-            localStorage.setItem('theme', 'dark');
-            themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-          } else {
-            document.body.classList.add('light-mode');
-            localStorage.setItem('theme', 'light');
-            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-          }
-        });
-      }
+      const mobileNav = document.createElement('nav');
+      mobileNav.className = 'mobile-nav';
+      mobileNav.innerHTML = `
+        <a href="#home">Home</a>
+        <a href="#solution">Solution</a>
+        <a href="#use-cases">Use Cases</a>
+        <a href="#proof">Proof</a>
+        <a href="#booking">Get Started</a>
+        <a href="https://cal.com/partner-discovery/south-africa" class="btn btn-secondary">Schedule Demo</a>
+      `;
+      document.body.appendChild(mobileNav);
+      
+      mobileBtn.addEventListener('click', () => {
+        mobileNav.classList.toggle('active');
+        mobileBtn.innerHTML = mobileNav.classList.contains('active') ? 
+          '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+      });
 
       // ROI Calculator
       const learnersInput = document.getElementById('learners');
