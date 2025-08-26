@@ -5,17 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mariba Media – Enterprise AI Training Solutions</title>
   <meta name="description" content="Mariba Media delivers performance-driven AI teaching & assessment systems for scalable, certifiable enterprise learning.">
-  
   <!-- Google Fonts: Lato -->
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
-  
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
   <style>
-    /* =====================================================
-       DESIGN SYSTEM - BASE STYLES
-       ===================================================== */
+    /* ——————————————————————————————————————
+       Modern Enterprise Design System
+       —————————————————————————————————————— */
     :root {
       /* Grayscale Color Palette */
       --bg: #000000;
@@ -27,29 +24,27 @@
       --text: #ffffff;
       --text-muted: #a0a0a0;
       --border: #333333;
-      
+      --success: #888888;
+      --warning: #aaaaaa;
+      --error: #999999;
       /* Motion */
       --dur: 0.3s;
       --ease: cubic-bezier(0.4, 0, 0.2, 1);
-      
       /* Design variables */
       --radius: 8px;
       --shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
       --card-bg: linear-gradient(145deg, rgba(30, 30, 30, 0.9), rgba(20, 20, 20, 0.9));
       --header-height: 80px;
     }
-
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-
     html {
       scroll-behavior: smooth;
       font-family: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
-
     body {
       background: var(--bg);
       color: var(--text);
@@ -59,10 +54,7 @@
       overflow-x: hidden;
       font-family: 'Lato', sans-serif;
     }
-
-    /* =====================================================
-       TYPOGRAPHY
-       ===================================================== */
+    /* Enhanced Typography */
     h1, h2, h3, h4 {
       line-height: 1.2;
       font-weight: 700;
@@ -72,7 +64,6 @@
       letter-spacing: -0.02em;
       font-family: 'Lato', sans-serif;
     }
-
     h1 {
       font-size: 3.5rem;
       max-width: 32ch;
@@ -83,7 +74,6 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-
     h2 {
       font-size: 2.5rem;
       margin-bottom: 1.5rem;
@@ -92,37 +82,18 @@
       display: block;
       text-align: center;
     }
-    
-    h2::after {
-      content: '';
-      display: block;
-      width: 80px;
-      height: 4px;
-      margin: 1rem auto 0;
-      background: linear-gradient(90deg, transparent, var(--accent), transparent);
-      border-radius: 2px;
-      animation: glow 2s infinite alternate;
-    }
-
-    @keyframes glow {
-      from { box-shadow: 0 0 4px var(--accent); }
-      to { box-shadow: 0 0 16px var(--accent), 0 0 24px var(--accent); }
-    }
-
     h3 {
       font-size: 1.8rem;
       margin-bottom: 1rem;
       color: #f0f0f0;
       text-align: center;
     }
-
     h4 {
       font-size: 1.4rem;
       margin-bottom: 0.75rem;
       color: #f0f0f0;
       text-align: left;
     }
-
     p {
       font-size: 1.1rem;
       color: var(--text-muted);
@@ -130,27 +101,20 @@
       margin-bottom: 1.5rem;
       text-align: center;
     }
-
     strong {
       color: #ffffff;
       font-weight: 700;
     }
-
-    /* =====================================================
-       LISTS
-       ===================================================== */
     ul.benefits-list {
       margin: 1.5rem 0;
       padding-left: 1.5rem;
       line-height: 1.8;
       text-align: left;
     }
-
     ul.benefits-list li {
       margin-bottom: 0.75rem;
       position: relative;
     }
-
     ul.benefits-list li::before {
       content: "•";
       color: var(--accent);
@@ -159,10 +123,7 @@
       width: 1em;
       margin-left: -1em;
     }
-
-    /* =====================================================
-       BUTTONS
-       ===================================================== */
+    /* Enhanced Button */
     .btn {
       font-size: 1.1rem;
       font-weight: 600;
@@ -185,7 +146,6 @@
       z-index: 1;
       text-decoration: none;
     }
-
     .btn::before {
       content: '';
       position: absolute;
@@ -197,37 +157,28 @@
       transition: all var(--dur) var(--ease);
       z-index: -1;
     }
-
     .btn:hover {
       transform: translateY(-3px);
       box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3), var(--accent-glow);
     }
-
     .btn:hover::before {
       width: 100%;
     }
-
     .btn:active {
       transform: translateY(-1px);
     }
-
     .btn-secondary {
       background: transparent;
       color: var(--accent);
       border: 2px solid var(--accent);
     }
-
     .btn-secondary::before {
       background: var(--accent);
     }
-
     .btn-secondary:hover {
       color: var(--bg);
     }
-
-    /* =====================================================
-       HEADER
-       ===================================================== */
+    /* Enhanced Sticky Header */
     header {
       position: sticky;
       top: 0;
@@ -241,7 +192,6 @@
       justify-content: space-between;
       height: var(--header-height);
     }
-
     .logo {
       font-weight: 800;
       font-size: 1.8rem;
@@ -251,17 +201,14 @@
       color: var(--text);
       text-decoration: none;
     }
-
     .logo span {
       color: var(--accent);
     }
-
     nav {
       display: flex;
       gap: 2.5rem;
       align-items: center;
     }
-
     nav a {
       font-size: 0.95rem;
       font-weight: 600;
@@ -273,7 +220,6 @@
       text-decoration: none;
       transition: color var(--dur);
     }
-
     nav a::after {
       content: '';
       position: absolute;
@@ -285,31 +231,16 @@
       border-radius: 1px;
       transition: width var(--dur);
     }
-
     nav a:hover {
       color: var(--accent);
     }
-
     nav a:hover::after {
       width: 100%;
     }
-
     .nav-cta {
       margin-left: 1.5rem;
     }
-
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      color: var(--text);
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    /* =====================================================
-       HERO SECTION
-       ===================================================== */
+    /* Enhanced Hero Section */
     .hero {
       padding: calc(var(--header-height) + 2rem) 2rem 4rem;
       min-height: 100vh;
@@ -323,7 +254,6 @@
       position: relative;
       overflow: hidden;
     }
-
     .hero::before {
       content: "";
       position: absolute;
@@ -336,19 +266,16 @@
         radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
       z-index: -1;
     }
-
     .hero-content {
       max-width: 1000px;
       margin: 0 auto;
       width: 100%;
     }
-
     .hero p {
       font-size: 1.3rem;
       max-width: 65ch;
       margin: 0 auto 2.5rem;
     }
-
     .youtube-embed {
       width: 100%;
       max-width: 900px;
@@ -360,18 +287,15 @@
       border: 1px solid var(--border);
       transition: transform var(--dur), box-shadow var(--dur);
     }
-
     .youtube-embed:hover {
       transform: translateY(-5px);
       box-shadow: 0 20px 40px rgba(255, 255, 255, 0.2);
     }
-
     .youtube-embed iframe {
       width: 100%;
       height: 100%;
       border: none;
     }
-
     .hero-cta {
       display: flex;
       gap: 1.5rem;
@@ -380,10 +304,7 @@
       flex-wrap: wrap;
       width: 100%;
     }
-
-    /* =====================================================
-       SECTIONS
-       ===================================================== */
+    /* Enhanced Sections */
     section {
       padding: 6rem 2rem;
       max-width: 1440px;
@@ -391,14 +312,26 @@
       position: relative;
       width: 100%;
     }
-
     .section-title {
       text-align: center;
       margin-bottom: 3rem;
       position: relative;
       width: 100%;
     }
-
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      margin: 1rem auto 0;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      border-radius: 2px;
+      animation: glow 2s infinite alternate;
+    }
+    @keyframes glow {
+      from { box-shadow: 0 0 4px var(--accent); }
+      to { box-shadow: 0 0 16px var(--accent), 0 0 24px var(--accent); }
+    }
     .section-intro {
       text-align: center;
       max-width: 800px;
@@ -406,10 +339,7 @@
       font-size: 1.2rem;
       width: 100%;
     }
-
-    /* =====================================================
-       CARDS
-       ===================================================== */
+    /* Enhanced Cards */
     .card {
       background: var(--card-bg);
       padding: 2.5rem;
@@ -423,7 +353,6 @@
       display: flex;
       flex-direction: column;
     }
-
     .card::before {
       content: "";
       position: absolute;
@@ -434,13 +363,11 @@
       background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
       z-index: -1;
     }
-
     .card:hover {
       transform: translateY(-5px);
       box-shadow: 0 12px 28px rgba(255, 255, 255, 0.15);
       border-color: rgba(255, 255, 255, 0.3);
     }
-
     .card h3 {
       color: var(--accent);
       margin-bottom: 1.25rem;
@@ -449,19 +376,14 @@
       justify-content: center;
       gap: 0.75rem;
     }
-
     .card h3 i {
       font-size: 1.5rem;
     }
-
     .card ul {
       text-align: left;
       flex-grow: 1;
     }
-
-    /* =====================================================
-       GRID LAYOUTS
-       ===================================================== */
+    /* Enhanced Grid Layouts */
     .problem-solution,
     .use-cases,
     .revenue-models,
@@ -470,23 +392,18 @@
       gap: 2rem;
       width: 100%;
     }
-
     .problem-solution {
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
-
     .use-cases {
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     }
-
     .revenue-models {
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     }
-
     .outcomes-grid {
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
-
     /* Steps */
     .steps {
       display: grid;
@@ -495,7 +412,6 @@
       margin-top: 3rem;
       width: 100%;
     }
-
     .step {
       background: var(--card-bg);
       padding: 2rem;
@@ -505,7 +421,6 @@
       position: relative;
       backdrop-filter: blur(10px);
     }
-
     .step-number {
       font-size: 2.5rem;
       font-weight: 800;
@@ -518,8 +433,7 @@
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.1);
     }
-
-    /* Models */
+    /* Enhanced Models */
     .model {
       background: var(--card-bg);
       padding: 2.5rem;
@@ -529,17 +443,14 @@
       backdrop-filter: blur(10px);
       height: 100%;
     }
-
     .model h3 {
       color: var(--accent);
       margin-bottom: 1.5rem;
     }
-
     .model ul {
       text-align: left;
       margin: 1.5rem 0;
     }
-
     /* Use Cases */
     .use-case {
       background: var(--card-bg);
@@ -551,11 +462,9 @@
       height: 100%;
       transition: all var(--dur);
     }
-
     .use-case:hover {
       border-color: var(--accent);
     }
-
     .use-case h4 {
       color: var(--accent);
       margin-bottom: 1rem;
@@ -564,11 +473,9 @@
       gap: 0.5rem;
       text-align: left;
     }
-
     .use-case h4 i {
       font-size: 1.25rem;
     }
-
     /* Outcomes */
     .outcome {
       background: var(--card-bg);
@@ -579,22 +486,16 @@
       backdrop-filter: blur(10px);
       transition: all var(--dur);
     }
-
     .outcome:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
     }
-
     .outcome strong {
       color: var(--accent);
       font-size: 1.8rem;
       display: block;
       margin-bottom: 0.5rem;
     }
-
-    /* =====================================================
-       OTHER COMPONENTS
-       ===================================================== */
     /* Demo Buttons */
     .demo-buttons {
       display: flex;
@@ -604,14 +505,12 @@
       flex-wrap: wrap;
       width: 100%;
     }
-
     /* Partners */
     .partners {
       margin-top: 3rem;
       text-align: center;
       width: 100%;
     }
-
     .partner-links {
       display: flex;
       justify-content: center;
@@ -619,7 +518,6 @@
       margin-top: 1rem;
       flex-wrap: wrap;
     }
-
     .partner-links a {
       color: var(--accent);
       font-weight: 600;
@@ -630,13 +528,11 @@
       border-radius: 30px;
       transition: all var(--dur);
     }
-
     .partner-links a:hover {
       color: #000;
       border-color: var(--accent);
       background: rgba(255, 255, 255, 0.1);
     }
-
     /* Cal Booking */
     .cal-booking {
       background: var(--card-bg);
@@ -648,14 +544,12 @@
       width: 100%;
       text-align: center;
     }
-
     .cal-booking p {
       text-align: center;
       max-width: 700px;
       margin: 0 auto 3rem;
       font-size: 1.2rem;
     }
-
     #my-cal-inline-south-africa {
       width: 100%;
       height: 600px;
@@ -665,8 +559,7 @@
       margin: 0 auto;
       display: block;
     }
-
-    /* Footer */
+    /* Enhanced Footer */
     footer {
       padding: 5rem 2rem 2rem;
       display: grid;
@@ -678,11 +571,9 @@
       width: 100%;
       text-align: center;
     }
-
     .footer-section {
       text-align: center;
     }
-
     .footer-section h3 {
       color: var(--accent);
       font-size: 1.4rem;
@@ -692,14 +583,12 @@
       justify-content: center;
       gap: 0.5rem;
     }
-
     .social-links {
       display: flex;
       gap: 1rem;
       margin-top: 1.5rem;
       justify-content: center;
     }
-
     .social-icon {
       width: 44px;
       height: 44px;
@@ -711,13 +600,11 @@
       transition: all var(--dur);
       text-decoration: none;
     }
-
     .social-icon:hover {
       background: var(--accent);
       color: var(--bg);
       transform: translateY(-3px);
     }
-
     .copyright {
       grid-column: 1 / -1;
       text-align: center;
@@ -727,14 +614,12 @@
       border-top: 1px solid var(--border);
       font-size: 0.9rem;
     }
-
     .footer-links {
       display: flex;
       flex-direction: column;
       gap: 0.75rem;
       align-items: center;
     }
-
     .footer-links a {
       color: var(--text-muted);
       text-decoration: none;
@@ -744,15 +629,12 @@
       gap: 0.5rem;
       font-size: 0.95rem;
     }
-
     .footer-links a:hover {
       color: var(--accent);
     }
-
     .footer-links a i {
       font-size: 0.9rem;
     }
-
     /* Stats Counter */
     .stats-container {
       display: grid;
@@ -761,7 +643,6 @@
       margin: 4rem 0;
       width: 100%;
     }
-
     .stat {
       text-align: center;
       padding: 2rem;
@@ -769,24 +650,19 @@
       border-radius: var(--radius);
       border: 1px solid var(--border);
     }
-
     .stat-number {
       font-size: 2.8rem;
       font-weight: 800;
       color: var(--accent);
       margin-bottom: 0.5rem;
     }
-
     .stat-label {
       color: var(--text-muted);
       font-size: 0.95rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
     }
-
-    /* =====================================================
-       RESPONSIVE DESIGN
-       ===================================================== */
+    /* Responsive Design */
     @media (max-width: 1024px) {
       h1 {
         font-size: 2.8rem;
@@ -798,7 +674,6 @@
         padding: calc(var(--header-height) + 1rem) 1.5rem 3rem;
       }
     }
-
     @media (max-width: 768px) {
       header {
         padding: 1rem;
@@ -808,6 +683,11 @@
       }
       .mobile-menu-btn {
         display: block;
+        background: none;
+        border: none;
+        color: var(--text);
+        font-size: 1.5rem;
+        cursor: pointer;
       }
       h1 {
         font-size: 2.2rem;
@@ -871,7 +751,6 @@
       <i class="fas fa-bars"></i>
     </button>
   </header>
-  
   <section class="hero" id="home">
     <div class="hero-content">
       <h1>AI-Powered Enterprise Training Solutions</h1>
@@ -894,7 +773,6 @@
       </div>
     </div>
   </section>
-
   <div class="stats-container">
     <div class="stat">
       <div class="stat-number" data-target="80">0</div>
@@ -913,7 +791,6 @@
       <div class="stat-label">Manual Grading</div>
     </div>
   </div>
-
   <section id="solution">
     <h2 class="section-title">The Problem: Why Traditional Training Fails</h2>
     <p class="section-intro">Are you facing these challenges in your current training approach?</p>
@@ -952,7 +829,6 @@
       </div>
     </div>
   </section>
-
   <section id="solution">
     <h2 class="section-title">The Solution: Your Intelligent Teaching Workforce</h2>
     <p class="section-intro">Mariba Media is designed to solve these pain points by providing <strong>your own AI-powered teaching workforce that never sleeps</strong>.</p>
@@ -1007,7 +883,6 @@
       </div>
     </div>
   </section>
-
   <section id="how-it-works">
     <h2 class="section-title">How It Works: Simple & Efficient Deployment</h2>
     <p class="section-intro">Getting started with Mariba Media is straightforward and hassle-free</p>
@@ -1034,6 +909,325 @@
       </div>
     </div>
   </section>
+
+  <!-- ROI CALCULATOR SECTION - ADDED WITHOUT CHANGING ANYTHING ELSE -->
+  <section id="roi-calculator">
+    <h2 class="section-title">Calculate Your Training ROI</h2>
+    <p class="section-intro">See your exact Rands saved with our pay-per-accreditation model — 60 seconds, no email</p>
+    
+    <div style="
+      max-width: 800px;
+      margin: 0 auto;
+      background: linear-gradient(145deg, rgba(30, 30, 30, 0.9), rgba(20, 20, 20, 0.9));
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+      border: 1px solid #333333;
+      backdrop-filter: blur(10px);
+    ">
+      <div style="
+        background: linear-gradient(135deg, #ffffff, #cccccc);
+        color: #000000;
+        padding: 24px;
+        text-align: center;
+      ">
+        <h1 style="
+          font-size: 28px;
+          margin-bottom: 8px;
+          font-weight: 700;
+          background: linear-gradient(135deg, #000000, #666666);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        ">Mariba Media ROI Calculator</h1>
+        <p style="
+          opacity: 0.9;
+          max-width: 600px;
+          margin: 0 auto;
+          font-size: 16px;
+        ">See your exact Rands saved with our pay-per-accreditation model - 60 seconds, no email</p>
+      </div>
+      
+      <div style="padding: 24px;">
+        <div style="margin-bottom: 30px;">
+          <h2 style="
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+          ">
+            <span style="
+              display: inline-block;
+              width: 4px;
+              height: 20px;
+              background: #ffffff;
+              margin-right: 10px;
+              border-radius: 2px;
+            "></span>
+            Your Current Training Data
+          </h2>
+          
+          <div style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+          ">
+            <div style="margin-bottom: 16px;">
+              <label style="
+                display: block;
+                margin-bottom: 6px;
+                font-weight: 500;
+                color: #ffffff;
+              ">Learners trained per month</label>
+              <input type="number" id="learners" value="500" min="1" style="
+                width: 100%;
+                padding: 12px 16px;
+                border: 1px solid #333333;
+                border-radius: 6px;
+                background: #0a0a0a;
+                color: #ffffff;
+                font-size: 16px;
+              ">
+            </div>
+            
+            <div style="margin-bottom: 16px;">
+              <label style="
+                display: block;
+                margin-bottom: 6px;
+                font-weight: 500;
+                color: #ffffff;
+              ">Current cost per learner (R)</label>
+              <input type="number" id="cost" value="1200" min="1" style="
+                width: 100%;
+                padding: 12px 16px;
+                border: 1px solid #333333;
+                border-radius: 6px;
+                background: #0a0a0a;
+                color: #ffffff;
+                font-size: 16px;
+              ">
+            </div>
+            
+            <div style="margin-bottom: 16px;">
+              <label style="
+                display: block;
+                margin-bottom: 6px;
+                font-weight: 500;
+                color: #ffffff;
+              ">Current pass rate (%)</label>
+              <input type="number" id="passRate" value="65" min="1" max="100" style="
+                width: 100%;
+                padding: 12px 16px;
+                border: 1px solid #333333;
+                border-radius: 6px;
+                background: #0a0a0a;
+                color: #ffffff;
+                font-size: 16px;
+              ">
+            </div>
+          </div>
+        </div>
+
+        <div style="
+          background: #0a0a0a;
+          border-radius: 8px;
+          padding: 20px;
+          margin-top: 20px;
+        ">
+          <h2 style="
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+          ">
+            <span style="
+              display: inline-block;
+              width: 4px;
+              height: 20px;
+              background: #ffffff;
+              margin-right: 10px;
+              border-radius: 2px;
+            "></span>
+            Your Training Cost Analysis
+          </h2>
+          
+          <div style="
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #333333;
+          ">
+            <span style="
+              font-weight: 500;
+              color: #ffffff;
+            ">Current monthly training cost</span>
+            <span style="
+              font-weight: 700;
+              color: #ffffff;
+            " id="currentCost">R600,000</span>
+          </div>
+          
+          <div style="
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #333333;
+          ">
+            <span style="
+              font-weight: 500;
+              color: #ffffff;
+            ">Wasted on failed training</span>
+            <span style="
+              font-weight: 700;
+              color: #ffffff;
+            " id="wasteAmount">R210,000</span>
+          </div>
+          
+          <div style="
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #333333;
+          ">
+            <span style="
+              font-weight: 500;
+              color: #ffffff;
+            ">Lost productivity cost</span>
+            <span style="
+              font-weight: 700;
+              color: #ffffff;
+            " id="productivityLoss">R3,237,500</span>
+          </div>
+          
+          <div style="
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #333333;
+          ">
+            <span style="
+              font-weight: 500;
+              color: #ffffff;
+            ">POPIA compliance risk score</span>
+            <span style="
+              font-weight: 700;
+              color: #ffffff;
+            " id="complianceRisk">52.5%</span>
+          </div>
+          
+          <div style="
+            background: rgba(255, 255, 255, 0.1);
+            border-left: 4px solid #ffffff;
+            padding: 16px;
+            border-radius: 0 6px 6px 0;
+            margin: 20px 0;
+          ">
+            <div style="
+              font-weight: 500;
+              color: #ffffff;
+            ">Your total monthly waste</div>
+            <div style="
+              font-size: 28px;
+              font-weight: 800;
+              color: #ff6b6b;
+              margin: 10px 0;
+            " id="totalWaste">R3,447,500</div>
+            <div style="
+              font-weight: 500;
+              color: #aaa;
+            ">(This is what Mariba fixes)</div>
+          </div>
+          
+          <div style="
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            font-weight: 700;
+            color: #0f9;
+          ">
+            <span style="
+              font-weight: 500;
+              color: #ffffff;
+            ">Mariba Media monthly savings</span>
+            <span style="
+              font-weight: 700;
+              color: #0f9;
+            " id="savingsAmount">R168,000</span>
+          </div>
+        </div>
+
+        <div style="
+          background: rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          border-radius: 8px;
+          padding: 16px;
+          margin-top: 15px;
+          text-align: center;
+        ">
+          <strong style="display: block; margin-bottom: 8px;">Our Risk Reversal Guarantee:</strong> We only get paid when your learners pass. 
+          <br><strong style="display: block; margin-top: 8px;">No passes = no fees. Period.</strong>
+        </div>
+
+        <div style="
+          text-align: center;
+          padding: 24px;
+          background: rgba(255, 255, 255, 0.05);
+          border-radius: 8px;
+          margin-top: 20px;
+        ">
+          <h2 style="
+            font-size: 22px;
+            margin-bottom: 12px;
+            color: #ffffff;
+          ">Your Free Compliance Audit</h2>
+          <p style="
+            color: #a0a0a0;
+            margin-bottom: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+          ">
+            First 5 people to share their results get a FREE 30-minute audit with our team.
+            We'll show exactly how to fix your biggest training leak.
+          </p>
+          <button onclick="shareResults()" style="
+            display: inline-block;
+            background: #ffffff;
+            color: #000000;
+            padding: 14px 28px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+            width: 100%;
+            max-width: 400px;
+          ">
+            Share My Results → Get Free Audit
+          </button>
+          <div style="
+            font-size: 12px;
+            color: #a0a0a0;
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #333333;
+          ">
+            *Calculations based on South African enterprise training data. 
+            Lost productivity cost = R18,500/day per untrained hire. 
+            Compliance risk score = (100 - pass rate) × 1.5
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END ROI CALCULATOR SECTION -->
 
   <section id="use-cases">
     <h2 class="section-title">Key Use Cases</h2>
@@ -1077,7 +1271,6 @@
       </div>
     </div>
   </section>
-
   <section id="proof">
     <h2 class="section-title">Flexible Revenue Models</h2>
     <p class="section-intro">Choose the model that fits your institutional needs and budget</p>
@@ -1104,7 +1297,6 @@
       </div>
     </div>
   </section>
-
   <section id="outcomes">
     <h2 class="section-title">Performance Outcomes</h2>
     <p class="section-intro">With Mariba Media, you will achieve unprecedented results and ROI</p>
@@ -1117,7 +1309,6 @@
       <div class="outcome"><strong>Real-time accreditation tracking</strong> with audit-ready reporting</div>
     </div>
   </section>
-
   <section id="why">
     <h2 class="section-title">Why Choose Mariba Media?</h2>
     <p class="section-intro">Discover the competitive advantages of our enterprise training solution</p>
@@ -1140,7 +1331,6 @@
       </div>
     </div>
   </section>
-
   <section id="demo">
     <h2 class="section-title">See Mariba Media in Action</h2>
     <p class="section-intro">Experience the future of AI-driven training with our interactive demos</p>
@@ -1161,7 +1351,6 @@
       </div>
     </div>
   </section>
-
   <section class="cal-booking" id="booking">
     <h2 class="section-title">Ready to Transform Your Training?</h2>
     <p>In this 30-minute session, we will:<br>
@@ -1171,7 +1360,6 @@
     </p>
     <div id="my-cal-inline-south-africa"></div>
   </section>
-
   <footer>
     <div class="footer-section">
       <h3><i class="fas fa-rocket"></i> Mariba<span style="color:var(--accent)">Media</span></h3>
@@ -1221,7 +1409,6 @@
       &copy; <span id="current-year"></span> Mariba Media. AI Infrastructure Partner. Pay only for performance.
     </div>
   </footer>
-
   <div class="whatsapp-widget">
     <a href="https://wa.me/27766473499" target="_blank" rel="noopener">
       <button class="whatsapp-button" aria-label="Chat on WhatsApp">
@@ -1229,30 +1416,65 @@
       </button>
     </a>
   </div>
-
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      // Mobile Menu Toggle
-      const mobileBtn = document.querySelector('.mobile-menu-btn');
-      if (mobileBtn) {
-        mobileBtn.addEventListener('click', function() {
-          const nav = document.createElement('nav');
-          nav.className = 'mobile-nav';
-          nav.innerHTML = `
-            <a href="#home">Home</a>
-            <a href="#solution">Solution</a>
-            <a href="#use-cases">Use Cases</a>
-            <a href="#proof">Proof</a>
-            <a href="#booking">Get Started</a>
-            <a href="https://cal.com/partner-discovery/south-africa" class="btn btn-secondary">Schedule Demo</a>
-          `;
-          document.body.appendChild(nav);
-          
-          nav.classList.toggle('active');
-          mobileBtn.innerHTML = nav.classList.contains('active') ? 
-            '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-        });
+      // ROI Calculator functionality
+      const learnersInput = document.getElementById('learners');
+      const costInput = document.getElementById('cost');
+      const passRateInput = document.getElementById('passRate');
+      const currentCostEl = document.getElementById('currentCost');
+      const wasteAmountEl = document.getElementById('wasteAmount');
+      const productivityLossEl = document.getElementById('productivityLoss');
+      const complianceRiskEl = document.getElementById('complianceRisk');
+      const totalWasteEl = document.getElementById('totalWaste');
+      const savingsAmountEl = document.getElementById('savingsAmount');
+
+      function calculateROI() {
+        const learners = parseInt(learnersInput.value) || 500;
+        const cost = parseInt(costInput.value) || 1200;
+        const passRate = parseInt(passRateInput.value) || 65;
+
+        const currentCost = learners * cost;
+        const wasteAmount = currentCost * (1 - passRate/100);
+        const productivityLoss = (learners * (1 - passRate/100)) * 18500;
+        const complianceRisk = (100 - passRate) * 1.5;
+        const totalWaste = wasteAmount + productivityLoss;
+        const savingsAmount = wasteAmount * 0.8;
+
+        const formatCurrency = (num) => 'R' + num.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        if (currentCostEl) currentCostEl.textContent = formatCurrency(currentCost);
+        if (wasteAmountEl) wasteAmountEl.textContent = formatCurrency(wasteAmount);
+        if (productivityLossEl) productivityLossEl.textContent = formatCurrency(productivityLoss);
+        if (complianceRiskEl) complianceRiskEl.textContent = complianceRisk.toFixed(1) + '%';
+        if (totalWasteEl) totalWasteEl.textContent = formatCurrency(totalWaste);
+        if (savingsAmountEl) savingsAmountEl.textContent = formatCurrency(savingsAmount);
       }
+
+      function shareResults() {
+        const learners = parseInt(learnersInput.value) || 500;
+        const cost = parseInt(costInput.value) || 1200;
+        const passRate = parseInt(passRateInput.value) || 65;
+        const totalWaste = document.getElementById('totalWaste').textContent;
+        const savingsAmount = document.getElementById('savingsAmount').textContent;
+
+        const message = `I just used Mariba Media's ROI Calculator:\n` +
+                       `• ${learners} learners/month\n` +
+                       `• Current cost: R${cost}\n` +
+                       `• Pass rate: ${passRate}%\n\n` +
+                       `My results:\n` +
+                       `• Total monthly waste: ${totalWaste}\n` +
+                       `• Potential savings: ${savingsAmount}\n\n` +
+                       `I'd like to claim my FREE 30-minute compliance audit.`;
+
+        const encodedMessage = encodeURIComponent(message);
+        window.open(`https://wa.me/27766473499?text=${encodedMessage}`, '_blank');
+      }
+
+      if (learnersInput) learnersInput.addEventListener('input', calculateROI);
+      if (costInput) costInput.addEventListener('input', calculateROI);
+      if (passRateInput) passRateInput.addEventListener('input', calculateROI);
+      if (learnersInput) calculateROI();
 
       // Cal.com
       const calDiv = document.getElementById('my-cal-inline-south-africa');
@@ -1295,11 +1517,9 @@
         });
         Cal.ns["south-africa"]("ui", { layout: "month_view" });
       }
-      
       // Year
       const yearEl = document.getElementById("current-year");
       if (yearEl) yearEl.textContent = new Date().getFullYear();
-      
       // Stats counter animation
       const stats = document.querySelectorAll('.stat-number');
       const speed = 200;
