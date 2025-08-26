@@ -313,7 +313,7 @@
       width: 100%;
     }
     .section-title {
-      text-align: center;
+      text-align: center !important;
       margin-bottom: 3rem;
       position: relative;
       width: 100%;
@@ -662,181 +662,6 @@
       text-transform: uppercase;
       letter-spacing: 0.1em;
     }
-    /* ROI Calculator Specific Styles */
-    .roi-calculator {
-      max-width: 800px;
-      margin: 0 auto;
-      background: var(--card-bg);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      border: 1px solid var(--border);
-      backdrop-filter: blur(10px);
-    }
-    .calculator-header {
-      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-      color: var(--bg);
-      padding: 24px;
-      text-align: center;
-    }
-    .calculator-header h1 {
-      font-size: 28px;
-      margin-bottom: 8px;
-      font-weight: 700;
-      background: linear-gradient(135deg, var(--bg), var(--text-muted));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .calculator-header p {
-      opacity: 0.9;
-      max-width: 600px;
-      margin: 0 auto;
-      font-size: 16px;
-    }
-    .calculator-body {
-      padding: 24px;
-    }
-    .input-section {
-      margin-bottom: 30px;
-    }
-    .section-title {
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 16px;
-      color: var(--accent);
-      display: flex;
-      align-items: center;
-    }
-    .section-title::before {
-      content: "";
-      display: inline-block;
-      width: 4px;
-      height: 20px;
-      background: var(--accent);
-      margin-right: 10px;
-      border-radius: 2px;
-    }
-    .input-group {
-      margin-bottom: 16px;
-    }
-    label {
-      display: block;
-      margin-bottom: 6px;
-      font-weight: 500;
-      color: var(--text);
-    }
-    input {
-      width: 100%;
-      padding: 12px 16px;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      background: var(--bg-soft);
-      color: var(--accent);
-      font-size: 16px;
-      transition: all var(--dur);
-    }
-    input:focus {
-      outline: none;
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
-    }
-    .input-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 16px;
-    }
-    .results-section {
-      background: var(--bg-soft);
-      border-radius: 8px;
-      padding: 20px;
-      margin-top: 20px;
-    }
-    .result-item {
-      display: flex;
-      justify-content: space-between;
-      padding: 12px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .result-item:last-child {
-      border-bottom: none;
-    }
-    .result-label {
-      font-weight: 500;
-      color: var(--text);
-    }
-    .result-value {
-      font-weight: 700;
-      color: var(--accent);
-    }
-    .highlight {
-      background: rgba(255, 255, 255, 0.1);
-      border-left: 4px solid var(--accent);
-      padding: 16px;
-      border-radius: 0 6px 6px 0;
-      margin: 20px 0;
-    }
-    .highlight-value {
-      font-size: 28px;
-      font-weight: 800;
-      color: #ff6b6b;
-      margin: 10px 0;
-    }
-    .risk-reversal {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      border-radius: 8px;
-      padding: 16px;
-      margin-top: 15px;
-      text-align: center;
-    }
-    .cta-section {
-      text-align: center;
-      padding: 24px;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 8px;
-      margin-top: 20px;
-    }
-    .cta-title {
-      font-size: 22px;
-      margin-bottom: 12px;
-      color: var(--accent);
-    }
-    .cta-description {
-      color: var(--text-muted);
-      margin-bottom: 20px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .button {
-      display: inline-block;
-      background: var(--accent);
-      color: var(--bg);
-      padding: 14px 28px;
-      border-radius: 6px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all var(--dur);
-      cursor: pointer;
-      border: none;
-      font-size: 16px;
-      width: 100%;
-      max-width: 400px;
-    }
-    .button:hover {
-      background: var(--accent-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
-    }
-    .disclaimer {
-      font-size: 12px;
-      color: var(--text-muted);
-      text-align: center;
-      margin-top: 20px;
-      padding-top: 15px;
-      border-top: 1px solid var(--border);
-    }
     /* Responsive Design */
     @media (max-width: 1024px) {
       h1 {
@@ -906,11 +731,6 @@
       .footer-links {
         align-items: center;
       }
-    }
-    
-    /* Ensure section headings are centered */
-    .section-title {
-      text-align: center !important;
     }
   </style>
 </head>
@@ -1089,86 +909,6 @@
       </div>
     </div>
   </section>
-
-  <!-- ROI Calculator Section - Added exactly as requested -->
-  <section id="roi-calculator">
-    <h2 class="section-title">Calculate Your Training ROI</h2>
-    <p class="section-intro">See your exact Rands saved with our pay-per-accreditation model — 60 seconds, no email</p>
-    <div class="roi-calculator">
-      <div class="calculator-header">
-        <h1>Mariba Media ROI Calculator</h1>
-        <p>See your exact Rands saved with our pay-per-accreditation model - 60 seconds, no email</p>
-      </div>
-      <div class="calculator-body">
-        <div class="input-section">
-          <h2 class="section-title">Your Current Training Data</h2>
-          <div class="input-grid">
-            <div class="input-group">
-              <label for="learners">Learners trained per month</label>
-              <input type="number" id="learners" value="500" min="1">
-            </div>
-            <div class="input-group">
-              <label for="cost">Current cost per learner (R)</label>
-              <input type="number" id="cost" value="1200" min="1">
-            </div>
-            <div class="input-group">
-              <label for="passRate">Current pass rate (%)</label>
-              <input type="number" id="passRate" value="65" min="1" max="100">
-            </div>
-          </div>
-        </div>
-
-        <div class="results-section">
-          <h2 class="section-title">Your Training Cost Analysis</h2>
-          <div class="result-item">
-            <span class="result-label">Current monthly training cost</span>
-            <span class="result-value" id="currentCost">R600,000</span>
-          </div>
-          <div class="result-item">
-            <span class="result-label">Wasted on failed training</span>
-            <span class="result-value" id="wasteAmount">R210,000</span>
-          </div>
-          <div class="result-item">
-            <span class="result-label">Lost productivity cost</span>
-            <span class="result-value" id="productivityLoss">R3,237,500</span>
-          </div>
-          <div class="result-item">
-            <span class="result-label">POPIA compliance risk score</span>
-            <span class="result-value" id="complianceRisk">52.5%</span>
-          </div>
-          <div class="highlight">
-            <div class="result-label">Your total monthly waste</div>
-            <div class="highlight-value" id="totalWaste">R3,447,500</div>
-            <div class="result-label" style="font-weight: 500; color: #aaa;">(This is what Mariba fixes)</div>
-          </div>
-          <div class="result-item" style="font-weight: 700; color: #0f9;">
-            <span class="result-label">Mariba Media monthly savings</span>
-            <span class="result-value" id="savingsAmount">R168,000</span>
-          </div>
-        </div>
-
-        <div class="risk-reversal">
-          <strong>Our Risk Reversal Guarantee:</strong> We only get paid when your learners pass. 
-          <br><strong>No passes = no fees. Period.</strong>
-        </div>
-
-        <div class="cta-section">
-          <h2 class="cta-title">Your Free Compliance Audit</h2>
-          <p class="cta-description">
-            First 5 people to share their results get a FREE 30-minute audit with our team.
-            We'll show exactly how to fix your biggest training leak.
-          </p>
-          <button class="button" onclick="shareResults()">Share My Results → Get Free Audit</button>
-          <div class="disclaimer">
-            *Calculations based on South African enterprise training data. 
-            Lost productivity cost = R18,500/day per untrained hire. 
-            Compliance risk score = (100 - pass rate) × 1.5
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section id="use-cases">
     <h2 class="section-title">Key Use Cases</h2>
     <p class="section-intro">Mariba Media is ideal for any scenario requiring scalable, certifiable training</p>
@@ -1352,99 +1092,19 @@
   <div class="whatsapp-widget">
     <a href="https://wa.me/27766473499" target="_blank" rel="noopener">
       <button class="whatsapp-button" aria-label="Chat on WhatsApp">
-        <svg class="whatsapp-svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.05-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.50-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.71-5.26c.001-5.45 4.436-9.884 9.888-9.884 5.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335 .157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <svg class="whatsapp-svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.05-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.71-5.26c.001-5.45 4.436-9.884 9.888-9.884 5.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335 .157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       </button>
     </a>
   </div>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      // Mobile Menu Toggle
-      const mobileBtn = document.querySelector('.mobile-menu-btn');
-      if (mobileBtn) {
-        mobileBtn.addEventListener('click', function() {
-          const nav = document.createElement('nav');
-          nav.className = 'mobile-nav';
-          nav.innerHTML = `
-            <a href="#home">Home</a>
-            <a href="#solution">Solution</a>
-            <a href="#use-cases">Use Cases</a>
-            <a href="#proof">Proof</a>
-            <a href="#booking">Get Started</a>
-            <a href="https://cal.com/partner-discovery/south-africa" class="btn btn-secondary">Schedule Demo</a>
-          `;
-          document.body.appendChild(nav);
-          
-          nav.classList.toggle('active');
-          mobileBtn.innerHTML = nav.classList.contains('active') ? 
-            '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-        });
-      }
-
-      // ROI Calculator
-      const learnersInput = document.getElementById('learners');
-      const costInput = document.getElementById('cost');
-      const passRateInput = document.getElementById('passRate');
-      const currentCostEl = document.getElementById('currentCost');
-      const wasteAmountEl = document.getElementById('wasteAmount');
-      const productivityLossEl = document.getElementById('productivityLoss');
-      const complianceRiskEl = document.getElementById('complianceRisk');
-      const totalWasteEl = document.getElementById('totalWaste');
-      const savingsAmountEl = document.getElementById('savingsAmount');
-
-      function calculateROI() {
-        const learners = parseInt(learnersInput.value) || 500;
-        const cost = parseInt(costInput.value) || 1200;
-        const passRate = parseInt(passRateInput.value) || 65;
-
-        const currentCost = learners * cost;
-        const wasteAmount = currentCost * (1 - passRate/100);
-        const productivityLoss = (learners * (1 - passRate/100)) * 18500;
-        const complianceRisk = (100 - passRate) * 1.5;
-        const totalWaste = wasteAmount + productivityLoss;
-        const savingsAmount = wasteAmount * 0.8;
-
-        const formatCurrency = (num) => 'R' + num.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-
-        if (currentCostEl) currentCostEl.textContent = formatCurrency(currentCost);
-        if (wasteAmountEl) wasteAmountEl.textContent = formatCurrency(wasteAmount);
-        if (productivityLossEl) productivityLossEl.textContent = formatCurrency(productivityLoss);
-        if (complianceRiskEl) complianceRiskEl.textContent = complianceRisk.toFixed(1) + '%';
-        if (totalWasteEl) totalWasteEl.textContent = formatCurrency(totalWaste);
-        if (savingsAmountEl) savingsAmountEl.textContent = formatCurrency(savingsAmount);
-      }
-
-      function shareResults() {
-        const learners = parseInt(learners極端Input.value) || 500;
-        const cost = parseInt(costInput.value) || 1200;
-        const passRate = parseInt(passRateInput.value) || 65;
-        const totalWaste = document.getElementById('totalWaste').textContent;
-        const savingsAmount = document.getElementById('savingsAmount').textContent;
-
-        const message = `I just used Mariba Media's ROI Calculator:\n` +
-                       `• ${learners} learners/month\n` +
-                       `• Current cost: R${cost}\n` +
-                       `• Pass rate: ${passRate}%\n\n` +
-                       `My results:\n` +
-                       `• Total monthly waste: ${totalWaste}\n` +
-                       `• Potential savings: ${savingsAmount}\n\n` +
-                       `I'd like to claim my FREE 30-minute compliance audit.`;
-
-        const encodedMessage = encodeURIComponent(message);
-        window.open(`https://wa.me/27766473499?text=${encodedMessage}`, '_blank');
-      }
-
-      if (learnersInput) learnersInput.addEventListener('input', calculateROI);
-      if (costInput) costInput.addEventListener('input', calculateROI);
-      if (passRateInput) passRateInput.addEventListener('input', calculateROI);
-      if (learnersInput) calculateROI();
-
       // Cal.com
       const calDiv = document.getElementById('my-cal-inline-south-africa');
-      if (cal極端Div) {
+      if (calDiv) {
         (function (C, A, L) {
           let p = function (a, ar) { a.q.push(ar); };
           let d = C.document;
-          C.C極端al = C.Cal || function () {
+          C.Cal = C.Cal || function () {
             let cal = C.Cal;
             let ar = arguments;
             if (!cal.loaded) {
@@ -1459,7 +1119,7 @@
             if (ar[0] === L) {
               const api = function () { p(api, arguments); };
               const namespace = ar[1];
-              api.q = api.q極端 || [];
+              api.q = api.q || [];
               if (typeof namespace === "string") {
                 cal.ns[namespace] = cal.ns[namespace] || api;
                 p(cal.ns[namespace], ar);
@@ -1472,7 +1132,7 @@
             p(cal, ar);
           };
         })(window, "https://app.cal.com/embed/embed.js", "init");
-        Cal("init", "south-africa", { origin: "極端https://app.cal.com" });
+        Cal("init", "south-africa", { origin: "https://app.cal.com" });
         Cal.ns["south-africa"]("inline", {
           elementOrSelector: "#my-cal-inline-south-africa",
           calLink: "partner-discovery/south-africa"
