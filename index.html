@@ -1,3 +1,5 @@
+Here is the complete HTML code for your website, now featuring the new "Our Strategic Partners" section integrated before the footer. This section includes lead cards summarizing the services of Urban Holding Solar, Commodity Suppliers Dataroom by Mr Kassanje, and Commercial Solar LLC.
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -388,7 +390,8 @@
     .problem-solution,
     .use-cases,
     .revenue-models,
-    .outcomes-grid {
+    .outcomes-grid,
+    .partners-grid {
       display: grid;
       gap: 2rem;
       width: 100%;
@@ -404,6 +407,11 @@
     }
     .outcomes-grid {
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .partners-grid {
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      max-width: 1400px;
+      margin: 0 auto;
     }
     /* Steps */
     .steps {
@@ -663,6 +671,49 @@
       text-transform: uppercase;
       letter-spacing: 0.1em;
     }
+    /* Partner Section */
+    .partner-card {
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      text-align: center;
+      backdrop-filter: blur(10px);
+      height: 100%;
+      transition: all var(--dur);
+    }
+    .partner-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+      border-color: var(--accent);
+    }
+    .partner-card h3 {
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      font-size: 1.6rem;
+    }
+    .partner-card p {
+      text-align: left;
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+    .partner-card ul {
+      text-align: left;
+      margin: 1.5rem 0;
+      padding-left: 1.5rem;
+    }
+    .partner-card ul li {
+      margin-bottom: 0.5rem;
+      position: relative;
+    }
+    .partner-card ul li::before {
+      content: "•";
+      color: var(--accent);
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
     /* Responsive Design */
     @media (max-width: 1024px) {
       h1 {
@@ -731,6 +782,9 @@
       }
       .footer-links {
         align-items: center;
+      }
+      .partners-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -1336,6 +1390,41 @@
       </div>
     </div>
   </section>
+  <!-- NEW PARTNERS SECTION -->
+  <section id="strategic-partners" style="padding: 8rem 2rem 6rem;">
+    <h2 class="section-title">Our Strategic Partners</h2>
+    <p class="section-intro">We collaborate with industry leaders to provide comprehensive, innovative solutions that drive your success.</p>
+    <div class="partners-grid">
+      <div class="partner-card">
+        <h3><i class="fas fa-solar-panel"></i> Urban Holding Solar</h3>
+        <p>Urban Holding Solar provides comprehensive, tailored solar solutions for diverse energy needs, helping you reduce costs and embrace sustainability.</p>
+        <ul>
+          <li><strong>Commercial Solar:</strong> Custom systems to maximize efficiency and reduce operational costs for businesses.</li>
+          <li><strong>Residential Solar:</strong> Empower homes with renewable energy, reducing bills and carbon footprints.</li>
+          <li><strong>Agricultural Solar:</strong> Power farms sustainably, boosting productivity and saving on energy costs.</li>
+        </ul>
+      </div>
+      <div class="partner-card">
+        <h3><i class="fas fa-boxes"></i> Commodity Suppliers Dataroom</h3>
+        <p>Managed by Mr. Kassanje, this dataroom is a centralized hub for global commodity trading, offering verified procedures and offers for key resources.</p>
+        <ul>
+          <li>Access to critical documents for commodities like Copper Cathode, ICUMSA 45 Sugar, and Manganese.</li>
+          <li>Streamlined processes for buyers and sellers in the global commodities market.</li>
+          <li>Ensures transparency and efficiency in high-value international trade.</li>
+        </ul>
+      </div>
+      <div class="partner-card">
+        <h3><i class="fas fa-wind"></i> Commercial Solar LLC</h3>
+        <p>Commercial Solar LLC pioneers the future of renewable energy with its revolutionary "Hybrid Tree" technology, combining wind and solar power.</p>
+        <ul>
+          <li><strong>The Hybrid Tree:</strong> A single, efficient system generating 12,200-37,892 kWh annually without rooftop panels.</li>
+          <li><strong>Energy Mixer Technology:</strong> Proprietary system for optimal energy blending and storage.</li>
+          <li>Provides reliable, affordable, and renewable energy for homes and businesses, ensuring energy security.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- END NEW PARTNERS SECTION -->
   <section class="cal-booking" id="booking">
     <h2 class="section-title">Ready to Transform Your Training?</h2>
     <p>In this 30-minute session, we will:<br>
