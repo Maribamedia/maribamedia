@@ -247,12 +247,12 @@
       padding: calc(var(--header-height) + 2rem) 2rem 4rem;
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       justify-content: center;
       align-items: center;
-      text-align: center;
+      text-align: left;
       background: radial-gradient(ellipse at 50% 50%, #f5f5f5 0%, var(--bg) 80%);
-      gap: 2rem;
+      gap: 4rem;
       position: relative;
       overflow: hidden;
     }
@@ -270,8 +270,8 @@
     }
     .hero-content {
       max-width: 1000px;
-      margin: 0 auto;
       width: 100%;
+      flex: 1;
     }
     .hero p {
       font-size: 1.3rem;
@@ -285,9 +285,9 @@
       border-radius: var(--radius);
       overflow: hidden;
       box-shadow: var(--shadow);
-      margin: 2rem auto;
       border: 1px solid var(--border);
       transition: transform var(--dur), box-shadow var(--dur);
+      flex-shrink: 0;
     }
     .youtube-embed:hover {
       transform: translateY(-5px);
@@ -301,7 +301,7 @@
     .hero-cta {
       display: flex;
       gap: 1.5rem;
-      justify-content: center;
+      justify-content: flex-start;
       margin-top: 2rem;
       flex-wrap: wrap;
       width: 100%;
@@ -723,6 +723,24 @@
       }
       .hero {
         padding: calc(var(--header-height) + 1rem) 1.5rem 3rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+      }
+      .hero-content {
+        max-width: 1000px;
+        width: 100%;
+      }
+      .youtube-embed {
+        width: 100%;
+        max-width: 900px;
+        margin: 2rem auto !important;
+      }
+      .hero p {
+        margin: 0 auto 2.5rem;
+      }
+      .hero-cta {
+        justify-content: center;
       }
     }
     @media (max-width: 768px) {
@@ -809,14 +827,6 @@
     <div class="hero-content">
       <h1>AI-Powered Enterprise Training Solutions</h1>
       <p><strong>Mariba Media</strong> delivers performance-driven AI teaching & assessment systems, expertly trained on your curriculum for scalable, high-quality, and certifiable learning — with zero manual effort.</p>
-      <div class="youtube-embed">
-        <iframe 
-          src="https://www.youtube.com/embed/-qzl6Xo1Jh8?rel=0" 
-          title="Mariba Media AI Training System Demo"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>
-      </div>
       <div class="hero-cta">
         <a href="https://cal.com/partner-discovery/south-africa" class="btn" target="_blank" rel="noopener">
           <i class="fas fa-calendar-check"></i> Schedule Demo
@@ -825,6 +835,14 @@
           <i class="fas fa-play-circle"></i> Watch Demo
         </a>
       </div>
+    </div>
+    <div class="youtube-embed">
+      <iframe 
+        src="https://www.youtube.com/embed/-qzl6Xo1Jh8?rel=0" 
+        title="Mariba Media AI Training System Demo"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
     </div>
   </section>
   <div class="stats-container">
@@ -1336,7 +1354,6 @@
       No fixed term. No hidden fees. No vendor lock-in.<br><br>
       This is how enterprise training should work."</em>
     </p>
-    
     <div style="max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: var(--radius); border: 1px solid var(--border); padding: 2rem; margin-bottom: 2rem;">
       <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--accent);">⚖️ Why Traditional Models Keep You Trapped in Costs</h3>
       <table style="width: 100%; border-collapse: collapse;">
@@ -1365,10 +1382,8 @@
           </tr>
         </tbody>
       </table>
-      
       <p style="text-align: center; margin-top: 1rem; font-style: italic;">"Traditional models are designed to keep you paying – regardless of results. We built this partnership to end that cycle."</p>
     </div>
-    
     <div style="max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: var(--radius); border: 1px solid var(--border); padding: 2rem; margin-bottom: 2rem;">
       <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--accent);">✅ Your Lifetime Partnership Includes:</h3>
       <ul style="list-style-type: none; padding: 0; margin: 0;">
@@ -1405,10 +1420,8 @@
           <span><strong>Risk-free guarantee</strong> – If we don't deliver savings, you pay $0. Period.</span>
         </li>
       </ul>
-      
       <p style="text-align: center; margin-top: 1.5rem; font-style: italic;">"We're not selling software. We're investing in your success.<br>Our only fee comes from the value we create for you."</p>
     </div>
-    
     <div style="max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: var(--radius); border: 1px solid var(--border); padding: 2rem; margin-bottom: 2rem;">
       <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--accent);">🌐 How It Works: Simple, Aligned, and Sustainable</h3>
       <ol style="padding-left: 1.5rem; margin-bottom: 1.5rem;">
@@ -1417,10 +1430,8 @@
         <li style="margin-bottom: 1rem;"><strong>You pay only for results</strong> – 35% of your verified annual savings.</li>
         <li style="margin-bottom: 1rem;"><strong>We refine together</strong> – Continuous optimization to maximize your ROI year-over-year.</li>
       </ol>
-      
       <p style="text-align: center; font-style: italic;">"This isn't a transaction – it's a collaboration.<br>When you save, we win. When you grow, we grow.<br>When you fail, we fail. That's how true partnerships work."</p>
     </div>
-    
     <div style="max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: var(--radius); border: 1px solid var(--border); padding: 2rem; margin-bottom: 2rem;">
       <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--accent);">🔥 Why This Changes Everything</h3>
       <ul style="list-style-type: none; padding: 0; margin: 0;">
@@ -1441,10 +1452,8 @@
           <span><strong>No vendor lock-in</strong> – You own your data, your courses, and your outcomes.</span>
         </li>
       </ul>
-      
       <p style="text-align: center; margin-top: 1.5rem; font-style: italic;">"Traditional vendors want you to pay forever.<br>We want you to save forever – and only charge for the value we deliver."</p>
     </div>
-    
     <div style="max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: var(--radius); border: 1px solid var(--border); padding: 2rem; margin-bottom: 2rem;">
       <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--accent);">🤝 This Is How Leaders Think</h3>
       <blockquote style="font-style: italic; border-left: 3px solid var(--accent); padding-left: 1rem; margin: 0 0 1rem;">
@@ -1454,10 +1463,8 @@
         - Every dollar spent generates measurable ROI<br>
         - We're invested in your success – not just your wallet"
       </blockquote>
-      
       <p style="text-align: center; font-weight: bold; font-size: 1.2rem;">This isn't a deal. It's the future of enterprise training.</p>
     </div>
-    
     <div style="text-align: center; margin: 2rem auto; max-width: 800px;">
       <a href="https://cal.com/partner-discovery/south-africa" class="btn" style="display: inline-block; margin: 1rem; padding: 1rem 2rem; font-size: 1.1rem;">
         <i class="fas fa-calendar-check"></i> Claim Your Lifetime Partnership
@@ -1469,7 +1476,6 @@
     </div>
   </section>
   <!-- END LIFETIME PARTNERSHIP SECTION -->
-  
   <section id="demo">
     <h2 class="section-title">See Mariba Media in Action</h2>
     <p class="section-intro">Experience the future of AI-driven training with our interactive demos</p>
