@@ -242,17 +242,17 @@
     .nav-cta {
       margin-left: 1.5rem;
     }
-    /* Enhanced Hero Section */
+    /* Enhanced Hero Section — MODIFIED TO STACK VERTICALLY */
     .hero {
       padding: calc(var(--header-height) + 2rem) 2rem 4rem;
       min-height: 100vh;
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: left;
+      text-align: center;
       background: radial-gradient(ellipse at 50% 50%, #f5f5f5 0%, var(--bg) 80%);
-      gap: 4rem;
+      gap: 3rem; /* Increased gap between vertical elements */
       position: relative;
       overflow: hidden;
     }
@@ -270,8 +270,9 @@
     }
     .hero-content {
       max-width: 1000px;
+      margin: 0 auto;
       width: 100%;
-      flex: 1;
+      text-align: center;
     }
     .hero p {
       font-size: 1.3rem;
@@ -285,9 +286,9 @@
       border-radius: var(--radius);
       overflow: hidden;
       box-shadow: var(--shadow);
+      margin: 0 auto;
       border: 1px solid var(--border);
       transition: transform var(--dur), box-shadow var(--dur);
-      flex-shrink: 0;
     }
     .youtube-embed:hover {
       transform: translateY(-5px);
@@ -301,10 +302,11 @@
     .hero-cta {
       display: flex;
       gap: 1.5rem;
-      justify-content: flex-start;
+      justify-content: center;
       margin-top: 2rem;
       flex-wrap: wrap;
       width: 100%;
+      max-width: 600px;
     }
     /* Enhanced Sections */
     section {
@@ -723,24 +725,6 @@
       }
       .hero {
         padding: calc(var(--header-height) + 1rem) 1.5rem 3rem;
-        flex-direction: column;
-        text-align: center;
-        gap: 2rem;
-      }
-      .hero-content {
-        max-width: 1000px;
-        width: 100%;
-      }
-      .youtube-embed {
-        width: 100%;
-        max-width: 900px;
-        margin: 2rem auto !important;
-      }
-      .hero p {
-        margin: 0 auto 2.5rem;
-      }
-      .hero-cta {
-        justify-content: center;
       }
     }
     @media (max-width: 768px) {
@@ -827,14 +811,6 @@
     <div class="hero-content">
       <h1>AI-Powered Enterprise Training Solutions</h1>
       <p><strong>Mariba Media</strong> delivers performance-driven AI teaching & assessment systems, expertly trained on your curriculum for scalable, high-quality, and certifiable learning — with zero manual effort.</p>
-      <div class="hero-cta">
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn" target="_blank" rel="noopener">
-          <i class="fas fa-calendar-check"></i> Schedule Demo
-        </a>
-        <a href="https://app.colossyan.com/videos/86851529-f9e2-4c93-b7f7-30ad7e3d5a04" class="btn btn-secondary" target="_blank">
-          <i class="fas fa-play-circle"></i> Watch Demo
-        </a>
-      </div>
     </div>
     <div class="youtube-embed">
       <iframe 
@@ -843,6 +819,14 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen>
       </iframe>
+    </div>
+    <div class="hero-cta">
+      <a href="https://cal.com/partner-discovery/south-africa" class="btn" target="_blank" rel="noopener">
+        <i class="fas fa-calendar-check"></i> Schedule Demo
+      </a>
+      <a href="https://app.colossyan.com/videos/86851529-f9e2-4c93-b7f7-30ad7e3d5a04" class="btn btn-secondary" target="_blank">
+        <i class="fas fa-play-circle"></i> Watch Demo
+      </a>
     </div>
   </section>
   <div class="stats-container">
