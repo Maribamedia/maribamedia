@@ -4,31 +4,38 @@
   <meta name="fo-verify" content="eaa1b420-4ea2-4989-b878-fe193416df52" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mariba Media – Save 80% on Training with On-Demand Experts</title>
-  <meta name="description" content="Save 80% on training costs with Mariba Media’s on-demand team of expert trainer consultants, powered by AI for personalized, scalable, certifiable learning.">
-  <!-- Open Lato font -->
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <title>Mariba Media – Enterprise AI Training Solutions</title>
+  <meta name="description" content="Mariba Media delivers performance-driven AI teaching & assessment systems for scalable, certifiable enterprise learning.">
+  <!-- Google Fonts: Lato -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300 ;400;700;900&display=swap" rel="stylesheet" />
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css ">
   <style>
-    /* MIDNIGHT BLUE LUXURY THEME */
+    /* ——————————————————————————————————————
+       Modern Enterprise Design System — INVERTED TO WHITE/BLACK
+       —————————————————————————————————————— */
     :root {
+      /* Inverted Grayscale Color Palette */
       --bg: #ffffff;
-      --bg-soft: #f4f6fa;
-      --accent: #0d1b3e;
-      --accent-dark: #09162d;
-      --accent-glow: 0 0 24px rgba(13, 27, 62, 0.18);
-      --text: #0a0a0a;
-      --text-muted: #444444;
-      --border: #d0d8e8;
-      --success: #1a7f55;
-      --warning: #c5760a;
-      --error: #a02c1f;
-      --dur: 0.4s;
+      --bg-soft: #f5f5f5;
+      --bg-softer: #e0e0e0;
+      --accent: #000000;
+      --accent-dark: #333333;
+      --accent-glow: 0 0 24px rgba(0, 0, 0, 0.1);
+      --text: #000000;
+      --text-muted: #666666;
+      --border: #cccccc;
+      --success: #888888;
+      --warning: #aaaaaa;
+      --error: #999999;
+      /* Motion */
+      --dur: 0.3s;
       --ease: cubic-bezier(0.4, 0, 0.2, 1);
-      --radius: 12px;
-      --shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
-      --header-height: 72px;
+      /* Design variables */
+      --radius: 8px;
+      --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      --card-bg: linear-gradient(145deg, rgba(245, 245, 245, 0.9), rgba(224, 224, 224, 0.9));
+      --header-height: 80px;
     }
     *, *::before, *::after {
       box-sizing: border-box;
@@ -37,146 +44,162 @@
     }
     html {
       scroll-behavior: smooth;
-      font-family: 'Lato', sans-serif;
+      font-family: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
     body {
       background: var(--bg);
       color: var(--text);
-      line-height: 1.7;
-      font-size: 17px;
+      line-height: 1.6;
+      font-size: 16px;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
-    }
-    h1, h2, h3, h4 {
       font-family: 'Lato', sans-serif;
+    }
+    /* Enhanced Typography */
+    h1, h2, h3, h4 {
+      line-height: 1.2;
       font-weight: 700;
-      letter-spacing: -0.01em;
       margin-top: 0;
+      text-align: center;
+      width: 100%;
+      letter-spacing: -0.02em;
+      font-family: 'Lato', sans-serif;
     }
     h1 {
-      font-size: clamp(2.8rem, 5.5vw, 4rem);
+      font-size: 3.5rem;
       max-width: 32ch;
       margin: 0 auto 1.5rem;
-      color: var(--text);
-      text-align: center;
-      line-height: 1.2;
+      color: #000000;
+      background: linear-gradient(135deg, #000000 0%, #333333 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
     h2 {
-      font-size: clamp(2.2rem, 4vw, 3.2rem);
-      margin-bottom: 1.25rem;
-      color: var(--text);
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--accent);
       position: relative;
-      display: inline-block;
-    }
-    h2::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      width: 64px;
-      height: 3px;
-      background: var(--accent);
-      border-radius: 2px;
+      display: block;
+      text-align: center;
     }
     h3 {
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #111111;
+      text-align: center;
+    }
+    h4 {
+      font-size: 1.4rem;
       margin-bottom: 0.75rem;
-      color: var(--accent);
+      color: #111111;
+      text-align: left;
     }
     p {
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       color: var(--text-muted);
+      line-height: 1.6;
       margin-bottom: 1.5rem;
+      text-align: center;
     }
     strong {
-      color: var(--accent);
+      color: #000000;
       font-weight: 700;
     }
+    ul.benefits-list {
+      margin: 1.5rem 0;
+      padding-left: 1.5rem;
+      line-height: 1.8;
+      text-align: left;
+    }
+    ul.benefits-list li {
+      margin-bottom: 0.75rem;
+      position: relative;
+    }
+    ul.benefits-list li::before {
+      content: "•";
+      color: var(--accent);
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+    /* Enhanced Button */
     .btn {
-      font-size: 1.05rem;
-      font-weight: 700;
+      font-size: 1.1rem;
+      font-weight: 600;
       padding: 1em 2.5em;
       border: none;
       border-radius: var(--radius);
-      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      background: linear-gradient(135deg, #000000, #333333);
       color: #ffffff;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.8em;
+      gap: 0.75em;
       transition: all var(--dur) var(--ease);
-      box-shadow: var(--shadow), var(--accent-glow);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       min-width: 220px;
-      text-decoration: none;
-      letter-spacing: 0.02em;
+      text-align: center;
       position: relative;
       overflow: hidden;
       z-index: 1;
+      text-decoration: none;
     }
     .btn::before {
       content: '';
       position: absolute;
       top: 0;
-      left: -100%;
-      width: 100%;
+      left: 0;
+      width: 0%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
-      transition: left 0.6s;
+      background: linear-gradient(135deg, #333333, #000000);
+      transition: all var(--dur) var(--ease);
       z-index: -1;
     }
     .btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1), var(--accent-glow);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2), var(--accent-glow);
     }
     .btn:hover::before {
-      left: 100%;
+      width: 100%;
+    }
+    .btn:active {
+      transform: translateY(-1px);
     }
     .btn-secondary {
       background: transparent;
       color: var(--accent);
-      border: 1.5px solid var(--accent);
-      box-shadow: 0 0 20px rgba(13, 27, 62, 0.1);
+      border: 2px solid var(--accent);
+    }
+    .btn-secondary::before {
+      background: var(--accent);
     }
     .btn-secondary:hover {
-      background: rgba(13, 27, 62, 0.05);
-      box-shadow: 0 0 30px rgba(13, 27, 62, 0.2);
+      color: #fff;
+      background: rgba(0, 0, 0, 0.05);
     }
-    .btn-price {
-      background: var(--accent);
-      color: white;
-      font-weight: 700;
-      padding: 0.75em 1.2em;
-      font-size: 1rem;
-      min-width: auto;
-      margin-top: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(13, 27, 62, 0.2);
-      text-align: center;
-      width: 100%;
-    }
-    .btn-price:hover {
-      background: var(--accent-dark);
-      transform: translateY(-2px);
-    }
+    /* Enhanced Sticky Header */
     header {
       position: sticky;
       top: 0;
       z-index: 999;
-      backdrop-filter: blur(20px);
+      backdrop-filter: blur(18px) saturate(180%);
       background: rgba(255, 255, 255, 0.95);
       border-bottom: 1px solid var(--border);
-      padding: 0 2.5rem;
+      padding: 1rem 2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       height: var(--header-height);
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
     }
     .logo {
-      font-family: 'Lato', sans-serif;
-      font-weight: 900;
+      font-weight: 800;
       font-size: 1.8rem;
+      letter-spacing: -0.03em;
+      display: flex;
+      align-items: center;
       color: var(--text);
       text-decoration: none;
     }
@@ -185,18 +208,19 @@
     }
     nav {
       display: flex;
-      gap: 2rem;
+      gap: 2.5rem;
       align-items: center;
     }
     nav a {
       font-size: 0.95rem;
-      font-weight: 700;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
-      text-decoration: none;
-      position: relative;
+      letter-spacing: 0.05em;
       padding: 0.5rem 0;
+      position: relative;
+      color: var(--text);
+      text-decoration: none;
+      transition: color var(--dur);
     }
     nav a::after {
       content: '';
@@ -206,6 +230,7 @@
       width: 0;
       height: 2px;
       background: var(--accent);
+      border-radius: 1px;
       transition: width var(--dur);
     }
     nav a:hover {
@@ -214,32 +239,64 @@
     nav a:hover::after {
       width: 100%;
     }
+    .nav-cta {
+      margin-left: 1.5rem;
+    }
+    /* Enhanced Hero Section */
     .hero {
-      padding: calc(var(--header-height) + 2rem) 2.5rem 4rem;
-      min-height: 90vh;
+      padding: calc(var(--header-height) + 2rem) 2rem 4rem;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      background: radial-gradient(ellipse at center, rgba(13, 27, 62, 0.04) 0%, transparent 70%);
+      background: radial-gradient(ellipse at 50% 50%, #f5f5f5 0%, var(--bg) 80%);
       gap: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 30%, rgba(0, 0, 0, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(0, 0, 0, 0.02) 0%, transparent 50%);
+      z-index: -1;
+    }
+    .hero-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      width: 100%;
     }
     .hero p {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       max-width: 65ch;
-      margin: 0 auto 2rem;
-      color: var(--text-muted);
+      margin: 0 auto 2.5rem;
     }
     .youtube-embed {
       width: 100%;
-      max-width: 850px;
+      max-width: 900px;
       aspect-ratio: 16 / 9;
       border-radius: var(--radius);
       overflow: hidden;
-      box-shadow: var(--shadow), 0 0 30px rgba(13, 27, 62, 0.1);
+      box-shadow: var(--shadow);
       margin: 2rem auto;
       border: 1px solid var(--border);
+      transition: transform var(--dur), box-shadow var(--dur);
+    }
+    .youtube-embed:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+    .youtube-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
     }
     .hero-cta {
       display: flex;
@@ -247,208 +304,529 @@
       justify-content: center;
       margin-top: 2rem;
       flex-wrap: wrap;
+      width: 100%;
     }
+    /* Enhanced Sections */
     section {
-      padding: 8rem 2.5rem;
+      padding: 6rem 2rem;
       max-width: 1440px;
       margin: 0 auto;
+      position: relative;
       width: 100%;
     }
     .section-title {
       text-align: center;
       margin-bottom: 3rem;
+      position: relative;
+      width: 100%;
+    }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      margin: 1rem auto 0;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      border-radius: 2px;
+      animation: glow 2s infinite alternate;
+    }
+    @keyframes glow {
+      from { box-shadow: 0 0 4px var(--accent); }
+      to { box-shadow: 0 0 16px var(--accent), 0 0 24px var(--accent); }
     }
     .section-intro {
       text-align: center;
       max-width: 800px;
-      margin: 0 auto 3.5rem;
-      font-size: 1.15rem;
+      margin: 0 auto 4rem;
+      font-size: 1.2rem;
+      width: 100%;
     }
-    .trainer-showcase {
-      background-color: #000;
-      padding: 3rem 2.5rem;
-      border: 2px solid silver;
-      margin: 0 auto 5rem;
-      max-width: 1440px;
-    }
-    .trainer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.8rem;
-      margin-top: 2rem;
-    }
-    .trainer-card {
-      background-color: #111;
-      border: 1px solid silver;
-      padding: 1.8rem;
-      text-align: center;
-      border-radius: var(--radius);
-      transition: transform 0.3s ease;
-    }
-    .trainer-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
-    }
-    .trainer-card h3 {
-      color: #fff;
-      margin-bottom: 0.75rem;
-      font-size: 1.35rem;
-    }
-    .trainer-card p {
-      color: #ddd;
-      font-size: 0.95rem;
-      margin: 0 0 1.2rem;
-    }
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2.2rem;
-      margin-top: 2rem;
-    }
+    /* Enhanced Cards */
     .card {
-      background: var(--bg);
-      padding: 2.2rem;
+      background: var(--card-bg);
+      padding: 2.5rem;
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      transition: all var(--dur);
+      transition: transform var(--dur), box-shadow var(--dur);
+      backdrop-filter: blur(10px);
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.03) 0%, transparent 70%);
+      z-index: -1;
     }
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
-      border-color: var(--accent);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+      border-color: rgba(0, 0, 0, 0.2);
     }
     .card h3 {
+      color: var(--accent);
+      margin-bottom: 1.25rem;
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 0.75rem;
-      margin-bottom: 1rem;
     }
     .card h3 i {
-      font-size: 1.4rem;
-      color: var(--accent);
+      font-size: 1.5rem;
     }
+    .card ul {
+      text-align: left;
+      flex-grow: 1;
+    }
+    /* Enhanced Grid Layouts */
+    .problem-solution,
+    .use-cases,
+    .revenue-models,
+    .outcomes-grid,
+    .partners-grid {
+      display: grid;
+      gap: 2rem;
+      width: 100%;
+    }
+    .problem-solution {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .use-cases {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+    .revenue-models {
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+    .outcomes-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .partners-grid {
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    /* Steps */
     .steps {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 2.2rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
       margin-top: 3rem;
+      width: 100%;
     }
     .step {
-      text-align: center;
+      background: var(--card-bg);
       padding: 2rem;
-      background: var(--bg);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      box-shadow: var(--shadow);
+      text-align: center;
+      position: relative;
+      backdrop-filter: blur(10px);
     }
     .step-number {
-      font-size: 2.2rem;
-      font-weight: 700;
+      font-size: 2.5rem;
+      font-weight: 800;
       color: var(--accent);
       margin-bottom: 1rem;
       display: inline-block;
-      width: 56px;
-      height: 56px;
-      line-height: 56px;
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
       border-radius: 50%;
-      background: rgba(13, 27, 62, 0.06);
-      border: 1.5px solid var(--accent);
+      background: rgba(0, 0, 0, 0.05);
     }
+    /* Enhanced Models */
+    .model {
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      text-align: center;
+      backdrop-filter: blur(10px);
+      height: 100%;
+    }
+    .model h3 {
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+    .model ul {
+      text-align: left;
+      margin: 1.5rem 0;
+    }
+    /* Use Cases */
+    .use-case {
+      background: var(--card-bg);
+      padding: 2rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      text-align: left;
+      backdrop-filter: blur(10px);
+      height: 100%;
+      transition: all var(--dur);
+    }
+    .use-case:hover {
+      border-color: var(--accent);
+    }
+    .use-case h4 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-align: left;
+    }
+    .use-case h4 i {
+      font-size: 1.25rem;
+    }
+    /* Outcomes */
+    .outcome {
+      background: var(--card-bg);
+      padding: 2rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      text-align: center;
+      backdrop-filter: blur(10px);
+      transition: all var(--dur);
+    }
+    .outcome:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    .outcome strong {
+      color: var(--accent);
+      font-size: 1.8rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    /* Demo Buttons */
+    .demo-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 3rem 0;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    /* Partners */
+    .partners {
+      margin-top: 3rem;
+      text-align: center;
+      width: 100%;
+    }
+    .partner-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+    .partner-links a {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      transition: all var(--dur);
+    }
+    .partner-links a:hover {
+      color: #fff;
+      border-color: var(--accent);
+      background: rgba(0, 0, 0, 0.05);
+    }
+    /* Cal Booking */
+    .cal-booking {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      overflow: hidden;
+      padding: 4rem 2rem;
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      width: 100%;
+      text-align: center;
+    }
+    .cal-booking p {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      font-size: 1.2rem;
+    }
+    #my-cal-inline-south-africa {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin: 0 auto;
+      display: block;
+    }
+    /* Enhanced Footer */
+    footer {
+      padding: 5rem 2rem 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+      background: var(--bg-soft);
+      width: 100%;
+      text-align: center;
+    }
+    .footer-section {
+      text-align: center;
+    }
+    .footer-section h3 {
+      color: var(--accent);
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      justify-content: center;
+    }
+    .social-icon {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--bg);
+      color: var(--text-muted);
+      transition: all var(--dur);
+      text-decoration: none;
+    }
+    .social-icon:hover {
+      background: var(--accent);
+      color: #fff;
+      transform: translateY(-3px);
+    }
+    .copyright {
+      grid-column: 1 / -1;
+      text-align: center;
+      margin-top: 3rem;
+      color: var(--text-muted);
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      align-items: center;
+    }
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color var(--dur);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+    }
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+    .footer-links a i {
+      font-size: 0.9rem;
+    }
+    /* Stats Counter */
     .stats-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 2rem;
-      margin: 4rem auto;
-      max-width: 1200px;
+      margin: 4rem 0;
+      width: 100%;
     }
     .stat {
       text-align: center;
       padding: 2rem;
-      background: var(--bg);
-      border: 1px solid var(--border);
+      background: var(--card-bg);
       border-radius: var(--radius);
+      border: 1px solid var(--border);
     }
     .stat-number {
       font-size: 2.8rem;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--accent);
       margin-bottom: 0.5rem;
     }
     .stat-label {
       color: var(--text-muted);
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-    footer {
-      padding: 5rem 2.5rem 2rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2.5rem;
-      border-top: 1px solid var(--border);
-      background: var(--bg-soft);
       font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
     }
-    .copyright {
-      grid-column: 1 / -1;
+    /* Partner Section */
+    .partner-card {
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
       text-align: center;
-      margin-top: 2rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border);
-      color: var(--text-muted);
+      backdrop-filter: blur(10px);
+      height: 100%;
+      transition: all var(--dur);
+    }
+    .partner-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      border-color: var(--accent);
+    }
+    .partner-card h3 {
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      font-size: 1.6rem;
+    }
+    .partner-card p {
+      text-align: left;
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+    .partner-card ul {
+      text-align: left;
+      margin: 1.5rem 0;
+      padding-left: 1.5rem;
+    }
+    .partner-card ul li {
+      margin-bottom: 0.5rem;
+      position: relative;
+    }
+    .partner-card ul li::before {
+      content: "•";
+      color: var(--accent);
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      h1 {
+        font-size: 2.8rem;
+      }
+      h2 {
+        font-size: 2.2rem;
+      }
+      .hero {
+        padding: calc(var(--header-height) + 1rem) 1.5rem 3rem;
+      }
     }
     @media (max-width: 768px) {
-      header { padding: 0 1.5rem; }
-      nav { display: none; }
-      h1 { font-size: 2.3rem; }
-      section { padding: 5rem 1.5rem; }
-      .hero { padding: calc(var(--header-height) + 1.5rem) 1.5rem 3rem; }
-      .hero-cta { flex-direction: column; align-items: center; }
-      .stats-container, footer { grid-template-columns: 1fr; }
+      header {
+        padding: 1rem;
+      }
+      nav {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--text);
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+      h1 {
+        font-size: 2.2rem;
+        max-width: 22ch;
+      }
+      h2 {
+        font-size: 1.8rem;
+      }
+      h3 {
+        font-size: 1.5rem;
+      }
+      .btn {
+        padding: 0.9em 2em;
+        font-size: 0.95rem;
+        min-width: 180px;
+      }
+      section {
+        padding: 4rem 1.5rem;
+      }
+      .hero {
+        padding: calc(var(--header-height) + 1rem) 1.5rem 3rem;
+      }
+      .demo-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      .hero-cta {
+        flex-direction: column;
+        align-items: center;
+      }
+      .stats-container {
+        grid-template-columns: 1fr;
+      }
+      .footer-section h3 {
+        justify-content: center;
+      }
+      footer {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .footer-links {
+        align-items: center;
+      }
+      .partners-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- HEADER -->
   <header>
     <a href="#" class="logo">Mariba<span>Media</span></a>
     <nav>
       <a href="#home">Home</a>
-      <a href="#problem">Solutions</a>
+      <a href="#solution">Solution</a>
       <a href="#use-cases">Use Cases</a>
-      <a href="#trainers">Our Trainers</a>
       <a href="#lifetime-partnership">Partnership</a>
       <a href="#booking">Get Started</a>
+      <div class="nav-cta">
+        <a href="https://cal.com/partner-discovery/south-africa " class="btn btn-secondary">Schedule Demo</a>
+      </div>
     </nav>
-    <a href="https://cal.com/partner-discovery/south-africa" class="btn btn-secondary">Schedule Demo</a>
+    <button class="mobile-menu-btn">
+      <i class="fas fa-bars"></i>
+    </button>
   </header>
-
-  <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero-content">
-      <h1>Save 80% of your training costs with our On-Demand Training Experts</h1>
-      <p>A dedicated team of specialist trainer consultants, powered by AI, to provide personalized coaching, automated assessment, and guaranteed results.</p>
+      <h1>AI-Powered Enterprise Training Solutions</h1>
+      <p><strong>Mariba Media</strong> delivers performance-driven AI teaching & assessment systems, expertly trained on your curriculum for scalable, high-quality, and certifiable learning — with zero manual effort.</p>
       <div class="youtube-embed">
         <iframe 
-          src="https://lab.anam.ai/frame/4vEi5xh7LlMleNwusv8hA" 
+          src="https://lab.anam.ai/frame/4vEi5xh7LlMleNwusv8hA " 
           width="720" 
           height="480" 
           allow="microphone"
         ></iframe>
       </div>
       <div class="hero-cta">
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn" target="_blank" rel="noopener">
+        <a href="https://cal.com/partner-discovery/south-africa " class="btn" target="_blank" rel="noopener">
           <i class="fas fa-calendar-check"></i> Schedule Demo
         </a>
-        <a href="https://app.colossyan.com/videos/86851529-f9e2-4c93-b7f7-30ad7e3d5a04" class="btn btn-secondary" target="_blank">
+        <a href="https://app.colossyan.com/videos/86851529-f9e2-4c93-b7f7-30ad7e3d5a04 " class="btn btn-secondary" target="_blank">
           <i class="fas fa-play-circle"></i> Watch Demo
         </a>
       </div>
     </div>
   </section>
-
-  <!-- STATS -->
   <div class="stats-container">
     <div class="stat">
       <div class="stat-number" data-target="80">0</div>
@@ -467,56 +845,115 @@
       <div class="stat-label">Manual Grading</div>
     </div>
   </div>
-
-  <!-- PROBLEM -->
-  <section id="problem">
-    <h2 class="section-title">Why Are Your Traditional Training Costs So High?</h2>
-    <p class="section-intro">Traditional models tie cost to scale. More learners mean more instructor hours, more manual grading, and more administrative overhead.</p>
-    <div class="card-grid">
+  <section id="solution">
+    <h2 class="section-title">The Problem: Why Traditional Training Fails</h2>
+    <p class="section-intro">Are you facing these challenges in your current training approach?</p>
+    <div class="problem-solution">
       <div class="card">
-        <h3><i class="fas fa-chart-line"></i> Linear Cost Scaling</h3>
-        <p>Budgets balloon as learner numbers grow — no economies of scale.</p>
+        <h3><i class="fas fa-chart-line"></i> High & Linear Training Costs</h3>
+        <ul class="benefits-list">
+          <li>Budgets balloon as learner numbers grow.</li>
+          <li>Instructor costs increase linearly with scale.</li>
+          <li>Physical materials and venues add significant expenses.</li>
+        </ul>
       </div>
       <div class="card">
         <h3><i class="fas fa-tachometer-alt"></i> Inconsistent Quality</h3>
-        <p>Delivery varies across locations, compromising certification standards.</p>
+        <ul class="benefits-list">
+          <li>Delivery varies across campuses and franchises, compromising quality.</li>
+          <li>Different instructors deliver content with varying effectiveness.</li>
+          <li>Lack of standardization leads to knowledge gaps.</li>
+        </ul>
       </div>
       <div class="card">
         <h3><i class="fas fa-tasks"></i> Administrative Overload</h3>
-        <p>Manual grading, certification, and reporting drain valuable resources.</p>
+        <ul class="benefits-list">
+          <li>Manual grading, certification, and reporting drain valuable resources.</li>
+          <li>Paper-based processes create bottlenecks and errors.</li>
+          <li>Tracking learner progress becomes increasingly complex.</li>
+        </ul>
       </div>
       <div class="card">
-        <h3><i class="fas fa-user-check"></i> Low Engagement</h3>
-        <p>Poor engagement leads to low pass rates and wasted training budgets.</p>
+        <h3><i class="fas fa-user-check"></i> Low Learner Engagement</h3>
+        <ul class="benefits-list">
+          <li>Poor engagement leads to low pass rates and wasted training budgets.</li>
+          <li>Traditional methods fail to capture attention of modern learners.</li>
+          <li>Lack of interactivity reduces knowledge retention.</li>
+        </ul>
+      </div>
+      <!-- RESTORED CARDS -->
+      <div class="card">
+        <h3><i class="fas fa-balance-scale"></i> Compliance & Accreditation Risks</h3>
+        <ul class="benefits-list">
+          <li>Failing audits due to incomplete or unverifiable training records.</li>
+          <li>Inability to prove regulatory compliance (e.g., POPIA, ISO, industry standards).</li>
+          <li>Legal and financial exposure from non-compliant certification issuance.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-users"></i> Talent Retention & Brand Damage</h3>
+        <ul class="benefits-list">
+          <li>Employees leave due to outdated, boring, or ineffective training programs.</li>
+          <li>Franchisees and partners lose trust when training quality is inconsistent.</li>
+          <li>Reputation suffers as learners associate poor training with poor brand value.</li>
+        </ul>
       </div>
     </div>
   </section>
-
-  <!-- SOLUTION -->
   <section id="solution">
-    <h2 class="section-title">The Perfect Blend: Expert Trainers + AI Efficiency</h2>
-    <p class="section-intro">We provide the specialist trainers; our AI handles the heavy lifting. This powerful combination delivers:</p>
-    <div class="card-grid">
+    <h2 class="section-title">The Solution: Your Intelligent Teaching Workforce</h2>
+    <p class="section-intro">Mariba Media is designed to solve these pain points by providing <strong>your own AI-powered teaching workforce that never sleeps</strong>.</p>
+    <div class="problem-solution">
       <div class="card">
-        <h3><i class="fas fa-user-tie"></i> Personalized Training Paths</h3>
-        <p>Our consultants design learning journeys tailored to individual needs, brought to life by adaptive AI.</p>
+        <h3><i class="fas fa-robot"></i> Automated Interactive Training</h3>
+        <ul class="benefits-list">
+          <li>Engage learners with dynamic content in video, chat, and adaptive learning paths.</li>
+          <li>AI-powered simulations create realistic training scenarios.</li>
+          <li>Personalized learning journeys for each student.</li>
+        </ul>
       </div>
       <div class="card">
-        <h3><i class="fas fa-check-circle"></i> Automated Assessment & Grading</h3>
-        <p>Instant, detailed feedback and certification. Zero manual effort.</p>
+        <h3><i class="fas fa-check-circle"></i> Auto-Grading & Instant Certification</h3>
+        <ul class="benefits-list">
+          <li>Eliminate manual marking entirely with AI assessment.</li>
+          <li>Instant feedback and certification upon completion.</li>
+          <li>Detailed analytics on learner performance and knowledge gaps.</li>
+        </ul>
       </div>
       <div class="card">
-        <h3><i class="fas fa-expand-arrows-alt"></i> Scalable Expertise</h3>
-        <p>One expert trainer can guide thousands of learners with AI-powered simulations and 24/7 tutoring.</p>
+        <h3><i class="fas fa-globe"></i> Global Reach & Accessibility</h3>
+        <ul class="benefits-list">
+          <li>Support 100+ languages with instant translation, transcription, and captioning.</li>
+          <li>Accessible on any device, anywhere in the world.</li>
+          <li>24/7 availability for learners in different time zones.</li>
+        </ul>
       </div>
       <div class="card">
-        <h3><i class="fas fa-gamepad"></i> Guaranteed Engagement</h3>
-        <p>Gamified, interactive content designed by our specialists achieves up to <strong>95% learner retention</strong>.</p>
+        <h3><i class="fas fa-gamepad"></i> Gamified Engagement</h3>
+        <ul class="benefits-list">
+          <li>Achieve up to <strong>95% learner retention</strong> through interactive, gamified learning experiences.</li>
+          <li>Points, badges, and leaderboards motivate continuous learning.</li>
+          <li>Micro-learning modules fit into busy schedules.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-expand-arrows-alt"></i> Scalable Delivery</h3>
+        <ul class="benefits-list">
+          <li>Seamlessly expand training across remote learners, multiple campuses, or global sites.</li>
+          <li>Handle thousands of concurrent learners without additional resources.</li>
+          <li>Cloud-based infrastructure grows with your needs.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-clipboard-list"></i> Audit-Ready Reporting</h3>
+        <ul class="benefits-list">
+          <li>Ensure compliance and accreditation with robust, auditable reports.</li>
+          <li>Track every interaction and assessment for complete transparency.</li>
+          <li>Export customized reports for different stakeholders.</li>
+        </ul>
       </div>
     </div>
   </section>
-
-  <!-- HOW IT WORKS -->
   <section id="how-it-works">
     <h2 class="section-title">How It Works: Simple & Efficient Deployment</h2>
     <p class="section-intro">Getting started with Mariba Media is straightforward and hassle-free</p>
@@ -543,199 +980,733 @@
       </div>
     </div>
   </section>
-
-  <!-- TRAINER SHOWCASE -->
-  <section class="trainer-showcase" id="trainers">
-    <h2 class="section-title" style="color: white;">Meet Your Dedicated Team of Expert Trainer Consultants</h2>
-    <p class="section-intro" style="color: #ccc; max-width: 800px; margin: 0 auto;">
-      Our AI platform amplifies the impact of our hand-picked specialists, giving you an unbeatable combination of human expertise and technological efficiency.
-    </p>
-    <div class="trainer-grid">
-      <div class="trainer-card">
-        <h3>SAT Tutor</h3>
-        <p>Expert test preparation strategies and personalized learning paths to maximize student scores.</p>
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn btn-price">Get Started – $30/hour</a>
-      </div>
-      <div class="trainer-card">
-        <h3>Matric Tutor</h3>
-        <p>Subject-matter experts providing crucial support for final high school examinations.</p>
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn btn-price">Get Started – $30/hour</a>
-      </div>
-      <div class="trainer-card">
-        <h3>K-12 Tutor</h3>
-        <p>Personalized academic support across all subjects and grade levels.</p>
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn btn-price">Get Started – $30/hour</a>
-      </div>
-      <div class="trainer-card">
-        <h3>Sales Enablement Trainer</h3>
-        <p>Equip your sales team with the skills and knowledge to close more deals.</p>
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn btn-price">Get Started – $30/hour</a>
-      </div>
-      <div class="trainer-card">
-        <h3>Recruitment Officer</h3>
-        <p>Train your HR team on effective sourcing, interviewing, and hiring techniques.</p>
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn btn-price">Get Started – $30/hour</a>
-      </div>
-      <div class="trainer-card">
-        <h3>Addiction Consultant</h3>
-        <p>Specialized training for healthcare professionals on support and intervention protocols.</p>
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn btn-price">Get Started – $30/hour</a>
-      </div>
-      <div class="trainer-card">
-        <h3>Psychologist</h3>
-        <p>Develop soft skills, mental resilience, and leadership qualities across your organization.</p>
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn btn-price">Get Started – $30/hour</a>
-      </div>
-      <div class="trainer-card">
-        <h3>Business Development Consultant</h3>
-        <p>Coach your team on strategic planning, market expansion, and partnership growth.</p>
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn btn-price">Get Started – $30/hour</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ROI CALCULATOR -->
+  <!-- ROI CALCULATOR SECTION - ADDED WITHOUT CHANGING ANYTHING ELSE -->
   <section id="roi-calculator">
     <h2 class="section-title">Calculate Your Training ROI</h2>
     <p class="section-intro">See your exact Rands saved with our pay-per-accreditation model — 60 seconds, no email</p>
-    <div style="max-width: 800px; margin: 0 auto; background: var(--bg); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border);">
-      <div style="background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: #ffffff; padding: 32px; text-align: center;">
-        <h3 style="font-size: 28px; margin-bottom: 10px; font-weight: 700;">Mariba Media ROI Calculator</h3>
-        <p style="opacity: 0.92; max-width: 600px; margin: 0 auto; font-size: 16px;">See your exact Rands saved with our pay-per-accreditation model — 60 seconds, no email</p>
+    <div style="
+      max-width: 800px;
+      margin: 0 auto;
+      background: linear-gradient(145deg, rgba(245, 245, 245, 0.9), rgba(224, 224, 224, 0.9));
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      border: 1px solid #cccccc;
+      backdrop-filter: blur(10px);
+    ">
+      <div style="
+        background: linear-gradient(135deg, #000000, #333333);
+        color: #ffffff;
+        padding: 24px;
+        text-align: center;
+      ">
+        <h1 style="
+          font-size: 28px;
+          margin-bottom: 8px;
+          font-weight: 700;
+          background: linear-gradient(135deg, #ffffff, #999999);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        ">Mariba Media ROI Calculator</h1>
+        <p style="
+          opacity: 0.9;
+          max-width: 600px;
+          margin: 0 auto;
+          font-size: 16px;
+        ">See your exact Rands saved with our pay-per-accreditation model - 60 seconds, no email</p>
       </div>
-      <div style="padding: 32px;">
-        <div style="margin-bottom: 24px;">
-          <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 16px; color: var(--text);">Your Current Training Data</h4>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
-            <div>
-              <label style="display: block; margin-bottom: 8px; font-weight: 700;">Learners/month</label>
-              <input type="number" id="learners" value="500" min="1" style="width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-soft);">
+      <div style="padding: 24px;">
+        <div style="margin-bottom: 30px;">
+          <h2 style="
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #000000;
+            display: flex;
+            align-items: center;
+          ">
+            <span style="
+              display: inline-block;
+              width: 4px;
+              height: 20px;
+              background: #000000;
+              margin-right: 10px;
+              border-radius: 2px;
+            "></span>
+            Your Current Training Data
+          </h2>
+          <div style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+          ">
+            <div style="margin-bottom: 16px;">
+              <label style="
+                display: block;
+                margin-bottom: 6px;
+                font-weight: 500;
+                color: #000000;
+              ">Learners trained per month</label>
+              <input type="number" id="learners" value="500" min="1" style="
+                width: 100%;
+                padding: 12px 16px;
+                border: 1px solid #cccccc;
+                border-radius: 6px;
+                background: #ffffff;
+                color: #000000;
+                font-size: 16px;
+              ">
             </div>
-            <div>
-              <label style="display: block; margin-bottom: 8px; font-weight: 700;">Cost per learner (R)</label>
-              <input type="number" id="cost" value="1200" min="1" style="width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-soft);">
+            <div style="margin-bottom: 16px;">
+              <label style="
+                display: block;
+                margin-bottom: 6px;
+                font-weight: 500;
+                color: #000000;
+              ">Current cost per learner (R)</label>
+              <input type="number" id="cost" value="1200" min="1" style="
+                width: 100%;
+                padding: 12px 16px;
+                border: 1px solid #cccccc;
+                border-radius: 6px;
+                background: #ffffff;
+                color: #000000;
+                font-size: 16px;
+              ">
             </div>
-            <div>
-              <label style="display: block; margin-bottom: 8px; font-weight: 700;">Pass rate (%)</label>
-              <input type="number" id="passRate" value="65" min="1" max="100" style="width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-soft);">
+            <div style="margin-bottom: 16px;">
+              <label style="
+                display: block;
+                margin-bottom: 6px;
+                font-weight: 500;
+                color: #000000;
+              ">Current pass rate (%)</label>
+              <input type="number" id="passRate" value="65" min="1" max="100" style="
+                width: 100%;
+                padding: 12px 16px;
+                border: 1px solid #cccccc;
+                border-radius: 6px;
+                background: #ffffff;
+                color: #000000;
+                font-size: 16px;
+              ">
             </div>
           </div>
         </div>
-        <div style="background: var(--bg-soft); border-radius: 10px; padding: 20px; margin-top: 20px;">
-          <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border);">
-            <span>Current monthly cost</span>
-            <span id="currentCost">R600,000</span>
+        <div style="
+          background: #ffffff;
+          border-radius: 8px;
+          padding: 20px;
+          margin-top: 20px;
+        ">
+          <h2 style="
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #000000;
+            display: flex;
+            align-items: center;
+          ">
+            <span style="
+              display: inline-block;
+              width: 4px;
+              height: 20px;
+              background: #000000;
+              margin-right: 10px;
+              border-radius: 2px;
+            "></span>
+            Your Training Cost Analysis
+          </h2>
+          <div style="
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #cccccc;
+          ">
+            <span style="
+              font-weight: 500;
+              color: #000000;
+            ">Current monthly training cost</span>
+            <span style="
+              font-weight: 700;
+              color: #000000;
+            " id="currentCost">R600,000</span>
           </div>
-          <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border);">
-            <span>Wasted on failures</span>
-            <span id="wasteAmount" style="color: var(--error);">R210,000</span>
+          <div style="
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #cccccc;
+          ">
+            <span style="
+              font-weight: 500;
+              color: #000000;
+            ">Wasted on failed training</span>
+            <span style="
+              font-weight: 700;
+              color: #000000;
+            " id="wasteAmount">R210,000</span>
           </div>
-          <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border);">
-            <span>Lost productivity</span>
-            <span id="productivityLoss" style="color: var(--error);">R3,237,500</span>
+          <div style="
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #cccccc;
+          ">
+            <span style="
+              font-weight: 500;
+              color: #000000;
+            ">Lost productivity cost</span>
+            <span style="
+              font-weight: 700;
+              color: #000000;
+            " id="productivityLoss">R3,237,500</span>
           </div>
-          <div style="background: rgba(13, 27, 62, 0.06); padding: 16px; margin: 16px 0; border-radius: 8px;">
-            <div style="font-weight: 700;">Your total monthly waste</div>
-            <div style="font-size: 26px; font-weight: 700; color: var(--error);" id="totalWaste">R3,447,500</div>
+          <div style="
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #cccccc;
+          ">
+            <span style="
+              font-weight: 500;
+              color: #000000;
+            ">POPIA compliance risk score</span>
+            <span style="
+              font-weight: 700;
+              color: #000000;
+            " id="complianceRisk">52.5%</span>
           </div>
-          <div style="display: flex; justify-content: space-between; padding: 12px 0; font-weight: 700; color: var(--success);">
-            <span>Mariba Media savings</span>
-            <span id="savingsAmount">R168,000</span>
+          <div style="
+            background: rgba(0, 0, 0, 0.05);
+            border-left: 4px solid #000000;
+            padding: 16px;
+            border-radius: 0 6px 6px 0;
+            margin: 20px 0;
+          ">
+            <div style="
+              font-weight: 500;
+              color: #000000;
+            ">Your total monthly waste</div>
+            <div style="
+              font-size: 28px;
+              font-weight: 800;
+              color: #ff6b6b;
+              margin: 10px 0;
+            " id="totalWaste">R3,447,500</div>
+            <div style="
+              font-weight: 500;
+              color: #777;
+            ">(This is what Mariba fixes)</div>
+          </div>
+          <div style="
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            font-weight: 700;
+            color: #0f9;
+          ">
+            <span style="
+              font-weight: 500;
+              color: #000000;
+            ">Mariba Media monthly savings</span>
+            <span style="
+              font-weight: 700;
+              color: #0f9;
+            " id="savingsAmount">R168,000</span>
           </div>
         </div>
-        <div style="text-align: center; margin-top: 24px;">
-          <a href="https://cal.com/partner-discovery/south-africa" class="btn" style="font-size: 1rem; padding: 0.9em 2em;">Get Your Free Audit</a>
+        <div style="
+          background: rgba(0, 0, 0, 0.05);
+          border: 1px solid rgba(0, 0, 0, 0.1);
+          border-radius: 8px;
+          padding: 16px;
+          margin-top: 15px;
+          text-align: center;
+        ">
+          <strong style="display: block; margin-bottom: 8px;">Our Risk Reversal Guarantee:</strong> We only get paid when your learners pass. 
+          <br><strong style="display: block; margin-top: 8px;">No passes = no fees. Period.</strong>
+        </div>
+        <div style="
+          text-align: center;
+          padding: 24px;
+          background: rgba(0, 0, 0, 0.02);
+          border-radius: 8px;
+          margin-top: 20px;
+        ">
+          <h2 style="
+            font-size: 22px;
+            margin-bottom: 12px;
+            color: #000000;
+          ">Your Free Compliance Audit</h2>
+          <p style="
+            color: #666666;
+            margin-bottom: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+          ">
+            First 5 people to share their results get a FREE 30-minute audit with our team.
+            We'll show exactly how to fix your biggest training leak.
+          </p>
+          <a href="https://cal.com/partner-discovery/south-africa " style="
+            display: inline-block;
+            background: #000000;
+            color: #ffffff;
+            padding: 14px 28px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+            width: 100%;
+            max-width: 400px;
+          ">
+            Share My Results → Get Free Audit
+          </a>
+          <div style="
+            font-size: 12px;
+            color: #666666;
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #cccccc;
+          ">
+            *Calculations based on South African enterprise training data. 
+            Lost productivity cost = R18,500/day per untrained hire. 
+            Compliance risk score = (100 - pass rate) × 1.5
+          </div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- FOOTER -->
+  <!-- END ROI CALCULATOR SECTION -->
+  <section id="use-cases">
+    <h2 class="section-title">Key Use Cases</h2>
+    <p class="section-intro">Mariba Media is ideal for any scenario requiring scalable, certifiable training</p>
+    <div class="use-cases">
+      <div class="use-case">
+        <h4><i class="fas fa-user-plus"></i> Employee Onboarding</h4>
+        <p>Automate and standardize onboarding for company policies, software, and safety protocols across all locations.</p>
+      </div>
+      <div class="use-case">
+        <h4><i class="fas fa-graduation-cap"></i> Continuing Professional Development</h4>
+        <p>Deliver ongoing training and certification to maintain licenses and update skills with automatic renewal reminders.</p>
+      </div>
+      <div class="use-case">
+        <h4><i class="fas fa-balance-scale"></i> Compliance & Regulatory Training</h4>
+        <p>Ensure staff complete mandatory training with audit-ready reporting and certification for compliance officers.</p>
+      </div>
+      <div class="use-case">
+        <h4><i class="fas fa-award"></i> Mass Certification Programs</h4>
+        <p>Scale standardized testing with auto-grading and instant results for large groups of learners.</p>
+      </div>
+      <div class="use-case">
+        <h4><i class="fas fa-university"></i> Multi-Campus & Global Training</h4>
+        <p>Deliver consistent training across locations and in 100+ languages with localized content.</p>
+      </div>
+      <div class="use-case">
+        <h4><i class="fas fa-book-open"></i> Academic Course Delivery</h4>
+        <p>Enhance university courses with 24/7 interactive learning and automated assessment for remote students.</p>
+      </div>
+      <div class="use-case">
+        <h4><i class="fas fa-store"></i> Franchise Training</h4>
+        <p>Ensure consistent quality and brand standards across all franchise locations with standardized training.</p>
+      </div>
+      <div class="use-case">
+        <h4><i class="fas fa-chart-line"></i> Sales & Product Training</h4>
+        <p>Train teams on new products with engaging, gamified content that improves knowledge retention.</p>
+      </div>
+      <div class="use-case">
+        <h4><i class="fas fa-check-double"></i> Internal Skill Validation</h4>
+        <p>Rapidly assess and certify employee proficiency in new tools or processes with objective AI evaluation.</p>
+      </div>
+    </div>
+  </section>
+  <!-- REPLACED FLEXIBLE REVENUE MODELS WITH LIFETIME PARTNERSHIP SECTION -->
+  <section id="lifetime-partnership">
+    <h2 class="section-title">🌟 Your Lifetime Partnership: Pay Only for What You Save</h2>
+    <p class="section-intro" style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">
+      <em>"This isn't a subscription. It's a partnership where we only get paid when we deliver real savings.<br>
+      You pay <strong>35% of your annual training cost savings</strong> – <strong>nothing if there are none</strong>.<br>
+      Every benefit, feature, and support level is included at no extra cost.<br>
+      No fixed term. No hidden fees. No vendor lock-in.<br><br>
+      This is how enterprise training should work."</em>
+    </p>
+    <div style="max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: var(--radius); border: 1px solid var(--border); padding: 2rem; margin-bottom: 2rem;">
+      <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--accent);">⚖️ Why Traditional Models Keep You Trapped in Costs</h3>
+      <table style="width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr>
+            <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border);">Model</th>
+            <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border);">Your Risk</th>
+            <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border);">Our Incentive</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid var(--border);"><strong>One-Time Setup Fee<br>(Traditional Licensing)</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border);">❌ Annual maintenance hikes<br>❌ Per-learner fees<br>❌ No ROI guarantee</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border);">🔄 We profit whether you save or not</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid var(--border);"><strong>Pay-Per-Accreditation<br>(Fixed Fee/Learner)</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border);">❌ Pay even when learners fail<br>❌ Costs scale with growth<br>❌ No flexibility for variable needs</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border);">🔄 We profit from volume, not results</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid var(--border);"><strong>Fixed Subscriptions<br>(Monthly/Annual Fees)</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border);">❌ Pay regardless of outcomes<br>❌ Hidden costs for upgrades<br>❌ No control over budget volatility</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border);">🔄 We profit from your ongoing pain</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="text-align: center; margin-top: 1rem; font-style: italic;">"Traditional models are designed to keep you paying – regardless of results. We built this partnership to end that cycle."</p>
+    </div>
+    <div style="max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: var(--radius); border: 1px solid var(--border); padding: 2rem; margin-bottom: 2rem;">
+      <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--accent);">✅ Your Lifetime Partnership Includes:</h3>
+      <ul style="list-style-type: none; padding: 0; margin: 0;">
+        <li style="margin-bottom: 1rem; display: flex; align-items: flex-start;">
+          <span style="margin-right: 10px; font-size: 1.2rem; color: var(--accent);">•</span>
+          <span><strong>Zero upfront costs</strong> – Pay nothing until we prove value</span>
+        </li>
+        <li style="margin-bottom: 1rem; display: flex; align-items: flex-start;">
+          <span style="margin-right: 10px; font-size: 1.2rem; color: var(--accent);">•</span>
+          <span><strong>35% of your actual annual training cost savings</strong> – <em>only when you save</em></span>
+        </li>
+        <li style="margin-bottom: 1rem; display: flex; align-items: flex-start;">
+          <span style="margin-right: 10px; font-size: 1.2rem; color: var(--accent);">•</span>
+          <span><strong>Unlimited learners</strong> – Scale training for your entire workforce without restrictions</span>
+        </li>
+        <li style="margin-bottom: 1rem; display: flex; align-items: flex-start;">
+          <span style="margin-right: 10px; font-size: 1.2rem; color: var(--accent);">•</span>
+          <span><strong>8 new courses per year</strong> – Custom-built for your unique needs (no extra fees)</span>
+        </li>
+        <li style="margin-bottom: 1rem; display: flex; align-items: flex-start;">
+          <span style="margin-right: 10px; font-size: 1.2rem; color: var(--accent);">•</span>
+          <span><strong>Priority 24/7 support</strong> – Dedicated experts, not ticket queues</span>
+        </li>
+        <li style="margin-bottom: 1rem; display: flex; align-items: flex-start;">
+          <span style="margin-right: 10px; font-size: 1.2rem; color: var(--accent);">•</span>
+          <span><strong>Unlimited platform features</strong> – AI avatars, chatbots, RAG knowledge bases, compliance tools, and all future innovations</span>
+        </li>
+        <li style="margin-bottom: 1rem; display: flex; align-items: flex-start;">
+          <span style="margin-right: 10px; font-size: 1.2rem; color: var(--accent);">•</span>
+          <span><strong>True partnership structure</strong> – No fixed term. Pause, scale, or cancel anytime – <em>but why would you?</em></span>
+        </li>
+        <li style="margin-bottom: 1rem; display: flex; align-items: flex-start;">
+          <span style="margin-right: 10px; font-size: 1.2rem; color: var(--accent);">•</span>
+          <span><strong>Risk-free guarantee</strong> – If we don't deliver savings, you pay $0. Period.</span>
+        </li>
+      </ul>
+      <p style="text-align: center; margin-top: 1.5rem; font-style: italic;">"We're not selling software. We're investing in your success.<br>Our only fee comes from the value we create for you."</p>
+    </div>
+    <div style="max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: var(--radius); border: 1px solid var(--border); padding: 2rem; margin-bottom: 2rem;">
+      <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--accent);">🌐 How It Works: Simple, Aligned, and Sustainable</h3>
+      <ol style="padding-left: 1.5rem; margin-bottom: 1.5rem;">
+        <li style="margin-bottom: 1rem;"><strong>We deploy your platform</strong> – Zero cost. Full access to all features.</li>
+        <li style="margin-bottom: 1rem;"><strong>We track your savings</strong> – Real-time metrics on reduced costs, faster certification, and eliminated waste.</li>
+        <li style="margin-bottom: 1rem;"><strong>You pay only for results</strong> – 35% of your verified annual savings.</li>
+        <li style="margin-bottom: 1rem;"><strong>We refine together</strong> – Continuous optimization to maximize your ROI year-over-year.</li>
+      </ol>
+      <p style="text-align: center; font-style: italic;">"This isn't a transaction – it's a collaboration.<br>When you save, we win. When you grow, we grow.<br>When you fail, we fail. That's how true partnerships work."</p>
+    </div>
+    <div style="max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: var(--radius); border: 1px solid var(--border); padding: 2rem; margin-bottom: 2rem;">
+      <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--accent);">🔥 Why This Changes Everything</h3>
+      <ul style="list-style-type: none; padding: 0; margin: 0;">
+        <li style="margin-bottom: 1rem; display: flex; align-items: flex-start;">
+          <span style="margin-right: 10px; font-size: 1.2rem; color: var(--accent);">•</span>
+          <span><strong>You control the budget</strong> – No more unpredictable costs. Pay only for what you save.</span>
+        </li>
+        <li style="margin-bottom: 1rem; display: flex; align-items: flex-start;">
+          <span style="margin-right: 10px; font-size: 1.2rem; color: var(--accent);">•</span>
+          <span><strong>We're 100% aligned with your goals</strong> – Our success = your savings. No middlemen. No hidden agendas.</span>
+        </li>
+        <li style="margin-bottom: 1rem; display: flex; align-items: flex-start;">
+          <span style="margin-right: 10px; font-size: 1.2rem; color: var(--accent);">•</span>
+          <span><strong>Future-proof innovation</strong> – All new AI capabilities, compliance updates, and platform upgrades included at no extra cost.</span>
+        </li>
+        <li style="margin-bottom: 1rem; display: flex; align-items: flex-start;">
+          <span style="margin-right: 10px; font-size: 1.2rem; color: var(--accent);">•</span>
+          <span><strong>No vendor lock-in</strong> – You own your data, your courses, and your outcomes.</span>
+        </li>
+      </ul>
+      <p style="text-align: center; margin-top: 1.5rem; font-style: italic;">"Traditional vendors want you to pay forever.<br>We want you to save forever – and only charge for the value we deliver."</p>
+    </div>
+    <div style="max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: var(--radius); border: 1px solid var(--border); padding: 2rem; margin-bottom: 2rem;">
+      <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--accent);">🤝 This Is How Leaders Think</h3>
+      <blockquote style="font-style: italic; border-left: 3px solid var(--accent); padding-left: 1rem; margin: 0 0 1rem;">
+        "While competitors debate 'setup fees' or 'per-learner costs', we're building a partnership where:<br>
+        - Training costs become a variable expense tied to results<br>
+        - Your team focuses on growth, not budget battles<br>
+        - Every dollar spent generates measurable ROI<br>
+        - We're invested in your success – not just your wallet"
+      </blockquote>
+      <p style="text-align: center; font-weight: bold; font-size: 1.2rem;">This isn't a deal. It's the future of enterprise training.</p>
+    </div>
+    <div style="text-align: center; margin: 2rem auto; max-width: 800px;">
+      <a href="https://cal.com/partner-discovery/south-africa " class="btn" style="display: inline-block; margin: 1rem; padding: 1rem 2rem; font-size: 1.1rem;">
+        <i class="fas fa-calendar-check"></i> Claim Your Lifetime Partnership
+      </a>
+      <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-muted);">
+        P.S. This partnership has no fixed term. You can pause or cancel anytime – but after seeing your first year's savings, you'll wonder why you ever paid for training any other way.<br>
+        P.P.S. If we don't save you money, you pay $0. Period. That's the power of true alignment.
+      </p>
+    </div>
+  </section>
+  <!-- END LIFETIME PARTNERSHIP SECTION -->
+  <section id="demo">
+    <h2 class="section-title">See Mariba Media in Action</h2>
+    <p class="section-intro">Experience the future of AI-driven training with our interactive demos</p>
+    <div class="demo-buttons">
+      <a href="https://app.colossyan.com/videos/86851529-f9e2-4c93-b7f7-30ad7e3d5a04 " target="_blank" class="btn">
+        <i class="fas fa-play-circle"></i> Watch AI Training Demo
+      </a>
+      <a href="https://cal.com/partner-discovery/south-africa " class="btn btn-secondary">
+        <i class="fas fa-calendar-check"></i> Schedule Live Demo
+      </a>
+    </div>
+    <div class="partners">
+      <p><strong>Technology Partners:</strong></p>
+      <div class="partner-links">
+        <a href="https://tavus.io " target="_blank" rel="noopener">Tavus.io</a>
+        <a href="https://heygen.com " target="_blank" rel="noopener">HeyGen.com</a>
+        <a href="https://coursebox.ai " target="_blank" rel="noopener">Coursebox.ai</a>
+      </div>
+    </div>
+  </section>
+  <!-- NEW PARTNERS SECTION -->
+  <section id="strategic-partners" style="padding: 8rem 2rem 6rem;">
+    <h2 class="section-title">Our Strategic Partners</h2>
+    <p class="section-intro">We collaborate with industry leaders to provide comprehensive, innovative solutions that drive your success.</p>
+    <div class="partners-grid">
+      <div class="partner-card">
+        <h3><i class="fas fa-solar-panel"></i> Urban Holding Solar</h3>
+        <p>Urban Holding Solar provides comprehensive, tailored solar solutions for diverse energy needs, helping you reduce costs and embrace sustainability.</p>
+        <ul>
+          <li><strong>Commercial Solar:</strong> Custom systems to maximize efficiency and reduce operational costs for businesses.</li>
+          <li><strong>Residential Solar:</strong> Empower homes with renewable energy, reducing bills and carbon footprints.</li>
+          <li><strong>Agricultural Solar:</strong> Power farms sustainably, boosting productivity and saving on energy costs.</li>
+        </ul>
+      </div>
+      <div class="partner-card">
+        <h3><i class="fas fa-boxes"></i> Commodity Suppliers Dataroom</h3>
+        <p>Managed by Mr. Kassanje, this dataroom is a centralized hub for global commodity trading, offering verified procedures and offers for key resources.</p>
+        <ul>
+          <li>Access to critical documents for commodities like Copper Cathode, ICUMSA 45 Sugar, and Manganese.</li>
+          <li>Streamlined processes for buyers and sellers in the global commodities market.</li>
+          <li>Ensures transparency and efficiency in high-value international trade.</li>
+        </ul>
+      </div>
+      <div class="partner-card">
+        <h3><i class="fas fa-wind"></i> Commercial Solar LLC</h3>
+        <p>Commercial Solar LLC pioneers the future of renewable energy with its revolutionary "Hybrid Tree" technology, combining wind and solar power.</p>
+        <ul>
+          <li><strong>The Hybrid Tree:</strong> A single, efficient system generating 12,200-37,892 kWh annually without rooftop panels.</li>
+          <li><strong>Energy Mixer Technology:</strong> Proprietary system for optimal energy blending and storage.</li>
+          <li>Provides reliable, affordable, and renewable energy for homes and businesses, ensuring energy security.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- END NEW PARTNERS SECTION -->
+  <section class="cal-booking" id="booking">
+    <h2 class="section-title">Ready to Transform Your Training?</h2>
+    <p>In this 30-minute session, we will:<br>
+      <strong>• Audit your training costs & delivery model</strong><br>
+      <strong>• Build a custom Mariba Media deployment plan</strong><br>
+      <strong>• Present your revenue model options</strong>
+    </p>
+    <div id="my-cal-inline-south-africa"></div>
+  </section>
   <footer>
     <div class="footer-section">
-      <h3>Mariba<span style="color:var(--accent)">Media</span></h3>
-      <p>On-Demand Trainer Consultants & AI-Powered Learning Systems. Pay only for performance.</p>
+      <h3><i class="fas fa-rocket"></i> Mariba<span style="color:var(--accent)">Media</span></h3>
+      <p>Multimodal Training Systems Development for Enterprise. Pay only for accredited learners.</p>
+      <div class="footer-meta">
+        <strong>Company Registration No:</strong> 2024 / 132788 / 07
+      </div>
+      <div class="social-links">
+        <a href="https://www.facebook.com/profile.php?id=61576915266105 " class="social-icon" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://youtube.com/@TV-Mariba " target="_blank" class="social-icon" aria-label="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://linkedin.com/company/mariba-media " class="social-icon" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
     </div>
     <div class="footer-section">
-      <h3>Quick Links</h3>
-      <a href="#home">Home</a><br>
-      <a href="#problem">Solutions</a><br>
-      <a href="#trainers">Our Trainers</a><br>
-      <a href="#booking">Get Started</a>
+      <h3><i class="fas fa-link"></i> Quick Links</h3>
+      <div class="footer-links">
+        <a href="#home"><i class="fas fa-home"></i> Home</a>
+        <a href="#solution"><i class="fas fa-puzzle-piece"></i> Solution</a>
+        <a href="#use-cases"><i class="fas fa-briefcase"></i> Use Cases</a>
+        <a href="#lifetime-partnership"><i class="fas fa-chart-bar"></i> Partnership</a>
+        <a href="#booking"><i class="fas fa-calendar-check"></i> Get Started</a>
+      </div>
     </div>
     <div class="footer-section">
-      <h3>Contact</h3>
-      <a href="mailto:victor@maribamedia.co.za">victor@maribamedia.co.za</a><br>
-      <a href="tel:+27766473499">+27 (0) 76 647 3499</a>
+      <h3><i class="fas fa-shield-alt"></i> Legal & Compliance</h3>
+      <div class="footer-links">
+        <a href="https://www.freeprivacypolicy.com/live/19ac9e12-2d32-49e8-b611-a103aaec0171 " target="_blank" rel="noopener">
+          <i class="fas fa-lock"></i> Privacy Policy
+        </a>
+        <a href="https://popia.co.za/ " target="_blank" rel="noopener">
+          <i class="fas fa-gavel"></i> POPIA Compliance Policy
+        </a>
+      </div>
+      <div class="footer-links" style="margin-top: 1.5rem;">
+        <a href="mailto:maribamedia@gmail.com"><i class="fas fa-envelope"></i> maribamedia@gmail.com</a>
+        <a href="tel:+27766473499"><i class="fas fa-phone"></i> +27 (0) 76 647 3499</a>
+        <a href="#"><i class="fas fa-map-marker-alt"></i> Bronkhorstspruit, South Africa</a>
+      </div>
     </div>
     <div class="copyright">
-      &copy; <span id="current-year"></span> Mariba Media. Pay only for performance.
+      &copy; <span id="current-year"></span> Mariba Media. AI Infrastructure Partner. Pay only for performance.
     </div>
   </footer>
-
-  <!-- SCRIPTS -->
+  <div class="whatsapp-widget">
+    <a href="https://wa.me/27766473499 " target="_blank" rel="noopener">
+      <button class="whatsapp-button" aria-label="Chat on WhatsApp">
+        <svg class="whatsapp-svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.05-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.71-5.26c.001-5.45 4.436-9.884 9.888-9.884 5.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335 .157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </button>
+    </a>
+  </div>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      // Stats animation
-      document.querySelectorAll('.stat-number').forEach(stat => {
-        const target = +stat.dataset.target;
+      // ROI Calculator functionality
+      const learnersInput = document.getElementById('learners');
+      const costInput = document.getElementById('cost');
+      const passRateInput = document.getElementById('passRate');
+      const currentCostEl = document.getElementById('currentCost');
+      const wasteAmountEl = document.getElementById('wasteAmount');
+      const productivityLossEl = document.getElementById('productivityLoss');
+      const complianceRiskEl = document.getElementById('complianceRisk');
+      const totalWasteEl = document.getElementById('totalWaste');
+      const savingsAmountEl = document.getElementById('savingsAmount');
+      function calculateROI() {
+        const learners = parseInt(learnersInput.value) || 500;
+        const cost = parseInt(costInput.value) || 1200;
+        const passRate = parseInt(passRateInput.value) || 65;
+        const currentCost = learners * cost;
+        const wasteAmount = currentCost * (1 - passRate/100);
+        const productivityLoss = (learners * (1 - passRate/100)) * 18500;
+        const complianceRisk = (100 - passRate) * 1.5;
+        const totalWaste = wasteAmount + productivityLoss;
+        const savingsAmount = wasteAmount * 0.8;
+        const formatCurrency = (num) => 'R' + num.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        if (currentCostEl) currentCostEl.textContent = formatCurrency(currentCost);
+        if (wasteAmountEl) wasteAmountEl.textContent = formatCurrency(wasteAmount);
+        if (productivityLossEl) productivityLossEl.textContent = formatCurrency(productivityLoss);
+        if (complianceRiskEl) complianceRiskEl.textContent = complianceRisk.toFixed(1) + '%';
+        if (totalWasteEl) totalWasteEl.textContent = formatCurrency(totalWaste);
+        if (savingsAmountEl) savingsAmountEl.textContent = formatCurrency(savingsAmount);
+      }
+      function shareResults() {
+        const learners = parseInt(learnersInput.value) || 500;
+        const cost = parseInt(costInput.value) || 1200;
+        const passRate = parseInt(passRateInput.value) || 65;
+        const totalWaste = document.getElementById('totalWaste').textContent;
+        const savingsAmount = document.getElementById('savingsAmount').textContent;
+        const message = `I just used Mariba Media's ROI Calculator:
+` +
+                       `• ${learners} learners/month
+` +
+                       `• Current cost: R${cost}
+` +
+                       `• Pass rate: ${passRate}%
+` +
+                       `My results:
+` +
+                       `• Total monthly waste: ${totalWaste}
+` +
+                       `• Potential savings: ${savingsAmount}
+` +
+                       `I'd like to claim my FREE 30-minute compliance audit.`;
+        const encodedMessage = encodeURIComponent(message);
+        window.open(`https://wa.me/27766473499?text= ${encodedMessage}`, '_blank');
+      }
+      if (learnersInput) learnersInput.addEventListener('input', calculateROI);
+      if (costInput) costInput.addEventListener('input', calculateROI);
+      if (passRateInput) passRateInput.addEventListener('input', calculateROI);
+      if (learnersInput) calculateROI();
+      // Cal.com
+      const calDiv = document.getElementById('my-cal-inline-south-africa');
+      if (calDiv) {
+        (function (C, A, L) {
+          let p = function (a, ar) { a.q.push(ar); };
+          let d = C.document;
+          C.Cal = C.Cal || function () {
+            let cal = C.Cal;
+            let ar = arguments;
+            if (!cal.loaded) {
+              cal.ns = {};
+              cal.q = cal.q || [];
+              let script = d.createElement("script");
+              script.async = 1;
+              script.src = A;
+              d.head.appendChild(script);
+              cal.loaded = true;
+            }
+            if (ar[0] === L) {
+              const api = function () { p(api, arguments); };
+              const namespace = ar[1];
+              api.q = api.q || [];
+              if (typeof namespace === "string") {
+                cal.ns[namespace] = cal.ns[namespace] || api;
+                p(cal.ns[namespace], ar);
+                p(cal, ["initNamespace", namespace]);
+              } else {
+                p(cal, ar);
+              }
+              return;
+            }
+            p(cal, ar);
+          };
+        })(window, "https://app.cal.com/embed/embed.js ", "init");
+        Cal("init", "south-africa", { origin: "https://app.cal.com " });
+        Cal.ns["south-africa"]("inline", {
+          elementOrSelector: "#my-cal-inline-south-africa",
+          calLink: "partner-discovery/south-africa"
+        });
+        Cal.ns["south-africa"]("ui", { layout: "month_view" });
+      }
+      // Year
+      const yearEl = document.getElementById("current-year");
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+      // Stats counter animation
+      const stats = document.querySelectorAll('.stat-number');
+      const speed = 200;
+      stats.forEach(stat => {
+        const target = parseInt(stat.getAttribute('data-target'));
+        let count = 0;
+        const updateCount = () => {
+          const increment = Math.ceil(target / speed);
+          if (count < target) {
+            count += increment;
+            if (count > target) count = target;
+            stat.innerText = count;
+            setTimeout(updateCount, 1);
+          } else {
+            stat.innerText = target;
+          }
+        };
         const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
-              let count = 0;
-              const timer = setInterval(() => {
-                count += Math.ceil(target / 60);
-                if (count >= target) {
-                  stat.textContent = target;
-                  clearInterval(timer);
-                } else {
-                  stat.textContent = count;
-                }
-              }, 20);
+              updateCount();
               observer.unobserve(entry.target);
             }
           });
         }, { threshold: 0.5 });
         observer.observe(stat);
       });
-
-      // ROI Calculator
-      const learners = document.getElementById('learners');
-      const cost = document.getElementById('cost');
-      const passRate = document.getElementById('passRate');
-      const currentCostEl = document.getElementById('currentCost');
-      const wasteAmountEl = document.getElementById('wasteAmount');
-      const productivityLossEl = document.getElementById('productivityLoss');
-      const totalWasteEl = document.getElementById('totalWaste');
-      const savingsAmountEl = document.getElementById('savingsAmount');
-
-      if (learners) {
-        function updateROI() {
-          const l = +learners.value || 500;
-          const c = +cost.value || 1200;
-          const p = +passRate.value || 65;
-          const current = l * c;
-          const waste = current * (1 - p/100);
-          const prodLoss = (l * (1 - p/100)) * 18500;
-          const totalWaste = waste + prodLoss;
-          const savings = waste * 0.8;
-
-          const fmt = n => 'R' + n.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-          if (currentCostEl) currentCostEl.textContent = fmt(current);
-          if (wasteAmountEl) wasteAmountEl.textContent = fmt(waste);
-          if (productivityLossEl) productivityLossEl.textContent = fmt(prodLoss);
-          if (totalWasteEl) totalWasteEl.textContent = fmt(totalWaste);
-          if (savingsAmountEl) savingsAmountEl.textContent = fmt(savings);
-        }
-
-        learners.addEventListener('input', updateROI);
-        cost.addEventListener('input', updateROI);
-        passRate.addEventListener('input', updateROI);
-        updateROI();
-      }
-
-      // Year
-      document.getElementById('current-year').textContent = new Date().getFullYear();
     });
   </script>
 </body>
