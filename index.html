@@ -4,33 +4,32 @@
   <meta name="fo-verify" content="eaa1b420-4ea2-4989-b878-fe193416df52" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mariba Media – Save 80% on Training with On-Demand Experts</title>
-  <meta name="description" content="Save 80% on training costs with Mariba Media’s on-demand team of expert trainer consultants, powered by AI for personalized, scalable, certifiable learning.">
+  <title>Mariba Media – Enterprise AI Training Solutions</title>
+  <meta name="description" content="Mariba Media delivers performance-driven AI teaching & assessment systems for scalable, certifiable enterprise learning.">
   <!-- Open Lato font -->
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* MIDNIGHT BLUE LUXURY THEME – WHITE BACKGROUND, BLACK TEXT, MIDNIGHT BLUE ACCENTS */
+    /* PROFESSIONAL NAVY BLUE ENTERPRISE THEME */
     :root {
       --bg: #ffffff;
-      --bg-soft: #f4f6fa;
-      --bg-softer: #e8edf5;
-      --accent: #0d1b3e; /* midnight blue */
-      --accent-dark: #09162d;
-      --accent-glow: 0 0 24px rgba(13, 27, 62, 0.18);
-      --text: #0a0a0a;
-      --text-muted: #444444;
-      --border: #d0d8e8;
-      --success: #1a7f55;
-      --warning: #c5760a;
-      --error: #a02c1f;
-      --dur: 0.4s;
+      --bg-soft: #f8f9fa;
+      --accent: #0A2540; /* Professional Navy Blue */
+      --accent-dark: #071a2e;
+      --accent-glow: 0 0 16px rgba(10, 37, 64, 0.12);
+      --text: #111111;
+      --text-muted: #4a5568;
+      --border: #e2e8f0;
+      --success: #2f855a;
+      --warning: #dd6b20;
+      --error: #c53030;
+      --dur: 0.3s;
       --ease: cubic-bezier(0.4, 0, 0.2, 1);
-      --radius: 10px;
-      --shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+      --radius: 12px;
+      --shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
       --card-bg: #ffffff;
-      --header-height: 88px;
+      --header-height: 72px;
     }
     *, *::before, *::after {
       box-sizing: border-box;
@@ -44,7 +43,7 @@
     body {
       background: var(--bg);
       color: var(--text);
-      line-height: 1.7;
+      line-height: 1.65;
       font-size: 17px;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
@@ -57,12 +56,12 @@
       margin-top: 0;
     }
     h1 {
-      font-size: clamp(3rem, 5.5vw, 4.5rem);
-      max-width: 28ch;
+      font-size: clamp(2.8rem, 5.5vw, 4rem);
+      max-width: 32ch;
       margin: 0 auto 1.5rem;
       color: var(--text);
       text-align: center;
-      line-height: 1.15;
+      line-height: 1.2;
     }
     h2 {
       font-size: clamp(2.2rem, 4vw, 3.2rem);
@@ -82,7 +81,7 @@
       border-radius: 2px;
     }
     h3 {
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-size: clamp(1.5rem, 2.8vw, 1.8rem);
       margin-bottom: 0.75rem;
       color: var(--accent);
     }
@@ -104,7 +103,7 @@
     .btn {
       font-size: 1.05rem;
       font-weight: 700;
-      padding: 1em 2.8em;
+      padding: 1em 2.5em;
       border: none;
       border-radius: var(--radius);
       background: linear-gradient(135deg, var(--accent), var(--accent-dark));
@@ -116,7 +115,7 @@
       gap: 0.8em;
       transition: all var(--dur) var(--ease);
       box-shadow: var(--shadow), var(--accent-glow);
-      min-width: 240px;
+      min-width: 220px;
       text-decoration: none;
       letter-spacing: 0.02em;
       position: relative;
@@ -136,7 +135,7 @@
     }
     .btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1), var(--accent-glow);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1), var(--accent-glow);
     }
     .btn:hover::before {
       left: 100%;
@@ -145,13 +144,14 @@
       background: transparent;
       color: var(--accent);
       border: 1.5px solid var(--accent);
-      box-shadow: 0 0 20px rgba(13, 27, 62, 0.1);
+      box-shadow: 0 0 16px rgba(10, 37, 64, 0.08);
     }
     .btn-secondary:hover {
-      background: rgba(13, 27, 62, 0.05);
-      box-shadow: 0 0 30px rgba(13, 27, 62, 0.2);
+      background: rgba(10, 37, 64, 0.04);
+      box-shadow: 0 0 24px rgba(10, 37, 64, 0.15);
     }
     .btn-trainer {
+      display: inline-block;
       background: var(--accent);
       color: white;
       font-weight: 700;
@@ -160,35 +160,36 @@
       min-width: auto;
       margin-top: 1rem;
       border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(13, 27, 62, 0.2);
+      box-shadow: 0 4px 10px rgba(10, 37, 64, 0.15);
       text-align: center;
       width: 100%;
       text-decoration: none;
-      display: inline-block;
+      transition: all var(--dur);
     }
     .btn-trainer:hover {
       background: var(--accent-dark);
       transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(10, 37, 64, 0.2);
     }
     /* HEADER */
     header {
       position: sticky;
       top: 0;
       z-index: 999;
-      backdrop-filter: blur(20px) saturate(180%);
-      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px);
+      background: rgba(255, 255, 255, 0.96);
       border-bottom: 1px solid var(--border);
-      padding: 1.2rem 2.5rem;
+      padding: 0 2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       height: var(--header-height);
-      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
     }
     .logo {
       font-family: 'Lato', sans-serif;
       font-weight: 900;
-      font-size: 2rem;
+      font-size: 1.8rem;
       letter-spacing: -0.02em;
       display: flex;
       align-items: center;
@@ -201,11 +202,11 @@
     }
     nav {
       display: flex;
-      gap: 2.8rem;
+      gap: 2.2rem;
       align-items: center;
     }
     nav a {
-      font-size: 0.97rem;
+      font-size: 0.95rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
@@ -232,20 +233,26 @@
     nav a:hover::after {
       width: 100%;
     }
-    .nav-cta {
-      margin-left: 2rem;
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--accent);
+      font-size: 1.6rem;
+      cursor: pointer;
+      transition: all var(--dur);
     }
     /* HERO */
     .hero {
-      padding: calc(var(--header-height) + 2.5rem) 2.5rem 5rem;
-      min-height: 100vh;
+      padding: calc(var(--header-height) + 2rem) 2rem 4rem;
+      min-height: 90vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      background: radial-gradient(ellipse at center, rgba(13, 27, 62, 0.06) 0%, transparent 70%);
-      gap: 2.5rem;
+      background: radial-gradient(ellipse at center, rgba(10, 37, 64, 0.03) 0%, transparent 70%);
+      gap: 2rem;
       position: relative;
       overflow: hidden;
     }
@@ -257,7 +264,7 @@
     .hero p {
       font-size: 1.25rem;
       max-width: 65ch;
-      margin: 0 auto 2.5rem;
+      margin: 0 auto 2rem;
       color: var(--text-muted);
     }
     .youtube-embed {
@@ -266,8 +273,8 @@
       aspect-ratio: 16 / 9;
       border-radius: var(--radius);
       overflow: hidden;
-      box-shadow: var(--shadow), 0 0 40px rgba(13, 27, 62, 0.12);
-      margin: 2.5rem auto;
+      box-shadow: var(--shadow), 0 0 30px rgba(10, 37, 64, 0.08);
+      margin: 2rem auto;
       border: 1px solid var(--border);
     }
     .youtube-embed iframe {
@@ -277,15 +284,15 @@
     }
     .hero-cta {
       display: flex;
-      gap: 1.8rem;
+      gap: 1.5rem;
       justify-content: center;
-      margin-top: 2.5rem;
+      margin-top: 2rem;
       flex-wrap: wrap;
       width: 100%;
     }
     /* SECTIONS */
     section {
-      padding: 9rem 2.5rem;
+      padding: 7rem 2rem;
       max-width: 1440px;
       margin: 0 auto;
       position: relative;
@@ -293,60 +300,62 @@
     }
     .section-title {
       text-align: center;
-      margin-bottom: 3.5rem;
+      margin-bottom: 3rem;
       position: relative;
       width: 100%;
     }
     .section-intro {
       text-align: center;
       max-width: 800px;
-      margin: 0 auto 4rem;
+      margin: 0 auto 3.5rem;
       font-size: 1.2rem;
       width: 100%;
     }
     /* TRAINER CARDS */
     .trainer-showcase {
       background-color: #000;
-      padding: 3rem 2.5rem;
+      padding: 3rem 2rem;
       border: 2px solid silver;
-      margin: 0 auto 6rem;
+      margin: 0 auto 5rem;
       max-width: 1440px;
     }
     .trainer-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+      gap: 1.8rem;
       margin-top: 2rem;
     }
     .trainer-card {
       background-color: #111;
       border: 1px solid silver;
-      padding: 1.5rem;
+      padding: 1.8rem;
       text-align: center;
+      border-radius: var(--radius);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .trainer-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
     }
     .trainer-card h3 {
       color: #fff;
-      margin-bottom: 0.5rem;
-      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+      font-size: 1.4rem;
+      line-height: 1.3;
     }
     .trainer-card p {
       color: #ddd;
-      font-size: 0.9rem;
-      margin: 0 0 1rem;
+      font-size: 0.95rem;
+      margin: 0 0 1.2rem;
+      line-height: 1.5;
     }
     /* CARDS */
     .card {
       background: var(--card-bg);
-      padding: 3rem;
+      padding: 2.5rem;
       border: 1px solid var(--border);
       border-radius: var(--radius);
       transition: all var(--dur) var(--ease);
-      backdrop-filter: blur(10px);
       height: 100%;
       position: relative;
       overflow: hidden;
@@ -356,37 +365,34 @@
     }
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 0 30px rgba(13, 27, 62, 0.15);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08), 0 0 20px rgba(10, 37, 64, 0.1);
       border-color: var(--accent);
     }
     .card h3 {
       color: var(--accent);
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 0.75rem;
     }
     .card h3 i {
-      font-size: 1.5rem;
-      filter: drop-shadow(0 0 10px var(--accent));
+      font-size: 1.4rem;
     }
     .benefits-list {
-      margin: 1.5rem 0;
+      margin: 1.2rem 0;
       padding-left: 1.5rem;
-      line-height: 1.8;
+      line-height: 1.7;
     }
     .benefits-list li {
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.6rem;
     }
     /* GRIDS */
     .problem-solution,
     .use-cases,
-    .revenue-models,
-    .outcomes-grid,
     .partners-grid {
       display: grid;
-      gap: 2.5rem;
+      gap: 2rem;
       width: 100%;
     }
     .problem-solution {
@@ -394,12 +400,6 @@
     }
     .use-cases {
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    }
-    .revenue-models {
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    }
-    .outcomes-grid {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
     .partners-grid {
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -409,55 +409,50 @@
     /* STEPS */
     .steps {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2.5rem;
-      margin-top: 3.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
       width: 100%;
     }
     .step {
       background: var(--card-bg);
-      padding: 2.5rem;
+      padding: 2rem;
       border: 1px solid var(--border);
       border-radius: var(--radius);
       text-align: center;
       position: relative;
-      backdrop-filter: blur(10px);
       transition: all var(--dur);
     }
     .step:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08), 0 0 20px rgba(13, 27, 62, 0.12);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
     }
     .step-number {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       font-weight: 700;
       color: var(--accent);
       margin-bottom: 1rem;
       display: inline-block;
-      width: 64px;
-      height: 64px;
-      line-height: 64px;
+      width: 56px;
+      height: 56px;
+      line-height: 56px;
       border-radius: 50%;
-      background: rgba(13, 27, 62, 0.08);
+      background: rgba(10, 37, 64, 0.06);
       border: 1.5px solid var(--accent);
-      box-shadow: var(--accent-glow);
     }
     /* USE CASE */
     .use-case {
       background: var(--card-bg);
-      padding: 2.2rem;
+      padding: 2rem;
       border: 1px solid var(--border);
       border-radius: var(--radius);
       text-align: left;
-      backdrop-filter: blur(10px);
       height: 100%;
       transition: all var(--dur);
-      position: relative;
-      overflow: hidden;
     }
     .use-case:hover {
       border-color: var(--accent);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06), 0 0 15px rgba(13, 27, 62, 0.1);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
     }
     .use-case h4 {
       color: var(--accent);
@@ -465,72 +460,17 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      text-align: left;
     }
     .use-case h4 i {
-      font-size: 1.25rem;
-      filter: drop-shadow(0 0 5px var(--accent));
-    }
-    /* DEMO BUTTONS */
-    .demo-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1.8rem;
-      margin: 3.5rem 0;
-      flex-wrap: wrap;
-      width: 100%;
-    }
-    /* PARTNERS */
-    .partners {
-      margin-top: 3.5rem;
-      text-align: center;
-      width: 100%;
-    }
-    .partner-links {
-      display: flex;
-      justify-content: center;
-      gap: 2.2rem;
-      margin-top: 1rem;
-      flex-wrap: wrap;
-    }
-    .partner-links a {
-      color: var(--accent);
-      font-weight: 500;
-      font-size: 0.95rem;
-      text-decoration: none;
-      padding: 0.5rem 1.2rem;
-      border: 1px solid var(--border);
-      border-radius: 30px;
-      transition: all var(--dur);
-      position: relative;
-      overflow: hidden;
-    }
-    .partner-links a::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 0;
-      height: 100%;
-      background: var(--accent);
-      transition: width var(--dur);
-      z-index: -1;
-    }
-    .partner-links a:hover {
-      color: #ffffff;
-      border-color: var(--accent);
-    }
-    .partner-links a:hover::before {
-      width: 100%;
+      font-size: 1.2rem;
     }
     /* CAL BOOKING */
     .cal-booking {
       background: var(--card-bg);
       border-radius: var(--radius);
       overflow: hidden;
-      padding: 4.5rem 2.5rem;
+      padding: 4rem 2rem;
       border: 1px solid var(--border);
-      backdrop-filter: blur(10px);
       width: 100%;
       text-align: center;
       box-shadow: var(--shadow);
@@ -538,7 +478,7 @@
     .cal-booking p {
       text-align: center;
       max-width: 700px;
-      margin: 0 auto 3.5rem;
+      margin: 0 auto 3rem;
       font-size: 1.2rem;
     }
     #my-cal-inline-south-africa {
@@ -552,37 +492,28 @@
     }
     /* FOOTER */
     footer {
-      padding: 5.5rem 2.5rem 2.5rem;
+      padding: 5rem 2rem 2rem;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 3.5rem;
+      gap: 3rem;
       border-top: 1px solid var(--border);
       font-size: 0.95rem;
       background: var(--bg-soft);
       width: 100%;
       text-align: center;
     }
-    .footer-section {
-      text-align: center;
-    }
     .footer-section h3 {
       color: var(--accent);
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       margin-bottom: 1.5rem;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
     }
-    .social-links {
-      display: flex;
-      gap: 1rem;
-      margin-top: 1.5rem;
-      justify-content: center;
-    }
     .social-icon {
-      width: 46px;
-      height: 46px;
+      width: 44px;
+      height: 44px;
       display: grid;
       place-items: center;
       border-radius: 50%;
@@ -596,136 +527,80 @@
       background: var(--accent);
       color: #ffffff;
       transform: translateY(-3px);
-      box-shadow: var(--accent-glow);
     }
     .copyright {
       grid-column: 1 / -1;
       text-align: center;
-      margin-top: 3.5rem;
+      margin-top: 2.5rem;
       color: var(--text-muted);
-      padding-top: 2.5rem;
+      padding-top: 2rem;
       border-top: 1px solid var(--border);
-      font-size: 0.9rem;
-    }
-    .footer-links {
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-      align-items: center;
-    }
-    .footer-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      transition: color var(--dur);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.95rem;
-    }
-    .footer-links a:hover {
-      color: var(--accent);
-    }
-    .footer-links a i {
       font-size: 0.9rem;
     }
     /* STATS COUNTER */
     .stats-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2.5rem;
-      margin: 5rem 0;
+      gap: 2rem;
+      margin: 4rem 0;
       width: 100%;
     }
     .stat {
       text-align: center;
-      padding: 2.5rem;
+      padding: 2rem;
       background: var(--card-bg);
       border-radius: var(--radius);
       border: 1px solid var(--border);
       transition: all var(--dur);
-      position: relative;
-      overflow: hidden;
     }
     .stat:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08), 0 0 20px rgba(13, 27, 62, 0.12);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
     }
     .stat-number {
-      font-size: 3rem;
+      font-size: 2.8rem;
       font-weight: 700;
       color: var(--accent);
       margin-bottom: 0.5rem;
-      text-shadow: 0 0 10px rgba(13, 27, 62, 0.2);
     }
     .stat-label {
       color: var(--text-muted);
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
     }
     /* PARTNER CARD */
     .partner-card {
       background: var(--card-bg);
-      padding: 3rem;
+      padding: 2.5rem;
       border: 1px solid var(--border);
       border-radius: var(--radius);
       text-align: center;
-      backdrop-filter: blur(10px);
       height: 100%;
       transition: all var(--dur);
-      position: relative;
-      overflow: hidden;
     }
     .partner-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08), 0 0 20px rgba(13, 27, 62, 0.12);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
       border-color: var(--accent);
     }
     .partner-card h3 {
       color: var(--accent);
-      margin-bottom: 1.5rem;
-      font-size: 1.7rem;
-    }
-    .partner-card p {
-      text-align: left;
-      margin-bottom: 1.5rem;
-      font-size: 1.05rem;
+      margin-bottom: 1.2rem;
+      font-size: 1.6rem;
     }
     .partner-card ul {
       text-align: left;
-      margin: 1.5rem 0;
+      margin: 1.2rem 0;
       padding-left: 1.5rem;
     }
     .partner-card ul li {
       margin-bottom: 0.5rem;
-      position: relative;
-    }
-    .partner-card ul li::before {
-      content: "•";
-      color: var(--accent);
-      font-weight: bold;
-      display: inline-block;
-      width: 1em;
-      margin-left: -1em;
-    }
-    /* MOBILE MENU BUTTON */
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      color: var(--accent);
-      font-size: 1.6rem;
-      cursor: pointer;
-      transition: all var(--dur);
-    }
-    .mobile-menu-btn:hover {
-      transform: scale(1.1);
-      filter: drop-shadow(0 0 10px var(--accent));
     }
     /* RESPONSIVE */
     @media (max-width: 768px) {
       header {
-        padding: 1.2rem;
+        padding: 0 1.5rem;
       }
       nav {
         display: none;
@@ -734,48 +609,21 @@
         display: block;
       }
       h1 {
-        font-size: 2.4rem;
-        max-width: 22ch;
-      }
-      h2 {
-        font-size: 1.9rem;
-      }
-      h3 {
-        font-size: 1.6rem;
-      }
-      .btn {
-        padding: 0.9em 2em;
-        font-size: 0.97rem;
-        min-width: 200px;
+        font-size: 2.3rem;
       }
       section {
         padding: 5rem 1.5rem;
       }
       .hero {
-        padding: calc(var(--header-height) + 1.5rem) 1.5rem 4rem;
+        padding: calc(var(--header-height) + 1.5rem) 1.5rem 3rem;
       }
+      .hero-cta,
       .demo-buttons {
         flex-direction: column;
         align-items: center;
       }
-      .hero-cta {
-        flex-direction: column;
-        align-items: center;
-      }
-      .stats-container {
-        grid-template-columns: 1fr;
-      }
-      .footer-section h3 {
-        justify-content: center;
-      }
+      .stats-container,
       footer {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      .footer-links {
-        align-items: center;
-      }
-      .partners-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -787,8 +635,8 @@
       z-index: 1000;
     }
     .whatsapp-button {
-      width: 62px;
-      height: 62px;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
       background: #25d366;
       border: none;
@@ -796,29 +644,17 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 6px 24px rgba(37, 211, 102, 0.4);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
       transition: all var(--dur);
-      animation: pulse 2s infinite;
     }
     .whatsapp-button:hover {
-      transform: scale(1.12);
-      box-shadow: 0 8px 32px rgba(37, 211, 102, 0.55);
+      transform: scale(1.1);
+      box-shadow: 0 8px 28px rgba(37, 211, 102, 0.5);
     }
     .whatsapp-svg {
-      width: 30px;
-      height: 30px;
+      width: 28px;
+      height: 28px;
       fill: white;
-    }
-    @keyframes pulse {
-      0% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-      }
-      70% {
-        box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);
-      }
-      100% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-      }
     }
   </style>
 </head>
@@ -833,13 +669,8 @@
       <a href="#trainers">Our Trainers</a>
       <a href="#lifetime-partnership">Partnership</a>
       <a href="#booking">Get Started</a>
-      <div class="nav-cta">
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn btn-secondary">Schedule Demo</a>
-      </div>
     </nav>
-    <button class="mobile-menu-btn">
-      <i class="fas fa-bars"></i>
-    </button>
+    <a href="https://cal.com/partner-discovery/south-africa" class="btn btn-secondary">Schedule Demo</a>
   </header>
 
   <!-- HERO -->
@@ -862,6 +693,56 @@
         <a href="https://app.colossyan.com/videos/86851529-f9e2-4c93-b7f7-30ad7e3d5a04" class="btn btn-secondary" target="_blank">
           <i class="fas fa-play-circle"></i> Watch Demo
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAINER SHOWCASE (MOVED HERE) -->
+  <section class="trainer-showcase" id="trainers">
+    <h2 class="section-title" style="color: white;">Meet Your Dedicated Team of Expert Trainer Consultants</h2>
+    <p class="section-intro" style="color: #ccc; max-width: 800px; margin: 0 auto;">
+      Our AI platform amplifies the impact of our hand-picked specialists, giving you an unbeatable combination of human expertise and technological efficiency.
+    </p>
+    <div class="trainer-grid">
+      <div class="trainer-card">
+        <h3>SAT Tutor</h3>
+        <p>Expert test preparation strategies and personalized learning paths to maximize student scores.</p>
+        <a href="https://cal.com/partner-discovery/south-africa" class="btn-trainer">Get Started</a>
+      </div>
+      <div class="trainer-card">
+        <h3>Matric Tutor</h3>
+        <p>Subject-matter experts providing crucial support for final high school examinations.</p>
+        <a href="https://cal.com/partner-discovery/south-africa" class="btn-trainer">Get Started</a>
+      </div>
+      <div class="trainer-card">
+        <h3>K-12 Tutor</h3>
+        <p>Personalized academic support across all subjects and grade levels.</p>
+        <a href="https://cal.com/partner-discovery/south-africa" class="btn-trainer">Get Started</a>
+      </div>
+      <div class="trainer-card">
+        <h3>Sales Enablement Trainer</h3>
+        <p>Equip your sales team with the skills and knowledge to close more deals.</p>
+        <a href="https://cal.com/partner-discovery/south-africa" class="btn-trainer">Get Started</a>
+      </div>
+      <div class="trainer-card">
+        <h3>Recruitment Officer</h3>
+        <p>Train your HR team on effective sourcing, interviewing, and hiring techniques.</p>
+        <a href="https://cal.com/partner-discovery/south-africa" class="btn-trainer">Get Started</a>
+      </div>
+      <div class="trainer-card">
+        <h3>Addiction Consultant</h3>
+        <p>Specialized training for healthcare professionals on support and intervention protocols.</p>
+        <a href="https://cal.com/partner-discovery/south-africa" class="btn-trainer">Get Started</a>
+      </div>
+      <div class="trainer-card">
+        <h3>Psychologist</h3>
+        <p>Develop soft skills, mental resilience, and leadership qualities across your organization.</p>
+        <a href="https://cal.com/partner-discovery/south-africa" class="btn-trainer">Get Started</a>
+      </div>
+      <div class="trainer-card">
+        <h3>Business Development Consultant</h3>
+        <p>Coach your team on strategic planning, market expansion, and partnership growth.</p>
+        <a href="https://cal.com/partner-discovery/south-africa" class="btn-trainer">Get Started</a>
       </div>
     </div>
   </section>
@@ -978,61 +859,11 @@
     </div>
   </section>
 
-  <!-- TRAINER SHOWCASE -->
-  <section class="trainer-showcase" id="trainers">
-    <h2 class="section-title" style="color: white;">Meet Your Dedicated Team of Expert Trainer Consultants</h2>
-    <p class="section-intro" style="color: #ccc; max-width: 800px; margin: 0 auto;">
-      Our AI platform amplifies the impact of our hand-picked specialists, giving you an unbeatable combination of human expertise and technological efficiency.
-    </p>
-    <div class="trainer-grid">
-      <div class="trainer-card">
-        <h3>SAT Tutor</h3>
-        <p>Expert test preparation strategies and personalized learning paths to maximize student scores.</p>
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn-trainer">Get Started</a>
-      </div>
-      <div class="trainer-card">
-        <h3>Matric Tutor</h3>
-        <p>Subject-matter experts providing crucial support for final high school examinations.</p>
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn-trainer">Get Started</a>
-      </div>
-      <div class="trainer-card">
-        <h3>K-12 Tutor</h3>
-        <p>Personalized academic support across all subjects and grade levels.</p>
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn-trainer">Get Started</a>
-      </div>
-      <div class="trainer-card">
-        <h3>Sales Enablement Trainer</h3>
-        <p>Equip your sales team with the skills and knowledge to close more deals.</p>
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn-trainer">Get Started</a>
-      </div>
-      <div class="trainer-card">
-        <h3>Recruitment Officer</h3>
-        <p>Train your HR team on effective sourcing, interviewing, and hiring techniques.</p>
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn-trainer">Get Started</a>
-      </div>
-      <div class="trainer-card">
-        <h3>Addiction Consultant</h3>
-        <p>Specialized training for healthcare professionals on support and intervention protocols.</p>
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn-trainer">Get Started</a>
-      </div>
-      <div class="trainer-card">
-        <h3>Psychologist</h3>
-        <p>Develop soft skills, mental resilience, and leadership qualities across your organization.</p>
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn-trainer">Get Started</a>
-      </div>
-      <div class="trainer-card">
-        <h3>Business Development Consultant</h3>
-        <p>Coach your team on strategic planning, market expansion, and partnership growth.</p>
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn-trainer">Get Started</a>
-      </div>
-    </div>
-  </section>
-
   <!-- ROI CALCULATOR -->
   <section id="roi-calculator">
     <h2 class="section-title">Calculate Your Training ROI</h2>
     <p class="section-intro">See your exact Rands saved with our pay-per-accreditation model — 60 seconds, no email</p>
-    <div style="max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border); backdrop-filter: blur(10px);">
+    <div style="max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border);">
       <div style="background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: #ffffff; padding: 32px; text-align: center;">
         <h1 style="font-size: 32px; margin-bottom: 10px; font-weight: 700; font-family: 'Lato', sans-serif;">Mariba Media ROI Calculator</h1>
         <p style="opacity: 0.92; max-width: 600px; margin: 0 auto; font-size: 17px;">See your exact Rands saved with our pay-per-accreditation model - 60 seconds, no email</p>
@@ -1079,7 +910,7 @@
             <span style="font-weight: 700; color: var(--text);">POPIA compliance risk score</span>
             <span style="font-weight: 700; color: var(--warning);" id="complianceRisk">52.5%</span>
           </div>
-          <div style="background: rgba(13, 27, 62, 0.08); border-left: 4px solid var(--accent); padding: 20px; border-radius: 0 8px 8px 0; margin: 24px 0;">
+          <div style="background: rgba(10, 37, 64, 0.08); border-left: 4px solid var(--accent); padding: 20px; border-radius: 0 8px 8px 0; margin: 24px 0;">
             <div style="font-weight: 700; color: var(--text);">Your total monthly waste</div>
             <div style="font-size: 32px; font-weight: 700; color: var(--error); margin: 12px 0;" id="totalWaste">R3,447,500</div>
             <div style="font-weight: 700; color: var(--text-muted);">(This is what Mariba fixes)</div>
@@ -1089,11 +920,11 @@
             <span style="font-weight: 700; color: var(--success);" id="savingsAmount">R168,000</span>
           </div>
         </div>
-        <div style="background: rgba(13, 27, 62, 0.05); border: 1px solid rgba(13, 27, 62, 0.2); border-radius: 8px; padding: 18px; margin-top: 18px; text-align: center;">
+        <div style="background: rgba(10, 37, 64, 0.05); border: 1px solid rgba(10, 37, 64, 0.2); border-radius: 8px; padding: 18px; margin-top: 18px; text-align: center;">
           <strong style="display: block; margin-bottom: 8px; color: var(--accent);">Our Risk Reversal Guarantee:</strong> We only get paid when your learners pass. 
           <br><strong style="display: block; margin-top: 8px; color: var(--accent);">No passes = no fees. Period.</strong>
         </div>
-        <div style="text-align: center; padding: 28px; background: rgba(13, 27, 62, 0.05); border-radius: 8px; margin-top: 24px;">
+        <div style="text-align: center; padding: 28px; background: rgba(10, 37, 64, 0.05); border-radius: 8px; margin-top: 24px;">
           <h2 style="font-size: 24px; margin-bottom: 14px; color: var(--text); font-family: 'Lato', sans-serif;">Your Free Compliance Audit</h2>
           <p style="color: var(--text-muted); margin-bottom: 22px; max-width: 600px; margin-left: auto; margin-right: auto;">
             First 5 people to share their results get a FREE 30-minute audit with our team.
