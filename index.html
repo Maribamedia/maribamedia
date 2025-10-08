@@ -6,31 +6,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mariba Media – Enterprise AI Training Solutions</title>
   <meta name="description" content="Mariba Media delivers performance-driven AI teaching & assessment systems for scalable, certifiable enterprise learning.">
-  <!-- Open Lato font -->
+  <!-- Google Fonts: Lato -->
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* MIDNIGHT BLUE LUXURY THEME – WHITE BACKGROUND, BLACK TEXT, MIDNIGHT BLUE ACCENTS */
+    /* ——————————————————————————————————————
+       Modern Enterprise Design System — INVERTED TO WHITE/BLACK
+       —————————————————————————————————————— */
     :root {
+      /* Inverted Grayscale Color Palette */
       --bg: #ffffff;
-      --bg-soft: #f4f6fa;
-      --bg-softer: #e8edf5;
+      --bg-soft: #f5f5f5;
+      --bg-softer: #e0e0e0;
       --accent: #0d1b3e; /* midnight blue */
       --accent-dark: #09162d;
       --accent-glow: 0 0 24px rgba(13, 27, 62, 0.18);
       --text: #0a0a0a;
       --text-muted: #444444;
-      --border: #d0d8e8;
+      --border: #cccccc;
       --success: #1a7f55;
       --warning: #c5760a;
       --error: #a02c1f;
+      /* Motion */
       --dur: 0.4s;
       --ease: cubic-bezier(0.4, 0, 0.2, 1);
-      --radius: 10px;
+      /* Design variables */
+      --radius: 8px;
       --shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
-      --card-bg: #ffffff;
-      --header-height: 88px;
+      --card-bg: linear-gradient(145deg, rgba(245, 245, 245, 0.9), rgba(224, 224, 224, 0.9));
+      --header-height: 72px; /* Reduced from 88px */
     }
     *, *::before, *::after {
       box-sizing: border-box;
@@ -39,7 +44,7 @@
     }
     html {
       scroll-behavior: smooth;
-      font-family: 'Lato', sans-serif;
+      font-family: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
     body {
       background: var(--bg);
@@ -48,21 +53,27 @@
       font-size: 17px;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
-    }
-    /* TYPOGRAPHY */
-    h1, h2, h3, h4 {
       font-family: 'Lato', sans-serif;
+    }
+    /* Enhanced Typography */
+    h1, h2, h3, h4 {
+      line-height: 1.2;
       font-weight: 700;
-      letter-spacing: -0.01em;
       margin-top: 0;
+      text-align: center;
+      width: 100%;
+      letter-spacing: -0.02em;
+      font-family: 'Lato', sans-serif;
     }
     h1 {
       font-size: clamp(3rem, 5.5vw, 4.5rem);
       max-width: 32ch;
       margin: 0 auto 1.5rem;
-      color: var(--text);
-      text-align: center;
-      line-height: 1.15;
+      color: #000000;
+      background: linear-gradient(135deg, #0d1b3e 0%, #09162d 100%); /* Midnight Blue Gradient */
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
     h2 {
       font-size: clamp(2.2rem, 4vw, 3.2rem);
@@ -70,6 +81,7 @@
       color: var(--text);
       position: relative;
       display: inline-block;
+      text-align: center;
     }
     h2::after {
       content: '';
@@ -78,32 +90,35 @@
       left: 0;
       width: 64px;
       height: 3px;
-      background: var(--accent);
+      background: var(--accent); /* Midnight Blue Accent */
       border-radius: 2px;
     }
     h3 {
       font-size: clamp(1.6rem, 3vw, 2.2rem);
       margin-bottom: 0.75rem;
-      color: var(--accent);
+      color: var(--accent); /* Midnight Blue Accent */
     }
     h4 {
       font-size: clamp(1.2rem, 2vw, 1.5rem);
       margin-bottom: 0.5rem;
       color: var(--text);
+      text-align: left;
     }
     p {
       font-size: 1.05rem;
       color: var(--text-muted);
       margin-bottom: 1.5rem;
+      text-align: center;
     }
     strong {
-      color: var(--accent);
+      color: var(--accent); /* Midnight Blue Accent */
       font-weight: 700;
     }
     ul.benefits-list {
       margin: 1.5rem 0;
       padding-left: 1.5rem;
       line-height: 1.8;
+      text-align: left;
     }
     ul.benefits-list li {
       margin-bottom: 0.75rem;
@@ -111,20 +126,20 @@
     }
     ul.benefits-list li::before {
       content: "•";
-      color: var(--accent);
+      color: var(--accent); /* Midnight Blue Bullet */
       font-weight: bold;
       display: inline-block;
       width: 1em;
       margin-left: -1em;
     }
-    /* BUTTON */
+    /* Enhanced Button */
     .btn {
       font-size: 1.05rem;
       font-weight: 700;
       padding: 1em 2.8em;
       border: none;
       border-radius: var(--radius);
-      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark)); /* Midnight Blue Gradient */
       color: #ffffff;
       cursor: pointer;
       display: inline-flex;
@@ -132,7 +147,7 @@
       justify-content: center;
       gap: 0.8em;
       transition: all var(--dur) var(--ease);
-      box-shadow: var(--shadow), var(--accent-glow);
+      box-shadow: var(--shadow), var(--accent-glow); /* Midnight Blue Glow */
       min-width: 240px;
       text-decoration: none;
       letter-spacing: 0.02em;
@@ -153,25 +168,22 @@
     }
     .btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1), var(--accent-glow);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1), var(--accent-glow); /* Midnight Blue Glow */
     }
     .btn:hover::before {
       left: 100%;
     }
-    .btn:active {
-      transform: translateY(-1px);
-    }
     .btn-secondary {
       background: transparent;
-      color: var(--accent);
-      border: 1.5px solid var(--accent);
-      box-shadow: 0 0 20px rgba(13, 27, 62, 0.1);
+      color: var(--accent); /* Midnight Blue Text */
+      border: 1.5px solid var(--accent); /* Midnight Blue Border */
+      box-shadow: 0 0 20px rgba(13, 27, 62, 0.1); /* Midnight Blue Shadow */
     }
     .btn-secondary:hover {
       background: rgba(13, 27, 62, 0.05);
-      box-shadow: 0 0 30px rgba(13, 27, 62, 0.2);
+      box-shadow: 0 0 30px rgba(13, 27, 62, 0.2); /* Midnight Blue Shadow */
     }
-    /* HEADER */
+    /* Sleeker Header */
     header {
       position: sticky;
       top: 0;
@@ -179,38 +191,37 @@
       backdrop-filter: blur(20px) saturate(180%);
       background: rgba(255, 255, 255, 0.92);
       border-bottom: 1px solid var(--border);
-      padding: 1.2rem 2.5rem;
+      padding: 0.8rem 1.5rem; /* Reduced padding */
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: var(--header-height);
-      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+      height: var(--header-height); /* Reduced height */
+      box-shadow: 0 2px 16px rgba(0, 0, 0, 0.03);
     }
     .logo {
-      font-family: 'Lato', sans-serif;
-      font-weight: 900;
-      font-size: 2rem;
-      letter-spacing: -0.02em;
+      font-weight: 800;
+      font-size: 1.6rem; /* Reduced font size */
+      letter-spacing: -0.03em;
       display: flex;
       align-items: center;
       color: var(--text);
       text-decoration: none;
     }
     .logo span {
-      color: var(--accent);
+      color: var(--accent); /* Midnight Blue Accent */
       margin-left: 0.2em;
     }
     nav {
       display: flex;
-      gap: 2.8rem;
+      gap: 2rem; /* Reduced gap */
       align-items: center;
     }
     nav a {
-      font-size: 0.97rem;
+      font-size: 0.9rem; /* Reduced font size */
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      padding: 0.5rem 0;
+      padding: 0.4rem 0; /* Reduced padding */
       position: relative;
       color: var(--text-muted);
       text-decoration: none;
@@ -223,22 +234,22 @@
       left: 0;
       width: 0;
       height: 2px;
-      background: var(--accent);
+      background: var(--accent); /* Midnight Blue Accent */
       border-radius: 1px;
       transition: width var(--dur);
     }
     nav a:hover {
-      color: var(--accent);
+      color: var(--accent); /* Midnight Blue Accent */
     }
     nav a:hover::after {
       width: 100%;
     }
     .nav-cta {
-      margin-left: 2rem;
+      margin-left: 1.5rem; /* Reduced left margin */
     }
-    /* HERO */
+    /* Hero */
     .hero {
-      padding: calc(var(--header-height) + 2.5rem) 2.5rem 5rem;
+      padding: calc(var(--header-height) + 2rem) 2rem 4rem;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -246,7 +257,7 @@
       align-items: center;
       text-align: center;
       background: radial-gradient(ellipse at center, rgba(13, 27, 62, 0.06) 0%, transparent 70%);
-      gap: 2.5rem;
+      gap: 2rem;
       position: relative;
       overflow: hidden;
     }
@@ -259,7 +270,6 @@
       font-size: 1.25rem;
       max-width: 65ch;
       margin: 0 auto 2.5rem;
-      color: var(--text-muted);
     }
     .youtube-embed {
       width: 100%;
@@ -268,7 +278,7 @@
       border-radius: var(--radius);
       overflow: hidden;
       box-shadow: var(--shadow), 0 0 40px rgba(13, 27, 62, 0.12);
-      margin: 2.5rem auto;
+      margin: 2rem auto;
       border: 1px solid var(--border);
     }
     .youtube-embed iframe {
@@ -278,15 +288,15 @@
     }
     .hero-cta {
       display: flex;
-      gap: 1.8rem;
+      gap: 1.5rem;
       justify-content: center;
-      margin-top: 2.5rem;
+      margin-top: 2rem;
       flex-wrap: wrap;
       width: 100%;
     }
-    /* SECTIONS */
+    /* Sections */
     section {
-      padding: 9rem 2.5rem;
+      padding: 8rem 2rem;
       max-width: 1440px;
       margin: 0 auto;
       position: relative;
@@ -294,7 +304,7 @@
     }
     .section-title {
       text-align: center;
-      margin-bottom: 3.5rem;
+      margin-bottom: 3rem;
       position: relative;
       width: 100%;
     }
@@ -305,30 +315,30 @@
       font-size: 1.2rem;
       width: 100%;
     }
-    /* TRAINER CARDS */
+    /* Trainer Cards */
     .trainer-showcase {
       background-color: #000;
-      padding: 3rem 2.5rem;
+      padding: 3rem 2rem;
       border: 2px solid silver;
-      margin: 0 auto 6rem;
+      margin: 0 auto 5rem;
       max-width: 1440px;
     }
     .trainer-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.8rem;
+      gap: 1.5rem;
       margin-top: 2rem;
     }
     .trainer-card {
       background-color: #111;
       border: 1px solid silver;
-      padding: 1.8rem;
+      padding: 1.5rem;
       text-align: center;
       border-radius: var(--radius);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .trainer-card:hover {
-      transform: translateY(-6px);
+      transform: translateY(-5px);
       box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
     }
     .trainer-card h3 {
@@ -340,10 +350,10 @@
     .trainer-card p {
       color: #ddd;
       font-size: 0.95rem;
-      margin: 0 0 1.2rem;
+      margin: 0 0 1rem;
       line-height: 1.5;
     }
-    /* CARDS */
+    /* Cards */
     .card {
       background: var(--card-bg);
       padding: 3rem;
@@ -382,17 +392,8 @@
     }
     .benefits-list li {
       margin-bottom: 0.75rem;
-      position: relative;
     }
-    .benefits-list li::before {
-      content: "•";
-      color: var(--accent);
-      font-weight: bold;
-      display: inline-block;
-      width: 1em;
-      margin-left: -1em;
-    }
-    /* GRIDS */
+    /* Grids */
     .problem-solution,
     .use-cases,
     .revenue-models,
@@ -419,7 +420,7 @@
       max-width: 1400px;
       margin: 0 auto;
     }
-    /* STEPS */
+    /* Steps */
     .steps {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -455,7 +456,7 @@
       border: 1.5px solid var(--accent);
       box-shadow: var(--accent-glow);
     }
-    /* USE CASE */
+    /* Use Case */
     .use-case {
       background: var(--card-bg);
       padding: 2.2rem;
@@ -484,7 +485,7 @@
       font-size: 1.25rem;
       filter: drop-shadow(0 0 5px var(--accent));
     }
-    /* DEMO BUTTONS */
+    /* Demo Buttons */
     .demo-buttons {
       display: flex;
       justify-content: center;
@@ -493,7 +494,7 @@
       flex-wrap: wrap;
       width: 100%;
     }
-    /* PARTNERS */
+    /* Partners */
     .partners {
       margin-top: 3.5rem;
       text-align: center;
@@ -536,7 +537,7 @@
     .partner-links a:hover::before {
       width: 100%;
     }
-    /* CAL BOOKING */
+    /* Cal Booking */
     .cal-booking {
       background: var(--card-bg);
       border-radius: var(--radius);
@@ -563,7 +564,7 @@
       margin: 0 auto;
       display: block;
     }
-    /* FOOTER */
+    /* Footer */
     footer {
       padding: 5.5rem 2.5rem 2.5rem;
       display: grid;
@@ -641,7 +642,7 @@
     .footer-links a i {
       font-size: 0.9rem;
     }
-    /* STATS COUNTER */
+    /* Stats Counter */
     .stats-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -676,7 +677,7 @@
       text-transform: uppercase;
       letter-spacing: 0.1em;
     }
-    /* PARTNER CARD */
+    /* Partner Card */
     .partner-card {
       background: var(--card-bg);
       padding: 3rem;
@@ -721,7 +722,7 @@
       width: 1em;
       margin-left: -1em;
     }
-    /* MOBILE MENU BUTTON */
+    /* Mobile Menu Button */
     .mobile-menu-btn {
       display: none;
       background: none;
@@ -735,110 +736,10 @@
       transform: scale(1.1);
       filter: drop-shadow(0 0 10px var(--accent));
     }
-    /* PRICING SECTION */
-    .pricing-section {
-      background: var(--bg-soft);
-      padding: 6rem 2rem;
-      text-align: center;
-    }
-    .pricing-intro {
-      max-width: 800px;
-      margin: 0 auto 3rem;
-      font-size: 1.2rem;
-    }
-    .pricing-tiers {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .pricing-tier {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 2.5rem 2rem;
-      text-align: center;
-      box-shadow: var(--shadow);
-      transition: all var(--dur);
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .pricing-tier:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08), var(--accent-glow);
-      border-color: var(--accent);
-    }
-    .tier-name {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: var(--accent);
-    }
-    .tier-minutes {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: var(--text);
-    }
-    .tier-price {
-      font-size: 2.5rem;
-      font-weight: 800;
-      margin-bottom: 1.5rem;
-      color: var(--accent);
-    }
-    .tier-description {
-      font-size: 1rem;
-      color: var(--text-muted);
-      margin-bottom: 1.5rem;
-    }
-    .tier-features {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 auto;
-      width: 100%;
-    }
-    .tier-features li {
-      padding: 0.75rem 0;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-    }
-    .tier-features li:last-child {
-      border-bottom: none;
-    }
-    .tier-features li i {
-      color: var(--accent);
-    }
-    .btn-pricing {
-      display: inline-block;
-      background: var(--accent);
-      color: white;
-      font-weight: 700;
-      padding: 0.8em 1.5em;
-      font-size: 1rem;
-      min-width: auto;
-      margin-top: 1.5rem;
-      border-radius: 6px;
-      box-shadow: 0 4px 10px rgba(13, 27, 62, 0.15);
-      text-align: center;
-      width: 100%;
-      text-decoration: none;
-      transition: all var(--dur);
-    }
-    .btn-pricing:hover {
-      background: var(--accent-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 14px rgba(13, 27, 62, 0.2);
-    }
-    /* RESPONSIVE */
+    /* Responsive */
     @media (max-width: 768px) {
       header {
-        padding: 1.2rem;
+        padding: 1rem;
       }
       nav {
         display: none;
@@ -894,11 +795,8 @@
       .trainer-grid {
         grid-template-columns: 1fr;
       }
-      .pricing-tiers {
-        grid-template-columns: 1fr;
-      }
     }
-    /* WHATSAPP WIDGET */
+    /* WhatsApp Widget */
     .whatsapp-widget {
       position: fixed;
       bottom: 24px;
@@ -939,6 +837,106 @@
         box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
       }
     }
+    /* PRICING SECTION */
+    .pricing-section {
+      background: var(--bg-soft);
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+    .pricing-intro {
+      max-width: 800px;
+      margin: 0 auto 3rem;
+      font-size: 1.2rem;
+    }
+    .pricing-tiers {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .pricing-tier {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: all var(--dur);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .pricing-tier:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      border-color: var(--accent);
+    }
+    .tier-name {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+    .tier-minutes {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+    .tier-price {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      color: var(--accent);
+    }
+    .tier-description {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+    .tier-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 auto;
+      width: 100%;
+    }
+    .tier-features li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .tier-features li:last-child {
+      border-bottom: none;
+    }
+    .tier-features li i {
+      color: var(--accent);
+    }
+    .btn-pricing {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      font-weight: 700;
+      padding: 0.8em 1.5em;
+      font-size: 1rem;
+      min-width: auto;
+      margin-top: 1.5rem;
+      border-radius: 6px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 100%;
+      text-decoration: none;
+      transition: all var(--dur);
+    }
+    .btn-pricing:hover {
+      background: var(--accent-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    }
   </style>
 </head>
 <body>
@@ -964,7 +962,7 @@
   <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero-content">
-      <h1>Cut 80% of training costs with Dedicated On-Demand Expert Trainers</h1> <!-- CHANGED -->
+      <h1>Cut 80% of training costs with Dedicated On-Demand Expert Trainers</h1>
       <p>A dedicated team of specialist trainer consultants, powered by AI, to provide personalized coaching, automated assessment, and guaranteed results.</p>
       <div class="youtube-embed">
         <iframe 
@@ -1005,8 +1003,8 @@
     </div>
   </div>
 
-  <!-- TRAINER SHOWCASE -->
-  <section class="trainer-showcase" id="trainers"> <!-- CHANGED ID -->
+  <!-- TRAINERS SECTION (MODIFIED) -->
+  <section class="trainer-showcase" id="trainers">
     <h2 class="section-title" style="color: white;">Meet Your Dedicated Team of Expert Trainer Consultants</h2> <!-- CHANGED TITLE -->
     <p class="section-intro" style="color: #ccc; max-width: 800px; margin: 0 auto;">
       Our AI platform amplifies the impact of our hand-picked specialists, giving you an unbeatable combination of human expertise and technological efficiency.
@@ -1195,7 +1193,7 @@
     </div>
   </section>
 
-  <!-- PRICING SECTION (NEW) -->
+  <!-- PRICING SECTION -->
   <section class="pricing-section" id="pricing">
     <h2 class="section-title">Simple, Transparent Pricing</h2>
     <p class="pricing-intro">Pay only for the minutes you use. Our avatars remember context, your users and payment will be linked to your account. Full Data Privacy Compliance. Request 30+ languages.</p>
@@ -1550,7 +1548,7 @@
   <!-- SCRIPTS -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      // ROI Calculator functionality
+      // ROI Calculator
       const learnersInput = document.getElementById('learners');
       const costInput = document.getElementById('cost');
       const passRateInput = document.getElementById('passRate');
