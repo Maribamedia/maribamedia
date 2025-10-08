@@ -7,24 +7,22 @@
   <title>Mariba Media – Enterprise AI Training Solutions</title>
   <meta name="description" content="Mariba Media delivers performance-driven AI teaching & assessment systems for scalable, certifiable enterprise learning.">
   <!-- Google Fonts: Lato -->
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* ——————————————————————————————————————
-       Modern Enterprise Design System — INVERTED TO WHITE/BLACK
-       —————————————————————————————————————— */
+    /* MIDNIGHT BLUE LUXURY THEME – WHITE BACKGROUND, BLACK TEXT, MIDNIGHT BLUE ACCENTS */
     :root {
       /* Inverted Grayscale Color Palette */
       --bg: #ffffff;
-      --bg-soft: #f5f5f5;
-      --bg-softer: #e0e0e0;
-      --accent: #0d1b3e; /* Luxury Navy Blue */
+      --bg-soft: #f4f6fa;
+      --bg-softer: #e8edf5;
+      --accent: #0d1b3e; /* midnight blue */
       --accent-dark: #09162d;
       --accent-glow: 0 0 24px rgba(13, 27, 62, 0.18);
       --text: #0a0a0a;
-      --text-muted: #666666;
-      --border: #cccccc;
+      --text-muted: #444444;
+      --border: #d0d8e8;
       --success: #1a7f55;
       --warning: #c5760a;
       --error: #a02c1f;
@@ -35,7 +33,7 @@
       --radius: 10px;
       --shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
       --card-bg: linear-gradient(145deg, rgba(245, 245, 245, 0.9), rgba(224, 224, 224, 0.9));
-      --header-height: 88px;
+      --header-height: 72px; /* Reduced from 88px */
     }
     *, *::before, *::after {
       box-sizing: border-box;
@@ -182,7 +180,7 @@
       background: rgba(13, 27, 62, 0.05);
       box-shadow: 0 0 30px rgba(13, 27, 62, 0.2);
     }
-    /* Enhanced Sticky Header */
+    /* Sleeker Header */
     header {
       position: sticky;
       top: 0;
@@ -190,16 +188,16 @@
       backdrop-filter: blur(20px) saturate(180%);
       background: rgba(255, 255, 255, 0.92);
       border-bottom: 1px solid var(--border);
-      padding: 1.2rem 2.5rem;
+      padding: 0.8rem 2rem; /* Reduced padding */
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: var(--header-height);
-      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+      height: var(--header-height); /* Reduced height */
+      box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
     }
     .logo {
       font-weight: 800;
-      font-size: 2rem;
+      font-size: 1.8rem; /* Slightly smaller */
       letter-spacing: -0.03em;
       display: flex;
       align-items: center;
@@ -212,15 +210,15 @@
     }
     nav {
       display: flex;
-      gap: 2.8rem;
+      gap: 2rem; /* Reduced gap */
       align-items: center;
     }
     nav a {
-      font-size: 0.97rem;
+      font-size: 0.95rem; /* Slightly smaller font */
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      padding: 0.5rem 0;
+      padding: 0.4rem 0; /* Reduced padding */
       position: relative;
       color: var(--text-muted);
       text-decoration: none;
@@ -244,11 +242,11 @@
       width: 100%;
     }
     .nav-cta {
-      margin-left: 2rem;
+      margin-left: 1.5rem; /* Reduced left margin */
     }
-    /* Enhanced Hero Section */
+    /* Hero */
     .hero {
-      padding: calc(var(--header-height) + 2.5rem) 2.5rem 5rem;
+      padding: calc(var(--header-height) + 2rem) 2rem 4rem;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -256,7 +254,7 @@
       align-items: center;
       text-align: center;
       background: radial-gradient(ellipse at center, rgba(13, 27, 62, 0.06) 0%, transparent 70%);
-      gap: 2.5rem;
+      gap: 2rem;
       position: relative;
       overflow: hidden;
     }
@@ -277,8 +275,13 @@
       border-radius: var(--radius);
       overflow: hidden;
       box-shadow: var(--shadow), 0 0 40px rgba(13, 27, 62, 0.12);
-      margin: 2.5rem auto;
+      margin: 2rem auto;
       border: 1px solid var(--border);
+      transition: transform var(--dur), box-shadow var(--dur);
+    }
+    .youtube-embed:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), var(--accent-glow);
     }
     .youtube-embed iframe {
       width: 100%;
@@ -287,15 +290,15 @@
     }
     .hero-cta {
       display: flex;
-      gap: 1.8rem;
+      gap: 1.5rem;
       justify-content: center;
-      margin-top: 2.5rem;
+      margin-top: 2rem;
       flex-wrap: wrap;
       width: 100%;
     }
-    /* Enhanced Sections */
+    /* Sections */
     section {
-      padding: 9rem 2.5rem;
+      padding: 9rem 2rem;
       max-width: 1440px;
       margin: 0 auto;
       position: relative;
@@ -303,7 +306,7 @@
     }
     .section-title {
       text-align: center;
-      margin-bottom: 3.5rem;
+      margin-bottom: 3rem;
       position: relative;
       width: 100%;
     }
@@ -314,7 +317,45 @@
       font-size: 1.2rem;
       width: 100%;
     }
-    /* Enhanced Cards */
+    /* Trainer Cards */
+    .trainer-showcase {
+      background-color: #000;
+      padding: 3rem 2rem;
+      border: 2px solid silver;
+      margin: 0 auto 5rem;
+      max-width: 1440px;
+    }
+    .trainer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.8rem;
+      margin-top: 2rem;
+    }
+    .trainer-card {
+      background-color: #111;
+      border: 1px solid silver;
+      padding: 1.8rem;
+      text-align: center;
+      border-radius: var(--radius);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .trainer-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
+    }
+    .trainer-card h3 {
+      color: #fff;
+      margin-bottom: 0.8rem;
+      font-size: 1.35rem;
+      line-height: 1.3;
+    }
+    .trainer-card p {
+      color: #ddd;
+      font-size: 0.95rem;
+      margin: 0 0 1.2rem;
+      line-height: 1.5;
+    }
+    /* Cards */
     .card {
       background: var(--card-bg);
       padding: 3rem;
@@ -346,7 +387,15 @@
       font-size: 1.5rem;
       filter: drop-shadow(0 0 10px var(--accent));
     }
-    /* Enhanced Grid Layouts */
+    .benefits-list {
+      margin: 1.5rem 0;
+      padding-left: 1.5rem;
+      line-height: 1.8;
+    }
+    .benefits-list li {
+      margin-bottom: 0.75rem;
+    }
+    /* Grids */
     .problem-solution,
     .use-cases,
     .revenue-models,
@@ -692,7 +741,7 @@
     /* Responsive */
     @media (max-width: 768px) {
       header {
-        padding: 1.2rem;
+        padding: 0.8rem 1.2rem; /* Adjusted padding for mobile */
       }
       nav {
         display: none;
@@ -743,6 +792,9 @@
         align-items: center;
       }
       .partners-grid {
+        grid-template-columns: 1fr;
+      }
+      .trainer-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -887,44 +939,6 @@
       transform: translateY(-2px);
       box-shadow: 0 6px 14px rgba(13, 27, 62, 0.2);
     }
-    /* TRAINER CARDS (WITHOUT BUTTONS) */
-    .trainer-showcase {
-      background-color: #000;
-      padding: 3rem 2.5rem;
-      border: 2px solid silver;
-      margin: 0 auto 6rem;
-      max-width: 1440px;
-    }
-    .trainer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.8rem;
-      margin-top: 2rem;
-    }
-    .trainer-card {
-      background-color: #111;
-      border: 1px solid silver;
-      padding: 1.8rem;
-      text-align: center;
-      border-radius: var(--radius);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .trainer-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
-    }
-    .trainer-card h3 {
-      color: #fff;
-      margin-bottom: 0.8rem;
-      font-size: 1.35rem;
-      line-height: 1.3;
-    }
-    .trainer-card p {
-      color: #ddd;
-      font-size: 0.95rem;
-      margin: 0 0 1.2rem;
-      line-height: 1.5;
-    }
   </style>
 </head>
 <body>
@@ -1001,34 +1015,42 @@
       <div class="trainer-card">
         <h3>Healthcare Training (Remote Trainer)</h3>
         <p>Trainers creating and delivering healthcare product training online, scalable for consistent education with 24/7 availability and personalized learner support.</p>
+        <!-- GET STARTED BUTTON REMOVED -->
       </div>
       <div class="trainer-card">
-        <h3>K-12 Tutor</h3>
-        <p>Personalized academic support across all subjects and grade levels for primary and secondary school students, delivered through interactive, AI-powered lessons that adapt to each learner's pace and style.</p>
+        <h3>Market Research Interviewing (Remote Interviewer)</h3>
+        <p>Remote interviewers for health and social research surveys; AI avatars can conduct and analyze thousands of interviews 24/7.</p>
+        <!-- GET STARTED BUTTON REMOVED -->
       </div>
       <div class="trainer-card">
-        <h3>Sales Lead Qualification (Lead Qualification Specialist)</h3>
-        <p>Remote sales lead qualifiers enrich leads and schedule demos; Tavus.io avatars can automate initial qualification and appointment setting.</p>
+        <h3>ESL TEFL Instructor</h3> <!-- REVERTED -->
+        <p>Certified trainers providing crucial support for final high school examinations.</p> <!-- ORIGINAL DESCRIPTION -->
+        <!-- GET STARTED BUTTON REMOVED -->
       </div>
       <div class="trainer-card">
         <h3>Corporate Learning and Development Trainer</h3>
         <p>Training officers for employee upskilling across industries, deployable as AI avatars for scalable, repeatable training sessions.</p>
+        <!-- GET STARTED BUTTON REMOVED -->
       </div>
       <div class="trainer-card">
         <h3>B2B SaaS Sales Trainer</h3>
         <p>Remote sales trainers for SaaS solutions deliver onboarding and coaching, where avatars can enable scalable personalized video coaching.</p>
+        <!-- GET STARTED BUTTON REMOVED -->
       </div>
       <div class="trainer-card">
-        <h3>Customer Support and Interviewing</h3>
+        <h3>Customer Support and Interviewing (Telephonic Interviewer)</h3>
         <p>Positions for survey or market research interviewers in customer insights roles; AI avatars can increase throughput, accuracy, and availability.</p>
+        <!-- GET STARTED BUTTON REMOVED -->
       </div>
       <div class="trainer-card">
-        <h3>Recruitment Admission Officer</h3>
-        <p>Specialist officers managing applicant screening, interviews, and onboarding processes; AI avatars can automate initial candidate engagement, qualification, and scheduling 24/7.</p>
+        <h3>Virtual Language or Soft Skills Instructor</h3>
+        <p>Roles for language or soft skills trainers (e.g., ESL, communication) leveraging AI avatars for interactive, scalable practice scenarios.</p>
+        <!-- GET STARTED BUTTON REMOVED -->
       </div>
       <div class="trainer-card">
         <h3>Remote Lead Generation & Appointment Setting</h3>
         <p>Lead generation and appointment setter roles widely demanded remotely; AI avatars can handle initial engagement and qualify prospects.</p>
+        <!-- GET STARTED BUTTON REMOVED -->
       </div>
     </div>
   </section>
@@ -1173,6 +1195,50 @@
     </div>
   </section>
 
+  <!-- PRICING SECTION (ADDED BACK) -->
+  <section class="pricing-section" id="pricing">
+    <h2 class="section-title">Simple, Transparent Pricing</h2>
+    <p class="pricing-intro">Pay only for the minutes you use. Our avatars remember context, your users and payment will be linked to your account. Full Data Privacy Compliance. Request 30+ languages.</p>
+    <div class="pricing-tiers">
+      <div class="pricing-tier">
+        <h3 class="tier-name">Starter</h3>
+        <div class="tier-minutes">25 Minutes</div>
+        <div class="tier-price">R260</div>
+        <p class="tier-description">Perfect for small teams or individuals starting out.</p>
+        <ul class="tier-features">
+          <li><i class="fas fa-check"></i> Context Memory</li>
+          <li><i class="fas fa-check"></i> Full Data Privacy</li>
+          <li><i class="fas fa-check"></i> 30+ Languages</li>
+        </ul>
+        <a href="https://cal.com/partner-discovery/south-africa" class="btn-pricing">Get Started</a>
+      </div>
+      <div class="pricing-tier">
+        <h3 class="tier-name">Professional</h3>
+        <div class="tier-minutes">100 Minutes</div>
+        <div class="tier-price">R899</div>
+        <p class="tier-description">Ideal for growing businesses needing consistent training.</p>
+        <ul class="tier-features">
+          <li><i class="fas fa-check"></i> Context Memory</li>
+          <li><i class="fas fa-check"></i> Full Data Privacy</li>
+          <li><i class="fas fa-check"></i> 30+ Languages</li>
+        </ul>
+        <a href="https://cal.com/partner-discovery/south-africa" class="btn-pricing">Get Started</a>
+      </div>
+      <div class="pricing-tier">
+        <h3 class="tier-name">Enterprise</h3>
+        <div class="tier-minutes">1250 Minutes</div>
+        <div class="tier-price">R8000</div>
+        <p class="tier-description">For large organizations with extensive training needs.</p>
+        <ul class="tier-features">
+          <li><i class="fas fa-check"></i> Context Memory</li>
+          <li><i class="fas fa-check"></i> Full Data Privacy</li>
+          <li><i class="fas fa-check"></i> 30+ Languages</li>
+        </ul>
+        <a href="https://cal.com/partner-discovery/south-africa" class="btn-pricing">Get Started</a>
+      </div>
+    </div>
+  </section>
+
   <!-- ROI CALCULATOR -->
   <section id="roi-calculator">
     <h2 class="section-title">Calculate Your Training ROI</h2>
@@ -1297,50 +1363,6 @@
       <div class="use-case">
         <h4><i class="fas fa-check-double"></i> Internal Skill Validation</h4>
         <p>Rapidly assess and certify employee proficiency in new tools or processes with objective AI evaluation.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICING SECTION (ADDED BACK) -->
-  <section class="pricing-section" id="pricing">
-    <h2 class="section-title">Simple, Transparent Pricing</h2>
-    <p class="pricing-intro">Pay only for the minutes you use. Our avatars remember context, your users and payment will be linked to your account. Full Data Privacy Compliance. Request 30+ languages.</p>
-    <div class="pricing-tiers">
-      <div class="pricing-tier">
-        <h3 class="tier-name">Starter</h3>
-        <div class="tier-minutes">25 Minutes</div>
-        <div class="tier-price">R260</div>
-        <p class="tier-description">Perfect for small teams or individuals starting out.</p>
-        <ul class="tier-features">
-          <li><i class="fas fa-check"></i> Context Memory</li>
-          <li><i class="fas fa-check"></i> Full Data Privacy</li>
-          <li><i class="fas fa-check"></i> 30+ Languages</li>
-        </ul>
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn-pricing">Get Started</a>
-      </div>
-      <div class="pricing-tier">
-        <h3 class="tier-name">Professional</h3>
-        <div class="tier-minutes">100 Minutes</div>
-        <div class="tier-price">R899</div>
-        <p class="tier-description">Ideal for growing businesses needing consistent training.</p>
-        <ul class="tier-features">
-          <li><i class="fas fa-check"></i> Context Memory</li>
-          <li><i class="fas fa-check"></i> Full Data Privacy</li>
-          <li><i class="fas fa-check"></i> 30+ Languages</li>
-        </ul>
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn-pricing">Get Started</a>
-      </div>
-      <div class="pricing-tier">
-        <h3 class="tier-name">Enterprise</h3>
-        <div class="tier-minutes">1250 Minutes</div>
-        <div class="tier-price">R8000</div>
-        <p class="tier-description">For large organizations with extensive training needs.</p>
-        <ul class="tier-features">
-          <li><i class="fas fa-check"></i> Context Memory</li>
-          <li><i class="fas fa-check"></i> Full Data Privacy</li>
-          <li><i class="fas fa-check"></i> 30+ Languages</li>
-        </ul>
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn-pricing">Get Started</a>
       </div>
     </div>
   </section>
