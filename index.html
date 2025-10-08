@@ -7,7 +7,7 @@
   <title>Mariba Media – Enterprise AI Training Solutions</title>
   <meta name="description" content="Mariba Media delivers performance-driven AI teaching & assessment systems for scalable, certifiable enterprise learning.">
   <!-- Google Fonts: Lato -->
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -19,11 +19,11 @@
       --bg: #ffffff;
       --bg-soft: #f5f5f5;
       --bg-softer: #e0e0e0;
-      --accent: #0d1b3e; /* midnight blue */
+      --accent: #0d1b3e; /* Luxury Navy Blue */
       --accent-dark: #09162d;
       --accent-glow: 0 0 24px rgba(13, 27, 62, 0.18);
       --text: #0a0a0a;
-      --text-muted: #444444;
+      --text-muted: #666666;
       --border: #cccccc;
       --success: #1a7f55;
       --warning: #c5760a;
@@ -35,7 +35,7 @@
       --radius: 8px;
       --shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
       --card-bg: linear-gradient(145deg, rgba(245, 245, 245, 0.9), rgba(224, 224, 224, 0.9));
-      --header-height: 72px; /* Reduced from 88px */
+      --header-height: 88px;
     }
     *, *::before, *::after {
       box-sizing: border-box;
@@ -70,7 +70,7 @@
       max-width: 32ch;
       margin: 0 auto 1.5rem;
       color: #000000;
-      background: linear-gradient(135deg, #0d1b3e 0%, #09162d 100%); /* Midnight Blue Gradient */
+      background: linear-gradient(135deg, #0d1b3e 0%, #09162d 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -78,10 +78,9 @@
     h2 {
       font-size: clamp(2.2rem, 4vw, 3.2rem);
       margin-bottom: 1.25rem;
-      color: var(--text);
+      color: var(--accent);
       position: relative;
       display: inline-block;
-      text-align: center;
     }
     h2::after {
       content: '';
@@ -90,13 +89,13 @@
       left: 0;
       width: 64px;
       height: 3px;
-      background: var(--accent); /* Midnight Blue Accent */
+      background: var(--accent);
       border-radius: 2px;
     }
     h3 {
       font-size: clamp(1.6rem, 3vw, 2.2rem);
       margin-bottom: 0.75rem;
-      color: var(--accent); /* Midnight Blue Accent */
+      color: var(--accent);
     }
     h4 {
       font-size: clamp(1.2rem, 2vw, 1.5rem);
@@ -107,11 +106,12 @@
     p {
       font-size: 1.05rem;
       color: var(--text-muted);
+      line-height: 1.6;
       margin-bottom: 1.5rem;
       text-align: center;
     }
     strong {
-      color: var(--accent); /* Midnight Blue Accent */
+      color: var(--accent);
       font-weight: 700;
     }
     ul.benefits-list {
@@ -126,7 +126,7 @@
     }
     ul.benefits-list li::before {
       content: "•";
-      color: var(--accent); /* Midnight Blue Bullet */
+      color: var(--accent);
       font-weight: bold;
       display: inline-block;
       width: 1em;
@@ -136,19 +136,19 @@
     .btn {
       font-size: 1.05rem;
       font-weight: 700;
-      padding: 1em 2.8em;
+      padding: 1em 2.5em;
       border: none;
       border-radius: var(--radius);
-      background: linear-gradient(135deg, var(--accent), var(--accent-dark)); /* Midnight Blue Gradient */
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
       color: #ffffff;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.8em;
+      gap: 0.75em;
       transition: all var(--dur) var(--ease);
-      box-shadow: var(--shadow), var(--accent-glow); /* Midnight Blue Glow */
-      min-width: 240px;
+      box-shadow: var(--shadow), var(--accent-glow);
+      min-width: 220px;
       text-decoration: none;
       letter-spacing: 0.02em;
       position: relative;
@@ -168,20 +168,41 @@
     }
     .btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1), var(--accent-glow); /* Midnight Blue Glow */
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1), var(--accent-glow);
     }
     .btn:hover::before {
       left: 100%;
     }
     .btn-secondary {
       background: transparent;
-      color: var(--accent); /* Midnight Blue Text */
-      border: 1.5px solid var(--accent); /* Midnight Blue Border */
-      box-shadow: 0 0 20px rgba(13, 27, 62, 0.1); /* Midnight Blue Shadow */
+      color: var(--accent);
+      border: 1.5px solid var(--accent);
+      box-shadow: 0 0 20px rgba(13, 27, 62, 0.1);
     }
     .btn-secondary:hover {
       background: rgba(13, 27, 62, 0.05);
-      box-shadow: 0 0 30px rgba(13, 27, 62, 0.2); /* Midnight Blue Shadow */
+      box-shadow: 0 0 30px rgba(13, 27, 62, 0.2);
+    }
+    .btn-trainer {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      font-weight: 700;
+      padding: 0.75em 1.2em;
+      font-size: 1rem;
+      min-width: auto;
+      margin-top: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(13, 27, 62, 0.15);
+      text-align: center;
+      width: 100%;
+      text-decoration: none;
+      transition: all var(--dur);
+    }
+    .btn-trainer:hover {
+      background: var(--accent-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(13, 27, 62, 0.2);
     }
     /* Sleeker Header */
     header {
@@ -189,18 +210,18 @@
       top: 0;
       z-index: 999;
       backdrop-filter: blur(20px) saturate(180%);
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.96);
       border-bottom: 1px solid var(--border);
-      padding: 0.8rem 1.5rem; /* Reduced padding */
+      padding: 1.2rem 2.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: var(--header-height); /* Reduced height */
-      box-shadow: 0 2px 16px rgba(0, 0, 0, 0.03);
+      height: var(--header-height);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
     }
     .logo {
       font-weight: 800;
-      font-size: 1.6rem; /* Reduced font size */
+      font-size: 1.8rem;
       letter-spacing: -0.03em;
       display: flex;
       align-items: center;
@@ -208,20 +229,20 @@
       text-decoration: none;
     }
     .logo span {
-      color: var(--accent); /* Midnight Blue Accent */
+      color: var(--accent);
       margin-left: 0.2em;
     }
     nav {
       display: flex;
-      gap: 2rem; /* Reduced gap */
+      gap: 2.5rem;
       align-items: center;
     }
     nav a {
-      font-size: 0.9rem; /* Reduced font size */
+      font-size: 0.95rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      padding: 0.4rem 0; /* Reduced padding */
+      padding: 0.5rem 0;
       position: relative;
       color: var(--text-muted);
       text-decoration: none;
@@ -234,20 +255,20 @@
       left: 0;
       width: 0;
       height: 2px;
-      background: var(--accent); /* Midnight Blue Accent */
+      background: var(--accent);
       border-radius: 1px;
       transition: width var(--dur);
     }
     nav a:hover {
-      color: var(--accent); /* Midnight Blue Accent */
+      color: var(--accent);
     }
     nav a:hover::after {
       width: 100%;
     }
     .nav-cta {
-      margin-left: 1.5rem; /* Reduced left margin */
+      margin-left: 2rem;
     }
-    /* Hero */
+    /* Enhanced Hero Section */
     .hero {
       padding: calc(var(--header-height) + 2rem) 2rem 4rem;
       min-height: 100vh;
@@ -260,6 +281,18 @@
       gap: 2rem;
       position: relative;
       overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 30%, rgba(13, 27, 62, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(13, 27, 62, 0.02) 0%, transparent 50%);
+      z-index: -1;
     }
     .hero-content {
       max-width: 1000px;
@@ -280,6 +313,11 @@
       box-shadow: var(--shadow), 0 0 40px rgba(13, 27, 62, 0.12);
       margin: 2rem auto;
       border: 1px solid var(--border);
+      transition: transform var(--dur), box-shadow var(--dur);
+    }
+    .youtube-embed:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), var(--accent-glow);
     }
     .youtube-embed iframe {
       width: 100%;
@@ -294,9 +332,9 @@
       flex-wrap: wrap;
       width: 100%;
     }
-    /* Sections */
+    /* Enhanced Sections */
     section {
-      padding: 8rem 2rem;
+      padding: 6rem 2rem;
       max-width: 1440px;
       margin: 0 auto;
       position: relative;
@@ -315,48 +353,10 @@
       font-size: 1.2rem;
       width: 100%;
     }
-    /* Trainer Cards */
-    .trainer-showcase {
-      background-color: #000;
-      padding: 3rem 2rem;
-      border: 2px solid silver;
-      margin: 0 auto 5rem;
-      max-width: 1440px;
-    }
-    .trainer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    .trainer-card {
-      background-color: #111;
-      border: 1px solid silver;
-      padding: 1.5rem;
-      text-align: center;
-      border-radius: var(--radius);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .trainer-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
-    }
-    .trainer-card h3 {
-      color: #fff;
-      margin-bottom: 0.8rem;
-      font-size: 1.35rem;
-      line-height: 1.3;
-    }
-    .trainer-card p {
-      color: #ddd;
-      font-size: 0.95rem;
-      margin: 0 0 1rem;
-      line-height: 1.5;
-    }
-    /* Cards */
+    /* Enhanced Cards */
     .card {
       background: var(--card-bg);
-      padding: 3rem;
+      padding: 2.5rem;
       border: 1px solid var(--border);
       border-radius: var(--radius);
       transition: all var(--dur) var(--ease);
@@ -392,8 +392,17 @@
     }
     .benefits-list li {
       margin-bottom: 0.75rem;
+      position: relative;
     }
-    /* Grids */
+    .benefits-list li::before {
+      content: "•";
+      color: var(--accent);
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+    /* Enhanced Grid Layouts */
     .problem-solution,
     .use-cases,
     .revenue-models,
@@ -456,7 +465,7 @@
       border: 1.5px solid var(--accent);
       box-shadow: var(--accent-glow);
     }
-    /* Use Case */
+    /* Use Cases */
     .use-case {
       background: var(--card-bg);
       padding: 2.2rem;
@@ -739,7 +748,7 @@
     /* Responsive */
     @media (max-width: 768px) {
       header {
-        padding: 1rem;
+        padding: 1.2rem;
       }
       nav {
         display: none;
@@ -837,105 +846,43 @@
         box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
       }
     }
-    /* PRICING SECTION */
-    .pricing-section {
-      background: var(--bg-soft);
-      padding: 6rem 2rem;
-      text-align: center;
+    /* Trainer Cards */
+    .trainer-showcase {
+      background-color: #000;
+      padding: 3rem 2.5rem;
+      border: 2px solid silver;
+      margin: 0 auto 6rem;
+      max-width: 1440px;
     }
-    .pricing-intro {
-      max-width: 800px;
-      margin: 0 auto 3rem;
-      font-size: 1.2rem;
-    }
-    .pricing-tiers {
+    .trainer-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.8rem;
+      margin-top: 2rem;
     }
-    .pricing-tier {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
+    .trainer-card {
+      background-color: #111;
+      border: 1px solid silver;
+      padding: 1.8rem;
+      text-align: center;
       border-radius: var(--radius);
-      padding: 2.5rem 2rem;
-      text-align: center;
-      box-shadow: var(--shadow);
-      transition: all var(--dur);
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .pricing-tier:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-      border-color: var(--accent);
+    .trainer-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
     }
-    .tier-name {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: var(--accent);
+    .trainer-card h3 {
+      color: #fff;
+      margin-bottom: 0.8rem;
+      font-size: 1.35rem;
+      line-height: 1.3;
     }
-    .tier-minutes {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: var(--text);
-    }
-    .tier-price {
-      font-size: 2.5rem;
-      font-weight: 800;
-      margin-bottom: 1.5rem;
-      color: var(--accent);
-    }
-    .tier-description {
-      font-size: 1rem;
-      color: var(--text-muted);
-      margin-bottom: 1.5rem;
-    }
-    .tier-features {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 auto;
-      width: 100%;
-    }
-    .tier-features li {
-      padding: 0.75rem 0;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-    }
-    .tier-features li:last-child {
-      border-bottom: none;
-    }
-    .tier-features li i {
-      color: var(--accent);
-    }
-    .btn-pricing {
-      display: inline-block;
-      background: var(--accent);
-      color: white;
-      font-weight: 700;
-      padding: 0.8em 1.5em;
-      font-size: 1rem;
-      min-width: auto;
-      margin-top: 1.5rem;
-      border-radius: 6px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      width: 100%;
-      text-decoration: none;
-      transition: all var(--dur);
-    }
-    .btn-pricing:hover {
-      background: var(--accent-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    .trainer-card p {
+      color: #ddd;
+      font-size: 0.95rem;
+      margin: 0 0 1.2rem;
+      line-height: 1.5;
     }
   </style>
 </head>
@@ -1005,7 +952,7 @@
 
   <!-- TRAINERS SECTION (MODIFIED) -->
   <section class="trainer-showcase" id="trainers">
-    <h2 class="section-title" style="color: white;">Meet Your Dedicated Team of Expert Trainer Consultants</h2> <!-- CHANGED TITLE -->
+    <h2 class="section-title" style="color: white;">Meet Your Dedicated Team of Expert Trainer Consultants</h2>
     <p class="section-intro" style="color: #ccc; max-width: 800px; margin: 0 auto;">
       Our AI platform amplifies the impact of our hand-picked specialists, giving you an unbeatable combination of human expertise and technological efficiency.
     </p>
@@ -1013,42 +960,44 @@
       <div class="trainer-card">
         <h3>Healthcare Training (Remote Trainer)</h3>
         <p>Trainers creating and delivering healthcare product training online, scalable for consistent education with 24/7 availability and personalized learner support.</p>
-        <!-- GET STARTED BUTTON REMOVED -->
+        <a href="https://cal.com/partner-discovery/south-africa" class="btn-trainer">Get Started</a>
+      </div>
+      <!-- CHANGED CARD -->
+      <div class="trainer-card">
+        <h3>K-12 Tutor</h3>
+        <p>Personalized academic support across all subjects and grade levels for primary and secondary school students, delivered through interactive, AI-powered lessons that adapt to each learner's pace and style.</p>
+        <a href="https://cal.com/partner-discovery/south-africa" class="btn-trainer">Get Started</a>
       </div>
       <div class="trainer-card">
-        <h3>Market Research Interviewing</h3> <!-- CHANGED TITLE -->
-        <p>Remote interviewers for health and social research surveys; AI avatars can conduct and analyze thousands of interviews 24/7.</p>
-        <!-- GET STARTED BUTTON REMOVED -->
-      </div>
-      <div class="trainer-card">
-        <h3>ESL TEFL Trainer</h3> <!-- CHANGED ROLE -->
-        <p>Certified trainers specializing in Teaching English as a Foreign Language, delivering immersive, interactive lessons with real-time feedback and adaptive learning paths for global learners.</p> <!-- CHANGED DESCRIPTION -->
-        <!-- GET STARTED BUTTON REMOVED -->
+        <h3>Sales Lead Qualification (Lead Qualification Specialist)</h3>
+        <p>Remote sales lead qualifiers enrich leads and schedule demos; Tavus.io avatars can automate initial qualification and appointment setting.</p>
+        <a href="https://cal.com/partner-discovery/south-africa" class="btn-trainer">Get Started</a>
       </div>
       <div class="trainer-card">
         <h3>Corporate Learning and Development Trainer</h3>
         <p>Training officers for employee upskilling across industries, deployable as AI avatars for scalable, repeatable training sessions.</p>
-        <!-- GET STARTED BUTTON REMOVED -->
+        <a href="https://cal.com/partner-discovery/south-africa" class="btn-trainer">Get Started</a>
       </div>
       <div class="trainer-card">
         <h3>B2B SaaS Sales Trainer</h3>
         <p>Remote sales trainers for SaaS solutions deliver onboarding and coaching, where avatars can enable scalable personalized video coaching.</p>
-        <!-- GET STARTED BUTTON REMOVED -->
+        <a href="https://cal.com/partner-discovery/south-africa" class="btn-trainer">Get Started</a>
       </div>
       <div class="trainer-card">
-        <h3>Customer Support and Interviewing</h3> <!-- CHANGED TITLE -->
-        <p>Positions for survey or market research interviewers in customer insights roles; AI avatars can increase throughput, accuracy, and availability.</p> <!-- CHANGED DESCRIPTION -->
-        <!-- GET STARTED BUTTON REMOVED -->
+        <h3>Customer Support and Interviewing (Telephonic Interviewer)</h3>
+        <p>Positions for survey or market research interviewers in customer insights roles; AI avatars can increase throughput, accuracy, and availability.</p>
+        <a href="https://cal.com/partner-discovery/south-africa" class="btn-trainer">Get Started</a>
       </div>
+      <!-- CHANGED CARD -->
       <div class="trainer-card">
-        <h3>Virtual Language or Soft Skills Instructor</h3>
-        <p>Roles for language or soft skills trainers (e.g., ESL, communication) leveraging AI avatars for interactive, scalable practice scenarios.</p>
-        <!-- GET STARTED BUTTON REMOVED -->
+        <h3>Recruitment Admission Officer</h3>
+        <p>Specialist officers managing applicant screening, interviews, and onboarding processes; AI avatars can automate initial candidate engagement, qualification, and scheduling 24/7.</p>
+        <a href="https://cal.com/partner-discovery/south-africa" class="btn-trainer">Get Started</a>
       </div>
       <div class="trainer-card">
         <h3>Remote Lead Generation & Appointment Setting</h3>
         <p>Lead generation and appointment setter roles widely demanded remotely; AI avatars can handle initial engagement and qualify prospects.</p>
-        <!-- GET STARTED BUTTON REMOVED -->
+        <a href="https://cal.com/partner-discovery/south-africa" class="btn-trainer">Get Started</a>
       </div>
     </div>
   </section>
@@ -1189,50 +1138,6 @@
         <div class="step-number">4</div>
         <h3>Start Delivering</h3>
         <p>Begin training immediately and track accreditations in real time through our dashboard.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICING SECTION -->
-  <section class="pricing-section" id="pricing">
-    <h2 class="section-title">Simple, Transparent Pricing</h2>
-    <p class="pricing-intro">Pay only for the minutes you use. Our avatars remember context, your users and payment will be linked to your account. Full Data Privacy Compliance. Request 30+ languages.</p>
-    <div class="pricing-tiers">
-      <div class="pricing-tier">
-        <h3 class="tier-name">Starter</h3>
-        <div class="tier-minutes">25 Minutes</div>
-        <div class="tier-price">R260</div>
-        <p class="tier-description">Perfect for small teams or individuals starting out.</p>
-        <ul class="tier-features">
-          <li><i class="fas fa-check"></i> Context Memory</li>
-          <li><i class="fas fa-check"></i> Full Data Privacy</li>
-          <li><i class="fas fa-check"></i> 30+ Languages</li>
-        </ul>
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn-pricing">Get Started</a>
-      </div>
-      <div class="pricing-tier">
-        <h3 class="tier-name">Professional</h3>
-        <div class="tier-minutes">100 Minutes</div>
-        <div class="tier-price">R899</div>
-        <p class="tier-description">Ideal for growing businesses needing consistent training.</p>
-        <ul class="tier-features">
-          <li><i class="fas fa-check"></i> Context Memory</li>
-          <li><i class="fas fa-check"></i> Full Data Privacy</li>
-          <li><i class="fas fa-check"></i> 30+ Languages</li>
-        </ul>
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn-pricing">Get Started</a>
-      </div>
-      <div class="pricing-tier">
-        <h3 class="tier-name">Enterprise</h3>
-        <div class="tier-minutes">1250 Minutes</div>
-        <div class="tier-price">R8000</div>
-        <p class="tier-description">For large organizations with extensive training needs.</p>
-        <ul class="tier-features">
-          <li><i class="fas fa-check"></i> Context Memory</li>
-          <li><i class="fas fa-check"></i> Full Data Privacy</li>
-          <li><i class="fas fa-check"></i> 30+ Languages</li>
-        </ul>
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn-pricing">Get Started</a>
       </div>
     </div>
   </section>
@@ -1526,7 +1431,7 @@
         </a>
       </div>
       <div class="footer-links" style="margin-top: 1.5rem;">
-        <a href="mailto:victor@maribamedia.co.za"><i class="fas fa-envelope"></i> victor@maribamedia.co.za</a> <!-- CHANGED EMAIL -->
+        <a href="mailto:victor@maribamedia.co.za"><i class="fas fa-envelope"></i> victor@maribamedia.co.za</a>
         <a href="tel:+27766473499"><i class="fas fa-phone"></i> +27 (0) 76 647 3499</a>
         <a href="#"><i class="fas fa-map-marker-alt"></i> Bronkhorstspruit, South Africa</a>
       </div>
