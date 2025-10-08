@@ -19,15 +19,15 @@
       --bg: #ffffff;
       --bg-soft: #f5f5f5;
       --bg-softer: #e0e0e0;
-      --accent: #0d1b3e; /* Luxury Navy Blue */
-      --accent-dark: #09162d;
-      --accent-glow: 0 0 24px rgba(13, 27, 62, 0.18);
+      --accent: #000000; /* midnight blue */
+      --accent-dark: #333333;
+      --accent-glow: 0 0 24px rgba(0, 0, 0, 0.1);
       --text: #000000;
       --text-muted: #666666;
       --border: #cccccc;
-      --success: #1a7f55;
-      --warning: #c5760a;
-      --error: #a02c1f;
+      --success: #888888;
+      --warning: #aaaaaa;
+      --error: #999999;
       /* Motion */
       --dur: 0.3s;
       --ease: cubic-bezier(0.4, 0, 0.2, 1);
@@ -66,21 +66,22 @@
       font-family: 'Lato', sans-serif;
     }
     h1 {
-      font-size: clamp(3rem, 5.5vw, 4.5rem);
-      max-width: 28ch;
+      font-size: 3.5rem;
+      max-width: 32ch;
       margin: 0 auto 1.5rem;
       color: #000000;
-      background: linear-gradient(135deg, #0d1b3e 0%, #09162d 100%); /* Navy Blue Gradient */
+      background: linear-gradient(135deg, #000000 0%, #333333 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
     h2 {
-      font-size: clamp(2.2rem, 4vw, 3.2rem);
-      margin-bottom: 1.25rem;
-      color: var(--text);
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--accent);
       position: relative;
-      display: inline-block;
+      display: block;
+      text-align: center;
     }
     h2::after {
       content: '';
@@ -89,28 +90,30 @@
       left: 0;
       width: 64px;
       height: 3px;
-      background: var(--accent); /* Navy Blue Accent */
+      background: var(--accent);
       border-radius: 2px;
     }
     h3 {
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
-      margin-bottom: 0.75rem;
-      color: var(--accent); /* Navy Blue Accent */
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #111111;
+      text-align: center;
     }
     h4 {
-      font-size: clamp(1.2rem, 2vw, 1.5rem);
-      margin-bottom: 0.5rem;
-      color: var(--text);
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
+      color: #111111;
+      text-align: left;
     }
     p {
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       color: var(--text-muted);
       line-height: 1.6;
       margin-bottom: 1.5rem;
       text-align: center;
     }
     strong {
-      color: var(--accent); /* Navy Blue Accent */
+      color: #000000;
       font-weight: 700;
     }
     ul.benefits-list {
@@ -125,7 +128,7 @@
     }
     ul.benefits-list li::before {
       content: "•";
-      color: var(--accent); /* Navy Blue Bullet */
+      color: var(--accent);
       font-weight: bold;
       display: inline-block;
       width: 1em;
@@ -138,7 +141,7 @@
       padding: 1em 2.5em;
       border: none;
       border-radius: var(--radius);
-      background: linear-gradient(135deg, var(--accent), var(--accent-dark)); /* Navy Blue Gradient */
+      background: linear-gradient(135deg, #000000, #333333);
       color: #ffffff;
       cursor: pointer;
       display: inline-flex;
@@ -161,13 +164,13 @@
       left: 0;
       width: 0%;
       height: 100%;
-      background: linear-gradient(135deg, var(--accent-dark), var(--accent)); /* Reverse Gradient */
+      background: linear-gradient(135deg, #333333, #000000);
       transition: all var(--dur) var(--ease);
       z-index: -1;
     }
     .btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2), var(--accent-glow); /* Navy Blue Glow */
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2), var(--accent-glow);
     }
     .btn:hover::before {
       width: 100%;
@@ -177,35 +180,33 @@
     }
     .btn-secondary {
       background: transparent;
-      color: var(--accent); /* Navy Blue Text */
-      border: 2px solid var(--accent); /* Navy Blue Border */
-      box-shadow: 0 0 20px rgba(13, 27, 62, 0.1); /* Navy Blue Shadow */
+      color: var(--accent);
+      border: 2px solid var(--accent);
     }
     .btn-secondary::before {
-      background: var(--accent); /* Navy Blue Fill on Hover */
+      background: var(--accent);
     }
     .btn-secondary:hover {
       color: #fff;
-      background: rgba(13, 27, 62, 0.05);
+      background: rgba(0, 0, 0, 0.05);
     }
-    /* Sleeker Header */
+    /* Enhanced Sticky Header */
     header {
       position: sticky;
       top: 0;
       z-index: 999;
-      backdrop-filter: blur(16px) saturate(180%);
+      backdrop-filter: blur(18px) saturate(180%);
       background: rgba(255, 255, 255, 0.96);
       border-bottom: 1px solid var(--border);
-      padding: 0 1.8rem; /* Reduced padding */
+      padding: 1rem 2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       height: var(--header-height);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
     }
     .logo {
       font-weight: 800;
-      font-size: 1.65rem; /* Slightly smaller */
+      font-size: 1.8rem;
       letter-spacing: -0.03em;
       display: flex;
       align-items: center;
@@ -213,21 +214,21 @@
       text-decoration: none;
     }
     .logo span {
-      color: var(--accent); /* Navy Blue Accent */
+      color: var(--accent);
     }
     nav {
       display: flex;
-      gap: 2rem; /* Reduced gap */
+      gap: 2.5rem;
       align-items: center;
     }
     nav a {
-      font-size: 0.92rem; /* Smaller font */
+      font-size: 0.95rem;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      padding: 0.4rem 0; /* Reduced padding */
+      letter-spacing: 0.05em;
+      padding: 0.5rem 0;
       position: relative;
-      color: var(--text-muted);
+      color: var(--text);
       text-decoration: none;
       transition: color var(--dur);
     }
@@ -238,18 +239,18 @@
       left: 0;
       width: 0;
       height: 2px;
-      background: var(--accent); /* Navy Blue Accent */
+      background: var(--accent);
       border-radius: 1px;
       transition: width var(--dur);
     }
     nav a:hover {
-      color: var(--accent); /* Navy Blue Accent */
+      color: var(--accent);
     }
     nav a:hover::after {
       width: 100%;
     }
     .nav-cta {
-      margin-left: 1.2rem; /* Reduced left margin */
+      margin-left: 1.5rem;
     }
     /* Enhanced Hero Section */
     .hero {
@@ -260,10 +261,22 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      background: radial-gradient(ellipse at 50% 50%, rgba(13, 27, 62, 0.05) 0%, transparent 70%); /* Navy Blue Tinted Background */
+      background: radial-gradient(ellipse at 50% 50%, #f5f5f5 0%, var(--bg) 80%);
       gap: 2rem;
       position: relative;
       overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 30%, rgba(0, 0, 0, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(0, 0, 0, 0.02) 0%, transparent 50%);
+      z-index: -1;
     }
     .hero-content {
       max-width: 1000px;
@@ -281,14 +294,14 @@
       aspect-ratio: 16 / 9;
       border-radius: var(--radius);
       overflow: hidden;
-      box-shadow: var(--shadow), 0 0 40px rgba(13, 27, 62, 0.12); /* Navy Blue Shadow */
+      box-shadow: var(--shadow);
       margin: 2rem auto;
       border: 1px solid var(--border);
       transition: transform var(--dur), box-shadow var(--dur);
     }
     .youtube-embed:hover {
       transform: translateY(-5px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), var(--accent-glow); /* Navy Blue Glow */
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     }
     .youtube-embed iframe {
       width: 100%;
@@ -317,6 +330,20 @@
       position: relative;
       width: 100%;
     }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      margin: 1rem auto 0;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      border-radius: 2px;
+      animation: glow 2s infinite alternate;
+    }
+    @keyframes glow {
+      from { box-shadow: 0 0 4px var(--accent); }
+      to { box-shadow: 0 0 16px var(--accent), 0 0 24px var(--accent); }
+    }
     .section-intro {
       text-align: center;
       max-width: 800px;
@@ -324,13 +351,51 @@
       font-size: 1.2rem;
       width: 100%;
     }
+    /* Trainer Cards */
+    .trainer-showcase {
+      background-color: #000;
+      padding: 3rem 2rem;
+      border: 2px solid silver;
+      margin: 0 auto 6rem;
+      max-width: 1440px;
+    }
+    .trainer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem;
+      margin-top: 2rem;
+    }
+    .trainer-card {
+      background-color: #111;
+      border: 1px solid silver;
+      padding: 1.8rem;
+      text-align: center;
+      border-radius: var(--radius);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .trainer-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
+    }
+    .trainer-card h3 {
+      color: #fff;
+      margin-bottom: 0.8rem;
+      font-size: 1.35rem;
+      line-height: 1.3;
+    }
+    .trainer-card p {
+      color: #ddd;
+      font-size: 0.95rem;
+      margin: 0 0 1.2rem;
+      line-height: 1.5;
+    }
     /* Enhanced Cards */
     .card {
       background: var(--card-bg);
       padding: 2.5rem;
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      transition: all var(--dur) var(--ease);
+      transition: transform var(--dur), box-shadow var(--dur);
       backdrop-filter: blur(10px);
       height: 100%;
       position: relative;
@@ -339,13 +404,23 @@
       flex-direction: column;
       box-shadow: var(--shadow);
     }
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.03) 0%, transparent 70%);
+      z-index: -1;
+    }
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1), var(--accent-glow); /* Navy Blue Glow */
-      border-color: rgba(13, 27, 62, 0.2); /* Navy Blue Border */
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+      border-color: rgba(0, 0, 0, 0.2);
     }
     .card h3 {
-      color: var(--accent); /* Navy Blue Accent */
+      color: var(--accent);
       margin-bottom: 1.25rem;
       display: flex;
       align-items: center;
@@ -354,7 +429,10 @@
     }
     .card h3 i {
       font-size: 1.5rem;
-      filter: drop-shadow(0 0 10px var(--accent)); /* Navy Blue Icon Glow */
+    }
+    .card ul {
+      text-align: left;
+      flex-grow: 1;
     }
     /* Enhanced Grid Layouts */
     .problem-solution,
@@ -403,21 +481,21 @@
     }
     .step:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08), var(--accent-glow); /* Navy Blue Glow */
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08), var(--accent-glow);
     }
     .step-number {
       font-size: 2.5rem;
       font-weight: 800;
-      color: var(--accent); /* Navy Blue Number */
+      color: var(--accent);
       margin-bottom: 1rem;
       display: inline-block;
       width: 60px;
       height: 60px;
       line-height: 60px;
       border-radius: 50%;
-      background: rgba(13, 27, 62, 0.08); /* Navy Blue Tinted Background */
-      border: 1.5px solid var(--accent); /* Navy Blue Border */
-      box-shadow: var(--accent-glow); /* Navy Blue Glow */
+      background: rgba(0, 0, 0, 0.05);
+      border: 1.5px solid var(--accent);
+      box-shadow: var(--accent-glow);
     }
     /* Use Cases */
     .use-case {
@@ -433,11 +511,11 @@
       overflow: hidden;
     }
     .use-case:hover {
-      border-color: var(--accent); /* Navy Blue Border */
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06), var(--accent-glow); /* Navy Blue Glow */
+      border-color: var(--accent);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06), var(--accent-glow);
     }
     .use-case h4 {
-      color: var(--accent); /* Navy Blue Accent */
+      color: var(--accent);
       margin-bottom: 1rem;
       display: flex;
       align-items: center;
@@ -446,7 +524,7 @@
     }
     .use-case h4 i {
       font-size: 1.25rem;
-      filter: drop-shadow(0 0 5px var(--accent)); /* Navy Blue Icon Glow */
+      filter: drop-shadow(0 0 5px var(--accent));
     }
     /* Demo Buttons */
     .demo-buttons {
@@ -471,11 +549,11 @@
       flex-wrap: wrap;
     }
     .partner-links a {
-      color: var(--accent); /* Navy Blue Link */
-      font-weight: 500;
+      color: var(--accent);
+      font-weight: 600;
       font-size: 0.95rem;
       text-decoration: none;
-      padding: 0.5rem 1.2rem;
+      padding: 0.5rem 1rem;
       border: 1px solid var(--border);
       border-radius: 30px;
       transition: all var(--dur);
@@ -489,13 +567,13 @@
       left: 0;
       width: 0;
       height: 100%;
-      background: var(--accent); /* Navy Blue Fill */
+      background: var(--accent);
       transition: width var(--dur);
       z-index: -1;
     }
     .partner-links a:hover {
       color: #ffffff;
-      border-color: var(--accent); /* Navy Blue Border */
+      border-color: var(--accent);
     }
     .partner-links a:hover::before {
       width: 100%;
@@ -539,9 +617,12 @@
       width: 100%;
       text-align: center;
     }
+    .footer-section {
+      text-align: center;
+    }
     .footer-section h3 {
-      color: var(--accent); /* Navy Blue Accent */
-      font-size: 1.5rem;
+      color: var(--accent);
+      font-size: 1.4rem;
       margin-bottom: 1.5rem;
       display: flex;
       align-items: center;
@@ -555,8 +636,8 @@
       justify-content: center;
     }
     .social-icon {
-      width: 46px;
-      height: 46px;
+      width: 44px;
+      height: 44px;
       display: grid;
       place-items: center;
       border-radius: 50%;
@@ -567,10 +648,10 @@
       border: 1px solid var(--border);
     }
     .social-icon:hover {
-      background: var(--accent); /* Navy Blue Background */
+      background: var(--accent);
       color: #ffffff;
       transform: translateY(-3px);
-      box-shadow: var(--accent-glow); /* Navy Blue Glow */
+      box-shadow: var(--accent-glow);
     }
     .copyright {
       grid-column: 1 / -1;
@@ -584,7 +665,7 @@
     .footer-links {
       display: flex;
       flex-direction: column;
-      gap: 0.8rem;
+      gap: 0.75rem;
       align-items: center;
     }
     .footer-links a {
@@ -597,7 +678,7 @@
       font-size: 0.95rem;
     }
     .footer-links a:hover {
-      color: var(--accent); /* Navy Blue Accent */
+      color: var(--accent);
     }
     .footer-links a i {
       font-size: 0.9rem;
@@ -622,14 +703,14 @@
     }
     .stat:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08), var(--accent-glow); /* Navy Blue Glow */
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08), var(--accent-glow);
     }
     .stat-number {
       font-size: 2.8rem;
-      font-weight: 700;
-      color: var(--accent); /* Navy Blue Number */
+      font-weight: 800;
+      color: var(--accent);
       margin-bottom: 0.5rem;
-      text-shadow: 0 0 10px rgba(13, 27, 62, 0.2); /* Navy Blue Shadow */
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
     .stat-label {
       color: var(--text-muted);
@@ -652,11 +733,11 @@
     }
     .partner-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08), var(--accent-glow); /* Navy Blue Glow */
-      border-color: var(--accent); /* Navy Blue Border */
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08), var(--accent-glow);
+      border-color: var(--accent);
     }
     .partner-card h3 {
-      color: var(--accent); /* Navy Blue Accent */
+      color: var(--accent);
       margin-bottom: 1.5rem;
       font-size: 1.6rem;
     }
@@ -676,7 +757,7 @@
     }
     .partner-card ul li::before {
       content: "•";
-      color: var(--accent); /* Navy Blue Bullet */
+      color: var(--accent);
       font-weight: bold;
       display: inline-block;
       width: 1em;
@@ -687,19 +768,30 @@
       display: none;
       background: none;
       border: none;
-      color: var(--accent); /* Navy Blue Menu Icon */
+      color: var(--accent);
       font-size: 1.6rem;
       cursor: pointer;
       transition: all var(--dur);
     }
     .mobile-menu-btn:hover {
       transform: scale(1.1);
-      filter: drop-shadow(0 0 10px var(--accent)); /* Navy Blue Glow */
+      filter: drop-shadow(0 0 10px var(--accent));
     }
     /* Responsive Design */
+    @media (max-width: 1024px) {
+      h1 {
+        font-size: 2.8rem;
+      }
+      h2 {
+        font-size: 2.2rem;
+      }
+      .hero {
+        padding: calc(var(--header-height) + 1rem) 1.5rem 3rem;
+      }
+    }
     @media (max-width: 768px) {
       header {
-        padding: 1.2rem;
+        padding: 1rem;
       }
       nav {
         display: none;
@@ -708,25 +800,25 @@
         display: block;
       }
       h1 {
-        font-size: 2.4rem;
+        font-size: 2.2rem;
         max-width: 22ch;
       }
       h2 {
-        font-size: 1.9rem;
+        font-size: 1.8rem;
       }
       h3 {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
       }
       .btn {
         padding: 0.9em 2em;
-        font-size: 0.97rem;
-        min-width: 200px;
+        font-size: 0.95rem;
+        min-width: 180px;
       }
       section {
-        padding: 5rem 1.5rem;
+        padding: 4rem 1.5rem;
       }
       .hero {
-        padding: calc(var(--header-height) + 1.5rem) 1.5rem 3rem;
+        padding: calc(var(--header-height) + 1rem) 1.5rem 3rem;
       }
       .demo-buttons {
         flex-direction: column;
@@ -750,6 +842,9 @@
         align-items: center;
       }
       .partners-grid {
+        grid-template-columns: 1fr;
+      }
+      .trainer-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -776,7 +871,7 @@
     }
     .whatsapp-button:hover {
       transform: scale(1.12);
-      box-shadow: 0 8px 32px rgba(37, 211, 102, 0.55);
+      box-shadow: 0 8px 32px rgba(37, 211, 100, 0.55);
     }
     .whatsapp-svg {
       width: 30px;
@@ -794,64 +889,105 @@
         box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
       }
     }
-    /* Trainer Cards */
-    .trainer-showcase {
-      background-color: #000;
-      padding: 3rem 2.5rem;
-      border: 2px solid silver;
-      margin: 0 auto 5rem;
-      max-width: 1440px;
-    }
-    .trainer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    .trainer-card {
-      background-color: #111;
-      border: 1px solid silver;
-      padding: 1.5rem;
+    /* PRICING SECTION */
+    .pricing-section {
+      background: var(--bg-soft);
+      padding: 6rem 2rem;
       text-align: center;
+    }
+    .pricing-intro {
+      max-width: 800px;
+      margin: 0 auto 3rem;
+      font-size: 1.2rem;
+    }
+    .pricing-tiers {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .pricing-tier {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
       border-radius: var(--radius);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: all var(--dur);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    .trainer-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
+    .pricing-tier:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      border-color: var(--accent);
     }
-    .trainer-card h3 {
-      color: #fff;
-      margin-bottom: 0.8rem;
-      font-size: 1.35rem;
-      line-height: 1.3;
+    .tier-name {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
     }
-    .trainer-card p {
-      color: #ddd;
-      font-size: 0.95rem;
-      margin: 0 0 1rem;
-      line-height: 1.5;
+    .tier-minutes {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text);
     }
-    .btn-trainer {
+    .tier-price {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      color: var(--accent);
+    }
+    .tier-description {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+    .tier-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 auto;
+      width: 100%;
+    }
+    .tier-features li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .tier-features li:last-child {
+      border-bottom: none;
+    }
+    .tier-features li i {
+      color: var(--accent);
+    }
+    .btn-pricing {
       display: inline-block;
-      background: var(--accent); /* Navy Blue Button */
+      background: var(--accent);
       color: white;
       font-weight: 700;
-      padding: 0.75em 1.2em;
+      padding: 0.8em 1.5em;
       font-size: 1rem;
       min-width: auto;
-      margin-top: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(13, 27, 62, 0.15); /* Navy Blue Shadow */
+      margin-top: 1.5rem;
+      border-radius: 6px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       text-align: center;
       width: 100%;
       text-decoration: none;
       transition: all var(--dur);
     }
-    .btn-trainer:hover {
-      background: var(--accent-dark); /* Darker Navy Blue */
+    .btn-pricing:hover {
+      background: var(--accent-dark);
       transform: translateY(-2px);
-      box-shadow: 0 6px 14px rgba(13, 27, 62, 0.2); /* Navy Blue Shadow */
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
     }
   </style>
 </head>
@@ -863,7 +999,7 @@
       <a href="#home">Home</a>
       <a href="#solution">Solution</a>
       <a href="#use-cases">Use Cases</a>
-      <a href="#trainers">Our Trainers</a> <!-- Updated Link -->
+      <a href="#trainers">Our Trainers</a>
       <a href="#lifetime-partnership">Partnership</a>
       <a href="#booking">Get Started</a>
       <div class="nav-cta">
@@ -878,13 +1014,13 @@
   <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero-content">
-      <h1>Cut 80% of training costs with Dedicated On-Demand Expert Trainers</h1>
-      <p>A dedicated team of specialist trainer consultants, powered by AI, to provide personalized coaching, automated assessment, and guaranteed results.</p>
+      <h1>AI-Powered Enterprise Training Solutions</h1>
+      <p><strong>Mariba Media</strong> delivers performance-driven AI teaching & assessment systems, expertly trained on your curriculum for scalable, high-quality, and certifiable learning — with zero manual effort.</p>
       <div class="youtube-embed">
-        <iframe
-          src="https://lab.anam.ai/frame/4vEi5xh7LlMleNwusv8hA"
-          width="720"
-          height="480"
+        <iframe 
+          src="https://lab.anam.ai/frame/4vEi5xh7LlMleNwusv8hA" 
+          width="720" 
+          height="480" 
           allow="microphone"
         ></iframe>
       </div>
@@ -918,6 +1054,48 @@
       <div class="stat-label">Manual Grading</div>
     </div>
   </div>
+
+  <!-- TRAINERS SECTION (MODIFIED) -->
+  <section class="trainer-showcase" id="trainers">
+    <h2 class="section-title" style="color: white;">Meet Your Dedicated Team of Expert Trainer Consultants</h2>
+    <p class="section-intro" style="color: #ccc; max-width: 800px; margin: 0 auto;">
+      Our AI platform amplifies the impact of our hand-picked specialists, giving you an unbeatable combination of human expertise and technological efficiency.
+    </p>
+    <div class="trainer-grid">
+      <div class="trainer-card">
+        <h3>Healthcare Training</h3>
+        <p>Trainers creating and delivering healthcare product training online, scalable for consistent education with 24/7 availability and personalized learner support.</p>
+      </div>
+      <div class="trainer-card">
+        <h3>Market Research Interviewing</h3>
+        <p>Remote interviewers for health and social research surveys; AI avatars can conduct and analyze thousands of interviews 24/7.</p>
+      </div>
+      <div class="trainer-card">
+        <h3>Sales Lead Qualification</h3>
+        <p>Remote sales lead qualifiers enrich leads and schedule demos; Tavus.io avatars can automate initial qualification and appointment setting.</p>
+      </div>
+      <div class="trainer-card">
+        <h3>Corporate Learning and Development Trainer</h3>
+        <p>Training officers for employee upskilling across industries, deployable as AI avatars for scalable, repeatable training sessions.</p>
+      </div>
+      <div class="trainer-card">
+        <h3>B2B SaaS Sales Trainer</h3>
+        <p>Remote sales trainers for SaaS solutions deliver onboarding and coaching, where avatars can enable scalable personalized video coaching.</p>
+      </div>
+      <div class="trainer-card">
+        <h3>Addiction & Trauma Counselor</h3>
+        <p>Specialists providing confidential support and therapeutic guidance. AI ensures complete privacy and creates a safe space for clients to express themselves freely, 24/7.</p>
+      </div>
+      <div class="trainer-card">
+        <h3>International Recruitment Admission</h3>
+        <p>Experts guiding students and professionals through global admissions processes. Avatars offer multilingual support, application assistance, and cultural orientation for seamless international transitions.</p>
+      </div>
+      <div class="trainer-card">
+        <h3>Remote Lead Generation & Appointment Setting</h3>
+        <p>Lead generation and appointment setter roles widely demanded remotely; AI avatars can handle initial engagement and qualify prospects.</p>
+      </div>
+    </div>
+  </section>
 
   <!-- PROBLEM -->
   <section id="solution">
@@ -1059,56 +1237,6 @@
     </div>
   </section>
 
-  <!-- TRAINERS SECTION (WITH UPDATED ROLES) -->
-  <section class="trainer-showcase" id="trainers"> <!-- Updated ID -->
-    <h2 class="section-title" style="color: white;">Meet Your Dedicated Team of Expert Trainer Consultants</h2>
-    <p class="section-intro" style="color: #ccc; max-width: 800px; margin: 0 auto;">
-      Our AI platform amplifies the impact of our hand-picked specialists, giving you an unbeatable combination of human expertise and technological efficiency.
-    </p>
-    <div class="trainer-grid">
-      <div class="trainer-card">
-        <h3>Healthcare Training (Remote Trainer)</h3>
-        <p>Trainers creating and delivering healthcare product training online, scalable for consistent education with 24/7 availability and personalized learner support.</p>
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn-trainer">Get Started</a>
-      </div>
-      <div class="trainer-card">
-        <h3>Market Research Interviewing</h3> <!-- Changed Title -->
-        <p>Remote interviewers for health and social research surveys; AI avatars can conduct and analyze thousands of interviews 24/7.</p>
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn-trainer">Get Started</a>
-      </div>
-      <div class="trainer-card">
-        <h3>ESL TEFL Trainer</h3> <!-- Changed Role and Description -->
-        <p>Certified trainers specializing in Teaching English as a Foreign Language, delivering immersive, interactive lessons to adult learners worldwide via AI-powered platforms.</p>
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn-trainer">Get Started</a>
-      </div>
-      <div class="trainer-card">
-        <h3>Corporate Learning and Development Trainer</h3>
-        <p>Training officers for employee upskilling across industries, deployable as AI avatars for scalable, repeatable training sessions.</p>
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn-trainer">Get Started</a>
-      </div>
-      <div class="trainer-card">
-        <h3>B2B SaaS Sales Trainer</h3>
-        <p>Remote sales trainers for SaaS solutions deliver onboarding and coaching, where avatars can enable scalable personalized video coaching.</p>
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn-trainer">Get Started</a>
-      </div>
-      <div class="trainer-card">
-        <h3>Customer Support and Interviewing</h3> <!-- Changed Title -->
-        <p>Positions for survey or market research interviewers in customer insights roles; AI avatars can increase throughput, accuracy, and availability.</p>
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn-trainer">Get Started</a>
-      </div>
-      <div class="trainer-card">
-        <h3>Virtual Language or Soft Skills Instructor</h3>
-        <p>Roles for language or soft skills trainers (e.g., ESL, communication) leveraging AI avatars for interactive, scalable practice scenarios.</p>
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn-trainer">Get Started</a>
-      </div>
-      <div class="trainer-card">
-        <h3>Remote Lead Generation & Appointment Setting</h3>
-        <p>Lead generation and appointment setter roles widely demanded remotely; AI avatars can handle initial engagement and qualify prospects.</p>
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn-trainer">Get Started</a>
-      </div>
-    </div>
-  </section>
-
   <!-- ROI CALCULATOR -->
   <section id="roi-calculator">
     <h2 class="section-title">Calculate Your Training ROI</h2>
@@ -1160,7 +1288,7 @@
             <span style="font-weight: 700; color: var(--text);">POPIA compliance risk score</span>
             <span style="font-weight: 700; color: var(--warning);" id="complianceRisk">52.5%</span>
           </div>
-          <div style="background: rgba(13, 27, 62, 0.08); border-left: 4px solid var(--accent); padding: 20px; border-radius: 0 8px 8px 0; margin: 24px 0;">
+          <div style="background: rgba(0, 0, 0, 0.08); border-left: 4px solid var(--accent); padding: 20px; border-radius: 0 8px 8px 0; margin: 24px 0;">
             <div style="font-weight: 700; color: var(--text);">Your total monthly waste</div>
             <div style="font-size: 32px; font-weight: 800; color: var(--error); margin: 12px 0;" id="totalWaste">R3,447,500</div>
             <div style="font-weight: 700; color: var(--text-muted);">(This is what Mariba fixes)</div>
@@ -1170,11 +1298,11 @@
             <span style="font-weight: 700; color: var(--success);" id="savingsAmount">R168,000</span>
           </div>
         </div>
-        <div style="background: rgba(13, 27, 62, 0.05); border: 1px solid rgba(13, 27, 62, 0.2); border-radius: 8px; padding: 18px; margin-top: 18px; text-align: center;">
-          <strong style="display: block; margin-bottom: 8px; color: var(--accent);">Our Risk Reversal Guarantee:</strong> We only get paid when your learners pass.
+        <div style="background: rgba(0, 0, 0, 0.05); border: 1px solid rgba(0, 0, 0, 0.2); border-radius: 8px; padding: 18px; margin-top: 18px; text-align: center;">
+          <strong style="display: block; margin-bottom: 8px; color: var(--accent);">Our Risk Reversal Guarantee:</strong> We only get paid when your learners pass. 
           <br><strong style="display: block; margin-top: 8px; color: var(--accent);">No passes = no fees. Period.</strong>
         </div>
-        <div style="text-align: center; padding: 28px; background: rgba(13, 27, 62, 0.05); border-radius: 8px; margin-top: 24px;">
+        <div style="text-align: center; padding: 28px; background: rgba(0, 0, 0, 0.02); border-radius: 8px; margin-top: 24px;">
           <h2 style="font-size: 24px; margin-bottom: 14px; color: var(--text); font-family: 'Lato', sans-serif;">Your Free Compliance Audit</h2>
           <p style="color: var(--text-muted); margin-bottom: 22px; max-width: 600px; margin-left: auto; margin-right: auto;">
             First 5 people to share their results get a FREE 30-minute audit with our team.
@@ -1184,8 +1312,8 @@
             Share My Results → Get Free Audit
           </a>
           <div style="font-size: 13px; color: var(--text-muted); text-align: center; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--border);">
-            *Calculations based on South African enterprise training data.
-            Lost productivity cost = R18,500/day per untrained hire.
+            *Calculations based on South African enterprise training data. 
+            Lost productivity cost = R18,500/day per untrained hire. 
             Compliance risk score = (100 - pass rate) × 1.5
           </div>
         </div>
@@ -1247,7 +1375,7 @@
       No fixed term. No hidden fees. No vendor lock-in.<br><br>
       This is how enterprise training should work."</em>
     </p>
-    <div style="max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: var(--radius); border: 1px solid var(--border); padding: 2.5rem; margin-bottom: 2.5rem;">
+    <div style="max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: var(--radius); border: 1px solid var(--border); padding: 2rem; margin-bottom: 2rem;">
       <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--accent); font-family: 'Lato', sans-serif;">⚖️ Why Traditional Models Keep You Trapped in Costs</h3>
       <table style="width: 100%; border-collapse: collapse;">
         <thead>
@@ -1311,7 +1439,7 @@
   </section>
 
   <!-- STRATEGIC PARTNERS -->
-  <section id="strategic-partners">
+  <section id="strategic-partners" style="padding: 8rem 2rem 6rem;">
     <h2 class="section-title">Our Strategic Partners</h2>
     <p class="section-intro">We collaborate with industry leaders to provide comprehensive, innovative solutions that drive your success.</p>
     <div class="partners-grid">
@@ -1345,6 +1473,50 @@
     </div>
   </section>
 
+  <!-- PRICING SECTION -->
+  <section class="pricing-section" id="pricing">
+    <h2 class="section-title">Simple, Transparent Pricing</h2>
+    <p class="pricing-intro">Pay only for the minutes you use. Our AI avatars remember context, ensuring personalized interactions every time.</p>
+    <div class="pricing-tiers">
+      <div class="pricing-tier">
+        <h3 class="tier-name">Starter</h3>
+        <div class="tier-minutes">25 Minutes</div>
+        <div class="tier-price">R260</div>
+        <p class="tier-description">Perfect for small teams or individuals starting out.</p>
+        <ul class="tier-features">
+          <li><i class="fas fa-check"></i> Context Memory</li>
+          <li><i class="fas fa-check"></i> Full Data Privacy</li>
+          <li><i class="fas fa-check"></i> 30+ Languages</li>
+        </ul>
+        <a href="https://cal.com/partner-discovery/south-africa" class="btn-pricing">Get Started</a>
+      </div>
+      <div class="pricing-tier">
+        <h3 class="tier-name">Professional</h3>
+        <div class="tier-minutes">100 Minutes</div>
+        <div class="tier-price">R899</div>
+        <p class="tier-description">Ideal for growing businesses needing consistent training.</p>
+        <ul class="tier-features">
+          <li><i class="fas fa-check"></i> Context Memory</li>
+          <li><i class="fas fa-check"></i> Full Data Privacy</li>
+          <li><i class="fas fa-check"></i> 30+ Languages</li>
+        </ul>
+        <a href="https://cal.com/partner-discovery/south-africa" class="btn-pricing">Get Started</a>
+      </div>
+      <div class="pricing-tier">
+        <h3 class="tier-name">Enterprise</h3>
+        <div class="tier-minutes">1250 Minutes</div>
+        <div class="tier-price">R8000</div>
+        <p class="tier-description">For large organizations with extensive training needs.</p>
+        <ul class="tier-features">
+          <li><i class="fas fa-check"></i> Context Memory</li>
+          <li><i class="fas fa-check"></i> Full Data Privacy</li>
+          <li><i class="fas fa-check"></i> 30+ Languages</li>
+        </ul>
+        <a href="https://cal.com/partner-discovery/south-africa" class="btn-pricing">Get Started</a>
+      </div>
+    </div>
+  </section>
+
   <!-- BOOKING -->
   <section class="cal-booking" id="booking">
     <h2 class="section-title">Ready to Transform Your Training?</h2>
@@ -1360,7 +1532,7 @@
   <footer>
     <div class="footer-section">
       <h3><i class="fas fa-rocket"></i> Mariba<span style="color:var(--accent)">Media</span></h3>
-      <p>On-Demand Trainer Consultants & AI-Powered Learning Systems. Pay only for performance.</p>
+      <p>Multimodal Training Systems Development for Enterprise. Pay only for accredited learners.</p>
       <div class="footer-meta">
         <strong>Company Registration No:</strong> 2024 / 132788 / 07
       </div>
@@ -1381,8 +1553,8 @@
       <div class="footer-links">
         <a href="#home"><i class="fas fa-home"></i> Home</a>
         <a href="#solution"><i class="fas fa-puzzle-piece"></i> Solution</a>
+        <a href="#trainers"><i class="fas fa-user-tie"></i> Our Trainers</a>
         <a href="#use-cases"><i class="fas fa-briefcase"></i> Use Cases</a>
-        <a href="#trainers"><i class="fas fa-user-tie"></i> Our Trainers</a> <!-- Updated Link -->
         <a href="#lifetime-partnership"><i class="fas fa-chart-bar"></i> Partnership</a>
         <a href="#booking"><i class="fas fa-calendar-check"></i> Get Started</a>
       </div>
@@ -1476,7 +1648,6 @@
       if (costInput) costInput.addEventListener('input', calculateROI);
       if (passRateInput) passRateInput.addEventListener('input', calculateROI);
       if (learnersInput) calculateROI();
-
       // Cal.com
       const calDiv = document.getElementById('my-cal-inline-south-africa');
       if (calDiv) {
@@ -1518,11 +1689,9 @@
         });
         Cal.ns["south-africa"]("ui", { layout: "month_view" });
       }
-
       // Year
       const yearEl = document.getElementById("current-year");
       if (yearEl) yearEl.textContent = new Date().getFullYear();
-
       // Stats counter animation
       const stats = document.querySelectorAll('.stat-number');
       const speed = 200;
@@ -1554,4 +1723,3 @@
   </script>
 </body>
 </html>
-```
