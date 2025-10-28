@@ -1,1677 +1,1415 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="fo-verify" content="eaa1b420-4ea2-4989-b878-fe193416df52" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mariba Media – Enterprise AI Training Solutions</title>
-  <meta name="description" content="Mariba Media delivers performance-driven AI teaching & assessment systems for scalable, certifiable enterprise learning.">
-  <!-- Google Fonts: Lato -->
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    /* MIDNIGHT BLUE LUXURY THEME – WHITE BACKGROUND, BLACK TEXT, MIDNIGHT BLUE ACCENTS */
-    :root {
-      /* Inverted Grayscale Color Palette */
-      --bg: #ffffff;
-      --bg-soft: #f4f6fa;
-      --bg-softer: #e8edf5;
-      --accent: #0d1b3e; /* midnight blue */
-      --accent-dark: #09162d;
-      --accent-glow: 0 0 24px rgba(13, 27, 62, 0.18);
-      --text: #0a0a0a;
-      --text-muted: #444444;
-      --border: #d0d8e8;
-      --success: #1a7f55;
-      --warning: #c5760a;
-      --error: #a02c1f;
-      /* Motion */
-      --dur: 0.4s;
-      --ease: cubic-bezier(0.4, 0, 0.2, 1);
-      /* Design variables */
-      --radius: 10px;
-      --shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
-      --card-bg: linear-gradient(145deg, rgba(245, 245, 245, 0.9), rgba(224, 224, 224, 0.9));
-      --header-height: 72px; /* Reduced from 88px */
-    }
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    html {
-      scroll-behavior: smooth;
-      font-family: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      font-size: 17px;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-      font-family: 'Lato', sans-serif;
-    }
-    /* Enhanced Typography */
-    h1, h2, h3, h4 {
-      line-height: 1.2;
-      font-weight: 700;
-      margin-top: 0;
-      text-align: center;
-      width: 100%;
-      letter-spacing: -0.02em;
-      font-family: 'Lato', sans-serif;
-    }
-    h1 {
-      font-size: clamp(3rem, 5.5vw, 4.5rem);
-      max-width: 32ch;
-      margin: 0 auto 1.5rem;
-      color: #000000;
-      background: linear-gradient(135deg, #0d1b3e 0%, #09162d 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    h2 {
-      font-size: clamp(2.2rem, 4vw, 3.2rem);
-      margin-bottom: 1.25rem;
-      color: var(--text);
-      position: relative;
-      display: inline-block;
-    }
-    h2::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      width: 64px;
-      height: 3px;
-      background: var(--accent);
-      border-radius: 2px;
-    }
-    h3 {
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
-      margin-bottom: 0.75rem;
-      color: var(--accent);
-    }
-    h4 {
-      font-size: clamp(1.2rem, 2vw, 1.5rem);
-      margin-bottom: 0.5rem;
-      color: var(--text);
-    }
-    p {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-    strong {
-      color: var(--accent);
-      font-weight: 700;
-    }
-    ul.benefits-list {
-      margin: 1.5rem 0;
-      padding-left: 1.5rem;
-      line-height: 1.8;
-      text-align: left;
-    }
-    ul.benefits-list li {
-      margin-bottom: 0.75rem;
-      position: relative;
-    }
-    ul.benefits-list li::before {
-      content: "•";
-      color: var(--accent);
-      font-weight: bold;
-      display: inline-block;
-      width: 1em;
-      margin-left: -1em;
-    }
-    /* Enhanced Button */
-    .btn {
-      font-size: 1.05rem;
-      font-weight: 700;
-      padding: 1em 2.8em;
-      border: none;
-      border-radius: var(--radius);
-      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-      color: #ffffff;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.8em;
-      transition: all var(--dur) var(--ease);
-      box-shadow: var(--shadow), var(--accent-glow);
-      min-width: 240px;
-      text-decoration: none;
-      letter-spacing: 0.02em;
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-    }
-    .btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
-      transition: left 0.6s;
-      z-index: -1;
-    }
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1), var(--accent-glow);
-    }
-    .btn:hover::before {
-      left: 100%;
-    }
-    .btn-secondary {
-      background: transparent;
-      color: var(--accent);
-      border: 1.5px solid var(--accent);
-      box-shadow: 0 0 20px rgba(13, 27, 62, 0.1);
-    }
-    .btn-secondary:hover {
-      background: rgba(13, 27, 62, 0.05);
-      box-shadow: 0 0 30px rgba(13, 27, 62, 0.2);
-    }
-    /* Sleeker Header */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      backdrop-filter: blur(20px) saturate(180%);
-      background: rgba(255, 255, 255, 0.92);
-      border-bottom: 1px solid var(--border);
-      padding: 0.8rem 2rem; /* Reduced padding */
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: var(--header-height); /* Reduced height */
-      box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
-    }
-    .logo {
-      font-weight: 800;
-      font-size: 1.8rem; /* Slightly smaller */
-      letter-spacing: -0.03em;
-      display: flex;
-      align-items: center;
-      color: var(--text);
-      text-decoration: none;
-    }
-    .logo span {
-      color: var(--accent);
-      margin-left: 0.2em;
-    }
-    nav {
-      display: flex;
-      gap: 2rem; /* Reduced gap */
-      align-items: center;
-    }
-    nav a {
-      font-size: 0.95rem; /* Slightly smaller font */
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      padding: 0.4rem 0; /* Reduced padding */
-      position: relative;
-      color: var(--text-muted);
-      text-decoration: none;
-      transition: color var(--dur);
-    }
-    nav a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--accent);
-      border-radius: 1px;
-      transition: width var(--dur);
-    }
-    nav a:hover {
-      color: var(--accent);
-    }
-    nav a:hover::after {
-      width: 100%;
-    }
-    .nav-cta {
-      margin-left: 1.5rem; /* Reduced left margin */
-    }
-    /* Hero */
-    .hero {
-      padding: calc(var(--header-height) + 2rem) 2rem 4rem;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background: radial-gradient(ellipse at center, rgba(13, 27, 62, 0.06) 0%, transparent 70%);
-      gap: 2rem;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-content {
-      max-width: 1000px;
-      margin: 0 auto;
-      width: 100%;
-    }
-    .hero p {
-      font-size: 1.25rem;
-      max-width: 65ch;
-      margin: 0 auto 2.5rem;
-    }
-    .youtube-embed {
-      width: 100%;
-      max-width: 900px;
-      aspect-ratio: 16 / 9;
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow), 0 0 40px rgba(13, 27, 62, 0.12);
-      margin: 2rem auto;
-      border: 1px solid var(--border);
-      transition: transform var(--dur), box-shadow var(--dur);
-    }
-    .youtube-embed:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), var(--accent-glow);
-    }
-    .youtube-embed iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-    .hero-cta {
-      display: flex;
-      gap: 1.5rem;
-      justify-content: center;
-      margin-top: 2rem;
-      flex-wrap: wrap;
-      width: 100%;
-    }
-    /* Sections */
-    section {
-      padding: 9rem 2rem;
-      max-width: 1440px;
-      margin: 0 auto;
-      position: relative;
-      width: 100%;
-    }
-    .section-title {
-      text-align: center;
-      margin-bottom: 3rem;
-      position: relative;
-      width: 100%;
-    }
-    .section-intro {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto 4rem;
-      font-size: 1.2rem;
-      width: 100%;
-    }
-    /* Trainer Cards */
-    .trainer-showcase {
-      background-color: #000;
-      padding: 3rem 2rem;
-      border: 2px solid silver;
-      margin: 0 auto 5rem;
-      max-width: 1440px;
-    }
-    .trainer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.8rem;
-      margin-top: 2rem;
-    }
-    .trainer-card {
-      background-color: #111;
-      border: 1px solid silver;
-      padding: 1.8rem;
-      text-align: center;
-      border-radius: var(--radius);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .trainer-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
-    }
-    .trainer-card h3 {
-      color: #fff;
-      margin-bottom: 0.8rem;
-      font-size: 1.35rem;
-      line-height: 1.3;
-    }
-    .trainer-card p {
-      color: #ddd;
-      font-size: 0.95rem;
-      margin: 0 0 1.2rem;
-      line-height: 1.5;
-    }
-    /* Cards */
-    .card {
-      background: var(--card-bg);
-      padding: 3rem;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      transition: all var(--dur) var(--ease);
-      backdrop-filter: blur(10px);
-      height: 100%;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      box-shadow: var(--shadow);
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 0 30px rgba(13, 27, 62, 0.15);
-      border-color: var(--accent);
-    }
-    .card h3 {
-      color: var(--accent);
-      margin-bottom: 1.25rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-    }
-    .card h3 i {
-      font-size: 1.5rem;
-      filter: drop-shadow(0 0 10px var(--accent));
-    }
-    .benefits-list {
-      margin: 1.5rem 0;
-      padding-left: 1.5rem;
-      line-height: 1.8;
-    }
-    .benefits-list li {
-      margin-bottom: 0.75rem;
-    }
-    /* Grids */
-    .problem-solution,
-    .use-cases,
-    .revenue-models,
-    .outcomes-grid,
-    .partners-grid {
-      display: grid;
-      gap: 2.5rem;
-      width: 100%;
-    }
-    .problem-solution {
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-    .use-cases {
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    }
-    .revenue-models {
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    }
-    .outcomes-grid {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-    .partners-grid {
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-    /* Steps */
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2.5rem;
-      margin-top: 3.5rem;
-      width: 100%;
-    }
-    .step {
-      background: var(--card-bg);
-      padding: 2.5rem;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      text-align: center;
-      position: relative;
-      backdrop-filter: blur(10px);
-      transition: all var(--dur);
-    }
-    .step:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08), 0 0 20px rgba(13, 27, 62, 0.12);
-    }
-    .step-number {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--accent);
-      margin-bottom: 1rem;
-      display: inline-block;
-      width: 64px;
-      height: 64px;
-      line-height: 64px;
-      border-radius: 50%;
-      background: rgba(13, 27, 62, 0.08);
-      border: 1.5px solid var(--accent);
-      box-shadow: var(--accent-glow);
-    }
-    /* Use Case */
-    .use-case {
-      background: var(--card-bg);
-      padding: 2.2rem;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      text-align: left;
-      backdrop-filter: blur(10px);
-      height: 100%;
-      transition: all var(--dur);
-      position: relative;
-      overflow: hidden;
-    }
-    .use-case:hover {
-      border-color: var(--accent);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06), 0 0 15px rgba(13, 27, 62, 0.1);
-    }
-    .use-case h4 {
-      color: var(--accent);
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      text-align: left;
-    }
-    .use-case h4 i {
-      font-size: 1.25rem;
-      filter: drop-shadow(0 0 5px var(--accent));
-    }
-    /* Demo Buttons */
-    .demo-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1.8rem;
-      margin: 3.5rem 0;
-      flex-wrap: wrap;
-      width: 100%;
-    }
-    /* Partners */
-    .partners {
-      margin-top: 3.5rem;
-      text-align: center;
-      width: 100%;
-    }
-    .partner-links {
-      display: flex;
-      justify-content: center;
-      gap: 2.2rem;
-      margin-top: 1rem;
-      flex-wrap: wrap;
-    }
-    .partner-links a {
-      color: var(--accent);
-      font-weight: 500;
-      font-size: 0.95rem;
-      text-decoration: none;
-      padding: 0.5rem 1.2rem;
-      border: 1px solid var(--border);
-      border-radius: 30px;
-      transition: all var(--dur);
-      position: relative;
-      overflow: hidden;
-    }
-    .partner-links a::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 0;
-      height: 100%;
-      background: var(--accent);
-      transition: width var(--dur);
-      z-index: -1;
-    }
-    .partner-links a:hover {
-      color: #ffffff;
-      border-color: var(--accent);
-    }
-    .partner-links a:hover::before {
-      width: 100%;
-    }
-    /* Cal Booking */
-    .cal-booking {
-      background: var(--card-bg);
-      border-radius: var(--radius);
-      overflow: hidden;
-      padding: 4.5rem 2.5rem;
-      border: 1px solid var(--border);
-      backdrop-filter: blur(10px);
-      width: 100%;
-      text-align: center;
-      box-shadow: var(--shadow);
-    }
-    .cal-booking p {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 3.5rem;
-      font-size: 1.2rem;
-    }
-    #my-cal-inline-south-africa {
-      width: 100%;
-      height: 600px;
-      border: none;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      margin: 0 auto;
-      display: block;
-    }
-    /* Footer */
-    footer {
-      padding: 5.5rem 2.5rem 2.5rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 3.5rem;
-      border-top: 1px solid var(--border);
-      font-size: 0.95rem;
-      background: var(--bg-soft);
-      width: 100%;
-      text-align: center;
-    }
-    .footer-section {
-      text-align: center;
-    }
-    .footer-section h3 {
-      color: var(--accent);
-      font-size: 1.5rem;
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-    }
-    .social-links {
-      display: flex;
-      gap: 1rem;
-      margin-top: 1.5rem;
-      justify-content: center;
-    }
-    .social-icon {
-      width: 46px;
-      height: 46px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: var(--bg);
-      color: var(--text-muted);
-      transition: all var(--dur);
-      text-decoration: none;
-      border: 1px solid var(--border);
-    }
-    .social-icon:hover {
-      background: var(--accent);
-      color: #ffffff;
-      transform: translateY(-3px);
-      box-shadow: var(--accent-glow);
-    }
-    .copyright {
-      grid-column: 1 / -1;
-      text-align: center;
-      margin-top: 3.5rem;
-      color: var(--text-muted);
-      padding-top: 2.5rem;
-      border-top: 1px solid var(--border);
-      font-size: 0.9rem;
-    }
-    .footer-links {
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-      align-items: center;
-    }
-    .footer-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      transition: color var(--dur);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.95rem;
-    }
-    .footer-links a:hover {
-      color: var(--accent);
-    }
-    .footer-links a i {
-      font-size: 0.9rem;
-    }
-    /* Stats Counter */
-    .stats-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2.5rem;
-      margin: 5rem 0;
-      width: 100%;
-    }
-    .stat {
-      text-align: center;
-      padding: 2.5rem;
-      background: var(--card-bg);
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      transition: all var(--dur);
-      position: relative;
-      overflow: hidden;
-    }
-    .stat:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08), 0 0 20px rgba(13, 27, 62, 0.12);
-    }
-    .stat-number {
-      font-size: 3rem;
-      font-weight: 700;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-      text-shadow: 0 0 10px rgba(13, 27, 62, 0.2);
-    }
-    .stat-label {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-    /* Partner Card */
-    .partner-card {
-      background: var(--card-bg);
-      padding: 3rem;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      text-align: center;
-      backdrop-filter: blur(10px);
-      height: 100%;
-      transition: all var(--dur);
-      position: relative;
-      overflow: hidden;
-    }
-    .partner-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08), 0 0 20px rgba(13, 27, 62, 0.12);
-      border-color: var(--accent);
-    }
-    .partner-card h3 {
-      color: var(--accent);
-      margin-bottom: 1.5rem;
-      font-size: 1.7rem;
-    }
-    .partner-card p {
-      text-align: left;
-      margin-bottom: 1.5rem;
-      font-size: 1.05rem;
-    }
-    .partner-card ul {
-      text-align: left;
-      margin: 1.5rem 0;
-      padding-left: 1.5rem;
-    }
-    .partner-card ul li {
-      margin-bottom: 0.5rem;
-      position: relative;
-    }
-    .partner-card ul li::before {
-      content: "•";
-      color: var(--accent);
-      font-weight: bold;
-      display: inline-block;
-      width: 1em;
-      margin-left: -1em;
-    }
-    /* Mobile Menu Button */
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      color: var(--accent);
-      font-size: 1.6rem;
-      cursor: pointer;
-      transition: all var(--dur);
-    }
-    .mobile-menu-btn:hover {
-      transform: scale(1.1);
-      filter: drop-shadow(0 0 10px var(--accent));
-    }
-    /* Responsive */
-    @media (max-width: 768px) {
-      header {
-        padding: 0.8rem 1.2rem; /* Adjusted padding for mobile */
-      }
-      nav {
-        display: none;
-      }
-      .mobile-menu-btn {
-        display: block;
-      }
-      h1 {
-        font-size: 2.4rem;
-        max-width: 22ch;
-      }
-      h2 {
-        font-size: 1.9rem;
-      }
-      h3 {
-        font-size: 1.6rem;
-      }
-      .btn {
-        padding: 0.9em 2em;
-        font-size: 0.97rem;
-        min-width: 200px;
-      }
-      section {
-        padding: 5rem 1.5rem;
-      }
-      .hero {
-        padding: calc(var(--header-height) + 1.5rem) 1.5rem 4rem;
-      }
-      .demo-buttons {
-        flex-direction: column;
-        align-items: center;
-      }
-      .hero-cta {
-        flex-direction: column;
-        align-items: center;
-      }
-      .stats-container {
-        grid-template-columns: 1fr;
-      }
-      .footer-section h3 {
-        justify-content: center;
-      }
-      footer {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      .footer-links {
-        align-items: center;
-      }
-      .partners-grid {
-        grid-template-columns: 1fr;
-      }
-      .trainer-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    /* WhatsApp Widget */
-    .whatsapp-widget {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      z-index: 1000;
-    }
-    .whatsapp-button {
-      width: 62px;
-      height: 62px;
-      border-radius: 50%;
-      background: #25d366;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 6px 24px rgba(37, 211, 102, 0.4);
-      transition: all var(--dur);
-      animation: pulse 2s infinite;
-    }
-    .whatsapp-button:hover {
-      transform: scale(1.12);
-      box-shadow: 0 8px 32px rgba(37, 211, 102, 0.55);
-    }
-    .whatsapp-svg {
-      width: 30px;
-      height: 30px;
-      fill: white;
-    }
-    @keyframes pulse {
-      0% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-      }
-      70% {
-        box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);
-      }
-      100% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-      }
-    }
-    /* PRICING SECTION */
-    .pricing-section {
-      background: var(--bg-soft);
-      padding: 6rem 2rem;
-      text-align: center;
-    }
-    .pricing-intro {
-      max-width: 800px;
-      margin: 0 auto 3rem;
-      font-size: 1.2rem;
-    }
-    .pricing-tiers {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .pricing-tier {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 2.5rem 2rem;
-      text-align: center;
-      box-shadow: var(--shadow);
-      transition: all var(--dur);
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .pricing-tier:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-      border-color: var(--accent);
-    }
-    .tier-name {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: var(--accent);
-    }
-    .tier-minutes {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: var(--text);
-    }
-    .tier-price {
-      font-size: 2.5rem;
-      font-weight: 800;
-      margin-bottom: 1.5rem;
-      color: var(--accent);
-    }
-    .tier-description {
-      font-size: 1rem;
-      color: var(--text-muted);
-      margin-bottom: 1.5rem;
-    }
-    .tier-features {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 auto;
-      width: 100%;
-    }
-    .tier-features li {
-      padding: 0.75rem 0;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-    }
-    .tier-features li:last-child {
-      border-bottom: none;
-    }
-    .tier-features li i {
-      color: var(--accent);
-    }
-    .btn-pricing {
-      display: inline-block;
-      background: var(--accent);
-      color: white;
-      font-weight: 700;
-      padding: 0.8em 1.5em;
-      font-size: 1rem;
-      min-width: auto;
-      margin-top: 1.5rem;
-      border-radius: 6px;
-      box-shadow: 0 4px 10px rgba(13, 27, 62, 0.15);
-      text-align: center;
-      width: 100%;
-      text-decoration: none;
-      transition: all var(--dur);
-    }
-    .btn-pricing:hover {
-      background: var(--accent-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 14px rgba(13, 27, 62, 0.2);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariba Media | Enterprise AI Solutions & Consultancy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0066ff;
+            --primary-dark: #0040cc;
+            --secondary: #6b46c1;
+            --accent: #10b981;
+            --text-primary: #1a1a1a;
+            --text-secondary: #666666;
+            --text-muted: #999999;
+            --background: #ffffff;
+            --background-light: #fafafa;
+            --border: #e5e5e5;
+            --border-light: #f0f0f0;
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+            --radius: 12px;
+            --radius-sm: 8px;
+            --radius-lg: 16px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--background);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            letter-spacing: -0.025em;
+        }
+        
+        h1 { font-size: 3.5rem; font-weight: 700; }
+        h2 { font-size: 2.75rem; }
+        h3 { font-size: 1.875rem; }
+        h4 { font-size: 1.5rem; }
+        h5 { font-size: 1.25rem; }
+        h6 { font-size: 1.125rem; }
+        
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        
+        .text-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .container {
+            max-width: 1200px;
+            padding: 0 1.5rem;
+        }
+        
+        /* Navigation */
+        .navbar {
+            padding: 1.5rem 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-light);
+            transition: var(--transition);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        
+        .navbar.scrolled {
+            padding: 1rem 0;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .navbar-brand {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.025em;
+        }
+        
+        .navbar-nav {
+            align-items: center;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary);
+            background-color: rgba(0, 102, 255, 0.05);
+            transform: translateY(-1px);
+        }
+        
+        .nav-link.active {
+            color: var(--primary);
+            background-color: rgba(0, 102, 255, 0.1);
+            font-weight: 600;
+        }
+        
+        .btn {
+            font-weight: 500;
+            border-radius: var(--radius-sm);
+            padding: 0.75rem 1.5rem;
+            border: none;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+        
+        .btn-outline:hover {
+            background: var(--text-primary);
+            color: white;
+        }
+        
+        .btn-outline-primary {
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+        
+        .btn-outline-primary:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-light {
+            background: white;
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+        
+        .btn-light:hover {
+            background: var(--background-light);
+        }
+        
+        .btn-lg {
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 8rem 0 6rem;
+            background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(0, 102, 255, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(0, 102, 255, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-description {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+        
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .hero-visual {
+            position: relative;
+        }
+        
+        .stats-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-xl);
+            border: 1px solid var(--border-light);
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+        
+        .stats-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        
+        /* Stats Section */
+        .stats {
+            padding: 5rem 0;
+            background: var(--background-light);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .stats-grid-main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-light);
+            transition: var(--transition);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .stat-card:hover .stat-icon {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 102, 255, 0.3);
+        }
+        
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 6rem 0;
+            background: white;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .section-title {
+            font-size: 2.75rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-description {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        
+        .product-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+        }
+        
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary);
+        }
+        
+        .product-card:hover .product-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .product-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .product-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-icon-bg-1 {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        }
+        
+        .product-icon-bg-2 {
+            background: linear-gradient(135deg, var(--secondary), #9333ea);
+        }
+        
+        .product-icon-bg-3 {
+            background: linear-gradient(135deg, var(--accent), #059669);
+        }
+        
+        .product-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+        
+        .product-subtitle {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .product-description {
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+        
+        .feature-icon {
+            color: var(--accent);
+            font-size: 0.875rem;
+            transition: var(--transition);
+        }
+        
+        .feature-item:hover .feature-icon {
+            transform: scale(1.2);
+        }
+        
+        /* Process Section */
+        .process {
+            padding: 6rem 0;
+            background: var(--background-light);
+        }
+        
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        
+        .process-step {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: white;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-light);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .process-step::after {
+            content: '';
+            position: absolute;
+            top: 2rem;
+            right: -1.25rem;
+            width: 2.5rem;
+            height: 2px;
+            background: var(--border);
+            display: none;
+        }
+        
+        .process-step:last-child::after {
+            display: none;
+        }
+        
+        .process-step:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary);
+        }
+        
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        /* ICP Section */
+        .icp {
+            padding: 6rem 0;
+            background: white;
+        }
+        
+        .icp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .icp-card {
+            padding: 2rem;
+            background: var(--background-light);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .icp-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .icp-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .icp-description {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+        
+        .icp-list {
+            text-align: left;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        .icp-list li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.05"><circle cx="30" cy="30" r="2"/></g></svg>') repeat;
+            pointer-events: none;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta h2 {
+            font-size: 2.75rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+        
+        .cta p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* Footer */
+        .footer {
+            padding: 4rem 0 2rem;
+            background: var(--text-primary);
+            color: white;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-section h5 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+        }
+        
+        .footer-section p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .pulse-glow {
+            animation: pulseGlow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes pulseGlow {
+            from { box-shadow: 0 0 20px rgba(0, 102, 255, 0.3); }
+            to { box-shadow: 0 0 30px rgba(0, 102, 255, 0.6); }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .process-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero-description { font-size: 1.125rem; }
+            .section-title { font-size: 2.25rem; }
+            .cta h2 { font-size: 2.25rem; }
+            .hero-actions { flex-direction: column; align-items: stretch; }
+            .stats-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .cta-actions { flex-direction: column; align-items: center; }
+            .process-step::after { display: none; }
+            .process-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+        }
+        
+        @media (max-width: 576px) {
+            .container { padding: 0 1rem; }
+            .hero { padding: 6rem 0 4rem; }
+            .products { padding: 4rem 0; }
+            .process { padding: 4rem 0; }
+            .cta { padding: 4rem 0; }
+        }
+    </style>
 </head>
 <body>
-  <!-- HEADER -->
-  <header>
-    <a href="#" class="logo">Mariba<span>Media</span></a>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#solution">Solution</a>
-      <a href="#use-cases">Use Cases</a>
-      <a href="#trainers">Our Trainers</a>
-      <a href="#lifetime-partnership">Partnership</a>
-      <a href="#booking">Get Started</a>
-      <div class="nav-cta">
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn btn-secondary">Schedule Demo</a>
-      </div>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                Mariba Media
+            </a>
+            
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#solutions">Solutions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#process">Process</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cta">Contact</a>
+                    </li>
+                </ul>
+                <div class="ms-lg-3 mt-3 mt-lg-0">
+                    <a href="https://cal.com/partner-discovery/south-africa" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-calendar"></i>
+                        Schedule Demo
+                    </a>
+                </div>
+            </div>
+        </div>
     </nav>
-    <button class="mobile-menu-btn">
-      <i class="fas fa-bars"></i>
-    </button>
-  </header>
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <h1>Cut 80% of training costs with Dedicated On-Demand Expert Trainers</h1>
-      <p>A dedicated team of specialist trainer consultants, powered by AI, to provide personalized coaching, automated assessment, and guaranteed results.</p>
-      <div class="youtube-embed">
-        <iframe 
-          src="https://lab.anam.ai/frame/4vEi5xh7LlMleNwusv8hA" 
-          width="720" 
-          height="480" 
-          allow="microphone"
-        ></iframe>
-      </div>
-      <div class="hero-cta">
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn" target="_blank" rel="noopener">
-          <i class="fas fa-calendar-check"></i> Schedule Demo
-        </a>
-        <a href="https://app.colossyan.com/videos/86851529-f9e2-4c93-b7f7-30ad7e3d5a04" class="btn btn-secondary" target="_blank">
-          <i class="fas fa-play-circle"></i> Watch Demo
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- STATS -->
-  <div class="stats-container">
-    <div class="stat">
-      <div class="stat-number" data-target="80">0</div>
-      <div class="stat-label">Reduction in Training Costs</div>
-    </div>
-    <div class="stat">
-      <div class="stat-number" data-target="95">0</div>
-      <div class="stat-label">Learner Retention Rate</div>
-    </div>
-    <div class="stat">
-      <div class="stat-number" data-target="100">0</div>
-      <div class="stat-label">Languages Supported</div>
-    </div>
-    <div class="stat">
-      <div class="stat-number" data-target="0">0</div>
-      <div class="stat-label">Manual Grading</div>
-    </div>
-  </div>
-  
-  <!-- TRAINERS SECTION (MODIFIED) -->
-  <section class="trainer-showcase" id="trainers">
-    <h2 class="section-title" style="color: white;">Meet Your Dedicated Team of Expert Trainer Consultants</h2>
-    <p class="section-intro" style="color: #ccc; max-width: 800px; margin: 0 auto;">
-      Our AI platform amplifies the impact of our hand-picked specialists, giving you an unbeatable combination of human expertise and technological efficiency.
-    </p>
-    <div class="trainer-grid">
-      <div class="trainer-card">
-        <h3>Healthcare Training</h3>
-        <p>Trainers creating and delivering healthcare product training online, scalable for consistent education with 24/7 availability and personalized learner support.</p>
-      </div>
-      <div class="trainer-card">
-        <h3>K-12 Tutor</h3>
-        <p>Specialized tutors providing academic support across all subjects and grade levels for primary and secondary school students with personalized learning paths.</p>
-      </div>
-      <div class="trainer-card">
-        <h3>ESL TEFL Instructor</h3>
-        <p>Certified trainers providing crucial support for final high school examinations and English language learners with adaptive, interactive teaching methods.</p>
-      </div>
-      <div class="trainer-card">
-        <h3>Corporate Learning and Development Trainer</h3>
-        <p>Training officers for employee upskilling across industries, deployable as AI avatars for scalable, repeatable training sessions.</p>
-      </div>
-      <div class="trainer-card">
-        <h3>B2B SaaS Sales Trainer</h3>
-        <p>Remote sales trainers for SaaS solutions deliver onboarding and coaching, where avatars can enable scalable personalized video coaching.</p>
-      </div>
-      <div class="trainer-card">
-        <h3>Recruitment & Admission Officer</h3> <!-- CHANGED -->
-        <p>Specialist officers managing applicant screening, interviews, and onboarding processes; AI avatars can automate initial candidate engagement and qualification.</p> <!-- NEW DESCRIPTION -->
-      </div>
-      <div class="trainer-card">
-        <h3>Addiction & Trauma Counselor</h3> <!-- CHANGED -->
-        <p>Qualified counselors providing confidential support and therapeutic guidance; AI ensures complete privacy and creates a safe space for clients to express freely.</p> <!-- NEW DESCRIPTION -->
-      </div>
-      <div class="trainer-card">
-        <h3>Remote Lead Generation & Appointment Setting</h3>
-        <p>Lead generation and appointment setter roles widely demanded remotely; AI avatars can handle initial engagement and qualify prospects.</p>
-      </div>
-    </div>
-  </section>
-  <!-- PROBLEM -->
-  <section id="solution">
-    <h2 class="section-title">The Problem: Why Traditional Training Fails</h2>
-    <p class="section-intro">Are you facing these challenges in your current training approach?</p>
-    <div class="problem-solution">
-      <div class="card">
-        <h3><i class="fas fa-chart-line"></i> High & Linear Training Costs</h3>
-        <ul class="benefits-list">
-          <li>Budgets balloon as learner numbers grow.</li>
-          <li>Instructor costs increase linearly with scale.</li>
-          <li>Physical materials and venues add significant expenses.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3><i class="fas fa-tachometer-alt"></i> Inconsistent Quality</h3>
-        <ul class="benefits-list">
-          <li>Delivery varies across campuses and franchises, compromising quality.</li>
-          <li>Different instructors deliver content with varying effectiveness.</li>
-          <li>Lack of standardization leads to knowledge gaps.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3><i class="fas fa-tasks"></i> Administrative Overload</h3>
-        <ul class="benefits-list">
-          <li>Manual grading, certification, and reporting drain valuable resources.</li>
-          <li>Paper-based processes create bottlenecks and errors.</li>
-          <li>Tracking learner progress becomes increasingly complex.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3><i class="fas fa-user-check"></i> Low Learner Engagement</h3>
-        <ul class="benefits-list">
-          <li>Poor engagement leads to low pass rates and wasted training budgets.</li>
-          <li>Traditional methods fail to capture attention of modern learners.</li>
-          <li>Lack of interactivity reduces knowledge retention.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3><i class="fas fa-balance-scale"></i> Compliance & Accreditation Risks</h3>
-        <ul class="benefits-list">
-          <li>Failing audits due to incomplete or unverifiable training records.</li>
-          <li>Inability to prove regulatory compliance (e.g., POPIA, ISO, industry standards).</li>
-          <li>Legal and financial exposure from non-compliant certification issuance.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3><i class="fas fa-users"></i> Talent Retention & Brand Damage</h3>
-        <ul class="benefits-list">
-          <li>Employees leave due to outdated, boring, or ineffective training programs.</li>
-          <li>Franchisees and partners lose trust when training quality is inconsistent.</li>
-          <li>Reputation suffers as learners associate poor training with poor brand value.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- SOLUTION -->
-  <section id="solution">
-    <h2 class="section-title">The Solution: Your Intelligent Teaching Workforce</h2>
-    <p class="section-intro">Mariba Media is designed to solve these pain points by providing <strong>your own AI-powered teaching workforce that never sleeps</strong>.</p>
-    <div class="problem-solution">
-      <div class="card">
-        <h3><i class="fas fa-robot"></i> Automated Interactive Training</h3>
-        <ul class="benefits-list">
-          <li>Engage learners with dynamic content in video, chat, and adaptive learning paths.</li>
-          <li>AI-powered simulations create realistic training scenarios.</li>
-          <li>Personalized learning journeys for each student.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3><i class="fas fa-check-circle"></i> Auto-Grading & Instant Certification</h3>
-        <ul class="benefits-list">
-          <li>Eliminate manual marking entirely with AI assessment.</li>
-          <li>Instant feedback and certification upon completion.</li>
-          <li>Detailed analytics on learner performance and knowledge gaps.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3><i class="fas fa-globe"></i> Global Reach & Accessibility</h3>
-        <ul class="benefits-list">
-          <li>Support 100+ languages with instant translation, transcription, and captioning.</li>
-          <li>Accessible on any device, anywhere in the world.</li>
-          <li>24/7 availability for learners in different time zones.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3><i class="fas fa-gamepad"></i> Gamified Engagement</h3>
-        <ul class="benefits-list">
-          <li>Achieve up to <strong>95% learner retention</strong> through interactive, gamified learning experiences.</li>
-          <li>Points, badges, and leaderboards motivate continuous learning.</li>
-          <li>Micro-learning modules fit into busy schedules.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3><i class="fas fa-expand-arrows-alt"></i> Scalable Delivery</h3>
-        <ul class="benefits-list">
-          <li>Seamlessly expand training across remote learners, multiple campuses, or global sites.</li>
-          <li>Handle thousands of concurrent learners without additional resources.</li>
-          <li>Cloud-based infrastructure grows with your needs.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3><i class="fas fa-clipboard-list"></i> Audit-Ready Reporting</h3>
-        <ul class="benefits-list">
-          <li>Ensure compliance and accreditation with robust, auditable reports.</li>
-          <li>Track every interaction and assessment for complete transparency.</li>
-          <li>Export customized reports for different stakeholders.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section id="how-it-works">
-    <h2 class="section-title">How It Works: Simple & Efficient Deployment</h2>
-    <p class="section-intro">Getting started with Mariba Media is straightforward and hassle-free</p>
-    <div class="steps">
-      <div class="step">
-        <div class="step-number">1</div>
-        <h3>Upload Your Content</h3>
-        <p>Provide your curriculum, rubrics, and assessments through our secure portal.</p>
-      </div>
-      <div class="step">
-        <div class="step-number">2</div>
-        <h3>AI Builds & Integrates</h3>
-        <p>Our system constructs interactive lessons and auto-grading engines tailored to your content.</p>
-      </div>
-      <div class="step">
-        <div class="step-number">3</div>
-        <h3>Quick Integration</h3>
-        <p>We integrate with your LMS/HR systems in just 2–4 weeks with minimal disruption.</p>
-      </div>
-      <div class="step">
-        <div class="step-number">4</div>
-        <h3>Start Delivering</h3>
-        <p>Begin training immediately and track accreditations in real time through our dashboard.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICING SECTION (ADDED BACK) -->
-  <section class="pricing-section" id="pricing">
-    <h2 class="section-title">Simple, Transparent Pricing</h2>
-    <p class="pricing-intro">Pay only for the minutes you use. Our avatars remember context, your users and payment will be linked to your account. Full Data Privacy Compliance. Request 30+ languages.</p>
-    <div class="pricing-tiers">
-      <div class="pricing-tier">
-        <h3 class="tier-name">Starter</h3>
-        <div class="tier-minutes">25 Minutes</div>
-        <div class="tier-price">R260</div>
-        <p class="tier-description">Perfect for small teams or individuals starting out.</p>
-        <ul class="tier-features">
-          <li><i class="fas fa-check"></i> Context Memory</li>
-          <li><i class="fas fa-check"></i> Full Data Privacy</li>
-          <li><i class="fas fa-check"></i> 30+ Languages</li>
-        </ul>
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn-pricing">Get Started</a>
-      </div>
-      <div class="pricing-tier">
-        <h3 class="tier-name">Professional</h3>
-        <div class="tier-minutes">100 Minutes</div>
-        <div class="tier-price">R899</div>
-        <p class="tier-description">Ideal for growing businesses needing consistent training.</p>
-        <ul class="tier-features">
-          <li><i class="fas fa-check"></i> Context Memory</li>
-          <li><i class="fas fa-check"></i> Full Data Privacy</li>
-          <li><i class="fas fa-check"></i> 30+ Languages</li>
-        </ul>
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn-pricing">Get Started</a>
-      </div>
-      <div class="pricing-tier">
-        <h3 class="tier-name">Enterprise</h3>
-        <div class="tier-minutes">1250 Minutes</div>
-        <div class="tier-price">R8000</div>
-        <p class="tier-description">For large organizations with extensive training needs.</p>
-        <ul class="tier-features">
-          <li><i class="fas fa-check"></i> Context Memory</li>
-          <li><i class="fas fa-check"></i> Full Data Privacy</li>
-          <li><i class="fas fa-check"></i> 30+ Languages</li>
-        </ul>
-        <a href="https://cal.com/partner-discovery/south-africa" class="btn-pricing">Get Started</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ROI CALCULATOR -->
-  <section id="roi-calculator">
-    <h2 class="section-title">Calculate Your Training ROI</h2>
-    <p class="section-intro">See your exact Rands saved with our pay-per-accreditation model — 60 seconds, no email</p>
-    <div style="max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border); backdrop-filter: blur(10px);">
-      <div style="background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: #ffffff; padding: 32px; text-align: center;">
-        <h1 style="font-size: 32px; margin-bottom: 10px; font-weight: 700; font-family: 'Lato', sans-serif;">Mariba Media ROI Calculator</h1>
-        <p style="opacity: 0.92; max-width: 600px; margin: 0 auto; font-size: 17px;">See your exact Rands saved with our pay-per-accreditation model - 60 seconds, no email</p>
-      </div>
-      <div style="padding: 32px;">
-        <div style="margin-bottom: 32px;">
-          <h2 style="font-size: 20px; font-weight: 700; margin-bottom: 20px; color: var(--text); display: flex; align-items: center;">
-            <span style="display: inline-block; width: 4px; height: 20px; background: var(--accent); margin-right: 12px; border-radius: 2px;"></span>
-            Your Current Training Data
-          </h2>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-            <div style="margin-bottom: 16px;">
-              <label style="display: block; margin-bottom: 8px; font-weight: 700; color: var(--text);">Learners trained per month</label>
-              <input type="number" id="learners" value="500" min="1" style="width: 100%; padding: 14px 18px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-soft); color: var(--text); font-size: 16px;">
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content">
+                    <div class="hero-badge" data-aos="fade-down">
+                        <i class="fas fa-code"></i>
+                        Custom Internal Software Development
+                    </div>
+                    
+                    <h1 data-aos="fade-up" data-aos-delay="100">
+                        Custom AI Software Development & Consultancy
+                    </h1>
+                    
+                    <p class="hero-description" data-aos="fade-up" data-aos-delay="200">
+                        We develop custom internal software solutions, AI-powered automation tools, and enterprise applications that integrate seamlessly with your existing systems to streamline operations and accelerate productivity.
+                    </p>
+                    
+                    <div class="hero-actions" data-aos="fade-up" data-aos-delay="300">
+                        <a href="https://cal.com/partner-discovery/south-africa" target="_blank" class="btn btn-primary btn-lg">
+                            <i class="fas fa-calendar"></i>
+                            Schedule Demo
+                        </a>
+                        <a href="#products" class="btn btn-outline btn-lg">
+                            <i class="fas fa-arrow-right"></i>
+                            Explore Products
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 hero-visual">
+                    <div class="stats-card float" data-aos="fade-left" data-aos-delay="400">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="stats-icon" style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                                <i class="fas fa-brain text-white" style="font-size: 1.5rem;"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-0">AI Solutions That Deliver</h4>
+                                <p class="text-muted mb-0" style="font-size: 0.95rem;">Cutting-edge automation platforms</p>
+                            </div>
+                        </div>
+                        
+                        <p class="mb-4">Cut operational costs by up to 80% with our intelligent automation platforms.</p>
+                        
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-number">80%</div>
+                                <div class="stat-label">Cost Reduction</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">5x</div>
+                                <div class="stat-label">Productivity Gain</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">95%</div>
+                                <div class="stat-label">Retention Rate</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div style="margin-bottom: 16px;">
-              <label style="display: block; margin-bottom: 8px; font-weight: 700; color: var(--text);">Current cost per learner (R)</label>
-              <input type="number" id="cost" value="1200" min="1" style="width: 100%; padding: 14px 18px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-soft); color: var(--text); font-size: 16px;">
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid-main">
+                <div class="stat-card fade-in" data-aos="fade-up">
+                    <div class="stat-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-number">80%</div>
+                    <div class="stat-label">Reduction in Training Costs & Time</div>
+                </div>
+                
+                <div class="stat-card fade-in" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">User Retention Rate</div>
+                </div>
+                
+                <div class="stat-card fade-in" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">Languages Supported</div>
+                </div>
+                
+                <div class="stat-card fade-in" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Manual Labor Eliminated</div>
+                </div>
             </div>
-            <div style="margin-bottom: 16px;">
-              <label style="display: block; margin-bottom: 8px; font-weight: 700; color: var(--text);">Current pass rate (%)</label>
-              <input type="number" id="passRate" value="65" min="1" max="100" style="width: 100%; padding: 14px 18px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-soft); color: var(--text); font-size: 16px;">
+        </div>
+    </section>
+
+    <!-- Ideal Customer Profile Section -->
+    <section class="icp" id="solutions">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Who We Serve</h2>
+                <p class="section-description">
+                    We build custom internal software applications, automation platforms, and AI-driven tools that seamlessly integrate with your existing infrastructure to enhance operational efficiency
+                </p>
             </div>
-          </div>
+            
+            <div class="icp-grid">
+                <div class="icp-card fade-in" data-aos="fade-up">
+                    <div class="icp-icon">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <h4 class="icp-title">Content Creators & Media Teams</h4>
+                    <p class="icp-description">
+                        Streamline content production, distribution, and audience engagement
+                    </p>
+                    <ul class="icp-list">
+                        <li>• Automated video editing workflows</li>
+                        <li>• Multi-platform content distribution</li>
+                        <li>• AI-powered audience analytics</li>
+                        <li>• Performance optimization tools</li>
+                    </ul>
+                </div>
+                
+                <div class="icp-card fade-in" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icp-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h4 class="icp-title">B2B Sales Organizations</h4>
+                    <p class="icp-description">
+                        Scale sales operations with intelligent lead generation and pipeline automation
+                    </p>
+                    <ul class="icp-list">
+                        <li>• Intelligent lead scoring systems</li>
+                        <li>• Automated outreach campaigns</li>
+                        <li>• Sales pipeline optimization</li>
+                        <li>• Custom B2B solution development</li>
+                    </ul>
+                </div>
+                
+                <div class="icp-card fade-in" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icp-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h4 class="icp-title">Training & Education Providers</h4>
+                    <p class="icp-description">
+                        Enhance learning outcomes with personalized, adaptive training solutions
+                    </p>
+                    <ul class="icp-list">
+                        <li>• Adaptive learning platforms</li>
+                        <li>• Real-time progress tracking</li>
+                        <li>• Multilingual support systems</li>
+                        <li>• Automated assessment tools</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div style="background: var(--bg-soft); border-radius: 10px; padding: 24px; margin-top: 24px;">
-          <h2 style="font-size: 20px; font-weight: 700; margin-bottom: 20px; color: var(--text); display: flex; align-items: center;">
-            <span style="display: inline-block; width: 4px; height: 20px; background: var(--accent); margin-right: 12px; border-radius: 2px;"></span>
-            Your Training Cost Analysis
-          </h2>
-          <div style="display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--border);">
-            <span style="font-weight: 700; color: var(--text);">Current monthly training cost</span>
-            <span style="font-weight: 700; color: var(--accent);" id="currentCost">R600,000</span>
-          </div>
-          <div style="display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--border);">
-            <span style="font-weight: 700; color: var(--text);">Wasted on failed training</span>
-            <span style="font-weight: 700; color: var(--error);" id="wasteAmount">R210,000</span>
-          </div>
-          <div style="display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--border);">
-            <span style="font-weight: 700; color: var(--text);">Lost productivity cost</span>
-            <span style="font-weight: 700; color: var(--error);" id="productivityLoss">R3,237,500</span>
-          </div>
-          <div style="display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--border);">
-            <span style="font-weight: 700; color: var(--text);">POPIA compliance risk score</span>
-            <span style="font-weight: 700; color: var(--warning);" id="complianceRisk">52.5%</span>
-          </div>
-          <div style="background: rgba(13, 27, 62, 0.08); border-left: 4px solid var(--accent); padding: 20px; border-radius: 0 8px 8px 0; margin: 24px 0;">
-            <div style="font-weight: 700; color: var(--text);">Your total monthly waste</div>
-            <div style="font-size: 32px; font-weight: 700; color: var(--error); margin: 12px 0;" id="totalWaste">R3,447,500</div>
-            <div style="font-weight: 700; color: var(--text-muted);">(This is what Mariba fixes)</div>
-          </div>
-          <div style="display: flex; justify-content: space-between; padding: 14px 0; font-weight: 700; color: var(--success);">
-            <span style="font-weight: 700; color: var(--text);">Mariba Media monthly savings</span>
-            <span style="font-weight: 700; color: var(--success);" id="savingsAmount">R168,000</span>
-          </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our AI Solutions Portfolio</h2>
+                <p class="section-description">
+                    Specialized platforms designed to transform how creators, sales teams, and educators work
+                </p>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card fade-in" data-aos="fade-up">
+                    <div class="product-icon product-icon-bg-1">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                    <h3 class="product-title">Focal</h3>
+                    <h5 class="product-subtitle">AI Media Platform</h5>
+                    <p class="product-description">
+                        An intelligent media creation and management platform that automates content production, editing, and distribution workflows for creators and media teams.
+                    </p>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <i class="fas fa-check feature-icon"></i>
+                            Automated video editing & production
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check feature-icon"></i>
+                            AI-powered content optimization
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check feature-icon"></i>
+                            Multi-platform distribution
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check feature-icon"></i>
+                            Audience engagement analytics
+                        </li>
+                    </ul>
+                    <a href="#" class="btn btn-outline-primary">
+                        <i class="fas fa-arrow-right"></i>
+                        Learn More
+                    </a>
+                </div>
+                
+                <div class="product-card fade-in" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-icon product-icon-bg-2">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="product-title">Concierge</h3>
+                    <h5 class="product-subtitle">B2B Development & Sales Platform</h5>
+                    <p class="product-description">
+                        A comprehensive platform that automates lead generation, qualification, and sales development processes while providing AI-powered business intelligence.
+                    </p>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <i class="fas fa-check feature-icon"></i>
+                            Intelligent lead scoring
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check feature-icon"></i>
+                            Automated outreach & follow-up
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check feature-icon"></i>
+                            Sales pipeline optimization
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check feature-icon"></i>
+                            Custom B2B solution development
+                        </li>
+                    </ul>
+                    <a href="#" class="btn btn-outline-primary">
+                        <i class="fas fa-arrow-right"></i>
+                        Learn More
+                    </a>
+                </div>
+                
+                <div class="product-card fade-in" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-icon product-icon-bg-3">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3 class="product-title">EFL AI</h3>
+                    <h5 class="product-subtitle">English Language Learning Platform</h5>
+                    <p class="product-description">
+                        An adaptive language learning platform that personalizes instruction for kids, teenagers, and adults with real-time feedback and progress tracking.
+                    </p>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <i class="fas fa-check feature-icon"></i>
+                            Personalized learning paths
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check feature-icon"></i>
+                            Real-time pronunciation feedback
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check feature-icon"></i>
+                            Interactive conversation practice
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check feature-icon"></i>
+                            Progress analytics & reporting
+                        </li>
+                    </ul>
+                    <a href="#" class="btn btn-outline-primary">
+                        <i class="fas fa-arrow-right"></i>
+                        Learn More
+                    </a>
+                </div>
+            </div>
         </div>
-        <div style="background: rgba(13, 27, 62, 0.05); border: 1px solid rgba(13, 27, 62, 0.2); border-radius: 8px; padding: 18px; margin-top: 18px; text-align: center;">
-          <strong style="display: block; margin-bottom: 8px; color: var(--accent);">Our Risk Reversal Guarantee:</strong> We only get paid when your learners pass. 
-          <br><strong style="display: block; margin-top: 8px; color: var(--accent);">No passes = no fees. Period.</strong>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How to Work With Us</h2>
+                <p class="section-description">
+                    Our streamlined process ensures we deliver maximum value with minimal disruption to your operations
+                </p>
+            </div>
+            
+            <div class="process-grid">
+                <div class="process-step fade-in" data-aos="fade-up">
+                    <div class="step-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h4>Discovery & Strategy</h4>
+                    <p>We begin with an in-depth analysis of your challenges and objectives to design a tailored AI solution strategy.</p>
+                </div>
+                
+                <div class="process-step fade-in" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-icon">
+                        <i class="fas fa-pencil-alt"></i>
+                    </div>
+                    <h4>Solution Design</h4>
+                    <p>Our experts create a detailed implementation plan with clear milestones, deliverables, and success metrics.</p>
+                </div>
+                
+                <div class="process-step fade-in" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h4>Development & Integration</h4>
+                    <p>We build and integrate your custom AI solution with minimal disruption to your existing workflows.</p>
+                </div>
+                
+                <div class="process-step fade-in" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4>Optimization & Support</h4>
+                    <p>We continuously monitor and optimize performance while providing ongoing support and enhancements.</p>
+                </div>
+                
+                <div class="process-step fade-in" data-aos="fade-up" data-aos-delay="400">
+                    <div class="step-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h4>Internal Integration</h4>
+                    <p>We ensure seamless integration with your existing systems, APIs, and workflows to maximize adoption and minimize disruption.</p>
+                </div>
+                
+                <div class="process-step fade-in" data-aos="fade-up" data-aos-delay="500">
+                    <div class="step-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h4>Team Enablement</h4>
+                    <p>We provide comprehensive training and documentation to ensure your team can fully leverage and maintain the custom solutions we've built.</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
+                <div style="background: white; border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 3rem; box-shadow: var(--shadow-sm);">
+                    <h4 style="margin-bottom: 1rem;">Ready to Transform Your Business with AI?</h4>
+                    <p style="margin-bottom: 2rem; color: var(--text-secondary);">Book your Enterprise Solutions Advisory Call today</p>
+                    <a href="https://cal.com/partner-discovery/south-africa" target="_blank" class="btn btn-primary btn-lg pulse-glow">
+                        <i class="fas fa-calendar"></i>
+                        Book Advisory Call
+                    </a>
+                </div>
+            </div>
         </div>
-        <div style="text-align: center; padding: 28px; background: rgba(13, 27, 62, 0.05); border-radius: 8px; margin-top: 24px;">
-          <h2 style="font-size: 24px; margin-bottom: 14px; color: var(--text); font-family: 'Lato', sans-serif;">Your Free Compliance Audit</h2>
-          <p style="color: var(--text-muted); margin-bottom: 22px; max-width: 600px; margin-left: auto; margin-right: auto;">
-            First 5 people to share their results get a FREE 30-minute audit with our team.
-            We'll show exactly how to fix your biggest training leak.
-          </p>
-          <a href="https://cal.com/partner-discovery/south-africa" style="display: inline-block; background: var(--accent); color: #ffffff; padding: 16px 32px; border-radius: 8px; font-weight: 700; text-decoration: none; transition: all 0.3s var(--ease); cursor: pointer; border: none; font-size: 16px; width: 100%; max-width: 420px;">
-            Share My Results → Get Free Audit
-          </a>
-          <div style="font-size: 13px; color: var(--text-muted); text-align: center; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--border);">
-            *Calculations based on South African enterprise training data. 
-            Lost productivity cost = R18,500/day per untrained hire. 
-            Compliance risk score = (100 - pass rate) × 1.5
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- USE CASES -->
-  <section id="use-cases">
-    <h2 class="section-title">Key Use Cases</h2>
-    <p class="section-intro">Mariba Media is ideal for any scenario requiring scalable, certifiable training</p>
-    <div class="use-cases">
-      <div class="use-case">
-        <h4><i class="fas fa-user-plus"></i> Employee Onboarding</h4>
-        <p>Automate and standardize onboarding for company policies, software, and safety protocols across all locations.</p>
-      </div>
-      <div class="use-case">
-        <h4><i class="fas fa-graduation-cap"></i> Continuing Professional Development</h4>
-        <p>Deliver ongoing training and certification to maintain licenses and update skills with automatic renewal reminders.</p>
-      </div>
-      <div class="use-case">
-        <h4><i class="fas fa-balance-scale"></i> Compliance & Regulatory Training</h4>
-        <p>Ensure staff complete mandatory training with audit-ready reporting and certification for compliance officers.</p>
-      </div>
-      <div class="use-case">
-        <h4><i class="fas fa-award"></i> Mass Certification Programs</h4>
-        <p>Scale standardized testing with auto-grading and instant results for large groups of learners.</p>
-      </div>
-      <div class="use-case">
-        <h4><i class="fas fa-university"></i> Multi-Campus & Global Training</h4>
-        <p>Deliver consistent training across locations and in 100+ languages with localized content.</p>
-      </div>
-      <div class="use-case">
-        <h4><i class="fas fa-book-open"></i> Academic Course Delivery</h4>
-        <p>Enhance university courses with 24/7 interactive learning and automated assessment for remote students.</p>
-      </div>
-      <div class="use-case">
-        <h4><i class="fas fa-store"></i> Franchise Training</h4>
-        <p>Ensure consistent quality and brand standards across all franchise locations with standardized training.</p>
-      </div>
-      <div class="use-case">
-        <h4><i class="fas fa-chart-line"></i> Sales & Product Training</h4>
-        <p>Train teams on new products with engaging, gamified content that improves knowledge retention.</p>
-      </div>
-      <div class="use-case">
-        <h4><i class="fas fa-check-double"></i> Internal Skill Validation</h4>
-        <p>Rapidly assess and certify employee proficiency in new tools or processes with objective AI evaluation.</p>
-      </div>
-    </div>
-  </section>
+    <!-- Cal inline embed code begins -->
+    <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-south-africa"></div>
+    <script type="text/javascript">
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "south-africa", {origin:"https://app.cal.com"});
 
-  <!-- LIFETIME PARTNERSHIP -->
-  <section id="lifetime-partnership">
-    <h2 class="section-title">🌟 Your Lifetime Partnership: Pay Only for What You Save</h2>
-    <p class="section-intro" style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">
-      <em>"This isn't a subscription. It's a partnership where we only get paid when we deliver real savings.<br>
-      You pay <strong>35% of your annual training cost savings</strong> – <strong>nothing if there are none</strong>.<br>
-      Every benefit, feature, and support level is included at no extra cost.<br>
-      No fixed term. No hidden fees. No vendor lock-in.<br><br>
-      This is how enterprise training should work."</em>
-    </p>
-    <div style="max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: var(--radius); border: 1px solid var(--border); padding: 2.5rem; margin-bottom: 2.5rem;">
-      <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--accent); font-family: 'Lato', sans-serif;">⚖️ Why Traditional Models Keep You Trapped in Costs</h3>
-      <table style="width: 100%; border-collapse: collapse;">
-        <thead>
-          <tr>
-            <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border);">Model</th>
-            <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border);">Your Risk</th>
-            <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border);">Our Incentive</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style="padding: 0.75rem; border: 1px solid var(--border);"><strong>One-Time Setup Fee<br>(Traditional Licensing)</strong></td>
-            <td style="padding: 0.75rem; border: 1px solid var(--border);">❌ Annual maintenance hikes<br>❌ Per-learner fees<br>❌ No ROI guarantee</td>
-            <td style="padding: 0.75rem; border: 1px solid var(--border);">🔄 We profit whether you save or not</td>
-          </tr>
-          <tr>
-            <td style="padding: 0.75rem; border: 1px solid var(--border);"><strong>Pay-Per-Accreditation<br>(Fixed Fee/Learner)</strong></td>
-            <td style="padding: 0.75rem; border: 1px solid var(--border);">❌ Pay even when learners fail<br>❌ Costs scale with growth<br>❌ No flexibility for variable needs</td>
-            <td style="padding: 0.75rem; border: 1px solid var(--border);">🔄 We profit from volume, not results</td>
-          </tr>
-          <tr>
-            <td style="padding: 0.75rem; border: 1px solid var(--border);"><strong>Fixed Subscriptions<br>(Monthly/Annual Fees)</strong></td>
-            <td style="padding: 0.75rem; border: 1px solid var(--border);">❌ Pay regardless of outcomes<br>❌ Hidden costs for upgrades<br>❌ No control over budget volatility</td>
-            <td style="padding: 0.75rem; border: 1px solid var(--border);">🔄 We profit from your ongoing pain</td>
-          </tr>
-        </tbody>
-      </table>
-      <p style="text-align: center; margin-top: 1rem; font-style: italic; color: var(--text-muted);">"Traditional models are designed to keep you paying – regardless of results. We built this partnership to end that cycle."</p>
-    </div>
-    <div style="text-align: center; margin: 2.5rem auto; max-width: 800px;">
-      <a href="https://cal.com/partner-discovery/south-africa" class="btn" style="display: inline-block; margin: 1rem; padding: 1rem 2.5rem; font-size: 1.1rem;">
-        <i class="fas fa-calendar-check"></i> Claim Your Lifetime Partnership
-      </a>
-      <p style="margin-top: 1.5rem; font-size: 0.95rem; color: var(--text-muted);">
-        P.S. This partnership has no fixed term. You can pause or cancel anytime – but after seeing your first year's savings, you'll wonder why you ever paid for training any other way.<br>
-        P.P.S. If we don't save you money, you pay $0. Period. That's the power of true alignment.
-      </p>
-    </div>
-  </section>
-
-  <!-- DEMO -->
-  <section id="demo">
-    <h2 class="section-title">See Mariba Media in Action</h2>
-    <p class="section-intro">Experience the future of AI-driven training with our interactive demos</p>
-    <div class="demo-buttons">
-      <a href="https://app.colossyan.com/videos/86851529-f9e2-4c93-b7f7-30ad7e3d5a04" target="_blank" class="btn">
-        <i class="fas fa-play-circle"></i> Watch AI Training Demo
-      </a>
-      <a href="https://cal.com/partner-discovery/south-africa" class="btn btn-secondary">
-        <i class="fas fa-calendar-check"></i> Schedule Live Demo
-      </a>
-    </div>
-    <div class="partners">
-      <p><strong>Technology Partners:</strong></p>
-      <div class="partner-links">
-        <a href="https://tavus.io" target="_blank" rel="noopener">Tavus.io</a>
-        <a href="https://heygen.com" target="_blank" rel="noopener">HeyGen.com</a>
-        <a href="https://coursebox.ai" target="_blank" rel="noopener">Coursebox.ai</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- STRATEGIC PARTNERS -->
-  <section id="strategic-partners" style="padding: 8rem 2rem 6rem;">
-    <h2 class="section-title">Our Strategic Partners</h2>
-    <p class="section-intro">We collaborate with industry leaders to provide comprehensive, innovative solutions that drive your success.</p>
-    <div class="partners-grid">
-      <div class="partner-card">
-        <h3><i class="fas fa-solar-panel"></i> Urban Holding Solar</h3>
-        <p>Urban Holding Solar provides comprehensive, tailored solar solutions for diverse energy needs, helping you reduce costs and embrace sustainability.</p>
-        <ul>
-          <li><strong>Commercial Solar:</strong> Custom systems to maximize efficiency and reduce operational costs for businesses.</li>
-          <li><strong>Residential Solar:</strong> Empower homes with renewable energy, reducing bills and carbon footprints.</li>
-          <li><strong>Agricultural Solar:</strong> Power farms sustainably, boosting productivity and saving on energy costs.</li>
-        </ul>
-      </div>
-      <div class="partner-card">
-        <h3><i class="fas fa-boxes"></i> Commodity Suppliers Dataroom</h3>
-        <p>Managed by Mr. Kassanje, this dataroom is a centralized hub for global commodity trading, offering verified procedures and offers for key resources.</p>
-        <ul>
-          <li>Access to critical documents for commodities like Copper Cathode, ICUMSA 45 Sugar, and Manganese.</li>
-          <li>Streamlined processes for buyers and sellers in the global commodities market.</li>
-          <li>Ensures transparency and efficiency in high-value international trade.</li>
-        </ul>
-      </div>
-      <div class="partner-card">
-        <h3><i class="fas fa-wind"></i> Commercial Solar LLC</h3>
-        <p>Commercial Solar LLC pioneers the future of renewable energy with its revolutionary "Hybrid Tree" technology, combining wind and solar power.</p>
-        <ul>
-          <li><strong>The Hybrid Tree:</strong> A single, efficient system generating 12,200-37,892 kWh annually without rooftop panels.</li>
-          <li><strong>Energy Mixer Technology:</strong> Proprietary system for optimal energy blending and storage.</li>
-          <li>Provides reliable, affordable, and renewable energy for homes and businesses, ensuring energy security.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- BOOKING -->
-  <section class="cal-booking" id="booking">
-    <h2 class="section-title">Ready to Transform Your Training?</h2>
-    <p>In this 30-minute session, we will:<br>
-      <strong>• Audit your training costs & delivery model</strong><br>
-      <strong>• Build a custom Mariba Media deployment plan</strong><br>
-      <strong>• Present your revenue model options</strong>
-    </p>
-    <div id="my-cal-inline-south-africa"></div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-section">
-      <h3><i class="fas fa-rocket"></i> Mariba<span style="color:var(--accent)">Media</span></h3>
-      <p>On-Demand Trainer Consultants & AI-Powered Learning Systems. Pay only for performance.</p>
-      <div class="footer-meta">
-        <strong>Company Registration No:</strong> 2024 / 132788 / 07
-      </div>
-      <div class="social-links">
-        <a href="https://www.facebook.com/profile.php?id=61576915266105" class="social-icon" aria-label="Facebook">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://youtube.com/@TV-Mariba" target="_blank" class="social-icon" aria-label="YouTube">
-          <i class="fab fa-youtube"></i>
-        </a>
-        <a href="https://linkedin.com/company/mariba-media" class="social-icon" aria-label="LinkedIn">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-      </div>
-    </div>
-    <div class="footer-section">
-      <h3><i class="fas fa-link"></i> Quick Links</h3>
-      <div class="footer-links">
-        <a href="#home"><i class="fas fa-home"></i> Home</a>
-        <a href="#solution"><i class="fas fa-puzzle-piece"></i> Solution</a>
-        <a href="#use-cases"><i class="fas fa-briefcase"></i> Use Cases</a>
-        <a href="#trainers"><i class="fas fa-user-tie"></i> Our Trainers</a>
-        <a href="#lifetime-partnership"><i class="fas fa-chart-bar"></i> Partnership</a>
-        <a href="#booking"><i class="fas fa-calendar-check"></i> Get Started</a>
-      </div>
-    </div>
-    <div class="footer-section">
-      <h3><i class="fas fa-shield-alt"></i> Legal & Compliance</h3>
-      <div class="footer-links">
-        <a href="https://www.freeprivacypolicy.com/live/19ac9e12-2d32-49e8-b611-a103aaec0171" target="_blank" rel="noopener">
-          <i class="fas fa-lock"></i> Privacy Policy
-        </a>
-        <a href="https://popia.co.za/" target="_blank" rel="noopener">
-          <i class="fas fa-gavel"></i> POPIA Compliance Policy
-        </a>
-      </div>
-      <div class="footer-links" style="margin-top: 1.5rem;">
-        <a href="mailto:victor@maribamedia.co.za"><i class="fas fa-envelope"></i> victor@maribamedia.co.za</a>
-        <a href="tel:+27766473499"><i class="fas fa-phone"></i> +27 (0) 76 647 3499</a>
-        <a href="#"><i class="fas fa-map-marker-alt"></i> Bronkhorstspruit, South Africa</a>
-      </div>
-    </div>
-    <div class="copyright">
-      &copy; <span id="current-year"></span> Mariba Media. AI Infrastructure Partner. Pay only for performance.
-    </div>
-  </footer>
-
-  <!-- WHATSAPP WIDGET -->
-  <div class="whatsapp-widget">
-    <a href="https://wa.me/27766473499" target="_blank" rel="noopener">
-      <button class="whatsapp-button" aria-label="Chat on WhatsApp">
-        <svg class="whatsapp-svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.05-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.71-5.26c.001-5.45 4.436-9.884 9.888-9.884 5.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335 .157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      </button>
-    </a>
-  </div>
-
-  <!-- SCRIPTS -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      // ROI Calculator
-      const learnersInput = document.getElementById('learners');
-      const costInput = document.getElementById('cost');
-      const passRateInput = document.getElementById('passRate');
-      const currentCostEl = document.getElementById('currentCost');
-      const wasteAmountEl = document.getElementById('wasteAmount');
-      const productivityLossEl = document.getElementById('productivityLoss');
-      const complianceRiskEl = document.getElementById('complianceRisk');
-      const totalWasteEl = document.getElementById('totalWaste');
-      const savingsAmountEl = document.getElementById('savingsAmount');
-      function calculateROI() {
-        const learners = parseInt(learnersInput.value) || 500;
-        const cost = parseInt(costInput.value) || 1200;
-        const passRate = parseInt(passRateInput.value) || 65;
-        const currentCost = learners * cost;
-        const wasteAmount = currentCost * (1 - passRate/100);
-        const productivityLoss = (learners * (1 - passRate/100)) * 18500;
-        const complianceRisk = (100 - passRate) * 1.5;
-        const totalWaste = wasteAmount + productivityLoss;
-        const savingsAmount = wasteAmount * 0.8;
-        const formatCurrency = (num) => 'R' + num.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        if (currentCostEl) currentCostEl.textContent = formatCurrency(currentCost);
-        if (wasteAmountEl) wasteAmountEl.textContent = formatCurrency(wasteAmount);
-        if (productivityLossEl) productivityLossEl.textContent = formatCurrency(productivityLoss);
-        if (complianceRiskEl) complianceRiskEl.textContent = complianceRisk.toFixed(1) + '%';
-        if (totalWasteEl) totalWasteEl.textContent = formatCurrency(totalWaste);
-        if (savingsAmountEl) savingsAmountEl.textContent = formatCurrency(savingsAmount);
-      }
-      function shareResults() {
-        const learners = parseInt(learnersInput.value) || 500;
-        const cost = parseInt(costInput.value) || 1200;
-        const passRate = parseInt(passRateInput.value) || 65;
-        const totalWaste = document.getElementById('totalWaste').textContent;
-        const savingsAmount = document.getElementById('savingsAmount').textContent;
-        const message = `I just used Mariba Media's ROI Calculator:
-` +
-                       `• ${learners} learners/month
-` +
-                       `• Current cost: R${cost}
-` +
-                       `• Pass rate: ${passRate}%
-` +
-                       `My results:
-` +
-                       `• Total monthly waste: ${totalWaste}
-` +
-                       `• Potential savings: ${savingsAmount}
-` +
-                       `I'd like to claim my FREE 30-minute compliance audit.`;
-        const encodedMessage = encodeURIComponent(message);
-        window.open(`https://wa.me/27766473499?text=${encodedMessage}`, '_blank');
-      }
-      if (learnersInput) learnersInput.addEventListener('input', calculateROI);
-      if (costInput) costInput.addEventListener('input', calculateROI);
-      if (passRateInput) passRateInput.addEventListener('input', calculateROI);
-      if (learnersInput) calculateROI();
-
-      // Cal.com
-      const calDiv = document.getElementById('my-cal-inline-south-africa');
-      if (calDiv) {
-        (function (C, A, L) {
-          let p = function (a, ar) { a.q.push(ar); };
-          let d = C.document;
-          C.Cal = C.Cal || function () {
-            let cal = C.Cal;
-            let ar = arguments;
-            if (!cal.loaded) {
-              cal.ns = {};
-              cal.q = cal.q || [];
-              let script = d.createElement("script");
-              script.async = 1;
-              script.src = A;
-              d.head.appendChild(script);
-              cal.loaded = true;
-            }
-            if (ar[0] === L) {
-              const api = function () { p(api, arguments); };
-              const namespace = ar[1];
-              api.q = api.q || [];
-              if (typeof namespace === "string") {
-                cal.ns[namespace] = cal.ns[namespace] || api;
-                p(cal.ns[namespace], ar);
-                p(cal, ["initNamespace", namespace]);
-              } else {
-                p(cal, ar);
-              }
-              return;
-            }
-            p(cal, ar);
-          };
-        })(window, "https://app.cal.com/embed/embed.js", "init");
-        Cal("init", "south-africa", { origin: "https://app.cal.com" });
-        Cal.ns["south-africa"]("inline", {
-          elementOrSelector: "#my-cal-inline-south-africa",
-          calLink: "partner-discovery/south-africa"
-        });
-        Cal.ns["south-africa"]("ui", { layout: "month_view" });
-      }
-
-      // Year
-      const yearEl = document.getElementById("current-year");
-      if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-      // Stats counter animation
-      const stats = document.querySelectorAll('.stat-number');
-      const speed = 200;
-      stats.forEach(stat => {
-        const target = parseInt(stat.getAttribute('data-target'));
-        let count = 0;
-        const updateCount = () => {
-          const increment = Math.ceil(target / speed);
-          if (count < target) {
-            count += increment;
-            if (count > target) count = target;
-            stat.innerText = count;
-            setTimeout(updateCount, 1);
-          } else {
-            stat.innerText = target;
-          }
-        };
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              updateCount();
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.5 });
-        observer.observe(stat);
+      Cal.ns["south-africa"]("inline", {
+        elementOrSelector:"#my-cal-inline-south-africa",
+        config: {"layout":"month_view"},
+        calLink: "partner-discovery/south-africa",
       });
-    });
-  </script>
+
+      Cal.ns["south-africa"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+      </script>
+      <!-- Cal inline embed code ends -->
+
+    <!-- CTA Section -->
+    <section class="cta" id="cta">
+        <div class="cta-content">
+            <div class="container">
+                <h2 data-aos="fade-up">Ready to Cut Costs & Boost Productivity?</h2>
+                <p data-aos="fade-up" data-aos-delay="100">
+                    Schedule your Enterprise Solutions Advisory Call today and discover how our custom internal software solutions can streamline your operations and accelerate growth.
+                </p>
+                <div class="cta-actions" data-aos="fade-up" data-aos-delay="200">
+                    <a href="https://cal.com/partner-discovery/south-africa" target="_blank" class="btn btn-light btn-lg">
+                        <i class="fas fa-calendar"></i>
+                        Schedule Demo
+                    </a>
+                    <a href="https://wa.me/27766473499" target="_blank" class="btn btn-outline-light btn-lg">
+                        <i class="fab fa-whatsapp"></i>
+                        Contact Sales
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h5>Mariba Media</h5>
+                    <p>Custom AI Software Development & Consultancy specializing in internal software solutions, automation tools, and AI-driven workflow optimization for creators, sales teams, and training organizations.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/people/Mariba-Media-Pty-Ltd/61576915266105/" target="_blank" class="social-link">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@TV-Mariba" target="_blank" class="social-link">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/mariba-media?_l=en_US" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#solutions">Solutions</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#process">Process</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h5>Legal & Compliance</h5>
+                    <ul class="footer-links">
+                        <li><a href="https://www.freeprivacypolicy.com/live/19ac9e12-2d32-49e8-b611-a103aaec0171" target="_blank">Privacy Policy</a></li>
+                        <li><a href="https://popia.co.za/" target="_blank">POPIA Compliance Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h5>Contact</h5>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope me-2"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="eb9d82889f8499ab868a9982898a868e8f828ac58884c5918a">[email&#160;protected]</a></li>
+                        <li><i class="fas fa-phone me-2"></i> +27 (0) 76 647 3499</li>
+                        <li><i class="fas fa-map-marker-alt me-2"></i> Bronkhorstspruit, South Africa</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 Mariba Media. Company Registration No: 2024 / 132788 / 07. AI Infrastructure Partner.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 600,
+            easing: 'ease-out',
+            once: true,
+            offset: 100
+        });
+
+        // Navbar scroll effect and active section indicator
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            // Update active navigation link based on scroll position
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Enhanced smooth scrolling for anchor links with improved offset calculation
+        function getNavbarHeight() {
+            const navbar = document.querySelector('.navbar');
+            return navbar ? navbar.offsetHeight : 80;
+        }
+        
+        function scrollToSection(targetId) {
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                const navbarHeight = getNavbarHeight();
+                const offsetTop = targetElement.offsetTop - navbarHeight - 20;
+                
+                window.scrollTo({
+                    top: Math.max(0, offsetTop),
+                    behavior: 'smooth'
+                });
+            }
+        }
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                scrollToSection(targetId);
+                
+                // Close mobile menu if open
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                    const navbarToggler = document.querySelector('.navbar-toggler');
+                    if (navbarToggler) {
+                        navbarToggler.click();
+                    }
+                }
+            });
+        });
+
+        // Add typing effect to hero title (optional enhancement)
+        function typeEffect(element, text, speed = 50) {
+            element.innerHTML = '';
+            let i = 0;
+            const timer = setInterval(() => {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(timer);
+                }
+            }, speed);
+        }
+
+        // Intersection Observer for enhanced animations
+        const animationObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const element = entry.target;
+                    
+                    // Add stagger effect for grid items
+                    if (element.classList.contains('product-card') || 
+                        element.classList.contains('process-step') ||
+                        element.classList.contains('icp-card') ||
+                        element.classList.contains('stat-card')) {
+                        const delay = element.getAttribute('data-aos-delay') || 0;
+                        element.style.animationDelay = `${delay}ms`;
+                    }
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        });
+
+        // Observe all animated elements
+        document.querySelectorAll('[data-aos]').forEach(el => {
+            animationObserver.observe(el);
+        });
+
+        // Add loading state management
+        window.addEventListener('load', function() {
+            document.body.classList.add('loaded');
+            
+            // Trigger hero animations
+            setTimeout(() => {
+                const heroTitle = document.querySelector('h1');
+                if (heroTitle && heroTitle.hasAttribute('data-aos')) {
+                    heroTitle.classList.add('aos-animate');
+                }
+            }, 100);
+        });
+    </script>
 </body>
 </html>
