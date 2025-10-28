@@ -856,31 +856,28 @@
             min-height: 300px; /* Ensure minimum height on very small screens */
         }
         
-        /* Enhanced Embed Container Responsiveness */
-        .embed-container {
+        /* Enhanced ICP Section Embed Styles */
+        .icp .embed-container {
             position: relative;
             width: 100%;
-            max-width: 720px;
+            max-width: 800px;
             margin: 0 auto;
             overflow: hidden;
         }
         
-        @media (max-width: 480px) {
-            .anam-embed {
-                height: 280px;
-                border-radius: var(--radius-sm);
-            }
-            
-            .embed-container {
-                margin: 0 -0.5rem;
-                border-radius: var(--radius-sm);
-            }
+        .icp .anam-embed {
+            width: 100%;
+            height: 500px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-lg);
+            min-height: 300px;
         }
 
-        /* Responsive Design */
+        /* Responsive ICP Section */
         @media (max-width: 992px) {
             .process-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-            .anam-embed { height: 400px; }
+            .icp .anam-embed { height: 450px; }
         }
         
         @media (max-width: 768px) {
@@ -893,8 +890,9 @@
             .cta-actions { flex-direction: column; align-items: center; }
             .process-step::after { display: none; }
             .process-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-            .anam-embed { height: 350px; }
+            .icp .anam-embed { height: 400px; }
             .hero-visual { margin-top: 3rem; }
+            .icp-grid { grid-template-columns: 1fr; gap: 1.5rem; }
         }
         
         @media (max-width: 576px) {
@@ -903,8 +901,21 @@
             .products { padding: 4rem 0; }
             .process { padding: 4rem 0; }
             .cta { padding: 4rem 0; }
-            .anam-embed { height: 300px; }
+            .icp { padding: 4rem 0; }
+            .icp .anam-embed { height: 350px; }
             .embed-container { margin: 0 -0.5rem; }
+        }
+        
+        @media (max-width: 480px) {
+            .icp .anam-embed {
+                height: 320px;
+                border-radius: var(--radius-sm);
+            }
+            
+            .icp .embed-container {
+                margin: 0 -0.5rem;
+                border-radius: var(--radius-sm);
+            }
         }
     </style>
 </head>
@@ -965,17 +976,6 @@
                     <p class="hero-description" data-aos="fade-up" data-aos-delay="200">
                         We develop custom internal software solutions, AI-powered automation tools, and enterprise applications that integrate seamlessly with your existing systems to streamline operations and accelerate productivity.
                     </p>
-                    
-                    <!-- anam.ai Embed -->
-                    <div class="mt-4" data-aos="fade-up" data-aos-delay="250">
-                        <div class="embed-container">
-                            <iframe
-                              src="https://lab.anam.ai/frame/gJbrQYfUYpFcOaRaEkAbG"
-                              class="anam-embed"
-                              allow="microphone"
-                            ></iframe>
-                        </div>
-                    </div>
                     
                     <!-- Mobile Stats Card - Only visible on Mobile -->
                     <div class="stats-card mt-4 d-lg-none" data-aos="fade-up" data-aos-delay="300">
@@ -1101,6 +1101,17 @@
                 <p class="section-description">
                     We build custom internal software applications, automation platforms, and AI-driven tools that seamlessly integrate with your existing infrastructure to enhance operational efficiency
                 </p>
+            </div>
+            
+            <!-- anam.ai Embed -->
+            <div class="mb-5" data-aos="fade-up" data-aos-delay="200">
+                <div class="embed-container">
+                    <iframe
+                      src="https://lab.anam.ai/frame/gJbrQYfUYpFcOaRaEkAbG"
+                      class="anam-embed"
+                      allow="microphone"
+                    ></iframe>
+                </div>
             </div>
             
             <div class="icp-grid">
@@ -1420,7 +1431,7 @@
                 <div class="footer-section">
                     <h5>Contact</h5>
                     <ul class="footer-links">
-                        <li><i class="fas fa-envelope me-2"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fc8a959f88938ebc919d8e959e9d919998959dd29f93d2869d">[email&#160;protected]</a></li>
+                        <li><i class="fas fa-envelope me-2"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="681e010b1c071a2805091a010a09050d0c0109460b07461209">[email&#160;protected]</a></li>
                         <li><i class="fas fa-phone me-2"></i> +27 (0) 76 647 3499</li>
                         <li><i class="fas fa-map-marker-alt me-2"></i> Bronkhorstspruit, South Africa</li>
                     </ul>
