@@ -135,6 +135,7 @@
 
       .product-card {
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        height: 100%;
       }
       .product-card:hover {
         transform: translateY(-8px);
@@ -232,6 +233,37 @@
         transform: translateY(0);
       }
 
+      /* Mobile Optimizations */
+      @media (max-width: 640px) {
+        .section-padding {
+          padding-top: 3rem;
+          padding-bottom: 3rem;
+        }
+        
+        .product-icon {
+          width: 48px;
+          height: 48px;
+        }
+        
+        .product-icon svg {
+          width: 20px;
+          height: 20px;
+        }
+        
+        .mobile-stack {
+          display: flex;
+          flex-direction: column;
+        }
+        
+        .mobile-center {
+          text-align: center;
+        }
+        
+        .mobile-full-width {
+          width: 100%;
+        }
+      }
+
       @media (max-width: 768px) {
         .whatsapp-widget {
           bottom: 20px;
@@ -246,6 +278,53 @@
         .whatsapp-tooltip {
           display: none;
         }
+        
+        .hero-heading {
+          font-size: 2.5rem;
+          line-height: 1.2;
+        }
+        
+        .section-heading {
+          font-size: 2.25rem;
+        }
+        
+        .grid-responsive {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+      }
+
+      @media (min-width: 769px) and (max-width: 1024px) {
+        .grid-responsive {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.5rem;
+        }
+        
+        .tablet-full-width {
+          width: 100%;
+        }
+      }
+
+      @media (min-width: 1025px) {
+        .grid-responsive {
+          grid-template-columns: repeat(4, 1fr);
+          gap: 2rem;
+        }
+      }
+
+      /* Uniform Product Card Height */
+      .uniform-card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+      
+      .uniform-card-content {
+        flex: 1;
+      }
+      
+      .uniform-card-button {
+        margin-top: auto;
       }
     </style>
 </head>
@@ -302,115 +381,115 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="relative pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden">
+    <section id="home" class="relative pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden section-padding">
         <!-- Background Pattern -->
         <div class="absolute inset-0 -z-10 h-full w-full bg-white bg-grid-pattern [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_70%)]"></div>
         <div class="absolute top-20 right-0 -z-10 w-[600px] h-[600px] bg-gray-100 rounded-full blur-3xl opacity-50"></div>
         <div class="absolute -bottom-20 -left-20 -z-10 w-[500px] h-[500px] bg-gray-100 rounded-full blur-3xl opacity-50"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                 
                 <!-- Text Content -->
-                <div class="text-center lg:text-left" data-aos="fade-up" data-aos-duration="800">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 border border-gray-300 text-gray-800 text-sm font-semibold mb-8" data-aos="zoom-in" data-aos-delay="200">
+                <div class="text-center lg:text-left mobile-center" data-aos="fade-up" data-aos-duration="800">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 border border-gray-300 text-gray-800 text-sm font-semibold mb-6 md:mb-8" data-aos="zoom-in" data-aos-delay="200">
                         <i data-lucide="shield-check" class="w-4 h-4"></i>
                         <span>30-Day Guarantee • 10+ Extra Jobs Guaranteed</span>
                     </div>
 
-                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 leading-[1.1]">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-6 md:mb-8 leading-[1.1] hero-heading">
                         <span class="text-black">Transform B2B</span><br>
                         <span class="text-black">Business Development</span><br>
                         <span class="text-black">with AI Agents</span>
                     </h1>
 
-                    <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                    <p class="text-lg md:text-xl text-gray-600 mb-8 md:mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
                         We deploy specialized business development AI agents that deliver <span class="font-bold text-black">28+ hours weekly time savings</span>, automate fulfillment systems, and increase client acquisition by <span class="font-bold text-black">35-80% within 30 days—guaranteed</span>.
                     </p>
 
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start" data-aos="fade-up" data-aos-delay="200">
                         <a href="https://cal.com/partner-discovery/south-africa" target="_blank"
-                           class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-10 py-4 rounded-xl font-bold transition-all duration-300 shadow-xl transform hover:-translate-y-1 active:translate-y-0 border-2 border-black">
+                           class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-8 py-3 md:px-10 md:py-4 rounded-xl font-bold transition-all duration-300 shadow-xl transform hover:-translate-y-1 active:translate-y-0 border-2 border-black mobile-full-width sm:w-auto text-center">
                             Start 30-Day Guarantee
                             <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </a>
                         <a href="#products"
-                           class="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-50 text-black border-2 border-black px-10 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl">
+                           class="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-50 text-black border-2 border-black px-8 py-3 md:px-10 md:py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl mobile-full-width sm:w-auto text-center">
                             <i data-lucide="package" class="w-5 h-5"></i>
                             View All Products
                         </a>
                     </div>
 
                     <!-- Stats -->
-                    <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6" data-aos="fade-up" data-aos-delay="400">
-                        <div class="text-center p-4 rounded-xl stat-card shadow-sm hover:shadow-md transition-all">
-                            <div class="text-3xl font-bold text-black mb-1">30</div>
-                            <div class="text-sm text-gray-600 font-medium">Days to Results</div>
+                    <div class="mt-12 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6" data-aos="fade-up" data-aos-delay="400">
+                        <div class="text-center p-3 md:p-4 rounded-xl stat-card shadow-sm hover:shadow-md transition-all">
+                            <div class="text-2xl md:text-3xl font-bold text-black mb-1">30</div>
+                            <div class="text-xs md:text-sm text-gray-600 font-medium">Days to Results</div>
                         </div>
-                        <div class="text-center p-4 rounded-xl stat-card shadow-sm hover:shadow-md transition-all">
-                            <div class="text-3xl font-bold text-black mb-1">28+</div>
-                            <div class="text-sm text-gray-600 font-medium">Hours Saved Weekly</div>
+                        <div class="text-center p-3 md:p-4 rounded-xl stat-card shadow-sm hover:shadow-md transition-all">
+                            <div class="text-2xl md:text-3xl font-bold text-black mb-1">28+</div>
+                            <div class="text-xs md:text-sm text-gray-600 font-medium">Hours Saved Weekly</div>
                         </div>
-                        <div class="text-center p-4 rounded-xl stat-card shadow-sm hover:shadow-md transition-all">
-                            <div class="text-3xl font-bold text-black mb-1">+35-80%</div>
-                            <div class="text-sm text-gray-600 font-medium">Client Acquisition</div>
+                        <div class="text-center p-3 md:p-4 rounded-xl stat-card shadow-sm hover:shadow-md transition-all">
+                            <div class="text-2xl md:text-3xl font-bold text-black mb-1">+35-80%</div>
+                            <div class="text-xs md:text-sm text-gray-600 font-medium">Client Acquisition</div>
                         </div>
-                        <div class="text-center p-4 rounded-xl stat-card shadow-sm hover:shadow-md transition-all">
-                            <div class="text-3xl font-bold text-black mb-1">95%</div>
-                            <div class="text-sm text-gray-600 font-medium">Automation Rate</div>
+                        <div class="text-center p-3 md:p-4 rounded-xl stat-card shadow-sm hover:shadow-md transition-all">
+                            <div class="text-2xl md:text-3xl font-bold text-black mb-1">95%</div>
+                            <div class="text-xs md:text-sm text-gray-600 font-medium">Automation Rate</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Value Proposition Card -->
                 <div class="relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
-                    <div class="glass-effect rounded-2xl p-10 shadow-2xl relative z-10 border border-gray-200">
-                        <div class="flex items-start justify-between mb-10">
+                    <div class="glass-effect rounded-2xl p-6 md:p-8 lg:p-10 shadow-2xl relative z-10 border border-gray-200">
+                        <div class="flex items-start justify-between mb-8 md:mb-10">
                             <div>
-                                <h3 class="text-2xl font-bold text-black mb-2">The Mariba Media Advantage</h3>
-                                <p class="text-gray-700 font-semibold">Business Development Transformation</p>
+                                <h3 class="text-xl md:text-2xl font-bold text-black mb-2">The Mariba Media Advantage</h3>
+                                <p class="text-gray-700 font-semibold text-sm md:text-base">Business Development Transformation</p>
                             </div>
-                            <div class="px-4 py-2 rounded-lg bg-gray-100 text-black text-sm font-bold border border-gray-300">
+                            <div class="px-3 py-1 md:px-4 md:py-2 rounded-lg bg-gray-100 text-black text-xs md:text-sm font-bold border border-gray-300">
                                 Risk-Free
                             </div>
                         </div>
 
-                        <div class="space-y-6">
-                            <div class="flex items-start gap-4 p-4 rounded-xl bg-gray-50 hover:bg-gray-100 transition-all duration-300 border border-gray-200">
-                                <div class="w-12 h-12 rounded-xl bg-black flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="clock" class="w-6 h-6 text-white"></i>
+                        <div class="space-y-4 md:space-y-6">
+                            <div class="flex items-start gap-3 md:gap-4 p-3 md:p-4 rounded-xl bg-gray-50 hover:bg-gray-100 transition-all duration-300 border border-gray-200">
+                                <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-black flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="clock" class="w-5 h-5 md:w-6 md:h-6 text-white"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-black mb-1">Time Recovery</h4>
-                                    <p class="text-gray-600 text-sm">Recover 28+ hours weekly through automation of repetitive business development tasks</p>
+                                    <h4 class="font-bold text-black mb-1 text-sm md:text-base">Time Recovery</h4>
+                                    <p class="text-gray-600 text-xs md:text-sm">Recover 28+ hours weekly through automation of repetitive business development tasks</p>
                                 </div>
                             </div>
 
-                            <div class="flex items-start gap-4 p-4 rounded-xl bg-gray-50 hover:bg-gray-100 transition-all duration-300 border border-gray-200">
-                                <div class="w-12 h-12 rounded-xl bg-black flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="users" class="w-6 h-6 text-white"></i>
+                            <div class="flex items-start gap-3 md:gap-4 p-3 md:p-4 rounded-xl bg-gray-50 hover:bg-gray-100 transition-all duration-300 border border-gray-200">
+                                <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-black flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="users" class="w-5 h-5 md:w-6 md:h-6 text-white"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-black mb-1">Quality Pipeline</h4>
-                                    <p class="text-gray-600 text-sm">Focus exclusively on pre-qualified, high-intent prospects that convert to revenue</p>
+                                    <h4 class="font-bold text-black mb-1 text-sm md:text-base">Quality Pipeline</h4>
+                                    <p class="text-gray-600 text-xs md:text-sm">Focus exclusively on pre-qualified, high-intent prospects that convert to revenue</p>
                                 </div>
                             </div>
 
-                            <div class="flex items-start gap-4 p-4 rounded-xl bg-gray-50 hover:bg-gray-100 transition-all duration-300 border border-gray-200">
-                                <div class="w-12 h-12 rounded-xl bg-black flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="bot" class="w-6 h-6 text-white"></i>
+                            <div class="flex items-start gap-3 md:gap-4 p-3 md:p-4 rounded-xl bg-gray-50 hover:bg-gray-100 transition-all duration-300 border border-gray-200">
+                                <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-black flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="bot" class="w-5 h-5 md:w-6 md:h-6 text-white"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-black mb-1">AI-Powered Agents</h4>
-                                    <p class="text-gray-600 text-sm">Specialized business development AI handles research, outreach, and qualification</p>
+                                    <h4 class="font-bold text-black mb-1 text-sm md:text-base">AI-Powered Agents</h4>
+                                    <p class="text-gray-600 text-xs md:text-sm">Specialized business development AI handles research, outreach, and qualification</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="mt-10 pt-8 border-t border-gray-200">
+                        <div class="mt-8 md:mt-10 pt-6 md:pt-8 border-t border-gray-200">
                            <div class="flex items-center gap-3">
-                             <div class="w-3 h-3 bg-black rounded-full animate-pulse"></div>
-                             <p class="text-gray-800 font-semibold">
+                             <div class="w-2 h-2 md:w-3 md:h-3 bg-black rounded-full animate-pulse"></div>
+                             <p class="text-gray-800 font-semibold text-sm md:text-base">
                                "We guarantee you'll focus only on qualified prospects within 30 days, or we continue working at no additional cost."
                              </p>
                            </div>
@@ -418,10 +497,10 @@
                     </div>
 
                     <!-- Floating Element -->
-                    <div class="absolute -top-6 -right-6 bg-white border border-gray-300 p-6 rounded-xl shadow-2xl hidden lg:block animate-float">
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-lg bg-black flex items-center justify-center">
-                                <i data-lucide="target" class="w-6 h-6 text-white"></i>
+                    <div class="absolute -top-4 -right-4 md:-top-6 md:-right-6 bg-white border border-gray-300 p-4 md:p-6 rounded-xl shadow-2xl hidden lg:block animate-float">
+                        <div class="flex items-center gap-3 md:gap-4">
+                            <div class="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-black flex items-center justify-center">
+                                <i data-lucide="target" class="w-5 h-5 md:w-6 md:h-6 text-white"></i>
                             </div>
                             <div>
                                 <div class="text-sm font-bold text-black">Guaranteed Results</div>
@@ -435,91 +514,91 @@
     </section>
 
     <!-- Solutions Section -->
-    <section id="solutions" class="py-24 bg-gray-50">
+    <section id="solutions" class="py-16 md:py-24 bg-gray-50 section-padding">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20" data-aos="fade-up">
+            <div class="text-center mb-12 md:mb-20" data-aos="fade-up">
                 <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 border border-gray-300 text-black text-sm font-semibold mb-6">
                     <i data-lucide="case" class="w-4 h-4"></i>
                     <span>B2B Enterprise Solutions</span>
                 </div>
-                <h2 class="text-4xl md:text-5xl font-bold text-black mb-6">Who We Serve</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 md:mb-6 section-heading">Who We Serve</h2>
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
                     Specialized business development solutions for enterprises seeking measurable growth, efficiency, and automation across key industries.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                 <!-- Sales Organizations -->
-                <div class="bg-white rounded-2xl border border-gray-200 p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group product-card" data-aos="fade-up" data-aos-delay="0">
-                    <div class="w-16 h-16 rounded-2xl bg-black flex items-center justify-center mb-8">
-                        <i data-lucide="trending-up" class="w-8 h-8 text-white"></i>
+                <div class="bg-white rounded-2xl border border-gray-200 p-6 md:p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group product-card uniform-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-black flex items-center justify-center mb-6 md:mb-8">
+                        <i data-lucide="trending-up" class="w-6 h-6 md:w-8 md:h-8 text-white"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-black mb-4">B2B Sales Organizations</h3>
-                    <p class="text-gray-600 mb-8">
+                    <h3 class="text-xl md:text-2xl font-bold text-black mb-4">B2B Sales Organizations</h3>
+                    <p class="text-gray-600 mb-6 md:mb-8 uniform-card-content">
                         Transform sales operations with AI-powered lead generation, intelligent qualification, and automated pipeline management.
                     </p>
-                    <div class="space-y-4">
+                    <div class="space-y-3 md:space-y-4">
                         <div class="flex items-center gap-3">
                             <div class="w-2 h-2 rounded-full bg-black"></div>
-                            <span class="text-gray-700 font-medium">Specialized business development AI agents</span>
+                            <span class="text-gray-700 font-medium text-sm md:text-base">Specialized business development AI agents</span>
                         </div>
                         <div class="flex items-center gap-3">
                             <div class="w-2 h-2 rounded-full bg-black"></div>
-                            <span class="text-gray-700 font-medium">28+ hours weekly time recovery</span>
+                            <span class="text-gray-700 font-medium text-sm md:text-base">28+ hours weekly time recovery</span>
                         </div>
                         <div class="flex items-center gap-3">
                             <div class="w-2 h-2 rounded-full bg-black"></div>
-                            <span class="text-gray-700 font-medium">Qualified prospect identification & nurturing</span>
+                            <span class="text-gray-700 font-medium text-sm md:text-base">Qualified prospect identification & nurturing</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Media & Content Teams -->
-                <div class="bg-white rounded-2xl border border-gray-200 p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group product-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-16 h-16 rounded-2xl bg-black flex items-center justify-center mb-8">
-                        <i data-lucide="video" class="w-8 h-8 text-white"></i>
+                <div class="bg-white rounded-2xl border border-gray-200 p-6 md:p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group product-card uniform-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-black flex items-center justify-center mb-6 md:mb-8">
+                        <i data-lucide="video" class="w-6 h-6 md:w-8 md:h-8 text-white"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-black mb-4">Media & Content Teams</h3>
-                    <p class="text-gray-600 mb-8">
+                    <h3 class="text-xl md:text-2xl font-bold text-black mb-4">Media & Content Teams</h3>
+                    <p class="text-gray-600 mb-6 md:mb-8 uniform-card-content">
                         Automate content production, multi-platform distribution, and audience engagement at enterprise scale.
                     </p>
-                    <div class="space-y-4">
+                    <div class="space-y-3 md:space-y-4">
                         <div class="flex items-center gap-3">
                             <div class="w-2 h-2 rounded-full bg-black"></div>
-                            <span class="text-gray-700 font-medium">Automated content production & editing</span>
+                            <span class="text-gray-700 font-medium text-sm md:text-base">Automated content production & editing</span>
                         </div>
                         <div class="flex items-center gap-3">
                             <div class="w-2 h-2 rounded-full bg-black"></div>
-                            <span class="text-gray-700 font-medium">Multi-platform distribution automation</span>
+                            <span class="text-gray-700 font-medium text-sm md:text-base">Multi-platform distribution automation</span>
                         </div>
                         <div class="flex items-center gap-3">
                             <div class="w-2 h-2 rounded-full bg-black"></div>
-                            <span class="text-gray-700 font-medium">Audience growth & engagement automation</span>
+                            <span class="text-gray-700 font-medium text-sm md:text-base">Audience growth & engagement automation</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Education & Training -->
-                <div class="bg-white rounded-2xl border border-gray-200 p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group product-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-16 h-16 rounded-2xl bg-black flex items-center justify-center mb-8">
-                        <i data-lucide="graduation-cap" class="w-8 h-8 text-white"></i>
+                <div class="bg-white rounded-2xl border border-gray-200 p-6 md:p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group product-card uniform-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-black flex items-center justify-center mb-6 md:mb-8">
+                        <i data-lucide="graduation-cap" class="w-6 h-6 md:w-8 md:h-8 text-white"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-black mb-4">Education & Training Providers</h3>
-                    <p class="text-gray-600 mb-8">
+                    <h3 class="text-xl md:text-2xl font-bold text-black mb-4">Education & Training Providers</h3>
+                    <p class="text-gray-600 mb-6 md:mb-8 uniform-card-content">
                         Streamline student acquisition, automated onboarding, and intelligent course delivery systems.
                     </p>
-                    <div class="space-y-4">
+                    <div class="space-y-3 md:space-y-4">
                         <div class="flex items-center gap-3">
                             <div class="w-2 h-2 rounded-full bg-black"></div>
-                            <span class="text-gray-700 font-medium">Automated student onboarding & fulfillment</span>
+                            <span class="text-gray-700 font-medium text-sm md:text-base">Automated student onboarding & fulfillment</span>
                         </div>
                         <div class="flex items-center gap-3">
                             <div class="w-2 h-2 rounded-full bg-black"></div>
-                            <span class="text-gray-700 font-medium">AI-powered course delivery automation</span>
+                            <span class="text-gray-700 font-medium text-sm md:text-base">AI-powered course delivery automation</span>
                         </div>
                         <div class="flex items-center gap-3">
                             <div class="w-2 h-2 rounded-full bg-black"></div>
-                            <span class="text-gray-700 font-medium">Progress tracking & reporting automation</span>
+                            <span class="text-gray-700 font-medium text-sm md:text-base">Progress tracking & reporting automation</span>
                         </div>
                     </div>
                 </div>
@@ -528,265 +607,284 @@
     </section>
 
     <!-- Products Section -->
-    <section id="products" class="py-24 bg-white">
+    <section id="products" class="py-16 md:py-24 bg-white section-padding">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20" data-aos="fade-up">
+            <div class="text-center mb-12 md:mb-20" data-aos="fade-up">
                 <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 border border-gray-300 text-black text-sm font-semibold mb-6">
                     <i data-lucide="package" class="w-4 h-4"></i>
                     <span>Product Portfolio</span>
                 </div>
-                <h2 class="text-4xl md:text-5xl font-bold text-black mb-6">Comprehensive Business Solutions</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 md:mb-6 section-heading">Comprehensive Business Solutions</h2>
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
                     Eight specialized platforms delivering measurable time savings, client acquisition growth, and automated fulfillment.
                 </p>
             </div>
 
             <!-- First Row: Concierge, TrainingOS, FibreConnector, Focal -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-                <!-- Product 1: Concierge AI -->
-                <div class="bg-white rounded-2xl border border-gray-200 p-8 product-card hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="0">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-16 h-16 rounded-2xl bg-black flex items-center justify-center">
-                            <i data-lucide="briefcase" class="w-8 h-8 text-white"></i>
+            <div class="mb-12 md:mb-16">
+                <h3 class="text-2xl md:text-3xl font-bold text-black mb-6 md:mb-8 text-center">Core Business Solutions</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 grid-responsive">
+                    <!-- Product 1: Concierge AI -->
+                    <div class="bg-white rounded-2xl border border-gray-200 p-6 md:p-8 product-card hover:shadow-xl transition-all duration-500 uniform-card" data-aos="fade-up" data-aos-delay="0">
+                        <div class="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
+                            <div class="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-2xl bg-black flex items-center justify-center product-icon">
+                                <i data-lucide="briefcase" class="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 text-white"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl md:text-2xl font-bold text-black">Concierge AI</h3>
+                                <p class="text-gray-600 text-sm md:text-base">Your 24/7 Business Development Team</p>
+                            </div>
                         </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-black">Concierge AI</h3>
-                            <p class="text-gray-600">Your 24/7 Business Development Team</p>
+                        <p class="text-gray-600 mb-4 md:mb-6 text-sm md:text-base uniform-card-content">
+                            No Revenue? No Jobs? Get 10+ Guaranteed Extra Jobs on 100% Commission. We're your 24/7 dedicated team that books appointments, manages your calendar, and handles business development.
+                        </p>
+                        <div class="space-y-3 mb-6 md:mb-8">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="clock" class="w-4 h-4 md:w-5 md:h-5 text-black flex-shrink-0"></i>
+                                <span class="text-gray-700 text-sm md:text-base">28+ Hours Weekly Saved</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="target" class="w-4 h-4 md:w-5 md:h-5 text-black flex-shrink-0"></i>
+                                <span class="text-gray-700 text-sm md:text-base">Qualified Lead Identification</span>
+                            </div>
                         </div>
+                        <a href="https://www.concierge.maribamedia.co.za" target="_blank" 
+                           class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-4 py-3 md:px-6 md:py-3 rounded-xl font-bold transition-all duration-300 w-full uniform-card-button text-sm md:text-base">
+                            Learn More
+                            <i data-lucide="arrow-right" class="w-4 h-4 md:w-5 md:h-5"></i>
+                        </a>
                     </div>
-                    <p class="text-gray-600 mb-6">No Revenue? No Jobs? Get 10+ Guaranteed Extra Jobs on 100% Commission. We're your 24/7 dedicated team that books appointments, manages your calendar, and handles business development.</p>
-                    <div class="space-y-4 mb-8">
-                        <div class="flex items-center gap-3">
-                            <i data-lucide="clock" class="w-5 h-5 text-black"></i>
-                            <span class="text-gray-700">28+ Hours Weekly Saved</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <i data-lucide="target" class="w-5 h-5 text-black"></i>
-                            <span class="text-gray-700">Qualified Lead Identification</span>
-                        </div>
-                    </div>
-                    <a href="https://www.concierge.maribamedia.co.za" target="_blank" 
-                       class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-xl font-bold transition-all duration-300 w-full">
-                        Learn More
-                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                    </a>
-                </div>
 
-                <!-- Product 2: TrainingOS -->
-                <div class="bg-white rounded-2xl border border-gray-200 p-8 product-card hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-16 h-16 rounded-2xl bg-black flex items-center justify-center">
-                            <i data-lucide="graduation-cap" class="w-8 h-8 text-white"></i>
+                    <!-- Product 2: TrainingOS -->
+                    <div class="bg-white rounded-2xl border border-gray-200 p-6 md:p-8 product-card hover:shadow-xl transition-all duration-500 uniform-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
+                            <div class="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-2xl bg-black flex items-center justify-center product-icon">
+                                <i data-lucide="graduation-cap" class="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 text-white"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl md:text-2xl font-bold text-black">TrainingOS</h3>
+                                <p class="text-gray-600 text-sm md:text-base">AI-Powered English Tutoring Platform</p>
+                            </div>
                         </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-black">TrainingOS</h3>
-                            <p class="text-gray-600">AI-Powered English Tutoring Platform</p>
+                        <p class="text-gray-600 mb-4 md:mb-6 text-sm md:text-base uniform-card-content">
+                            Guarantees 12% grade improvement through AI-powered English tutoring. Automates 95% of administrative tasks, student onboarding, and course delivery.
+                        </p>
+                        <div class="space-y-3 mb-6 md:mb-8">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="trending-up" class="w-4 h-4 md:w-5 md:h-5 text-black flex-shrink-0"></i>
+                                <span class="text-gray-700 text-sm md:text-base">12% Grade Improvement</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="bot" class="w-4 h-4 md:w-5 md:h-5 text-black flex-shrink-0"></i>
+                                <span class="text-gray-700 text-sm md:text-base">95% Admin Automation</span>
+                            </div>
                         </div>
+                        <a href="https://www.training.maribamedia.co.za" target="_blank" 
+                           class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-4 py-3 md:px-6 md:py-3 rounded-xl font-bold transition-all duration-300 w-full uniform-card-button text-sm md:text-base">
+                            Learn More
+                            <i data-lucide="arrow-right" class="w-4 h-4 md:w-5 md:h-5"></i>
+                        </a>
                     </div>
-                    <p class="text-gray-600 mb-6">Guarantees 12% grade improvement through AI-powered English tutoring. Automates 95% of administrative tasks, student onboarding, and course delivery.</p>
-                    <div class="space-y-4 mb-8">
-                        <div class="flex items-center gap-3">
-                            <i data-lucide="trending-up" class="w-5 h-5 text-black"></i>
-                            <span class="text-gray-700">12% Grade Improvement</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <i data-lucide="bot" class="w-5 h-5 text-black"></i>
-                            <span class="text-gray-700">95% Admin Automation</span>
-                        </div>
-                    </div>
-                    <a href="https://www.training.maribamedia.co.za" target="_blank" 
-                       class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-xl font-bold transition-all duration-300 w-full">
-                        Learn More
-                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                    </a>
-                </div>
 
-                <!-- Product 3: FibreConnector -->
-                <div class="bg-white rounded-2xl border border-gray-200 p-8 product-card hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-16 h-16 rounded-2xl bg-black flex items-center justify-center">
-                            <i data-lucide="wifi" class="w-8 h-8 text-white"></i>
+                    <!-- Product 3: FibreConnector -->
+                    <div class="bg-white rounded-2xl border border-gray-200 p-6 md:p-8 product-card hover:shadow-xl transition-all duration-500 uniform-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
+                            <div class="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-2xl bg-black flex items-center justify-center product-icon">
+                                <i data-lucide="wifi" class="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 text-white"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl md:text-2xl font-bold text-black">FibreConnector</h3>
+                                <p class="text-gray-600 text-sm md:text-base">Fast Uncapped Fibre Internet</p>
+                            </div>
                         </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-black">FibreConnector</h3>
-                            <p class="text-gray-600">Fast Uncapped Fibre Internet</p>
+                        <p class="text-gray-600 mb-4 md:mb-6 text-sm md:text-base uniform-card-content">
+                            High-speed uncapped fibre internet with free professional installation and 14-day risk-free trial. Openserve Accredited partners.
+                        </p>
+                        <div class="space-y-3 mb-6 md:mb-8">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="zap" class="w-4 h-4 md:w-5 md:h-5 text-black flex-shrink-0"></i>
+                                <span class="text-gray-700 text-sm md:text-base">Fast Uncapped Fibre</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="gift" class="w-4 h-4 md:w-5 md:h-5 text-black flex-shrink-0"></i>
+                                <span class="text-gray-700 text-sm md:text-base">14-Day Free Trial</span>
+                            </div>
                         </div>
+                        <a href="https://fibre.maribamedia.co.za" target="_blank" 
+                           class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-4 py-3 md:px-6 md:py-3 rounded-xl font-bold transition-all duration-300 w-full uniform-card-button text-sm md:text-base">
+                            Learn More
+                            <i data-lucide="arrow-right" class="w-4 h-4 md:w-5 md:h-5"></i>
+                        </a>
                     </div>
-                    <p class="text-gray-600 mb-6">High-speed uncapped fibre internet with free professional installation and 14-day risk-free trial. Openserve Accredited partners.</p>
-                    <div class="space-y-4 mb-8">
-                        <div class="flex items-center gap-3">
-                            <i data-lucide="zap" class="w-5 h-5 text-black"></i>
-                            <span class="text-gray-700">Fast Uncapped Fibre</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <i data-lucide="gift" class="w-5 h-5 text-black"></i>
-                            <span class="text-gray-700">14-Day Free Trial</span>
-                        </div>
-                    </div>
-                    <a href="https://fibre.maribamedia.co.za" target="_blank" 
-                       class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-xl font-bold transition-all duration-300 w-full">
-                        Learn More
-                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                    </a>
-                </div>
 
-                <!-- Product 4: Focal -->
-                <div class="bg-white rounded-2xl border border-gray-200 p-8 product-card hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="300">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-16 h-16 rounded-2xl bg-black flex items-center justify-center">
-                            <i data-lucide="film" class="w-8 h-8 text-white"></i>
+                    <!-- Product 4: Focal -->
+                    <div class="bg-white rounded-2xl border border-gray-200 p-6 md:p-8 product-card hover:shadow-xl transition-all duration-500 uniform-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
+                            <div class="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-2xl bg-black flex items-center justify-center product-icon">
+                                <i data-lucide="film" class="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 text-white"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl md:text-2xl font-bold text-black">Focal</h3>
+                                <p class="text-gray-600 text-sm md:text-base">AI-Powered Media Production Platform</p>
+                            </div>
                         </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-black">Focal</h3>
-                            <p class="text-gray-600">AI-Powered Media Production Platform</p>
+                        <p class="text-gray-600 mb-4 md:mb-6 text-sm md:text-base uniform-card-content">
+                            Automates content production, editing, and multi-platform distribution. Saves media teams 28+ hours weekly by automating repetitive tasks.
+                        </p>
+                        <div class="space-y-3 mb-6 md:mb-8">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="film" class="w-4 h-4 md:w-5 md:h-5 text-black flex-shrink-0"></i>
+                                <span class="text-gray-700 text-sm md:text-base">Automated Content Production</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="share-2" class="w-4 h-4 md:w-5 md:h-5 text-black flex-shrink-0"></i>
+                                <span class="text-gray-700 text-sm md:text-base">Multi-Platform Distribution</span>
+                            </div>
                         </div>
+                        <a href="https://www.focal.maribamedia.co.za" target="_blank" 
+                           class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-4 py-3 md:px-6 md:py-3 rounded-xl font-bold transition-all duration-300 w-full uniform-card-button text-sm md:text-base">
+                            Learn More
+                            <i data-lucide="arrow-right" class="w-4 h-4 md:w-5 md:h-5"></i>
+                        </a>
                     </div>
-                    <p class="text-gray-600 mb-6">Automates content production, editing, and multi-platform distribution. Saves media teams 28+ hours weekly by automating repetitive tasks.</p>
-                    <div class="space-y-4 mb-8">
-                        <div class="flex items-center gap-3">
-                            <i data-lucide="film" class="w-5 h-5 text-black"></i>
-                            <span class="text-gray-700">Automated Content Production</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <i data-lucide="share-2" class="w-5 h-5 text-black"></i>
-                            <span class="text-gray-700">Multi-Platform Distribution</span>
-                        </div>
-                    </div>
-                    <a href="https://www.focal.maribamedia.co.za" target="_blank" 
-                       class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-xl font-bold transition-all duration-300 w-full">
-                        Learn More
-                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                    </a>
                 </div>
             </div>
 
             <!-- Second Row: Solar Products -->
-            <div class="mt-16">
-                <div class="text-center mb-12" data-aos="fade-up">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-50 border border-yellow-200 text-yellow-800 text-sm font-semibold mb-6">
+            <div class="mt-12 md:mt-16">
+                <div class="text-center mb-8 md:mb-12" data-aos="fade-up">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-50 border border-yellow-200 text-yellow-800 text-sm font-semibold mb-4 md:mb-6">
                         <i data-lucide="sun" class="w-4 h-4"></i>
                         <span>Renewable Energy Solutions</span>
                     </div>
-                    <h3 class="text-3xl md:text-4xl font-bold text-black mb-6">Solar & Energy Products</h3>
-                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    <h3 class="text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-4 md:mb-6">Solar & Energy Products</h3>
+                    <p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
                         Comprehensive energy solutions for residential, commercial, and industrial applications with guaranteed savings.
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 grid-responsive">
                     <!-- Product 5: Energy Mixer -->
-                    <div class="bg-white rounded-2xl border border-gray-200 p-8 product-card hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="0">
-                        <div class="flex items-center gap-4 mb-6">
-                            <div class="w-16 h-16 rounded-2xl bg-black flex items-center justify-center">
-                                <i data-lucide="zap" class="w-8 h-8 text-white"></i>
+                    <div class="bg-white rounded-2xl border border-gray-200 p-6 md:p-8 product-card hover:shadow-xl transition-all duration-500 uniform-card" data-aos="fade-up" data-aos-delay="0">
+                        <div class="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
+                            <div class="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-2xl bg-black flex items-center justify-center product-icon">
+                                <i data-lucide="zap" class="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 text-white"></i>
                             </div>
-                            <div>
-                                <h3 class="text-2xl font-bold text-black">Energy Mixer</h3>
-                                <p class="text-gray-600">Hybrid Renewable Energy System</p>
+                            <div class="flex-1">
+                                <h3 class="text-xl md:text-2xl font-bold text-black">Energy Mixer</h3>
+                                <p class="text-gray-600 text-sm md:text-base">Hybrid Renewable Energy System</p>
                             </div>
                         </div>
-                        <p class="text-gray-600 mb-6">US-patented DC power blending system that automates energy management, reducing costs by 40% and increasing output by 22%.</p>
-                        <div class="space-y-4 mb-8">
+                        <p class="text-gray-600 mb-4 md:mb-6 text-sm md:text-base uniform-card-content">
+                            US-patented DC power blending system that automates energy management, reducing costs by 40% and increasing output by 22%.
+                        </p>
+                        <div class="space-y-3 mb-6 md:mb-8">
                             <div class="flex items-center gap-3">
-                                <i data-lucide="dollar-sign" class="w-5 h-5 text-black"></i>
-                                <span class="text-gray-700">40% Cost Reduction</span>
+                                <i data-lucide="dollar-sign" class="w-4 h-4 md:w-5 md:h-5 text-black flex-shrink-0"></i>
+                                <span class="text-gray-700 text-sm md:text-base">40% Cost Reduction</span>
                             </div>
                             <div class="flex items-center gap-3">
-                                <i data-lucide="battery-charging" class="w-5 h-5 text-black"></i>
-                                <span class="text-gray-700">22% Output Increase</span>
+                                <i data-lucide="battery-charging" class="w-4 h-4 md:w-5 md:h-5 text-black flex-shrink-0"></i>
+                                <span class="text-gray-700 text-sm md:text-base">22% Output Increase</span>
                             </div>
                         </div>
                         <a href="http://www.energy.maribamedia.co.za" target="_blank" 
-                           class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-xl font-bold transition-all duration-300 w-full">
+                           class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-4 py-3 md:px-6 md:py-3 rounded-xl font-bold transition-all duration-300 w-full uniform-card-button text-sm md:text-base">
                             Learn More
-                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            <i data-lucide="arrow-right" class="w-4 h-4 md:w-5 md:h-5"></i>
                         </a>
                     </div>
 
                     <!-- Product 6: SolarConnector -->
-                    <div class="bg-white rounded-2xl border border-gray-200 p-8 product-card hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
-                        <div class="flex items-center gap-4 mb-6">
-                            <div class="w-16 h-16 rounded-2xl bg-black flex items-center justify-center">
-                                <i data-lucide="sun" class="w-8 h-8 text-white"></i>
+                    <div class="bg-white rounded-2xl border border-gray-200 p-6 md:p-8 product-card hover:shadow-xl transition-all duration-500 uniform-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
+                            <div class="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-2xl bg-black flex items-center justify-center product-icon">
+                                <i data-lucide="sun" class="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 text-white"></i>
                             </div>
-                            <div>
-                                <h3 class="text-2xl font-bold text-black">SolarConnector</h3>
-                                <p class="text-gray-600">Residential Solar Solutions</p>
+                            <div class="flex-1">
+                                <h3 class="text-xl md:text-2xl font-bold text-black">SolarConnector</h3>
+                                <p class="text-gray-600 text-sm md:text-base">Residential Solar Solutions</p>
                             </div>
                         </div>
-                        <p class="text-gray-600 mb-6">Guaranteed 70% electricity bill reduction within 30 days or we continue working at no cost. 30-day installation with 25-year warranties.</p>
-                        <div class="space-y-4 mb-8">
+                        <p class="text-gray-600 mb-4 md:mb-6 text-sm md:text-base uniform-card-content">
+                            Guaranteed 70% electricity bill reduction within 30 days or we continue working at no cost. 30-day installation with 25-year warranties.
+                        </p>
+                        <div class="space-y-3 mb-6 md:mb-8">
                             <div class="flex items-center gap-3">
-                                <i data-lucide="dollar-sign" class="w-5 h-5 text-black"></i>
-                                <span class="text-gray-700">70% Savings Guarantee</span>
+                                <i data-lucide="dollar-sign" class="w-4 h-4 md:w-5 md:h-5 text-black flex-shrink-0"></i>
+                                <span class="text-gray-700 text-sm md:text-base">70% Savings Guarantee</span>
                             </div>
                             <div class="flex items-center gap-3">
-                                <i data-lucide="shield" class="w-5 h-5 text-black"></i>
-                                <span class="text-gray-700">25-Year Warranty</span>
+                                <i data-lucide="shield" class="w-4 h-4 md:w-5 md:h-5 text-black flex-shrink-0"></i>
+                                <span class="text-gray-700 text-sm md:text-base">25-Year Warranty</span>
                             </div>
                         </div>
                         <a href="https://solar.maribamedia.co.za" target="_blank" 
-                           class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-xl font-bold transition-all duration-300 w-full">
+                           class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-4 py-3 md:px-6 md:py-3 rounded-xl font-bold transition-all duration-300 w-full uniform-card-button text-sm md:text-base">
                             Learn More
-                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            <i data-lucide="arrow-right" class="w-4 h-4 md:w-5 md:h-5"></i>
                         </a>
                     </div>
 
                     <!-- Product 7: CommercialSolar -->
-                    <div class="bg-white rounded-2xl border border-gray-200 p-8 product-card hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
-                        <div class="flex items-center gap-4 mb-6">
-                            <div class="w-16 h-16 rounded-2xl bg-black flex items-center justify-center">
-                                <i data-lucide="building-2" class="w-8 h-8 text-white"></i>
+                    <div class="bg-white rounded-2xl border border-gray-200 p-6 md:p-8 product-card hover:shadow-xl transition-all duration-500 uniform-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
+                            <div class="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-2xl bg-black flex items-center justify-center product-icon">
+                                <i data-lucide="building-2" class="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 text-white"></i>
                             </div>
-                            <div>
-                                <h3 class="text-2xl font-bold text-black">CommercialSolar</h3>
-                                <p class="text-gray-600">Commercial Solar Solutions</p>
+                            <div class="flex-1">
+                                <h3 class="text-xl md:text-2xl font-bold text-black">CommercialSolar</h3>
+                                <p class="text-gray-600 text-sm md:text-base">Commercial Solar Solutions</p>
                             </div>
                         </div>
-                        <p class="text-gray-600 mb-6">70% electricity savings for businesses with no upfront costs. Partnership with Urban Holdings Solar delivers flexible financing and professional installation.</p>
-                        <div class="space-y-4 mb-8">
+                        <p class="text-gray-600 mb-4 md:mb-6 text-sm md:text-base uniform-card-content">
+                            70% electricity savings for businesses with no upfront costs. Partnership with Urban Holdings Solar delivers flexible financing and professional installation.
+                        </p>
+                        <div class="space-y-3 mb-6 md:mb-8">
                             <div class="flex items-center gap-3">
-                                <i data-lucide="dollar-sign" class="w-5 h-5 text-black"></i>
-                                <span class="text-gray-700">70% Business Savings</span>
+                                <i data-lucide="dollar-sign" class="w-4 h-4 md:w-5 md:h-5 text-black flex-shrink-0"></i>
+                                <span class="text-gray-700 text-sm md:text-base">70% Business Savings</span>
                             </div>
                             <div class="flex items-center gap-3">
-                                <i data-lucide="credit-card" class="w-5 h-5 text-black"></i>
-                                <span class="text-gray-700">No Upfront Costs</span>
+                                <i data-lucide="credit-card" class="w-4 h-4 md:w-5 md:h-5 text-black flex-shrink-0"></i>
+                                <span class="text-gray-700 text-sm md:text-base">No Upfront Costs</span>
                             </div>
                         </div>
                         <a href="https://commercial.maribamedia.co.za" target="_blank" 
-                           class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-xl font-bold transition-all duration-300 w-full">
+                           class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-4 py-3 md:px-6 md:py-3 rounded-xl font-bold transition-all duration-300 w-full uniform-card-button text-sm md:text-base">
                             Learn More
-                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            <i data-lucide="arrow-right" class="w-4 h-4 md:w-5 md:h-5"></i>
                         </a>
                     </div>
 
                     <!-- Product 8: SolarFund -->
-                    <div class="bg-white rounded-2xl border border-gray-200 p-8 product-card hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="300">
-                        <div class="flex items-center gap-4 mb-6">
-                            <div class="w-16 h-16 rounded-2xl bg-black flex items-center justify-center">
-                                <i data-lucide="badge-dollar-sign" class="w-8 h-8 text-white"></i>
+                    <div class="bg-white rounded-2xl border border-gray-200 p-6 md:p-8 product-card hover:shadow-xl transition-all duration-500 uniform-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
+                            <div class="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-2xl bg-black flex items-center justify-center product-icon">
+                                <i data-lucide="badge-dollar-sign" class="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 text-white"></i>
                             </div>
-                            <div>
-                                <h3 class="text-2xl font-bold text-black">SolarFund</h3>
-                                <p class="text-gray-600">Complete Energy Solutions for Africa</p>
+                            <div class="flex-1">
+                                <h3 class="text-xl md:text-2xl font-bold text-black">SolarFund</h3>
+                                <p class="text-gray-600 text-sm md:text-base">Complete Energy Solutions for Africa</p>
                             </div>
                         </div>
-                        <p class="text-gray-600 mb-6">Comprehensive energy finance and development platform offering pre-approved capital for 30MW+ projects with full EPC services and IPP development.</p>
-                        <div class="space-y-4 mb-8">
+                        <p class="text-gray-600 mb-4 md:mb-6 text-sm md:text-base uniform-card-content">
+                            Comprehensive energy finance and development platform offering pre-approved capital for 30MW+ projects with full EPC services and IPP development.
+                        </p>
+                        <div class="space-y-3 mb-6 md:mb-8">
                             <div class="flex items-center gap-3">
-                                <i data-lucide="dollar-sign" class="w-5 h-5 text-black"></i>
-                                <span class="text-gray-700">Pre-Approved Capital</span>
+                                <i data-lucide="dollar-sign" class="w-4 h-4 md:w-5 md:h-5 text-black flex-shrink-0"></i>
+                                <span class="text-gray-700 text-sm md:text-base">Pre-Approved Capital</span>
                             </div>
                             <div class="flex items-center gap-3">
-                                <i data-lucide="globe" class="w-5 h-5 text-black"></i>
-                                <span class="text-gray-700">Pan-African Reach</span>
+                                <i data-lucide="globe" class="w-4 h-4 md:w-5 md:h-5 text-black flex-shrink-0"></i>
+                                <span class="text-gray-700 text-sm md:text-base">Pan-African Reach</span>
                             </div>
                         </div>
                         <a href="https://funding.maribamedia.co.za" target="_blank" 
-                           class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-xl font-bold transition-all duration-300 w-full">
+                           class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-4 py-3 md:px-6 md:py-3 rounded-xl font-bold transition-all duration-300 w-full uniform-card-button text-sm md:text-base">
                             Learn More
-                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            <i data-lucide="arrow-right" class="w-4 h-4 md:w-5 md:h-5"></i>
                         </a>
                     </div>
                 </div>
@@ -796,49 +894,49 @@
     </section>
 
     <!-- Guarantee Section -->
-    <section id="guarantee" class="py-24 bg-gray-50">
+    <section id="guarantee" class="py-16 md:py-24 bg-gray-50 section-padding">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20" data-aos="fade-up">
+            <div class="text-center mb-12 md:mb-20" data-aos="fade-up">
                 <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 border border-gray-300 text-black text-sm font-semibold mb-6">
                     <i data-lucide="shield-check" class="w-4 h-4"></i>
                     <span>Our Guarantee</span>
                 </div>
-                <h2 class="text-4xl md:text-5xl font-bold text-black mb-6">The 30-Day Business Development Guarantee</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 md:mb-6 section-heading">The 30-Day Business Development Guarantee</h2>
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
                     We guarantee measurable results within 30 days or continue working at no additional cost until we deliver.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
                 <div data-aos="fade-right">
-                    <div class="rounded-2xl p-10 border-2 border-black guarantee-card">
-                        <h3 class="text-2xl font-bold text-black mb-8">What We Guarantee</h3>
-                        <div class="space-y-8">
-                            <div class="flex items-start gap-4">
-                                <div class="icon-circle">
-                                    <i data-lucide="briefcase" class="w-6 h-6 text-white"></i>
+                    <div class="rounded-2xl p-6 md:p-8 lg:p-10 border-2 border-black guarantee-card">
+                        <h3 class="text-xl md:text-2xl font-bold text-black mb-6 md:mb-8">What We Guarantee</h3>
+                        <div class="space-y-6 md:space-y-8">
+                            <div class="flex items-start gap-3 md:gap-4">
+                                <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="briefcase" class="w-5 h-5 md:w-6 md:h-6 text-white"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-xl font-bold text-black mb-2">10+ Guaranteed Extra Jobs</h4>
-                                    <p class="text-gray-600">100% commission basis - we only earn when you get paid</p>
+                                    <h4 class="text-lg md:text-xl font-bold text-black mb-2">10+ Guaranteed Extra Jobs</h4>
+                                    <p class="text-gray-600 text-sm md:text-base">100% commission basis - we only earn when you get paid</p>
                                 </div>
                             </div>
-                            <div class="flex items-start gap-4">
-                                <div class="icon-circle">
-                                    <i data-lucide="clock" class="w-6 h-6 text-white"></i>
+                            <div class="flex items-start gap-3 md:gap-4">
+                                <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="clock" class="w-5 h-5 md:w-6 md:h-6 text-white"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-xl font-bold text-black mb-2">28+ Hours Weekly Time Savings</h4>
-                                    <p class="text-gray-600">Automation of repetitive tasks and business development</p>
+                                    <h4 class="text-lg md:text-xl font-bold text-black mb-2">28+ Hours Weekly Time Savings</h4>
+                                    <p class="text-gray-600 text-sm md:text-base">Automation of repetitive tasks and business development</p>
                                 </div>
                             </div>
-                            <div class="flex items-start gap-4">
-                                <div class="icon-circle">
-                                    <i data-lucide="zap" class="w-6 h-6 text-white"></i>
+                            <div class="flex items-start gap-3 md:gap-4">
+                                <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="zap" class="w-5 h-5 md:w-6 md:h-6 text-white"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-xl font-bold text-black mb-2">24/7 AI Team Operation</h4>
-                                    <p class="text-gray-600">Your dedicated team works around the clock</p>
+                                    <h4 class="text-lg md:text-xl font-bold text-black mb-2">24/7 AI Team Operation</h4>
+                                    <p class="text-gray-600 text-sm md:text-base">Your dedicated team works around the clock</p>
                                 </div>
                             </div>
                         </div>
@@ -846,45 +944,45 @@
                 </div>
 
                 <div data-aos="fade-left">
-                    <div class="bg-white rounded-2xl p-10 border-2 border-black guarantee-card">
-                        <div class="flex items-center gap-4 mb-8">
-                            <div class="w-16 h-16 rounded-2xl bg-black flex items-center justify-center">
-                                <i data-lucide="badge-check" class="w-8 h-8 text-white"></i>
+                    <div class="bg-white rounded-2xl p-6 md:p-8 lg:p-10 border-2 border-black guarantee-card">
+                        <div class="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
+                            <div class="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-black flex items-center justify-center">
+                                <i data-lucide="badge-check" class="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-white"></i>
                             </div>
                             <div>
-                                <h3 class="text-2xl font-bold text-black">Risk-Free Premium Implementation</h3>
-                                <p class="text-gray-600">No results = No additional cost</p>
+                                <h3 class="text-xl md:text-2xl font-bold text-black">Risk-Free Premium Implementation</h3>
+                                <p class="text-gray-600 text-sm md:text-base">No results = No additional cost</p>
                             </div>
                         </div>
 
-                        <div class="space-y-6">
-                            <div class="p-6 rounded-xl bg-gray-50 border-2 border-black hover:shadow-md transition-all">
-                                <div class="flex items-center justify-between mb-2">
+                        <div class="space-y-4 md:space-y-6">
+                            <div class="p-4 md:p-6 rounded-xl bg-gray-50 border-2 border-black hover:shadow-md transition-all">
+                                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-2 gap-2">
                                     <h4 class="font-bold text-black">30-Day Timeline</h4>
-                                    <span class="px-3 py-1 bg-black text-white text-sm font-bold rounded-full">Guaranteed</span>
+                                    <span class="px-3 py-1 bg-black text-white text-sm font-bold rounded-full w-fit">Guaranteed</span>
                                 </div>
-                                <p class="text-gray-600">Full implementation and measurable results</p>
+                                <p class="text-gray-600 text-sm md:text-base">Full implementation and measurable results</p>
                             </div>
 
-                            <div class="p-6 rounded-xl bg-gray-50 border-2 border-black hover:shadow-md transition-all">
-                                <div class="flex items-center justify-between mb-2">
+                            <div class="p-4 md:p-6 rounded-xl bg-gray-50 border-2 border-black hover:shadow-md transition-all">
+                                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-2 gap-2">
                                     <h4 class="font-bold text-black">Weekly Progress Reports</h4>
-                                    <span class="px-3 py-1 bg-black text-white text-sm font-bold rounded-full">Transparent</span>
+                                    <span class="px-3 py-1 bg-black text-white text-sm font-bold rounded-full w-fit">Transparent</span>
                                 </div>
-                                <p class="text-gray-600">Clear metrics showing job acquisition and time savings</p>
+                                <p class="text-gray-600 text-sm md:text-base">Clear metrics showing job acquisition and time savings</p>
                             </div>
 
-                            <div class="p-6 rounded-xl bg-gray-50 border-2 border-black hover:shadow-md transition-all">
-                                <div class="flex items-center justify-between mb-2">
+                            <div class="p-4 md:p-6 rounded-xl bg-gray-50 border-2 border-black hover:shadow-md transition-all">
+                                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-2 gap-2">
                                     <h4 class="font-bold text-black">No Upfront Fees</h4>
-                                    <span class="px-3 py-1 bg-black text-white text-sm font-bold rounded-full">Included</span>
+                                    <span class="px-3 py-1 bg-black text-white text-sm font-bold rounded-full w-fit">Included</span>
                                 </div>
-                                <p class="text-gray-600">We only get paid 30% when you get paid</p>
+                                <p class="text-gray-600 text-sm md:text-base">We only get paid 30% when you get paid</p>
                             </div>
                         </div>
 
                         <a href="https://cal.com/partner-discovery/south-africa" target="_blank" 
-                           class="mt-10 block w-full py-4 px-6 bg-black hover:bg-gray-900 text-white rounded-xl font-bold text-center transition-all duration-300 shadow-lg border-2 border-black">
+                           class="mt-8 md:mt-10 block w-full py-3 md:py-4 px-4 md:px-6 bg-black hover:bg-gray-900 text-white rounded-xl font-bold text-center transition-all duration-300 shadow-lg border-2 border-black text-sm md:text-base">
                             Start Your 30-Day Guarantee
                         </a>
                     </div>
@@ -894,15 +992,15 @@
     </section>
 
     <!-- Process Section -->
-    <section id="process" class="py-24 bg-white">
+    <section id="process" class="py-16 md:py-24 bg-white section-padding">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20" data-aos="fade-up">
+            <div class="text-center mb-12 md:mb-20" data-aos="fade-up">
                 <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 border border-gray-300 text-black text-sm font-semibold mb-6">
                     <i data-lucide="play-circle" class="w-4 h-4"></i>
                     <span>Our Process</span>
                 </div>
-                <h2 class="text-4xl md:text-5xl font-bold text-black mb-6">The 30-Day Implementation Framework</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 md:mb-6 section-heading">The 30-Day Implementation Framework</h2>
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
                     A structured approach to deliver guaranteed business development results within 30 days.
                 </p>
             </div>
@@ -913,35 +1011,35 @@
                 <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-300 hidden lg:block"></div>
 
                 <!-- Process Steps -->
-                <div class="space-y-16 lg:space-y-0">
+                <div class="space-y-12 md:space-y-16 lg:space-y-0">
                     <!-- Week 1 -->
-                    <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center" data-aos="fade-right">
-                        <div class="lg:text-right mb-8 lg:mb-0">
-                            <div class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gray-100 border border-gray-300">
-                                <span class="text-2xl font-bold text-black">Week 1</span>
-                                <span class="text-black font-semibold">Discovery & Design</span>
+                    <div class="lg:grid lg:grid-cols-2 lg:gap-12 md:gap-16 items-center" data-aos="fade-right">
+                        <div class="lg:text-right mb-6 md:mb-8 lg:mb-0">
+                            <div class="inline-flex items-center gap-2 md:gap-3 px-4 md:px-6 py-2 md:py-3 rounded-full bg-gray-100 border border-gray-300">
+                                <span class="text-xl md:text-2xl font-bold text-black">Week 1</span>
+                                <span class="text-black font-semibold text-sm md:text-base">Discovery & Design</span>
                             </div>
-                            <h3 class="text-2xl font-bold text-black mt-6 mb-4">Strategic Assessment</h3>
-                            <p class="text-gray-600">Identify automation opportunities and design specialized business development AI.</p>
+                            <h3 class="text-xl md:text-2xl font-bold text-black mt-4 md:mt-6 mb-2 md:mb-4">Strategic Assessment</h3>
+                            <p class="text-gray-600 text-sm md:text-base">Identify automation opportunities and design specialized business development AI.</p>
                         </div>
                         <div class="relative">
-                            <div class="absolute left-1/2 transform -translate-x-1/2 lg:left-0 lg:transform-none w-16 h-16 rounded-2xl bg-black flex items-center justify-center z-10">
-                                <i data-lucide="search" class="w-8 h-8 text-white"></i>
+                            <div class="absolute left-1/2 transform -translate-x-1/2 lg:left-0 lg:transform-none w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-black flex items-center justify-center z-10">
+                                <i data-lucide="search" class="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-white"></i>
                             </div>
-                            <div class="pt-10 lg:pt-0 lg:pl-24">
-                                <div class="bg-white rounded-2xl border-2 border-black p-8 shadow-lg product-card">
-                                    <ul class="space-y-4">
+                            <div class="pt-10 lg:pt-0 lg:pl-20 md:lg:pl-24">
+                                <div class="bg-white rounded-2xl border-2 border-black p-6 md:p-8 shadow-lg product-card">
+                                    <ul class="space-y-3 md:space-y-4">
                                         <li class="flex items-center gap-3">
                                             <div class="timeline-dot"></div>
-                                            <span class="text-gray-700">Time-wasting task analysis</span>
+                                            <span class="text-gray-700 text-sm md:text-base">Time-wasting task analysis</span>
                                         </li>
                                         <li class="flex items-center gap-3">
                                             <div class="timeline-dot"></div>
-                                            <span class="text-gray-700">Automation opportunity mapping</span>
+                                            <span class="text-gray-700 text-sm md:text-base">Automation opportunity mapping</span>
                                         </li>
                                         <li class="flex items-center gap-3">
                                             <div class="timeline-dot"></div>
-                                            <span class="text-gray-700">AI agent configuration</span>
+                                            <span class="text-gray-700 text-sm md:text-base">AI agent configuration</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -950,33 +1048,33 @@
                     </div>
 
                     <!-- Week 2-3 -->
-                    <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center" data-aos="fade-left">
-                        <div class="lg:order-2 mb-8 lg:mb-0">
-                            <div class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gray-100 border border-gray-300">
-                                <span class="text-2xl font-bold text-black">Week 2-3</span>
-                                <span class="text-black font-semibold">Implementation & Optimization</span>
+                    <div class="lg:grid lg:grid-cols-2 lg:gap-12 md:gap-16 items-center mt-12 md:mt-16 lg:mt-0" data-aos="fade-left">
+                        <div class="lg:order-2 mb-6 md:mb-8 lg:mb-0">
+                            <div class="inline-flex items-center gap-2 md:gap-3 px-4 md:px-6 py-2 md:py-3 rounded-full bg-gray-100 border border-gray-300">
+                                <span class="text-xl md:text-2xl font-bold text-black">Week 2-3</span>
+                                <span class="text-black font-semibold text-sm md:text-base">Implementation & Optimization</span>
                             </div>
-                            <h3 class="text-2xl font-bold text-black mt-6 mb-4">AI Deployment & Tuning</h3>
-                            <p class="text-gray-600">Deploy specialized business development AI and optimize for maximum efficiency.</p>
+                            <h3 class="text-xl md:text-2xl font-bold text-black mt-4 md:mt-6 mb-2 md:mb-4">AI Deployment & Tuning</h3>
+                            <p class="text-gray-600 text-sm md:text-base">Deploy specialized business development AI and optimize for maximum efficiency.</p>
                         </div>
                         <div class="relative lg:order-1">
-                            <div class="absolute left-1/2 transform -translate-x-1/2 lg:left-auto lg:right-0 lg:transform-none w-16 h-16 rounded-2xl bg-black flex items-center justify-center z-10">
-                                <i data-lucide="settings" class="w-8 h-8 text-white"></i>
+                            <div class="absolute left-1/2 transform -translate-x-1/2 lg:left-auto lg:right-0 lg:transform-none w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-black flex items-center justify-center z-10">
+                                <i data-lucide="settings" class="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-white"></i>
                             </div>
-                            <div class="pt-10 lg:pt-0 lg:pr-24">
-                                <div class="bg-white rounded-2xl border-2 border-black p-8 shadow-lg product-card">
-                                    <ul class="space-y-4">
+                            <div class="pt-10 lg:pt-0 lg:pr-20 md:lg:pr-24">
+                                <div class="bg-white rounded-2xl border-2 border-black p-6 md:p-8 shadow-lg product-card">
+                                    <ul class="space-y-3 md:space-y-4">
                                         <li class="flex items-center gap-3">
                                             <div class="timeline-dot"></div>
-                                            <span class="text-gray-700">Specialized AI agent deployment</span>
+                                            <span class="text-gray-700 text-sm md:text-base">Specialized AI agent deployment</span>
                                         </li>
                                         <div class="flex items-center gap-3">
                                             <div class="timeline-dot"></div>
-                                            <span class="text-gray-700">Automation system implementation</span>
+                                            <span class="text-gray-700 text-sm md:text-base">Automation system implementation</span>
                                         </div>
                                         <li class="flex items-center gap-3">
                                             <div class="timeline-dot"></div>
-                                            <span class="text-gray-700">Performance optimization</span>
+                                            <span class="text-gray-700 text-sm md:text-base">Performance optimization</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -985,33 +1083,33 @@
                     </div>
 
                     <!-- Week 4 -->
-                    <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center" data-aos="fade-right">
-                        <div class="lg:text-right mb-8 lg:mb-0">
-                            <div class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gray-100 border border-gray-300">
-                                <span class="text-2xl font-bold text-black">Week 4</span>
-                                <span class="text-black font-semibold">Results & Validation</span>
+                    <div class="lg:grid lg:grid-cols-2 lg:gap-12 md:gap-16 items-center mt-12 md:mt-16 lg:mt-0" data-aos="fade-right">
+                        <div class="lg:text-right mb-6 md:mb-8 lg:mb-0">
+                            <div class="inline-flex items-center gap-2 md:gap-3 px-4 md:px-6 py-2 md:py-3 rounded-full bg-gray-100 border border-gray-300">
+                                <span class="text-xl md:text-2xl font-bold text-black">Week 4</span>
+                                <span class="text-black font-semibold text-sm md:text-base">Results & Validation</span>
                             </div>
-                            <h3 class="text-2xl font-bold text-black mt-6 mb-4">Guarantee Validation</h3>
-                            <p class="text-gray-600">Measure results and validate achievement of all guaranteed outcomes.</p>
+                            <h3 class="text-xl md:text-2xl font-bold text-black mt-4 md:mt-6 mb-2 md:mb-4">Guarantee Validation</h3>
+                            <p class="text-gray-600 text-sm md:text-base">Measure results and validate achievement of all guaranteed outcomes.</p>
                         </div>
                         <div class="relative">
-                            <div class="absolute left-1/2 transform -translate-x-1/2 lg:left-0 lg:transform-none w-16 h-16 rounded-2xl bg-black flex items-center justify-center z-10">
-                                <i data-lucide="target" class="w-8 h-8 text-white"></i>
+                            <div class="absolute left-1/2 transform -translate-x-1/2 lg:left-0 lg:transform-none w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-black flex items-center justify-center z-10">
+                                <i data-lucide="target" class="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-white"></i>
                             </div>
-                            <div class="pt-10 lg:pt-0 lg:pl-24">
-                                <div class="bg-white rounded-2xl border-2 border-black p-8 shadow-lg product-card">
-                                    <ul class="space-y-4">
+                            <div class="pt-10 lg:pt-0 lg:pl-20 md:lg:pl-24">
+                                <div class="bg-white rounded-2xl border-2 border-black p-6 md:p-8 shadow-lg product-card">
+                                    <ul class="space-y-3 md:space-y-4">
                                         <li class="flex items-center gap-3">
                                             <div class="timeline-dot"></div>
-                                            <span class="text-gray-700">28+ hours time savings validation</span>
+                                            <span class="text-gray-700 text-sm md:text-base">28+ hours time savings validation</span>
                                         </li>
                                         <li class="flex items-center gap-3">
                                             <div class="timeline-dot"></div>
-                                            <span class="text-gray-700">Qualified prospect pipeline review</span>
+                                            <span class="text-gray-700 text-sm md:text-base">Qualified prospect pipeline review</span>
                                         </li>
                                         <li class="flex items-center gap-3">
                                             <div class="timeline-dot"></div>
-                                            <span class="text-gray-700">Guarantee activation verification</span>
+                                            <span class="text-gray-700 text-sm md:text-base">Guarantee activation verification</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -1022,22 +1120,22 @@
             </div>
 
             <!-- Final CTA -->
-            <div class="mt-32 text-center" data-aos="zoom-in">
-                <div class="bg-black rounded-3xl p-12 shadow-2xl relative overflow-hidden">
+            <div class="mt-16 md:mt-24 lg:mt-32 text-center" data-aos="zoom-in">
+                <div class="bg-black rounded-2xl md:rounded-3xl p-8 md:p-10 lg:p-12 shadow-2xl relative overflow-hidden">
                     <div class="relative z-10">
-                        <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Transform Your Business Development?</h3>
-                        <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+                        <h3 class="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 md:mb-6">Ready to Transform Your Business Development?</h3>
+                        <p class="text-base md:text-lg lg:text-xl text-gray-300 mb-6 md:mb-8 lg:mb-10 max-w-2xl mx-auto">
                             Start your 30-day guarantee today and experience 28+ hours weekly time savings, automated fulfillment, and focus on qualified prospects only.
                         </p>
-                        <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                        <div class="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center">
                             <a href="https://cal.com/partner-discovery/south-africa" target="_blank"
-                               class="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-black px-12 py-5 rounded-xl font-bold text-lg transition-all duration-300 shadow-2xl transform hover:-translate-y-1 border-2 border-white">
-                                <i data-lucide="calendar" class="w-6 h-6"></i>
+                               class="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-black px-8 py-4 md:px-10 md:py-4 lg:px-12 lg:py-5 rounded-xl font-bold text-base md:text-lg transition-all duration-300 shadow-2xl transform hover:-translate-y-1 border-2 border-white mobile-full-width sm:w-auto text-center">
+                                <i data-lucide="calendar" class="w-5 h-5 md:w-6 md:h-6"></i>
                                 Schedule Your Demo
                             </a>
                             <a href="mailto:victor@maribamedia.co.za"
-                               class="inline-flex items-center justify-center gap-3 bg-transparent hover:bg-white/10 text-white px-12 py-5 rounded-xl font-semibold text-lg transition-all duration-300 border-2 border-white">
-                                <i data-lucide="mail" class="w-6 h-6"></i>
+                               class="inline-flex items-center justify-center gap-3 bg-transparent hover:bg-white/10 text-white px-8 py-4 md:px-10 md:py-4 lg:px-12 lg:py-5 rounded-xl font-semibold text-base md:text-lg transition-all duration-300 border-2 border-white mobile-full-width sm:w-auto text-center">
+                                <i data-lucide="mail" class="w-5 h-5 md:w-6 md:h-6"></i>
                                 Contact Sales
                             </a>
                         </div>
@@ -1048,94 +1146,94 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black border-t border-gray-800 pt-20 pb-12">
+    <footer class="bg-black border-t border-gray-800 pt-12 md:pt-16 lg:pt-20 pb-8 md:pb-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-12 mb-12 md:mb-16">
                 
                 <!-- Brand -->
                 <div class="lg:col-span-2">
-                    <a href="#home" class="flex items-center gap-3 mb-6 group">
+                    <a href="#home" class="flex items-center gap-3 mb-4 md:mb-6 group">
                         <div class="bg-white p-2 rounded-lg group-hover:shadow-lg transition-all">
-                            <i data-lucide="zap" class="w-6 h-6 text-black"></i>
+                            <i data-lucide="zap" class="w-5 h-5 md:w-6 md:h-6 text-black"></i>
                         </div>
                         <div>
-                            <span class="text-xl font-bold text-white">Mariba Media</span>
-                            <span class="block text-sm text-gray-400">B2B Business Development Consultancy</span>
+                            <span class="text-lg md:text-xl font-bold text-white">Mariba Media</span>
+                            <span class="block text-xs md:text-sm text-gray-400">B2B Business Development Consultancy</span>
                         </div>
                     </a>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-8 max-w-md">
+                    <p class="text-gray-400 text-xs md:text-sm leading-relaxed mb-6 md:mb-8 max-w-md">
                         We implement specialized business development agents that deliver 28+ hours weekly time savings, automate fulfillment systems, and increase client acquisition within 30 days—guaranteed.
                     </p>
-                    <div class="flex gap-4">
-                        <a href="https://www.facebook.com/people/Mariba-Media-Pty-Ltd/61576915266105/" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-white flex items-center justify-center text-gray-300 hover:text-black transition-all">
-                            <i data-lucide="facebook" class="w-4 h-4"></i>
+                    <div class="flex gap-3 md:gap-4">
+                        <a href="https://www.facebook.com/people/Mariba-Media-Pty-Ltd/61576915266105/" target="_blank" class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gray-800 hover:bg-white flex items-center justify-center text-gray-300 hover:text-black transition-all">
+                            <i data-lucide="facebook" class="w-3 h-3 md:w-4 md:h-4"></i>
                         </a>
-                        <a href="https://www.youtube.com/@TV-Mariba" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-white flex items-center justify-center text-gray-300 hover:text-black transition-all">
-                            <i data-lucide="youtube" class="w-4 h-4"></i>
+                        <a href="https://www.youtube.com/@TV-Mariba" target="_blank" class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gray-800 hover:bg-white flex items-center justify-center text-gray-300 hover:text-black transition-all">
+                            <i data-lucide="youtube" class="w-3 h-3 md:w-4 md:h-4"></i>
                         </a>
-                        <a href="https://www.linkedin.com/company/mariba-media?_l=en_US" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-white flex items-center justify-center text-gray-300 hover:text-black transition-all">
-                            <i data-lucide="linkedin" class="w-4 h-4"></i>
+                        <a href="https://www.linkedin.com/company/mariba-media?_l=en_US" target="_blank" class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gray-800 hover:bg-white flex items-center justify-center text-gray-300 hover:text-black transition-all">
+                            <i data-lucide="linkedin" class="w-3 h-3 md:w-4 md:h-4"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/tebogo-mariba-466960330/" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-white flex items-center justify-center text-gray-300 hover:text-black transition-all">
-                            <i data-lucide="user" class="w-4 h-4"></i>
+                        <a href="https://www.linkedin.com/in/tebogo-mariba-466960330/" target="_blank" class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gray-800 hover:bg-white flex items-center justify-center text-gray-300 hover:text-black transition-all">
+                            <i data-lucide="user" class="w-3 h-3 md:w-4 md:h-4"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Solutions -->
                 <div>
-                    <h5 class="text-lg font-bold text-white mb-6">Solutions</h5>
-                    <ul class="space-y-4">
-                        <li><a href="#solutions" class="text-gray-400 hover:text-white text-sm transition-colors">Sales Organizations</a></li>
-                        <li><a href="#solutions" class="text-gray-400 hover:text-white text-sm transition-colors">Media & Content Teams</a></li>
-                        <li><a href="#solutions" class="text-gray-400 hover:text-white text-sm transition-colors">Education & Training</a></li>
-                        <li><a href="#guarantee" class="text-gray-400 hover:text-white text-sm transition-colors">30-Day Guarantee</a></li>
+                    <h5 class="text-base md:text-lg font-bold text-white mb-4 md:mb-6">Solutions</h5>
+                    <ul class="space-y-3 md:space-y-4">
+                        <li><a href="#solutions" class="text-gray-400 hover:text-white text-xs md:text-sm transition-colors">Sales Organizations</a></li>
+                        <li><a href="#solutions" class="text-gray-400 hover:text-white text-xs md:text-sm transition-colors">Media & Content Teams</a></li>
+                        <li><a href="#solutions" class="text-gray-400 hover:text-white text-xs md:text-sm transition-colors">Education & Training</a></li>
+                        <li><a href="#guarantee" class="text-gray-400 hover:text-white text-xs md:text-sm transition-colors">30-Day Guarantee</a></li>
                     </ul>
                 </div>
 
                 <!-- Products -->
                 <div>
-                    <h5 class="text-lg font-bold text-white mb-6">Products</h5>
-                    <ul class="space-y-4">
-                        <li><a href="#products" class="text-gray-400 hover:text-white text-sm transition-colors">Concierge AI</a></li>
-                        <li><a href="#products" class="text-gray-400 hover:text-white text-sm transition-colors">Focal</a></li>
-                        <li><a href="#products" class="text-gray-400 hover:text-white text-sm transition-colors">TrainingOS</a></li>
-                        <li><a href="#products" class="text-gray-400 hover:text-white text-sm transition-colors">Energy Mixer</a></li>
+                    <h5 class="text-base md:text-lg font-bold text-white mb-4 md:mb-6">Products</h5>
+                    <ul class="space-y-3 md:space-y-4">
+                        <li><a href="#products" class="text-gray-400 hover:text-white text-xs md:text-sm transition-colors">Concierge AI</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white text-xs md:text-sm transition-colors">Focal</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white text-xs md:text-sm transition-colors">TrainingOS</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white text-xs md:text-sm transition-colors">Energy Mixer</a></li>
                     </ul>
                 </div>
 
                 <!-- Contact -->
                 <div>
-                    <h5 class="text-lg font-bold text-white mb-6">Contact</h5>
-                    <ul class="space-y-4">
-                        <li class="flex items-center gap-3 text-sm text-gray-400">
-                            <i data-lucide="mail" class="w-4 h-4 text-white"></i>
+                    <h5 class="text-base md:text-lg font-bold text-white mb-4 md:mb-6">Contact</h5>
+                    <ul class="space-y-3 md:space-y-4">
+                        <li class="flex items-center gap-2 md:gap-3 text-xs md:text-sm text-gray-400">
+                            <i data-lucide="mail" class="w-3 h-3 md:w-4 md:h-4 text-white"></i>
                             <a href="mailto:victor@maribamedia.co.za" class="hover:text-white">victor@maribamedia.co.za</a>
                         </li>
-                        <li class="flex items-center gap-3 text-sm text-gray-400">
-                            <i data-lucide="phone" class="w-4 h-4 text-white"></i>
+                        <li class="flex items-center gap-2 md:gap-3 text-xs md:text-sm text-gray-400">
+                            <i data-lucide="phone" class="w-3 h-3 md:w-4 md:h-4 text-white"></i>
                             <span>+27 (0) 76 647 3499</span>
                         </li>
-                        <li class="flex items-center gap-3 text-sm text-gray-400">
-                            <i data-lucide="map-pin" class="w-4 h-4 text-white"></i>
+                        <li class="flex items-center gap-2 md:gap-3 text-xs md:text-sm text-gray-400">
+                            <i data-lucide="map-pin" class="w-3 h-3 md:w-4 md:h-4 text-white"></i>
                             <span>Bronkhorstspruit, South Africa</span>
                         </li>
-                        <li class="flex items-center gap-3 text-sm text-gray-400">
-                            <i data-lucide="linkedin" class="w-4 h-4 text-white"></i>
+                        <li class="flex items-center gap-2 md:gap-3 text-xs md:text-sm text-gray-400">
+                            <i data-lucide="linkedin" class="w-3 h-3 md:w-4 md:h-4 text-white"></i>
                             <a href="https://www.linkedin.com/in/tebogo-mariba-466960330/" target="_blank" class="hover:text-white">Tebogo Mariba</a>
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <div class="border-t border-gray-800 pt-8 text-center">
-                <p class="text-gray-500 text-sm">
+            <div class="border-t border-gray-800 pt-6 md:pt-8 text-center">
+                <p class="text-gray-500 text-xs md:text-sm">
                     © 2025 Mariba Media. Company Registration No: 2024 / 132788 / 07. All rights reserved.
                 </p>
-                <div class="mt-4 flex flex-wrap justify-center gap-6 text-sm text-gray-500">
+                <div class="mt-3 md:mt-4 flex flex-wrap justify-center gap-4 md:gap-6 text-xs md:text-sm text-gray-500">
                     <a href="https://www.freeprivacypolicy.com/live/19ac9e12-2d32-49e8-b611-a103aaec0171" target="_blank" class="hover:text-gray-300">Privacy Policy</a>
                     <a href="https://drive.google.com/file/d/1vfcZwMMvgjc5IV4U0AUEHpZUzszQ8r79/view?usp=sharing" target="_blank" class="hover:text-gray-300">POPIA Compliance</a>
-                    <span>30-Day Business Development Guarantee</span>
+                    <span class="hidden sm:inline">30-Day Business Development Guarantee</span>
                 </div>
             </div>
         </div>
@@ -1167,8 +1265,9 @@
             duration: 1000,
             easing: 'ease-out-cubic',
             once: true,
-            offset: 100,
-            delay: 100
+            offset: 50,
+            delay: 100,
+            disable: window.innerWidth < 768
         });
 
         // Navbar Scroll Effect
