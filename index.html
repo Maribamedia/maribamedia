@@ -45,13 +45,16 @@
                 700: '#374151',
                 800: '#1f2937',
                 900: '#111827',
-              }
+              },
+              whatsapp: '#25D366',
+            }
             },
             animation: {
               'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
               'float': 'float 6s ease-in-out infinite',
               'slide-in': 'slideIn 0.5s ease-out',
               'fade-in': 'fadeIn 0.8s ease-out',
+              'bounce-slow': 'bounce 2s infinite',
             },
             keyframes: {
               float: {
@@ -69,7 +72,6 @@
             }
           }
         }
-      }
     </script>
     
     <style>
@@ -173,6 +175,77 @@
         background: #000000;
         border: 3px solid #ffffff;
         box-shadow: 0 0 0 3px #000000;
+      }
+
+      /* WhatsApp Widget Styles */
+      .whatsapp-widget {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+
+      .whatsapp-button {
+        width: 60px;
+        height: 60px;
+        background-color: #25D366;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+        transition: all 0.3s ease;
+        animation: pulse-slow 2s infinite;
+      }
+
+      .whatsapp-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+      }
+
+      .whatsapp-button i {
+        color: white;
+        width: 28px;
+        height: 28px;
+      }
+
+      .whatsapp-tooltip {
+        background: #075E54;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 8px;
+        margin-bottom: 12px;
+        font-size: 14px;
+        font-weight: 500;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+        white-space: nowrap;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .whatsapp-widget:hover .whatsapp-tooltip {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 768px) {
+        .whatsapp-widget {
+          bottom: 20px;
+          right: 20px;
+        }
+        
+        .whatsapp-button {
+          width: 56px;
+          height: 56px;
+        }
+        
+        .whatsapp-tooltip {
+          display: none;
+        }
       }
     </style>
 </head>
@@ -468,602 +541,253 @@
                 </p>
             </div>
 
-            <!-- Product 1: Concierge AI -->
-            <div class="mb-32" data-aos="fade-up">
-                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
-                    <div class="order-2 lg:order-1">
-                        <div class="inline-flex items-center gap-3 mb-6">
-                            <div class="w-16 h-16 rounded-2xl bg-black flex items-center justify-center">
-                                <i data-lucide="briefcase" class="w-8 h-8 text-white"></i>
-                            </div>
-                            <span class="px-4 py-2 rounded-lg bg-gray-100 text-black text-sm font-bold border border-gray-300">SaaS Platform</span>
+            <!-- First Row: Concierge, TrainingOS, FibreConnector, Focal -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <!-- Product 1: Concierge AI -->
+                <div class="bg-white rounded-2xl border border-gray-200 p-8 product-card hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="0">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 rounded-2xl bg-black flex items-center justify-center">
+                            <i data-lucide="briefcase" class="w-8 h-8 text-white"></i>
                         </div>
-                        <h3 class="text-4xl font-bold text-black mb-6">Concierge AI</h3>
-                        <h4 class="text-xl text-gray-600 font-medium mb-8">Your 24/7 Business Development Team</h4>
-                        <p class="text-lg text-gray-600 mb-10 leading-relaxed">
-                            <span class="font-bold text-black">No Revenue? No Jobs?</span> Get 10+ Guaranteed Extra Jobs on 100% Commission. We're your 24/7 dedicated team that books appointments, manages your calendar, and handles business development. No upfront fees. We only get paid 30% when YOU get paid.
-                        </p>
-                        
-                        <div class="grid sm:grid-cols-2 gap-6 mb-10">
-                            <div class="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-200 hover:shadow-md transition-all">
-                                <i data-lucide="clock" class="w-5 h-5 text-black mt-1"></i>
-                                <div>
-                                    <h5 class="font-bold text-black mb-1">28+ Hours Weekly Saved</h5>
-                                    <p class="text-sm text-gray-600">Automate research and outreach tasks</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-200 hover:shadow-md transition-all">
-                                <i data-lucide="target" class="w-5 h-5 text-black mt-1"></i>
-                                <div>
-                                    <h5 class="font-bold text-black mb-1">Qualified Lead Identification</h5>
-                                    <p class="text-sm text-gray-600">AI-powered prospect qualification</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <a href="https://www.concierge.maribamedia.co.za" target="_blank" 
-                           class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg border-2 border-black">
-                            Automate Business Development
-                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                        </a>
-                    </div>
-                    <div class="order-1 lg:order-2">
-                        <div class="bg-gray-50 rounded-2xl p-8 product-card border border-gray-200">
-                            <div class="bg-white rounded-xl p-8 shadow-lg">
-                                <h4 class="text-xl font-bold text-black mb-6">Core Capabilities</h4>
-                                <ul class="space-y-4">
-                                    <li class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                                            <i data-lucide="search" class="w-4 h-4 text-black"></i>
-                                        </div>
-                                        <span class="text-gray-700">Intelligent market research automation</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                                            <i data-lucide="message-square" class="w-4 h-4 text-black"></i>
-                                        </div>
-                                        <span class="text-gray-700">Automated outreach & follow-up sequences</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                                            <i data-lucide="bar-chart-3" class="w-4 h-4 text-black"></i>
-                                        </div>
-                                        <span class="text-gray-700">Lead scoring & qualification algorithms</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                                            <i data-lucide="zap" class="w-4 h-4 text-black"></i>
-                                        </div>
-                                        <span class="text-gray-700">Real-time opportunity identification</span>
-                                    </li>
-                                </ul>
-                            </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-black">Concierge AI</h3>
+                            <p class="text-gray-600">Your 24/7 Business Development Team</p>
                         </div>
                     </div>
+                    <p class="text-gray-600 mb-6">No Revenue? No Jobs? Get 10+ Guaranteed Extra Jobs on 100% Commission. We're your 24/7 dedicated team that books appointments, manages your calendar, and handles business development.</p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="clock" class="w-5 h-5 text-black"></i>
+                            <span class="text-gray-700">28+ Hours Weekly Saved</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="target" class="w-5 h-5 text-black"></i>
+                            <span class="text-gray-700">Qualified Lead Identification</span>
+                        </div>
+                    </div>
+                    <a href="https://www.concierge.maribamedia.co.za" target="_blank" 
+                       class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-xl font-bold transition-all duration-300 w-full">
+                        Learn More
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+
+                <!-- Product 2: TrainingOS -->
+                <div class="bg-white rounded-2xl border border-gray-200 p-8 product-card hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 rounded-2xl bg-black flex items-center justify-center">
+                            <i data-lucide="graduation-cap" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-black">TrainingOS</h3>
+                            <p class="text-gray-600">AI-Powered English Tutoring Platform</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">Guarantees 12% grade improvement through AI-powered English tutoring. Automates 95% of administrative tasks, student onboarding, and course delivery.</p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="trending-up" class="w-5 h-5 text-black"></i>
+                            <span class="text-gray-700">12% Grade Improvement</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="bot" class="w-5 h-5 text-black"></i>
+                            <span class="text-gray-700">95% Admin Automation</span>
+                        </div>
+                    </div>
+                    <a href="https://www.training.maribamedia.co.za" target="_blank" 
+                       class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-xl font-bold transition-all duration-300 w-full">
+                        Learn More
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+
+                <!-- Product 3: FibreConnector -->
+                <div class="bg-white rounded-2xl border border-gray-200 p-8 product-card hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 rounded-2xl bg-black flex items-center justify-center">
+                            <i data-lucide="wifi" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-black">FibreConnector</h3>
+                            <p class="text-gray-600">Fast Uncapped Fibre Internet</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">High-speed uncapped fibre internet with free professional installation and 14-day risk-free trial. Openserve Accredited partners.</p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="zap" class="w-5 h-5 text-black"></i>
+                            <span class="text-gray-700">Fast Uncapped Fibre</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="gift" class="w-5 h-5 text-black"></i>
+                            <span class="text-gray-700">14-Day Free Trial</span>
+                        </div>
+                    </div>
+                    <a href="https://fibre.maribamedia.co.za" target="_blank" 
+                       class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-xl font-bold transition-all duration-300 w-full">
+                        Learn More
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+
+                <!-- Product 4: Focal -->
+                <div class="bg-white rounded-2xl border border-gray-200 p-8 product-card hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 rounded-2xl bg-black flex items-center justify-center">
+                            <i data-lucide="film" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-black">Focal</h3>
+                            <p class="text-gray-600">AI-Powered Media Production Platform</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">Automates content production, editing, and multi-platform distribution. Saves media teams 28+ hours weekly by automating repetitive tasks.</p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="film" class="w-5 h-5 text-black"></i>
+                            <span class="text-gray-700">Automated Content Production</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="share-2" class="w-5 h-5 text-black"></i>
+                            <span class="text-gray-700">Multi-Platform Distribution</span>
+                        </div>
+                    </div>
+                    <a href="https://www.focal.maribamedia.co.za" target="_blank" 
+                       class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-xl font-bold transition-all duration-300 w-full">
+                        Learn More
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
                 </div>
             </div>
 
-            <!-- Product 2: Focal -->
-            <div class="mb-32" data-aos="fade-up">
-                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
-                    <div>
-                        <div class="inline-flex items-center gap-3 mb-6">
-                            <div class="w-16 h-16 rounded-2xl bg-black flex items-center justify-center">
-                                <i data-lucide="film" class="w-8 h-8 text-white"></i>
-                            </div>
-                            <span class="px-4 py-2 rounded-lg bg-gray-100 text-black text-sm font-bold border border-gray-300">SaaS Platform</span>
-                        </div>
-                        <h3 class="text-4xl font-bold text-black mb-6">Focal</h3>
-                        <h4 class="text-xl text-gray-600 font-medium mb-8">AI-Powered Media Production Platform</h4>
-                        <p class="text-lg text-gray-600 mb-10 leading-relaxed">
-                            An intelligent media creation and management system that automates content production, editing, and multi-platform distribution. Focal saves media teams 28+ hours weekly by automating repetitive tasks and optimizing content workflows across all digital channels.
-                        </p>
-                        
-                        <div class="grid sm:grid-cols-2 gap-6 mb-10">
-                            <div class="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-200 hover:shadow-md transition-all">
-                                <i data-lucide="film" class="w-5 h-5 text-black mt-1"></i>
-                                <div>
-                                    <h5 class="font-bold text-black mb-1">Automated Content Production</h5>
-                                    <p class="text-sm text-gray-600">AI-powered video & content creation</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-200 hover:shadow-md transition-all">
-                                <i data-lucide="share-2" class="w-5 h-5 text-black mt-1"></i>
-                                <div>
-                                    <h5 class="font-bold text-black mb-1">Multi-Platform Distribution</h5>
-                                    <p class="text-sm text-gray-600">Automated publishing across channels</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <a href="https://www.focal.maribamedia.co.za" target="_blank" 
-                           class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg border-2 border-black">
-                            Automate Media Production
-                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                        </a>
+            <!-- Second Row: Solar Products -->
+            <div class="mt-16">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-50 border border-yellow-200 text-yellow-800 text-sm font-semibold mb-6">
+                        <i data-lucide="sun" class="w-4 h-4"></i>
+                        <span>Renewable Energy Solutions</span>
                     </div>
-                    <div>
-                        <div class="bg-gray-50 rounded-2xl p-8 product-card border border-gray-200">
-                            <div class="bg-white rounded-xl p-8 shadow-lg">
-                                <h4 class="text-xl font-bold text-black mb-6">Core Capabilities</h4>
-                                <ul class="space-y-4">
-                                    <li class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                                            <i data-lucide="edit" class="w-4 h-4 text-black"></i>
-                                        </div>
-                                        <span class="text-gray-700">AI-powered video editing automation</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                                            <i data-lucide="upload" class="w-4 h-4 text-black"></i>
-                                        </div>
-                                        <span class="text-gray-700">Automated content scheduling & publishing</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                                            <i data-lucide="trending-up" class="w-4 h-4 text-black"></i>
-                                        </div>
-                                        <span class="text-gray-700">Performance analytics & optimization</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                                            <i data-lucide="users" class="w-4 h-4 text-black"></i>
-                                        </div>
-                                        <span class="text-gray-700">Audience engagement automation</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    <h3 class="text-3xl md:text-4xl font-bold text-black mb-6">Solar & Energy Products</h3>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Comprehensive energy solutions for residential, commercial, and industrial applications with guaranteed savings.
+                    </p>
                 </div>
-            </div>
 
-            <!-- Product 3: TrainingOS -->
-            <div class="mb-32" data-aos="fade-up">
-                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
-                    <div class="order-2 lg:order-1">
-                        <div class="inline-flex items-center gap-3 mb-6">
-                            <div class="w-16 h-16 rounded-2xl bg-black flex items-center justify-center">
-                                <i data-lucide="graduation-cap" class="w-8 h-8 text-white"></i>
-                            </div>
-                            <span class="px-4 py-2 rounded-lg bg-gray-100 text-black text-sm font-bold border border-gray-300">SaaS Platform</span>
-                        </div>
-                        <h3 class="text-4xl font-bold text-black mb-6">TrainingOS</h3>
-                        <h4 class="text-xl text-gray-600 font-medium mb-8">AI-Powered English Tutoring Platform</h4>
-                        <p class="text-lg text-gray-600 mb-10 leading-relaxed">
-                            A comprehensive education platform that guarantees 12% grade improvement through AI-powered English tutoring. TrainingOS automates 95% of administrative tasks, student onboarding, and course delivery while providing real-time progress tracking and personalized learning paths.
-                        </p>
-                        
-                        <div class="grid sm:grid-cols-2 gap-6 mb-10">
-                            <div class="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-200 hover:shadow-md transition-all">
-                                <i data-lucide="trending-up" class="w-5 h-5 text-black mt-1"></i>
-                                <div>
-                                    <h5 class="font-bold text-black mb-1">12% Grade Improvement Guarantee</h5>
-                                    <p class="text-sm text-gray-600">Measurable academic results</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-200 hover:shadow-md transition-all">
-                                <i data-lucide="bot" class="w-5 h-5 text-black mt-1"></i>
-                                <div>
-                                    <h5 class="font-bold text-black mb-1">95% Administrative Automation</h5>
-                                    <p class="text-sm text-gray-600">Automated student management</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <a href="https://www.training.maribamedia.co.za" target="_blank" 
-                           class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg border-2 border-black">
-                            Automate Education Delivery
-                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                        </a>
-                    </div>
-                    <div class="order-1 lg:order-2">
-                        <div class="bg-gray-50 rounded-2xl p-8 product-card border border-gray-200">
-                            <div class="bg-white rounded-xl p-8 shadow-lg">
-                                <h4 class="text-xl font-bold text-black mb-6">Core Capabilities</h4>
-                                <ul class="space-y-4">
-                                    <li class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                                            <i data-lucide="user-check" class="w-4 h-4 text-black"></i>
-                                        </div>
-                                        <span class="text-gray-700">Automated student onboarding systems</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                                            <i data-lucide="book-open" class="w-4 h-4 text-black"></i>
-                                        </div>
-                                        <span class="text-gray-700">Personalized learning path algorithms</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                                            <i data-lucide="bar-chart" class="w-4 h-4 text-black"></i>
-                                        </div>
-                                        <span class="text-gray-700">Real-time progress tracking & reporting</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                                            <i data-lucide="message-circle" class="w-4 h-4 text-black"></i>
-                                        </div>
-                                        <span class="text-gray-700">AI-powered tutoring & feedback systems</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 4: Energy Mixer -->
-            <div class="mb-32" data-aos="fade-up">
-                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
-                    <div>
-                        <div class="inline-flex items-center gap-3 mb-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Product 5: Energy Mixer -->
+                    <div class="bg-white rounded-2xl border border-gray-200 p-8 product-card hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="0">
+                        <div class="flex items-center gap-4 mb-6">
                             <div class="w-16 h-16 rounded-2xl bg-black flex items-center justify-center">
                                 <i data-lucide="zap" class="w-8 h-8 text-white"></i>
                             </div>
-                            <span class="px-4 py-2 rounded-lg bg-gray-100 text-black text-sm font-bold border border-gray-300">US-Patented Technology</span>
-                        </div>
-                        <h3 class="text-4xl font-bold text-black mb-6">Energy Mixer</h3>
-                        <h4 class="text-xl text-gray-600 font-medium mb-8">Hybrid Renewable Energy System</h4>
-                        <p class="text-lg text-gray-600 mb-10 leading-relaxed">
-                            A US-patented DC power blending system that automates energy management, reducing operational costs by 40% and increasing output efficiency by 22% for commercial enterprises. The Energy Mixer intelligently combines multiple renewable sources for optimal power delivery.
-                        </p>
-                        
-                        <div class="grid sm:grid-cols-2 gap-6 mb-10">
-                            <div class="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-200 hover:shadow-md transition-all">
-                                <i data-lucide="dollar-sign" class="w-5 h-5 text-black mt-1"></i>
-                                <div>
-                                    <h5 class="font-bold text-black mb-1">40% Cost Reduction</h5>
-                                    <p class="text-sm text-gray-600">Automated energy optimization</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-200 hover:shadow-md transition-all">
-                                <i data-lucide="battery-charging" class="w-5 h-5 text-black mt-1"></i>
-                                <div>
-                                    <h5 class="font-bold text-black mb-1">22% Output Increase</h5>
-                                    <p class="text-sm text-gray-600">Intelligent power blending</p>
-                                </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-black">Energy Mixer</h3>
+                                <p class="text-gray-600">Hybrid Renewable Energy System</p>
                             </div>
                         </div>
-                        
+                        <p class="text-gray-600 mb-6">US-patented DC power blending system that automates energy management, reducing costs by 40% and increasing output by 22%.</p>
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="dollar-sign" class="w-5 h-5 text-black"></i>
+                                <span class="text-gray-700">40% Cost Reduction</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="battery-charging" class="w-5 h-5 text-black"></i>
+                                <span class="text-gray-700">22% Output Increase</span>
+                            </div>
+                        </div>
                         <a href="http://www.energy.maribamedia.co.za" target="_blank" 
-                           class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg border-2 border-black">
-                            Explore Energy Technology
+                           class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-xl font-bold transition-all duration-300 w-full">
+                            Learn More
                             <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </a>
                     </div>
-                    <div>
-                        <div class="bg-gray-50 rounded-2xl p-8 product-card border border-gray-200">
-                            <div class="bg-white rounded-xl p-8 shadow-lg">
-                                <h4 class="text-xl font-bold text-black mb-6">Core Capabilities</h4>
-                                <ul class="space-y-4">
-                                    <li class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                                            <i data-lucide="cpu" class="w-4 h-4 text-black"></i>
-                                        </div>
-                                        <span class="text-gray-700">US-patented DC power blending technology</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                                            <i data-lucide="refresh-cw" class="w-4 h-4 text-black"></i>
-                                        </div>
-                                        <span class="text-gray-700">Automated multi-source energy management</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                                            <i data-lucide="activity" class="w-4 h-4 text-black"></i>
-                                        </div>
-                                        <span class="text-gray-700">Real-time efficiency optimization algorithms</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                                            <i data-lucide="shield" class="w-4 h-4 text-black"></i>
-                                        </div>
-                                        <span class="text-gray-700">Enterprise-grade reliability & uptime</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Product 5: FibreConnector -->
-            <div class="mb-32" data-aos="fade-up">
-                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
-                    <div class="order-2 lg:order-1">
-                        <div class="inline-flex items-center gap-3 mb-6">
-                            <div class="w-16 h-16 rounded-2xl bg-black flex items-center justify-center">
-                                <i data-lucide="wifi" class="w-8 h-8 text-white"></i>
-                            </div>
-                            <span class="px-4 py-2 rounded-lg bg-gray-100 text-black text-sm font-bold border border-gray-300">Connectivity Solution</span>
-                        </div>
-                        <h3 class="text-4xl font-bold text-black mb-6">FibreConnector</h3>
-                        <h4 class="text-xl text-gray-600 font-medium mb-8">Fast Uncapped Fibre Internet</h4>
-                        <p class="text-lg text-gray-600 mb-10 leading-relaxed">
-                            High-speed uncapped fibre internet with free professional installation and 14-day risk-free trial. As Openserve Accredited partners, we provide enterprise-grade connectivity with no upfront costs and seamless business integration.
-                        </p>
-                        
-                        <div class="grid sm:grid-cols-2 gap-6 mb-10">
-                            <div class="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-200 hover:shadow-md transition-all">
-                                <i data-lucide="zap" class="w-5 h-5 text-black mt-1"></i>
-                                <div>
-                                    <h5 class="font-bold text-black mb-1">Fast Uncapped Fibre</h5>
-                                    <p class="text-sm text-gray-600">High-speed business connectivity</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-200 hover:shadow-md transition-all">
-                                <i data-lucide="gift" class="w-5 h-5 text-black mt-1"></i>
-                                <div>
-                                    <h5 class="font-bold text-black mb-1">14-Day Free Trial</h5>
-                                    <p class="text-sm text-gray-600">Risk-free implementation</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <a href="https://fibre.maribamedia.co.za" target="_blank" 
-                           class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg border-2 border-black">
-                            Get Connected Free
-                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                        </a>
-                    </div>
-                    <div class="order-1 lg:order-2">
-                        <div class="bg-gray-50 rounded-2xl p-8 product-card border border-gray-200">
-                            <div class="bg-white rounded-xl p-8 shadow-lg">
-                                <h4 class="text-xl font-bold text-black mb-6">Core Capabilities</h4>
-                                <ul class="space-y-4">
-                                    <li class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                                            <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
-                                        </div>
-                                        <span class="text-gray-700">Openserve Accredited infrastructure</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                                            <i data-lucide="tool" class="w-4 h-4 text-black"></i>
-                                        </div>
-                                        <span class="text-gray-700">Professional certified installation</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                                            <i data-lucide="clock" class="w-4 h-4 text-black"></i>
-                                        </div>
-                                        <span class="text-gray-700">24/7 business support & monitoring</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                                            <i data-lucide="shield" class="w-4 h-4 text-black"></i>
-                                        </div>
-                                        <span class="text-gray-700">Enterprise-grade security & reliability</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 6: SolarConnector -->
-            <div class="mb-32" data-aos="fade-up">
-                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
-                    <div>
-                        <div class="inline-flex items-center gap-3 mb-6">
+                    <!-- Product 6: SolarConnector -->
+                    <div class="bg-white rounded-2xl border border-gray-200 p-8 product-card hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex items-center gap-4 mb-6">
                             <div class="w-16 h-16 rounded-2xl bg-black flex items-center justify-center">
                                 <i data-lucide="sun" class="w-8 h-8 text-white"></i>
                             </div>
-                            <span class="px-4 py-2 rounded-lg bg-gray-100 text-black text-sm font-bold border border-gray-300">Residential Energy</span>
-                        </div>
-                        <h3 class="text-4xl font-bold text-black mb-6">SolarConnector</h3>
-                        <h4 class="text-xl text-gray-600 font-medium mb-8">Residential Solar Solutions</h4>
-                        <p class="text-lg text-gray-600 mb-10 leading-relaxed">
-                            Guaranteed 70% electricity bill reduction within 30 days or we continue working at no cost. Our residential solar solutions feature 30-day professional installation with comprehensive 25-year performance warranties and intelligent energy management.
-                        </p>
-                        
-                        <div class="grid sm:grid-cols-2 gap-6 mb-10">
-                            <div class="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-200 hover:shadow-md transition-all">
-                                <i data-lucide="dollar-sign" class="w-5 h-5 text-black mt-1"></i>
-                                <div>
-                                    <h5 class="font-bold text-black mb-1">70% Savings Guarantee</h5>
-                                    <p class="text-sm text-gray-600">Reduced electricity costs</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-200 hover:shadow-md transition-all">
-                                <i data-lucide="shield" class="w-5 h-5 text-black mt-1"></i>
-                                <div>
-                                    <h5 class="font-bold text-black mb-1">25-Year Warranty</h5>
-                                    <p class="text-sm text-gray-600">Comprehensive performance guarantee</p>
-                                </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-black">SolarConnector</h3>
+                                <p class="text-gray-600">Residential Solar Solutions</p>
                             </div>
                         </div>
-                        
+                        <p class="text-gray-600 mb-6">Guaranteed 70% electricity bill reduction within 30 days or we continue working at no cost. 30-day installation with 25-year warranties.</p>
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="dollar-sign" class="w-5 h-5 text-black"></i>
+                                <span class="text-gray-700">70% Savings Guarantee</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="shield" class="w-5 h-5 text-black"></i>
+                                <span class="text-gray-700">25-Year Warranty</span>
+                            </div>
+                        </div>
                         <a href="https://solar.maribamedia.co.za" target="_blank" 
-                           class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg border-2 border-black">
-                            Save 70% Now
+                           class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-xl font-bold transition-all duration-300 w-full">
+                            Learn More
                             <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </a>
                     </div>
-                    <div>
-                        <div class="bg-gray-50 rounded-2xl p-8 product-card border border-gray-200">
-                            <div class="bg-white rounded-xl p-8 shadow-lg">
-                                <h4 class="text-xl font-bold text-black mb-6">Core Capabilities</h4>
-                                <ul class="space-y-4">
-                                    <li class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                                            <i data-lucide="sun" class="w-4 h-4 text-black"></i>
-                                        </div>
-                                        <span class="text-gray-700">High-efficiency solar panel systems</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                                            <i data-lucide="battery" class="w-4 h-4 text-black"></i>
-                                        </div>
-                                        <span class="text-gray-700">Intelligent battery storage solutions</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                                            <i data-lucide="monitor" class="w-4 h-4 text-black"></i>
-                                        </div>
-                                        <span class="text-gray-700">Real-time energy monitoring & management</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                                            <i data-lucide="zap" class="w-4 h-4 text-black"></i>
-                                        </div>
-                                        <span class="text-gray-700">Grid-tied & off-grid system options</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Product 7: CommercialSolar -->
-            <div class="mb-32" data-aos="fade-up">
-                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
-                    <div class="order-2 lg:order-1">
-                        <div class="inline-flex items-center gap-3 mb-6">
+                    <!-- Product 7: CommercialSolar -->
+                    <div class="bg-white rounded-2xl border border-gray-200 p-8 product-card hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex items-center gap-4 mb-6">
                             <div class="w-16 h-16 rounded-2xl bg-black flex items-center justify-center">
                                 <i data-lucide="building-2" class="w-8 h-8 text-white"></i>
                             </div>
-                            <span class="px-4 py-2 rounded-lg bg-gray-100 text-black text-sm font-bold border border-gray-300">Commercial Energy</span>
-                        </div>
-                        <h3 class="text-4xl font-bold text-black mb-6">CommercialSolar</h3>
-                        <h4 class="text-xl text-gray-600 font-medium mb-8">Commercial Solar Solutions</h4>
-                        <p class="text-lg text-gray-600 mb-10 leading-relaxed">
-                            Partnership with Urban Holdings Solar delivers 70% electricity savings for businesses with no upfront costs. Our commercial solutions include flexible financing, professional installation, and comprehensive energy management for enterprises of all sizes.
-                        </p>
-                        
-                        <div class="grid sm:grid-cols-2 gap-6 mb-10">
-                            <div class="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-200 hover:shadow-md transition-all">
-                                <i data-lucide="dollar-sign" class="w-5 h-5 text-black mt-1"></i>
-                                <div>
-                                    <h5 class="font-bold text-black mb-1">70% Business Savings</h5>
-                                    <p class="text-sm text-gray-600">Reduced operational costs</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-200 hover:shadow-md transition-all">
-                                <i data-lucide="credit-card" class="w-5 h-5 text-black mt-1"></i>
-                                <div>
-                                    <h5 class="font-bold text-black mb-1">No Upfront Costs</h5>
-                                    <p class="text-sm text-gray-600">Flexible financing options</p>
-                                </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-black">CommercialSolar</h3>
+                                <p class="text-gray-600">Commercial Solar Solutions</p>
                             </div>
                         </div>
-                        
+                        <p class="text-gray-600 mb-6">70% electricity savings for businesses with no upfront costs. Partnership with Urban Holdings Solar delivers flexible financing and professional installation.</p>
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="dollar-sign" class="w-5 h-5 text-black"></i>
+                                <span class="text-gray-700">70% Business Savings</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="credit-card" class="w-5 h-5 text-black"></i>
+                                <span class="text-gray-700">No Upfront Costs</span>
+                            </div>
+                        </div>
                         <a href="https://commercial.maribamedia.co.za" target="_blank" 
-                           class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg border-2 border-black">
-                            Business Quote
+                           class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-xl font-bold transition-all duration-300 w-full">
+                            Learn More
                             <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </a>
                     </div>
-                    <div class="order-1 lg:order-2">
-                        <div class="bg-gray-50 rounded-2xl p-8 product-card border border-gray-200">
-                            <div class="bg-white rounded-xl p-8 shadow-lg">
-                                <h4 class="text-xl font-bold text-black mb-6">Core Capabilities</h4>
-                                <ul class="space-y-4">
-                                    <li class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                                            <i data-lucide="building" class="w-4 h-4 text-black"></i>
-                                        </div>
-                                        <span class="text-gray-700">Enterprise-scale solar installations</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                                            <i data-lucide="pie-chart" class="w-4 h-4 text-black"></i>
-                                        </div>
-                                        <span class="text-gray-700">Energy consumption analytics & optimization</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                                            <i data-lucide="file-text" class="w-4 h-4 text-black"></i>
-                                        </div>
-                                        <span class="text-gray-700">Compliance & regulatory documentation</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                                            <i data-lucide="trending-up" class="w-4 h-4 text-black"></i>
-                                        </div>
-                                        <span class="text-gray-700">ROI analysis & performance guarantees</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Product 8: SolarFund -->
-            <div class="mb-32" data-aos="fade-up">
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <div class="inline-flex items-center gap-3 mb-6">
+                    <!-- Product 8: SolarFund -->
+                    <div class="bg-white rounded-2xl border border-gray-200 p-8 product-card hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex items-center gap-4 mb-6">
                             <div class="w-16 h-16 rounded-2xl bg-black flex items-center justify-center">
                                 <i data-lucide="badge-dollar-sign" class="w-8 h-8 text-white"></i>
                             </div>
-                            <span class="px-4 py-2 rounded-lg bg-gray-100 text-black text-sm font-bold border border-gray-300">Energy Finance</span>
-                        </div>
-                        <h3 class="text-4xl font-bold text-black mb-6">SolarFund</h3>
-                        <h4 class="text-xl text-gray-600 font-medium mb-8">Complete Energy Solutions for Africa</h4>
-                        <p class="text-lg text-gray-600 mb-10 leading-relaxed">
-                            Comprehensive energy finance and development platform offering pre-approved capital for 30MW+ projects. SolarFund provides full EPC services, IPP development, PPAs, and regulatory compliance for Africa's renewable energy future.
-                        </p>
-                        
-                        <div class="grid sm:grid-cols-2 gap-6 mb-10">
-                            <div class="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-200 hover:shadow-md transition-all">
-                                <i data-lucide="dollar-sign" class="w-5 h-5 text-black mt-1"></i>
-                                <div>
-                                    <h5 class="font-bold text-black mb-1">Pre-Approved Capital</h5>
-                                    <p class="text-sm text-gray-600">30MW+ project funding</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-200 hover:shadow-md transition-all">
-                                <i data-lucide="globe" class="w-5 h-5 text-black mt-1"></i>
-                                <div>
-                                    <h5 class="font-bold text-black mb-1">Pan-African Reach</h5>
-                                    <p class="text-sm text-gray-600">Complete energy solutions</p>
-                                </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-black">SolarFund</h3>
+                                <p class="text-gray-600">Complete Energy Solutions for Africa</p>
                             </div>
                         </div>
-                        
+                        <p class="text-gray-600 mb-6">Comprehensive energy finance and development platform offering pre-approved capital for 30MW+ projects with full EPC services and IPP development.</p>
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="dollar-sign" class="w-5 h-5 text-black"></i>
+                                <span class="text-gray-700">Pre-Approved Capital</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="globe" class="w-5 h-5 text-black"></i>
+                                <span class="text-gray-700">Pan-African Reach</span>
+                            </div>
+                        </div>
                         <a href="https://funding.maribamedia.co.za" target="_blank" 
-                           class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg border-2 border-black">
-                            Funding Solutions
+                           class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-xl font-bold transition-all duration-300 w-full">
+                            Learn More
                             <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </a>
-                    </div>
-                    <div>
-                        <div class="bg-gray-50 rounded-2xl p-8 product-card border border-gray-200">
-                            <div class="bg-white rounded-xl p-8 shadow-lg">
-                                <h4 class="text-xl font-bold text-black mb-6">Core Capabilities</h4>
-                                <ul class="space-y-4">
-                                    <li class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                                            <i data-lucide="briefcase" class="w-4 h-4 text-black"></i>
-                                        </div>
-                                        <span class="text-gray-700">Full EPC (Engineering, Procurement, Construction)</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                                            <i data-lucide="file-text" class="w-4 h-4 text-black"></i>
-                                        </div>
-                                        <span class="text-gray-700">IPP development & PPA structuring</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                                            <i data-lucide="scale" class="w-4 h-4 text-black"></i>
-                                        </div>
-                                        <span class="text-gray-700">Regulatory compliance & permitting</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                                            <i data-lucide="bar-chart" class="w-4 h-4 text-black"></i>
-                                        </div>
-                                        <span class="text-gray-700">Financial modeling & risk assessment</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1246,10 +970,10 @@
                                             <div class="timeline-dot"></div>
                                             <span class="text-gray-700">Specialized AI agent deployment</span>
                                         </li>
-                                        <li class="flex items-center gap-3">
+                                        <div class="flex items-center gap-3">
                                             <div class="timeline-dot"></div>
                                             <span class="text-gray-700">Automation system implementation</span>
-                                        </li>
+                                        </div>
                                         <li class="flex items-center gap-3">
                                             <div class="timeline-dot"></div>
                                             <span class="text-gray-700">Performance optimization</span>
@@ -1416,6 +1140,21 @@
             </div>
         </div>
     </footer>
+
+    <!-- WhatsApp Widget -->
+    <div class="whatsapp-widget">
+        <div class="whatsapp-tooltip">
+            Start Chat on WhatsApp
+        </div>
+        <a href="https://wa.me/27766473499?text=Hi%20Mariba%20Media%2C%20I'm%20interested%20in%20your%20AI-powered%20business%20solutions" 
+           target="_blank" 
+           class="whatsapp-button"
+           aria-label="Chat on WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+            </svg>
+        </a>
+    </div>
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
