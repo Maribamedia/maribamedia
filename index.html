@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Development Lab | Mariba Media</title>
+    <title>Business Development Lab | Performance-Bias Business Growth</title>
     <meta name="description" content="We create new revenue or we don't get paid. Performance bias guarantee with full refunds if targets aren't met in 90 days.">
     <meta name="theme-color" content="#000000">
     
@@ -32,8 +32,9 @@
               sans: ['Inter', 'sans-serif'],
             },
             colors: {
-              dark: '#000000',
-              light: '#ffffff',
+              primary: '#000000',
+              secondary: '#111827',
+              accent: '#25D366',
               gray: {
                 50: '#f9fafb',
                 100: '#f3f4f6',
@@ -45,8 +46,17 @@
                 700: '#374151',
                 800: '#1f2937',
                 900: '#111827',
-              },
-              whatsapp: '#25D366',
+              }
+            },
+            animation: {
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'float': 'float 6s ease-in-out infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0px)' },
+                '50%': { transform: 'translateY(-20px)' },
+              }
             }
           }
         }
@@ -90,60 +100,102 @@
         width: 100%;
       }
 
-      .product-card {
+      .section-header {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 1.5rem;
+      }
+      
+      .section-header::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background: #000000;
+      }
+
+      .category-card {
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         height: 100%;
+        position: relative;
+        overflow: hidden;
       }
-      .product-card:hover {
+      
+      .category-card:hover {
         transform: translateY(-8px);
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
       }
-
-      .stat-card {
-        background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
-        border: 1px solid #e5e7eb;
+      
+      .category-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: #000000;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+      
+      .category-card:hover::before {
+        transform: scaleX(1);
       }
 
-      .guarantee-card {
-        border: 2px solid #000000;
+      .product-item {
+        display: flex;
+        flex-direction: column;
+        background: white;
+        border-radius: 1rem;
+        border: 1px solid #e5e7eb;
+        padding: 2rem;
+        height: 100%;
         transition: all 0.3s ease;
       }
-
-      .guarantee-card:hover {
+      
+      .product-item:hover {
         transform: translateY(-4px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        border-color: #000000;
       }
 
-      .icon-circle {
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
+      .product-badge {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
         background: #000000;
-        color: #ffffff;
+        color: white;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      .icon-container {
+        width: 64px;
+        height: 64px;
+        border-radius: 1rem;
+        background: #000000;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-weight: 600;
+        margin-bottom: 1.5rem;
+      }
+      
+      .icon-container i {
+        color: white;
+        width: 28px;
+        height: 28px;
       }
 
-      .timeline-dot {
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background: #000000;
-        border: 3px solid #ffffff;
-        box-shadow: 0 0 0 3px #000000;
-      }
-
-      /* WhatsApp Widget Styles */
+      /* WhatsApp Widget */
       .whatsapp-widget {
         position: fixed;
         bottom: 24px;
         right: 24px;
         z-index: 1000;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
       }
 
       .whatsapp-button {
@@ -164,149 +216,99 @@
         box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
       }
 
-      .whatsapp-tooltip {
-        background: #075E54;
-        color: white;
-        padding: 8px 16px;
-        border-radius: 8px;
-        margin-bottom: 12px;
-        font-size: 14px;
-        font-weight: 500;
-        opacity: 0;
-        transform: translateY(10px);
-        transition: all 0.3s ease;
-        white-space: nowrap;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      }
-
-      .whatsapp-widget:hover .whatsapp-tooltip {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      /* Product Portfolio Specific Styles */
-      .product-row {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-      }
-
-      @media (min-width: 768px) {
-        .product-row {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 3rem;
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
         }
       }
 
-      .product-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 2.5rem 2rem;
-        border-radius: 1.5rem;
+      /* Performance Grid */
+      .performance-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+      
+      .performance-item {
+        background: #f9fafb;
         border: 1px solid #e5e7eb;
-        background: white;
-        transition: all 0.3s ease;
-        height: 100%;
-      }
-
-      .product-item:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-      }
-
-      .product-icon-container {
-        width: 80px;
-        height: 80px;
-        border-radius: 1.5rem;
-        background: #000000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 2rem;
-      }
-
-      .product-icon {
-        width: 36px;
-        height: 36px;
-        color: white;
-      }
-
-      .product-title {
-        font-size: 1.875rem;
-        font-weight: 700;
-        color: #000000;
-        margin-bottom: 0.75rem;
-        line-height: 1.2;
-      }
-
-      .product-subtitle {
-        font-size: 1.125rem;
-        color: #6b7280;
-        font-weight: 500;
-        margin-bottom: 1.5rem;
-      }
-
-      .product-description {
-        font-size: 1rem;
-        color: #6b7280;
-        line-height: 1.6;
-        margin-bottom: 2rem;
-        max-width: 500px;
-      }
-
-      .product-features {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        margin-bottom: 2.5rem;
-        width: 100%;
-        max-width: 400px;
-      }
-
-      .feature-item {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.75rem;
-        font-size: 0.95rem;
-        color: #374151;
-      }
-
-      .feature-icon {
-        width: 20px;
-        height: 20px;
-        color: #000000;
-        flex-shrink: 0;
-      }
-
-      .product-button {
-        padding: 1rem 2.5rem;
-        background: #000000;
-        color: white;
-        font-weight: 600;
         border-radius: 0.75rem;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        border: 2px solid #000000;
-        font-size: 1rem;
-        margin-top: auto;
-      }
-
-      .product-button:hover {
-        background: #1f2937;
-        transform: translateY(-2px);
-      }
-
-      .row-heading {
-        font-size: 1.875rem;
-        font-weight: 700;
-        color: #000000;
+        padding: 1.5rem;
         text-align: center;
-        margin-bottom: 2.5rem;
-        padding-bottom: 1rem;
-        border-bottom: 2px solid #e5e7eb;
+      }
+      
+      .performance-value {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #000000;
+        display: block;
+        line-height: 1;
+      }
+      
+      .performance-label {
+        font-size: 0.875rem;
+        color: #6b7280;
+        margin-top: 0.5rem;
+      }
+
+      /* Guarantee Card */
+      .guarantee-card {
+        border: 2px solid #000000;
+        border-radius: 1rem;
+        padding: 2rem;
+        background: white;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .guarantee-card::before {
+        content: 'GUARANTEED';
+        position: absolute;
+        top: 10px;
+        right: -30px;
+        background: #000000;
+        color: white;
+        padding: 4px 30px;
+        transform: rotate(45deg);
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+
+      /* Timeline */
+      .timeline-item {
+        position: relative;
+        padding-left: 3rem;
+        margin-bottom: 3rem;
+      }
+      
+      .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 2px;
+        height: 100%;
+        background: #000000;
+      }
+      
+      .timeline-dot {
+        position: absolute;
+        left: -8px;
+        top: 0;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: #000000;
+        border: 3px solid white;
+        box-shadow: 0 0 0 3px #000000;
       }
 
       @media (max-width: 768px) {
@@ -320,47 +322,8 @@
           height: 56px;
         }
         
-        .whatsapp-tooltip {
-          display: none;
-        }
-        
-        .product-item {
-          padding: 2rem 1.5rem;
-        }
-        
-        .product-icon-container {
-          width: 70px;
-          height: 70px;
-          margin-bottom: 1.5rem;
-        }
-        
-        .product-icon {
-          width: 30px;
-          height: 30px;
-        }
-        
-        .product-title {
-          font-size: 1.5rem;
-        }
-        
-        .product-subtitle {
-          font-size: 1rem;
-        }
-        
-        .product-description {
-          font-size: 0.95rem;
-        }
-      }
-
-      .section-padding {
-        padding-top: 3rem;
-        padding-bottom: 3rem;
-      }
-
-      @media (min-width: 768px) {
-        .section-padding {
-          padding-top: 6rem;
-          padding-bottom: 6rem;
+        .performance-grid {
+          grid-template-columns: 1fr;
         }
       }
     </style>
@@ -372,25 +335,25 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
             <a href="#home" class="flex items-center gap-2.5 group">
                 <div class="bg-black p-1.5 rounded-lg group-hover:shadow-lg transition-all duration-300">
-                    <i data-lucide="zap" class="w-5 h-5 text-white"></i>
+                    <i data-lucide="flask-conical" class="w-5 h-5 text-white"></i>
                 </div>
                 <span class="text-lg font-black tracking-tight text-black">
                     Business Development Lab
-                    <span class="block text-xs font-normal text-gray-600 -mt-1">by Mariba Media</span>
+                    <span class="block text-xs font-normal text-gray-600 -mt-1">Performance-Bias Growth</span>
                 </span>
             </a>
 
             <!-- Desktop Nav -->
             <div class="hidden md:flex items-center gap-8">
                 <a href="#home" class="nav-link text-sm font-semibold text-gray-700 hover:text-black px-2 py-1 transition-colors">Home</a>
-                <a href="#solutions" class="nav-link text-sm font-semibold text-gray-700 hover:text-black px-2 py-1 transition-colors">Solutions</a>
-                <a href="#products" class="nav-link text-sm font-semibold text-gray-700 hover:text-black px-2 py-1 transition-colors">Products</a>
-                <a href="#guarantee" class="nav-link text-sm font-semibold text-gray-700 hover:text-black px-2 py-1 transition-colors">Guarantee</a>
-                <a href="#process" class="nav-link text-sm font-semibold text-gray-700 hover:text-black px-2 py-1 transition-colors">Process</a>
+                <a href="#solutions" class="nav-link text-sm font-semibold text-gray-700 hover:text-black px-2 py-1 transition-colors">Our Solutions</a>
+                <a href="#categories" class="nav-link text-sm font-semibold text-gray-700 hover:text-black px-2 py-1 transition-colors">Product Portfolio</a>
+                <a href="#guarantee" class="nav-link text-sm font-semibold text-gray-700 hover:text-black px-2 py-1 transition-colors">Performance Guarantee</a>
+                <a href="#process" class="nav-link text-sm font-semibold text-gray-700 hover:text-black px-2 py-1 transition-colors">90-Day Process</a>
                 
                 <a href="https://cal.com/partner-discovery/south-africa" target="_blank" rel="noopener noreferrer" 
                    class="bg-black hover:bg-gray-900 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all duration-300 shadow-md transform hover:-translate-y-0.5 active:translate-y-0 border border-black">
-                    Schedule Demo
+                    Start Risk-Free
                 </a>
             </div>
 
@@ -404,13 +367,13 @@
         <div id="mobile-menu" class="hidden md:hidden glass-effect absolute w-full top-full left-0 shadow-xl">
             <div class="px-4 py-4 space-y-1">
                 <a href="#home" class="mobile-link block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Home</a>
-                <a href="#solutions" class="mobile-link block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Solutions</a>
-                <a href="#products" class="mobile-link block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Products</a>
-                <a href="#guarantee" class="mobile-link block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Guarantee</a>
-                <a href="#process" class="mobile-link block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Process</a>
+                <a href="#solutions" class="mobile-link block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Our Solutions</a>
+                <a href="#categories" class="mobile-link block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Product Portfolio</a>
+                <a href="#guarantee" class="mobile-link block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Performance Guarantee</a>
+                <a href="#process" class="mobile-link block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg transition-all">90-Day Process</a>
                 <div class="pt-2 px-4">
                     <a href="https://cal.com/partner-discovery/south-africa" target="_blank" class="block w-full text-center bg-black hover:bg-gray-900 text-white px-5 py-3 rounded-lg font-bold transition-all shadow-md border border-black">
-                        Schedule Demo
+                        Start Risk-Free
                     </a>
                 </div>
             </div>
@@ -419,7 +382,7 @@
 
     <!-- Hero Section -->
     <section id="home" class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center" data-aos="fade-up">
                 <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 border border-gray-300 text-gray-800 text-sm font-semibold mb-8" data-aos="zoom-in" data-aos-delay="200">
                     <i data-lucide="shield-check" class="w-4 h-4"></i>
@@ -436,11 +399,29 @@
                     <span class="text-gray-700">It's that simple.</span>
                 </h2>
 
-                <div class="max-w-2xl mx-auto mb-12">
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        We implement specialized business development systems that deliver measurable results. 
-                        No upfront costs. We only get paid when you get paid. Full refunds if we don't meet our targets in 90 days.
+                <div class="max-w-3xl mx-auto mb-12">
+                    <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                        We implement specialized business development systems across three solution categories: AI-Powered Apps, Local Professional Services, and Commercial Solar Development. We only get paid when you get paid.
                     </p>
+                    
+                    <div class="performance-grid">
+                        <div class="performance-item" data-aos="fade-up" data-aos-delay="100">
+                            <span class="performance-value">0%</span>
+                            <span class="performance-label">Upfront Costs</span>
+                        </div>
+                        <div class="performance-item" data-aos="fade-up" data-aos-delay="150">
+                            <span class="performance-value">90</span>
+                            <span class="performance-label">Day Guarantee</span>
+                        </div>
+                        <div class="performance-item" data-aos="fade-up" data-aos-delay="200">
+                            <span class="performance-value">100%</span>
+                            <span class="performance-label">Refund Protection</span>
+                        </div>
+                        <div class="performance-item" data-aos="fade-up" data-aos-delay="250">
+                            <span class="performance-value">28+</span>
+                            <span class="performance-label">Hours Saved Weekly</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">
@@ -449,10 +430,10 @@
                         Start Risk-Free
                         <i data-lucide="arrow-right" class="w-5 h-5"></i>
                     </a>
-                    <a href="#guarantee"
+                    <a href="#categories"
                        class="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-50 text-black border-2 border-black px-10 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl">
-                        <i data-lucide="shield-check" class="w-5 h-5"></i>
-                        See Guarantee
+                        <i data-lucide="package" class="w-5 h-5"></i>
+                        View Solutions
                     </a>
                 </div>
             </div>
@@ -462,381 +443,348 @@
     <!-- Solutions Section -->
     <section id="solutions" class="py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20" data-aos="fade-up">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 border border-gray-300 text-black text-sm font-semibold mb-6">
-                    <i data-lucide="case" class="w-4 h-4"></i>
-                    <span>B2B Enterprise Solutions</span>
-                </div>
-                <h2 class="text-4xl md:text-5xl font-bold text-black mb-6">Who We Serve</h2>
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="section-header text-3xl md:text-4xl font-bold text-black mb-6">Our Three-Pillar Approach</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Specialized business development solutions for enterprises seeking measurable growth, efficiency, and automation across key industries.
+                    Specialized business development solutions delivering measurable results across three distinct categories.
                 </p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Sales Organizations -->
-                <div class="bg-white rounded-2xl border border-gray-200 p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group product-card" data-aos="fade-up" data-aos-delay="0">
-                    <div class="w-16 h-16 rounded-2xl bg-black flex items-center justify-center mb-8">
-                        <i data-lucide="trending-up" class="w-8 h-8 text-white"></i>
+                <!-- AI Powered Apps -->
+                <div class="category-card bg-white rounded-2xl border border-gray-200 p-8" data-aos="fade-up" data-aos-delay="0">
+                    <div class="icon-container">
+                        <i data-lucide="brain" class="w-8 h-8 text-white"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-black mb-4">B2B Sales Organizations</h3>
-                    <p class="text-gray-600 mb-8">
-                        Transform sales operations with AI-powered lead generation, intelligent qualification, and automated pipeline management.
+                    <h3 class="text-2xl font-bold text-black mb-4">AI Powered Apps</h3>
+                    <p class="text-gray-600 mb-6">
+                        Intelligent automation platforms that transform business development through AI-powered workflows, reducing manual effort by 70% while increasing results.
                     </p>
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-3">
-                            <div class="w-2 h-2 rounded-full bg-black"></div>
-                            <span class="text-gray-700 font-medium">Specialized business development AI agents</span>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-2 text-sm text-gray-700">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
+                            <span>28+ hours weekly time recovery</span>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-2 h-2 rounded-full bg-black"></div>
-                            <span class="text-gray-700 font-medium">28+ hours weekly time recovery</span>
+                        <div class="flex items-center gap-2 text-sm text-gray-700">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
+                            <span>Automated lead generation & nurturing</span>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-2 h-2 rounded-full bg-black"></div>
-                            <span class="text-gray-700 font-medium">Qualified prospect identification & nurturing</span>
+                        <div class="flex items-center gap-2 text-sm text-gray-700">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
+                            <span>Performance-based pricing</span>
                         </div>
                     </div>
+                    <a href="#ai-apps" class="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-black hover:text-gray-800 transition-colors">
+                        View AI Apps <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
                 </div>
 
-                <!-- Media & Content Teams -->
-                <div class="bg-white rounded-2xl border border-gray-200 p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group product-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-16 h-16 rounded-2xl bg-black flex items-center justify-center mb-8">
-                        <i data-lucide="video" class="w-8 h-8 text-white"></i>
+                <!-- Local Professional Services -->
+                <div class="category-card bg-white rounded-2xl border border-gray-200 p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon-container">
+                        <i data-lucide="users" class="w-8 h-8 text-white"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-black mb-4">Media & Content Teams</h3>
-                    <p class="text-gray-600 mb-8">
-                        Automate content production, multi-platform distribution, and audience engagement at enterprise scale.
+                    <h3 class="text-2xl font-bold text-black mb-4">Local Professional Services</h3>
+                    <p class="text-gray-600 mb-6">
+                        Performance-guaranteed services for local professionals, connecting qualified clients with verified service providers using our specialized matching systems.
                     </p>
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-3">
-                            <div class="w-2 h-2 rounded-full bg-black"></div>
-                            <span class="text-gray-700 font-medium">Automated content production & editing</span>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-2 text-sm text-gray-700">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
+                            <span>10+ qualified jobs guaranteed</span>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-2 h-2 rounded-full bg-black"></div>
-                            <span class="text-gray-700 font-medium">Multi-platform distribution automation</span>
+                        <div class="flex items-center gap-2 text-sm text-gray-700">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
+                            <span>Performance-based commission only</span>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-2 h-2 rounded-full bg-black"></div>
-                            <span class="text-gray-700 font-medium">Audience growth & engagement automation</span>
+                        <div class="flex items-center gap-2 text-sm text-gray-700">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
+                            <span>Zero upfront costs</span>
                         </div>
                     </div>
+                    <a href="#local-services" class="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-black hover:text-gray-800 transition-colors">
+                        View Services <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
                 </div>
 
-                <!-- Education & Training -->
-                <div class="bg-white rounded-2xl border border-gray-200 p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group product-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-16 h-16 rounded-2xl bg-black flex items-center justify-center mb-8">
-                        <i data-lucide="graduation-cap" class="w-8 h-8 text-white"></i>
+                <!-- Commercial Solar Development -->
+                <div class="category-card bg-white rounded-2xl border border-gray-200 p-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon-container">
+                        <i data-lucide="zap" class="w-8 h-8 text-white"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-black mb-4">Education & Training Providers</h3>
-                    <p class="text-gray-600 mb-8">
-                        Streamline student acquisition, automated onboarding, and intelligent course delivery systems.
+                    <h3 class="text-2xl font-bold text-black mb-4">Commercial Solar Development</h3>
+                    <p class="text-gray-600 mb-6">
+                        Enterprise-scale solar solutions delivering guaranteed 70% electricity savings with comprehensive project financing, development, and management services.
                     </p>
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-3">
-                            <div class="w-2 h-2 rounded-full bg-black"></div>
-                            <span class="text-gray-700 font-medium">Automated student onboarding & fulfillment</span>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-2 text-sm text-gray-700">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
+                            <span>70% guaranteed electricity savings</span>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-2 h-2 rounded-full bg-black"></div>
-                            <span class="text-gray-700 font-medium">AI-powered course delivery automation</span>
+                        <div class="flex items-center gap-2 text-sm text-gray-700">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
+                            <span>Pre-approved capital for 30MW+ projects</span>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-2 h-2 rounded-full bg-black"></div>
-                            <span class="text-gray-700 font-medium">Progress tracking & reporting automation</span>
+                        <div class="flex items-center gap-2 text-sm text-gray-700">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
+                            <span>Full EPC and IPP development</span>
                         </div>
                     </div>
+                    <a href="#solar-development" class="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-black hover:text-gray-800 transition-colors">
+                        View Solar Solutions <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Products Section -->
-    <section id="products" class="py-24 bg-white section-padding">
+    <!-- Product Categories Section -->
+    <section id="categories" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20" data-aos="fade-up">
+            <div class="text-center mb-16" data-aos="fade-up">
                 <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 border border-gray-300 text-black text-sm font-semibold mb-6">
                     <i data-lucide="package" class="w-4 h-4"></i>
                     <span>Product Portfolio</span>
                 </div>
-                <h2 class="text-4xl md:text-5xl font-bold text-black mb-6">Comprehensive Business Solutions</h2>
+                <h2 class="text-4xl md:text-5xl font-bold text-black mb-6">Specialized Business Development Solutions</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Eight specialized platforms delivering measurable time savings, client acquisition growth, and automated fulfillment.
+                    Eight performance-guaranteed platforms across three solution categories, delivering measurable results with zero upfront costs.
                 </p>
             </div>
 
-            <!-- Row 1: Concierge, TrainingOS -->
-            <div class="mb-20" data-aos="fade-up">
-                <h3 class="row-heading">Business Development & Education</h3>
-                <div class="product-row">
-                    <!-- Product 1: Concierge -->
+            <!-- Category 1: AI Powered Apps -->
+            <div id="ai-apps" class="mb-24" data-aos="fade-up">
+                <div class="flex items-center gap-4 mb-12">
+                    <div class="w-12 h-12 rounded-xl bg-black flex items-center justify-center">
+                        <i data-lucide="brain" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-black">AI Powered Apps</h3>
+                        <p class="text-gray-600">Intelligent automation platforms transforming business development</p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Concierge -->
                     <div class="product-item" data-aos="fade-up" data-aos-delay="0">
-                        <div class="product-icon-container">
-                            <i data-lucide="briefcase" class="product-icon"></i>
+                        <span class="product-badge">AI Business Development</span>
+                        <div class="icon-container">
+                            <i data-lucide="briefcase" class="w-8 h-8 text-white"></i>
                         </div>
-                        <h3 class="product-title">Concierge</h3>
-                        <p class="product-subtitle">Your own 24/7 Business Development Network </p>
-                        <p class="product-description">
-                           We help Local Professionals fill their calendars with 10+ Qualified New Jobs, New Revenue and we charge zero money upfront.
+                        <h4 class="text-xl font-bold text-black mb-3">Concierge</h4>
+                        <p class="text-gray-600 mb-4">
+                            Your 24/7 AI business development agent that fills calendars with 10+ qualified new jobs monthly. Zero upfront costs, performance-based billing only.
                         </p>
-                        <div class="product-features">
-                            <div class="feature-item">
-                                <i data-lucide="clock" class="feature-icon"></i>
-                                <span>28+ Hours Weekly Time Savings</span>
-                            </div>
-                            <div class="feature-item">
-                                <i data-lucide="target" class="feature-icon"></i>
-                                <span>10+ Qualified Jobs Guaranteed</span>
-                            </div>
+                        <div class="mt-auto">
+                            <a href="https://www.concierge.maribamedia.co.za" target="_blank" 
+                               class="inline-flex items-center gap-2 text-sm font-semibold text-black hover:text-gray-800 transition-colors">
+                                Learn More <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </a>
                         </div>
-                        <a href="https://www.concierge.maribamedia.co.za" target="_blank" class="product-button">
-                            Learn More
-                        </a>
                     </div>
 
-                    <!-- Product 2: English Mastery Platform -->
+                    <!-- TrainingOS -->
                     <div class="product-item" data-aos="fade-up" data-aos-delay="100">
-                        <div class="product-icon-container">
-                            <i data-lucide="graduation-cap" class="product-icon"></i>
+                        <span class="product-badge">AI Education Platform</span>
+                        <div class="icon-container">
+                            <i data-lucide="graduation-cap" class="w-8 h-8 text-white"></i>
                         </div>
-                        <h3 class="product-title">English Mastery Platform</h3>
-                        <p class="product-subtitle">AI-Powered English Tutoring Platform</p>
-                        <p class="product-description">
-                            Guarantees 12% grade improvement over 90 days through personalized coaching by certified TEFL instructors using AI. Automates 95% of administrative tasks and course delivery.
+                        <h4 class="text-xl font-bold text-black mb-3">TrainingOS</h4>
+                        <p class="text-gray-600 mb-4">
+                            AI-powered education platform guaranteeing 12% grade improvement in 90 days. Automates 95% of administrative tasks and personalized learning delivery.
                         </p>
-                        <div class="product-features">
-                            <div class="feature-item">
-                                <i data-lucide="trending-up" class="feature-icon"></i>
-                                <span>12% Grade Improvement Guarantee</span>
-                            </div>
-                            <div class="feature-item">
-                                <i data-lucide="bot" class="feature-icon"></i>
-                                <span>95% Administrative Automation</span>
-                            </div>
+                        <div class="mt-auto">
+                            <a href="https://www.training.maribamedia.co.za" target="_blank" 
+                               class="inline-flex items-center gap-2 text-sm font-semibold text-black hover:text-gray-800 transition-colors">
+                                Learn More <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </a>
                         </div>
-                        <a href="https://www.training.maribamedia.co.za" target="_blank" class="product-button">
-                            Learn More
-                        </a>
+                    </div>
+
+                    <!-- Focal -->
+                    <div class="product-item" data-aos="fade-up" data-aos-delay="200">
+                        <span class="product-badge">AI Media Production</span>
+                        <div class="icon-container">
+                            <i data-lucide="film" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-black mb-3">Focal</h4>
+                        <p class="text-gray-600 mb-4">
+                            Intelligent media creation system automating content production, editing, and multi-platform distribution. Saves media teams 28+ hours weekly.
+                        </p>
+                        <div class="mt-auto">
+                            <a href="https://www.focal.maribamedia.co.za" target="_blank" 
+                               class="inline-flex items-center gap-2 text-sm font-semibold text-black hover:text-gray-800 transition-colors">
+                                Learn More <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Row 2: FibreConnector, Focal -->
-            <div class="mb-20" data-aos="fade-up">
-                <h3 class="row-heading">Connectivity & Media Production</h3>
-                <div class="product-row">
-                    <!-- Product 3: FibreConnector -->
+            <!-- Category 2: Local Professional Services -->
+            <div id="local-services" class="mb-24" data-aos="fade-up">
+                <div class="flex items-center gap-4 mb-12">
+                    <div class="w-12 h-12 rounded-xl bg-black flex items-center justify-center">
+                        <i data-lucide="users" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-black">Local Professional Services</h3>
+                        <p class="text-gray-600">Performance-guaranteed services connecting professionals with qualified clients</p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- FibreConnector -->
                     <div class="product-item" data-aos="fade-up" data-aos-delay="0">
-                        <div class="product-icon-container">
-                            <i data-lucide="wifi" class="product-icon"></i>
+                        <span class="product-badge">Connectivity Services</span>
+                        <div class="icon-container">
+                            <i data-lucide="wifi" class="w-8 h-8 text-white"></i>
                         </div>
-                        <h3 class="product-title">FibreConnector</h3>
-                        <p class="product-subtitle">Fast Uncapped Fibre Internet</p>
-                        <p class="product-description">
-                            High-speed uncapped fibre internet with free professional installation and 14-day risk-free trial. As Openserve Accredited partners, we provide enterprise-grade connectivity.
+                        <h4 class="text-xl font-bold text-black mb-3">FibreConnector</h4>
+                        <p class="text-gray-600 mb-4">
+                            Fast uncapped fibre internet with free professional installation and 14-day risk-free trial. Openserve accredited, enterprise-grade connectivity for professionals.
                         </p>
-                        <div class="product-features">
-                            <div class="feature-item">
-                                <i data-lucide="zap" class="feature-icon"></i>
-                                <span>Fast Uncapped Fibre Internet</span>
-                            </div>
-                            <div class="feature-item">
-                                <i data-lucide="gift" class="feature-icon"></i>
-                                <span>14-Day Risk-Free Trial</span>
-                            </div>
+                        <div class="mt-auto">
+                            <a href="https://fibre.maribamedia.co.za" target="_blank" 
+                               class="inline-flex items-center gap-2 text-sm font-semibold text-black hover:text-gray-800 transition-colors">
+                                Learn More <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </a>
                         </div>
-                        <a href="https://fibre.maribamedia.co.za" target="_blank" class="product-button">
-                            Learn More
-                        </a>
                     </div>
 
-                    <!-- Product 4: Focal -->
+                    <!-- SolarConnector -->
                     <div class="product-item" data-aos="fade-up" data-aos-delay="100">
-                        <div class="product-icon-container">
-                            <i data-lucide="film" class="product-icon"></i>
+                        <span class="product-badge">Residential Solar</span>
+                        <div class="icon-container">
+                            <i data-lucide="sun" class="w-8 h-8 text-white"></i>
                         </div>
-                        <h3 class="product-title">Focal</h3>
-                        <p class="product-subtitle">AI-Powered Media Production Platform</p>
-                        <p class="product-description">
-                            An intelligent media creation and management system that automates content production, editing, and multi-platform distribution. Saves media teams 28+ hours weekly.
+                        <h4 class="text-xl font-bold text-black mb-3">SolarConnector</h4>
+                        <p class="text-gray-600 mb-4">
+                            Guaranteed 70% electricity bill reduction within 30 days. Residential solar solutions with 30-day installation and comprehensive 25-year performance warranties.
                         </p>
-                        <div class="product-features">
-                            <div class="feature-item">
-                                <i data-lucide="film" class="feature-icon"></i>
-                                <span>Automated Content Production</span>
-                            </div>
-                            <div class="feature-item">
-                                <i data-lucide="share-2" class="feature-icon"></i>
-                                <span>Multi-Platform Distribution</span>
-                            </div>
+                        <div class="mt-auto">
+                            <a href="https://solar.maribamedia.co.za" target="_blank" 
+                               class="inline-flex items-center gap-2 text-sm font-semibold text-black hover:text-gray-800 transition-colors">
+                                Learn More <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </a>
                         </div>
-                        <a href="https://www.focal.maribamedia.co.za" target="_blank" class="product-button">
-                            Learn More
-                        </a>
                     </div>
                 </div>
             </div>
 
-            <!-- Row 3: SolarConnector, CommercialSolar -->
-            <div class="mb-20" data-aos="fade-up">
-                <h3 class="row-heading">Solar Energy Solutions</h3>
-                <div class="product-row">
-                    <!-- Product 5: SolarConnector -->
+            <!-- Category 3: Commercial Solar Development -->
+            <div id="solar-development" data-aos="fade-up">
+                <div class="flex items-center gap-4 mb-12">
+                    <div class="w-12 h-12 rounded-xl bg-black flex items-center justify-center">
+                        <i data-lucide="zap" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-black">Commercial Solar Development</h3>
+                        <p class="text-gray-600">Enterprise-scale energy solutions with guaranteed savings and comprehensive development services</p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- CommercialSolar -->
                     <div class="product-item" data-aos="fade-up" data-aos-delay="0">
-                        <div class="product-icon-container">
-                            <i data-lucide="sun" class="product-icon"></i>
+                        <span class="product-badge">Business Solar</span>
+                        <div class="icon-container">
+                            <i data-lucide="building-2" class="w-8 h-8 text-white"></i>
                         </div>
-                        <h3 class="product-title">SolarConnector</h3>
-                        <p class="product-subtitle">Residential Solar Solutions</p>
-                        <p class="product-description">
-                            Guaranteed 70% electricity bill reduction within 30 days or we continue working at no cost. Our residential solar solutions feature 30-day professional installation with comprehensive 25-year performance warranties.
+                        <h4 class="text-xl font-bold text-black mb-3">CommercialSolar</h4>
+                        <p class="text-gray-600 mb-4">
+                            Partnership with Urban Holdings Solar delivering 70% electricity savings for businesses with no upfront costs. Flexible financing and professional installation.
                         </p>
-                        <div class="product-features">
-                            <div class="feature-item">
-                                <i data-lucide="dollar-sign" class="feature-icon"></i>
-                                <span>70% Savings Guarantee</span>
-                            </div>
-                            <div class="feature-item">
-                                <i data-lucide="shield" class="feature-icon"></i>
-                                <span>25-Year Performance Warranty</span>
-                            </div>
+                        <div class="mt-auto">
+                            <a href="https://commercial.maribamedia.co.za" target="_blank" 
+                               class="inline-flex items-center gap-2 text-sm font-semibold text-black hover:text-gray-800 transition-colors">
+                                Learn More <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </a>
                         </div>
-                        <a href="https://solar.maribamedia.co.za" target="_blank" class="product-button">
-                            Learn More
-                        </a>
                     </div>
 
-                    <!-- Product 6: CommercialSolar -->
+                    <!-- SolarFund -->
                     <div class="product-item" data-aos="fade-up" data-aos-delay="100">
-                        <div class="product-icon-container">
-                            <i data-lucide="building-2" class="product-icon"></i>
+                        <span class="product-badge">Energy Finance</span>
+                        <div class="icon-container">
+                            <i data-lucide="badge-dollar-sign" class="w-8 h-8 text-white"></i>
                         </div>
-                        <h3 class="product-title">CommercialSolar</h3>
-                        <p class="product-subtitle">Commercial Solar Solutions</p>
-                        <p class="product-description">
-                            Partnership with Urban Holdings Solar delivers 70% electricity savings for businesses with no upfront costs. Our commercial solutions include flexible financing and professional installation.
+                        <h4 class="text-xl font-bold text-black mb-3">SolarFund</h4>
+                        <p class="text-gray-600 mb-4">
+                            Complete energy finance and development platform offering pre-approved capital for 30MW+ projects. Full EPC services, IPP development, PPAs, and regulatory compliance.
                         </p>
-                        <div class="product-features">
-                            <div class="feature-item">
-                                <i data-lucide="dollar-sign" class="feature-icon"></i>
-                                <span>70% Business Savings</span>
-                            </div>
-                            <div class="feature-item">
-                                <i data-lucide="credit-card" class="feature-icon"></i>
-                                <span>No Upfront Costs</span>
-                            </div>
+                        <div class="mt-auto">
+                            <a href="https://funding.maribamedia.co.za" target="_blank" 
+                               class="inline-flex items-center gap-2 text-sm font-semibold text-black hover:text-gray-800 transition-colors">
+                                Learn More <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </a>
                         </div>
-                        <a href="https://commercial.maribamedia.co.za" target="_blank" class="product-button">
-                            Learn More
-                        </a>
+                    </div>
+
+                    <!-- EnergyMixer -->
+                    <div class="product-item" data-aos="fade-up" data-aos-delay="200">
+                        <span class="product-badge">Hybrid Energy</span>
+                        <div class="icon-container">
+                            <i data-lucide="battery-charging" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-black mb-3">EnergyMixer</h4>
+                        <p class="text-gray-600 mb-4">
+                            US-patented DC power blending system automating energy management. Reduces operational costs by 40% and increases output efficiency by 22% for commercial enterprises.
+                        </p>
+                        <div class="mt-auto">
+                            <a href="http://www.energy.maribamedia.co.za" target="_blank" 
+                               class="inline-flex items-center gap-2 text-sm font-semibold text-black hover:text-gray-800 transition-colors">
+                                Learn More <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Row 4: Energy Mixer, SolarFund -->
-            <div data-aos="fade-up">
-                <h3 class="row-heading">Advanced Energy Technology</h3>
-                <div class="product-row">
-                    <!-- Product 7: Energy Mixer -->
-                    <div class="product-item" data-aos="fade-up" data-aos-delay="0">
-                        <div class="product-icon-container">
-                            <i data-lucide="zap" class="product-icon"></i>
-                        </div>
-                        <h3 class="product-title">Energy Mixer</h3>
-                        <p class="product-subtitle">Hybrid Renewable Energy System</p>
-                        <p class="product-description">
-                            A US-patented DC power blending system that automates energy management, reducing operational costs by 40% and increasing output efficiency by 22% for commercial enterprises.
-                        </p>
-                        <div class="product-features">
-                            <div class="feature-item">
-                                <i data-lucide="dollar-sign" class="feature-icon"></i>
-                                <span>40% Cost Reduction</span>
-                            </div>
-                            <div class="feature-item">
-                                <i data-lucide="battery-charging" class="feature-icon"></i>
-                                <span>22% Output Increase</span>
-                            </div>
-                        </div>
-                        <a href="http://www.energy.maribamedia.co.za" target="_blank" class="product-button">
-                            Learn More
-                        </a>
-                    </div>
-
-                    <!-- Product 8: SolarFund -->
-                    <div class="product-item" data-aos="fade-up" data-aos-delay="100">
-                        <div class="product-icon-container">
-                            <i data-lucide="badge-dollar-sign" class="product-icon"></i>
-                        </div>
-                        <h3 class="product-title">SolarFund</h3>
-                        <p class="product-subtitle">Complete Energy Solutions for Africa</p>
-                        <p class="product-description">
-                            Comprehensive energy finance and development platform offering pre-approved capital for 30MW+ projects. SolarFund provides full EPC services, IPP development, PPAs, and regulatory compliance.
-                        </p>
-                        <div class="product-features">
-                            <div class="feature-item">
-                                <i data-lucide="dollar-sign" class="feature-icon"></i>
-                                <span>Pre-Approved Capital for 30MW+ Projects</span>
-                            </div>
-                            <div class="feature-item">
-                                <i data-lucide="globe" class="feature-icon"></i>
-                                <span>Pan-African Energy Solutions</span>
-                            </div>
-                        </div>
-                        <a href="https://funding.maribamedia.co.za" target="_blank" class="product-button">
-                            Learn More
-                        </a>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </section>
 
-    <!-- Guarantee Section -->
+    <!-- Performance Guarantee Section -->
     <section id="guarantee" class="py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20" data-aos="fade-up">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 border border-gray-300 text-black text-sm font-semibold mb-6">
-                    <i data-lucide="shield-check" class="w-4 h-4"></i>
-                    <span>Our Guarantee</span>
-                </div>
-                <h2 class="text-4xl md:text-5xl font-bold text-black mb-6">Performance Bias Guarantee and Full Refund</h2>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="section-header text-3xl md:text-4xl font-bold text-black mb-6">The Business Development Lab Guarantee</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    We only get paid when you get paid and full refunds if we don't meet our targets in 90 days.
+                    Zero risk implementation with clear performance targets. We only succeed when you succeed.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="grid md:grid-cols-2 gap-12">
                 <div data-aos="fade-right">
-                    <div class="rounded-2xl p-10 border-2 border-black guarantee-card">
-                        <h3 class="text-2xl font-bold text-black mb-8">What We Guarantee</h3>
-                        <div class="space-y-8">
+                    <div class="guarantee-card">
+                        <h3 class="text-2xl font-bold text-black mb-8">Our Performance Guarantee</h3>
+                        <div class="space-y-6">
                             <div class="flex items-start gap-4">
-                                <div class="icon-circle">
-                                    <i data-lucide="briefcase" class="w-6 h-6 text-white"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-xl font-bold text-black mb-2">Performance Bias</h4>
-                                    <p class="text-gray-600">We only earn when you get paid - no revenue = no pay</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <div class="icon-circle">
-                                    <i data-lucide="clock" class="w-6 h-6 text-white"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-xl font-bold text-black mb-2">90-Day Target Window</h4>
-                                    <p class="text-gray-600">Full refund if we don't meet agreed targets in 90 days</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <div class="icon-circle">
+                                <div class="w-12 h-12 rounded-lg bg-black flex items-center justify-center flex-shrink-0">
                                     <i data-lucide="dollar-sign" class="w-6 h-6 text-white"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-xl font-bold text-black mb-2">No Upfront Costs</h4>
-                                    <p class="text-gray-600">Zero risk implementation with clear, measurable targets</p>
+                                    <h4 class="text-xl font-bold text-black mb-2">Zero Upfront Costs</h4>
+                                    <p class="text-gray-600">No implementation fees. We invest in your success from day one.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-lg bg-black flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="target" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-black mb-2">90-Day Performance Window</h4>
+                                    <p class="text-gray-600">Clear targets set upfront, measured weekly. Full refund if targets aren't met.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-lg bg-black flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="trending-up" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-black mb-2">Performance-Based Billing</h4>
+                                    <p class="text-gray-600">We only earn when you get paid. Our success is tied directly to your results.</p>
                                 </div>
                             </div>
                         </div>
@@ -844,45 +792,36 @@
                 </div>
 
                 <div data-aos="fade-left">
-                    <div class="bg-white rounded-2xl p-10 border-2 border-black guarantee-card">
-                        <div class="flex items-center gap-4 mb-8">
-                            <div class="w-16 h-16 rounded-2xl bg-black flex items-center justify-center">
-                                <i data-lucide="badge-check" class="w-8 h-8 text-white"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-bold text-black">Risk-Free Implementation</h3>
-                                <p class="text-gray-600">No results = No pay = Full refund</p>
-                            </div>
-                        </div>
-
+                    <div class="bg-white rounded-2xl p-8 border-2 border-black">
+                        <h3 class="text-2xl font-bold text-black mb-6">Why It Works</h3>
                         <div class="space-y-6">
-                            <div class="p-6 rounded-xl bg-gray-50 border-2 border-black hover:shadow-md transition-all">
+                            <div class="p-4 rounded-lg bg-gray-50 border border-gray-200">
                                 <div class="flex items-center justify-between mb-2">
-                                    <h4 class="font-bold text-black">90-Day Performance Window</h4>
-                                    <span class="px-3 py-1 bg-black text-white text-sm font-bold rounded-full">Guaranteed</span>
+                                    <h4 class="font-bold text-black">Aligned Incentives</h4>
+                                    <i data-lucide="handshake" class="w-5 h-5 text-black"></i>
                                 </div>
-                                <p class="text-gray-600">Clear targets set upfront, measured weekly</p>
+                                <p class="text-gray-600 text-sm">We only succeed when you succeed. Our compensation is directly tied to your results.</p>
                             </div>
-
-                            <div class="p-6 rounded-xl bg-gray-50 border-2 border-black hover:shadow-md transition-all">
+                            
+                            <div class="p-4 rounded-lg bg-gray-50 border border-gray-200">
                                 <div class="flex items-center justify-between mb-2">
-                                    <h4 class="font-bold text-black">Weekly Performance Reports</h4>
-                                    <span class="px-3 py-1 bg-black text-white text-sm font-bold rounded-full">Transparent</span>
+                                    <h4 class="font-bold text-black">Transparent Tracking</h4>
+                                    <i data-lucide="chart-bar" class="w-5 h-5 text-black"></i>
                                 </div>
-                                <p class="text-gray-600">Real-time tracking against agreed targets</p>
+                                <p class="text-gray-600 text-sm">Weekly performance reports with real-time tracking against agreed targets.</p>
                             </div>
-
-                            <div class="p-6 rounded-xl bg-gray-50 border-2 border-black hover:shadow-md transition-all">
+                            
+                            <div class="p-4 rounded-lg bg-gray-50 border border-gray-200">
                                 <div class="flex items-center justify-between mb-2">
-                                    <h4 class="font-bold text-black">Full Refund Guarantee</h4>
-                                    <span class="px-3 py-1 bg-black text-white text-sm font-bold rounded-full">Included</span>
+                                    <h4 class="font-bold text-black">Risk-Free Implementation</h4>
+                                    <i data-lucide="shield-check" class="w-5 h-5 text-black"></i>
                                 </div>
-                                <p class="text-gray-600">100% refund if targets aren't met in 90 days</p>
+                                <p class="text-gray-600 text-sm">100% refund protection ensures zero financial risk for your business.</p>
                             </div>
                         </div>
-
+                        
                         <a href="https://cal.com/partner-discovery/south-africa" target="_blank" 
-                           class="mt-10 block w-full py-4 px-6 bg-black hover:bg-gray-900 text-white rounded-xl font-bold text-center transition-all duration-300 shadow-lg border-2 border-black">
+                           class="mt-8 block w-full py-4 px-6 bg-black hover:bg-gray-900 text-white rounded-xl font-bold text-center transition-all duration-300 shadow-lg">
                             Start Your Risk-Free Trial
                         </a>
                     </div>
@@ -893,143 +832,106 @@
 
     <!-- Process Section -->
     <section id="process" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20" data-aos="fade-up">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 border border-gray-300 text-black text-sm font-semibold mb-6">
-                    <i data-lucide="play-circle" class="w-4 h-4"></i>
-                    <span>Our Process</span>
-                </div>
-                <h2 class="text-4xl md:text-5xl font-bold text-black mb-6">The Performance Bias Implementation Framework</h2>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="section-header text-3xl md:text-4xl font-bold text-black mb-6">The 90-Day Performance Framework</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    A structured 90-day approach delivering guaranteed business development results with full refund protection.
+                    A structured approach delivering guaranteed business development results with full refund protection.
                 </p>
             </div>
 
-            <!-- Process Timeline -->
-            <div class="relative">
-                <!-- Timeline Line -->
-                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-300 hidden lg:block"></div>
-
-                <!-- Process Steps -->
-                <div class="space-y-16 lg:space-y-0">
-                    <!-- Week 1-30 -->
-                    <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center" data-aos="fade-right">
-                        <div class="lg:text-right mb-8 lg:mb-0">
-                            <div class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gray-100 border border-gray-300">
-                                <span class="text-2xl font-bold text-black">Days 1-30</span>
-                                <span class="text-black font-semibold">Discovery & Design</span>
-                            </div>
-                            <h3 class="text-2xl font-bold text-black mt-6 mb-4">Strategic Assessment & Target Setting</h3>
-                            <p class="text-gray-600">Identify automation opportunities and set clear, measurable performance targets.</p>
+            <!-- Timeline -->
+            <div class="max-w-3xl mx-auto">
+                <!-- Phase 1 -->
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="px-3 py-1 bg-black text-white text-sm font-bold rounded-full">Days 1-30</span>
+                            <h3 class="text-xl font-bold text-black">Discovery & Design</h3>
                         </div>
-                        <div class="relative">
-                            <div class="absolute left-1/2 transform -translate-x-1/2 lg:left-0 lg:transform-none w-16 h-16 rounded-2xl bg-black flex items-center justify-center z-10">
-                                <i data-lucide="search" class="w-8 h-8 text-white"></i>
-                            </div>
-                            <div class="pt-10 lg:pt-0 lg:pl-24">
-                                <div class="bg-white rounded-2xl border-2 border-black p-8 shadow-lg product-card">
-                                    <ul class="space-y-4">
-                                        <li class="flex items-center gap-3">
-                                            <div class="timeline-dot"></div>
-                                            <span class="text-gray-700">Clear target setting & KPI definition</span>
-                                        </li>
-                                        <li class="flex items-center gap-3">
-                                            <div class="timeline-dot"></div>
-                                            <span class="text-gray-700">Automation opportunity mapping</span>
-                                        </li>
-                                        <li class="flex items-center gap-3">
-                                            <div class="timeline-dot"></div>
-                                            <span class="text-gray-700">Performance bias agreement signing</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        <p class="text-gray-600 mb-4">Identify automation opportunities and set clear, measurable performance targets across your chosen solution category.</p>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
+                                <span>Target setting & KPI definition</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
+                                <span>Solution category selection</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
+                                <span>Performance bias agreement</span>
+                            </li>
+                        </ul>
                     </div>
+                </div>
 
-                    <!-- Week 31-60 -->
-                    <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center" data-aos="fade-left">
-                        <div class="lg:order-2 mb-8 lg:mb-0">
-                            <div class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gray-100 border border-gray-300">
-                                <span class="text-2xl font-bold text-black">Days 31-60</span>
-                                <span class="text-black font-semibold">Implementation & Optimization</span>
-                            </div>
-                            <h3 class="text-2xl font-bold text-black mt-6 mb-4">AI Deployment & Performance Tracking</h3>
-                            <p class="text-gray-600">Deploy specialized business development systems with weekly performance tracking.</p>
+                <!-- Phase 2 -->
+                <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="px-3 py-1 bg-black text-white text-sm font-bold rounded-full">Days 31-60</span>
+                            <h3 class="text-xl font-bold text-black">Implementation & Optimization</h3>
                         </div>
-                        <div class="relative lg:order-1">
-                            <div class="absolute left-1/2 transform -translate-x-1/2 lg:left-auto lg:right-0 lg:transform-none w-16 h-16 rounded-2xl bg-black flex items-center justify-center z-10">
-                                <i data-lucide="settings" class="w-8 h-8 text-white"></i>
-                            </div>
-                            <div class="pt-10 lg:pt-0 lg:pr-24">
-                                <div class="bg-white rounded-2xl border-2 border-black p-8 shadow-lg product-card">
-                                    <ul class="space-y-4">
-                                        <li class="flex items-center gap-3">
-                                            <div class="timeline-dot"></div>
-                                            <span class="text-gray-700">Specialized AI system deployment</span>
-                                        </li>
-                                        <div class="flex items-center gap-3">
-                                            <div class="timeline-dot"></div>
-                                            <span class="text-gray-700">Weekly performance tracking</span>
-                                        </div>
-                                        <li class="flex items-center gap-3">
-                                            <div class="timeline-dot"></div>
-                                            <span class="text-gray-700">Real-time optimization based on data</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        <p class="text-gray-600 mb-4">Deploy specialized business development systems with weekly performance tracking and real-time optimization.</p>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
+                                <span>Solution deployment & integration</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
+                                <span>Weekly performance tracking</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
+                                <span>Real-time optimization adjustments</span>
+                            </li>
+                        </ul>
                     </div>
+                </div>
 
-                    <!-- Week 61-90 -->
-                    <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center" data-aos="fade-right">
-                        <div class="lg:text-right mb-8 lg:mb-0">
-                            <div class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gray-100 border border-gray-300">
-                                <span class="text-2xl font-bold text-black">Days 61-90</span>
-                                <span class="text-black font-semibold">Results & Validation</span>
-                            </div>
-                            <h3 class="text-2xl font-bold text-black mt-6 mb-4">Guarantee Validation & Refund Assessment</h3>
-                            <p class="text-gray-600">Measure results against targets and validate performance bias guarantee.</p>
+                <!-- Phase 3 -->
+                <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="px-3 py-1 bg-black text-white text-sm font-bold rounded-full">Days 61-90</span>
+                            <h3 class="text-xl font-bold text-black">Results & Validation</h3>
                         </div>
-                        <div class="relative">
-                            <div class="absolute left-1/2 transform -translate-x-1/2 lg:left-0 lg:transform-none w-16 h-16 rounded-2xl bg-black flex items-center justify-center z-10">
-                                <i data-lucide="target" class="w-8 h-8 text-white"></i>
-                            </div>
-                            <div class="pt-10 lg:pt-0 lg:pl-24">
-                                <div class="bg-white rounded-2xl border-2 border-black p-8 shadow-lg product-card">
-                                    <ul class="space-y-4">
-                                        <li class="flex items-center gap-3">
-                                            <div class="timeline-dot"></div>
-                                            <span class="text-gray-700">Final performance measurement</span>
-                                        </li>
-                                        <li class="flex items-center gap-3">
-                                            <div class="timeline-dot"></div>
-                                            <span class="text-gray-700">Target achievement validation</span>
-                                        </li>
-                                        <li class="flex items-center gap-3">
-                                            <div class="timeline-dot"></div>
-                                            <span class="text-gray-700">Full refund processing if targets not met</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        <p class="text-gray-600 mb-4">Measure results against targets and validate performance bias guarantee with full refund processing if needed.</p>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
+                                <span>Final performance measurement</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
+                                <span>Target achievement validation</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
+                                <span>Full refund processing if targets not met</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
             <!-- Final CTA -->
-            <div class="mt-32 text-center" data-aos="zoom-in">
+            <div class="mt-24 text-center" data-aos="zoom-in">
                 <div class="bg-black rounded-3xl p-12 shadow-2xl relative overflow-hidden">
                     <div class="relative z-10">
                         <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Transform Your Business Development?</h3>
                         <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-                            Start your performance bias guarantee today with no upfront costs. We only get paid when you get paid, with full refund protection.
+                            Start your performance bias guarantee today with no upfront costs. Choose from our three solution categories and only pay when you see results.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-6 justify-center">
                             <a href="https://cal.com/partner-discovery/south-africa" target="_blank"
-                               class="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-black px-12 py-5 rounded-xl font-bold text-lg transition-all duration-300 shadow-2xl transform hover:-translate-y-1 border-2 border-white">
+                               class="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-black px-12 py-5 rounded-xl font-bold text-lg transition-all duration-300 shadow-2xl transform hover:-translate-y-1">
                                 <i data-lucide="calendar" class="w-6 h-6"></i>
                                 Schedule Your Demo
                             </a>
@@ -1054,15 +956,15 @@
                 <div class="lg:col-span-2">
                     <a href="#home" class="flex items-center gap-3 mb-6 group">
                         <div class="bg-white p-2 rounded-lg group-hover:shadow-lg transition-all">
-                            <i data-lucide="zap" class="w-6 h-6 text-black"></i>
+                            <i data-lucide="flask-conical" class="w-6 h-6 text-black"></i>
                         </div>
                         <div>
                             <span class="text-xl font-bold text-white">Business Development Lab</span>
-                            <span class="block text-sm text-gray-400">by Mariba Media</span>
+                            <span class="block text-sm text-gray-400">Performance-Bias Growth</span>
                         </div>
                     </a>
                     <p class="text-gray-400 text-sm leading-relaxed mb-8 max-w-md">
-                        We create new revenue or we don't get paid. Performance bias guarantee with full refunds if targets aren't met in 90 days.
+                        We create new revenue or we don't get paid. Performance bias guarantee with full refunds if targets aren't met in 90 days across three specialized solution categories.
                     </p>
                     <div class="flex gap-4">
                         <a href="https://www.facebook.com/people/Mariba-Media-Pty-Ltd/61576915266105/" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-white flex items-center justify-center text-gray-300 hover:text-black transition-all">
@@ -1074,38 +976,35 @@
                         <a href="https://www.linkedin.com/company/mariba-media?_l=en_US" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-white flex items-center justify-center text-gray-300 hover:text-black transition-all">
                             <i data-lucide="linkedin" class="w-4 h-4"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/tebogo-mariba-466960330/" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-white flex items-center justify-center text-gray-300 hover:text-black transition-all">
-                            <i data-lucide="user" class="w-4 h-4"></i>
-                        </a>
                     </div>
                 </div>
 
                 <!-- Solutions -->
                 <div>
-                    <h5 class="text-lg font-bold text-white mb-6">Solutions</h5>
-                    <ul class="space-y-4">
-                        <li><a href="#solutions" class="text-gray-400 hover:text-white text-sm transition-colors">Sales Organizations</a></li>
-                        <li><a href="#solutions" class="text-gray-400 hover:text-white text-sm transition-colors">Media & Content Teams</a></li>
-                        <li><a href="#solutions" class="text-gray-400 hover:text-white text-sm transition-colors">Education & Training</a></li>
-                        <li><a href="#guarantee" class="text-gray-400 hover:text-white text-sm transition-colors">Performance Bias Guarantee</a></li>
+                    <h5 class="text-lg font-bold text-white mb-6">Solution Categories</h5>
+                    <ul class="space-y-3">
+                        <li><a href="#ai-apps" class="text-gray-400 hover:text-white text-sm transition-colors">AI Powered Apps</a></li>
+                        <li><a href="#local-services" class="text-gray-400 hover:text-white text-sm transition-colors">Local Professional Services</a></li>
+                        <li><a href="#solar-development" class="text-gray-400 hover:text-white text-sm transition-colors">Commercial Solar Development</a></li>
+                        <li><a href="#guarantee" class="text-gray-400 hover:text-white text-sm transition-colors">Performance Guarantee</a></li>
                     </ul>
                 </div>
 
                 <!-- Products -->
                 <div>
-                    <h5 class="text-lg font-bold text-white mb-6">Products</h5>
-                    <ul class="space-y-4">
-                        <li><a href="#products" class="text-gray-400 hover:text-white text-sm transition-colors">Concierge</a></li>
-                        <li><a href="#products" class="text-gray-400 hover:text-white text-sm transition-colors">Focal</a></li>
-                        <li><a href="#products" class="text-gray-400 hover:text-white text-sm transition-colors">English Mastery Platform</a></li>
-                        <li><a href="#products" class="text-gray-400 hover:text-white text-sm transition-colors">Energy Mixer</a></li>
+                    <h5 class="text-lg font-bold text-white mb-6">Featured Products</h5>
+                    <ul class="space-y-3">
+                        <li><a href="#ai-apps" class="text-gray-400 hover:text-white text-sm transition-colors">Concierge</a></li>
+                        <li><a href="#ai-apps" class="text-gray-400 hover:text-white text-sm transition-colors">TrainingOS</a></li>
+                        <li><a href="#local-services" class="text-gray-400 hover:text-white text-sm transition-colors">SolarConnector</a></li>
+                        <li><a href="#solar-development" class="text-gray-400 hover:text-white text-sm transition-colors">SolarFund</a></li>
                     </ul>
                 </div>
 
                 <!-- Contact -->
                 <div>
                     <h5 class="text-lg font-bold text-white mb-6">Contact</h5>
-                    <ul class="space-y-4">
+                    <ul class="space-y-3">
                         <li class="flex items-center gap-3 text-sm text-gray-400">
                             <i data-lucide="mail" class="w-4 h-4 text-white"></i>
                             <a href="mailto:victor@maribamedia.co.za" class="hover:text-white">victor@maribamedia.co.za</a>
@@ -1128,7 +1027,7 @@
 
             <div class="border-t border-gray-800 pt-8 text-center">
                 <p class="text-gray-500 text-sm">
-                    © 2025 Mariba Media. Company Registration No: 2024 / 132788 / 07. All rights reserved.
+                    © 2025 Business Development Lab | Mariba Media. Company Registration No: 2024 / 132788 / 07. All rights reserved.
                 </p>
                 <div class="mt-4 flex flex-wrap justify-center gap-6 text-sm text-gray-500">
                     <a href="https://www.freeprivacypolicy.com/live/19ac9e12-2d32-49e8-b611-a103aaec0171" target="_blank" class="hover:text-gray-300">Privacy Policy</a>
@@ -1141,10 +1040,7 @@
 
     <!-- WhatsApp Widget -->
     <div class="whatsapp-widget">
-        <div class="whatsapp-tooltip">
-            Start Chat on WhatsApp
-        </div>
-        <a href="https://wa.me/27766473499?text=Hi%20Mariba%20Media%2C%20I'm%20interested%20in%20your%20Business%20Development%20Lab" 
+        <a href="https://wa.me/27766473499?text=Hi%20Business%20Development%20Lab%2C%20I'm%20interested%20in%20your%20performance%20bias%20guarantee" 
            target="_blank" 
            class="whatsapp-button"
            aria-label="Chat on WhatsApp">
@@ -1196,7 +1092,6 @@
 
         btn.addEventListener('click', () => {
             menu.classList.toggle('hidden');
-            menu.classList.toggle('animate-slide-in');
             const icon = btn.querySelector('i');
             if (menu.classList.contains('hidden')) {
                 lucide.createIcons();
@@ -1227,37 +1122,6 @@
                 }
             });
         });
-
-        // Cal.com Integration
-        (function (C, A, L) { 
-            let p = function (a, ar) { a.q.push(ar); }; 
-            let d = C.document; 
-            C.Cal = C.Cal || function () { 
-                let cal = C.Cal; 
-                let ar = arguments; 
-                if (!cal.loaded) { 
-                    cal.ns = {}; 
-                    cal.q = cal.q || []; 
-                    d.head.appendChild(d.createElement("script")).src = A; 
-                    cal.loaded = true; 
-                } 
-                if (ar[0] === L) { 
-                    const api = function () { p(api, arguments); }; 
-                    const namespace = ar[1]; 
-                    api.q = api.q || []; 
-                    if(typeof namespace === "string") {
-                        cal.ns[namespace] = cal.ns[namespace] || api;
-                        p(cal.ns[namespace], ar);
-                        p(cal, ["initNamespace", namespace]);
-                    } else p(cal, ar); 
-                    return;
-                } 
-                p(cal, ar); 
-            }; 
-        })(window, "https://app.cal.com/embed/embed.js", "init");
-        
-        Cal("init", "south-africa", {origin:"https://app.cal.com"});
-        Cal.ns["south-africa"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
     </script>
 </body>
 </html>
