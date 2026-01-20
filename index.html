@@ -19,7 +19,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -30,6 +30,7 @@
           extend: {
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
+              display: ['Space Grotesk', 'sans-serif'],
             },
             colors: {
               primary: '#000000',
@@ -51,11 +52,16 @@
             animation: {
               'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
               'float': 'float 6s ease-in-out infinite',
+              'gradient': 'gradient 8s ease infinite',
             },
             keyframes: {
               float: {
                 '0%, 100%': { transform: 'translateY(0px)' },
                 '50%': { transform: 'translateY(-20px)' },
+              },
+              gradient: {
+                '0%, 100%': { 'background-position': '0% 50%' },
+                '50%': { 'background-position': '100% 50%' },
               }
             }
           }
@@ -216,18 +222,6 @@
         box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
       }
 
-      @keyframes pulse {
-        0% {
-          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
-        }
-        70% {
-          box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
-        }
-        100% {
-          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-        }
-      }
-
       /* Performance Grid */
       .performance-grid {
         display: grid;
@@ -351,6 +345,14 @@
         box-shadow: 0 0 0 3px #000000;
       }
 
+      /* Gradient Text */
+      .gradient-text {
+        background: linear-gradient(90deg, #000000 0%, #374151 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
       @media (max-width: 768px) {
         .whatsapp-widget {
           bottom: 20px;
@@ -363,10 +365,29 @@
         }
         
         .performance-grid {
-          grid-template-columns: 1fr;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1rem;
         }
         
         .feature-card {
+          padding: 1.5rem;
+        }
+        
+        .timeline-item {
+          padding-left: 2rem;
+        }
+        
+        .section-header {
+          font-size: 1.875rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .performance-grid {
+          grid-template-columns: 1fr;
+        }
+        
+        .product-item {
           padding: 1.5rem;
         }
       }
@@ -381,7 +402,7 @@
                 <div class="bg-black p-1.5 rounded-lg group-hover:shadow-lg transition-all duration-300">
                     <i data-lucide="flask-conical" class="w-5 h-5 text-white"></i>
                 </div>
-                <span class="text-lg font-black tracking-tight text-black">
+                <span class="text-lg font-black tracking-tight text-black font-display">
                     Business Development Lab
                     <span class="block text-xs font-normal text-gray-600 -mt-1">Performance-Bias Growth</span>
                 </span>
@@ -390,13 +411,13 @@
             <!-- Desktop Nav -->
             <div class="hidden md:flex items-center gap-8">
                 <a href="#home" class="nav-link text-sm font-semibold text-gray-700 hover:text-black px-2 py-1 transition-colors">Home</a>
-                <a href="#solutions" class="nav-link text-sm font-semibold text-gray-700 hover:text-black px-2 py-1 transition-colors">Our Solutions</a>
-                <a href="#services" class="nav-link text-sm font-semibold text-gray-700 hover:text-black px-2 py-1 transition-colors">Service Portfolio</a>
-                <a href="#process" class="nav-link text-sm font-semibold text-gray-700 hover:text-black px-2 py-1 transition-colors">90-Day Process</a>
+                <a href="#solutions" class="nav-link text-sm font-semibold text-gray-700 hover:text-black px-2 py-1 transition-colors">Solutions</a>
+                <a href="#services" class="nav-link text-sm font-semibold text-gray-700 hover:text-black px-2 py-1 transition-colors">Services</a>
+                <a href="#process" class="nav-link text-sm font-semibold text-gray-700 hover:text-black px-2 py-1 transition-colors">Process</a>
                 
                 <a href="https://cal.com/partner-discovery/south-africa" target="_blank" rel="noopener noreferrer" 
                    class="bg-black hover:bg-gray-900 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all duration-300 shadow-md transform hover:-translate-y-0.5 active:translate-y-0 border border-black">
-                    Free Site Assessment
+                    Free Assessment
                 </a>
             </div>
 
@@ -410,12 +431,12 @@
         <div id="mobile-menu" class="hidden md:hidden glass-effect absolute w-full top-full left-0 shadow-xl">
             <div class="px-4 py-4 space-y-1">
                 <a href="#home" class="mobile-link block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Home</a>
-                <a href="#solutions" class="mobile-link block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Our Solutions</a>
-                <a href="#services" class="mobile-link block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Service Portfolio</a>
-                <a href="#process" class="mobile-link block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg transition-all">90-Day Process</a>
+                <a href="#solutions" class="mobile-link block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Solutions</a>
+                <a href="#services" class="mobile-link block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Services</a>
+                <a href="#process" class="mobile-link block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Process</a>
                 <div class="pt-2 px-4">
                     <a href="https://cal.com/partner-discovery/south-africa" target="_blank" class="block w-full text-center bg-black hover:bg-gray-900 text-white px-5 py-3 rounded-lg font-bold transition-all shadow-md border border-black">
-                        Free Site Assessment
+                        Free Assessment
                     </a>
                 </div>
             </div>
@@ -431,8 +452,8 @@
                     <span>Performance Bias Guarantee • No Revenue = No Pay</span>
                 </div>
 
-                <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">
-                    <span class="text-black">Business Development Lab</span>
+                <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight font-display">
+                    <span class="gradient-text">Business Development Lab</span>
                 </h1>
 
                 <h2 class="text-2xl md:text-3xl font-bold text-black mb-10">
@@ -453,7 +474,7 @@
                         </div>
                         <div class="performance-item" data-aos="fade-up" data-aos-delay="150">
                             <span class="performance-value">90</span>
-                            <span class="performance-label">Day Performance Window</span>
+                            <span class="performance-label">Day Window</span>
                         </div>
                         <div class="performance-item" data-aos="fade-up" data-aos-delay="200">
                             <span class="performance-value">100%</span>
@@ -466,14 +487,14 @@
                     </div>
                 </div>
 
-                <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="300">
                     <a href="https://cal.com/partner-discovery/south-africa" target="_blank"
-                       class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-10 py-4 rounded-xl font-bold transition-all duration-300 shadow-xl transform hover:-translate-y-1 active:translate-y-0 border-2 border-black">
+                       class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-xl transform hover:-translate-y-1 active:translate-y-0 border-2 border-black text-base sm:text-lg">
                         Free Site Assessment
                         <i data-lucide="arrow-right" class="w-5 h-5"></i>
                     </a>
                     <a href="#services"
-                       class="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-50 text-black border-2 border-black px-10 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl">
+                       class="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-50 text-black border-2 border-black px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl text-base sm:text-lg">
                         <i data-lucide="package" class="w-5 h-5"></i>
                         View Services
                     </a>
@@ -483,22 +504,22 @@
     </section>
 
     <!-- Solutions Section -->
-    <section id="solutions" class="py-24 bg-gray-50">
+    <section id="solutions" class="py-20 md:py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="section-header text-3xl md:text-4xl font-bold text-black mb-6">Our Two-Pillar Approach</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                <h2 class="section-header text-3xl md:text-4xl font-bold text-black mb-6 font-display">Our Two-Pillar Approach</h2>
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
                     Specialized business development solutions delivering measurable results across two distinct categories, each with clear performance guarantees.
                 </p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 <!-- Professional Residential Services -->
-                <div class="category-card bg-white rounded-2xl border border-gray-200 p-8" data-aos="fade-up" data-aos-delay="0">
+                <div class="category-card bg-white rounded-2xl border border-gray-200 p-6 md:p-8" data-aos="fade-up" data-aos-delay="0">
                     <div class="icon-container">
                         <i data-lucide="home" class="w-8 h-8 text-white"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-black mb-4">Professional Residential Services</h3>
+                    <h3 class="text-xl md:text-2xl font-bold text-black mb-4 font-display">Professional Residential Services</h3>
                     <p class="text-gray-600 mb-6">
                         Performance-guaranteed services connecting homeowners with qualified professionals. Our specialized matching systems deliver verified leads and guaranteed results across multiple residential service categories.
                     </p>
@@ -522,22 +543,22 @@
                 </div>
 
                 <!-- Commercial Solar Development -->
-                <div class="category-card bg-white rounded-2xl border border-gray-200 p-8" data-aos="fade-up" data-aos-delay="100">
+                <div class="category-card bg-white rounded-2xl border border-gray-200 p-6 md:p-8" data-aos="fade-up" data-aos-delay="100">
                     <div class="icon-container">
                         <i data-lucide="zap" class="w-8 h-8 text-white"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-black mb-4">Commercial Solar Development</h3>
+                    <h3 class="text-xl md:text-2xl font-bold text-black mb-4 font-display">Commercial Solar Development</h3>
                     <p class="text-gray-600 mb-6">
-                        Enterprise-scale solar solutions delivering guaranteed 80% electricity savings with comprehensive project financing, development, and management services for commercial properties. Zero upfront financing or prepaid solar with zero equipment cost.
+                        Enterprise-scale solar solutions delivering guaranteed 80% electricity savings with comprehensive project financing, development, and management services for commercial properties.
                     </p>
                     <div class="space-y-3">
                         <div class="flex items-center gap-2 text-sm text-gray-700">
                             <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
-                            <span>80% guaranteed electricity bill reduction within 30 days</span>
+                            <span>80% guaranteed electricity bill reduction</span>
                         </div>
                         <div class="flex items-center gap-2 text-sm text-gray-700">
                             <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
-                            <span>Zero upfront financing or prepaid solar available</span>
+                            <span>Zero upfront financing available</span>
                         </div>
                         <div class="flex items-center gap-2 text-sm text-gray-700">
                             <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
@@ -553,93 +574,39 @@
     </section>
 
     <!-- Service Portfolio Section -->
-    <section id="services" class="py-24 bg-white">
+    <section id="services" class="py-20 md:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
                 <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 border border-gray-300 text-black text-sm font-semibold mb-6">
                     <i data-lucide="package" class="w-4 h-4"></i>
                     <span>Service Portfolio</span>
                 </div>
-                <h2 class="text-4xl md:text-5xl font-bold text-black mb-6">Professional Residential & Commercial Solutions</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-bold text-black mb-6 font-display">Professional Residential & Commercial Solutions</h2>
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
                     Performance-guaranteed services delivering measurable results with zero upfront costs. Every service includes a free site assessment.
                 </p>
             </div>
 
             <!-- Category 1: Professional Residential Services -->
-            <div id="residential-services" class="mb-24" data-aos="fade-up">
-                <div class="flex items-center gap-4 mb-12">
-                    <div class="w-12 h-12 rounded-xl bg-black flex items-center justify-center">
-                        <i data-lucide="home" class="w-6 h-6 text-white"></i>
+            <div id="residential-services" class="mb-20 md:mb-24" data-aos="fade-up">
+                <div class="flex items-center gap-4 mb-10 md:mb-12">
+                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-black flex items-center justify-center">
+                        <i data-lucide="home" class="w-5 h-5 md:w-6 md:h-6 text-white"></i>
                     </div>
                     <div>
-                        <h3 class="text-3xl font-bold text-black">Professional Residential Services</h3>
-                        <p class="text-gray-600">Performance-guaranteed services connecting homeowners with qualified professionals</p>
+                        <h3 class="text-2xl md:text-3xl font-bold text-black font-display">Professional Residential Services</h3>
+                        <p class="text-gray-600 text-sm md:text-base">Performance-guaranteed services connecting homeowners with qualified professionals</p>
                     </div>
                 </div>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Home Connector -->
-                    <div class="product-item" data-aos="fade-up" data-aos-delay="0">
-                        <span class="product-badge">Complete Home Services</span>
-                        <div class="icon-container">
-                            <i data-lucide="hammer" class="w-8 h-8 text-white"></i>
-                        </div>
-                        <h4 class="text-xl font-bold text-black mb-3">Home Connector</h4>
-                        <p class="text-gray-600 mb-4">
-                            Comprehensive home improvement services with quality craftsmanship guaranteed and performance-based pricing.
-                        </p>
-                        
-                        <div class="service-highlights">
-                            <div class="highlight-item">
-                                <div class="highlight-icon">
-                                    <i data-lucide="check" class="w-3 h-3"></i>
-                                </div>
-                                <div class="highlight-text">
-                                    <strong>Painting & Plastering:</strong> Professional finishing for interior and exterior surfaces
-                                </div>
-                            </div>
-                            <div class="highlight-item">
-                                <div class="highlight-icon">
-                                    <i data-lucide="check" class="w-3 h-3"></i>
-                                </div>
-                                <div class="highlight-text">
-                                    <strong>Paving & Brickwork:</strong> Durable outdoor and structural construction
-                                </div>
-                            </div>
-                            <div class="highlight-item">
-                                <div class="highlight-icon">
-                                    <i data-lucide="check" class="w-3 h-3"></i>
-                                </div>
-                                <div class="highlight-text">
-                                    <strong>Ceiling & Tiling:</strong> Expert installation for floors, walls, and ceilings
-                                </div>
-                            </div>
-                            <div class="highlight-item">
-                                <div class="highlight-icon">
-                                    <i data-lucide="check" class="w-3 h-3"></i>
-                                </div>
-                                <div class="highlight-text">
-                                    <strong>Remodeling Services:</strong> Complete home transformation projects
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mt-auto">
-                            <a href="https://home.maribamedia.co.za" target="_blank" 
-                               class="inline-flex items-center gap-2 text-sm font-semibold text-black hover:text-gray-800 transition-colors">
-                                Visit Service Website <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                            </a>
-                        </div>
-                    </div>
-
+                <div class="grid md:grid-cols-2 gap-8">
                     <!-- Water Connector -->
-                    <div class="product-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-item" data-aos="fade-up" data-aos-delay="0">
                         <span class="product-badge">Water Security</span>
                         <div class="icon-container">
                             <i data-lucide="droplets" class="w-8 h-8 text-white"></i>
                         </div>
-                        <h4 class="text-xl font-bold text-black mb-3">Water Connector</h4>
+                        <h4 class="text-xl font-bold text-black mb-3 font-display">Water Connector</h4>
                         <p class="text-gray-600 mb-4">
                             Reliable water solutions ensuring uninterrupted supply with custom installations for residential needs.
                         </p>
@@ -688,12 +655,12 @@
                     </div>
 
                     <!-- Solar Connector -->
-                    <div class="product-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-item" data-aos="fade-up" data-aos-delay="100">
                         <span class="product-badge">Residential Solar</span>
                         <div class="icon-container">
                             <i data-lucide="sun" class="w-8 h-8 text-white"></i>
                         </div>
-                        <h4 class="text-xl font-bold text-black mb-3">Solar Connector</h4>
+                        <h4 class="text-xl font-bold text-black mb-3 font-display">Solar Connector</h4>
                         <p class="text-gray-600 mb-4">
                             Residential solar solutions with guaranteed 80% electricity bill reduction within 30 days.
                         </p>
@@ -740,17 +707,19 @@
                             </a>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Service Features -->
-                    <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                <!-- Feature Card -->
+                <div class="mt-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card">
                         <div class="icon-container bg-gradient-to-br from-black to-gray-800">
                             <i data-lucide="shield-check" class="w-8 h-8 text-white"></i>
                         </div>
-                        <h4 class="text-xl font-bold text-black mb-4">Performance Guarantee</h4>
+                        <h4 class="text-xl font-bold text-black mb-4 font-display">Performance Guarantee</h4>
                         <p class="text-gray-600 mb-6">
                             All residential services come with our signature performance guarantee: zero upfront costs, measurable results, and we only get paid when you're satisfied.
                         </p>
-                        <div class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                             <div class="flex items-center gap-2 text-sm text-gray-700">
                                 <i data-lucide="check" class="w-4 h-4 text-black"></i>
                                 <span>Free initial site assessment</span>
@@ -770,13 +739,13 @@
 
             <!-- Category 2: Commercial Solar Development -->
             <div id="solar-development" data-aos="fade-up">
-                <div class="flex items-center gap-4 mb-12">
-                    <div class="w-12 h-12 rounded-xl bg-black flex items-center justify-center">
-                        <i data-lucide="zap" class="w-6 h-6 text-white"></i>
+                <div class="flex items-center gap-4 mb-10 md:mb-12">
+                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-black flex items-center justify-center">
+                        <i data-lucide="zap" class="w-5 h-5 md:w-6 md:h-6 text-white"></i>
                     </div>
                     <div>
-                        <h3 class="text-3xl font-bold text-black">Commercial Solar Development</h3>
-                        <p class="text-gray-600">Enterprise-scale energy solutions with guaranteed savings and comprehensive development services</p>
+                        <h3 class="text-2xl md:text-3xl font-bold text-black font-display">Commercial Solar Development</h3>
+                        <p class="text-gray-600 text-sm md:text-base">Enterprise-scale energy solutions with guaranteed savings and comprehensive development services</p>
                     </div>
                 </div>
 
@@ -787,7 +756,7 @@
                         <div class="icon-container">
                             <i data-lucide="building-2" class="w-8 h-8 text-white"></i>
                         </div>
-                        <h4 class="text-xl font-bold text-black mb-3">Commercial Solar Connector</h4>
+                        <h4 class="text-xl font-bold text-black mb-3 font-display">Commercial Solar Connector</h4>
                         <p class="text-gray-600 mb-4">
                             Comprehensive solar solutions for commercial and industrial applications with guaranteed 80% electricity savings.
                         </p>
@@ -825,14 +794,6 @@
                                     <strong>Energy Finance - Greenfield & Brownfield Funding:</strong> Complete financing solutions
                                 </div>
                             </div>
-                            <div class="highlight-item">
-                                <div class="highlight-icon">
-                                    <i data-lucide="file-check" class="w-3 h-3"></i>
-                                </div>
-                                <div class="highlight-text">
-                                    <strong>Compliance with EPC for Installation and Commissioning:</strong> Full regulatory compliance
-                                </div>
-                            </div>
                         </div>
 
                         <div class="mt-auto space-y-3">
@@ -853,7 +814,7 @@
                         <div class="icon-container">
                             <i data-lucide="battery-charging" class="w-8 h-8 text-white"></i>
                         </div>
-                        <h4 class="text-xl font-bold text-black mb-3">EnergyMixer</h4>
+                        <h4 class="text-xl font-bold text-black mb-3 font-display">EnergyMixer</h4>
                         <p class="text-gray-600 mb-4">
                             US-patented DC power blending system automating energy management for commercial enterprises.
                         </p>
@@ -891,14 +852,6 @@
                                     <strong>Automated Energy Management:</strong> Smart optimization for commercial enterprises
                                 </div>
                             </div>
-                            <div class="highlight-item">
-                                <div class="highlight-icon">
-                                    <i data-lucide="zap" class="w-3 h-3"></i>
-                                </div>
-                                <div class="highlight-text">
-                                    <strong>Compatible with Zero Upfront Solar Financing:</strong> Integrated financial solutions
-                                </div>
-                            </div>
                         </div>
 
                         <div class="mt-auto">
@@ -914,12 +867,12 @@
     </section>
 
     <!-- Process Section -->
-    <section id="process" class="py-24 bg-gray-50">
+    <section id="process" class="py-20 md:py-24 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="section-header text-3xl md:text-4xl font-bold text-black mb-6">The 90-Day Performance Framework</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    A structured approach delivering guaranteed business development results through aligned incentives and measurable targets across all service categories.
+                <h2 class="section-header text-3xl md:text-4xl font-bold text-black mb-6 font-display">The 90-Day Performance Framework</h2>
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                    A structured approach delivering guaranteed business development results through aligned incentives and measurable targets.
                 </p>
             </div>
 
@@ -929,9 +882,9 @@
                 <div class="timeline-item" data-aos="fade-right">
                     <div class="timeline-dot"></div>
                     <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="px-3 py-1 bg-black text-white text-sm font-bold rounded-full">Days 1-7</span>
-                            <h3 class="text-xl font-bold text-black">Free Site Assessment</h3>
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
+                            <span class="px-3 py-1 bg-black text-white text-sm font-bold rounded-full w-fit">Days 1-7</span>
+                            <h3 class="text-xl font-bold text-black font-display">Free Site Assessment</h3>
                         </div>
                         <p class="text-gray-600 mb-4">Comprehensive evaluation of your needs across our service portfolio with detailed implementation roadmap at no cost.</p>
                         <ul class="space-y-2 text-sm text-gray-700">
@@ -955,9 +908,9 @@
                 <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
                     <div class="timeline-dot"></div>
                     <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="px-3 py-1 bg-black text-white text-sm font-bold rounded-full">Days 8-30</span>
-                            <h3 class="text-xl font-bold text-black">Discovery & Design</h3>
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
+                            <span class="px-3 py-1 bg-black text-white text-sm font-bold rounded-full w-fit">Days 8-30</span>
+                            <h3 class="text-xl font-bold text-black font-display">Discovery & Design</h3>
                         </div>
                         <p class="text-gray-600 mb-4">Identify business development opportunities and set clear, measurable performance targets for your chosen service category.</p>
                         <ul class="space-y-2 text-sm text-gray-700">
@@ -981,9 +934,9 @@
                 <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
                     <div class="timeline-dot"></div>
                     <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="px-3 py-1 bg-black text-white text-sm font-bold rounded-full">Days 31-60</span>
-                            <h3 class="text-xl font-bold text-black">Implementation & Optimization</h3>
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
+                            <span class="px-3 py-1 bg-black text-white text-sm font-bold rounded-full w-fit">Days 31-60</span>
+                            <h3 class="text-xl font-bold text-black font-display">Implementation & Optimization</h3>
                         </div>
                         <p class="text-gray-600 mb-4">Deploy specialized business development systems with weekly performance tracking and real-time optimization.</p>
                         <ul class="space-y-2 text-sm text-gray-700">
@@ -1007,9 +960,9 @@
                 <div class="timeline-item" data-aos="fade-right" data-aos-delay="300">
                     <div class="timeline-dot"></div>
                     <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="px-3 py-1 bg-black text-white text-sm font-bold rounded-full">Days 61-90</span>
-                            <h3 class="text-xl font-bold text-black">Results & Validation</h3>
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
+                            <span class="px-3 py-1 bg-black text-white text-sm font-bold rounded-full w-fit">Days 61-90</span>
+                            <h3 class="text-xl font-bold text-black font-display">Results & Validation</h3>
                         </div>
                         <p class="text-gray-600 mb-4">Measure results against targets and validate performance bias guarantee through aligned success metrics.</p>
                         <ul class="space-y-2 text-sm text-gray-700">
@@ -1031,27 +984,27 @@
             </div>
 
             <!-- Final CTA -->
-            <div class="mt-24 text-center" data-aos="zoom-in">
-                <div class="bg-black rounded-3xl p-12 shadow-2xl relative overflow-hidden">
+            <div class="mt-20 md:mt-24 text-center" data-aos="zoom-in">
+                <div class="bg-black rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
                     <div class="relative z-10">
-                        <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Transform Your Business Development?</h3>
-                        <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-                            Start with a free site assessment across our comprehensive service portfolio. Choose from professional residential services or commercial solar solutions with zero upfront costs.
+                        <h3 class="text-2xl md:text-4xl font-bold text-white mb-6 font-display">Ready to Transform Your Business?</h3>
+                        <p class="text-lg md:text-xl text-gray-300 mb-8 md:mb-10 max-w-2xl mx-auto">
+                            Start with a free site assessment across our comprehensive service portfolio.
                         </p>
-                        <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                        <div class="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center">
                             <a href="https://cal.com/partner-discovery/south-africa" target="_blank"
-                               class="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-black px-12 py-5 rounded-xl font-bold text-lg transition-all duration-300 shadow-2xl transform hover:-translate-y-1">
-                                <i data-lucide="clipboard-check" class="w-6 h-6"></i>
-                                Get Free Site Assessment
+                               class="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-black px-8 md:px-12 py-4 md:py-5 rounded-xl font-bold text-base md:text-lg transition-all duration-300 shadow-2xl transform hover:-translate-y-1">
+                                <i data-lucide="clipboard-check" class="w-5 h-5 md:w-6 md:h-6"></i>
+                                Get Free Assessment
                             </a>
                             <a href="mailto:victor@maribamedia.co.za"
-                               class="inline-flex items-center justify-center gap-3 bg-transparent hover:bg-white/10 text-white px-12 py-5 rounded-xl font-semibold text-lg transition-all duration-300 border-2 border-white">
-                                <i data-lucide="mail" class="w-6 h-6"></i>
+                               class="inline-flex items-center justify-center gap-3 bg-transparent hover:bg-white/10 text-white px-8 md:px-12 py-4 md:py-5 rounded-xl font-semibold text-base md:text-lg transition-all duration-300 border-2 border-white">
+                                <i data-lucide="mail" class="w-5 h-5 md:w-6 md:h-6"></i>
                                 Contact Sales
                             </a>
                         </div>
-                        <p class="mt-8 text-gray-400 text-sm">
-                            Choose from: Home Connector • Water Connector • Solar Connector • Commercial Solar Connector
+                        <p class="mt-6 md:mt-8 text-gray-400 text-sm">
+                            Choose from: Water Connector • Solar Connector • Commercial Solar Connector
                         </p>
                     </div>
                 </div>
@@ -1060,9 +1013,9 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black border-t border-gray-800 pt-20 pb-12">
+    <footer class="bg-black border-t border-gray-800 pt-16 md:pt-20 pb-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 mb-16">
                 
                 <!-- Brand -->
                 <div class="lg:col-span-2">
@@ -1071,12 +1024,12 @@
                             <i data-lucide="flask-conical" class="w-6 h-6 text-black"></i>
                         </div>
                         <div>
-                            <span class="text-xl font-bold text-white">Business Development Lab</span>
+                            <span class="text-xl font-bold text-white font-display">Business Development Lab</span>
                             <span class="block text-sm text-gray-400">Performance-Bias Growth</span>
                         </div>
                     </a>
                     <p class="text-gray-400 text-sm leading-relaxed mb-8 max-w-md">
-                        We create new revenue or we don't get paid. Performance bias guarantee with measurable targets met in 90 days across comprehensive professional residential and commercial solar services.
+                        We create new revenue or we don't get paid. Performance bias guarantee with measurable targets met in 90 days.
                     </p>
                     <div class="flex gap-4">
                         <a href="https://www.facebook.com/people/Mariba-Media-Pty-Ltd/61576915266105/" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-white flex items-center justify-center text-gray-300 hover:text-black transition-all">
@@ -1093,28 +1046,27 @@
 
                 <!-- Solutions -->
                 <div>
-                    <h5 class="text-lg font-bold text-white mb-6">Solution Categories</h5>
+                    <h5 class="text-lg font-bold text-white mb-6 font-display">Solution Categories</h5>
                     <ul class="space-y-3">
-                        <li><a href="#residential-services" class="text-gray-400 hover:text-white text-sm transition-colors">Professional Residential Services</a></li>
-                        <li><a href="#solar-development" class="text-gray-400 hover:text-white text-sm transition-colors">Commercial Solar Development</a></li>
+                        <li><a href="#residential-services" class="text-gray-400 hover:text-white text-sm transition-colors">Residential Services</a></li>
+                        <li><a href="#solar-development" class="text-gray-400 hover:text-white text-sm transition-colors">Commercial Solar</a></li>
                         <li><a href="#process" class="text-gray-400 hover:text-white text-sm transition-colors">90-Day Process</a></li>
                     </ul>
                 </div>
 
                 <!-- Services -->
                 <div>
-                    <h5 class="text-lg font-bold text-white mb-6">Featured Services</h5>
+                    <h5 class="text-lg font-bold text-white mb-6 font-display">Featured Services</h5>
                     <ul class="space-y-3">
-                        <li><a href="https://home.maribamedia.co.za" target="_blank" class="text-gray-400 hover:text-white text-sm transition-colors">Home Connector</a></li>
                         <li><a href="https://waterbackup.maribamedia.co.za" target="_blank" class="text-gray-400 hover:text-white text-sm transition-colors">Water Connector</a></li>
                         <li><a href="https://solar.maribamedia.co.za" target="_blank" class="text-gray-400 hover:text-white text-sm transition-colors">Solar Connector</a></li>
-                        <li><a href="https://commercial.maribamedia.co.za" target="_blank" class="text-gray-400 hover:text-white text-sm transition-colors">Commercial Solar Connector</a></li>
+                        <li><a href="https://commercial.maribamedia.co.za" target="_blank" class="text-gray-400 hover:text-white text-sm transition-colors">Commercial Solar</a></li>
                     </ul>
                 </div>
 
                 <!-- Contact -->
                 <div>
-                    <h5 class="text-lg font-bold text-white mb-6">Contact</h5>
+                    <h5 class="text-lg font-bold text-white mb-6 font-display">Contact</h5>
                     <ul class="space-y-3">
                         <li class="flex items-center gap-3 text-sm text-gray-400">
                             <i data-lucide="mail" class="w-4 h-4 text-white"></i>
@@ -1128,23 +1080,18 @@
                             <i data-lucide="map-pin" class="w-4 h-4 text-white"></i>
                             <span>Bronkhorstspruit, South Africa</span>
                         </li>
-                        <li class="flex items-center gap-3 text-sm text-gray-400">
-                            <i data-lucide="linkedin" class="w-4 h-4 text-white"></i>
-                            <a href="https://www.linkedin.com/in/tebogo-mariba-466960330/" target="_blank" class="hover:text-white">Tebogo Mariba</a>
-                        </li>
                     </ul>
                 </div>
             </div>
 
             <div class="border-t border-gray-800 pt-8 text-center">
                 <p class="text-gray-500 text-sm">
-                    © 2025 Business Development Lab | Mariba Media. Company Registration No: 2024 / 132788 / 07. All rights reserved.
+                    © 2025 Business Development Lab | Mariba Media. Company Registration No: 2024 / 132788 / 07.
                 </p>
-                <div class="mt-4 flex flex-wrap justify-center gap-6 text-sm text-gray-500">
+                <div class="mt-4 flex flex-wrap justify-center gap-4 md:gap-6 text-sm text-gray-500">
                     <a href="https://www.freeprivacypolicy.com/live/19ac9e12-2d32-49e8-b611-a103aaec0171" target="_blank" class="hover:text-gray-300">Privacy Policy</a>
                     <a href="https://drive.google.com/file/d/1vfcZwMMvgjc5IV4U0AUEHpZUzszQ8r79/view?usp=sharing" target="_blank" class="hover:text-gray-300">POPIA Compliance</a>
                     <span>Performance Bias Guarantee</span>
-                    <span>80% Bill Reduction Guarantee</span>
                 </div>
             </div>
         </div>
@@ -1152,7 +1099,7 @@
 
     <!-- WhatsApp Widget -->
     <div class="whatsapp-widget">
-        <a href="https://wa.me/27766473499?text=Hi%20Business%20Development%20Lab%2C%20I'm%20interested%20in%20your%20free%20site%20assessment%20for%3A%20Home%20Connector%2C%20Water%20Connector%2C%20Solar%20Connector%2C%20or%20Commercial%20Solar%20Connector" 
+        <a href="https://wa.me/27766473499?text=Hi%20Business%20Development%20Lab%2C%20I'm%20interested%20in%20your%20free%20site%20assessment%20for%3A%20Water%20Connector%2C%20Solar%20Connector%2C%20or%20Commercial%20Solar%20Connector" 
            target="_blank" 
            class="whatsapp-button"
            aria-label="Chat on WhatsApp">
@@ -1174,7 +1121,8 @@
             easing: 'ease-out-cubic',
             once: true,
             offset: 100,
-            delay: 100
+            delay: 100,
+            disable: window.innerWidth < 768
         });
 
         // Navbar Scroll Effect
@@ -1233,6 +1181,11 @@
                     });
                 }
             });
+        });
+
+        // Re-initialize AOS on resize
+        window.addEventListener('resize', () => {
+            AOS.refresh();
         });
     </script>
 </body>
