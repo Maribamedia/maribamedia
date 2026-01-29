@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Development Lab | Performance-Bias Business Growth</title>
-    <meta name="description" content="We create new revenue or we don't get paid. Performance bias guarantee with measurable targets met in 90 days.">
+    <title>Business Development Lab Network | Performance-Bias Revenue Generation</title>
+    <meta name="description" content="Exclusive business development lab network focusing on revenue growth through demand generation, media buying, and sales systems with performance bias guarantees.">
     <meta name="theme-color" content="#000000">
     
     <!-- Favicon -->
@@ -36,6 +36,15 @@
               primary: '#000000',
               secondary: '#111827',
               accent: '#25D366',
+              lab: {
+                red: '#DC2626',
+                blue: '#2563EB',
+                green: '#059669',
+                purple: '#7C3AED',
+                orange: '#EA580C',
+                indigo: '#4F46E5',
+                teal: '#0D9488'
+              },
               gray: {
                 50: '#f9fafb',
                 100: '#f3f4f6',
@@ -53,6 +62,9 @@
               'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
               'float': 'float 6s ease-in-out infinite',
               'gradient': 'gradient 8s ease infinite',
+              'slide-in': 'slideIn 0.5s ease-out',
+              'fade-in': 'fadeIn 0.8s ease-out',
+              'bounce-slow': 'bounce 2s infinite',
             },
             keyframes: {
               float: {
@@ -62,6 +74,14 @@
               gradient: {
                 '0%, 100%': { 'background-position': '0% 50%' },
                 '50%': { 'background-position': '100% 50%' },
+              },
+              slideIn: {
+                '0%': { transform: 'translateX(-20px)', opacity: 0 },
+                '100%': { transform: 'translateX(0)', opacity: 1 }
+              },
+              fadeIn: {
+                '0%': { opacity: 0 },
+                '100%': { opacity: 1 }
               }
             }
           }
@@ -106,6 +126,13 @@
         width: 100%;
       }
 
+      .lab-grid-bg {
+        background-image: 
+          linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+
       .section-header {
         position: relative;
         display: inline-block;
@@ -123,19 +150,23 @@
         background: #000000;
       }
 
-      .category-card {
+      .lab-card {
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         height: 100%;
         position: relative;
         overflow: hidden;
+        border-radius: 1rem;
+        background: white;
+        border: 1px solid #e5e7eb;
       }
       
-      .category-card:hover {
+      .lab-card:hover {
         transform: translateY(-8px);
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        border-color: #000000;
       }
       
-      .category-card::before {
+      .lab-card::before {
         content: '';
         position: absolute;
         top: 0;
@@ -147,28 +178,11 @@
         transition: transform 0.3s ease;
       }
       
-      .category-card:hover::before {
+      .lab-card:hover::before {
         transform: scaleX(1);
       }
 
-      .product-item {
-        display: flex;
-        flex-direction: column;
-        background: white;
-        border-radius: 1rem;
-        border: 1px solid #e5e7eb;
-        padding: 2rem;
-        height: 100%;
-        transition: all 0.3s ease;
-      }
-      
-      .product-item:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        border-color: #000000;
-      }
-
-      .product-badge {
+      .service-badge {
         display: inline-block;
         padding: 0.25rem 0.75rem;
         background: #000000;
@@ -179,7 +193,7 @@
         margin-bottom: 1rem;
       }
 
-      .icon-container {
+      .lab-icon-container {
         width: 64px;
         height: 64px;
         border-radius: 1rem;
@@ -190,7 +204,7 @@
         margin-bottom: 1.5rem;
       }
       
-      .icon-container i {
+      .lab-icon-container i {
         color: white;
         width: 28px;
         height: 28px;
@@ -222,58 +236,58 @@
         box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
       }
 
-      /* Performance Grid */
-      .performance-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1.5rem;
-        margin-top: 2rem;
-      }
-      
-      .performance-item {
-        background: #f9fafb;
-        border: 1px solid #e5e7eb;
-        border-radius: 0.75rem;
+      /* Performance Metrics */
+      .performance-metric {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         padding: 1.5rem;
-        text-align: center;
+        background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+        border-radius: 1rem;
+        border: 1px solid #e5e7eb;
+        transition: all 0.3s ease;
       }
       
-      .performance-value {
+      .performance-metric:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+      
+      .metric-value {
         font-size: 2rem;
         font-weight: 800;
         color: #000000;
         display: block;
         line-height: 1;
+        margin-bottom: 0.5rem;
       }
       
-      .performance-label {
+      .metric-label {
         font-size: 0.875rem;
         color: #6b7280;
-        margin-top: 0.5rem;
+        text-align: center;
       }
 
-      /* Service Highlight Bullets */
-      .service-highlights {
-        margin: 1.5rem 0;
-      }
-      
-      .highlight-item {
+      /* Service Highlights */
+      .service-highlight {
         display: flex;
         align-items: flex-start;
-        margin-bottom: 0.75rem;
-        padding: 0.5rem;
-        border-radius: 0.5rem;
+        margin-bottom: 1rem;
+        padding: 0.75rem;
+        border-radius: 0.75rem;
         transition: all 0.2s ease;
+        background: #f9fafb;
       }
       
-      .highlight-item:hover {
-        background: #f9fafb;
+      .service-highlight:hover {
+        background: #f3f4f6;
+        transform: translateX(4px);
       }
       
       .highlight-icon {
         flex-shrink: 0;
-        width: 20px;
-        height: 20px;
+        width: 24px;
+        height: 24px;
         border-radius: 50%;
         background: #000000;
         color: white;
@@ -285,64 +299,68 @@
       }
       
       .highlight-icon i {
-        width: 12px;
-        height: 12px;
+        width: 14px;
+        height: 14px;
       }
       
-      .highlight-text {
-        font-size: 0.875rem;
-        color: #374151;
-        line-height: 1.5;
-      }
-      
-      .highlight-text strong {
-        color: #000000;
+      .highlight-content h5 {
         font-weight: 600;
+        color: #000000;
+        margin-bottom: 0.25rem;
+        font-size: 0.875rem;
+      }
+      
+      .highlight-content p {
+        font-size: 0.75rem;
+        color: #6b7280;
+        line-height: 1.4;
       }
 
-      /* Feature Card */
-      .feature-card {
-        background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
-        border: 1px solid #e5e7eb;
-        border-radius: 1rem;
+      /* Process Step */
+      .process-step {
+        position: relative;
         padding: 2rem;
-        height: 100%;
+        border-radius: 1rem;
+        background: white;
+        border: 2px solid #e5e7eb;
         transition: all 0.3s ease;
+        height: 100%;
       }
       
-      .feature-card:hover {
+      .process-step:hover {
         border-color: #000000;
         transform: translateY(-4px);
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
       }
-
-      /* Timeline */
-      .timeline-item {
-        position: relative;
-        padding-left: 3rem;
-        margin-bottom: 3rem;
-      }
       
-      .timeline-item::before {
-        content: '';
+      .step-number {
         position: absolute;
-        left: 0;
-        top: 0;
-        width: 2px;
-        height: 100%;
-        background: #000000;
-      }
-      
-      .timeline-dot {
-        position: absolute;
-        left: -8px;
-        top: 0;
-        width: 18px;
-        height: 18px;
+        top: -16px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 32px;
+        height: 32px;
         border-radius: 50%;
         background: #000000;
-        border: 3px solid white;
-        box-shadow: 0 0 0 3px #000000;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 0.875rem;
+      }
+
+      /* Industry Pill */
+      .industry-pill {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.375rem 0.75rem;
+        background: #f3f4f6;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: #4b5563;
+        margin: 0.125rem;
       }
 
       /* Gradient Text */
@@ -351,6 +369,69 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
+      }
+
+      /* Lab Network Animation */
+      .lab-network {
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .lab-network::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, transparent 30%, rgba(0,0,0,0.02) 50%, transparent 70%);
+        animation: shimmer 3s infinite;
+      }
+
+      @keyframes shimmer {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+      }
+
+      /* Service Grid Animation */
+      .service-grid-item {
+        animation: slideIn 0.6s ease-out forwards;
+        opacity: 0;
+      }
+
+      .service-grid-item:nth-child(1) { animation-delay: 0.1s; }
+      .service-grid-item:nth-child(2) { animation-delay: 0.2s; }
+      .service-grid-item:nth-child(3) { animation-delay: 0.3s; }
+      .service-grid-item:nth-child(4) { animation-delay: 0.4s; }
+      .service-grid-item:nth-child(5) { animation-delay: 0.5s; }
+      .service-grid-item:nth-child(6) { animation-delay: 0.6s; }
+
+      /* Enhanced Card Hover */
+      .enhanced-card {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+      
+      .enhanced-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+      }
+      
+      .enhanced-card::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      
+      .enhanced-card:hover::after {
+        opacity: 1;
       }
 
       @media (max-width: 768px) {
@@ -364,31 +445,31 @@
           height: 56px;
         }
         
-        .performance-grid {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 1rem;
+        .section-header {
+          font-size: 1.875rem;
         }
         
-        .feature-card {
+        .process-step {
           padding: 1.5rem;
         }
         
-        .timeline-item {
-          padding-left: 2rem;
-        }
-        
-        .section-header {
-          font-size: 1.875rem;
+        .lab-icon-container {
+          width: 56px;
+          height: 56px;
         }
       }
 
       @media (max-width: 480px) {
-        .performance-grid {
-          grid-template-columns: 1fr;
+        .performance-metric {
+          padding: 1rem;
         }
         
-        .product-item {
-          padding: 1.5rem;
+        .metric-value {
+          font-size: 1.5rem;
+        }
+        
+        .enhanced-card:hover {
+          transform: translateY(-5px);
         }
       }
     </style>
@@ -403,21 +484,21 @@
                     <i data-lucide="flask-conical" class="w-5 h-5 text-white"></i>
                 </div>
                 <span class="text-lg font-black tracking-tight text-black font-display">
-                    Business Development Lab
-                    <span class="block text-xs font-normal text-gray-600 -mt-1">Performance-Bias Growth</span>
+                    Mariba Business Development Lab
+                    <span class="block text-xs font-normal text-gray-600 -mt-1">Performance-Bias Revenue Systems</span>
                 </span>
             </a>
 
             <!-- Desktop Nav -->
             <div class="hidden md:flex items-center gap-8">
-                <a href="#home" class="nav-link text-sm font-semibold text-gray-700 hover:text-black px-2 py-1 transition-colors">Home</a>
-                <a href="#solutions" class="nav-link text-sm font-semibold text-gray-700 hover:text-black px-2 py-1 transition-colors">Solutions</a>
-                <a href="#services" class="nav-link text-sm font-semibold text-gray-700 hover:text-black px-2 py-1 transition-colors">Services</a>
-                <a href="#process" class="nav-link text-sm font-semibold text-gray-700 hover:text-black px-2 py-1 transition-colors">Process</a>
+                <a href="#home" class="nav-link text-sm font-semibold text-gray-700 hover:text-black px-2 py-1 transition-colors">Lab Network</a>
+                <a href="#solutions" class="nav-link text-sm font-semibold text-gray-700 hover:text-black px-2 py-1 transition-colors">Performance Solutions</a>
+                <a href="#services" class="nav-link text-sm font-semibold text-gray-700 hover:text-black px-2 py-1 transition-colors">Revenue Systems</a>
+                <a href="#process" class="nav-link text-sm font-semibold text-gray-700 hover:text-black px-2 py-1 transition-colors">90-Day Framework</a>
                 
                 <a href="https://cal.com/partner-discovery/south-africa" target="_blank" rel="noopener noreferrer" 
                    class="bg-black hover:bg-gray-900 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all duration-300 shadow-md transform hover:-translate-y-0.5 active:translate-y-0 border border-black">
-                    Free Assessment
+                    Free Lab Assessment
                 </a>
             </div>
 
@@ -430,13 +511,13 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden glass-effect absolute w-full top-full left-0 shadow-xl">
             <div class="px-4 py-4 space-y-1">
-                <a href="#home" class="mobile-link block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Home</a>
-                <a href="#solutions" class="mobile-link block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Solutions</a>
-                <a href="#services" class="mobile-link block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Services</a>
-                <a href="#process" class="mobile-link block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Process</a>
+                <a href="#home" class="mobile-link block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Lab Network</a>
+                <a href="#solutions" class="mobile-link block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Performance Solutions</a>
+                <a href="#services" class="mobile-link block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Revenue Systems</a>
+                <a href="#process" class="mobile-link block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg transition-all">90-Day Framework</a>
                 <div class="pt-2 px-4">
                     <a href="https://cal.com/partner-discovery/south-africa" target="_blank" class="block w-full text-center bg-black hover:bg-gray-900 text-white px-5 py-3 rounded-lg font-bold transition-all shadow-md border border-black">
-                        Free Assessment
+                        Free Lab Assessment
                     </a>
                 </div>
             </div>
@@ -444,45 +525,48 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="home" class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden lab-grid-bg">
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-50 opacity-80"></div>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center" data-aos="fade-up">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 border border-gray-300 text-gray-800 text-sm font-semibold mb-8" data-aos="zoom-in" data-aos-delay="200">
-                    <i data-lucide="shield-check" class="w-4 h-4"></i>
-                    <span>Performance Bias Guarantee • No Revenue = No Pay</span>
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black text-white text-sm font-semibold mb-8" data-aos="zoom-in" data-aos-delay="200">
+                    <i data-lucide="zap" class="w-4 h-4"></i>
+                    <span>Exclusive Business Development Lab Network</span>
                 </div>
 
                 <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight font-display">
-                    <span class="gradient-text">Business Development Lab</span>
+                    <span class="gradient-text">Revenue Through</span>
+                    <br>
+                    <span class="text-black">Performance Bias</span>
                 </h1>
 
                 <h2 class="text-2xl md:text-3xl font-bold text-black mb-10">
-                    We create new revenue or we don't get paid.
+                    We build business revenue systems through demand generation,
                     <br class="hidden md:block">
-                    <span class="text-gray-700">Performance-based growth for residential & commercial solutions.</span>
+                    <span class="text-gray-700">media buying, and sales systems. No revenue = No pay.</span>
                 </h2>
 
                 <div class="max-w-3xl mx-auto mb-12">
                     <p class="text-lg text-gray-600 leading-relaxed mb-8">
-                        We implement specialized business development systems across two solution categories: Professional Residential Services and Commercial Solar Development. We only get paid when you get paid - our incentives are aligned with your success.
+                        As an exclusive business development lab network, we deploy performance-bias systems focused on generating measurable revenue. Our lab specializes in demand generation, media buying, and sales system optimization with guaranteed results.
                     </p>
                     
-                    <div class="performance-grid">
-                        <div class="performance-item" data-aos="fade-up" data-aos-delay="100">
-                            <span class="performance-value">0%</span>
-                            <span class="performance-label">Upfront Costs</span>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+                        <div class="performance-metric" data-aos="fade-up" data-aos-delay="100">
+                            <span class="metric-value">100%</span>
+                            <span class="metric-label">Performance Bias</span>
                         </div>
-                        <div class="performance-item" data-aos="fade-up" data-aos-delay="150">
-                            <span class="performance-value">90</span>
-                            <span class="performance-label">Day Window</span>
+                        <div class="performance-metric" data-aos="fade-up" data-aos-delay="150">
+                            <span class="metric-value">24h</span>
+                            <span class="metric-label">Call Delivery</span>
                         </div>
-                        <div class="performance-item" data-aos="fade-up" data-aos-delay="200">
-                            <span class="performance-value">100%</span>
-                            <span class="performance-label">Performance Bias</span>
+                        <div class="performance-metric" data-aos="fade-up" data-aos-delay="200">
+                            <span class="metric-value">90</span>
+                            <span class="metric-label">Day Guarantee</span>
                         </div>
-                        <div class="performance-item" data-aos="fade-up" data-aos-delay="250">
-                            <span class="performance-value">80%</span>
-                            <span class="performance-label">Guaranteed Savings</span>
+                        <div class="performance-metric" data-aos="fade-up" data-aos-delay="250">
+                            <span class="metric-value">0%</span>
+                            <span class="metric-label">Upfront Cost</span>
                         </div>
                     </div>
                 </div>
@@ -490,13 +574,13 @@
                 <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="300">
                     <a href="https://cal.com/partner-discovery/south-africa" target="_blank"
                        class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-xl transform hover:-translate-y-1 active:translate-y-0 border-2 border-black text-base sm:text-lg">
-                        Free Site Assessment
+                        Book Lab Discovery
                         <i data-lucide="arrow-right" class="w-5 h-5"></i>
                     </a>
                     <a href="#services"
                        class="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-50 text-black border-2 border-black px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl text-base sm:text-lg">
-                        <i data-lucide="package" class="w-5 h-5"></i>
-                        View Services
+                        <i data-lucide="layers" class="w-5 h-5"></i>
+                        View Revenue Systems
                     </a>
                 </div>
             </div>
@@ -507,358 +591,452 @@
     <section id="solutions" class="py-20 md:py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="section-header text-3xl md:text-4xl font-bold text-black mb-6 font-display">Our Two-Pillar Approach</h2>
+                <h2 class="section-header text-3xl md:text-4xl font-bold text-black mb-6 font-display">Performance-Bias Revenue Systems</h2>
                 <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                    Specialized business development solutions delivering measurable results across two distinct categories, each with clear performance guarantees.
+                    Our lab network deploys specialized revenue generation systems across three core disciplines, each with performance guarantees and measurable outcomes.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- Professional Residential Services -->
-                <div class="category-card bg-white rounded-2xl border border-gray-200 p-6 md:p-8" data-aos="fade-up" data-aos-delay="0">
-                    <div class="icon-container">
-                        <i data-lucide="home" class="w-8 h-8 text-white"></i>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Demand Generation Lab -->
+                <div class="lab-card p-6 md:p-8" data-aos="fade-up" data-aos-delay="0">
+                    <div class="lab-icon-container">
+                        <i data-lucide="trending-up" class="w-8 h-8 text-white"></i>
                     </div>
-                    <h3 class="text-xl md:text-2xl font-bold text-black mb-4 font-display">Professional Residential Services</h3>
+                    <h3 class="text-xl md:text-2xl font-bold text-black mb-4 font-display">Demand Generation Lab</h3>
                     <p class="text-gray-600 mb-6">
-                        Performance-guaranteed services connecting homeowners with qualified professionals. Our specialized matching systems deliver verified leads and guaranteed results across multiple residential service categories.
+                        Specialized systems that create qualified demand and deliver measurable leads through targeted campaigns and conversion optimization.
                     </p>
                     <div class="space-y-3">
                         <div class="flex items-center gap-2 text-sm text-gray-700">
                             <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
-                            <span>5+ qualified leads guaranteed monthly</span>
+                            <span>Qualified lead generation systems</span>
                         </div>
                         <div class="flex items-center gap-2 text-sm text-gray-700">
                             <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
-                            <span>Performance-based commission only</span>
+                            <span>Performance-based campaign management</span>
                         </div>
                         <div class="flex items-center gap-2 text-sm text-gray-700">
                             <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
-                            <span>Free site assessment for all services</span>
+                            <span>Conversion rate optimization</span>
                         </div>
                     </div>
-                    <a href="#residential-services" class="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-black hover:text-gray-800 transition-colors">
-                        View Services <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
                 </div>
 
-                <!-- Commercial Solar Development -->
-                <div class="category-card bg-white rounded-2xl border border-gray-200 p-6 md:p-8" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon-container">
-                        <i data-lucide="zap" class="w-8 h-8 text-white"></i>
+                <!-- Media Buying Lab -->
+                <div class="lab-card p-6 md:p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="lab-icon-container">
+                        <i data-lucide="bar-chart-3" class="w-8 h-8 text-white"></i>
                     </div>
-                    <h3 class="text-xl md:text-2xl font-bold text-black mb-4 font-display">Commercial Solar Development</h3>
+                    <h3 class="text-xl md:text-2xl font-bold text-black mb-4 font-display">Media Buying Lab</h3>
                     <p class="text-gray-600 mb-6">
-                        Enterprise-scale solar solutions delivering guaranteed 80% electricity savings with comprehensive project financing, development, and management services for commercial properties.
+                        Data-driven media acquisition and optimization systems that maximize ROI through strategic placement and performance tracking.
                     </p>
                     <div class="space-y-3">
                         <div class="flex items-center gap-2 text-sm text-gray-700">
                             <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
-                            <span>80% guaranteed electricity bill reduction</span>
+                            <span>Strategic media placement systems</span>
                         </div>
                         <div class="flex items-center gap-2 text-sm text-gray-700">
                             <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
-                            <span>Zero upfront financing available</span>
+                            <span>ROI-optimized buying strategies</span>
                         </div>
                         <div class="flex items-center gap-2 text-sm text-gray-700">
                             <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
-                            <span>Free commercial energy assessment</span>
+                            <span>Real-time performance analytics</span>
                         </div>
                     </div>
-                    <a href="#solar-development" class="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-black hover:text-gray-800 transition-colors">
-                        View Solar Solutions <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
+                </div>
+
+                <!-- Sales Systems Lab -->
+                <div class="lab-card p-6 md:p-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="lab-icon-container">
+                        <i data-lucide="settings" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-bold text-black mb-4 font-display">Sales Systems Lab</h3>
+                    <p class="text-gray-600 mb-6">
+                        Revenue conversion systems that transform leads into closed deals through optimized sales processes and performance tracking.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-2 text-sm text-gray-700">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
+                            <span>Sales process optimization</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-gray-700">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
+                            <span>Conversion rate systems</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-gray-700">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
+                            <span>Revenue tracking & analytics</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Service Portfolio Section -->
-    <section id="services" class="py-20 md:py-24 bg-white">
+    <!-- Services Section -->
+    <section id="services" class="py-20 md:py-24 bg-white lab-network">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
                 <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 border border-gray-300 text-black text-sm font-semibold mb-6">
                     <i data-lucide="package" class="w-4 h-4"></i>
-                    <span>Service Portfolio</span>
+                    <span>Revenue Generation Systems</span>
                 </div>
-                <h2 class="text-3xl md:text-5xl font-bold text-black mb-6 font-display">Professional Residential & Commercial Solutions</h2>
+                <h2 class="text-3xl md:text-5xl font-bold text-black mb-6 font-display">Performance-Bias Offers</h2>
                 <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                    Performance-guaranteed services delivering measurable results with zero upfront costs. Every service includes a free site assessment.
+                    Our specialized revenue systems deliver measurable results with performance guarantees. Zero upfront cost, payment only on results.
                 </p>
             </div>
 
-            <!-- Category 1: Professional Residential Services -->
-            <div id="residential-services" class="mb-20 md:mb-24" data-aos="fade-up">
-                <div class="flex items-center gap-4 mb-10 md:mb-12">
-                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-black flex items-center justify-center">
-                        <i data-lucide="home" class="w-5 h-5 md:w-6 md:h-6 text-white"></i>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+                <!-- Solar Connector -->
+                <div class="enhanced-card lab-card p-6 service-grid-item" data-aos="fade-up" data-aos-delay="0">
+                    <span class="service-badge" style="background-color: #DC2626;">Solar Revenue System</span>
+                    <div class="lab-icon-container" style="background-color: #DC2626;">
+                        <i data-lucide="sun" class="w-8 h-8 text-white"></i>
                     </div>
-                    <div>
-                        <h3 class="text-2xl md:text-3xl font-bold text-black font-display">Professional Residential Services</h3>
-                        <p class="text-gray-600 text-sm md:text-base">Performance-guaranteed services connecting homeowners with qualified professionals</p>
-                    </div>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-8">
-                    <!-- Water Connector -->
-                    <div class="product-item" data-aos="fade-up" data-aos-delay="0">
-                        <span class="product-badge">Water Security</span>
-                        <div class="icon-container">
-                            <i data-lucide="droplets" class="w-8 h-8 text-white"></i>
-                        </div>
-                        <h4 class="text-xl font-bold text-black mb-3 font-display">Water Connector</h4>
-                        <p class="text-gray-600 mb-4">
-                            Reliable water solutions ensuring uninterrupted supply with custom installations for residential needs.
-                        </p>
-                        
-                        <div class="service-highlights">
-                            <div class="highlight-item">
-                                <div class="highlight-icon">
-                                    <i data-lucide="check" class="w-3 h-3"></i>
-                                </div>
-                                <div class="highlight-text">
-                                    <strong>Zero Upfront Turnkey Borehole Solutions:</strong> Complete drilling and installation
-                                </div>
+                    <h4 class="text-xl font-bold text-black mb-3 font-display">Solar Connector</h4>
+                    <p class="text-gray-600 mb-4">
+                        Complete solar revenue generation system with guaranteed client acquisition and project financing.
+                    </p>
+                    
+                    <div class="mt-6">
+                        <div class="service-highlight">
+                            <div class="highlight-icon" style="background-color: #DC2626;">
+                                <i data-lucide="zap" class="w-3 h-3"></i>
                             </div>
-                            <div class="highlight-item">
-                                <div class="highlight-icon">
-                                    <i data-lucide="check" class="w-3 h-3"></i>
-                                </div>
-                                <div class="highlight-text">
-                                    <strong>Water Backup Storage Systems:</strong> Reliable water storage solutions
-                                </div>
-                            </div>
-                            <div class="highlight-item">
-                                <div class="highlight-icon">
-                                    <i data-lucide="check" class="w-3 h-3"></i>
-                                </div>
-                                <div class="highlight-text">
-                                    <strong>Pump Supply & Installation:</strong> High-efficiency pumping systems
-                                </div>
-                            </div>
-                            <div class="highlight-item">
-                                <div class="highlight-icon">
-                                    <i data-lucide="check" class="w-3 h-3"></i>
-                                </div>
-                                <div class="highlight-text">
-                                    <strong>Emergency Response Guarantees:</strong> 24/7 support and monitoring
-                                </div>
+                            <div class="highlight-content">
+                                <h5>Residential Solar Lead Generation</h5>
+                                <p>Performance-based client acquisition</p>
                             </div>
                         </div>
-
-                        <div class="mt-auto">
-                            <a href="https://waterbackup.maribamedia.co.za" target="_blank" 
-                               class="inline-flex items-center gap-2 text-sm font-semibold text-black hover:text-gray-800 transition-colors">
-                                Visit Service Website <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                            </a>
+                        <div class="service-highlight">
+                            <div class="highlight-icon" style="background-color: #DC2626;">
+                                <i data-lucide="building" class="w-3 h-3"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h5>Commercial Solar Development</h5>
+                                <p>Enterprise project financing & deployment</p>
+                            </div>
+                        </div>
+                        <div class="service-highlight">
+                            <div class="highlight-icon" style="background-color: #DC2626;">
+                                <i data-lucide="dollar-sign" class="w-3 h-3"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h5>Performance-Based Commission</h5>
+                                <p>Only pay on successful project closure</p>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Solar Connector -->
-                    <div class="product-item" data-aos="fade-up" data-aos-delay="100">
-                        <span class="product-badge">Residential Solar</span>
-                        <div class="icon-container">
-                            <i data-lucide="sun" class="w-8 h-8 text-white"></i>
-                        </div>
-                        <h4 class="text-xl font-bold text-black mb-3 font-display">Solar Connector</h4>
-                        <p class="text-gray-600 mb-4">
-                            Residential solar solutions with guaranteed 80% electricity bill reduction within 30 days.
-                        </p>
-                        
-                        <div class="service-highlights">
-                            <div class="highlight-item">
-                                <div class="highlight-icon">
-                                    <i data-lucide="zap" class="w-3 h-3"></i>
-                                </div>
-                                <div class="highlight-text">
-                                    <strong>Custom Solar Installation for Residential:</strong> Tailored systems for homes
-                                </div>
-                            </div>
-                            <div class="highlight-item">
-                                <div class="highlight-icon">
-                                    <i data-lucide="zap" class="w-3 h-3"></i>
-                                </div>
-                                <div class="highlight-text">
-                                    <strong>Prepaid Solar Installation for Residential:</strong> Pay-as-you-go solar options
-                                </div>
-                            </div>
-                            <div class="highlight-item">
-                                <div class="highlight-icon">
-                                    <i data-lucide="zap" class="w-3 h-3"></i>
-                                </div>
-                                <div class="highlight-text">
-                                    <strong>80% Bill Reduction Guarantee:</strong> Achieve savings within 30 days
-                                </div>
-                            </div>
-                            <div class="highlight-item">
-                                <div class="highlight-icon">
-                                    <i data-lucide="zap" class="w-3 h-3"></i>
-                                </div>
-                                <div class="highlight-text">
-                                    <strong>25-Year Performance Warranties:</strong> Long-term reliability assurance
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mt-auto">
-                            <a href="https://solar.maribamedia.co.za" target="_blank" 
-                               class="inline-flex items-center gap-2 text-sm font-semibold text-black hover:text-gray-800 transition-colors">
-                                Visit Service Website <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                            </a>
-                        </div>
+                    <div class="mt-8">
+                        <a href="https://solar.maribamedia.co.za" target="_blank" 
+                           class="inline-flex items-center gap-2 text-sm font-semibold text-black hover:text-gray-800 transition-colors">
+                            Visit Solar System <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Feature Card -->
-                <div class="mt-8" data-aos="fade-up" data-aos-delay="200">
-                    <div class="feature-card">
-                        <div class="icon-container bg-gradient-to-br from-black to-gray-800">
-                            <i data-lucide="shield-check" class="w-8 h-8 text-white"></i>
-                        </div>
-                        <h4 class="text-xl font-bold text-black mb-4 font-display">Performance Guarantee</h4>
-                        <p class="text-gray-600 mb-6">
-                            All residential services come with our signature performance guarantee: zero upfront costs, measurable results, and we only get paid when you're satisfied.
-                        </p>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <div class="flex items-center gap-2 text-sm text-gray-700">
-                                <i data-lucide="check" class="w-4 h-4 text-black"></i>
-                                <span>Free initial site assessment</span>
+                <!-- Water Connector -->
+                <div class="enhanced-card lab-card p-6 service-grid-item" data-aos="fade-up" data-aos-delay="100">
+                    <span class="service-badge" style="background-color: #2563EB;">Water Revenue System</span>
+                    <div class="lab-icon-container" style="background-color: #2563EB;">
+                        <i data-lucide="droplets" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-black mb-3 font-display">Water Connector</h4>
+                    <p class="text-gray-600 mb-4">
+                        Water solutions revenue system delivering qualified leads for borehole, storage, and pumping systems.
+                    </p>
+                    
+                    <div class="mt-6">
+                        <div class="service-highlight">
+                            <div class="highlight-icon" style="background-color: #2563EB;">
+                                <i data-lucide="droplet" class="w-3 h-3"></i>
                             </div>
-                            <div class="flex items-center gap-2 text-sm text-gray-700">
-                                <i data-lucide="check" class="w-4 h-4 text-black"></i>
-                                <span>Performance-based billing</span>
-                            </div>
-                            <div class="flex items-center gap-2 text-sm text-gray-700">
-                                <i data-lucide="check" class="w-4 h-4 text-black"></i>
-                                <span>90-day results guarantee</span>
+                            <div class="highlight-content">
+                                <h5>Borehole Lead Generation</h5>
+                                <p>Targeted demand creation for water solutions</p>
                             </div>
                         </div>
+                        <div class="service-highlight">
+                            <div class="highlight-icon" style="background-color: #2563EB;">
+                                <i data-lucide="hard-drive" class="w-3 h-3"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h5>Storage System Sales</h5>
+                                <p>Water backup system client acquisition</p>
+                            </div>
+                        </div>
+                        <div class="service-highlight">
+                            <div class="highlight-icon" style="background-color: #2563EB;">
+                                <i data-lucide="settings" class="w-3 h-3"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h5>Pump Installation Leads</h5>
+                                <p>High-conversion service leads</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <a href="https://waterbackup.maribamedia.co.za" target="_blank" 
+                           class="inline-flex items-center gap-2 text-sm font-semibold text-black hover:text-gray-800 transition-colors">
+                            Visit Water System <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Concierge -->
+                <div class="enhanced-card lab-card p-6 service-grid-item" data-aos="fade-up" data-aos-delay="200">
+                    <span class="service-badge" style="background-color: #059669;">Premium Call System</span>
+                    <div class="lab-icon-container" style="background-color: #059669;">
+                        <i data-lucide="phone-call" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-black mb-3 font-display">Concierge</h4>
+                    <p class="text-gray-600 mb-4">
+                        Pay-per-call system delivering qualified calls within 24 hours across multiple high-value industries.
+                    </p>
+                    
+                    <div class="mt-6">
+                        <div class="service-highlight">
+                            <div class="highlight-icon" style="background-color: #059669;">
+                                <i data-lucide="shield" class="w-3 h-3"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h5>24-Hour Call Delivery</h5>
+                                <p>Guaranteed qualified calls in one day</p>
+                            </div>
+                        </div>
+                        <div class="service-highlight">
+                            <div class="highlight-icon" style="background-color: #059669;">
+                                <i data-lucide="credit-card" class="w-3 h-3"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h5>Pay-Per-Call Model</h5>
+                                <p>Only pay for qualified calls received</p>
+                            </div>
+                        </div>
+                        <div class="service-highlight">
+                            <div class="highlight-icon" style="background-color: #059669;">
+                                <i data-lucide="filter" class="w-3 h-3"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h5>Industry Specialization</h5>
+                                <p>Targeted call generation by sector</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Industry Pills -->
+                    <div class="mt-6 flex flex-wrap gap-1">
+                        <span class="industry-pill">Insurance</span>
+                        <span class="industry-pill">Solar</span>
+                        <span class="industry-pill">Personal Liability</span>
+                        <span class="industry-pill">Auto Parts</span>
+                        <span class="industry-pill">Engine Replacement</span>
+                        <span class="industry-pill">Drain Services</span>
+                        <span class="industry-pill">Plumbing</span>
+                        <span class="industry-pill">Home Remodeling</span>
+                    </div>
+
+                    <div class="mt-8">
+                        <a href="https://www.concierge.maribamedia.co.za" target="_blank" 
+                           class="inline-flex items-center gap-2 text-sm font-semibold text-black hover:text-gray-800 transition-colors">
+                            Visit Concierge System <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Commercial Solar Connector -->
+                <div class="enhanced-card lab-card p-6 service-grid-item" data-aos="fade-up" data-aos-delay="300">
+                    <span class="service-badge" style="background-color: #EA580C;">Commercial Solar</span>
+                    <div class="lab-icon-container" style="background-color: #EA580C;">
+                        <i data-lucide="building-2" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-black mb-3 font-display">Commercial Solar Connector</h4>
+                    <p class="text-gray-600 mb-4">
+                        Enterprise solar solutions with guaranteed 80% electricity savings, comprehensive project financing, and development services for commercial properties.
+                    </p>
+                    
+                    <div class="mt-6">
+                        <div class="service-highlight">
+                            <div class="highlight-icon" style="background-color: #EA580C;">
+                                <i data-lucide="zap" class="w-3 h-3"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h5>Commercial Solar Installation</h5>
+                                <p>Tailored systems for businesses</p>
+                            </div>
+                        </div>
+                        <div class="service-highlight">
+                            <div class="highlight-icon" style="background-color: #EA580C;">
+                                <i data-lucide="battery" class="w-3 h-3"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h5>BESS Installation & Commission</h5>
+                                <p>Battery Energy Storage Systems</p>
+                            </div>
+                        </div>
+                        <div class="service-highlight">
+                            <div class="highlight-icon" style="background-color: #EA580C;">
+                                <i data-lucide="dollar-sign" class="w-3 h-3"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h5>Energy Finance Solutions</h5>
+                                <p>Greenfield & Brownfield funding</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 space-y-3">
+                        <a href="https://commercial.maribamedia.co.za" target="_blank" 
+                           class="inline-flex items-center gap-2 text-sm font-semibold text-black hover:text-gray-800 transition-colors block">
+                            Free Energy Assessment <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </a>
+                        <a href="https://funding.maribamedia.co.za" target="_blank" 
+                           class="inline-flex items-center gap-2 text-sm font-semibold text-black hover:text-gray-800 transition-colors block">
+                            Free Financing Assessment <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Energy Mixer -->
+                <div class="enhanced-card lab-card p-6 service-grid-item" data-aos="fade-up" data-aos-delay="400">
+                    <span class="service-badge" style="background-color: #7C3AED;">Hybrid Energy</span>
+                    <div class="lab-icon-container" style="background-color: #7C3AED;">
+                        <i data-lucide="battery-charging" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-black mb-3 font-display">Energy Mixer</h4>
+                    <p class="text-gray-600 mb-4">
+                        US-patented DC power blending system automating energy management for commercial enterprises with significant efficiency improvements.
+                    </p>
+                    
+                    <div class="mt-6">
+                        <div class="service-highlight">
+                            <div class="highlight-icon" style="background-color: #7C3AED;">
+                                <i data-lucide="cpu" class="w-3 h-3"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h5>US-Patented DC Power Blending</h5>
+                                <p>Advanced energy management technology</p>
+                            </div>
+                        </div>
+                        <div class="service-highlight">
+                            <div class="highlight-icon" style="background-color: #7C3AED;">
+                                <i data-lucide="trending-down" class="w-3 h-3"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h5>40% Operational Cost Reduction</h5>
+                                <p>Significant savings on energy expenses</p>
+                            </div>
+                        </div>
+                        <div class="service-highlight">
+                            <div class="highlight-icon" style="background-color: #7C3AED;">
+                                <i data-lucide="refresh-cw" class="w-3 h-3"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h5>Automated Energy Management</h5>
+                                <p>Smart optimization for commercial enterprises</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <a href="http://www.energy.maribamedia.co.za" target="_blank" 
+                           class="inline-flex items-center gap-2 text-sm font-semibold text-black hover:text-gray-800 transition-colors">
+                            Free System Assessment <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- TrainingOS Enterprise -->
+                <div class="enhanced-card lab-card p-6 service-grid-item" data-aos="fade-up" data-aos-delay="500">
+                    <span class="service-badge" style="background-color: #4F46E5;">AI-Powered LMS</span>
+                    <div class="lab-icon-container" style="background-color: #4F46E5;">
+                        <i data-lucide="graduation-cap" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-black mb-3 font-display">TrainingOS Enterprise</h4>
+                    <p class="text-gray-600 mb-4">
+                        Complete AI-Powered LMS with Annual Support & Full Management. Everything you need to scale your training organization with enterprise features.
+                    </p>
+                    
+                    <div class="mt-6">
+                        <div class="service-highlight">
+                            <div class="highlight-icon" style="background-color: #4F46E5;">
+                                <i data-lucide="brain" class="w-3 h-3"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h5>AI-Powered Learning Management</h5>
+                                <p>Smart course creation & student grading</p>
+                            </div>
+                        </div>
+                        <div class="service-highlight">
+                            <div class="highlight-icon" style="background-color: #4F46E5;">
+                                <i data-lucide="video" class="w-3 h-3"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h5>Video Course Creation Platform</h5>
+                                <p>Professional training content development</p>
+                            </div>
+                        </div>
+                        <div class="service-highlight">
+                            <div class="highlight-icon" style="background-color: #4F46E5;">
+                                <i data-lucide="users" class="w-3 h-3"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h5>Complete Training Management</h5>
+                                <p>Annual support & full administration</p>
+                            </div>
+                        </div>
+                        <div class="service-highlight">
+                            <div class="highlight-icon" style="background-color: #4F46E5;">
+                                <i data-lucide="headphones" class="w-3 h-3"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h5>24/7 Customer Support</h5>
+                                <p>Round-the-clock technical assistance</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <a href="https://www.training.maribamedia.co.za" target="_blank" 
+                           class="inline-flex items-center gap-2 text-sm font-semibold text-black hover:text-gray-800 transition-colors">
+                            Explore TrainingOS <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <!-- Category 2: Commercial Solar Development -->
-            <div id="solar-development" data-aos="fade-up">
-                <div class="flex items-center gap-4 mb-10 md:mb-12">
-                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-black flex items-center justify-center">
-                        <i data-lucide="zap" class="w-5 h-5 md:w-6 md:h-6 text-white"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl md:text-3xl font-bold text-black font-display">Commercial Solar Development</h3>
-                        <p class="text-gray-600 text-sm md:text-base">Enterprise-scale energy solutions with guaranteed savings and comprehensive development services</p>
-                    </div>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-8">
-                    <!-- Commercial Solar Connector -->
-                    <div class="product-item" data-aos="fade-up" data-aos-delay="0">
-                        <span class="product-badge">Business Solar Solutions</span>
-                        <div class="icon-container">
-                            <i data-lucide="building-2" class="w-8 h-8 text-white"></i>
+            <!-- Performance Guarantee -->
+            <div class="bg-gradient-to-r from-black to-gray-900 rounded-2xl p-8 md:p-12 text-white" data-aos="zoom-in">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="flex-shrink-0">
+                        <div class="w-20 h-20 rounded-full bg-white/10 flex items-center justify-center">
+                            <i data-lucide="shield-check" class="w-10 h-10 text-white"></i>
                         </div>
-                        <h4 class="text-xl font-bold text-black mb-3 font-display">Commercial Solar Connector</h4>
-                        <p class="text-gray-600 mb-4">
-                            Comprehensive solar solutions for commercial and industrial applications with guaranteed 80% electricity savings.
+                    </div>
+                    <div class="flex-grow">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-4 font-display">Performance Bias Guarantee</h3>
+                        <p class="text-gray-300 mb-6 max-w-3xl">
+                            All our revenue systems operate on a strict performance-bias model. We only get paid when you generate revenue. No upfront costs, no retainers - just measurable results.
                         </p>
-                        
-                        <div class="service-highlights">
-                            <div class="highlight-item">
-                                <div class="highlight-icon">
-                                    <i data-lucide="building" class="w-3 h-3"></i>
-                                </div>
-                                <div class="highlight-text">
-                                    <strong>Custom Solar Installation for Commercial & Industrial:</strong> Tailored systems for businesses
-                                </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-green-400"></i>
+                                <span>Zero upfront implementation costs</span>
                             </div>
-                            <div class="highlight-item">
-                                <div class="highlight-icon">
-                                    <i data-lucide="building" class="w-3 h-3"></i>
-                                </div>
-                                <div class="highlight-text">
-                                    <strong>Prepaid Solar Installation for Commercial & Industrial:</strong> Flexible payment options
-                                </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-green-400"></i>
+                                <span>90-day measurable results guarantee</span>
                             </div>
-                            <div class="highlight-item">
-                                <div class="highlight-icon">
-                                    <i data-lucide="battery" class="w-3 h-3"></i>
-                                </div>
-                                <div class="highlight-text">
-                                    <strong>BESS Installation & Commission with EPC:</strong> Battery Energy Storage Systems
-                                </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-green-400"></i>
+                                <span>Performance-based commission only</span>
                             </div>
-                            <div class="highlight-item">
-                                <div class="highlight-icon">
-                                    <i data-lucide="dollar-sign" class="w-3 h-3"></i>
-                                </div>
-                                <div class="highlight-text">
-                                    <strong>Energy Finance - Greenfield & Brownfield Funding:</strong> Complete financing solutions
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mt-auto space-y-3">
-                            <a href="https://commercial.maribamedia.co.za" target="_blank" 
-                               class="inline-flex items-center gap-2 text-sm font-semibold text-black hover:text-gray-800 transition-colors block">
-                                Free Energy Assessment <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                            </a>
-                            <a href="https://funding.maribamedia.co.za" target="_blank" 
-                               class="inline-flex items-center gap-2 text-sm font-semibold text-black hover:text-gray-800 transition-colors block">
-                                Free Financing Assessment <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- EnergyMixer -->
-                    <div class="product-item" data-aos="fade-up" data-aos-delay="200">
-                        <span class="product-badge">Hybrid Energy</span>
-                        <div class="icon-container">
-                            <i data-lucide="battery-charging" class="w-8 h-8 text-white"></i>
-                        </div>
-                        <h4 class="text-xl font-bold text-black mb-3 font-display">EnergyMixer</h4>
-                        <p class="text-gray-600 mb-4">
-                            US-patented DC power blending system automating energy management for commercial enterprises.
-                        </p>
-                        
-                        <div class="service-highlights">
-                            <div class="highlight-item">
-                                <div class="highlight-icon">
-                                    <i data-lucide="cpu" class="w-3 h-3"></i>
-                                </div>
-                                <div class="highlight-text">
-                                    <strong>US-Patented DC Power Blending System:</strong> Advanced energy management technology
-                                </div>
-                            </div>
-                            <div class="highlight-item">
-                                <div class="highlight-icon">
-                                    <i data-lucide="trending-down" class="w-3 h-3"></i>
-                                </div>
-                                <div class="highlight-text">
-                                    <strong>40% Operational Cost Reduction:</strong> Significant savings on energy expenses
-                                </div>
-                            </div>
-                            <div class="highlight-item">
-                                <div class="highlight-icon">
-                                    <i data-lucide="trending-up" class="w-3 h-3"></i>
-                                </div>
-                                <div class="highlight-text">
-                                    <strong>22% Output Efficiency Increase:</strong> Enhanced system performance
-                                </div>
-                            </div>
-                            <div class="highlight-item">
-                                <div class="highlight-icon">
-                                    <i data-lucide="refresh-cw" class="w-3 h-3"></i>
-                                </div>
-                                <div class="highlight-text">
-                                    <strong>Automated Energy Management:</strong> Smart optimization for commercial enterprises
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mt-auto">
-                            <a href="http://www.energy.maribamedia.co.za" target="_blank" 
-                               class="inline-flex items-center gap-2 text-sm font-semibold text-black hover:text-gray-800 transition-colors">
-                                Free System Assessment <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -870,141 +1048,134 @@
     <section id="process" class="py-20 md:py-24 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="section-header text-3xl md:text-4xl font-bold text-black mb-6 font-display">The 90-Day Performance Framework</h2>
+                <h2 class="section-header text-3xl md:text-4xl font-bold text-black mb-6 font-display">90-Day Revenue Framework</h2>
                 <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                    A structured approach delivering guaranteed business development results through aligned incentives and measurable targets.
+                    Our structured lab process delivers measurable revenue growth through aligned incentives and performance tracking.
                 </p>
             </div>
 
-            <!-- Timeline -->
-            <div class="max-w-3xl mx-auto">
-                <!-- Phase 1 -->
-                <div class="timeline-item" data-aos="fade-right">
-                    <div class="timeline-dot"></div>
-                    <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                        <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
-                            <span class="px-3 py-1 bg-black text-white text-sm font-bold rounded-full w-fit">Days 1-7</span>
-                            <h3 class="text-xl font-bold text-black font-display">Free Site Assessment</h3>
-                        </div>
-                        <p class="text-gray-600 mb-4">Comprehensive evaluation of your needs across our service portfolio with detailed implementation roadmap at no cost.</p>
-                        <ul class="space-y-2 text-sm text-gray-700">
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
-                                <span>On-site evaluation for residential services</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
-                                <span>Energy assessment for solar solutions</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
-                                <span>Water needs analysis</span>
-                            </li>
-                        </ul>
+            <!-- Process Steps -->
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="process-step" data-aos="fade-up" data-aos-delay="0">
+                    <div class="step-number">1</div>
+                    <div class="lab-icon-container mb-6 mx-auto">
+                        <i data-lucide="clipboard-check" class="w-6 h-6 text-white"></i>
                     </div>
+                    <h3 class="text-xl font-bold text-black mb-4 text-center font-display">Lab Assessment</h3>
+                    <p class="text-gray-600 text-center mb-6">Comprehensive analysis of your revenue systems and identification of growth opportunities.</p>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-black"></i>
+                            <span>Revenue system audit</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-black"></i>
+                            <span>Market opportunity analysis</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-black"></i>
+                            <span>Performance baseline setup</span>
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- Phase 2 -->
-                <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
-                    <div class="timeline-dot"></div>
-                    <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                        <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
-                            <span class="px-3 py-1 bg-black text-white text-sm font-bold rounded-full w-fit">Days 8-30</span>
-                            <h3 class="text-xl font-bold text-black font-display">Discovery & Design</h3>
-                        </div>
-                        <p class="text-gray-600 mb-4">Identify business development opportunities and set clear, measurable performance targets for your chosen service category.</p>
-                        <ul class="space-y-2 text-sm text-gray-700">
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
-                                <span>Target setting & KPI definition</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
-                                <span>Service category selection</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
-                                <span>Performance bias agreement</span>
-                            </li>
-                        </ul>
+                <!-- Step 2 -->
+                <div class="process-step" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-number">2</div>
+                    <div class="lab-icon-container mb-6 mx-auto">
+                        <i data-lucide="settings" class="w-6 h-6 text-white"></i>
                     </div>
+                    <h3 class="text-xl font-bold text-black mb-4 text-center font-display">System Design</h3>
+                    <p class="text-gray-600 text-center mb-6">Custom revenue system design integrating demand generation, media buying, and sales optimization.</p>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-black"></i>
+                            <span>Revenue system architecture</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-black"></i>
+                            <span>Performance metric definition</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-black"></i>
+                            <span>Integration roadmap</span>
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- Phase 3 -->
-                <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
-                    <div class="timeline-dot"></div>
-                    <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                        <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
-                            <span class="px-3 py-1 bg-black text-white text-sm font-bold rounded-full w-fit">Days 31-60</span>
-                            <h3 class="text-xl font-bold text-black font-display">Implementation & Optimization</h3>
-                        </div>
-                        <p class="text-gray-600 mb-4">Deploy specialized business development systems with weekly performance tracking and real-time optimization.</p>
-                        <ul class="space-y-2 text-sm text-gray-700">
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
-                                <span>Service deployment & integration</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
-                                <span>Weekly performance tracking</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
-                                <span>Real-time optimization adjustments</span>
-                            </li>
-                        </ul>
+                <!-- Step 3 -->
+                <div class="process-step" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-number">3</div>
+                    <div class="lab-icon-container mb-6 mx-auto">
+                        <i data-lucide="zap" class="w-6 h-6 text-white"></i>
                     </div>
+                    <h3 class="text-xl font-bold text-black mb-4 text-center font-display">System Deployment</h3>
+                    <p class="text-gray-600 text-center mb-6">Implementation of revenue generation systems with real-time optimization and performance tracking.</p>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-black"></i>
+                            <span>Demand generation activation</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-black"></i>
+                            <span>Media buying optimization</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-black"></i>
+                            <span>Sales system integration</span>
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- Phase 4 -->
-                <div class="timeline-item" data-aos="fade-right" data-aos-delay="300">
-                    <div class="timeline-dot"></div>
-                    <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                        <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
-                            <span class="px-3 py-1 bg-black text-white text-sm font-bold rounded-full w-fit">Days 61-90</span>
-                            <h3 class="text-xl font-bold text-black font-display">Results & Validation</h3>
-                        </div>
-                        <p class="text-gray-600 mb-4">Measure results against targets and validate performance bias guarantee through aligned success metrics.</p>
-                        <ul class="space-y-2 text-sm text-gray-700">
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
-                                <span>80% electricity bill reduction validation</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
-                                <span>Target achievement validation</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
-                                <span>Performance-based billing activation</span>
-                            </li>
-                        </ul>
+                <!-- Step 4 -->
+                <div class="process-step" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-number">4</div>
+                    <div class="lab-icon-container mb-6 mx-auto">
+                        <i data-lucide="trending-up" class="w-6 h-6 text-white"></i>
                     </div>
+                    <h3 class="text-xl font-bold text-black mb-4 text-center font-display">Revenue Validation</h3>
+                    <p class="text-gray-600 text-center mb-6">Performance measurement and validation against targets, with payment only on achieved results.</p>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-black"></i>
+                            <span>Revenue tracking & analytics</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-black"></i>
+                            <span>Performance bias validation</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-black"></i>
+                            <span>Results-based commission</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
 
             <!-- Final CTA -->
             <div class="mt-20 md:mt-24 text-center" data-aos="zoom-in">
-                <div class="bg-black rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+                <div class="bg-gradient-to-r from-black to-gray-900 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+                    <div class="absolute inset-0 bg-grid-white/[0.05] bg-[size:40px_40px]"></div>
                     <div class="relative z-10">
-                        <h3 class="text-2xl md:text-4xl font-bold text-white mb-6 font-display">Ready to Transform Your Business?</h3>
+                        <h3 class="text-2xl md:text-4xl font-bold text-white mb-6 font-display">Ready to Deploy Revenue Systems?</h3>
                         <p class="text-lg md:text-xl text-gray-300 mb-8 md:mb-10 max-w-2xl mx-auto">
-                            Start with a free site assessment across our comprehensive service portfolio.
+                            Start with a free lab assessment of your revenue generation potential.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center">
                             <a href="https://cal.com/partner-discovery/south-africa" target="_blank"
                                class="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-black px-8 md:px-12 py-4 md:py-5 rounded-xl font-bold text-base md:text-lg transition-all duration-300 shadow-2xl transform hover:-translate-y-1">
-                                <i data-lucide="clipboard-check" class="w-5 h-5 md:w-6 md:h-6"></i>
-                                Get Free Assessment
+                                <i data-lucide="flask-conical" class="w-5 h-5 md:w-6 md:h-6"></i>
+                                Free Lab Assessment
                             </a>
                             <a href="mailto:victor@maribamedia.co.za"
                                class="inline-flex items-center justify-center gap-3 bg-transparent hover:bg-white/10 text-white px-8 md:px-12 py-4 md:py-5 rounded-xl font-semibold text-base md:text-lg transition-all duration-300 border-2 border-white">
                                 <i data-lucide="mail" class="w-5 h-5 md:w-6 md:h-6"></i>
-                                Contact Sales
+                                Contact Lab Director
                             </a>
                         </div>
                         <p class="mt-6 md:mt-8 text-gray-400 text-sm">
-                            Choose from: Water Connector • Solar Connector • Commercial Solar Connector
+                            Choose from: Solar Connector • Water Connector • Concierge • Commercial Solar • Energy Mixer • TrainingOS
                         </p>
                     </div>
                 </div>
@@ -1024,12 +1195,12 @@
                             <i data-lucide="flask-conical" class="w-6 h-6 text-black"></i>
                         </div>
                         <div>
-                            <span class="text-xl font-bold text-white font-display">Business Development Lab</span>
-                            <span class="block text-sm text-gray-400">Performance-Bias Growth</span>
+                            <span class="text-xl font-bold text-white font-display">Mariba Business Development Lab</span>
+                            <span class="block text-sm text-gray-400">Performance-Bias Revenue Systems</span>
                         </div>
                     </a>
                     <p class="text-gray-400 text-sm leading-relaxed mb-8 max-w-md">
-                        We create new revenue or we don't get paid. Performance bias guarantee with measurable targets met in 90 days.
+                        Exclusive business development lab network focusing on revenue growth through demand generation, media buying, and sales systems with performance bias guarantees.
                     </p>
                     <div class="flex gap-4">
                         <a href="https://www.facebook.com/people/Mariba-Media-Pty-Ltd/61576915266105/" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-white flex items-center justify-center text-gray-300 hover:text-black transition-all">
@@ -1046,27 +1217,30 @@
 
                 <!-- Solutions -->
                 <div>
-                    <h5 class="text-lg font-bold text-white mb-6 font-display">Solution Categories</h5>
+                    <h5 class="text-lg font-bold text-white mb-6 font-display">Lab Divisions</h5>
                     <ul class="space-y-3">
-                        <li><a href="#residential-services" class="text-gray-400 hover:text-white text-sm transition-colors">Residential Services</a></li>
-                        <li><a href="#solar-development" class="text-gray-400 hover:text-white text-sm transition-colors">Commercial Solar</a></li>
-                        <li><a href="#process" class="text-gray-400 hover:text-white text-sm transition-colors">90-Day Process</a></li>
+                        <li><a href="#solutions" class="text-gray-400 hover:text-white text-sm transition-colors">Demand Generation Lab</a></li>
+                        <li><a href="#solutions" class="text-gray-400 hover:text-white text-sm transition-colors">Media Buying Lab</a></li>
+                        <li><a href="#solutions" class="text-gray-400 hover:text-white text-sm transition-colors">Sales Systems Lab</a></li>
                     </ul>
                 </div>
 
                 <!-- Services -->
                 <div>
-                    <h5 class="text-lg font-bold text-white mb-6 font-display">Featured Services</h5>
+                    <h5 class="text-lg font-bold text-white mb-6 font-display">Revenue Systems</h5>
                     <ul class="space-y-3">
-                        <li><a href="https://waterbackup.maribamedia.co.za" target="_blank" class="text-gray-400 hover:text-white text-sm transition-colors">Water Connector</a></li>
                         <li><a href="https://solar.maribamedia.co.za" target="_blank" class="text-gray-400 hover:text-white text-sm transition-colors">Solar Connector</a></li>
+                        <li><a href="https://waterbackup.maribamedia.co.za" target="_blank" class="text-gray-400 hover:text-white text-sm transition-colors">Water Connector</a></li>
+                        <li><a href="https://www.concierge.maribamedia.co.za" target="_blank" class="text-gray-400 hover:text-white text-sm transition-colors">Concierge</a></li>
                         <li><a href="https://commercial.maribamedia.co.za" target="_blank" class="text-gray-400 hover:text-white text-sm transition-colors">Commercial Solar</a></li>
+                        <li><a href="http://www.energy.maribamedia.co.za" target="_blank" class="text-gray-400 hover:text-white text-sm transition-colors">Energy Mixer</a></li>
+                        <li><a href="https://www.training.maribamedia.co.za" target="_blank" class="text-gray-400 hover:text-white text-sm transition-colors">TrainingOS</a></li>
                     </ul>
                 </div>
 
                 <!-- Contact -->
                 <div>
-                    <h5 class="text-lg font-bold text-white mb-6 font-display">Contact</h5>
+                    <h5 class="text-lg font-bold text-white mb-6 font-display">Lab Contact</h5>
                     <ul class="space-y-3">
                         <li class="flex items-center gap-3 text-sm text-gray-400">
                             <i data-lucide="mail" class="w-4 h-4 text-white"></i>
@@ -1078,7 +1252,7 @@
                         </li>
                         <li class="flex items-center gap-3 text-sm text-gray-400">
                             <i data-lucide="map-pin" class="w-4 h-4 text-white"></i>
-                            <span>Bronkhorstspruit, South Africa</span>
+                            <span>Business Development Lab Network</span>
                         </li>
                     </ul>
                 </div>
@@ -1086,7 +1260,7 @@
 
             <div class="border-t border-gray-800 pt-8 text-center">
                 <p class="text-gray-500 text-sm">
-                    © 2025 Business Development Lab | Mariba Media. Company Registration No: 2024 / 132788 / 07.
+                    © 2025 Mariba Business Development Lab | Exclusive Performance-Bias Network. Company Registration No: 2024 / 132788 / 07.
                 </p>
                 <div class="mt-4 flex flex-wrap justify-center gap-4 md:gap-6 text-sm text-gray-500">
                     <a href="https://www.freeprivacypolicy.com/live/19ac9e12-2d32-49e8-b611-a103aaec0171" target="_blank" class="hover:text-gray-300">Privacy Policy</a>
@@ -1099,7 +1273,7 @@
 
     <!-- WhatsApp Widget -->
     <div class="whatsapp-widget">
-        <a href="https://wa.me/27766473499?text=Hi%20Business%20Development%20Lab%2C%20I'm%20interested%20in%20your%20free%20site%20assessment%20for%3A%20Water%20Connector%2C%20Solar%20Connector%2C%20or%20Commercial%20Solar%20Connector" 
+        <a href="https://wa.me/27766473499?text=Hi%20Mariba%20Business%20Development%20Lab%2C%20I'm%20interested%20in%20your%20revenue%20systems%3A%20Solar%20Connector%2C%20Water%20Connector%2C%20Concierge%2C%20Commercial%20Solar%2C%20Energy%20Mixer%2C%20or%20TrainingOS" 
            target="_blank" 
            class="whatsapp-button"
            aria-label="Chat on WhatsApp">
@@ -1186,6 +1360,35 @@
         // Re-initialize AOS on resize
         window.addEventListener('resize', () => {
             AOS.refresh();
+        });
+
+        // Enhanced card hover animations
+        document.querySelectorAll('.enhanced-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Animate service grid items on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-grid-item').forEach(item => {
+            observer.observe(item);
         });
     </script>
 </body>
