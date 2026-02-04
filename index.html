@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Development Lab Network | Performance-Bias Revenue Generation</title>
-    <meta name="description" content="Exclusive business development lab network focusing on revenue growth through demand generation, media buying, and sales systems with performance bias guarantees.">
+    <title>Mariba Media | Performance-Based Call Network</title>
+    <meta name="description" content="We help buyers, agents and operators fulfill demand using performance-based calls across solar, insurance, auto, home services & more.">
     <meta name="theme-color" content="#000000">
     
     <!-- Favicon -->
@@ -36,14 +36,11 @@
               primary: '#000000',
               secondary: '#111827',
               accent: '#25D366',
-              lab: {
-                red: '#DC2626',
+              mariba: {
                 blue: '#2563EB',
                 green: '#059669',
-                purple: '#7C3AED',
                 orange: '#EA580C',
-                indigo: '#4F46E5',
-                teal: '#0D9488'
+                purple: '#7C3AED'
               }
             }
           }
@@ -63,32 +60,6 @@
         -moz-osx-font-smoothing: grayscale;
       }
 
-      /* Fix for clickable links - remove any overlays */
-      .enhanced-card {
-        position: relative;
-      }
-      
-      /* Ensure links are always clickable */
-      a {
-        position: relative;
-        z-index: 10;
-      }
-      
-      .clickable-area {
-        position: relative;
-        z-index: 20;
-      }
-
-      /* Remove any overlay that might block clicks */
-      .enhanced-card::after {
-        display: none !important;
-      }
-
-      .lab-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      }
-
       .section-header {
         position: relative;
         display: inline-block;
@@ -106,47 +77,40 @@
         background: #000000;
       }
 
-      .service-badge {
+      .industry-badge {
         display: inline-block;
-        padding: 0.25rem 0.75rem;
+        padding: 0.5rem 1rem;
         background: #000000;
         color: white;
-        border-radius: 9999px;
-        font-size: 0.75rem;
+        border-radius: 0.375rem;
+        font-size: 0.875rem;
         font-weight: 600;
-        margin-bottom: 1rem;
+        margin: 0.25rem;
       }
 
-      .lab-icon-container {
-        width: 64px;
-        height: 64px;
-        border-radius: 1rem;
+      .feature-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 0.75rem;
         background: #000000;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 1.5rem;
-      }
-
-      .service-highlight {
-        display: flex;
-        align-items: flex-start;
         margin-bottom: 1rem;
-        padding: 0.75rem;
-        border-radius: 0.75rem;
-        background: #f9fafb;
       }
 
-      .industry-pill {
-        display: inline-flex;
-        align-items: center;
-        padding: 0.375rem 0.75rem;
-        background: #f3f4f6;
-        border-radius: 9999px;
-        font-size: 0.75rem;
-        font-weight: 500;
-        color: #4b5563;
-        margin: 0.125rem;
+      .benefit-card {
+        padding: 1.5rem;
+        border: 2px solid #e5e7eb;
+        border-radius: 1rem;
+        transition: all 0.3s ease;
+        background: white;
+      }
+      
+      .benefit-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        border-color: #000000;
       }
 
       /* WhatsApp Widget */
@@ -174,30 +138,24 @@
         box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
       }
 
-      /* Performance Metrics */
-      .performance-metric {
-        display: flex;
-        flex-direction: column;
+      .performance-pill {
+        display: inline-flex;
         align-items: center;
-        padding: 1.5rem;
-        background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
-        border-radius: 1rem;
-        border: 1px solid #e5e7eb;
-        transition: all 0.3s ease;
-      }
-      
-      .performance-metric:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      }
-      
-      .metric-value {
-        font-size: 2rem;
-        font-weight: 800;
+        padding: 0.5rem 1rem;
+        background: #f3f4f6;
+        border-radius: 9999px;
+        font-size: 0.875rem;
+        font-weight: 600;
         color: #000000;
-        display: block;
-        line-height: 1;
-        margin-bottom: 0.5rem;
+        margin: 0.25rem;
+      }
+
+      /* Cal.com Calendar Styles */
+      .cal-embed-container {
+        border-radius: 0.75rem;
+        overflow: hidden;
+        height: 600px;
+        background: white;
       }
     </style>
 </head>
@@ -208,24 +166,24 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
             <a href="#home" class="flex items-center gap-2.5 group">
                 <div class="bg-black p-1.5 rounded-lg">
-                    <i data-lucide="flask-conical" class="w-5 h-5 text-white"></i>
+                    <i data-lucide="phone-call" class="w-5 h-5 text-white"></i>
                 </div>
                 <span class="text-lg font-black tracking-tight text-black">
-                    Mariba Business Development Lab
-                    <span class="block text-xs font-normal text-gray-600 -mt-1">Performance-Bias Revenue Systems</span>
+                    Mariba Media
+                    <span class="block text-xs font-normal text-gray-600 -mt-1">Performance-Based Pay-Per-Call Network</span>
                 </span>
             </a>
 
             <!-- Desktop Nav -->
             <div class="hidden md:flex items-center gap-8">
-                <a href="#home" class="text-sm font-semibold text-gray-700 hover:text-black px-2 py-1">Lab Network</a>
-                <a href="#solutions" class="text-sm font-semibold text-gray-700 hover:text-black px-2 py-1">Performance Solutions</a>
-                <a href="#services" class="text-sm font-semibold text-gray-700 hover:text-black px-2 py-1">Revenue Systems</a>
-                <a href="#process" class="text-sm font-semibold text-gray-700 hover:text-black px-2 py-1">90-Day Framework</a>
+                <a href="#home" class="text-sm font-semibold text-gray-700 hover:text-black px-2 py-1">Home</a>
+                <a href="#how-it-works" class="text-sm font-semibold text-gray-700 hover:text-black px-2 py-1">How It Works</a>
+                <a href="#industries" class="text-sm font-semibold text-gray-700 hover:text-black px-2 py-1">Industries</a>
+                <a href="#benefits" class="text-sm font-semibold text-gray-700 hover:text-black px-2 py-1">Benefits</a>
                 
-                <a href="https://cal.com/partner-discovery/south-africa" target="_blank" rel="noopener noreferrer" 
+                <a href="#contact" 
                    class="bg-black hover:bg-gray-900 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all duration-300 shadow-md">
-                    Free Lab Assessment
+                    Get Qualified Calls
                 </a>
             </div>
 
@@ -238,13 +196,13 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white absolute w-full top-full left-0 shadow-xl">
             <div class="px-4 py-4 space-y-1">
-                <a href="#home" class="block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg">Lab Network</a>
-                <a href="#solutions" class="block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg">Performance Solutions</a>
-                <a href="#services" class="block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg">Revenue Systems</a>
-                <a href="#process" class="block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg">90-Day Framework</a>
+                <a href="#home" class="block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg">Home</a>
+                <a href="#how-it-works" class="block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg">How It Works</a>
+                <a href="#industries" class="block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg">Industries</a>
+                <a href="#benefits" class="block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg">Benefits</a>
                 <div class="pt-2 px-4">
-                    <a href="https://cal.com/partner-discovery/south-africa" target="_blank" class="block w-full text-center bg-black hover:bg-gray-900 text-white px-5 py-3 rounded-lg font-bold shadow-md">
-                        Free Lab Assessment
+                    <a href="#contact" class="block w-full text-center bg-black hover:bg-gray-900 text-white px-5 py-3 rounded-lg font-bold shadow-md">
+                        Get Qualified Calls
                     </a>
                 </div>
             </div>
@@ -257,503 +215,313 @@
             <div class="text-center">
                 <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black text-white text-sm font-semibold mb-8">
                     <i data-lucide="zap" class="w-4 h-4"></i>
-                    <span>Exclusive Business Development Lab Network</span>
+                    <span>Performance-Based Pay-Per-Call Network</span>
                 </div>
 
                 <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">
-                    <span>Revenue Through</span>
+                    <span>QUALIFIED CALLS.</span>
                     <br>
-                    <span class="text-black">Performance Bias</span>
+                    <span class="text-black">NO RISK.</span>
                 </h1>
 
-                <h2 class="text-2xl md:text-3xl font-bold text-black mb-10">
-                    We build business revenue systems through demand generation,
+                <h2 class="text-xl md:text-2xl font-bold text-black mb-10">
+                    We help buyers, agents and operators fulfill demand using performance-based calls
                     <br class="hidden md:block">
-                    <span class="text-gray-700">media buying, and sales systems. No revenue = No pay.</span>
+                    <span class="text-gray-700">across solar, insurance, auto, home services & more.</span>
                 </h2>
+
+                <!-- Industry Badges -->
+                <div class="flex flex-wrap justify-center gap-2 mb-12">
+                    <span class="industry-badge">Insurance</span>
+                    <span class="industry-badge">Solar</span>
+                    <span class="industry-badge">Auto</span>
+                    <span class="industry-badge">Plumbing</span>
+                    <span class="industry-badge">Remodeling</span>
+                    <span class="industry-badge">Home Services</span>
+                </div>
 
                 <div class="max-w-3xl mx-auto mb-12">
                     <p class="text-lg text-gray-600 leading-relaxed mb-8">
-                        As an exclusive business development lab network, we deploy performance-bias systems focused on generating measurable revenue. Our lab specializes in demand generation, media buying, and sales system optimization with guaranteed results.
+                        We deliver verified, high-intent phone leads on a pure pay-per-call model. You only pay for qualified calls that meet your criteria—no upfront fees, no lead waste.
                     </p>
                     
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
-                        <div class="performance-metric">
-                            <span class="metric-value">100%</span>
-                            <span class="text-sm text-gray-600 text-center">Performance Bias</span>
+                        <div class="performance-pill">
+                            <i data-lucide="shield-check" class="w-4 h-4 mr-2"></i>
+                            Verified Calls
                         </div>
-                        <div class="performance-metric">
-                            <span class="metric-value">24h</span>
-                            <span class="text-sm text-gray-600 text-center">Call Delivery</span>
+                        <div class="performance-pill">
+                            <i data-lucide="clock" class="w-4 h-4 mr-2"></i>
+                            24h Delivery
                         </div>
-                        <div class="performance-metric">
-                            <span class="metric-value">90</span>
-                            <span class="text-sm text-gray-600 text-center">Day Guarantee</span>
+                        <div class="performance-pill">
+                            <i data-lucide="dollar-sign" class="w-4 h-4 mr-2"></i>
+                            Pay Per Call
                         </div>
-                        <div class="performance-metric">
-                            <span class="metric-value">0%</span>
-                            <span class="text-sm text-gray-600 text-center">Upfront Cost</span>
+                        <div class="performance-pill">
+                            <i data-lucide="target" class="w-4 h-4 mr-2"></i>
+                            High-Intent
                         </div>
                     </div>
                 </div>
 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="https://cal.com/partner-discovery/south-africa" target="_blank"
+                    <a href="#contact"
                        class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-xl border-2 border-black text-base sm:text-lg">
-                        Book Lab Discovery
-                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        Book Discovery Call
+                        <i data-lucide="calendar" class="w-5 h-5"></i>
                     </a>
-                    <a href="#services"
+                    <a href="#how-it-works"
                        class="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-50 text-black border-2 border-black px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl text-base sm:text-lg">
-                        <i data-lucide="layers" class="w-5 h-5"></i>
-                        View Revenue Systems
+                        <i data-lucide="play-circle" class="w-5 h-5"></i>
+                        See How It Works
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Solutions Section -->
-    <section id="solutions" class="py-20 md:py-24 bg-gray-50">
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 md:py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="section-header text-3xl md:text-4xl font-bold text-black mb-6">Performance-Bias Revenue Systems</h2>
+                <h2 class="section-header text-3xl md:text-4xl font-bold text-black mb-6">Our Call Network Provides</h2>
                 <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                    Our lab network deploys specialized revenue generation systems across three core disciplines, each with performance guarantees and measurable outcomes.
+                    A complete performance-based call solution designed to deliver only qualified, high-intent calls to your business.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Demand Generation Lab -->
-                <div class="lab-card p-6 md:p-8 border border-gray-200 rounded-xl bg-white">
-                    <div class="lab-icon-container">
-                        <i data-lucide="trending-up" class="w-8 h-8 text-white"></i>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Guaranteed Call Delivery -->
+                <div class="benefit-card">
+                    <div class="feature-icon">
+                        <i data-lucide="phone-incoming" class="w-6 h-6 text-white"></i>
                     </div>
-                    <h3 class="text-xl md:text-2xl font-bold text-black mb-4">Demand Generation Lab</h3>
-                    <p class="text-gray-600 mb-6">
-                        Specialized systems that create qualified demand and deliver measurable leads through targeted campaigns and conversion optimization.
+                    <h3 class="text-xl md:text-2xl font-bold text-black mb-4">Guaranteed Call Delivery</h3>
+                    <p class="text-gray-600">
+                        Pre-screened, high-intent calls delivered on your schedule. We ensure consistent call flow that matches your capacity.
                     </p>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-2 text-sm text-gray-700">
-                            <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
-                            <span>Qualified lead generation systems</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-gray-700">
-                            <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
-                            <span>Performance-based campaign management</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-gray-700">
-                            <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
-                            <span>Conversion rate optimization</span>
-                        </div>
-                    </div>
                 </div>
 
-                <!-- Media Buying Lab -->
-                <div class="lab-card p-6 md:p-8 border border-gray-200 rounded-xl bg-white">
-                    <div class="lab-icon-container">
-                        <i data-lucide="bar-chart-3" class="w-8 h-8 text-white"></i>
+                <!-- Call Verification & Scoring -->
+                <div class="benefit-card">
+                    <div class="feature-icon">
+                        <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
                     </div>
-                    <h3 class="text-xl md:text-2xl font-bold text-black mb-4">Media Buying Lab</h3>
-                    <p class="text-gray-600 mb-6">
-                        Data-driven media acquisition and optimization systems that maximize ROI through strategic placement and performance tracking.
+                    <h3 class="text-xl md:text-2xl font-bold text-black mb-4">Call Verification & Scoring</h3>
+                    <p class="text-gray-600">
+                        Every call validated for relevance and intent before you pay. Our system scores calls based on qualification criteria.
                     </p>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-2 text-sm text-gray-700">
-                            <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
-                            <span>Strategic media placement systems</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-gray-700">
-                            <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
-                            <span>ROI-optimized buying strategies</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-gray-700">
-                            <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
-                            <span>Real-time performance analytics</span>
-                        </div>
-                    </div>
                 </div>
 
-                <!-- Sales Systems Lab -->
-                <div class="lab-card p-6 md:p-8 border border-gray-200 rounded-xl bg-white">
-                    <div class="lab-icon-container">
-                        <i data-lucide="settings" class="w-8 h-8 text-white"></i>
+                <!-- Performance-Based Billing -->
+                <div class="benefit-card">
+                    <div class="feature-icon">
+                        <i data-lucide="credit-card" class="w-6 h-6 text-white"></i>
                     </div>
-                    <h3 class="text-xl md:text-2xl font-bold text-black mb-4">Sales Systems Lab</h3>
-                    <p class="text-gray-600 mb-6">
-                        Revenue conversion systems that transform leads into closed deals through optimized sales processes and performance tracking.
+                    <h3 class="text-xl md:text-2xl font-bold text-black mb-4">Performance-Based Billing</h3>
+                    <p class="text-gray-600">
+                        Only pay for calls that meet your qualification criteria. No monthly fees, no wasted ad spend.
                     </p>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-2 text-sm text-gray-700">
-                            <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
-                            <span>Sales process optimization</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-gray-700">
-                            <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
-                            <span>Conversion rate systems</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-gray-700">
-                            <i data-lucide="check-circle" class="w-4 h-4 text-black"></i>
-                            <span>Revenue tracking & analytics</span>
-                        </div>
+                </div>
+
+                <!-- Industry-Specific Callers -->
+                <div class="benefit-card">
+                    <div class="feature-icon">
+                        <i data-lucide="target" class="w-6 h-6 text-white"></i>
                     </div>
+                    <h3 class="text-xl md:text-2xl font-bold text-black mb-4">Industry-Specific Callers</h3>
+                    <p class="text-gray-600">
+                        Calls targeted to your exact service area and customer profile. We match callers with your specific industry needs.
+                    </p>
+                </div>
+
+                <!-- Real-Time Dashboard -->
+                <div class="benefit-card">
+                    <div class="feature-icon">
+                        <i data-lucide="bar-chart-3" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-bold text-black mb-4">Real-Time Call Dashboard</h3>
+                    <p class="text-gray-600">
+                        Track call volume, quality, and ROI live. Monitor performance and adjust criteria in real-time.
+                    </p>
+                </div>
+
+                <!-- No Risk Guarantee -->
+                <div class="benefit-card">
+                    <div class="feature-icon">
+                        <i data-lucide="thumbs-up" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-bold text-black mb-4">No-Risk Guarantee</h3>
+                    <p class="text-gray-600">
+                        Start with no upfront costs. You only pay for qualified calls that meet your specific business criteria.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section - Performance-Bias Offers -->
-    <section id="services" class="py-20 md:py-24 bg-white">
+    <!-- Industries Section -->
+    <section id="industries" class="py-20 md:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 border border-gray-300 text-black text-sm font-semibold mb-6">
-                    <i data-lucide="package" class="w-4 h-4"></i>
-                    <span>Revenue Generation Systems</span>
+                    <i data-lucide="building" class="w-4 h-4"></i>
+                    <span>Industries We Serve</span>
                 </div>
-                <h2 class="text-3xl md:text-5xl font-bold text-black mb-6">Performance-Bias Offers</h2>
+                <h2 class="text-3xl md:text-5xl font-bold text-black mb-6">Who We Serve</h2>
                 <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                    Our specialized revenue systems deliver measurable results with performance guarantees. Zero upfront cost, payment only on results.
+                    Our performance-based call network delivers qualified leads to businesses across multiple high-demand industries.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
-                <!-- Solar Connector -->
-                <div class="enhanced-card p-6 border border-gray-200 rounded-xl bg-white">
-                    <span class="service-badge" style="background-color: #DC2626;">Solar Revenue System</span>
-                    <div class="lab-icon-container" style="background-color: #DC2626;">
-                        <i data-lucide="sun" class="w-8 h-8 text-white"></i>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Insurance -->
+                <div class="p-6 border border-gray-200 rounded-xl bg-white">
+                    <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center mb-4">
+                        <i data-lucide="shield" class="w-6 h-6 text-blue-600"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-black mb-3">Solar Connector</h4>
+                    <h4 class="text-xl font-bold text-black mb-3">Insurance Agencies & Brokers</h4>
                     <p class="text-gray-600 mb-4">
-                        Complete solar revenue generation system with guaranteed client acquisition and project financing.
+                        Qualified leads for auto, home, life, and commercial insurance. Pre-screened callers ready for quotes.
                     </p>
-                    
-                    <div class="mt-6">
-                        <div class="service-highlight">
-                            <div class="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center mr-3">
-                                <i data-lucide="zap" class="w-3 h-3 text-red-600"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-semibold text-black">Residential Solar Lead Generation</h5>
-                                <p class="text-sm text-gray-600">Performance-based client acquisition</p>
-                            </div>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 text-sm text-gray-700">
+                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
+                            <span>Personal Liability Insurance</span>
                         </div>
-                        <div class="service-highlight">
-                            <div class="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center mr-3">
-                                <i data-lucide="building" class="w-3 h-3 text-red-600"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-semibold text-black">Commercial Solar Development</h5>
-                                <p class="text-sm text-gray-600">Enterprise project financing & deployment</p>
-                            </div>
+                        <div class="flex items-center gap-2 text-sm text-gray-700">
+                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
+                            <span>Auto Insurance Quotes</span>
                         </div>
-                        <div class="service-highlight">
-                            <div class="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center mr-3">
-                                <i data-lucide="dollar-sign" class="w-3 h-3 text-red-600"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-semibold text-black">Performance-Based Commission</h5>
-                                <p class="text-sm text-gray-600">Only pay on successful project closure</p>
-                            </div>
+                        <div class="flex items-center gap-2 text-sm text-gray-700">
+                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
+                            <span>Home Insurance Coverage</span>
                         </div>
-                    </div>
-
-                    <div class="mt-8">
-                        <a href="https://solar.maribamedia.co.za" target="_blank" rel="noopener noreferrer"
-                           class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 transition-colors clickable-area">
-                            Visit Solar System <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                        </a>
                     </div>
                 </div>
 
-                <!-- Water Connector -->
-                <div class="enhanced-card p-6 border border-gray-200 rounded-xl bg-white">
-                    <span class="service-badge" style="background-color: #2563EB;">Water Revenue System</span>
-                    <div class="lab-icon-container" style="background-color: #2563EB;">
-                        <i data-lucide="droplets" class="w-8 h-8 text-white"></i>
+                <!-- Solar -->
+                <div class="p-6 border border-gray-200 rounded-xl bg-white">
+                    <div class="w-12 h-12 rounded-lg bg-orange-100 flex items-center justify-center mb-4">
+                        <i data-lucide="sun" class="w-6 h-6 text-orange-600"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-black mb-3">Water Connector</h4>
+                    <h4 class="text-xl font-bold text-black mb-3">Solar Installation Companies</h4>
                     <p class="text-gray-600 mb-4">
-                        Water solutions revenue system delivering qualified leads for borehole, storage, and pumping systems.
+                        High-intent homeowners and businesses ready for solar consultations and installations.
                     </p>
-                    
-                    <div class="mt-6">
-                        <div class="service-highlight">
-                            <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mr-3">
-                                <i data-lucide="droplet" class="w-3 h-3 text-blue-600"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-semibold text-black">Borehole Lead Generation</h5>
-                                <p class="text-sm text-gray-600">Targeted demand creation for water solutions</p>
-                            </div>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 text-sm text-gray-700">
+                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
+                            <span>Residential Solar Installations</span>
                         </div>
-                        <div class="service-highlight">
-                            <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mr-3">
-                                <i data-lucide="hard-drive" class="w-3 h-3 text-blue-600"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-semibold text-black">Storage System Sales</h5>
-                                <p class="text-sm text-gray-600">Water backup system client acquisition</p>
-                            </div>
+                        <div class="flex items-center gap-2 text-sm text-gray-700">
+                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
+                            <span>Commercial Solar Projects</span>
                         </div>
-                        <div class="service-highlight">
-                            <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mr-3">
-                                <i data-lucide="settings" class="w-3 h-3 text-blue-600"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-semibold text-black">Pump Installation Leads</h5>
-                                <p class="text-sm text-gray-600">High-conversion service leads</p>
-                            </div>
+                        <div class="flex items-center gap-2 text-sm text-gray-700">
+                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
+                            <span>Solar Financing Consultations</span>
                         </div>
-                    </div>
-
-                    <div class="mt-8">
-                        <a href="https://waterbackup.maribamedia.co.za" target="_blank" rel="noopener noreferrer"
-                           class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 transition-colors clickable-area">
-                            Visit Water System <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                        </a>
                     </div>
                 </div>
 
-                <!-- Concierge -->
-                <div class="enhanced-card p-6 border border-gray-200 rounded-xl bg-white">
-                    <span class="service-badge" style="background-color: #059669;">Premium Call System</span>
-                    <div class="lab-icon-container" style="background-color: #059669;">
-                        <i data-lucide="phone-call" class="w-8 h-8 text-white"></i>
+                <!-- Auto -->
+                <div class="p-6 border border-gray-200 rounded-xl bg-white">
+                    <div class="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center mb-4">
+                        <i data-lucide="car" class="w-6 h-6 text-gray-600"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-black mb-3">Concierge</h4>
+                    <h4 class="text-xl font-bold text-black mb-3">Auto Repair & Parts Suppliers</h4>
                     <p class="text-gray-600 mb-4">
-                        Pay-per-call system delivering qualified calls within 24 hours across multiple high-value industries.
+                        Vehicle owners needing immediate repairs, parts, or maintenance services.
                     </p>
-                    
-                    <div class="mt-6">
-                        <div class="service-highlight">
-                            <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mr-3">
-                                <i data-lucide="shield" class="w-3 h-3 text-green-600"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-semibold text-black">24-Hour Call Delivery</h5>
-                                <p class="text-sm text-gray-600">Guaranteed qualified calls in one day</p>
-                            </div>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 text-sm text-gray-700">
+                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
+                            <span>Auto Repair Services</span>
                         </div>
-                        <div class="service-highlight">
-                            <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mr-3">
-                                <i data-lucide="credit-card" class="w-3 h-3 text-green-600"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-semibold text-black">Pay-Per-Call Model</h5>
-                                <p class="text-sm text-gray-600">Only pay for qualified calls received</p>
-                            </div>
+                        <div class="flex items-center gap-2 text-sm text-gray-700">
+                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
+                            <span>Engine Replacement</span>
                         </div>
-                        <div class="service-highlight">
-                            <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mr-3">
-                                <i data-lucide="filter" class="w-3 h-3 text-green-600"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-semibold text-black">Industry Specialization</h5>
-                                <p class="text-sm text-gray-600">Targeted call generation by sector</p>
-                            </div>
+                        <div class="flex items-center gap-2 text-sm text-gray-700">
+                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
+                            <span>Auto Parts Sales</span>
                         </div>
-                    </div>
-
-                    <!-- Industry Pills -->
-                    <div class="mt-6 flex flex-wrap gap-1">
-                        <span class="industry-pill">Insurance</span>
-                        <span class="industry-pill">Solar</span>
-                        <span class="industry-pill">Personal Liability</span>
-                        <span class="industry-pill">Auto Parts</span>
-                        <span class="industry-pill">Engine Replacement</span>
-                        <span class="industry-pill">Drain Services</span>
-                        <span class="industry-pill">Plumbing</span>
-                        <span class="industry-pill">Home Remodeling</span>
-                    </div>
-
-                    <div class="mt-8">
-                        <a href="https://www.concierge.maribamedia.co.za" target="_blank" rel="noopener noreferrer"
-                           class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 transition-colors clickable-area">
-                            Visit Concierge System <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                        </a>
                     </div>
                 </div>
 
-                <!-- Commercial Solar Connector -->
-                <div class="enhanced-card p-6 border border-gray-200 rounded-xl bg-white">
-                    <span class="service-badge" style="background-color: #EA580C;">Commercial Solar</span>
-                    <div class="lab-icon-container" style="background-color: #EA580C;">
-                        <i data-lucide="building-2" class="w-8 h-8 text-white"></i>
+                <!-- Plumbing -->
+                <div class="p-6 border border-gray-200 rounded-xl bg-white">
+                    <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center mb-4">
+                        <i data-lucide="droplets" class="w-6 h-6 text-blue-600"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-black mb-3">Commercial Solar Connector</h4>
+                    <h4 class="text-xl font-bold text-black mb-3">Plumbing & HVAC Services</h4>
                     <p class="text-gray-600 mb-4">
-                        Enterprise solar solutions with guaranteed 80% electricity savings, comprehensive project financing, and development services for commercial properties.
+                        Emergency and scheduled plumbing, drain, and HVAC service calls.
                     </p>
-                    
-                    <div class="mt-6">
-                        <div class="service-highlight">
-                            <div class="w-6 h-6 rounded-full bg-orange-100 flex items-center justify-center mr-3">
-                                <i data-lucide="zap" class="w-3 h-3 text-orange-600"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-semibold text-black">Commercial Solar Installation</h5>
-                                <p class="text-sm text-gray-600">Tailored systems for businesses</p>
-                            </div>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 text-sm text-gray-700">
+                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
+                            <span>Emergency Plumbing</span>
                         </div>
-                        <div class="service-highlight">
-                            <div class="w-6 h-6 rounded-full bg-orange-100 flex items-center justify-center mr-3">
-                                <i data-lucide="battery" class="w-3 h-3 text-orange-600"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-semibold text-black">BESS Installation & Commission</h5>
-                                <p class="text-sm text-gray-600">Battery Energy Storage Systems</p>
-                            </div>
+                        <div class="flex items-center gap-2 text-sm text-gray-700">
+                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
+                            <span>Drain Services</span>
                         </div>
-                        <div class="service-highlight">
-                            <div class="w-6 h-6 rounded-full bg-orange-100 flex items-center justify-center mr-3">
-                                <i data-lucide="dollar-sign" class="w-3 h-3 text-orange-600"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-semibold text-black">Energy Finance Solutions</h5>
-                                <p class="text-sm text-gray-600">Greenfield & Brownfield funding</p>
-                            </div>
+                        <div class="flex items-center gap-2 text-sm text-gray-700">
+                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
+                            <span>HVAC Installation & Repair</span>
                         </div>
-                    </div>
-
-                    <div class="mt-8 space-y-3">
-                        <a href="https://commercial.maribamedia.co.za" target="_blank" rel="noopener noreferrer"
-                           class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 transition-colors clickable-area block">
-                            Free Energy Assessment <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                        </a>
-                        <a href="https://funding.maribamedia.co.za" target="_blank" rel="noopener noreferrer"
-                           class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 transition-colors clickable-area block">
-                            Free Financing Assessment <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                        </a>
                     </div>
                 </div>
 
-                <!-- Energy Mixer -->
-                <div class="enhanced-card p-6 border border-gray-200 rounded-xl bg-white">
-                    <span class="service-badge" style="background-color: #7C3AED;">Hybrid Energy</span>
-                    <div class="lab-icon-container" style="background-color: #7C3AED;">
-                        <i data-lucide="battery-charging" class="w-8 h-8 text-white"></i>
+                <!-- Remodeling -->
+                <div class="p-6 border border-gray-200 rounded-xl bg-white">
+                    <div class="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center mb-4">
+                        <i data-lucide="home" class="w-6 h-6 text-green-600"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-black mb-3">Energy Mixer</h4>
+                    <h4 class="text-xl font-bold text-black mb-3">Home Remodeling & Contracting</h4>
                     <p class="text-gray-600 mb-4">
-                        US-patented DC power blending system automating energy management for commercial enterprises with significant efficiency improvements.
+                        Homeowners planning renovations, additions, or home improvement projects.
                     </p>
-                    
-                    <div class="mt-6">
-                        <div class="service-highlight">
-                            <div class="w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center mr-3">
-                                <i data-lucide="cpu" class="w-3 h-3 text-purple-600"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-semibold text-black">US-Patented DC Power Blending</h5>
-                                <p class="text-sm text-gray-600">Advanced energy management technology</p>
-                            </div>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 text-sm text-gray-700">
+                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
+                            <span>Home Remodeling Projects</span>
                         </div>
-                        <div class="service-highlight">
-                            <div class="w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center mr-3">
-                                <i data-lucide="trending-down" class="w-3 h-3 text-purple-600"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-semibold text-black">40% Operational Cost Reduction</h5>
-                                <p class="text-sm text-gray-600">Significant savings on energy expenses</p>
-                            </div>
+                        <div class="flex items-center gap-2 text-sm text-gray-700">
+                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
+                            <span>Kitchen & Bathroom Renovations</span>
                         </div>
-                        <div class="service-highlight">
-                            <div class="w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center mr-3">
-                                <i data-lucide="refresh-cw" class="w-3 h-3 text-purple-600"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-semibold text-black">Automated Energy Management</h5>
-                                <p class="text-sm text-gray-600">Smart optimization for commercial enterprises</p>
-                            </div>
+                        <div class="flex items-center gap-2 text-sm text-gray-700">
+                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
+                            <span>Home Additions</span>
                         </div>
-                    </div>
-
-                    <div class="mt-8">
-                        <a href="http://www.energy.maribamedia.co.za" target="_blank" rel="noopener noreferrer"
-                           class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 transition-colors clickable-area">
-                            Free System Assessment <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                        </a>
                     </div>
                 </div>
 
-                <!-- TrainingOS Enterprise -->
-                <div class="enhanced-card p-6 border border-gray-200 rounded-xl bg-white">
-                    <span class="service-badge" style="background-color: #4F46E5;">AI-Powered LMS</span>
-                    <div class="lab-icon-container" style="background-color: #4F46E5;">
-                        <i data-lucide="graduation-cap" class="w-8 h-8 text-white"></i>
+                <!-- Sales & Marketing -->
+                <div class="p-6 border border-gray-200 rounded-xl bg-white">
+                    <div class="w-12 h-12 rounded-lg bg-purple-100 flex items-center justify-center mb-4">
+                        <i data-lucide="users" class="w-6 h-6 text-purple-600"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-black mb-3">TrainingOS Enterprise</h4>
+                    <h4 class="text-xl font-bold text-black mb-3">Sales Teams & Marketing Directors</h4>
                     <p class="text-gray-600 mb-4">
-                        Complete AI-Powered LMS with Annual Support & Full Management. Everything you need to scale your training organization with enterprise features.
+                        Businesses needing high-quality leads for sales teams and call centers.
                     </p>
-                    
-                    <div class="mt-6">
-                        <div class="service-highlight">
-                            <div class="w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center mr-3">
-                                <i data-lucide="brain" class="w-3 h-3 text-indigo-600"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-semibold text-black">AI-Powered Learning Management</h5>
-                                <p class="text-sm text-gray-600">Smart course creation & student grading</p>
-                            </div>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 text-sm text-gray-700">
+                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
+                            <span>Sales Team Lead Generation</span>
                         </div>
-                        <div class="service-highlight">
-                            <div class="w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center mr-3">
-                                <i data-lucide="video" class="w-3 h-3 text-indigo-600"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-semibold text-black">Video Course Creation Platform</h5>
-                                <p class="text-sm text-gray-600">Professional training content development</p>
-                            </div>
+                        <div class="flex items-center gap-2 text-sm text-gray-700">
+                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
+                            <span>Call Center Qualified Calls</span>
                         </div>
-                        <div class="service-highlight">
-                            <div class="w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center mr-3">
-                                <i data-lucide="users" class="w-3 h-3 text-indigo-600"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-semibold text-black">Complete Training Management</h5>
-                                <p class="text-sm text-gray-600">Annual support & full administration</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mt-8">
-                        <a href="https://www.training.maribamedia.co.za" target="_blank" rel="noopener noreferrer"
-                           class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 transition-colors clickable-area">
-                            Explore TrainingOS <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Performance Guarantee -->
-            <div class="bg-gradient-to-r from-black to-gray-900 rounded-2xl p-8 md:p-12 text-white">
-                <div class="flex flex-col md:flex-row items-center gap-8">
-                    <div class="flex-shrink-0">
-                        <div class="w-20 h-20 rounded-full bg-white/10 flex items-center justify-center">
-                            <i data-lucide="shield-check" class="w-10 h-10 text-white"></i>
-                        </div>
-                    </div>
-                    <div class="flex-grow">
-                        <h3 class="text-2xl md:text-3xl font-bold mb-4">Performance Bias Guarantee</h3>
-                        <p class="text-gray-300 mb-6 max-w-3xl">
-                            All our revenue systems operate on a strict performance-bias model. We only get paid when you generate revenue. No upfront costs, no retainers - just measurable results.
-                        </p>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-green-400"></i>
-                                <span>Zero upfront implementation costs</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-green-400"></i>
-                                <span>90-day measurable results guarantee</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-green-400"></i>
-                                <span>Performance-based commission only</span>
-                            </div>
+                        <div class="flex items-center gap-2 text-sm text-gray-700">
+                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
+                            <span>Marketing Campaign Optimization</span>
                         </div>
                     </div>
                 </div>
@@ -761,81 +529,258 @@
         </div>
     </section>
 
-    <!-- Process Section -->
-    <section id="process" class="py-20 md:py-24 bg-gray-50">
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20 md:py-24 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="section-header text-3xl md:text-4xl font-bold text-black mb-6">90-Day Revenue Framework</h2>
+                <h2 class="section-header text-3xl md:text-4xl font-bold text-black mb-6">Why Choose Our Call Network</h2>
                 <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                    Our structured lab process delivers measurable revenue growth through aligned incentives and performance tracking.
+                    The no-risk solution for businesses that want qualified leads without upfront costs or wasted ad spend.
                 </p>
             </div>
 
-            <!-- Process Steps -->
-            <div class="grid md:grid-cols-4 gap-8">
-                <!-- Step 1 -->
-                <div class="p-6 border-2 border-gray-200 rounded-xl bg-white">
-                    <div class="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center mx-auto mb-6">1</div>
-                    <div class="lab-icon-container mb-6 mx-auto">
-                        <i data-lucide="clipboard-check" class="w-6 h-6 text-white"></i>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Left Column -->
+                <div class="space-y-8">
+                    <div class="bg-white p-6 rounded-xl border border-gray-200">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-black flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="dollar-sign" class="w-5 h-5 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-black mb-2">Pay Only for Results</h3>
+                                <p class="text-gray-600">
+                                    No monthly retainers, no wasted ad spend. You only pay for qualified calls that meet your specific criteria.
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold text-black mb-4 text-center">Lab Assessment</h3>
-                    <p class="text-gray-600 text-center mb-6">Comprehensive analysis of your revenue systems and identification of growth opportunities.</p>
+
+                    <div class="bg-white p-6 rounded-xl border border-gray-200">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-black flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="filter" class="w-5 h-5 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-black mb-2">Custom Qualification Criteria</h3>
+                                <p class="text-gray-600">
+                                    Set your own criteria for what constitutes a qualified call. We filter out tire-kickers and deliver only serious prospects.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl border border-gray-200">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-black flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="trending-up" class="w-5 h-5 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-black mb-2">Scalable Call Volume</h3>
+                                <p class="text-gray-600">
+                                    Start small and scale up as you see results. Adjust call volume daily based on your team's capacity.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Step 2 -->
-                <div class="p-6 border-2 border-gray-200 rounded-xl bg-white">
-                    <div class="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center mx-auto mb-6">2</div>
-                    <div class="lab-icon-container mb-6 mx-auto">
-                        <i data-lucide="settings" class="w-6 h-6 text-white"></i>
+                <!-- Right Column -->
+                <div class="space-y-8">
+                    <div class="bg-white p-6 rounded-xl border border-gray-200">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-black flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="clock" class="w-5 h-5 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-black mb-2">24-Hour Setup</h3>
+                                <p class="text-gray-600">
+                                    Get started within 24 hours. No long-term contracts, no complicated onboarding process.
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold text-black mb-4 text-center">System Design</h3>
-                    <p class="text-gray-600 text-center mb-6">Custom revenue system design integrating demand generation, media buying, and sales optimization.</p>
-                </div>
 
-                <!-- Step 3 -->
-                <div class="p-6 border-2 border-gray-200 rounded-xl bg-white">
-                    <div class="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center mx-auto mb-6">3</div>
-                    <div class="lab-icon-container mb-6 mx-auto">
-                        <i data-lucide="zap" class="w-6 h-6 text-white"></i>
+                    <div class="bg-white p-6 rounded-xl border border-gray-200">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-black flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-black mb-2">Geographic Targeting</h3>
+                                <p class="text-gray-600">
+                                    Target calls from specific cities, regions, or radius around your business locations.
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold text-black mb-4 text-center">System Deployment</h3>
-                    <p class="text-gray-600 text-center mb-6">Implementation of revenue generation systems with real-time optimization and performance tracking.</p>
-                </div>
 
-                <!-- Step 4 -->
-                <div class="p-6 border-2 border-gray-200 rounded-xl bg-white">
-                    <div class="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center mx-auto mb-6">4</div>
-                    <div class="lab-icon-container mb-6 mx-auto">
-                        <i data-lucide="trending-up" class="w-6 h-6 text-white"></i>
+                    <div class="bg-white p-6 rounded-xl border border-gray-200">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-black flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="bar-chart" class="w-5 h-5 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-black mb-2">Transparent Reporting</h3>
+                                <p class="text-gray-600">
+                                    Real-time dashboard showing call volume, quality scores, conversion rates, and ROI calculations.
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold text-black mb-4 text-center">Revenue Validation</h3>
-                    <p class="text-gray-600 text-center mb-6">Performance measurement and validation against targets, with payment only on achieved results.</p>
                 </div>
             </div>
 
-            <!-- Final CTA -->
-            <div class="mt-20 md:mt-24 text-center">
-                <div class="bg-gradient-to-r from-black to-gray-900 rounded-3xl p-8 md:p-12 shadow-2xl">
-                    <h3 class="text-2xl md:text-4xl font-bold text-white mb-6">Ready to Deploy Revenue Systems?</h3>
-                    <p class="text-lg md:text-xl text-gray-300 mb-8 md:mb-10 max-w-2xl mx-auto">
-                        Start with a free lab assessment of your revenue generation potential.
+            <!-- CTA Box -->
+            <div class="mt-16 bg-gradient-to-r from-black to-gray-900 rounded-2xl p-8 md:p-12 text-white">
+                <div class="text-center">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4">Start Receiving Qualified Calls</h3>
+                    <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
+                        Only pay for calls that meet your criteria. No upfront fees, no lead waste.
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center">
-                        <a href="https://cal.com/partner-discovery/south-africa" target="_blank"
-                           class="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-black px-8 md:px-12 py-4 md:py-5 rounded-xl font-bold text-base md:text-lg transition-all duration-300 shadow-2xl">
-                            <i data-lucide="flask-conical" class="w-5 h-5 md:w-6 md:h-6"></i>
-                            Free Lab Assessment
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#contact"
+                           class="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-black px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-xl">
+                            <i data-lucide="calendar" class="w-5 h-5"></i>
+                            Book Discovery Call
                         </a>
                         <a href="mailto:victor@maribamedia.co.za"
-                           class="inline-flex items-center justify-center gap-3 bg-transparent hover:bg-white/10 text-white px-8 md:px-12 py-4 md:py-5 rounded-xl font-semibold text-base md:text-lg transition-all duration-300 border-2 border-white">
-                            <i data-lucide="mail" class="w-5 h-5 md:w-6 md:h-6"></i>
-                            Contact Lab Director
+                           class="inline-flex items-center justify-center gap-3 bg-transparent hover:bg-white/10 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 border-2 border-white">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                            Email Us
                         </a>
                     </div>
-                    <p class="mt-6 md:mt-8 text-gray-400 text-sm">
-                        Choose from: Solar Connector • Water Connector • Concierge • Commercial Solar • Energy Mixer • TrainingOS
-                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 md:py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-header text-3xl md:text-4xl font-bold text-black mb-6">Book Your Discovery Call</h2>
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                    Schedule a free discovery call to learn how our performance-based call network can deliver qualified leads to your business.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Contact Info -->
+                <div class="space-y-6">
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h3 class="text-xl font-bold text-black mb-4">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-black flex items-center justify-center">
+                                    <i data-lucide="mail" class="w-5 h-5 text-white"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-600">Email</p>
+                                    <a href="mailto:victor@maribamedia.co.za" class="font-semibold text-black hover:text-blue-600">
+                                        victor@maribamedia.co.za
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-black flex items-center justify-center">
+                                    <i data-lucide="phone" class="w-5 h-5 text-white"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-600">Phone</p>
+                                    <p class="font-semibold text-black">+27 (0) 76 647 3499</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-black flex items-center justify-center">
+                                    <i data-lucide="clock" class="w-5 h-5 text-white"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-600">Call Hours</p>
+                                    <p class="font-semibold text-black">Mon-Fri, 9AM-5PM SAST</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-black text-white p-6 rounded-xl">
+                        <h3 class="text-xl font-bold mb-4">Our Promise</h3>
+                        <p class="text-gray-300 mb-4">
+                            You only pay for qualified calls that meet your specific criteria. No results, no cost.
+                        </p>
+                        <div class="space-y-2">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-green-400"></i>
+                                <span>No upfront fees</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-green-400"></i>
+                                <span>24-hour setup</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-green-400"></i>
+                                <span>Pay per qualified call</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-green-400"></i>
+                                <span>Industry-specific targeting</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h3 class="text-xl font-bold text-black mb-4">Preferred Industries</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-white border border-gray-300 rounded-full text-sm">Insurance</span>
+                            <span class="px-3 py-1 bg-white border border-gray-300 rounded-full text-sm">Solar</span>
+                            <span class="px-3 py-1 bg-white border border-gray-300 rounded-full text-sm">Auto</span>
+                            <span class="px-3 py-1 bg-white border border-gray-300 rounded-full text-sm">Plumbing</span>
+                            <span class="px-3 py-1 bg-white border border-gray-300 rounded-full text-sm">Remodeling</span>
+                            <span class="px-3 py-1 bg-white border border-gray-300 rounded-full text-sm">Home Services</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cal.com Calendar Embed -->
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-lg bg-black flex items-center justify-center">
+                            <i data-lucide="calendar" class="w-5 h-5 text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-black">Schedule Discovery Call</h3>
+                            <p class="text-sm text-gray-600">Select a time that works for you</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Cal inline embed code begins -->
+                    <div class="cal-embed-container">
+                        <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-south-africa"></div>
+                    </div>
+                    <script type="text/javascript">
+                      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+                      Cal("init", "south-africa", {origin:"https://app.cal.com"});
+
+                      Cal.ns["south-africa"]("inline", {
+                        elementOrSelector:"#my-cal-inline-south-africa",
+                        config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+                        calLink: "partner-discovery/south-africa",
+                      });
+
+                      Cal.ns["south-africa"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+                    </script>
+                    <!-- Cal inline embed code ends -->
+
+                    <div class="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="info" class="w-5 h-5 text-blue-600 mt-0.5"></i>
+                            <div>
+                                <p class="text-sm text-blue-800">
+                                    <span class="font-semibold">What to expect:</span> During this 15-30 minute call, we'll discuss your business needs, target audience, and how our performance-based call network can deliver qualified leads to your team.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -850,15 +795,15 @@
                 <div class="lg:col-span-2">
                     <a href="#home" class="flex items-center gap-3 mb-6 group">
                         <div class="bg-white p-2 rounded-lg">
-                            <i data-lucide="flask-conical" class="w-6 h-6 text-black"></i>
+                            <i data-lucide="phone-call" class="w-6 h-6 text-black"></i>
                         </div>
                         <div>
-                            <span class="text-xl font-bold text-white">Mariba Business Development Lab</span>
-                            <span class="block text-sm text-gray-400">Performance-Bias Revenue Systems</span>
+                            <span class="text-xl font-bold text-white">Mariba Media</span>
+                            <span class="block text-sm text-gray-400">Performance-Based Pay-Per-Call Network</span>
                         </div>
                     </a>
                     <p class="text-gray-400 text-sm leading-relaxed mb-8 max-w-md">
-                        Exclusive business development lab network focusing on revenue growth through demand generation, media buying, and sales systems with performance bias guarantees.
+                        We help buyers, agents and operators fulfill demand using performance-based calls across solar, insurance, auto, home services & more.
                     </p>
                     <div class="flex gap-4">
                         <a href="https://www.facebook.com/people/Mariba-Media-Pty-Ltd/61576915266105/" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-white flex items-center justify-center text-gray-300 hover:text-black">
@@ -873,32 +818,33 @@
                     </div>
                 </div>
 
-                <!-- Solutions -->
+                <!-- Industries -->
                 <div>
-                    <h5 class="text-lg font-bold text-white mb-6">Lab Divisions</h5>
+                    <h5 class="text-lg font-bold text-white mb-6">Industries</h5>
                     <ul class="space-y-3">
-                        <li><a href="#solutions" class="text-gray-400 hover:text-white text-sm">Demand Generation Lab</a></li>
-                        <li><a href="#solutions" class="text-gray-400 hover:text-white text-sm">Media Buying Lab</a></li>
-                        <li><a href="#solutions" class="text-gray-400 hover:text-white text-sm">Sales Systems Lab</a></li>
+                        <li><a href="#industries" class="text-gray-400 hover:text-white text-sm">Insurance</a></li>
+                        <li><a href="#industries" class="text-gray-400 hover:text-white text-sm">Solar</a></li>
+                        <li><a href="#industries" class="text-gray-400 hover:text-white text-sm">Auto</a></li>
+                        <li><a href="#industries" class="text-gray-400 hover:text-white text-sm">Plumbing</a></li>
+                        <li><a href="#industries" class="text-gray-400 hover:text-white text-sm">Remodeling</a></li>
+                        <li><a href="#industries" class="text-gray-400 hover:text-white text-sm">Home Services</a></li>
                     </ul>
                 </div>
 
                 <!-- Services -->
                 <div>
-                    <h5 class="text-lg font-bold text-white mb-6">Revenue Systems</h5>
+                    <h5 class="text-lg font-bold text-white mb-6">Our Network</h5>
                     <ul class="space-y-3">
-                        <li><a href="https://solar.maribamedia.co.za" target="_blank" class="text-gray-400 hover:text-white text-sm">Solar Connector</a></li>
-                        <li><a href="https://waterbackup.maribamedia.co.za" target="_blank" class="text-gray-400 hover:text-white text-sm">Water Connector</a></li>
-                        <li><a href="https://www.concierge.maribamedia.co.za" target="_blank" class="text-gray-400 hover:text-white text-sm">Concierge</a></li>
-                        <li><a href="https://commercial.maribamedia.co.za" target="_blank" class="text-gray-400 hover:text-white text-sm">Commercial Solar</a></li>
-                        <li><a href="http://www.energy.maribamedia.co.za" target="_blank" class="text-gray-400 hover:text-white text-sm">Energy Mixer</a></li>
-                        <li><a href="https://www.training.maribamedia.co.za" target="_blank" class="text-gray-400 hover:text-white text-sm">TrainingOS</a></li>
+                        <li><a href="#how-it-works" class="text-gray-400 hover:text-white text-sm">How It Works</a></li>
+                        <li><a href="#benefits" class="text-gray-400 hover:text-white text-sm">Benefits</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white text-sm">Book a Call</a></li>
+                        <li><a href="mailto:victor@maribamedia.co.za" class="text-gray-400 hover:text-white text-sm">Contact Us</a></li>
                     </ul>
                 </div>
 
                 <!-- Contact -->
                 <div>
-                    <h5 class="text-lg font-bold text-white mb-6">Lab Contact</h5>
+                    <h5 class="text-lg font-bold text-white mb-6">Contact</h5>
                     <ul class="space-y-3">
                         <li class="flex items-center gap-3 text-sm text-gray-400">
                             <i data-lucide="mail" class="w-4 h-4 text-white"></i>
@@ -908,13 +854,17 @@
                             <i data-lucide="phone" class="w-4 h-4 text-white"></i>
                             <span>+27 (0) 76 647 3499</span>
                         </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-400">
+                            <i data-lucide="calendar" class="w-4 h-4 text-white"></i>
+                            <a href="#contact" class="hover:text-white">Book Discovery Call</a>
+                        </li>
                     </ul>
                 </div>
             </div>
 
             <div class="border-t border-gray-800 pt-8 text-center">
                 <p class="text-gray-500 text-sm">
-                    © 2025 Mariba Business Development Lab | Exclusive Performance-Bias Network. Company Registration No: 2024 / 132788 / 07.
+                    © 2025 Mariba Media | Performance-Based Pay-Per-Call Network. Company Registration No: 2024 / 132788 / 07.
                 </p>
             </div>
         </div>
@@ -922,7 +872,7 @@
 
     <!-- WhatsApp Widget -->
     <div class="whatsapp-widget">
-        <a href="https://wa.me/27766473499?text=Hi%20Mariba%20Business%20Development%20Lab%2C%20I'm%20interested%20in%20your%20revenue%20systems%3A%20Solar%20Connector%2C%20Water%20Connector%2C%20Concierge%2C%20Commercial%20Solar%2C%20Energy%20Mixer%2C%20or%20TrainingOS" 
+        <a href="https://wa.me/27766473499?text=Hi%20Mariba%20Media%2C%20I'm%20interested%20in%20your%20performance-based%20call%20network%20for%20qualified%20leads." 
            target="_blank" 
            class="whatsapp-button"
            aria-label="Chat on WhatsApp">
