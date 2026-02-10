@@ -4,22 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mariba Media | Performance-Based Call Network</title>
-    <meta name="description" content="We help buyers, agents and operators fulfill demand using performance-based calls across solar, insurance, auto, home services & more.">
-    <meta name="theme-color" content="#000000">
+    <meta name="description" content="We help buyers, agents and operators fulfill demand using performance-based calls across home services, professional services & senior care.">
+    <meta name="theme-color" content="#0f172a">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23000000'/%3E%3Cpath d='M30 30 L50 70 L70 30 M35 50 L65 50' stroke='white' stroke-width='8' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230f172a'/%3E%3Cpath d='M30 35 L50 75 L70 35' stroke='%2322d3ee' stroke-width='8' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -33,14 +30,38 @@
               display: ['Space Grotesk', 'sans-serif'],
             },
             colors: {
-              primary: '#000000',
-              secondary: '#111827',
-              accent: '#25D366',
               mariba: {
-                blue: '#2563EB',
-                green: '#059669',
-                orange: '#EA580C',
-                purple: '#7C3AED'
+                dark: '#0f172a',
+                navy: '#1e3a8a',
+                purple: '#581c87',
+                cyan: '#22d3ee',
+                blue: '#3b82f6',
+                accent: '#06b6d4'
+              }
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'slide-up': 'slideUp 0.8s ease-out forwards',
+              'fade-in': 'fadeIn 1s ease-out forwards',
+              'gradient-x': 'gradientX 15s ease infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              },
+              slideUp: {
+                '0%': { opacity: '0', transform: 'translateY(30px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              gradientX: {
+                '0%, 100%': { 'background-position': '0% 50%' },
+                '50%': { 'background-position': '100% 50%' },
               }
             }
           }
@@ -49,68 +70,146 @@
     </script>
     
     <style>
-      html {
-        scroll-padding-top: 80px;
-      }
-      
       body {
-        background-color: #ffffff;
-        color: #000000;
+        background-color: #0f172a;
+        color: #f8fafc;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        overflow-x: hidden;
       }
 
-      .section-header {
-        position: relative;
-        display: inline-block;
-        margin-bottom: 1.5rem;
+      /* Gradient Text */
+      .gradient-text {
+        background: linear-gradient(135deg, #22d3ee 0%, #3b82f6 50%, #8b5cf6 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      /* Animated Background */
+      .animated-bg {
+        background: linear-gradient(-45deg, #0f172a, #1e3a8a, #581c87, #0f172a);
+        background-size: 400% 400%;
+        animation: gradientX 15s ease infinite;
+      }
+
+      /* Glassmorphism */
+      .glass {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .glass-strong {
+        background: rgba(15, 23, 42, 0.8);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      /* Glow Effects */
+      .glow-cyan {
+        box-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
       }
       
-      .section-header::after {
+      .glow-purple {
+        box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+      }
+
+      /* Card Hover Effects */
+      .sector-card {
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        transform-style: preserve-3d;
+      }
+      
+      .sector-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 25px 50px -12px rgba(34, 211, 238, 0.25);
+      }
+
+      /* Network Lines Animation */
+      .network-line {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        animation: drawLine 3s ease-out forwards;
+      }
+
+      @keyframes drawLine {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      /* Particle Background */
+      .particle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: rgba(34, 211, 238, 0.5);
+        border-radius: 50%;
+        animation: particleFloat 20s infinite;
+      }
+
+      @keyframes particleFloat {
+        0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
+      }
+
+      /* Scroll Reveal */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease-out;
+      }
+      
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      
+      ::-webkit-scrollbar-track {
+        background: #0f172a;
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        background: #3b82f6;
+        border-radius: 5px;
+      }
+      
+      ::-webkit-scrollbar-thumb:hover {
+        background: #22d3ee;
+      }
+
+      /* Button Shine Effect */
+      .btn-shine {
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .btn-shine::before {
         content: '';
         position: absolute;
-        bottom: -8px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 60px;
-        height: 3px;
-        background: #000000;
-      }
-
-      .industry-badge {
-        display: inline-block;
-        padding: 0.5rem 1rem;
-        background: #000000;
-        color: white;
-        border-radius: 0.375rem;
-        font-size: 0.875rem;
-        font-weight: 600;
-        margin: 0.25rem;
-      }
-
-      .feature-icon {
-        width: 48px;
-        height: 48px;
-        border-radius: 0.75rem;
-        background: #000000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 1rem;
-      }
-
-      .benefit-card {
-        padding: 1.5rem;
-        border: 2px solid #e5e7eb;
-        border-radius: 1rem;
-        transition: all 0.3s ease;
-        background: white;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        transition: 0.5s;
       }
       
-      .benefit-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        border-color: #000000;
+      .btn-shine:hover::before {
+        left: 100%;
+      }
+
+      /* Stats Counter Animation */
+      .stat-number {
+        font-variant-numeric: tabular-nums;
       }
 
       /* WhatsApp Widget */
@@ -124,85 +223,77 @@
       .whatsapp-button {
         width: 60px;
         height: 60px;
-        background-color: #25D366;
+        background: linear-gradient(135deg, #25D366, #128C7E);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
         transition: all 0.3s ease;
+        animation: pulse 2s infinite;
       }
 
       .whatsapp-button:hover {
-        transform: scale(1.1);
-        box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
-      }
-
-      .performance-pill {
-        display: inline-flex;
-        align-items: center;
-        padding: 0.5rem 1rem;
-        background: #f3f4f6;
-        border-radius: 9999px;
-        font-size: 0.875rem;
-        font-weight: 600;
-        color: #000000;
-        margin: 0.25rem;
-      }
-
-      /* Cal.com Calendar Styles */
-      .cal-embed-container {
-        border-radius: 0.75rem;
-        overflow: hidden;
-        height: 600px;
-        background: white;
+        transform: scale(1.1) rotate(10deg);
+        box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
       }
     </style>
 </head>
 <body class="antialiased">
 
+    <!-- Particle Background -->
+    <div id="particles" class="fixed inset-0 pointer-events-none z-0"></div>
+
     <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 py-4">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-            <a href="#home" class="flex items-center gap-2.5 group">
-                <div class="bg-black p-1.5 rounded-lg">
-                    <i data-lucide="phone-call" class="w-5 h-5 text-white"></i>
-                </div>
-                <span class="text-lg font-black tracking-tight text-black">
-                    Mariba Media
-                    <span class="block text-xs font-normal text-gray-600 -mt-1">Performance-Based Pay-Per-Call Network</span>
-                </span>
-            </a>
-
-            <!-- Desktop Nav -->
-            <div class="hidden md:flex items-center gap-8">
-                <a href="#home" class="text-sm font-semibold text-gray-700 hover:text-black px-2 py-1">Home</a>
-                <a href="#how-it-works" class="text-sm font-semibold text-gray-700 hover:text-black px-2 py-1">How It Works</a>
-                <a href="#industries" class="text-sm font-semibold text-gray-700 hover:text-black px-2 py-1">Industries</a>
-                <a href="#benefits" class="text-sm font-semibold text-gray-700 hover:text-black px-2 py-1">Benefits</a>
-                
-                <a href="#contact" 
-                   class="bg-black hover:bg-gray-900 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all duration-300 shadow-md">
-                    Get Qualified Calls
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 glass-strong transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-cyan-400 rounded-lg blur opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                        <div class="relative bg-gradient-to-br from-cyan-400 to-blue-600 p-2.5 rounded-lg">
+                            <i data-lucide="phone-call" class="w-6 h-6 text-white"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold tracking-tight text-white font-display">
+                            Mariba<span class="gradient-text">Media</span>
+                        </span>
+                        <span class="block text-xs text-cyan-400/80 font-medium tracking-wider uppercase">Performance Network</span>
+                    </div>
                 </a>
-            </div>
 
-            <!-- Mobile Toggle -->
-            <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-600 hover:text-black hover:bg-gray-100 rounded-lg">
-                <i data-lucide="menu" class="w-6 h-6"></i>
-            </button>
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#home" class="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors px-3 py-2">Home</a>
+                    <a href="#sectors" class="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors px-3 py-2">Sectors</a>
+                    <a href="#how-it-works" class="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors px-3 py-2">How It Works</a>
+                    <a href="#benefits" class="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors px-3 py-2">Benefits</a>
+                    
+                    <a href="#contact" 
+                       class="btn-shine bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 shadow-lg shadow-cyan-500/25">
+                        Get Started
+                    </a>
+                </div>
+
+                <!-- Mobile Toggle -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-300 hover:text-cyan-400 hover:bg-white/5 rounded-lg transition-colors">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white absolute w-full top-full left-0 shadow-xl">
-            <div class="px-4 py-4 space-y-1">
-                <a href="#home" class="block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg">Home</a>
-                <a href="#how-it-works" class="block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg">How It Works</a>
-                <a href="#industries" class="block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg">Industries</a>
-                <a href="#benefits" class="block px-4 py-3 text-base font-semibold text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg">Benefits</a>
-                <div class="pt-2 px-4">
-                    <a href="#contact" class="block w-full text-center bg-black hover:bg-gray-900 text-white px-5 py-3 rounded-lg font-bold shadow-md">
-                        Get Qualified Calls
+        <div id="mobile-menu" class="hidden md:hidden glass-strong border-t border-white/10">
+            <div class="px-4 py-6 space-y-2">
+                <a href="#home" class="block px-4 py-3 text-base font-medium text-slate-300 hover:text-cyan-400 hover:bg-white/5 rounded-lg transition-colors">Home</a>
+                <a href="#sectors" class="block px-4 py-3 text-base font-medium text-slate-300 hover:text-cyan-400 hover:bg-white/5 rounded-lg transition-colors">Sectors</a>
+                <a href="#how-it-works" class="block px-4 py-3 text-base font-medium text-slate-300 hover:text-cyan-400 hover:bg-white/5 rounded-lg transition-colors">How It Works</a>
+                <a href="#benefits" class="block px-4 py-3 text-base font-medium text-slate-300 hover:text-cyan-400 hover:bg-white/5 rounded-lg transition-colors">Benefits</a>
+                <div class="pt-4 px-4">
+                    <a href="#contact" class="block w-full text-center bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-5 py-3 rounded-full font-bold shadow-lg">
+                        Get Started
                     </a>
                 </div>
             </div>
@@ -210,319 +301,325 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="pt-32 pb-20 md:pt-40 md:pb-28">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black text-white text-sm font-semibold mb-8">
+    <section id="home" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 animated-bg opacity-50"></div>
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%2322d3ee\' fill-opacity=\'0.05\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+        
+        <!-- Animated Network Graphic -->
+        <div class="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-full opacity-30 pointer-events-none hidden lg:block">
+            <svg viewBox="0 0 400 400" class="w-full h-full animate-float">
+                <defs>
+                    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#22d3ee;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <!-- Network Lines -->
+                <path d="M50,200 Q100,100 200,50 T350,150" fill="none" stroke="url(#lineGrad)" stroke-width="2" class="network-line" style="animation-delay: 0s"/>
+                <path d="M50,200 Q150,250 250,200 T350,250" fill="none" stroke="url(#lineGrad)" stroke-width="2" class="network-line" style="animation-delay: 0.5s"/>
+                <path d="M200,50 Q250,150 200,250 T150,350" fill="none" stroke="url(#lineGrad)" stroke-width="2" class="network-line" style="animation-delay: 1s"/>
+                <!-- Nodes -->
+                <circle cx="50" cy="200" r="8" fill="#22d3ee" class="animate-pulse"/>
+                <circle cx="200" cy="50" r="8" fill="#3b82f6" class="animate-pulse" style="animation-delay: 0.5s"/>
+                <circle cx="350" cy="150" r="8" fill="#8b5cf6" class="animate-pulse" style="animation-delay: 1s"/>
+                <circle cx="250" cy="200" r="6" fill="#22d3ee" class="animate-pulse" style="animation-delay: 0.3s"/>
+                <circle cx="200" cy="250" r="6" fill="#3b82f6" class="animate-pulse" style="animation-delay: 0.8s"/>
+            </svg>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="max-w-3xl">
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-cyan-500/30 text-cyan-400 text-sm font-semibold mb-8 animate-fade-in">
                     <i data-lucide="zap" class="w-4 h-4"></i>
                     <span>Performance-Based Pay-Per-Call Network</span>
                 </div>
 
-                <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">
-                    <span>QUALIFIED CALLS.</span>
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight font-display animate-slide-up">
+                    <span class="text-white">Qualified Calls.</span>
                     <br>
-                    <span class="text-black">NO RISK.</span>
+                    <span class="gradient-text">Zero Risk.</span>
                 </h1>
 
-                <h2 class="text-xl md:text-2xl font-bold text-black mb-10">
-                    We help buyers, agents and operators fulfill demand using performance-based calls
-                    <br class="hidden md:block">
-                    <span class="text-gray-700">across solar, insurance, auto, home services & more.</span>
-                </h2>
+                <p class="text-xl md:text-2xl text-slate-300 mb-8 leading-relaxed animate-slide-up" style="animation-delay: 0.2s">
+                    We connect <span class="text-cyan-400 font-semibold">Home Services</span>, <span class="text-blue-400 font-semibold">Professional Services</span>, and <span class="text-purple-400 font-semibold">Senior Care</span> providers with high-intent customers ready to buy.
+                </p>
 
-                <!-- Industry Badges -->
-                <div class="flex flex-wrap justify-center gap-2 mb-12">
-                    <span class="industry-badge">Insurance</span>
-                    <span class="industry-badge">Solar</span>
-                    <span class="industry-badge">Auto</span>
-                    <span class="industry-badge">Plumbing</span>
-                    <span class="industry-badge">Remodeling</span>
-                    <span class="industry-badge">Home Services</span>
-                </div>
-
-                <div class="max-w-3xl mx-auto mb-12">
-                    <p class="text-lg text-gray-600 leading-relaxed mb-8">
-                        We deliver verified, high-intent phone leads on a pure pay-per-call model. You only pay for qualified calls that meet your criteria—no upfront fees, no lead waste.
-                    </p>
-                    
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
-                        <div class="performance-pill">
-                            <i data-lucide="shield-check" class="w-4 h-4 mr-2"></i>
-                            Verified Calls
+                <!-- Stats Row -->
+                <div class="flex flex-wrap gap-8 mb-12 animate-slide-up" style="animation-delay: 0.4s">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center border border-cyan-500/20">
+                            <i data-lucide="phone-incoming" class="w-6 h-6 text-cyan-400"></i>
                         </div>
-                        <div class="performance-pill">
-                            <i data-lucide="clock" class="w-4 h-4 mr-2"></i>
-                            24h Delivery
+                        <div>
+                            <div class="text-2xl font-bold text-white stat-number" data-target="50000">50K+</div>
+                            <div class="text-sm text-slate-400">Calls Delivered</div>
                         </div>
-                        <div class="performance-pill">
-                            <i data-lucide="dollar-sign" class="w-4 h-4 mr-2"></i>
-                            Pay Per Call
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-500/20">
+                            <i data-lucide="target" class="w-6 h-6 text-blue-400"></i>
                         </div>
-                        <div class="performance-pill">
-                            <i data-lucide="target" class="w-4 h-4 mr-2"></i>
-                            High-Intent
+                        <div>
+                            <div class="text-2xl font-bold text-white">85%</div>
+                            <div class="text-sm text-slate-400">Avg. Conversion</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center border border-purple-500/20">
+                            <i data-lucide="clock" class="w-6 h-6 text-purple-400"></i>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-white">24h</div>
+                            <div class="text-sm text-slate-400">Setup Time</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <div class="flex flex-col sm:flex-row gap-4 animate-slide-up" style="animation-delay: 0.6s">
                     <a href="#contact"
-                       class="inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-900 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-xl border-2 border-black text-base sm:text-lg">
+                       class="btn-shine group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white px-8 py-4 rounded-full font-bold transition-all duration-300 shadow-xl shadow-cyan-500/25 text-lg">
                         Book Discovery Call
-                        <i data-lucide="calendar" class="w-5 h-5"></i>
+                        <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
                     </a>
-                    <a href="#how-it-works"
-                       class="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-50 text-black border-2 border-black px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl text-base sm:text-lg">
+                    <a href="#sectors"
+                       class="inline-flex items-center justify-center gap-3 glass hover:bg-white/10 text-white border border-white/20 px-8 py-4 rounded-full font-semibold transition-all duration-300 text-lg">
                         <i data-lucide="play-circle" class="w-5 h-5"></i>
-                        See How It Works
+                        Explore Sectors
                     </a>
                 </div>
             </div>
         </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+            <i data-lucide="chevron-down" class="w-6 h-6 text-cyan-400"></i>
+        </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="py-20 md:py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="section-header text-3xl md:text-4xl font-bold text-black mb-6">Our Call Network Provides</h2>
-                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                    A complete performance-based call solution designed to deliver only qualified, high-intent calls to your business.
+    <!-- Three Sectors Section -->
+    <section id="sectors" class="relative py-24 md:py-32">
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-800"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20 reveal">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-cyan-500/30 text-cyan-400 text-sm font-semibold mb-6">
+                    <i data-lucide="layers" class="w-4 h-4"></i>
+                    <span>Our Specialization</span>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-display">
+                    Three Core <span class="gradient-text">Sectors</span>
+                </h2>
+                <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+                    We dominate these high-value verticals with deep industry expertise and pre-qualified caller networks.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Guaranteed Call Delivery -->
-                <div class="benefit-card">
-                    <div class="feature-icon">
-                        <i data-lucide="phone-incoming" class="w-6 h-6 text-white"></i>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Home Services -->
+                <div class="sector-card group relative glass rounded-3xl p-8 border border-white/10 overflow-hidden reveal">
+                    <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-500/20 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-cyan-500/30 transition-colors"></div>
+                    
+                    <div class="relative">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-400 to-cyan-600 flex items-center justify-center mb-6 shadow-lg shadow-cyan-500/30 group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="home" class="w-8 h-8 text-white"></i>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold text-white mb-4 font-display">Home Services</h3>
+                        <p class="text-slate-400 mb-6 leading-relaxed">
+                            Emergency repairs, installations, and maintenance. Connect with homeowners actively seeking immediate service.
+                        </p>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-3 text-slate-300">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-cyan-400"></i>
+                                <span>Plumbing & HVAC</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-300">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-cyan-400"></i>
+                                <span>Electrical & Roofing</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-300">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-cyan-400"></i>
+                                <span>Remodeling & Renovation</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-300">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-cyan-400"></i>
+                                <span>Pest Control & Cleaning</span>
+                            </li>
+                        </ul>
+
+                        <div class="flex items-center justify-between pt-6 border-t border-white/10">
+                            <div class="text-sm text-slate-400">Avg. Call Value</div>
+                            <div class="text-xl font-bold text-cyan-400">$150-500</div>
+                        </div>
                     </div>
-                    <h3 class="text-xl md:text-2xl font-bold text-black mb-4">Guaranteed Call Delivery</h3>
-                    <p class="text-gray-600">
-                        Pre-screened, high-intent calls delivered on your schedule. We ensure consistent call flow that matches your capacity.
-                    </p>
                 </div>
 
-                <!-- Call Verification & Scoring -->
-                <div class="benefit-card">
-                    <div class="feature-icon">
-                        <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
+                <!-- Professional Services -->
+                <div class="sector-card group relative glass rounded-3xl p-8 border border-white/10 overflow-hidden reveal" style="transition-delay: 0.2s">
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-blue-500/30 transition-colors"></div>
+                    
+                    <div class="relative">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center mb-6 shadow-lg shadow-blue-500/30 group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="briefcase" class="w-8 h-8 text-white"></i>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold text-white mb-4 font-display">Professional Services</h3>
+                        <p class="text-slate-400 mb-6 leading-relaxed">
+                            B2B and B2C professional consultations. High-value clients seeking expert legal, financial, and business services.
+                        </p>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-3 text-slate-300">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-blue-400"></i>
+                                <span>Legal & Accounting</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-300">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-blue-400"></i>
+                                <span>Financial Advisory</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-300">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-blue-400"></i>
+                                <span>Real Estate & Insurance</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-300">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-blue-400"></i>
+                                <span>Marketing Agencies</span>
+                            </li>
+                        </ul>
+
+                        <div class="flex items-center justify-between pt-6 border-t border-white/10">
+                            <div class="text-sm text-slate-400">Avg. Call Value</div>
+                            <div class="text-xl font-bold text-blue-400">$500-2K</div>
+                        </div>
                     </div>
-                    <h3 class="text-xl md:text-2xl font-bold text-black mb-4">Call Verification & Scoring</h3>
-                    <p class="text-gray-600">
-                        Every call validated for relevance and intent before you pay. Our system scores calls based on qualification criteria.
-                    </p>
                 </div>
 
-                <!-- Performance-Based Billing -->
-                <div class="benefit-card">
-                    <div class="feature-icon">
-                        <i data-lucide="credit-card" class="w-6 h-6 text-white"></i>
-                    </div>
-                    <h3 class="text-xl md:text-2xl font-bold text-black mb-4">Performance-Based Billing</h3>
-                    <p class="text-gray-600">
-                        Only pay for calls that meet your qualification criteria. No monthly fees, no wasted ad spend.
-                    </p>
-                </div>
+                <!-- Senior Care Services -->
+                <div class="sector-card group relative glass rounded-3xl p-8 border border-white/10 overflow-hidden reveal" style="transition-delay: 0.4s">
+                    <div class="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-purple-500/20 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-purple-500/30 transition-colors"></div>
+                    
+                    <div class="relative">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center mb-6 shadow-lg shadow-purple-500/30 group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="heart-handshake" class="w-8 h-8 text-white"></i>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold text-white mb-4 font-display">Senior Care Services</h3>
+                        <p class="text-slate-400 mb-6 leading-relaxed">
+                            Compassionate care solutions for families. Connect with adult children seeking immediate care options for loved ones.
+                        </p>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-3 text-slate-300">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-purple-400"></i>
+                                <span>Assisted Living</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-300">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-purple-400"></i>
+                                <span>In-Home Care</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-300">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-purple-400"></i>
+                                <span>Memory Care</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-300">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-purple-400"></i>
+                                <span>Medicare Insurance</span>
+                            </li>
+                        </ul>
 
-                <!-- Industry-Specific Callers -->
-                <div class="benefit-card">
-                    <div class="feature-icon">
-                        <i data-lucide="target" class="w-6 h-6 text-white"></i>
+                        <div class="flex items-center justify-between pt-6 border-t border-white/10">
+                            <div class="text-sm text-slate-400">Avg. Call Value</div>
+                            <div class="text-xl font-bold text-purple-400">$1K-5K</div>
+                        </div>
                     </div>
-                    <h3 class="text-xl md:text-2xl font-bold text-black mb-4">Industry-Specific Callers</h3>
-                    <p class="text-gray-600">
-                        Calls targeted to your exact service area and customer profile. We match callers with your specific industry needs.
-                    </p>
-                </div>
-
-                <!-- Real-Time Dashboard -->
-                <div class="benefit-card">
-                    <div class="feature-icon">
-                        <i data-lucide="bar-chart-3" class="w-6 h-6 text-white"></i>
-                    </div>
-                    <h3 class="text-xl md:text-2xl font-bold text-black mb-4">Real-Time Call Dashboard</h3>
-                    <p class="text-gray-600">
-                        Track call volume, quality, and ROI live. Monitor performance and adjust criteria in real-time.
-                    </p>
-                </div>
-
-                <!-- No Risk Guarantee -->
-                <div class="benefit-card">
-                    <div class="feature-icon">
-                        <i data-lucide="thumbs-up" class="w-6 h-6 text-white"></i>
-                    </div>
-                    <h3 class="text-xl md:text-2xl font-bold text-black mb-4">No-Risk Guarantee</h3>
-                    <p class="text-gray-600">
-                        Start with no upfront costs. You only pay for qualified calls that meet your specific business criteria.
-                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Industries Section -->
-    <section id="industries" class="py-20 md:py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 border border-gray-300 text-black text-sm font-semibold mb-6">
-                    <i data-lucide="building" class="w-4 h-4"></i>
-                    <span>Industries We Serve</span>
-                </div>
-                <h2 class="text-3xl md:text-5xl font-bold text-black mb-6">Who We Serve</h2>
-                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                    Our performance-based call network delivers qualified leads to businesses across multiple high-demand industries.
+    <!-- How It Works -->
+    <section id="how-it-works" class="relative py-24 md:py-32 overflow-hidden">
+        <div class="absolute inset-0 bg-slate-900"></div>
+        
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0">
+            <div class="absolute top-1/4 left-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-1/4 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20 reveal">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-display">
+                    How Our <span class="gradient-text">Network</span> Works
+                </h2>
+                <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+                    A seamless four-step process to deliver qualified calls to your business within 24 hours.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Insurance -->
-                <div class="p-6 border border-gray-200 rounded-xl bg-white">
-                    <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center mb-4">
-                        <i data-lucide="shield" class="w-6 h-6 text-blue-600"></i>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="relative reveal">
+                    <div class="absolute -top-4 -left-4 text-8xl font-bold text-white/5 font-display select-none">01</div>
+                    <div class="relative glass rounded-2xl p-8 border border-white/10 h-full hover:border-cyan-500/50 transition-colors group">
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-400 to-cyan-600 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                            <i data-lucide="settings" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Define Criteria</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Set your specific qualification requirements, service areas, and call volume preferences.
+                        </p>
                     </div>
-                    <h4 class="text-xl font-bold text-black mb-3">Insurance Agencies & Brokers</h4>
-                    <p class="text-gray-600 mb-4">
-                        Qualified leads for auto, home, life, and commercial insurance. Pre-screened callers ready for quotes.
-                    </p>
-                    <div class="space-y-2">
-                        <div class="flex items-center gap-2 text-sm text-gray-700">
-                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
-                            <span>Personal Liability Insurance</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-gray-700">
-                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
-                            <span>Auto Insurance Quotes</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-gray-700">
-                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
-                            <span>Home Insurance Coverage</span>
-                        </div>
-                    </div>
+                    <div class="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-cyan-500 to-transparent"></div>
                 </div>
 
-                <!-- Solar -->
-                <div class="p-6 border border-gray-200 rounded-xl bg-white">
-                    <div class="w-12 h-12 rounded-lg bg-orange-100 flex items-center justify-center mb-4">
-                        <i data-lucide="sun" class="w-6 h-6 text-orange-600"></i>
+                <!-- Step 2 -->
+                <div class="relative reveal" style="transition-delay: 0.1s">
+                    <div class="absolute -top-4 -left-4 text-8xl font-bold text-white/5 font-display select-none">02</div>
+                    <div class="relative glass rounded-2xl p-8 border border-white/10 h-full hover:border-blue-500/50 transition-colors group">
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                            <i data-lucide="filter" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Pre-Screening</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Our AI + human verification filters out low-intent callers before they reach you.
+                        </p>
                     </div>
-                    <h4 class="text-xl font-bold text-black mb-3">Solar Installation Companies</h4>
-                    <p class="text-gray-600 mb-4">
-                        High-intent homeowners and businesses ready for solar consultations and installations.
-                    </p>
-                    <div class="space-y-2">
-                        <div class="flex items-center gap-2 text-sm text-gray-700">
-                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
-                            <span>Residential Solar Installations</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-gray-700">
-                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
-                            <span>Commercial Solar Projects</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-gray-700">
-                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
-                            <span>Solar Financing Consultations</span>
-                        </div>
-                    </div>
+                    <div class="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-blue-500 to-transparent"></div>
                 </div>
 
-                <!-- Auto -->
-                <div class="p-6 border border-gray-200 rounded-xl bg-white">
-                    <div class="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center mb-4">
-                        <i data-lucide="car" class="w-6 h-6 text-gray-600"></i>
+                <!-- Step 3 -->
+                <div class="relative reveal" style="transition-delay: 0.2s">
+                    <div class="absolute -top-4 -left-4 text-8xl font-bold text-white/5 font-display select-none">03</div>
+                    <div class="relative glass rounded-2xl p-8 border border-white/10 h-full hover:border-purple-500/50 transition-colors group">
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                            <i data-lucide="phone-call" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Live Transfer</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            High-intent calls are transferred directly to your team in real-time, 24/7.
+                        </p>
                     </div>
-                    <h4 class="text-xl font-bold text-black mb-3">Auto Repair & Parts Suppliers</h4>
-                    <p class="text-gray-600 mb-4">
-                        Vehicle owners needing immediate repairs, parts, or maintenance services.
-                    </p>
-                    <div class="space-y-2">
-                        <div class="flex items-center gap-2 text-sm text-gray-700">
-                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
-                            <span>Auto Repair Services</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-gray-700">
-                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
-                            <span>Engine Replacement</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-gray-700">
-                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
-                            <span>Auto Parts Sales</span>
-                        </div>
-                    </div>
+                    <div class="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-purple-500 to-transparent"></div>
                 </div>
 
-                <!-- Plumbing -->
-                <div class="p-6 border border-gray-200 rounded-xl bg-white">
-                    <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center mb-4">
-                        <i data-lucide="droplets" class="w-6 h-6 text-blue-600"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-black mb-3">Plumbing & HVAC Services</h4>
-                    <p class="text-gray-600 mb-4">
-                        Emergency and scheduled plumbing, drain, and HVAC service calls.
-                    </p>
-                    <div class="space-y-2">
-                        <div class="flex items-center gap-2 text-sm text-gray-700">
-                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
-                            <span>Emergency Plumbing</span>
+                <!-- Step 4 -->
+                <div class="relative reveal" style="transition-delay: 0.3s">
+                    <div class="absolute -top-4 -left-4 text-8xl font-bold text-white/5 font-display select-none">04</div>
+                    <div class="relative glass rounded-2xl p-8 border border-white/10 h-full hover:border-green-500/50 transition-colors group">
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                            <i data-lucide="credit-card" class="w-7 h-7 text-white"></i>
                         </div>
-                        <div class="flex items-center gap-2 text-sm text-gray-700">
-                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
-                            <span>Drain Services</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-gray-700">
-                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
-                            <span>HVAC Installation & Repair</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Remodeling -->
-                <div class="p-6 border border-gray-200 rounded-xl bg-white">
-                    <div class="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center mb-4">
-                        <i data-lucide="home" class="w-6 h-6 text-green-600"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-black mb-3">Home Remodeling & Contracting</h4>
-                    <p class="text-gray-600 mb-4">
-                        Homeowners planning renovations, additions, or home improvement projects.
-                    </p>
-                    <div class="space-y-2">
-                        <div class="flex items-center gap-2 text-sm text-gray-700">
-                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
-                            <span>Home Remodeling Projects</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-gray-700">
-                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
-                            <span>Kitchen & Bathroom Renovations</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-gray-700">
-                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
-                            <span>Home Additions</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sales & Marketing -->
-                <div class="p-6 border border-gray-200 rounded-xl bg-white">
-                    <div class="w-12 h-12 rounded-lg bg-purple-100 flex items-center justify-center mb-4">
-                        <i data-lucide="users" class="w-6 h-6 text-purple-600"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-black mb-3">Sales Teams & Marketing Directors</h4>
-                    <p class="text-gray-600 mb-4">
-                        Businesses needing high-quality leads for sales teams and call centers.
-                    </p>
-                    <div class="space-y-2">
-                        <div class="flex items-center gap-2 text-sm text-gray-700">
-                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
-                            <span>Sales Team Lead Generation</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-gray-700">
-                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
-                            <span>Call Center Qualified Calls</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-gray-700">
-                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
-                            <span>Marketing Campaign Optimization</span>
-                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Pay Per Result</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Only pay for calls that meet your criteria. No setup fees, no monthly retainers.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -530,125 +627,107 @@
     </section>
 
     <!-- Benefits Section -->
-    <section id="benefits" class="py-20 md:py-24 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="section-header text-3xl md:text-4xl font-bold text-black mb-6">Why Choose Our Call Network</h2>
-                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                    The no-risk solution for businesses that want qualified leads without upfront costs or wasted ad spend.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Left Column -->
-                <div class="space-y-8">
-                    <div class="bg-white p-6 rounded-xl border border-gray-200">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-lg bg-black flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="dollar-sign" class="w-5 h-5 text-white"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-black mb-2">Pay Only for Results</h3>
-                                <p class="text-gray-600">
-                                    No monthly retainers, no wasted ad spend. You only pay for qualified calls that meet your specific criteria.
-                                </p>
-                            </div>
-                        </div>
+    <section id="benefits" class="relative py-24 md:py-32 bg-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-cyan-500/30 text-cyan-400 text-sm font-semibold mb-6">
+                        <i data-lucide="shield-check" class="w-4 h-4"></i>
+                        <span>Why Choose Mariba</span>
                     </div>
-
-                    <div class="bg-white p-6 rounded-xl border border-gray-200">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-lg bg-black flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="filter" class="w-5 h-5 text-white"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-black mb-2">Custom Qualification Criteria</h3>
-                                <p class="text-gray-600">
-                                    Set your own criteria for what constitutes a qualified call. We filter out tire-kickers and deliver only serious prospects.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-white p-6 rounded-xl border border-gray-200">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-lg bg-black flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="trending-up" class="w-5 h-5 text-white"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-black mb-2">Scalable Call Volume</h3>
-                                <p class="text-gray-600">
-                                    Start small and scale up as you see results. Adjust call volume daily based on your team's capacity.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Column -->
-                <div class="space-y-8">
-                    <div class="bg-white p-6 rounded-xl border border-gray-200">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-lg bg-black flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="clock" class="w-5 h-5 text-white"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-black mb-2">24-Hour Setup</h3>
-                                <p class="text-gray-600">
-                                    Get started within 24 hours. No long-term contracts, no complicated onboarding process.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-white p-6 rounded-xl border border-gray-200">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-lg bg-black flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="map-pin" class="w-5 h-5 text-white"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-black mb-2">Geographic Targeting</h3>
-                                <p class="text-gray-600">
-                                    Target calls from specific cities, regions, or radius around your business locations.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-white p-6 rounded-xl border border-gray-200">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-lg bg-black flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="bar-chart" class="w-5 h-5 text-white"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-black mb-2">Transparent Reporting</h3>
-                                <p class="text-gray-600">
-                                    Real-time dashboard showing call volume, quality scores, conversion rates, and ROI calculations.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CTA Box -->
-            <div class="mt-16 bg-gradient-to-r from-black to-gray-900 rounded-2xl p-8 md:p-12 text-white">
-                <div class="text-center">
-                    <h3 class="text-2xl md:text-3xl font-bold mb-4">Start Receiving Qualified Calls</h3>
-                    <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
-                        Only pay for calls that meet your criteria. No upfront fees, no lead waste.
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-display">
+                        The <span class="gradient-text">No-Risk</span> Solution
+                    </h2>
+                    <p class="text-lg text-slate-400 mb-8 leading-relaxed">
+                        Stop wasting money on unqualified leads. Our performance-based model ensures you only pay for calls that actually convert.
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="#contact"
-                           class="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-black px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-xl">
-                            <i data-lucide="calendar" class="w-5 h-5"></i>
-                            Book Discovery Call
-                        </a>
-                        <a href="mailto:victor@maribamedia.co.za"
-                           class="inline-flex items-center justify-center gap-3 bg-transparent hover:bg-white/10 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 border-2 border-white">
-                            <i data-lucide="mail" class="w-5 h-5"></i>
-                            Email Us
-                        </a>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4 group">
+                            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-cyan-500/20 transition-colors">
+                                <i data-lucide="trending-up" class="w-6 h-6 text-cyan-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-white mb-1">Scalable Volume</h4>
+                                <p class="text-slate-400">Ramp up or down daily based on your team's capacity and seasonality.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 group">
+                            <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-500/20 transition-colors">
+                                <i data-lucide="map-pin" class="w-6 h-6 text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-white mb-1">Hyper-Local Targeting</h4>
+                                <p class="text-slate-400">Target by ZIP code, city, or radius. Only get calls from your service area.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 group">
+                            <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-purple-500/20 transition-colors">
+                                <i data-lucide="bar-chart-3" class="w-6 h-6 text-purple-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-white mb-1">Real-Time Analytics</h4>
+                                <p class="text-slate-400">Track call quality, conversion rates, and ROI with our live dashboard.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 group">
+                            <div class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-green-500/20 transition-colors">
+                                <i data-lucide="headphones" class="w-6 h-6 text-green-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-white mb-1">Dedicated Support</h4>
+                                <p class="text-slate-400">Your account manager optimizes campaigns weekly for maximum ROI.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative reveal">
+                    <div class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-3xl blur-2xl opacity-20"></div>
+                    <div class="relative glass rounded-3xl p-8 border border-white/10">
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="text-center p-6 rounded-2xl bg-white/5 border border-white/10">
+                                <div class="text-4xl font-bold text-cyan-400 mb-2">0%</div>
+                                <div class="text-sm text-slate-400">Setup Fees</div>
+                            </div>
+                            <div class="text-center p-6 rounded-2xl bg-white/5 border border-white/10">
+                                <div class="text-4xl font-bold text-blue-400 mb-2">100%</div>
+                                <div class="text-sm text-slate-400">Performance</div>
+                            </div>
+                            <div class="text-center p-6 rounded-2xl bg-white/5 border border-white/10">
+                                <div class="text-4xl font-bold text-purple-400 mb-2">24/7</div>
+                                <div class="text-sm text-slate-400">Call Delivery</div>
+                            </div>
+                            <div class="text-center p-6 rounded-2xl bg-white/5 border border-white/10">
+                                <div class="text-4xl font-bold text-green-400 mb-2">85%</div>
+                                <div class="text-sm text-slate-400">Avg. Quality</div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 p-6 rounded-2xl bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="flex -space-x-2">
+                                    <div class="w-10 h-10 rounded-full bg-cyan-500 flex items-center justify-center text-white text-xs font-bold">JD</div>
+                                    <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white text-xs font-bold">MK</div>
+                                    <div class="w-10 h-10 rounded-full bg-purple-500 flex items-center justify-center text-white text-xs font-bold">+5</div>
+                                </div>
+                                <div class="text-sm text-slate-300">
+                                    <span class="text-white font-semibold">200+</span> active clients
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                                <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                                <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                                <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                                <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                                <span class="ml-2 text-white font-semibold">4.9/5</span>
+                                <span class="text-slate-400 text-sm ml-1">average rating</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -656,130 +735,92 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 md:py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="section-header text-3xl md:text-4xl font-bold text-black mb-6">Book Your Discovery Call</h2>
-                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                    Schedule a free discovery call to learn how our performance-based call network can deliver qualified leads to your business.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Contact Info -->
-                <div class="space-y-6">
-                    <div class="bg-gray-50 p-6 rounded-xl">
-                        <h3 class="text-xl font-bold text-black mb-4">Contact Information</h3>
-                        <div class="space-y-4">
-                            <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-lg bg-black flex items-center justify-center">
-                                    <i data-lucide="mail" class="w-5 h-5 text-white"></i>
-                                </div>
-                                <div>
-                                    <p class="text-sm text-gray-600">Email</p>
-                                    <a href="mailto:victor@maribamedia.co.za" class="font-semibold text-black hover:text-blue-600">
-                                        victor@maribamedia.co.za
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-lg bg-black flex items-center justify-center">
-                                    <i data-lucide="phone" class="w-5 h-5 text-white"></i>
-                                </div>
-                                <div>
-                                    <p class="text-sm text-gray-600">Phone</p>
-                                    <p class="font-semibold text-black">+27 (0) 76 647 3499</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-lg bg-black flex items-center justify-center">
-                                    <i data-lucide="clock" class="w-5 h-5 text-white"></i>
-                                </div>
-                                <div>
-                                    <p class="text-sm text-gray-600">Call Hours</p>
-                                    <p class="font-semibold text-black">Mon-Fri, 9AM-5PM SAST</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-black text-white p-6 rounded-xl">
-                        <h3 class="text-xl font-bold mb-4">Our Promise</h3>
-                        <p class="text-gray-300 mb-4">
-                            You only pay for qualified calls that meet your specific criteria. No results, no cost.
+    <section id="contact" class="relative py-24 md:py-32">
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-800 to-slate-900"></div>
+        
+        <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass rounded-3xl p-8 md:p-12 border border-white/10 reveal">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h2 class="text-4xl font-bold text-white mb-6 font-display">
+                            Ready to Get <span class="gradient-text">Qualified Calls</span>?
+                        </h2>
+                        <p class="text-slate-400 mb-8 leading-relaxed">
+                            Book your free discovery call. We'll analyze your needs and show you exactly how many qualified calls we can deliver to your business.
                         </p>
-                        <div class="space-y-2">
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-green-400"></i>
-                                <span>No upfront fees</span>
+
+                        <div class="space-y-6 mb-8">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center border border-cyan-500/20">
+                                    <i data-lucide="mail" class="w-6 h-6 text-cyan-400"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm text-slate-400">Email</div>
+                                    <a href="mailto:victor@maribamedia.co.za" class="text-white font-semibold hover:text-cyan-400 transition-colors">victor@maribamedia.co.za</a>
+                                </div>
                             </div>
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-green-400"></i>
-                                <span>24-hour setup</span>
+                            
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-500/20">
+                                    <i data-lucide="phone" class="w-6 h-6 text-blue-400"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm text-slate-400">Phone</div>
+                                    <a href="tel:+27766473499" class="text-white font-semibold hover:text-blue-400 transition-colors">+27 (0) 76 647 3499</a>
+                                </div>
                             </div>
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-green-400"></i>
-                                <span>Pay per qualified call</span>
+
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center border border-purple-500/20">
+                                    <i data-lucide="clock" class="w-6 h-6 text-purple-400"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm text-slate-400">Availability</div>
+                                    <div class="text-white font-semibold">Mon-Fri, 9AM-5PM SAST</div>
+                                </div>
                             </div>
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-green-400"></i>
-                                <span>Industry-specific targeting</span>
-                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <a href="https://www.facebook.com/people/Mariba-Media-Pty-Ltd/61576915266105/" target="_blank" class="w-12 h-12 rounded-full glass flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-400/50 border border-white/10 transition-all">
+                                <i data-lucide="facebook" class="w-5 h-5"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@TV-Mariba" target="_blank" class="w-12 h-12 rounded-full glass flex items-center justify-center text-slate-400 hover:text-red-400 hover:border-red-400/50 border border-white/10 transition-all">
+                                <i data-lucide="youtube" class="w-5 h-5"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/company/mariba-media?_l=en_US" target="_blank" class="w-12 h-12 rounded-full glass flex items-center justify-center text-slate-400 hover:text-blue-400 hover:border-blue-400/50 border border-white/10 transition-all">
+                                <i data-lucide="linkedin" class="w-5 h-5"></i>
+                            </a>
                         </div>
                     </div>
 
-                    <div class="bg-gray-50 p-6 rounded-xl">
-                        <h3 class="text-xl font-bold text-black mb-4">Preferred Industries</h3>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-white border border-gray-300 rounded-full text-sm">Insurance</span>
-                            <span class="px-3 py-1 bg-white border border-gray-300 rounded-full text-sm">Solar</span>
-                            <span class="px-3 py-1 bg-white border border-gray-300 rounded-full text-sm">Auto</span>
-                            <span class="px-3 py-1 bg-white border border-gray-300 rounded-full text-sm">Plumbing</span>
-                            <span class="px-3 py-1 bg-white border border-gray-300 rounded-full text-sm">Remodeling</span>
-                            <span class="px-3 py-1 bg-white border border-gray-300 rounded-full text-sm">Home Services</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Cal.com Calendar Embed -->
-                <div class="bg-gray-50 p-6 rounded-xl">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-10 h-10 rounded-lg bg-black flex items-center justify-center">
-                            <i data-lucide="calendar" class="w-5 h-5 text-white"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-black">Schedule Discovery Call</h3>
-                            <p class="text-sm text-gray-600">Select a time that works for you</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Cal inline embed code begins -->
-                    <div class="cal-embed-container">
-                        <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-south-africa"></div>
-                    </div>
-                    <script type="text/javascript">
-                      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-                      Cal("init", "south-africa", {origin:"https://app.cal.com"});
-
-                      Cal.ns["south-africa"]("inline", {
-                        elementOrSelector:"#my-cal-inline-south-africa",
-                        config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
-                        calLink: "partner-discovery/south-africa",
-                      });
-
-                      Cal.ns["south-africa"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
-                    </script>
-                    <!-- Cal inline embed code ends -->
-
-                    <div class="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                        <div class="flex items-start gap-3">
-                            <i data-lucide="info" class="w-5 h-5 text-blue-600 mt-0.5"></i>
+                    <div class="glass rounded-2xl p-6 border border-white/10">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center">
+                                <i data-lucide="calendar" class="w-5 h-5 text-white"></i>
+                            </div>
                             <div>
-                                <p class="text-sm text-blue-800">
-                                    <span class="font-semibold">What to expect:</span> During this 15-30 minute call, we'll discuss your business needs, target audience, and how our performance-based call network can deliver qualified leads to your team.
-                                </p>
+                                <h3 class="text-lg font-bold text-white">Schedule Your Call</h3>
+                                <p class="text-sm text-slate-400">15-30 minute discovery session</p>
                             </div>
                         </div>
+                        
+                        <!-- Cal.com Calendar Embed -->
+                        <div class="rounded-xl overflow-hidden bg-white" style="height: 500px;">
+                            <div style="width:100%;height:100%;" id="my-cal-inline-south-africa"></div>
+                        </div>
+                        <script type="text/javascript">
+                          (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+                          Cal("init", "south-africa", {origin:"https://app.cal.com"});
+
+                          Cal.ns["south-africa"]("inline", {
+                            elementOrSelector:"#my-cal-inline-south-africa",
+                            config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+                            calLink: "partner-discovery/south-africa",
+                          });
+
+                          Cal.ns["south-africa"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+                        </script>
                     </div>
                 </div>
             </div>
@@ -787,140 +828,185 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black border-t border-gray-800 pt-16 md:pt-20 pb-12">
+    <footer class="relative bg-slate-950 border-t border-white/10 pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 mb-16">
-                
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                 <!-- Brand -->
                 <div class="lg:col-span-2">
-                    <a href="#home" class="flex items-center gap-3 mb-6 group">
-                        <div class="bg-white p-2 rounded-lg">
-                            <i data-lucide="phone-call" class="w-6 h-6 text-black"></i>
+                    <a href="#home" class="flex items-center gap-3 mb-6">
+                        <div class="bg-gradient-to-br from-cyan-400 to-blue-600 p-2 rounded-lg">
+                            <i data-lucide="phone-call" class="w-6 h-6 text-white"></i>
                         </div>
                         <div>
-                            <span class="text-xl font-bold text-white">Mariba Media</span>
-                            <span class="block text-sm text-gray-400">Performance-Based Pay-Per-Call Network</span>
+                            <span class="text-xl font-bold text-white font-display">Mariba<span class="gradient-text">Media</span></span>
                         </div>
                     </a>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-8 max-w-md">
-                        We help buyers, agents and operators fulfill demand using performance-based calls across solar, insurance, auto, home services & more.
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6 max-w-md">
+                        Performance-based pay-per-call network specializing in Home Services, Professional Services, and Senior Care. Delivering qualified leads with zero risk.
                     </p>
-                    <div class="flex gap-4">
-                        <a href="https://www.facebook.com/people/Mariba-Media-Pty-Ltd/61576915266105/" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-white flex items-center justify-center text-gray-300 hover:text-black">
-                            <i data-lucide="facebook" class="w-4 h-4"></i>
-                        </a>
-                        <a href="https://www.youtube.com/@TV-Mariba" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-white flex items-center justify-center text-gray-300 hover:text-black">
-                            <i data-lucide="youtube" class="w-4 h-4"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/company/mariba-media?_l=en_US" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-white flex items-center justify-center text-gray-300 hover:text-black">
-                            <i data-lucide="linkedin" class="w-4 h-4"></i>
-                        </a>
-                    </div>
+                    <p class="text-slate-500 text-xs">
+                        Company Registration No: 2024 / 132788 / 07
+                    </p>
                 </div>
 
-                <!-- Industries -->
+                <!-- Sectors -->
                 <div>
-                    <h5 class="text-lg font-bold text-white mb-6">Industries</h5>
+                    <h5 class="text-white font-bold mb-4">Our Sectors</h5>
                     <ul class="space-y-3">
-                        <li><a href="#industries" class="text-gray-400 hover:text-white text-sm">Insurance</a></li>
-                        <li><a href="#industries" class="text-gray-400 hover:text-white text-sm">Solar</a></li>
-                        <li><a href="#industries" class="text-gray-400 hover:text-white text-sm">Auto</a></li>
-                        <li><a href="#industries" class="text-gray-400 hover:text-white text-sm">Plumbing</a></li>
-                        <li><a href="#industries" class="text-gray-400 hover:text-white text-sm">Remodeling</a></li>
-                        <li><a href="#industries" class="text-gray-400 hover:text-white text-sm">Home Services</a></li>
+                        <li><a href="#sectors" class="text-slate-400 hover:text-cyan-400 text-sm transition-colors">Home Services</a></li>
+                        <li><a href="#sectors" class="text-slate-400 hover:text-cyan-400 text-sm transition-colors">Professional Services</a></li>
+                        <li><a href="#sectors" class="text-slate-400 hover:text-cyan-400 text-sm transition-colors">Senior Care</a></li>
                     </ul>
                 </div>
 
-                <!-- Services -->
+                <!-- Company -->
                 <div>
-                    <h5 class="text-lg font-bold text-white mb-6">Our Network</h5>
+                    <h5 class="text-white font-bold mb-4">Company</h5>
                     <ul class="space-y-3">
-                        <li><a href="#how-it-works" class="text-gray-400 hover:text-white text-sm">How It Works</a></li>
-                        <li><a href="#benefits" class="text-gray-400 hover:text-white text-sm">Benefits</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white text-sm">Book a Call</a></li>
-                        <li><a href="mailto:victor@maribamedia.co.za" class="text-gray-400 hover:text-white text-sm">Contact Us</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact -->
-                <div>
-                    <h5 class="text-lg font-bold text-white mb-6">Contact</h5>
-                    <ul class="space-y-3">
-                        <li class="flex items-center gap-3 text-sm text-gray-400">
-                            <i data-lucide="mail" class="w-4 h-4 text-white"></i>
-                            <a href="mailto:victor@maribamedia.co.za" class="hover:text-white">victor@maribamedia.co.za</a>
-                        </li>
-                        <li class="flex items-center gap-3 text-sm text-gray-400">
-                            <i data-lucide="phone" class="w-4 h-4 text-white"></i>
-                            <span>+27 (0) 76 647 3499</span>
-                        </li>
-                        <li class="flex items-center gap-3 text-sm text-gray-400">
-                            <i data-lucide="calendar" class="w-4 h-4 text-white"></i>
-                            <a href="#contact" class="hover:text-white">Book Discovery Call</a>
-                        </li>
+                        <li><a href="#how-it-works" class="text-slate-400 hover:text-cyan-400 text-sm transition-colors">How It Works</a></li>
+                        <li><a href="#benefits" class="text-slate-400 hover:text-cyan-400 text-sm transition-colors">Benefits</a></li>
+                        <li><a href="#contact" class="text-slate-400 hover:text-cyan-400 text-sm transition-colors">Contact</a></li>
                     </ul>
                 </div>
             </div>
 
-            <div class="border-t border-gray-800 pt-8 text-center">
-                <p class="text-gray-500 text-sm">
-                    © 2025 Mariba Media | Performance-Based Pay-Per-Call Network. Company Registration No: 2024 / 132788 / 07.
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">
+                    © 2025 Mariba Media. All rights reserved.
                 </p>
+                <div class="flex gap-6">
+                    <a href="#" class="text-slate-500 hover:text-white text-sm transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-slate-500 hover:text-white text-sm transition-colors">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp Widget -->
     <div class="whatsapp-widget">
-        <a href="https://wa.me/27766473499?text=Hi%20Mariba%20Media%2C%20I'm%20interested%20in%20your%20performance-based%20call%20network%20for%20qualified%20leads." 
+        <a href="https://wa.me/27766473499?text=Hi%20Mariba%20Media%2C%20I'm%20interested%20in%20your%20performance-based%20call%20network." 
            target="_blank" 
            class="whatsapp-button"
            aria-label="Chat on WhatsApp">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
                 <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
             </svg>
         </a>
     </div>
 
     <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         // Initialize Lucide Icons
         lucide.createIcons();
 
-        // Simple mobile menu toggle
+        // Mobile Menu Toggle
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
 
         btn.addEventListener('click', () => {
             menu.classList.toggle('hidden');
-            const icon = btn.querySelector('i');
-            if (menu.classList.contains('hidden')) {
-                btn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
-            } else {
-                btn.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
-            }
+            const isOpen = !menu.classList.contains('hidden');
+            btn.innerHTML = isOpen 
+                ? '<i data-lucide="x" class="w-6 h-6"></i>' 
+                : '<i data-lucide="menu" class="w-6 h-6"></i>';
             lucide.createIcons();
         });
 
-        // Simple smooth scrolling for anchor links
+        // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    menu.classList.add('hidden');
                 }
             });
         });
 
-        // Initialize AOS
-        AOS.init({
-            duration: 1000,
-            once: true
+        // Scroll Reveal Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Particle Background
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                container.appendChild(particle);
+            }
+        }
+        createParticles();
+
+        // Navbar Scroll Effect
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                navbar.classList.add('shadow-lg');
+                navbar.classList.add('shadow-cyan-500/5');
+            } else {
+                navbar.classList.remove('shadow-lg');
+                navbar.classList.remove('shadow-cyan-500/5');
+            }
+            
+            lastScroll = currentScroll;
         });
+
+        // Counter Animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number[data-target]');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                
+                const updateCounter = () => {
+                    current += step;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current).toLocaleString() + '+';
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target.toLocaleString() + '+';
+                    }
+                };
+                
+                updateCounter();
+            });
+        }
+
+        // Trigger counter animation when hero is visible
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    heroObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        heroObserver.observe(document.querySelector('#home'));
     </script>
 </body>
 </html>
