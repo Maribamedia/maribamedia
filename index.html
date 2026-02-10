@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mariba Media | Exclusive Performance Network</title>
-    <meta name="description" content="Private performance-based call network for elite home services, professional services and senior care providers. Invitation-only access.">
-    <meta name="theme-color" content="#020617">
+    <title>Mariba Media | Performance-Based Call Network</title>
+    <meta name="description" content="Premium performance-based call network for solar, insurance, auto, and home services. We connect qualified buyers with elite service providers.">
+    <meta name="theme-color" content="#0f172a">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23020617'/%3E%3Cpath d='M35 35 L50 65 L65 35' stroke='%23d4af37' stroke-width='6' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230f172a'/%3E%3Cpath d='M30 70 L50 30 L70 70' stroke='%2338bdf8' stroke-width='8' stroke-linecap='round' fill='none'/%3E%3Cpath d='M35 70 L50 40 L65 70' stroke='%23a855f7' stroke-width='6' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -16,7 +16,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -26,52 +26,65 @@
         theme: {
           extend: {
             fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              display: ['Space Grotesk', 'sans-serif'],
-              serif: ['Playfair Display', 'serif'],
+              sans: ['Plus Jakarta Sans', 'sans-serif'],
+              body: ['Inter', 'sans-serif'],
             },
             colors: {
-              elite: {
-                black: '#020617',
-                navy: '#0f172a',
-                gold: '#d4af37',
-                'gold-light': '#f4e4bc',
-                platinum: '#e5e7eb',
-                cyan: '#06b6d4',
-                purple: '#7c3aed'
+              brand: {
+                dark: '#0f172a',
+                darker: '#020617',
+                cyan: '#38bdf8',
+                purple: '#a855f7',
+                pink: '#ec4899',
+                blue: '#3b82f6',
+                surface: '#1e293b',
+                'surface-light': '#334155'
               }
             },
-            screens: {
-              'xs': '475px',
-              'sm': '640px',
-              'md': '768px',
-              'lg': '1024px',
-              'xl': '1280px',
-              '2xl': '1536px',
-            },
             animation: {
-              'float': 'float 8s ease-in-out infinite',
-              'shimmer': 'shimmer 3s linear infinite',
+              'float': 'float 6s ease-in-out infinite',
+              'float-delayed': 'float 6s ease-in-out infinite 3s',
               'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-              'gradient-x': 'gradientX 20s ease infinite',
-              'glow': 'glow 2s ease-in-out infinite alternate',
+              'gradient-x': 'gradientX 15s ease infinite',
+              'shimmer': 'shimmer 2s linear infinite',
+              'slide-up': 'slideUp 0.6s ease-out forwards',
+              'fade-in': 'fadeIn 0.8s ease-out forwards',
+              'scale-in': 'scaleIn 0.5s ease-out forwards',
+              'draw': 'draw 2s ease-in-out forwards',
+              'rotate-slow': 'rotate 20s linear infinite',
             },
             keyframes: {
               float: {
-                '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
-                '50%': { transform: 'translateY(-20px) rotate(2deg)' },
-              },
-              shimmer: {
-                '0%': { backgroundPosition: '-200% 0' },
-                '100%': { backgroundPosition: '200% 0' },
+                '0%, 100%': { transform: 'translateY(0px)' },
+                '50%': { transform: 'translateY(-20px)' },
               },
               gradientX: {
                 '0%, 100%': { 'background-position': '0% 50%' },
                 '50%': { 'background-position': '100% 50%' },
               },
-              glow: {
-                '0%': { boxShadow: '0 0 20px rgba(212, 175, 55, 0.2)' },
-                '100%': { boxShadow: '0 0 40px rgba(212, 175, 55, 0.4)' },
+              shimmer: {
+                '0%': { backgroundPosition: '-200% 0' },
+                '100%': { backgroundPosition: '200% 0' },
+              },
+              slideUp: {
+                '0%': { opacity: '0', transform: 'translateY(30px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              scaleIn: {
+                '0%': { opacity: '0', transform: 'scale(0.9)' },
+                '100%': { opacity: '1', transform: 'scale(1)' },
+              },
+              draw: {
+                '0%': { strokeDashoffset: '1000' },
+                '100%': { strokeDashoffset: '0' },
+              },
+              rotate: {
+                '0%': { transform: 'rotate(0deg)' },
+                '100%': { transform: 'rotate(360deg)' },
               }
             }
           }
@@ -80,179 +93,154 @@
     </script>
     
     <style>
-      * {
-        -webkit-tap-highlight-color: transparent;
-      }
-      
       body {
         background-color: #020617;
         color: #f8fafc;
-        font-family: 'Inter', sans-serif;
+        font-family: 'Plus Jakarta Sans', sans-serif;
         -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
         overflow-x: hidden;
-        width: 100%;
       }
 
-      /* Responsive Typography */
-      .responsive-heading {
-        font-size: clamp(2.5rem, 5vw, 4.5rem);
-        line-height: 1.1;
-      }
-      
-      .responsive-subheading {
-        font-size: clamp(1.75rem, 3vw, 3.5rem);
-        line-height: 1.2;
-      }
-      
-      .responsive-text {
-        font-size: clamp(1rem, 1.2vw, 1.125rem);
-      }
-
-      /* Gold Gradient Text */
-      .gold-text {
-        background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 50%, #d4af37 100%);
+      /* Gradient Text */
+      .gradient-text {
+        background: linear-gradient(135deg, #38bdf8 0%, #a855f7 50%, #ec4899 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
         background-size: 200% auto;
-        animation: shimmer 3s linear infinite;
+        animation: gradientX 5s ease infinite;
       }
 
-      /* Platinum Gradient */
-      .platinum-text {
-        background: linear-gradient(135deg, #e5e7eb 0%, #ffffff 50%, #9ca3af 100%);
+      .gradient-text-cyan {
+        background: linear-gradient(135deg, #38bdf8 0%, #22d3ee 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
       }
 
       /* Animated Background */
-      .elite-bg {
-        background: linear-gradient(-45deg, #020617, #0f172a, #1e1b4b, #020617);
+      .animated-bg {
+        background: linear-gradient(-45deg, #020617, #0f172a, #1e1b4b, #0f172a, #020617);
         background-size: 400% 400%;
-        animation: gradientX 20s ease infinite;
+        animation: gradientX 15s ease infinite;
       }
 
-      /* Glassmorphism Elite */
-      .glass-elite {
-        background: rgba(255, 255, 255, 0.02);
+      /* Glassmorphism Modern */
+      .glass-modern {
+        background: rgba(30, 41, 59, 0.4);
         backdrop-filter: blur(20px);
-        border: 1px solid rgba(212, 175, 55, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.08);
       }
 
-      .glass-elite-strong {
-        background: rgba(2, 6, 23, 0.9);
+      .glass-strong {
+        background: rgba(15, 23, 42, 0.95);
         backdrop-filter: blur(30px);
-        border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
       }
 
-      @media (max-width: 768px) {
-        .glass-elite,
-        .glass-elite-strong {
-          backdrop-filter: blur(10px);
-        }
+      /* Glow Effects */
+      .glow-cyan {
+        box-shadow: 0 0 40px rgba(56, 189, 248, 0.15);
+      }
+      
+      .glow-purple {
+        box-shadow: 0 0 40px rgba(168, 85, 247, 0.15);
       }
 
-      /* Gold Glow */
-      .gold-glow {
-        box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
+      /* Button Modern */
+      .btn-primary {
+        background: linear-gradient(135deg, #38bdf8 0%, #3b82f6 100%);
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+      
+      .btn-primary::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        transition: 0.5s;
+      }
+      
+      .btn-primary:hover::before {
+        left: 100%;
+      }
+      
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 40px rgba(56, 189, 248, 0.4);
       }
 
-      .gold-glow-hover:hover {
-        box-shadow: 0 0 40px rgba(212, 175, 55, 0.3);
-        border-color: rgba(212, 175, 55, 0.3);
+      .btn-secondary {
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+      }
+      
+      .btn-secondary:hover {
+        border-color: rgba(56, 189, 248, 0.5);
+        background: rgba(56, 189, 248, 0.1);
+        transform: translateY(-2px);
+      }
+
+      /* Card Modern */
+      .card-modern {
+        background: rgba(30, 41, 59, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .card-modern:hover {
+        transform: translateY(-8px);
+        border-color: rgba(56, 189, 248, 0.2);
+        box-shadow: 0 20px 40px -15px rgba(56, 189, 248, 0.2);
+        background: rgba(30, 41, 59, 0.5);
       }
 
       /* Sector Cards */
-      .sector-card-elite {
-        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        transform-style: preserve-3d;
+      .sector-card {
+        position: relative;
+        overflow: hidden;
       }
       
-      .sector-card-elite:hover {
-        transform: translateY(-15px) scale(1.02);
-        box-shadow: 0 30px 60px -15px rgba(212, 175, 55, 0.2);
-        border-color: rgba(212, 175, 55, 0.3);
+      .sector-card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(56, 189, 248, 0.06), transparent 40%);
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      
+      .sector-card:hover::before {
+        opacity: 1;
       }
 
       /* Partner Cards */
       .partner-card {
-        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        position: relative;
-        overflow: hidden;
-      }
-      
-      .partner-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
-        transition: 0.7s;
-      }
-      
-      .partner-card:hover::before {
-        left: 100%;
-      }
-      
-      .partner-card:hover {
-        transform: translateY(-8px);
-        border-color: rgba(212, 175, 55, 0.4);
-        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
-      }
-
-      /* Button Elite */
-      .btn-elite {
-        position: relative;
-        overflow: hidden;
-        background: linear-gradient(135deg, #d4af37 0%, #b8941f 100%);
         transition: all 0.4s ease;
       }
       
-      .btn-elite::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-        transition: 0.6s;
-      }
-      
-      .btn-elite:hover::before {
-        left: 100%;
-      }
-      
-      .btn-elite:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
-      }
-
-      /* Mobile Responsive Button */
-      @media (max-width: 640px) {
-        .btn-elite {
-          padding: 1rem 1.5rem;
-          font-size: 0.875rem;
-        }
+      .partner-card:hover {
+        transform: translateY(-4px);
       }
 
       /* Scroll Reveal */
-      .reveal-elite {
+      .reveal {
         opacity: 0;
-        transform: translateY(40px);
-        transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: translateY(24px);
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
       }
       
-      .reveal-elite.active {
+      .reveal.active {
         opacity: 1;
         transform: translateY(0);
       }
 
-      /* Custom Scrollbar Elite */
+      /* Custom Scrollbar */
       ::-webkit-scrollbar {
         width: 8px;
       }
@@ -262,629 +250,592 @@
       }
       
       ::-webkit-scrollbar-thumb {
-        background: #d4af37;
+        background: #334155;
         border-radius: 4px;
       }
       
       ::-webkit-scrollbar-thumb:hover {
-        background: #f4e4bc;
+        background: #475569;
       }
 
-      /* Decorative Elements */
-      .deco-line {
-        height: 1px;
-        background: linear-gradient(90deg, transparent, #d4af37, transparent);
+      /* Grid Pattern */
+      .grid-pattern {
+        background-image: radial-gradient(rgba(56, 189, 248, 0.1) 1px, transparent 1px);
+        background-size: 40px 40px;
       }
 
-      .corner-accent {
-        position: absolute;
-        width: 40px;
-        height: 40px;
-        border: 1px solid rgba(212, 175, 55, 0.3);
-      }
-      
-      .corner-accent.top-left { top: -1px; left: -1px; border-right: 0; border-bottom: 0; }
-      .corner-accent.top-right { top: -1px; right: -1px; border-left: 0; border-bottom: 0; }
-      .corner-accent.bottom-left { bottom: -1px; left: -1px; border-right: 0; border-top: 0; }
-      .corner-accent.bottom-right { bottom: -1px; right: -1px; border-left: 0; border-top: 0; }
-
-      @media (max-width: 768px) {
-        .corner-accent {
-          width: 30px;
-          height: 30px;
-        }
+      /* Floating Elements */
+      .float-element {
+        animation: float 6s ease-in-out infinite;
       }
 
-      /* Badge Elite */
-      .badge-elite {
-        background: rgba(212, 175, 55, 0.1);
-        border: 1px solid rgba(212, 175, 55, 0.2);
-        color: #d4af37;
-      }
-
-      /* Link Hover Effect */
-      .link-elite {
+      /* Link Hover */
+      .link-hover {
         position: relative;
-        display: inline-block;
       }
       
-      .link-elite::after {
+      .link-hover::after {
         content: '';
         position: absolute;
         width: 0;
-        height: 1px;
-        bottom: -2px;
+        height: 2px;
+        bottom: -4px;
         left: 0;
-        background: #d4af37;
+        background: linear-gradient(90deg, #38bdf8, #a855f7);
         transition: width 0.3s ease;
       }
       
-      .link-elite:hover::after {
+      .link-hover:hover::after {
         width: 100%;
       }
 
-      /* Stats Divider */
-      .stat-divider {
-        width: 1px;
-        height: 40px;
-        background: linear-gradient(180deg, transparent, #d4af37, transparent);
+      /* Stats Counter */
+      .stat-number {
+        font-variant-numeric: tabular-nums;
       }
 
-      /* Touch-friendly elements */
-      @media (hover: none) {
-        .sector-card-elite:hover {
-          transform: none;
-        }
-        
-        .partner-card:hover {
-          transform: none;
-        }
-        
-        .btn-elite:hover {
-          transform: none;
-        }
-        
-        .gold-glow-hover:hover {
-          box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
-        }
+      /* Process Step */
+      .step-connector {
+        background: linear-gradient(90deg, #38bdf8, #a855f7);
+        height: 2px;
       }
 
-      /* Safe area insets for modern mobile devices */
-      .safe-top {
-        padding-top: env(safe-area-inset-top);
+      /* Input Modern */
+      .input-modern {
+        background: rgba(30, 41, 59, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
       }
       
-      .safe-bottom {
-        padding-bottom: env(safe-area-inset-bottom);
+      .input-modern:focus {
+        border-color: rgba(56, 189, 248, 0.5);
+        box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.1);
+        outline: none;
+      }
+
+      /* Gradient Border */
+      .gradient-border {
+        position: relative;
+        background: rgba(30, 41, 59, 0.5);
+        border-radius: 16px;
       }
       
-      .safe-left {
-        padding-left: env(safe-area-inset-left);
+      .gradient-border::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 16px;
+        padding: 1px;
+        background: linear-gradient(135deg, rgba(56, 189, 248, 0.5), rgba(168, 85, 247, 0.5));
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+      }
+
+      /* Badge Modern */
+      .badge-modern {
+        background: rgba(56, 189, 248, 0.1);
+        border: 1px solid rgba(56, 189, 248, 0.2);
+        color: #38bdf8;
+      }
+
+      /* Orbit Animation */
+      .orbit {
+        animation: rotate 20s linear infinite;
       }
       
-      .safe-right {
-        padding-right: env(safe-area-inset-right);
+      .orbit-reverse {
+        animation: rotate 25s linear infinite reverse;
+      }
+
+      /* Particle Canvas */
+      #particles-canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
       }
     </style>
 </head>
 <body class="antialiased">
 
     <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 glass-elite-strong transition-all duration-500 safe-top safe-left safe-right">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16 sm:h-20 lg:h-24">
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 glass-strong transition-all duration-500">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
-                <a href="#home" class="flex items-center gap-3 sm:gap-4 group">
+                <a href="#home" class="flex items-center gap-3 group">
                     <div class="relative">
-                        <div class="absolute inset-0 bg-elite-gold rounded-lg blur opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
-                        <div class="relative bg-gradient-to-br from-elite-gold to-yellow-600 p-2 sm:p-3 rounded-lg">
-                            <i data-lucide="crown" class="w-4 h-4 sm:w-6 sm:h-6 text-elite-black"></i>
+                        <div class="absolute inset-0 bg-gradient-to-r from-brand-cyan to-brand-purple rounded-lg blur opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
+                        <div class="relative bg-gradient-to-br from-brand-dark to-brand-surface p-2.5 rounded-lg border border-white/10">
+                            <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M30 70 L50 30 L70 70" stroke="#38bdf8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M35 70 L50 40 L65 70" stroke="#a855f7" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
                         </div>
                     </div>
                     <div>
-                        <span class="text-xl sm:text-2xl font-serif italic font-bold tracking-wide text-white">
-                            Mariba<span class="gold-text">Media</span>
+                        <span class="text-xl font-bold tracking-tight text-white">
+                            Mariba<span class="gradient-text-cyan">Media</span>
                         </span>
-                        <span class="block text-[9px] xs:text-[10px] text-elite-gold/80 font-medium tracking-[0.2em] sm:tracking-[0.3em] uppercase">Private Network</span>
                     </div>
                 </a>
 
                 <!-- Desktop Nav -->
-                <div class="hidden md:flex items-center gap-8 lg:gap-10">
-                    <a href="#home" class="text-sm font-medium text-elite-platinum/80 hover:text-elite-gold transition-colors duration-300 tracking-wide">Home</a>
-                    <a href="#sectors" class="text-sm font-medium text-elite-platinum/80 hover:text-elite-gold transition-colors duration-300 tracking-wide">Sectors</a>
-                    <a href="#partners" class="text-sm font-medium text-elite-platinum/80 hover:text-elite-gold transition-colors duration-300 tracking-wide">Partners</a>
-                    <a href="#how-it-works" class="text-sm font-medium text-elite-platinum/80 hover:text-elite-gold transition-colors duration-300 tracking-wide">Process</a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#home" class="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-300">Home</a>
+                    <a href="#sectors" class="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-300">Sectors</a>
+                    <a href="#partners" class="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-300">Network</a>
+                    <a href="#process" class="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-300">Process</a>
                     
-                    <a href="#contact" 
-                       class="btn-elite text-elite-black px-6 lg:px-8 py-2 lg:py-3 rounded-sm text-xs lg:text-sm font-bold tracking-wider uppercase">
-                        Request Access
+                    <a href="#contact" class="btn-primary text-white px-6 py-2.5 rounded-full text-sm font-semibold">
+                        Get Started
                     </a>
                 </div>
 
                 <!-- Mobile Toggle -->
-                <button id="mobile-menu-btn" class="md:hidden p-2 text-elite-platinum hover:text-elite-gold transition-colors">
-                    <i data-lucide="menu" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-300 hover:text-white transition-colors">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden glass-elite-strong border-t border-elite-gold/10 safe-left safe-right">
-            <div class="px-4 sm:px-6 py-6 space-y-2">
-                <a href="#home" class="block text-elite-platinum hover:text-elite-gold py-3 px-4 tracking-wide rounded-sm hover:bg-white/5 transition-colors">Home</a>
-                <a href="#sectors" class="block text-elite-platinum hover:text-elite-gold py-3 px-4 tracking-wide rounded-sm hover:bg-white/5 transition-colors">Sectors</a>
-                <a href="#partners" class="block text-elite-platinum hover:text-elite-gold py-3 px-4 tracking-wide rounded-sm hover:bg-white/5 transition-colors">Partners</a>
-                <a href="#how-it-works" class="block text-elite-platinum hover:text-elite-gold py-3 px-4 tracking-wide rounded-sm hover:bg-white/5 transition-colors">Process</a>
-                <div class="pt-4 px-4">
-                    <a href="#contact" class="block w-full text-center btn-elite text-elite-black px-5 py-3 sm:py-4 rounded-sm font-bold tracking-wider uppercase text-sm">
-                        Request Access
-                    </a>
-                </div>
+        <div id="mobile-menu" class="hidden md:hidden glass-strong border-t border-white/5">
+            <div class="px-6 py-6 space-y-4">
+                <a href="#home" class="block text-slate-300 hover:text-white py-2">Home</a>
+                <a href="#sectors" class="block text-slate-300 hover:text-white py-2">Sectors</a>
+                <a href="#partners" class="block text-slate-300 hover:text-white py-2">Network</a>
+                <a href="#process" class="block text-slate-300 hover:text-white py-2">Process</a>
+                <a href="#contact" class="block w-full text-center btn-primary text-white px-5 py-3 rounded-full font-semibold mt-4">
+                    Get Started
+                </a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center pt-16 sm:pt-20 lg:pt-24 overflow-hidden safe-left safe-right">
-        <!-- Background -->
-        <div class="absolute inset-0 elite-bg opacity-40"></div>
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(212,175,55,0.1)_0%,_transparent_70%)]"></div>
+    <section id="home" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 animated-bg opacity-50"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(56,189,248,0.15)_0%,_transparent_50%)]"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(168,85,247,0.15)_0%,_transparent_50%)]"></div>
+        <div class="absolute inset-0 grid-pattern opacity-30"></div>
         
-        <!-- Decorative Grid -->
-        <div class="absolute inset-0 bg-[linear-gradient(rgba(212,175,55,0.03)_1px,_transparent_1px),_linear-gradient(90deg,_rgba(212,175,55,0.03)_1px,_transparent_1px)] bg-[size:40px_40px] sm:bg-[size:60px_60px]"></div>
+        <!-- Canvas for Particles -->
+        <canvas id="particles-canvas"></canvas>
 
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-            <div class="max-w-4xl mx-auto text-center">
-                <!-- Exclusive Badge -->
-                <div class="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 badge-elite rounded-sm mb-6 sm:mb-8 lg:mb-10 reveal-elite">
-                    <i data-lucide="sparkles" class="w-3 h-3 sm:w-4 sm:h-4"></i>
-                    <span class="text-[10px] xs:text-xs font-bold tracking-[0.2em] sm:tracking-[0.3em] uppercase">Invitation-Only</span>
-                    <i data-lucide="sparkles" class="w-3 h-3 sm:w-4 sm:h-4"></i>
+        <!-- Floating Elements -->
+        <div class="absolute top-1/4 left-10 w-64 h-64 bg-brand-cyan/20 rounded-full blur-3xl float-element"></div>
+        <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-brand-purple/20 rounded-full blur-3xl float-element" style="animation-delay: 3s;"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-20">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="max-w-2xl">
+                    <!-- Badge -->
+                    <div class="inline-flex items-center gap-2 px-4 py-2 badge-modern rounded-full mb-8 reveal">
+                        <i data-lucide="zap" class="w-4 h-4"></i>
+                        <span class="text-xs font-semibold tracking-wide uppercase">Performance-Based Network</span>
+                    </div>
+
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 reveal" style="transition-delay: 0.1s">
+                        We help <span class="gradient-text">buyers, agents</span> and operators fulfill demand
+                    </h1>
+
+                    <p class="text-lg text-slate-400 mb-8 leading-relaxed reveal" style="transition-delay: 0.2s">
+                        Using performance-based calls across solar, insurance, auto, home services & more. No monthly fees. Pay only for qualified connections.
+                    </p>
+
+                    <!-- Stats -->
+                    <div class="flex gap-8 mb-10 reveal" style="transition-delay: 0.3s">
+                        <div>
+                            <div class="text-3xl font-bold gradient-text-cyan stat-number" data-target="2.4">0</div>
+                            <div class="text-sm text-slate-500 mt-1">Million Revenue Generated</div>
+                        </div>
+                        <div class="w-px bg-slate-800"></div>
+                        <div>
+                            <div class="text-3xl font-bold gradient-text-cyan stat-number" data-target="87">0</div>
+                            <div class="text-sm text-slate-500 mt-1">Active Partners</div>
+                        </div>
+                        <div class="w-px bg-slate-800"></div>
+                        <div>
+                            <div class="text-3xl font-bold gradient-text-cyan stat-number" data-target="94">0</div>
+                            <div class="text-sm text-slate-500 mt-1">% Retention Rate</div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 reveal" style="transition-delay: 0.4s">
+                        <a href="#contact" class="btn-primary text-white px-8 py-4 rounded-full font-semibold inline-flex items-center justify-center gap-2 group">
+                            Start Growing Today
+                            <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <a href="#sectors" class="btn-secondary text-white px-8 py-4 rounded-full font-semibold inline-flex items-center justify-center gap-2">
+                            Explore Sectors
+                        </a>
+                    </div>
                 </div>
 
-                <h1 class="responsive-heading font-serif font-bold tracking-tight mb-6 sm:mb-8 reveal-elite">
-                    <span class="platinum-text italic block">Qualified</span>
-                    <span class="gold-text block mt-2">Exclusivity</span>
-                </h1>
+                <!-- Hero Visual -->
+                <div class="relative hidden lg:block reveal" style="transition-delay: 0.5s">
+                    <div class="relative w-full aspect-square max-w-lg mx-auto">
+                        <!-- Central Hub -->
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-32 h-32 rounded-2xl bg-gradient-to-br from-brand-cyan to-brand-purple p-[2px] glow-cyan">
+                                <div class="w-full h-full rounded-2xl bg-brand-dark flex items-center justify-center">
+                                    <i data-lucide="phone-call" class="w-12 h-12 text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Orbiting Icons -->
+                        <div class="absolute inset-0 orbit">
+                            <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-4 w-16 h-16 rounded-xl glass-modern flex items-center justify-center border border-brand-cyan/30">
+                                <i data-lucide="sun" class="w-8 h-8 text-brand-cyan"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="absolute inset-0 orbit-reverse">
+                            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-4 w-16 h-16 rounded-xl glass-modern flex items-center justify-center border border-brand-purple/30">
+                                <i data-lucide="shield" class="w-8 h-8 text-brand-purple"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="absolute inset-0 orbit" style="animation-delay: -5s;">
+                            <div class="absolute top-1/2 right-0 translate-x-4 -translate-y-1/2 w-16 h-16 rounded-xl glass-modern flex items-center justify-center border border-brand-pink/30">
+                                <i data-lucide="car" class="w-8 h-8 text-brand-pink"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="absolute inset-0 orbit-reverse" style="animation-delay: -7s;">
+                            <div class="absolute top-1/2 left-0 -translate-x-4 -translate-y-1/2 w-16 h-16 rounded-xl glass-modern flex items-center justify-center border border-brand-blue/30">
+                                <i data-lucide="home" class="w-8 h-8 text-brand-blue"></i>
+                            </div>
+                        </div>
 
-                <p class="responsive-text text-elite-platinum/70 mb-4 sm:mb-6 max-w-2xl mx-auto leading-relaxed font-light reveal-elite" style="transition-delay: 0.2s">
-                    A private performance network serving elite providers in Home Services, Professional Services, and Senior Care.
-                </p>
-                
-                <p class="text-xs sm:text-sm text-elite-gold/60 mb-8 sm:mb-12 tracking-widest uppercase reveal-elite" style="transition-delay: 0.3s">
-                    No monthly fees • Pay per qualified call • By application only
-                </p>
-
-                <!-- Stats -->
-                <div class="flex flex-col xs:flex-row justify-center items-center gap-4 xs:gap-6 sm:gap-8 lg:gap-16 mb-12 sm:mb-16 reveal-elite" style="transition-delay: 0.4s">
-                    <div class="text-center">
-                        <div class="text-2xl sm:text-3xl lg:text-4xl font-serif gold-text mb-1">$2.4M</div>
-                        <div class="text-xs text-elite-platinum/50 tracking-widest uppercase">Revenue Generated</div>
+                        <!-- Connection Lines SVG -->
+                        <svg class="absolute inset-0 w-full h-full" viewBox="0 0 400 400">
+                            <circle cx="200" cy="200" r="120" fill="none" stroke="rgba(56,189,248,0.1)" stroke-width="1" stroke-dasharray="5,5" class="animate-[rotate_30s_linear_infinite]"/>
+                            <circle cx="200" cy="200" r="160" fill="none" stroke="rgba(168,85,247,0.1)" stroke-width="1" stroke-dasharray="10,10" class="animate-[rotate_40s_linear_infinite_reverse]"/>
+                        </svg>
                     </div>
-                    <div class="stat-divider hidden xs:block"></div>
-                    <div class="text-center">
-                        <div class="text-2xl sm:text-3xl lg:text-4xl font-serif gold-text mb-1">87</div>
-                        <div class="text-xs text-elite-platinum/50 tracking-widest uppercase">Partner Firms</div>
-                    </div>
-                    <div class="stat-divider hidden xs:block"></div>
-                    <div class="text-center">
-                        <div class="text-2xl sm:text-3xl lg:text-4xl font-serif gold-text mb-1">94%</div>
-                        <div class="text-xs text-elite-platinum/50 tracking-widest uppercase">Retention Rate</div>
-                    </div>
-                </div>
-
-                <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center reveal-elite" style="transition-delay: 0.5s">
-                    <a href="#contact"
-                       class="btn-elite group inline-flex items-center justify-center gap-2 sm:gap-3 text-elite-black px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-sm font-bold tracking-wider uppercase text-xs sm:text-sm">
-                        Apply for Membership
-                        <i data-lucide="arrow-right" class="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                    <a href="#sectors"
-                       class="inline-flex items-center justify-center gap-2 sm:gap-3 glass-elite text-elite-platinum border border-elite-gold/20 hover:border-elite-gold/40 px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-sm font-medium tracking-wider uppercase text-xs sm:text-sm transition-all duration-300">
-                        Explore Sectors
-                    </a>
                 </div>
             </div>
         </div>
 
         <!-- Scroll Indicator -->
-        <div class="absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 sm:gap-3 opacity-50">
-            <span class="text-[9px] sm:text-[10px] tracking-[0.2em] sm:tracking-[0.3em] uppercase text-elite-platinum/50">Scroll</span>
-            <div class="w-px h-8 sm:h-12 bg-gradient-to-b from-elite-gold to-transparent"></div>
-        </div>
-    </section>
-
-    <!-- Three Sectors Section -->
-    <section id="sectors" class="relative py-16 sm:py-24 lg:py-32 xl:py-40 safe-left safe-right">
-        <div class="absolute inset-0 bg-elite-black"></div>
-        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-elite-gold/30 to-transparent"></div>
-        
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 sm:mb-16 lg:mb-24 reveal-elite">
-                <span class="text-elite-gold/60 text-xs tracking-[0.3em] sm:tracking-[0.4em] uppercase block mb-3 sm:mb-4">Our Expertise</span>
-                <h2 class="responsive-subheading font-serif font-bold mb-4 sm:mb-6">
-                    <span class="platinum-text block">Three Elite</span>
-                    <span class="gold-text italic block">Verticals</span>
-                </h2>
-                <div class="deco-line w-16 sm:w-24 mx-auto mt-6 sm:mt-8"></div>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
-                <!-- Home Services -->
-                <div class="sector-card-elite group relative glass-elite rounded-sm p-6 sm:p-8 lg:p-10 border border-white/5 reveal-elite">
-                    <div class="corner-accent top-left"></div>
-                    <div class="corner-accent top-right"></div>
-                    <div class="corner-accent bottom-left"></div>
-                    <div class="corner-accent bottom-right"></div>
-                    
-                    <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                    
-                    <div class="relative">
-                        <div class="w-16 h-16 sm:w-20 sm:h-20 mb-6 sm:mb-8 relative">
-                            <div class="absolute inset-0 border border-elite-gold/20 rotate-45 transform group-hover:rotate-90 transition-transform duration-700"></div>
-                            <div class="absolute inset-2 border border-elite-gold/40 rotate-45 transform group-hover:rotate-0 transition-transform duration-700"></div>
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <i data-lucide="home" class="w-6 h-6 sm:w-8 sm:h-8 text-cyan-400"></i>
-                            </div>
-                        </div>
-                        
-                        <span class="text-cyan-400/60 text-xs tracking-[0.2em] sm:tracking-[0.3em] uppercase block mb-3">01</span>
-                        <h3 class="text-xl sm:text-2xl font-serif font-bold text-white mb-3 sm:mb-4 italic">Home Services</h3>
-                        <p class="text-elite-platinum/60 mb-6 sm:mb-8 leading-relaxed text-sm">
-                            Premium residential contractors and emergency service providers. Exclusive territories ensure zero competition among members.
-                        </p>
-                        
-                        <ul class="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
-                            <li class="flex items-center gap-3 sm:gap-4 text-elite-platinum/80 text-xs sm:text-sm">
-                                <div class="w-1.5 h-1.5 bg-cyan-400 rotate-45 flex-shrink-0"></div>
-                                <span>Luxury HVAC & Plumbing</span>
-                            </li>
-                            <li class="flex items-center gap-3 sm:gap-4 text-elite-platinum/80 text-xs sm:text-sm">
-                                <div class="w-1.5 h-1.5 bg-cyan-400 rotate-45 flex-shrink-0"></div>
-                                <span>High-End Renovations</span>
-                            </li>
-                            <li class="flex items-center gap-3 sm:gap-4 text-elite-platinum/80 text-xs sm:text-sm">
-                                <div class="w-1.5 h-1.5 bg-cyan-400 rotate-45 flex-shrink-0"></div>
-                                <span>Smart Home Integration</span>
-                            </li>
-                            <li class="flex items-center gap-3 sm:gap-4 text-elite-platinum/80 text-xs sm:text-sm">
-                                <div class="w-1.5 h-1.5 bg-cyan-400 rotate-45 flex-shrink-0"></div>
-                                <span>Estate Management</span>
-                            </li>
-                        </ul>
-
-                        <div class="pt-4 sm:pt-6 border-t border-white/10 flex justify-between items-center">
-                            <span class="text-xs text-elite-platinum/40 tracking-widest uppercase">Entry Threshold</span>
-                            <span class="text-cyan-400 font-serif italic text-sm sm:text-base">$500+</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Professional Services -->
-                <div class="sector-card-elite group relative glass-elite rounded-sm p-6 sm:p-8 lg:p-10 border border-white/5 reveal-elite" style="transition-delay: 0.2s">
-                    <div class="corner-accent top-left"></div>
-                    <div class="corner-accent top-right"></div>
-                    <div class="corner-accent bottom-left"></div>
-                    <div class="corner-accent bottom-right"></div>
-                    
-                    <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                    
-                    <div class="relative">
-                        <div class="w-16 h-16 sm:w-20 sm:h-20 mb-6 sm:mb-8 relative">
-                            <div class="absolute inset-0 border border-elite-gold/20 rotate-45 transform group-hover:rotate-90 transition-transform duration-700"></div>
-                            <div class="absolute inset-2 border border-elite-gold/40 rotate-45 transform group-hover:rotate-0 transition-transform duration-700"></div>
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <i data-lucide="briefcase" class="w-6 h-6 sm:w-8 sm:h-8 text-blue-400"></i>
-                            </div>
-                        </div>
-                        
-                        <span class="text-blue-400/60 text-xs tracking-[0.2em] sm:tracking-[0.3em] uppercase block mb-3">02</span>
-                        <h3 class="text-xl sm:text-2xl font-serif font-bold text-white mb-3 sm:mb-4 italic">Professional</h3>
-                        <p class="text-elite-platinum/60 mb-6 sm:mb-8 leading-relaxed text-sm">
-                            White-glove B2B and B2C consultancies. Vetted firms serving high-net-worth individuals and enterprise clients.
-                        </p>
-                        
-                        <ul class="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
-                            <li class="flex items-center gap-3 sm:gap-4 text-elite-platinum/80 text-xs sm:text-sm">
-                                <div class="w-1.5 h-1.5 bg-blue-400 rotate-45 flex-shrink-0"></div>
-                                <span>Wealth Management</span>
-                            </li>
-                            <li class="flex items-center gap-3 sm:gap-4 text-elite-platinum/80 text-xs sm:text-sm">
-                                <div class="w-1.5 h-1.5 bg-blue-400 rotate-45 flex-shrink-0"></div>
-                                <span>Corporate Legal</span>
-                            </li>
-                            <li class="flex items-center gap-3 sm:gap-4 text-elite-platinum/80 text-xs sm:text-sm">
-                                <div class="w-1.5 h-1.5 bg-blue-400 rotate-45 flex-shrink-0"></div>
-                                <span>Commercial Real Estate</span>
-                            </li>
-                            <li class="flex items-center gap-3 sm:gap-4 text-elite-platinum/80 text-xs sm:text-sm">
-                                <div class="w-1.5 h-1.5 bg-blue-400 rotate-45 flex-shrink-0"></div>
-                                <span>Executive Insurance</span>
-                            </li>
-                        </ul>
-
-                        <div class="pt-4 sm:pt-6 border-t border-white/10 flex justify-between items-center">
-                            <span class="text-xs text-elite-platinum/40 tracking-widest uppercase">Entry Threshold</span>
-                            <span class="text-blue-400 font-serif italic text-sm sm:text-base">$2K+</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Senior Care -->
-                <div class="sector-card-elite group relative glass-elite rounded-sm p-6 sm:p-8 lg:p-10 border border-white/5 reveal-elite" style="transition-delay: 0.4s">
-                    <div class="corner-accent top-left"></div>
-                    <div class="corner-accent top-right"></div>
-                    <div class="corner-accent bottom-left"></div>
-                    <div class="corner-accent bottom-right"></div>
-                    
-                    <div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                    
-                    <div class="relative">
-                        <div class="w-16 h-16 sm:w-20 sm:h-20 mb-6 sm:mb-8 relative">
-                            <div class="absolute inset-0 border border-elite-gold/20 rotate-45 transform group-hover:rotate-90 transition-transform duration-700"></div>
-                            <div class="absolute inset-2 border border-elite-gold/40 rotate-45 transform group-hover:rotate-0 transition-transform duration-700"></div>
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <i data-lucide="heart-handshake" class="w-6 h-6 sm:w-8 sm:h-8 text-purple-400"></i>
-                            </div>
-                        </div>
-                        
-                        <span class="text-purple-400/60 text-xs tracking-[0.2em] sm:tracking-[0.3em] uppercase block mb-3">03</span>
-                        <h3 class="text-xl sm:text-2xl font-serif font-bold text-white mb-3 sm:mb-4 italic">Senior Care</h3>
-                        <p class="text-elite-platinum/60 mb-6 sm:mb-8 leading-relaxed text-sm">
-                            Boutique care providers and luxury living facilities. Serving discerning families who demand excellence.
-                        </p>
-                        
-                        <ul class="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
-                            <li class="flex items-center gap-3 sm:gap-4 text-elite-platinum/80 text-xs sm:text-sm">
-                                <div class="w-1.5 h-1.5 bg-purple-400 rotate-45 flex-shrink-0"></div>
-                                <span>Concierge Home Care</span>
-                            </li>
-                            <li class="flex items-center gap-3 sm:gap-4 text-elite-platinum/80 text-xs sm:text-sm">
-                                <div class="w-1.5 h-1.5 bg-purple-400 rotate-45 flex-shrink-0"></div>
-                                <span>Luxury Assisted Living</span>
-                            </li>
-                            <li class="flex items-center gap-3 sm:gap-4 text-elite-platinum/80 text-xs sm:text-sm">
-                                <div class="w-1.5 h-1.5 bg-purple-400 rotate-45 flex-shrink-0"></div>
-                                <span>Memory Care Estates</span>
-                            </li>
-                            <li class="flex items-center gap-3 sm:gap-4 text-elite-platinum/80 text-xs sm:text-sm">
-                                <div class="w-1.5 h-1.5 bg-purple-400 rotate-45 flex-shrink-0"></div>
-                                <span>Private Nursing</span>
-                            </li>
-                        </ul>
-
-                        <div class="pt-4 sm:pt-6 border-t border-white/10 flex justify-between items-center">
-                            <span class="text-xs text-elite-platinum/40 tracking-widest uppercase">Entry Threshold</span>
-                            <span class="text-purple-400 font-serif italic text-sm sm:text-base">$5K+</span>
-                        </div>
-                    </div>
-                </div>
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 animate-bounce">
+            <div class="w-6 h-10 rounded-full border-2 border-slate-600 flex justify-center pt-2">
+                <div class="w-1 h-2 bg-slate-400 rounded-full"></div>
             </div>
         </div>
     </section>
 
-    <!-- Partners Ecosystem Section -->
-    <section id="partners" class="relative py-16 sm:py-24 lg:py-32 xl:py-40 bg-elite-navy safe-left safe-right">
-        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(212,175,55,0.05)_0%,_transparent_50%)]"></div>
+    <!-- Sectors Section -->
+    <section id="sectors" class="relative py-24 md:py-32 bg-brand-darker">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(56,189,248,0.05)_0%,_transparent_70%)]"></div>
         
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 sm:mb-16 lg:mb-20 reveal-elite">
-                <span class="text-elite-gold/60 text-xs tracking-[0.3em] sm:tracking-[0.4em] uppercase block mb-3 sm:mb-4">The Ecosystem</span>
-                <h2 class="responsive-subheading font-serif font-bold mb-4 sm:mb-6">
-                    <span class="platinum-text block">Mariba</span>
-                    <span class="gold-text italic block">Partners</span>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="text-brand-cyan text-sm font-semibold tracking-wider uppercase block mb-4">Industries We Serve</span>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
+                    Performance-driven <span class="gradient-text">results</span>
                 </h2>
-                <p class="text-elite-platinum/60 max-w-2xl mx-auto leading-relaxed text-sm sm:text-base">
-                    Our integrated network of specialized platforms serving the energy, commercial, and training sectors. Members receive preferred access across all properties.
+                <p class="text-slate-400 max-w-2xl mx-auto text-lg">
+                    Specialized call generation across high-value service sectors. Quality connections, zero waste.
                 </p>
-                <div class="deco-line w-16 sm:w-24 mx-auto mt-6 sm:mt-8"></div>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                <!-- Solar Connector -->
-                <a href="https://solar.maribamedia.co.za" target="_blank" rel="noopener noreferrer" 
-                   class="partner-card group glass-elite rounded-sm p-6 sm:p-8 border border-white/5 block reveal-elite">
-                    <div class="flex items-start justify-between mb-4 sm:mb-6">
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-sm bg-gradient-to-br from-orange-500/20 to-yellow-500/20 flex items-center justify-center border border-orange-500/30">
-                            <i data-lucide="sun" class="w-5 h-5 sm:w-7 sm:h-7 text-orange-400"></i>
-                        </div>
-                        <i data-lucide="external-link" class="w-4 h-4 sm:w-5 sm:h-5 text-elite-platinum/30 group-hover:text-elite-gold transition-colors"></i>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6" id="sectors-grid">
+                <!-- Solar -->
+                <div class="sector-card card-modern rounded-2xl p-8 reveal">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-orange-500/20 to-yellow-500/20 flex items-center justify-center mb-6 border border-orange-500/30">
+                        <i data-lucide="sun" class="w-7 h-7 text-orange-400"></i>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-serif font-bold text-white mb-2 group-hover:gold-text transition-colors">Solar Connector</h3>
-                    <p class="text-elite-gold/60 text-xs tracking-widest uppercase mb-3 sm:mb-4">solar.maribamedia.co.za</p>
-                    <p class="text-elite-platinum/60 text-xs sm:text-sm leading-relaxed">
-                        Premium residential and commercial solar installation leads. Connecting certified installers with pre-qualified property owners seeking energy independence.
+                    <h3 class="text-xl font-bold text-white mb-3">Solar Energy</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Residential and commercial solar installation leads. Pre-qualified homeowners ready to invest in energy independence.
                     </p>
-                    <div class="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-white/5 flex items-center gap-2 text-xs text-elite-platinum/40">
-                        <i data-lucide="zap" class="w-3 h-3"></i>
-                        <span>Energy Sector</span>
+                    <div class="flex items-center gap-2 text-xs text-orange-400 font-semibold">
+                        <span>High Intent</span>
+                        <div class="w-1 h-1 rounded-full bg-orange-400"></div>
+                        <span>$500+ Value</span>
                     </div>
+                </div>
+
+                <!-- Insurance -->
+                <div class="sector-card card-modern rounded-2xl p-8 reveal" style="transition-delay: 0.1s">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center mb-6 border border-blue-500/30">
+                        <i data-lucide="shield-check" class="w-7 h-7 text-blue-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Insurance</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Auto, home, and commercial insurance prospects. Active shoppers comparing quotes and ready to bind policies.
+                    </p>
+                    <div class="flex items-center gap-2 text-xs text-blue-400 font-semibold">
+                        <span>Live Transfers</span>
+                        <div class="w-1 h-1 rounded-full bg-blue-400"></div>
+                        <span>Real-time</span>
+                    </div>
+                </div>
+
+                <!-- Auto -->
+                <div class="sector-card card-modern rounded-2xl p-8 reveal" style="transition-delay: 0.2s">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-red-500/20 to-pink-500/20 flex items-center justify-center mb-6 border border-red-500/30">
+                        <i data-lucide="car" class="w-7 h-7 text-red-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Auto Services</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Warranty extensions, repair services, and dealership connections. Qualified vehicle owners seeking immediate solutions.
+                    </p>
+                    <div class="flex items-center gap-2 text-xs text-red-400 font-semibold">
+                        <span>Urgent Demand</span>
+                        <div class="w-1 h-1 rounded-full bg-red-400"></div>
+                        <span>24/7 Flow</span>
+                    </div>
+                </div>
+
+                <!-- Home Services -->
+                <div class="sector-card card-modern rounded-2xl p-8 reveal" style="transition-delay: 0.3s">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-500/20 to-green-500/20 flex items-center justify-center mb-6 border border-emerald-500/30">
+                        <i data-lucide="home" class="w-7 h-7 text-emerald-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Home Services</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        HVAC, plumbing, roofing, and renovations. Homeowners with immediate needs and approved budgets.
+                    </p>
+                    <div class="flex items-center gap-2 text-xs text-emerald-400 font-semibold">
+                        <span>Local Focus</span>
+                        <div class="w-1 h-1 rounded-full bg-emerald-400"></div>
+                        <span>Geo-targeted</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Verticals -->
+            <div class="mt-12 text-center reveal">
+                <p class="text-slate-500 text-sm mb-6">Also serving: Legal, Financial Services, Healthcare & More</p>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-slate-400 text-sm">Legal</span>
+                    <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-slate-400 text-sm">Finance</span>
+                    <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-slate-400 text-sm">Healthcare</span>
+                    <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-slate-400 text-sm">Education</span>
+                    <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-slate-400 text-sm">Technology</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Network/Partners Section -->
+    <section id="partners" class="relative py-24 md:py-32 bg-brand-dark">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(168,85,247,0.1)_0%,_transparent_50%)]"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="text-brand-purple text-sm font-semibold tracking-wider uppercase block mb-4">Our Ecosystem</span>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
+                    Integrated <span class="gradient-text">network</span> platforms
+                </h2>
+                <p class="text-slate-400 max-w-2xl mx-auto text-lg">
+                    Specialized verticals working in harmony to deliver comprehensive market coverage.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Solar Connector -->
+                <a href="https://solar.maribamedia.co.za" target="_blank" rel="noopener" class="partner-card group glass-modern rounded-2xl p-6 border border-white/5 hover:border-brand-cyan/30 block reveal">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500/20 to-yellow-500/20 flex items-center justify-center border border-orange-500/30 group-hover:scale-110 transition-transform">
+                            <i data-lucide="sun" class="w-6 h-6 text-orange-400"></i>
+                        </div>
+                        <i data-lucide="arrow-up-right" class="w-5 h-5 text-slate-600 group-hover:text-brand-cyan transition-colors"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-brand-cyan transition-colors">Solar Connector</h3>
+                    <p class="text-brand-cyan/60 text-xs mb-3">solar.maribamedia.co.za</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Residential & commercial solar leads. Certified installer network across all major markets.
+                    </p>
                 </a>
 
                 <!-- Commercial Connector -->
-                <a href="https://commercial.maribamedia.co.za" target="_blank" rel="noopener noreferrer"
-                   class="partner-card group glass-elite rounded-sm p-6 sm:p-8 border border-white/5 block reveal-elite" style="transition-delay: 0.1s">
-                    <div class="flex items-start justify-between mb-4 sm:mb-6">
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-sm bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center border border-blue-500/30">
-                            <i data-lucide="building-2" class="w-5 h-5 sm:w-7 sm:h-7 text-blue-400"></i>
+                <a href="https://commercial.maribamedia.co.za" target="_blank" rel="noopener" class="partner-card group glass-modern rounded-2xl p-6 border border-white/5 hover:border-brand-blue/30 block reveal" style="transition-delay: 0.1s">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center border border-blue-500/30 group-hover:scale-110 transition-transform">
+                            <i data-lucide="building-2" class="w-6 h-6 text-blue-400"></i>
                         </div>
-                        <i data-lucide="external-link" class="w-4 h-4 sm:w-5 sm:h-5 text-elite-platinum/30 group-hover:text-elite-gold transition-colors"></i>
+                        <i data-lucide="arrow-up-right" class="w-5 h-5 text-slate-600 group-hover:text-brand-blue transition-colors"></i>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-serif font-bold text-white mb-2 group-hover:gold-text transition-colors">Commercial Connector</h3>
-                    <p class="text-elite-gold/60 text-xs tracking-widest uppercase mb-3 sm:mb-4">commercial.maribamedia.co.za</p>
-                    <p class="text-elite-platinum/60 text-xs sm:text-sm leading-relaxed">
-                        Enterprise-grade B2B connections. Facilitating partnerships between service providers and commercial property portfolios, retail chains, and corporate facilities.
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-brand-blue transition-colors">Commercial Connector</h3>
+                    <p class="text-brand-blue/60 text-xs mb-3">commercial.maribamedia.co.za</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        B2B service connections for enterprise clients, retail chains, and corporate facilities.
                     </p>
-                    <div class="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-white/5 flex items-center gap-2 text-xs text-elite-platinum/40">
-                        <i data-lucide="briefcase" class="w-3 h-3"></i>
-                        <span>B2B Division</span>
-                    </div>
                 </a>
 
                 <!-- Energy Funding -->
-                <a href="https://funding.maribamedia.co.za" target="_blank" rel="noopener noreferrer"
-                   class="partner-card group glass-elite rounded-sm p-6 sm:p-8 border border-white/5 block reveal-elite" style="transition-delay: 0.2s">
-                    <div class="flex items-start justify-between mb-4 sm:mb-6">
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-sm bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center border border-green-500/30">
-                            <i data-lucide="banknote" class="w-5 h-5 sm:w-7 sm:h-7 text-green-400"></i>
+                <a href="https://funding.maribamedia.co.za" target="_blank" rel="noopener" class="partner-card group glass-modern rounded-2xl p-6 border border-white/5 hover:border-emerald-500/30 block reveal" style="transition-delay: 0.2s">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500/20 to-green-500/20 flex items-center justify-center border border-emerald-500/30 group-hover:scale-110 transition-transform">
+                            <i data-lucide="banknote" class="w-6 h-6 text-emerald-400"></i>
                         </div>
-                        <i data-lucide="external-link" class="w-4 h-4 sm:w-5 sm:h-5 text-elite-platinum/30 group-hover:text-elite-gold transition-colors"></i>
+                        <i data-lucide="arrow-up-right" class="w-5 h-5 text-slate-600 group-hover:text-emerald-400 transition-colors"></i>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-serif font-bold text-white mb-2 group-hover:gold-text transition-colors">Energy Funding</h3>
-                    <p class="text-elite-gold/60 text-xs tracking-widest uppercase mb-3 sm:mb-4">funding.maribamedia.co.za</p>
-                    <p class="text-elite-platinum/60 text-xs sm:text-sm leading-relaxed">
-                        Specialized financing solutions for energy projects. Connecting qualified borrowers with private lenders and green energy investment vehicles.
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">Energy Funding</h3>
+                    <p class="text-emerald-400/60 text-xs mb-3">funding.maribamedia.co.za</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Specialized financing for energy projects. Private lenders and green investment vehicles.
                     </p>
-                    <div class="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-white/5 flex items-center gap-2 text-xs text-elite-platinum/40">
-                        <i data-lucide="landmark" class="w-3 h-3"></i>
-                        <span>Financial Services</span>
-                    </div>
                 </a>
 
                 <!-- Water Connector -->
-                <a href="https://waterbackup.maribamedia.co.za" target="_blank" rel="noopener noreferrer"
-                   class="partner-card group glass-elite rounded-sm p-6 sm:p-8 border border-white/5 block reveal-elite" style="transition-delay: 0.3s">
-                    <div class="flex items-start justify-between mb-4 sm:mb-6">
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-sm bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center border border-cyan-500/30">
-                            <i data-lucide="droplets" class="w-5 h-5 sm:w-7 sm:h-7 text-cyan-400"></i>
+                <a href="https://waterbackup.maribamedia.co.za" target="_blank" rel="noopener" class="partner-card group glass-modern rounded-2xl p-6 border border-white/5 hover:border-cyan-500/30 block reveal" style="transition-delay: 0.3s">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center border border-cyan-500/30 group-hover:scale-110 transition-transform">
+                            <i data-lucide="droplets" class="w-6 h-6 text-cyan-400"></i>
                         </div>
-                        <i data-lucide="external-link" class="w-4 h-4 sm:w-5 sm:h-5 text-elite-platinum/30 group-hover:text-elite-gold transition-colors"></i>
+                        <i data-lucide="arrow-up-right" class="w-5 h-5 text-slate-600 group-hover:text-cyan-400 transition-colors"></i>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-serif font-bold text-white mb-2 group-hover:gold-text transition-colors">Water Connector</h3>
-                    <p class="text-elite-gold/60 text-xs tracking-widest uppercase mb-3 sm:mb-4">waterbackup.maribamedia.co.za</p>
-                    <p class="text-elite-platinum/60 text-xs sm:text-sm leading-relaxed">
-                        Backup water systems and filtration solutions. Premium leads for borehole drilling, rainwater harvesting, and whole-home water security installations.
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-cyan-400 transition-colors">Water Connector</h3>
+                    <p class="text-cyan-400/60 text-xs mb-3">waterbackup.maribamedia.co.za</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Backup water systems, borehole drilling, and rainwater harvesting solutions.
                     </p>
-                    <div class="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-white/5 flex items-center gap-2 text-xs text-elite-platinum/40">
-                        <i data-lucide="waves" class="w-3 h-3"></i>
-                        <span>Infrastructure</span>
-                    </div>
                 </a>
 
                 <!-- Training OS -->
-                <a href="https://training.maribamedia.co.za" target="_blank" rel="noopener noreferrer"
-                   class="partner-card group glass-elite rounded-sm p-6 sm:p-8 border border-white/5 block reveal-elite" style="transition-delay: 0.4s">
-                    <div class="flex items-start justify-between mb-4 sm:mb-6">
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-sm bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center border border-purple-500/30">
-                            <i data-lucide="graduation-cap" class="w-5 h-5 sm:w-7 sm:h-7 text-purple-400"></i>
+                <a href="https://training.maribamedia.co.za" target="_blank" rel="noopener" class="partner-card group glass-modern rounded-2xl p-6 border border-white/5 hover:border-purple-500/30 block reveal" style="transition-delay: 0.4s">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center border border-purple-500/30 group-hover:scale-110 transition-transform">
+                            <i data-lucide="graduation-cap" class="w-6 h-6 text-purple-400"></i>
                         </div>
-                        <i data-lucide="external-link" class="w-4 h-4 sm:w-5 sm:h-5 text-elite-platinum/30 group-hover:text-elite-gold transition-colors"></i>
+                        <i data-lucide="arrow-up-right" class="w-5 h-5 text-slate-600 group-hover:text-purple-400 transition-colors"></i>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-serif font-bold text-white mb-2 group-hover:gold-text transition-colors">Training OS</h3>
-                    <p class="text-elite-gold/60 text-xs tracking-widest uppercase mb-3 sm:mb-4">training.maribamedia.co.za</p>
-                    <p class="text-elite-platinum/60 text-xs sm:text-sm leading-relaxed">
-                        Professional development platform for sales teams and call center operations. Certification programs and performance optimization tools for member firms.
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-purple-400 transition-colors">Training OS</h3>
+                    <p class="text-purple-400/60 text-xs mb-3">training.maribamedia.co.za</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Professional development for sales teams. Certification and performance optimization.
                     </p>
-                    <div class="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-white/5 flex items-center gap-2 text-xs text-elite-platinum/40">
-                        <i data-lucide="book-open" class="w-3 h-3"></i>
-                        <span>Education</span>
-                    </div>
                 </a>
 
                 <!-- Energy Mixer -->
-                <a href="https://energy.maribamedia.co.za" target="_blank" rel="noopener noreferrer"
-                   class="partner-card group glass-elite rounded-sm p-6 sm:p-8 border border-white/5 block reveal-elite" style="transition-delay: 0.5s">
-                    <div class="flex items-start justify-between mb-4 sm:mb-6">
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-sm bg-gradient-to-br from-yellow-500/20 to-orange-500/20 flex items-center justify-center border border-yellow-500/30">
-                            <i data-lucide="plug-zap" class="w-5 h-5 sm:w-7 sm:h-7 text-yellow-400"></i>
+                <a href="https://energy.maribamedia.co.za" target="_blank" rel="noopener" class="partner-card group glass-modern rounded-2xl p-6 border border-white/5 hover:border-yellow-500/30 block reveal" style="transition-delay: 0.5s">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-500/20 to-orange-500/20 flex items-center justify-center border border-yellow-500/30 group-hover:scale-110 transition-transform">
+                            <i data-lucide="plug-zap" class="w-6 h-6 text-yellow-400"></i>
                         </div>
-                        <i data-lucide="external-link" class="w-4 h-4 sm:w-5 sm:h-5 text-elite-platinum/30 group-hover:text-elite-gold transition-colors"></i>
+                        <i data-lucide="arrow-up-right" class="w-5 h-5 text-slate-600 group-hover:text-yellow-400 transition-colors"></i>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-serif font-bold text-white mb-2 group-hover:gold-text transition-colors">Energy Mixer</h3>
-                    <p class="text-elite-gold/60 text-xs tracking-widest uppercase mb-3 sm:mb-4">energy.maribamedia.co.za</p>
-                    <p class="text-elite-platinum/60 text-xs sm:text-sm leading-relaxed">
-                        Networking platform for energy sector stakeholders. Exclusive events, deal flow sharing, and partnership opportunities for vetted industry participants.
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-yellow-400 transition-colors">Energy Mixer</h3>
+                    <p class="text-yellow-400/60 text-xs mb-3">energy.maribamedia.co.za</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Networking platform for energy sector stakeholders. Exclusive events and deal flow.
                     </p>
-                    <div class="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-white/5 flex items-center gap-2 text-xs text-elite-platinum/40">
-                        <i data-lucide="users" class="w-3 h-3"></i>
-                        <span>Networking</span>
-                    </div>
                 </a>
-            </div>
-
-            <div class="mt-12 sm:mt-16 text-center reveal-elite">
-                <p class="text-elite-platinum/40 text-sm italic">
-                    Mariba Media partners receive cross-platform benefits and unified billing
-                </p>
             </div>
         </div>
     </section>
 
     <!-- Process Section -->
-    <section id="how-it-works" class="relative py-16 sm:py-24 lg:py-32 xl:py-40 safe-left safe-right">
-        <div class="absolute inset-0 bg-elite-black"></div>
-        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-elite-gold/30 to-transparent"></div>
+    <section id="process" class="relative py-24 md:py-32 bg-brand-darker">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(56,189,248,0.05)_0%,_transparent_70%)]"></div>
         
-        <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 sm:mb-16 lg:mb-24 reveal-elite">
-                <span class="text-elite-gold/60 text-xs tracking-[0.3em] sm:tracking-[0.4em] uppercase block mb-3 sm:mb-4">Admissions</span>
-                <h2 class="responsive-subheading font-serif font-bold mb-4 sm:mb-6">
-                    <span class="platinum-text block">The</span>
-                    <span class="gold-text italic block">Process</span>
+        <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="text-brand-cyan text-sm font-semibold tracking-wider uppercase block mb-4">How It Works</span>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
+                    Simple <span class="gradient-text">process</span>, powerful results
                 </h2>
-                <div class="deco-line w-16 sm:w-24 mx-auto mt-6 sm:mt-8"></div>
             </div>
 
             <div class="relative">
-                <!-- Connecting Line -->
-                <div class="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-elite-gold/20 to-transparent hidden lg:block"></div>
+                <!-- Desktop Connector Line -->
+                <div class="hidden lg:block absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-brand-cyan via-brand-purple to-brand-pink opacity-30"></div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+                <div class="grid md:grid-cols-4 gap-8">
                     <!-- Step 1 -->
-                    <div class="relative reveal-elite">
-                        <div class="glass-elite rounded-sm p-6 sm:p-8 border border-white/5 relative z-10 hover:border-elite-gold/30 transition-colors">
-                            <div class="absolute -top-3 sm:-top-4 left-1/2 -translate-x-1/2 w-6 h-6 sm:w-8 sm:h-8 bg-elite-black border border-elite-gold/50 rounded-full flex items-center justify-center">
-                                <span class="text-elite-gold text-xs font-bold">01</span>
+                    <div class="relative reveal">
+                        <div class="glass-modern rounded-2xl p-8 border border-white/5 relative z-10 h-full">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-brand-cyan to-brand-blue flex items-center justify-center mb-6 text-white font-bold text-lg shadow-lg shadow-brand-cyan/25">
+                                1
                             </div>
-                            <div class="pt-6 sm:pt-8 text-center">
-                                <i data-lucide="file-text" class="w-6 h-6 sm:w-8 sm:h-8 text-elite-gold/60 mx-auto mb-3 sm:mb-4"></i>
-                                <h3 class="text-base sm:text-lg font-serif font-bold text-white mb-2">Application</h3>
-                                <p class="text-elite-platinum/50 text-xs sm:text-sm">Submit firm credentials and service capabilities</p>
-                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">Connect</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Partner with us and integrate your sales systems. We align with your qualification criteria.
+                            </p>
                         </div>
                     </div>
 
                     <!-- Step 2 -->
-                    <div class="relative reveal-elite" style="transition-delay: 0.15s">
-                        <div class="glass-elite rounded-sm p-6 sm:p-8 border border-white/5 relative z-10 hover:border-elite-gold/30 transition-colors">
-                            <div class="absolute -top-3 sm:-top-4 left-1/2 -translate-x-1/2 w-6 h-6 sm:w-8 sm:h-8 bg-elite-black border border-elite-gold/50 rounded-full flex items-center justify-center">
-                                <span class="text-elite-gold text-xs font-bold">02</span>
+                    <div class="relative reveal" style="transition-delay: 0.15s">
+                        <div class="glass-modern rounded-2xl p-8 border border-white/5 relative z-10 h-full">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-brand-blue to-brand-purple flex items-center justify-center mb-6 text-white font-bold text-lg shadow-lg shadow-brand-purple/25">
+                                2
                             </div>
-                            <div class="pt-6 sm:pt-8 text-center">
-                                <i data-lucide="search" class="w-6 h-6 sm:w-8 sm:h-8 text-elite-gold/60 mx-auto mb-3 sm:mb-4"></i>
-                                <h3 class="text-base sm:text-lg font-serif font-bold text-white mb-2">Vetting</h3>
-                                <p class="text-elite-platinum/50 text-xs sm:text-sm">Background verification and reference checks</p>
-                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">Receive Calls</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Get pre-qualified, high-intent calls delivered in real-time to your sales team.
+                            </p>
                         </div>
                     </div>
 
                     <!-- Step 3 -->
-                    <div class="relative reveal-elite" style="transition-delay: 0.3s">
-                        <div class="glass-elite rounded-sm p-6 sm:p-8 border border-white/5 relative z-10 hover:border-elite-gold/30 transition-colors">
-                            <div class="absolute -top-3 sm:-top-4 left-1/2 -translate-x-1/2 w-6 h-6 sm:w-8 sm:h-8 bg-elite-black border border-elite-gold/50 rounded-full flex items-center justify-center">
-                                <span class="text-elite-gold text-xs font-bold">03</span>
+                    <div class="relative reveal" style="transition-delay: 0.3s">
+                        <div class="glass-modern rounded-2xl p-8 border border-white/5 relative z-10 h-full">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-brand-purple to-brand-pink flex items-center justify-center mb-6 text-white font-bold text-lg shadow-lg shadow-brand-pink/25">
+                                3
                             </div>
-                            <div class="pt-6 sm:pt-8 text-center">
-                                <i data-lucide="handshake" class="w-6 h-6 sm:w-8 sm:h-8 text-elite-gold/60 mx-auto mb-3 sm:mb-4"></i>
-                                <h3 class="text-base sm:text-lg font-serif font-bold text-white mb-2">Onboarding</h3>
-                                <p class="text-elite-platinum/50 text-xs sm:text-sm">Integration and call flow configuration</p>
-                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">Convert</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Your team closes deals. We monitor quality and optimize for better conversions.
+                            </p>
                         </div>
                     </div>
 
                     <!-- Step 4 -->
-                    <div class="relative reveal-elite" style="transition-delay: 0.45s">
-                        <div class="glass-elite rounded-sm p-6 sm:p-8 border border-white/5 relative z-10 hover:border-elite-gold/30 transition-colors">
-                            <div class="absolute -top-3 sm:-top-4 left-1/2 -translate-x-1/2 w-6 h-6 sm:w-8 sm:h-8 bg-elite-black border border-elite-gold/50 rounded-full flex items-center justify-center">
-                                <span class="text-elite-gold text-xs font-bold">04</span>
+                    <div class="relative reveal" style="transition-delay: 0.45s">
+                        <div class="glass-modern rounded-2xl p-8 border border-white/5 relative z-10 h-full">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-brand-pink to-orange-500 flex items-center justify-center mb-6 text-white font-bold text-lg shadow-lg shadow-orange-500/25">
+                                4
                             </div>
-                            <div class="pt-6 sm:pt-8 text-center">
-                                <i data-lucide="crown" class="w-6 h-6 sm:w-8 sm:h-8 text-elite-gold/60 mx-auto mb-3 sm:mb-4"></i>
-                                <h3 class="text-base sm:text-lg font-serif font-bold text-white mb-2">Membership</h3>
-                                <p class="text-elite-platinum/50 text-xs sm:text-sm">Receive qualified calls within 24 hours</p>
-                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">Scale</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Increase volume as needed. Pay only for qualified calls that meet your standards.
+                            </p>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Benefits -->
+            <div class="mt-20 grid md:grid-cols-3 gap-8 reveal">
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-lg bg-brand-cyan/10 flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-brand-cyan"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold mb-1">No Monthly Fees</h4>
+                        <p class="text-slate-400 text-sm">Pay only for the qualified calls you receive. No retainers or hidden costs.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-lg bg-brand-purple/10 flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-brand-purple"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold mb-1">Real-Time Delivery</h4>
+                        <p class="text-slate-400 text-sm">Calls delivered instantly to your team. Hot transfers and live connections.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-lg bg-brand-pink/10 flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-brand-pink"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold mb-1">Quality Guaranteed</h4>
+                        <p class="text-slate-400 text-sm">Strict qualification criteria. Replace any call that doesn't meet standards.</p>
                     </div>
                 </div>
             </div>
@@ -892,82 +843,80 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="relative py-16 sm:py-24 lg:py-32 xl:py-40 bg-elite-navy safe-left safe-right">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(212,175,55,0.05)_0%,_transparent_70%)]"></div>
+    <section id="contact" class="relative py-24 md:py-32 bg-brand-dark">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(168,85,247,0.1)_0%,_transparent_50%)]"></div>
         
-        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="glass-elite rounded-sm p-1 border border-elite-gold/20 reveal-elite">
-                <div class="bg-elite-black/50 p-6 sm:p-8 lg:p-12 xl:p-16">
-                    <div class="text-center mb-8 sm:mb-12">
-                        <span class="text-elite-gold/60 text-xs tracking-[0.3em] sm:tracking-[0.4em] uppercase block mb-3 sm:mb-4">Inquiries</span>
-                        <h2 class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-serif font-bold mb-4 sm:mb-6">
-                            <span class="platinum-text block">Request an</span>
-                            <span class="gold-text italic block">Invitation</span>
-                        </h2>
-                        <p class="text-elite-platinum/60 max-w-xl mx-auto text-sm sm:text-base">
-                            Membership is limited and by application only. Submit your details for consideration by our admissions team.
-                        </p>
-                    </div>
+        <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-8">
+            <div class="gradient-border rounded-3xl p-1 reveal">
+                <div class="bg-brand-darker/80 rounded-3xl p-8 md:p-12 backdrop-blur-xl">
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <div>
+                            <span class="text-brand-cyan text-sm font-semibold tracking-wider uppercase block mb-4">Get Started</span>
+                            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">
+                                Ready to scale your <span class="gradient-text">business</span>?
+                            </h2>
+                            <p class="text-slate-400 mb-8 leading-relaxed">
+                                Join our network of elite service providers. Start receiving qualified calls within 48 hours of approval.
+                            </p>
 
-                    <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-                        <div class="space-y-6 sm:space-y-8">
-                            <div class="flex items-center gap-4 sm:gap-6">
-                                <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-sm border border-elite-gold/20 flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="mail" class="w-5 h-5 sm:w-6 sm:h-6 text-elite-gold"></i>
+                            <div class="space-y-6">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center border border-white/10">
+                                        <i data-lucide="mail" class="w-5 h-5 text-brand-cyan"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs text-slate-500 uppercase tracking-wider mb-1">Email</div>
+                                        <a href="mailto:victor@maribamedia.co.za" class="text-white hover:text-brand-cyan transition-colors">victor@maribamedia.co.za</a>
+                                    </div>
                                 </div>
-                                <div>
-                                    <div class="text-xs text-elite-platinum/40 tracking-widest uppercase mb-1">Email</div>
-                                    <a href="mailto:victor@maribamedia.co.za" class="text-white font-serif text-base sm:text-lg link-elite">victor@maribamedia.co.za</a>
+
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center border border-white/10">
+                                        <i data-lucide="phone" class="w-5 h-5 text-brand-purple"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs text-slate-500 uppercase tracking-wider mb-1">Phone</div>
+                                        <a href="tel:+27766473499" class="text-white hover:text-brand-purple transition-colors">+27 (0) 76 647 3499</a>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center border border-white/10">
+                                        <i data-lucide="clock" class="w-5 h-5 text-brand-pink"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs text-slate-500 uppercase tracking-wider mb-1">Availability</div>
+                                        <p class="text-white">Mon-Fri, 9AM-5PM SAST</p>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="flex items-center gap-4 sm:gap-6">
-                                <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-sm border border-elite-gold/20 flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="phone" class="w-5 h-5 sm:w-6 sm:h-6 text-elite-gold"></i>
-                                </div>
-                                <div>
-                                    <div class="text-xs text-elite-platinum/40 tracking-widest uppercase mb-1">Private Line</div>
-                                    <a href="tel:+27766473499" class="text-white font-serif text-base sm:text-lg link-elite">+27 (0) 76 647 3499</a>
-                                </div>
-                            </div>
-
-                            <div class="flex items-center gap-4 sm:gap-6">
-                                <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-sm border border-elite-gold/20 flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="map-pin" class="w-5 h-5 sm:w-6 sm:h-6 text-elite-gold"></i>
-                                </div>
-                                <div>
-                                    <div class="text-xs text-elite-platinum/40 tracking-widest uppercase mb-1">Availability</div>
-                                    <p class="text-white font-serif text-base sm:text-lg">Mon-Fri, 9AM-5PM SAST</p>
-                                </div>
-                            </div>
-
-                            <div class="pt-6 sm:pt-8 border-t border-white/10">
-                                <p class="text-elite-platinum/40 text-sm italic mb-3 sm:mb-4">"Quality over quantity. Every call is an opportunity."</p>
-                                <p class="text-elite-gold text-xs tracking-widest uppercase">— The Mariba Standard</p>
+                            <div class="mt-10 pt-8 border-t border-white/10">
+                                <p class="text-slate-500 text-sm italic">"Performance-based partnerships built on trust and results."</p>
                             </div>
                         </div>
 
-                        <div class="glass-elite rounded-sm p-4 sm:p-6 lg:p-8 border border-white/5">
-                            <div class="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
-                                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-sm bg-gradient-to-br from-elite-gold to-yellow-600 flex items-center justify-center">
-                                    <i data-lucide="calendar" class="w-5 h-5 sm:w-6 sm:h-6 text-elite-black"></i>
+                        <div class="glass-modern rounded-2xl p-8 border border-white/5">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-cyan to-brand-purple flex items-center justify-center">
+                                    <i data-lucide="calendar" class="w-6 h-6 text-white"></i>
                                 </div>
                                 <div>
-                                    <h3 class="text-base sm:text-lg font-bold text-white font-serif">Schedule Consultation</h3>
-                                    <p class="text-xs text-elite-platinum/50">Private 30-minute session</p>
+                                    <h3 class="text-lg font-bold text-white">Schedule a Call</h3>
+                                    <p class="text-xs text-slate-400">Free 30-minute consultation</p>
                                 </div>
                             </div>
                             
                             <!-- Cal.com Calendar -->
-                            <div class="rounded-sm overflow-hidden bg-white h-64 sm:h-80 lg:h-96 xl:h-[450px]">
-                                <div style="width:100%;height:100%;" id="my-cal-inline-south-africa"></div>
+                            <div class="rounded-xl overflow-hidden bg-white" style="height: 400px;">
+                                <div style="width:100%;height:100%;" id="my-cal-inline"></div>
                             </div>
                             <script type="text/javascript">
                               (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
                               Cal("init", "south-africa", {origin:"https://app.cal.com"});
 
                               Cal.ns["south-africa"]("inline", {
-                                elementOrSelector:"#my-cal-inline-south-africa",
+                                elementOrSelector:"#my-cal-inline",
                                 config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
                                 calLink: "partner-discovery/south-africa",
                               });
@@ -982,62 +931,64 @@
     </section>
 
     <!-- Footer -->
-    <footer class="relative bg-elite-black border-t border-elite-gold/10 pt-12 sm:pt-16 lg:pt-20 pb-8 sm:pb-12 safe-left safe-right">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 mb-12 sm:mb-16">
+    <footer class="relative bg-brand-darker border-t border-white/5 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                 <!-- Brand -->
                 <div class="lg:col-span-2">
-                    <a href="#home" class="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-                        <div class="bg-gradient-to-br from-elite-gold to-yellow-600 p-2 sm:p-3 rounded-sm">
-                            <i data-lucide="crown" class="w-4 h-4 sm:w-6 sm:h-6 text-elite-black"></i>
+                    <a href="#home" class="flex items-center gap-3 mb-6">
+                        <div class="bg-gradient-to-br from-brand-cyan to-brand-purple p-2 rounded-lg">
+                            <svg width="24" height="24" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M30 70 L50 30 L70 70" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M35 70 L50 40 L65 70" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+                            </svg>
                         </div>
-                        <div>
-                            <span class="text-xl sm:text-2xl font-serif italic font-bold text-white">Mariba<span class="gold-text">Media</span></span>
-                        </div>
+                        <span class="text-xl font-bold text-white">Mariba<span class="gradient-text-cyan">Media</span></span>
                     </a>
-                    <p class="text-elite-platinum/40 text-sm leading-relaxed mb-4 sm:mb-6 max-w-md font-light">
-                        An exclusive performance network for elite service providers. By invitation only.
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6 max-w-md">
+                        Premium performance-based call network connecting qualified buyers with elite service providers across solar, insurance, auto, and home services.
                     </p>
-                    <div class="flex gap-3 sm:gap-4">
-                        <a href="https://www.facebook.com/people/Mariba-Media-Pty-Ltd/61576915266105/" target="_blank" class="w-8 h-8 sm:w-10 sm:h-10 rounded-sm border border-white/10 flex items-center justify-center text-elite-platinum/50 hover:text-elite-gold hover:border-elite-gold/30 transition-all">
-                            <i data-lucide="facebook" class="w-3 h-3 sm:w-4 sm:h-4"></i>
+                    <div class="flex gap-4">
+                        <a href="https://www.facebook.com/people/Mariba-Media-Pty-Ltd/61576915266105/" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/10 transition-all">
+                            <i data-lucide="facebook" class="w-4 h-4"></i>
                         </a>
-                        <a href="https://www.youtube.com/@TV-Mariba" target="_blank" class="w-8 h-8 sm:w-10 sm:h-10 rounded-sm border border-white/10 flex items-center justify-center text-elite-platinum/50 hover:text-red-400 hover:border-red-400/30 transition-all">
-                            <i data-lucide="youtube" class="w-3 h-3 sm:w-4 sm:h-4"></i>
+                        <a href="https://www.youtube.com/@TV-Mariba" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-slate-400 hover:text-red-400 hover:bg-white/10 transition-all">
+                            <i data-lucide="youtube" class="w-4 h-4"></i>
                         </a>
-                        <a href="https://www.linkedin.com/company/mariba-media?_l=en_US" target="_blank" class="w-8 h-8 sm:w-10 sm:h-10 rounded-sm border border-white/10 flex items-center justify-center text-elite-platinum/50 hover:text-blue-400 hover:border-blue-400/30 transition-all">
-                            <i data-lucide="linkedin" class="w-3 h-3 sm:w-4 sm:h-4"></i>
+                        <a href="https://www.linkedin.com/company/mariba-media?_l=en_US" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-slate-400 hover:text-blue-400 hover:bg-white/10 transition-all">
+                            <i data-lucide="linkedin" class="w-4 h-4"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Sectors -->
                 <div>
-                    <h5 class="text-xs font-bold text-elite-gold tracking-[0.2em] sm:tracking-[0.3em] uppercase mb-4 sm:mb-6">Verticals</h5>
-                    <ul class="space-y-3 sm:space-y-4">
-                        <li><a href="#sectors" class="text-elite-platinum/50 hover:text-white text-sm transition-colors">Home Services</a></li>
-                        <li><a href="#sectors" class="text-elite-platinum/50 hover:text-white text-sm transition-colors">Professional</a></li>
-                        <li><a href="#sectors" class="text-elite-platinum/50 hover:text-white text-sm transition-colors">Senior Care</a></li>
+                    <h5 class="text-xs font-bold text-white tracking-wider uppercase mb-6">Sectors</h5>
+                    <ul class="space-y-3">
+                        <li><a href="#sectors" class="text-slate-400 hover:text-brand-cyan text-sm transition-colors">Solar Energy</a></li>
+                        <li><a href="#sectors" class="text-slate-400 hover:text-brand-blue text-sm transition-colors">Insurance</a></li>
+                        <li><a href="#sectors" class="text-slate-400 hover:text-red-400 text-sm transition-colors">Auto Services</a></li>
+                        <li><a href="#sectors" class="text-slate-400 hover:text-emerald-400 text-sm transition-colors">Home Services</a></li>
                     </ul>
                 </div>
 
-                <!-- Partners -->
+                <!-- Network -->
                 <div>
-                    <h5 class="text-xs font-bold text-elite-gold tracking-[0.2em] sm:tracking-[0.3em] uppercase mb-4 sm:mb-6">Ecosystem</h5>
-                    <ul class="space-y-3 sm:space-y-4">
-                        <li><a href="https://solar.maribamedia.co.za" target="_blank" class="text-elite-platinum/50 hover:text-white text-sm transition-colors flex items-center gap-2">Solar Connector <i data-lucide="external-link" class="w-3 h-3"></i></a></li>
-                        <li><a href="https://commercial.maribamedia.co.za" target="_blank" class="text-elite-platinum/50 hover:text-white text-sm transition-colors flex items-center gap-2">Commercial <i data-lucide="external-link" class="w-3 h-3"></i></a></li>
-                        <li><a href="https://funding.maribamedia.co.za" target="_blank" class="text-elite-platinum/50 hover:text-white text-sm transition-colors flex items-center gap-2">Energy Funding <i data-lucide="external-link" class="w-3 h-3"></i></a></li>
-                        <li><a href="https://energy.maribamedia.co.za" target="_blank" class="text-elite-platinum/50 hover:text-white text-sm transition-colors flex items-center gap-2">Energy Mixer <i data-lucide="external-link" class="w-3 h-3"></i></a></li>
+                    <h5 class="text-xs font-bold text-white tracking-wider uppercase mb-6">Network</h5>
+                    <ul class="space-y-3">
+                        <li><a href="https://solar.maribamedia.co.za" target="_blank" class="text-slate-400 hover:text-orange-400 text-sm transition-colors flex items-center gap-2">Solar Connector <i data-lucide="external-link" class="w-3 h-3"></i></a></li>
+                        <li><a href="https://commercial.maribamedia.co.za" target="_blank" class="text-slate-400 hover:text-blue-400 text-sm transition-colors flex items-center gap-2">Commercial <i data-lucide="external-link" class="w-3 h-3"></i></a></li>
+                        <li><a href="https://funding.maribamedia.co.za" target="_blank" class="text-slate-400 hover:text-emerald-400 text-sm transition-colors flex items-center gap-2">Energy Funding <i data-lucide="external-link" class="w-3 h-3"></i></a></li>
+                        <li><a href="https://training.maribamedia.co.za" target="_blank" class="text-slate-400 hover:text-purple-400 text-sm transition-colors flex items-center gap-2">Training OS <i data-lucide="external-link" class="w-3 h-3"></i></a></li>
                     </ul>
                 </div>
             </div>
 
-            <div class="border-t border-white/5 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
-                <p class="text-elite-platinum/30 text-xs tracking-wider">
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-xs">
                     © 2025 Mariba Media. All rights reserved.
                 </p>
-                <p class="text-elite-platinum/30 text-xs">
+                <p class="text-slate-500 text-xs">
                     Company Registration No: 2024 / 132788 / 07
                 </p>
             </div>
@@ -1045,11 +996,11 @@
     </footer>
 
     <!-- WhatsApp Widget -->
-    <div class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 lg:bottom-8 lg:right-8 z-50 safe-right safe-bottom">
-        <a href="https://wa.me/27766473499?text=I%20would%20like%20to%20inquire%20about%20Mariba%20Media%20membership." 
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/27766473499?text=I%20would%20like%20to%20inquire%20about%20Mariba%20Media%20partnership." 
            target="_blank" 
-           class="group flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-full shadow-2xl shadow-green-500/30 hover:scale-110 active:scale-95 transition-transform duration-300 border border-white/10">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" sm:width="24" sm:height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
+           class="group flex items-center justify-center w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-full shadow-2xl shadow-green-500/30 hover:scale-110 transition-transform duration-300 border border-white/10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
                 <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
             </svg>
         </a>
@@ -1068,22 +1019,9 @@
             menu.classList.toggle('hidden');
             const isOpen = !menu.classList.contains('hidden');
             btn.innerHTML = isOpen 
-                ? '<i data-lucide="x" class="w-5 h-5 sm:w-6 sm:h-6"></i>' 
-                : '<i data-lucide="menu" class="w-5 h-5 sm:w-6 sm:h-6"></i>';
+                ? '<i data-lucide="x" class="w-6 h-6"></i>' 
+                : '<i data-lucide="menu" class="w-6 h-6"></i>';
             lucide.createIcons();
-            
-            // Prevent body scroll when menu is open
-            document.body.style.overflow = isOpen ? 'hidden' : '';
-        });
-
-        // Close mobile menu when clicking links
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                menu.classList.add('hidden');
-                btn.innerHTML = '<i data-lucide="menu" class="w-5 h-5 sm:w-6 sm:h-6"></i>';
-                lucide.createIcons();
-                document.body.style.overflow = '';
-            });
         });
 
         // Smooth Scroll
@@ -1092,12 +1030,8 @@
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    const offset = 80; // Account for fixed navbar
-                    const targetPosition = target.offsetTop - offset;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    menu.classList.add('hidden');
                 }
             });
         });
@@ -1112,11 +1046,39 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
+                    
+                    // Animate numbers if it's a stat
+                    const statNumbers = entry.target.querySelectorAll('.stat-number');
+                    statNumbers.forEach(stat => {
+                        const target = parseFloat(stat.dataset.target);
+                        const isDecimal = target % 1 !== 0;
+                        const duration = 2000;
+                        const start = performance.now();
+                        
+                        const updateNumber = (currentTime) => {
+                            const elapsed = currentTime - start;
+                            const progress = Math.min(elapsed / duration, 1);
+                            const easeProgress = 1 - Math.pow(1 - progress, 3);
+                            const current = target * easeProgress;
+                            
+                            if (isDecimal) {
+                                stat.textContent = current.toFixed(1) + (target > 10 ? 'M' : '');
+                            } else {
+                                stat.textContent = Math.floor(current) + (target > 100 ? '%' : '+');
+                            }
+                            
+                            if (progress < 1) {
+                                requestAnimationFrame(updateNumber);
+                            }
+                        };
+                        
+                        requestAnimationFrame(updateNumber);
+                    });
                 }
             });
         }, observerOptions);
 
-        document.querySelectorAll('.reveal-elite').forEach(el => observer.observe(el));
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
         // Navbar Scroll Effect
         let lastScroll = 0;
@@ -1124,26 +1086,122 @@
             const navbar = document.getElementById('navbar');
             const currentScroll = window.pageYOffset;
             
-            if (currentScroll > 100) {
-                navbar.classList.add('shadow-2xl');
-                navbar.classList.add('shadow-elite-gold/5');
+            if (currentScroll > 50) {
+                navbar.classList.add('shadow-lg', 'shadow-brand-cyan/5');
             } else {
-                navbar.classList.remove('shadow-2xl');
-                navbar.classList.remove('shadow-elite-gold/5');
+                navbar.classList.remove('shadow-lg', 'shadow-brand-cyan/5');
             }
         });
 
-        // Touch device detection
-        const isTouchDevice = () => {
-            return (('ontouchstart' in window) ||
-                   (navigator.maxTouchPoints > 0) ||
-                   (navigator.msMaxTouchPoints > 0));
-        };
+        // Particle System
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let mouseX = 0;
+        let mouseY = 0;
 
-        // Add touch-specific classes
-        if (isTouchDevice()) {
-            document.body.classList.add('touch-device');
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
         }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = Math.random() * 0.5 - 0.25;
+                this.speedY = Math.random() * 0.5 - 0.25;
+                this.opacity = Math.random() * 0.5 + 0.1;
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.x > canvas.width) this.x = 0;
+                if (this.x < 0) this.x = canvas.width;
+                if (this.y > canvas.height) this.y = 0;
+                if (this.y < 0) this.y = canvas.height;
+
+                // Mouse interaction
+                const dx = mouseX - this.x;
+                const dy = mouseY - this.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance < 100) {
+                    const forceDirectionX = dx / distance;
+                    const forceDirectionY = dy / distance;
+                    const force = (100 - distance) / 100;
+                    this.x -= forceDirectionX * force * 2;
+                    this.y -= forceDirectionY * force * 2;
+                }
+            }
+
+            draw() {
+                ctx.fillStyle = `rgba(56, 189, 248, ${this.opacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            const particleCount = Math.min(window.innerWidth / 10, 100);
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            particles.forEach((particle, index) => {
+                particle.update();
+                particle.draw();
+                
+                // Draw connections
+                particles.slice(index + 1).forEach(otherParticle => {
+                    const dx = particle.x - otherParticle.x;
+                    const dy = particle.y - otherParticle.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (distance < 100) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(56, 189, 248, ${0.1 * (1 - distance / 100)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.moveTo(particle.x, particle.y);
+                        ctx.lineTo(otherParticle.x, otherParticle.y);
+                        ctx.stroke();
+                    }
+                });
+            });
+            
+            requestAnimationFrame(animateParticles);
+        }
+
+        initParticles();
+        animateParticles();
+
+        // Sector Card Mouse Tracking
+        document.querySelectorAll('.sector-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
     </script>
 </body>
 </html>
