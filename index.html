@@ -41,6 +41,14 @@
                 purple: '#7c3aed'
               }
             },
+            screens: {
+              'xs': '475px',
+              'sm': '640px',
+              'md': '768px',
+              'lg': '1024px',
+              'xl': '1280px',
+              '2xl': '1536px',
+            },
             animation: {
               'float': 'float 8s ease-in-out infinite',
               'shimmer': 'shimmer 3s linear infinite',
@@ -72,6 +80,10 @@
     </script>
     
     <style>
+      * {
+        -webkit-tap-highlight-color: transparent;
+      }
+      
       body {
         background-color: #020617;
         color: #f8fafc;
@@ -79,11 +91,24 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         overflow-x: hidden;
+        width: 100%;
       }
 
-      /* Elite Typography */
-      .font-serif { font-family: 'Playfair Display', serif; }
+      /* Responsive Typography */
+      .responsive-heading {
+        font-size: clamp(2.5rem, 5vw, 4.5rem);
+        line-height: 1.1;
+      }
       
+      .responsive-subheading {
+        font-size: clamp(1.75rem, 3vw, 3.5rem);
+        line-height: 1.2;
+      }
+      
+      .responsive-text {
+        font-size: clamp(1rem, 1.2vw, 1.125rem);
+      }
+
       /* Gold Gradient Text */
       .gold-text {
         background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 50%, #d4af37 100%);
@@ -120,6 +145,13 @@
         background: rgba(2, 6, 23, 0.9);
         backdrop-filter: blur(30px);
         border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+      }
+
+      @media (max-width: 768px) {
+        .glass-elite,
+        .glass-elite-strong {
+          backdrop-filter: blur(10px);
+        }
       }
 
       /* Gold Glow */
@@ -200,6 +232,14 @@
         box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
       }
 
+      /* Mobile Responsive Button */
+      @media (max-width: 640px) {
+        .btn-elite {
+          padding: 1rem 1.5rem;
+          font-size: 0.875rem;
+        }
+      }
+
       /* Scroll Reveal */
       .reveal-elite {
         opacity: 0;
@@ -248,6 +288,13 @@
       .corner-accent.bottom-left { bottom: -1px; left: -1px; border-right: 0; border-top: 0; }
       .corner-accent.bottom-right { bottom: -1px; right: -1px; border-left: 0; border-top: 0; }
 
+      @media (max-width: 768px) {
+        .corner-accent {
+          width: 30px;
+          height: 30px;
+        }
+      }
+
       /* Badge Elite */
       .badge-elite {
         background: rgba(212, 175, 55, 0.1);
@@ -282,59 +329,95 @@
         height: 40px;
         background: linear-gradient(180deg, transparent, #d4af37, transparent);
       }
+
+      /* Touch-friendly elements */
+      @media (hover: none) {
+        .sector-card-elite:hover {
+          transform: none;
+        }
+        
+        .partner-card:hover {
+          transform: none;
+        }
+        
+        .btn-elite:hover {
+          transform: none;
+        }
+        
+        .gold-glow-hover:hover {
+          box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
+        }
+      }
+
+      /* Safe area insets for modern mobile devices */
+      .safe-top {
+        padding-top: env(safe-area-inset-top);
+      }
+      
+      .safe-bottom {
+        padding-bottom: env(safe-area-inset-bottom);
+      }
+      
+      .safe-left {
+        padding-left: env(safe-area-inset-left);
+      }
+      
+      .safe-right {
+        padding-right: env(safe-area-inset-right);
+      }
     </style>
 </head>
 <body class="antialiased">
 
     <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 glass-elite-strong transition-all duration-500">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex justify-between items-center h-24">
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 glass-elite-strong transition-all duration-500 safe-top safe-left safe-right">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 sm:h-20 lg:h-24">
                 <!-- Logo -->
-                <a href="#home" class="flex items-center gap-4 group">
+                <a href="#home" class="flex items-center gap-3 sm:gap-4 group">
                     <div class="relative">
                         <div class="absolute inset-0 bg-elite-gold rounded-lg blur opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
-                        <div class="relative bg-gradient-to-br from-elite-gold to-yellow-600 p-3 rounded-lg">
-                            <i data-lucide="crown" class="w-6 h-6 text-elite-black"></i>
+                        <div class="relative bg-gradient-to-br from-elite-gold to-yellow-600 p-2 sm:p-3 rounded-lg">
+                            <i data-lucide="crown" class="w-4 h-4 sm:w-6 sm:h-6 text-elite-black"></i>
                         </div>
                     </div>
                     <div>
-                        <span class="text-2xl font-serif italic font-bold tracking-wide text-white">
+                        <span class="text-xl sm:text-2xl font-serif italic font-bold tracking-wide text-white">
                             Mariba<span class="gold-text">Media</span>
                         </span>
-                        <span class="block text-[10px] text-elite-gold/80 font-medium tracking-[0.3em] uppercase">Private Network</span>
+                        <span class="block text-[9px] xs:text-[10px] text-elite-gold/80 font-medium tracking-[0.2em] sm:tracking-[0.3em] uppercase">Private Network</span>
                     </div>
                 </a>
 
                 <!-- Desktop Nav -->
-                <div class="hidden md:flex items-center gap-10">
+                <div class="hidden md:flex items-center gap-8 lg:gap-10">
                     <a href="#home" class="text-sm font-medium text-elite-platinum/80 hover:text-elite-gold transition-colors duration-300 tracking-wide">Home</a>
                     <a href="#sectors" class="text-sm font-medium text-elite-platinum/80 hover:text-elite-gold transition-colors duration-300 tracking-wide">Sectors</a>
                     <a href="#partners" class="text-sm font-medium text-elite-platinum/80 hover:text-elite-gold transition-colors duration-300 tracking-wide">Partners</a>
                     <a href="#how-it-works" class="text-sm font-medium text-elite-platinum/80 hover:text-elite-gold transition-colors duration-300 tracking-wide">Process</a>
                     
                     <a href="#contact" 
-                       class="btn-elite text-elite-black px-8 py-3 rounded-sm text-sm font-bold tracking-wider uppercase">
+                       class="btn-elite text-elite-black px-6 lg:px-8 py-2 lg:py-3 rounded-sm text-xs lg:text-sm font-bold tracking-wider uppercase">
                         Request Access
                     </a>
                 </div>
 
                 <!-- Mobile Toggle -->
                 <button id="mobile-menu-btn" class="md:hidden p-2 text-elite-platinum hover:text-elite-gold transition-colors">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
+                    <i data-lucide="menu" class="w-5 h-5 sm:w-6 sm:h-6"></i>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden glass-elite-strong border-t border-elite-gold/10">
-            <div class="px-6 py-8 space-y-4">
-                <a href="#home" class="block text-elite-platinum hover:text-elite-gold py-3 tracking-wide">Home</a>
-                <a href="#sectors" class="block text-elite-platinum hover:text-elite-gold py-3 tracking-wide">Sectors</a>
-                <a href="#partners" class="block text-elite-platinum hover:text-elite-gold py-3 tracking-wide">Partners</a>
-                <a href="#how-it-works" class="block text-elite-platinum hover:text-elite-gold py-3 tracking-wide">Process</a>
-                <div class="pt-4">
-                    <a href="#contact" class="block w-full text-center btn-elite text-elite-black px-5 py-4 rounded-sm font-bold tracking-wider uppercase">
+        <div id="mobile-menu" class="hidden md:hidden glass-elite-strong border-t border-elite-gold/10 safe-left safe-right">
+            <div class="px-4 sm:px-6 py-6 space-y-2">
+                <a href="#home" class="block text-elite-platinum hover:text-elite-gold py-3 px-4 tracking-wide rounded-sm hover:bg-white/5 transition-colors">Home</a>
+                <a href="#sectors" class="block text-elite-platinum hover:text-elite-gold py-3 px-4 tracking-wide rounded-sm hover:bg-white/5 transition-colors">Sectors</a>
+                <a href="#partners" class="block text-elite-platinum hover:text-elite-gold py-3 px-4 tracking-wide rounded-sm hover:bg-white/5 transition-colors">Partners</a>
+                <a href="#how-it-works" class="block text-elite-platinum hover:text-elite-gold py-3 px-4 tracking-wide rounded-sm hover:bg-white/5 transition-colors">Process</a>
+                <div class="pt-4 px-4">
+                    <a href="#contact" class="block w-full text-center btn-elite text-elite-black px-5 py-3 sm:py-4 rounded-sm font-bold tracking-wider uppercase text-sm">
                         Request Access
                     </a>
                 </div>
@@ -343,63 +426,62 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center pt-24 overflow-hidden">
+    <section id="home" class="relative min-h-screen flex items-center pt-16 sm:pt-20 lg:pt-24 overflow-hidden safe-left safe-right">
         <!-- Background -->
         <div class="absolute inset-0 elite-bg opacity-40"></div>
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(212,175,55,0.1)_0%,_transparent_70%)]"></div>
         
         <!-- Decorative Grid -->
-        <div class="absolute inset-0 bg-[linear-gradient(rgba(212,175,55,0.03)_1px,_transparent_1px),_linear-gradient(90deg,_rgba(212,175,55,0.03)_1px,_transparent_1px)] bg-[size:60px_60px]"></div>
+        <div class="absolute inset-0 bg-[linear-gradient(rgba(212,175,55,0.03)_1px,_transparent_1px),_linear-gradient(90deg,_rgba(212,175,55,0.03)_1px,_transparent_1px)] bg-[size:40px_40px] sm:bg-[size:60px_60px]"></div>
 
-        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-20">
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
             <div class="max-w-4xl mx-auto text-center">
                 <!-- Exclusive Badge -->
-                <div class="inline-flex items-center gap-3 px-6 py-3 badge-elite rounded-sm mb-10 reveal-elite">
-                    <i data-lucide="sparkles" class="w-4 h-4"></i>
-                    <span class="text-xs font-bold tracking-[0.3em] uppercase">Invitation-Only Network</span>
-                    <i data-lucide="sparkles" class="w-4 h-4"></i>
+                <div class="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 badge-elite rounded-sm mb-6 sm:mb-8 lg:mb-10 reveal-elite">
+                    <i data-lucide="sparkles" class="w-3 h-3 sm:w-4 sm:h-4"></i>
+                    <span class="text-[10px] xs:text-xs font-bold tracking-[0.2em] sm:tracking-[0.3em] uppercase">Invitation-Only</span>
+                    <i data-lucide="sparkles" class="w-3 h-3 sm:w-4 sm:h-4"></i>
                 </div>
 
-                <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold tracking-tight mb-8 reveal-elite">
-                    <span class="platinum-text italic">Qualified</span>
-                    <br>
-                    <span class="gold-text">Exclusivity</span>
+                <h1 class="responsive-heading font-serif font-bold tracking-tight mb-6 sm:mb-8 reveal-elite">
+                    <span class="platinum-text italic block">Qualified</span>
+                    <span class="gold-text block mt-2">Exclusivity</span>
                 </h1>
 
-                <p class="text-lg md:text-xl text-elite-platinum/70 mb-6 max-w-2xl mx-auto leading-relaxed font-light reveal-elite" style="transition-delay: 0.2s">
+                <p class="responsive-text text-elite-platinum/70 mb-4 sm:mb-6 max-w-2xl mx-auto leading-relaxed font-light reveal-elite" style="transition-delay: 0.2s">
                     A private performance network serving elite providers in Home Services, Professional Services, and Senior Care.
                 </p>
                 
-                <p class="text-sm text-elite-gold/60 mb-12 tracking-widest uppercase reveal-elite" style="transition-delay: 0.3s">
+                <p class="text-xs sm:text-sm text-elite-gold/60 mb-8 sm:mb-12 tracking-widest uppercase reveal-elite" style="transition-delay: 0.3s">
                     No monthly fees • Pay per qualified call • By application only
                 </p>
 
                 <!-- Stats -->
-                <div class="flex justify-center items-center gap-8 md:gap-16 mb-16 reveal-elite" style="transition-delay: 0.4s">
+                <div class="flex flex-col xs:flex-row justify-center items-center gap-4 xs:gap-6 sm:gap-8 lg:gap-16 mb-12 sm:mb-16 reveal-elite" style="transition-delay: 0.4s">
                     <div class="text-center">
-                        <div class="text-3xl md:text-4xl font-serif gold-text mb-1">$2.4M</div>
+                        <div class="text-2xl sm:text-3xl lg:text-4xl font-serif gold-text mb-1">$2.4M</div>
                         <div class="text-xs text-elite-platinum/50 tracking-widest uppercase">Revenue Generated</div>
                     </div>
-                    <div class="stat-divider hidden md:block"></div>
+                    <div class="stat-divider hidden xs:block"></div>
                     <div class="text-center">
-                        <div class="text-3xl md:text-4xl font-serif gold-text mb-1">87</div>
+                        <div class="text-2xl sm:text-3xl lg:text-4xl font-serif gold-text mb-1">87</div>
                         <div class="text-xs text-elite-platinum/50 tracking-widest uppercase">Partner Firms</div>
                     </div>
-                    <div class="stat-divider hidden md:block"></div>
+                    <div class="stat-divider hidden xs:block"></div>
                     <div class="text-center">
-                        <div class="text-3xl md:text-4xl font-serif gold-text mb-1">94%</div>
+                        <div class="text-2xl sm:text-3xl lg:text-4xl font-serif gold-text mb-1">94%</div>
                         <div class="text-xs text-elite-platinum/50 tracking-widest uppercase">Retention Rate</div>
                     </div>
                 </div>
 
-                <div class="flex flex-col sm:flex-row gap-6 justify-center reveal-elite" style="transition-delay: 0.5s">
+                <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center reveal-elite" style="transition-delay: 0.5s">
                     <a href="#contact"
-                       class="btn-elite group inline-flex items-center justify-center gap-3 text-elite-black px-10 py-5 rounded-sm font-bold tracking-wider uppercase text-sm">
+                       class="btn-elite group inline-flex items-center justify-center gap-2 sm:gap-3 text-elite-black px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-sm font-bold tracking-wider uppercase text-xs sm:text-sm">
                         Apply for Membership
-                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        <i data-lucide="arrow-right" class="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform"></i>
                     </a>
                     <a href="#sectors"
-                       class="inline-flex items-center justify-center gap-3 glass-elite text-elite-platinum border border-elite-gold/20 hover:border-elite-gold/40 px-10 py-5 rounded-sm font-medium tracking-wider uppercase text-sm transition-all duration-300">
+                       class="inline-flex items-center justify-center gap-2 sm:gap-3 glass-elite text-elite-platinum border border-elite-gold/20 hover:border-elite-gold/40 px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-sm font-medium tracking-wider uppercase text-xs sm:text-sm transition-all duration-300">
                         Explore Sectors
                     </a>
                 </div>
@@ -407,30 +489,30 @@
         </div>
 
         <!-- Scroll Indicator -->
-        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-50">
-            <span class="text-[10px] tracking-[0.3em] uppercase text-elite-platinum/50">Scroll</span>
-            <div class="w-px h-12 bg-gradient-to-b from-elite-gold to-transparent"></div>
+        <div class="absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 sm:gap-3 opacity-50">
+            <span class="text-[9px] sm:text-[10px] tracking-[0.2em] sm:tracking-[0.3em] uppercase text-elite-platinum/50">Scroll</span>
+            <div class="w-px h-8 sm:h-12 bg-gradient-to-b from-elite-gold to-transparent"></div>
         </div>
     </section>
 
     <!-- Three Sectors Section -->
-    <section id="sectors" class="relative py-32 md:py-40">
+    <section id="sectors" class="relative py-16 sm:py-24 lg:py-32 xl:py-40 safe-left safe-right">
         <div class="absolute inset-0 bg-elite-black"></div>
         <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-elite-gold/30 to-transparent"></div>
         
-        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center mb-24 reveal-elite">
-                <span class="text-elite-gold/60 text-xs tracking-[0.4em] uppercase block mb-4">Our Expertise</span>
-                <h2 class="text-4xl md:text-6xl font-serif font-bold mb-6">
-                    <span class="platinum-text">Three Elite</span>
-                    <span class="gold-text italic"> Verticals</span>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16 lg:mb-24 reveal-elite">
+                <span class="text-elite-gold/60 text-xs tracking-[0.3em] sm:tracking-[0.4em] uppercase block mb-3 sm:mb-4">Our Expertise</span>
+                <h2 class="responsive-subheading font-serif font-bold mb-4 sm:mb-6">
+                    <span class="platinum-text block">Three Elite</span>
+                    <span class="gold-text italic block">Verticals</span>
                 </h2>
-                <div class="deco-line w-24 mx-auto mt-8"></div>
+                <div class="deco-line w-16 sm:w-24 mx-auto mt-6 sm:mt-8"></div>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
                 <!-- Home Services -->
-                <div class="sector-card-elite group relative glass-elite rounded-sm p-10 border border-white/5 reveal-elite">
+                <div class="sector-card-elite group relative glass-elite rounded-sm p-6 sm:p-8 lg:p-10 border border-white/5 reveal-elite">
                     <div class="corner-accent top-left"></div>
                     <div class="corner-accent top-right"></div>
                     <div class="corner-accent bottom-left"></div>
@@ -439,48 +521,48 @@
                     <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                     
                     <div class="relative">
-                        <div class="w-20 h-20 mb-8 relative">
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 mb-6 sm:mb-8 relative">
                             <div class="absolute inset-0 border border-elite-gold/20 rotate-45 transform group-hover:rotate-90 transition-transform duration-700"></div>
                             <div class="absolute inset-2 border border-elite-gold/40 rotate-45 transform group-hover:rotate-0 transition-transform duration-700"></div>
                             <div class="absolute inset-0 flex items-center justify-center">
-                                <i data-lucide="home" class="w-8 h-8 text-cyan-400"></i>
+                                <i data-lucide="home" class="w-6 h-6 sm:w-8 sm:h-8 text-cyan-400"></i>
                             </div>
                         </div>
                         
-                        <span class="text-cyan-400/60 text-xs tracking-[0.3em] uppercase block mb-3">01</span>
-                        <h3 class="text-2xl font-serif font-bold text-white mb-4 italic">Home Services</h3>
-                        <p class="text-elite-platinum/60 mb-8 leading-relaxed text-sm">
+                        <span class="text-cyan-400/60 text-xs tracking-[0.2em] sm:tracking-[0.3em] uppercase block mb-3">01</span>
+                        <h3 class="text-xl sm:text-2xl font-serif font-bold text-white mb-3 sm:mb-4 italic">Home Services</h3>
+                        <p class="text-elite-platinum/60 mb-6 sm:mb-8 leading-relaxed text-sm">
                             Premium residential contractors and emergency service providers. Exclusive territories ensure zero competition among members.
                         </p>
                         
-                        <ul class="space-y-4 mb-8">
-                            <li class="flex items-center gap-4 text-elite-platinum/80 text-sm">
-                                <div class="w-1.5 h-1.5 bg-cyan-400 rotate-45"></div>
+                        <ul class="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
+                            <li class="flex items-center gap-3 sm:gap-4 text-elite-platinum/80 text-xs sm:text-sm">
+                                <div class="w-1.5 h-1.5 bg-cyan-400 rotate-45 flex-shrink-0"></div>
                                 <span>Luxury HVAC & Plumbing</span>
                             </li>
-                            <li class="flex items-center gap-4 text-elite-platinum/80 text-sm">
-                                <div class="w-1.5 h-1.5 bg-cyan-400 rotate-45"></div>
+                            <li class="flex items-center gap-3 sm:gap-4 text-elite-platinum/80 text-xs sm:text-sm">
+                                <div class="w-1.5 h-1.5 bg-cyan-400 rotate-45 flex-shrink-0"></div>
                                 <span>High-End Renovations</span>
                             </li>
-                            <li class="flex items-center gap-4 text-elite-platinum/80 text-sm">
-                                <div class="w-1.5 h-1.5 bg-cyan-400 rotate-45"></div>
+                            <li class="flex items-center gap-3 sm:gap-4 text-elite-platinum/80 text-xs sm:text-sm">
+                                <div class="w-1.5 h-1.5 bg-cyan-400 rotate-45 flex-shrink-0"></div>
                                 <span>Smart Home Integration</span>
                             </li>
-                            <li class="flex items-center gap-4 text-elite-platinum/80 text-sm">
-                                <div class="w-1.5 h-1.5 bg-cyan-400 rotate-45"></div>
+                            <li class="flex items-center gap-3 sm:gap-4 text-elite-platinum/80 text-xs sm:text-sm">
+                                <div class="w-1.5 h-1.5 bg-cyan-400 rotate-45 flex-shrink-0"></div>
                                 <span>Estate Management</span>
                             </li>
                         </ul>
 
-                        <div class="pt-6 border-t border-white/10 flex justify-between items-center">
+                        <div class="pt-4 sm:pt-6 border-t border-white/10 flex justify-between items-center">
                             <span class="text-xs text-elite-platinum/40 tracking-widest uppercase">Entry Threshold</span>
-                            <span class="text-cyan-400 font-serif italic">$500+</span>
+                            <span class="text-cyan-400 font-serif italic text-sm sm:text-base">$500+</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Professional Services -->
-                <div class="sector-card-elite group relative glass-elite rounded-sm p-10 border border-white/5 reveal-elite" style="transition-delay: 0.2s">
+                <div class="sector-card-elite group relative glass-elite rounded-sm p-6 sm:p-8 lg:p-10 border border-white/5 reveal-elite" style="transition-delay: 0.2s">
                     <div class="corner-accent top-left"></div>
                     <div class="corner-accent top-right"></div>
                     <div class="corner-accent bottom-left"></div>
@@ -489,48 +571,48 @@
                     <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                     
                     <div class="relative">
-                        <div class="w-20 h-20 mb-8 relative">
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 mb-6 sm:mb-8 relative">
                             <div class="absolute inset-0 border border-elite-gold/20 rotate-45 transform group-hover:rotate-90 transition-transform duration-700"></div>
                             <div class="absolute inset-2 border border-elite-gold/40 rotate-45 transform group-hover:rotate-0 transition-transform duration-700"></div>
                             <div class="absolute inset-0 flex items-center justify-center">
-                                <i data-lucide="briefcase" class="w-8 h-8 text-blue-400"></i>
+                                <i data-lucide="briefcase" class="w-6 h-6 sm:w-8 sm:h-8 text-blue-400"></i>
                             </div>
                         </div>
                         
-                        <span class="text-blue-400/60 text-xs tracking-[0.3em] uppercase block mb-3">02</span>
-                        <h3 class="text-2xl font-serif font-bold text-white mb-4 italic">Professional</h3>
-                        <p class="text-elite-platinum/60 mb-8 leading-relaxed text-sm">
+                        <span class="text-blue-400/60 text-xs tracking-[0.2em] sm:tracking-[0.3em] uppercase block mb-3">02</span>
+                        <h3 class="text-xl sm:text-2xl font-serif font-bold text-white mb-3 sm:mb-4 italic">Professional</h3>
+                        <p class="text-elite-platinum/60 mb-6 sm:mb-8 leading-relaxed text-sm">
                             White-glove B2B and B2C consultancies. Vetted firms serving high-net-worth individuals and enterprise clients.
                         </p>
                         
-                        <ul class="space-y-4 mb-8">
-                            <li class="flex items-center gap-4 text-elite-platinum/80 text-sm">
-                                <div class="w-1.5 h-1.5 bg-blue-400 rotate-45"></div>
+                        <ul class="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
+                            <li class="flex items-center gap-3 sm:gap-4 text-elite-platinum/80 text-xs sm:text-sm">
+                                <div class="w-1.5 h-1.5 bg-blue-400 rotate-45 flex-shrink-0"></div>
                                 <span>Wealth Management</span>
                             </li>
-                            <li class="flex items-center gap-4 text-elite-platinum/80 text-sm">
-                                <div class="w-1.5 h-1.5 bg-blue-400 rotate-45"></div>
+                            <li class="flex items-center gap-3 sm:gap-4 text-elite-platinum/80 text-xs sm:text-sm">
+                                <div class="w-1.5 h-1.5 bg-blue-400 rotate-45 flex-shrink-0"></div>
                                 <span>Corporate Legal</span>
                             </li>
-                            <li class="flex items-center gap-4 text-elite-platinum/80 text-sm">
-                                <div class="w-1.5 h-1.5 bg-blue-400 rotate-45"></div>
+                            <li class="flex items-center gap-3 sm:gap-4 text-elite-platinum/80 text-xs sm:text-sm">
+                                <div class="w-1.5 h-1.5 bg-blue-400 rotate-45 flex-shrink-0"></div>
                                 <span>Commercial Real Estate</span>
                             </li>
-                            <li class="flex items-center gap-4 text-elite-platinum/80 text-sm">
-                                <div class="w-1.5 h-1.5 bg-blue-400 rotate-45"></div>
+                            <li class="flex items-center gap-3 sm:gap-4 text-elite-platinum/80 text-xs sm:text-sm">
+                                <div class="w-1.5 h-1.5 bg-blue-400 rotate-45 flex-shrink-0"></div>
                                 <span>Executive Insurance</span>
                             </li>
                         </ul>
 
-                        <div class="pt-6 border-t border-white/10 flex justify-between items-center">
+                        <div class="pt-4 sm:pt-6 border-t border-white/10 flex justify-between items-center">
                             <span class="text-xs text-elite-platinum/40 tracking-widest uppercase">Entry Threshold</span>
-                            <span class="text-blue-400 font-serif italic">$2K+</span>
+                            <span class="text-blue-400 font-serif italic text-sm sm:text-base">$2K+</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Senior Care -->
-                <div class="sector-card-elite group relative glass-elite rounded-sm p-10 border border-white/5 reveal-elite" style="transition-delay: 0.4s">
+                <div class="sector-card-elite group relative glass-elite rounded-sm p-6 sm:p-8 lg:p-10 border border-white/5 reveal-elite" style="transition-delay: 0.4s">
                     <div class="corner-accent top-left"></div>
                     <div class="corner-accent top-right"></div>
                     <div class="corner-accent bottom-left"></div>
@@ -539,42 +621,42 @@
                     <div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                     
                     <div class="relative">
-                        <div class="w-20 h-20 mb-8 relative">
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 mb-6 sm:mb-8 relative">
                             <div class="absolute inset-0 border border-elite-gold/20 rotate-45 transform group-hover:rotate-90 transition-transform duration-700"></div>
                             <div class="absolute inset-2 border border-elite-gold/40 rotate-45 transform group-hover:rotate-0 transition-transform duration-700"></div>
                             <div class="absolute inset-0 flex items-center justify-center">
-                                <i data-lucide="heart-handshake" class="w-8 h-8 text-purple-400"></i>
+                                <i data-lucide="heart-handshake" class="w-6 h-6 sm:w-8 sm:h-8 text-purple-400"></i>
                             </div>
                         </div>
                         
-                        <span class="text-purple-400/60 text-xs tracking-[0.3em] uppercase block mb-3">03</span>
-                        <h3 class="text-2xl font-serif font-bold text-white mb-4 italic">Senior Care</h3>
-                        <p class="text-elite-platinum/60 mb-8 leading-relaxed text-sm">
+                        <span class="text-purple-400/60 text-xs tracking-[0.2em] sm:tracking-[0.3em] uppercase block mb-3">03</span>
+                        <h3 class="text-xl sm:text-2xl font-serif font-bold text-white mb-3 sm:mb-4 italic">Senior Care</h3>
+                        <p class="text-elite-platinum/60 mb-6 sm:mb-8 leading-relaxed text-sm">
                             Boutique care providers and luxury living facilities. Serving discerning families who demand excellence.
                         </p>
                         
-                        <ul class="space-y-4 mb-8">
-                            <li class="flex items-center gap-4 text-elite-platinum/80 text-sm">
-                                <div class="w-1.5 h-1.5 bg-purple-400 rotate-45"></div>
+                        <ul class="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
+                            <li class="flex items-center gap-3 sm:gap-4 text-elite-platinum/80 text-xs sm:text-sm">
+                                <div class="w-1.5 h-1.5 bg-purple-400 rotate-45 flex-shrink-0"></div>
                                 <span>Concierge Home Care</span>
                             </li>
-                            <li class="flex items-center gap-4 text-elite-platinum/80 text-sm">
-                                <div class="w-1.5 h-1.5 bg-purple-400 rotate-45"></div>
+                            <li class="flex items-center gap-3 sm:gap-4 text-elite-platinum/80 text-xs sm:text-sm">
+                                <div class="w-1.5 h-1.5 bg-purple-400 rotate-45 flex-shrink-0"></div>
                                 <span>Luxury Assisted Living</span>
                             </li>
-                            <li class="flex items-center gap-4 text-elite-platinum/80 text-sm">
-                                <div class="w-1.5 h-1.5 bg-purple-400 rotate-45"></div>
+                            <li class="flex items-center gap-3 sm:gap-4 text-elite-platinum/80 text-xs sm:text-sm">
+                                <div class="w-1.5 h-1.5 bg-purple-400 rotate-45 flex-shrink-0"></div>
                                 <span>Memory Care Estates</span>
                             </li>
-                            <li class="flex items-center gap-4 text-elite-platinum/80 text-sm">
-                                <div class="w-1.5 h-1.5 bg-purple-400 rotate-45"></div>
+                            <li class="flex items-center gap-3 sm:gap-4 text-elite-platinum/80 text-xs sm:text-sm">
+                                <div class="w-1.5 h-1.5 bg-purple-400 rotate-45 flex-shrink-0"></div>
                                 <span>Private Nursing</span>
                             </li>
                         </ul>
 
-                        <div class="pt-6 border-t border-white/10 flex justify-between items-center">
+                        <div class="pt-4 sm:pt-6 border-t border-white/10 flex justify-between items-center">
                             <span class="text-xs text-elite-platinum/40 tracking-widest uppercase">Entry Threshold</span>
-                            <span class="text-purple-400 font-serif italic">$5K+</span>
+                            <span class="text-purple-400 font-serif italic text-sm sm:text-base">$5K+</span>
                         </div>
                     </div>
                 </div>
@@ -583,38 +665,38 @@
     </section>
 
     <!-- Partners Ecosystem Section -->
-    <section id="partners" class="relative py-32 md:py-40 bg-elite-navy">
+    <section id="partners" class="relative py-16 sm:py-24 lg:py-32 xl:py-40 bg-elite-navy safe-left safe-right">
         <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(212,175,55,0.05)_0%,_transparent_50%)]"></div>
         
-        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center mb-20 reveal-elite">
-                <span class="text-elite-gold/60 text-xs tracking-[0.4em] uppercase block mb-4">The Ecosystem</span>
-                <h2 class="text-4xl md:text-6xl font-serif font-bold mb-6">
-                    <span class="platinum-text">Mariba</span>
-                    <span class="gold-text italic"> Partners</span>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16 lg:mb-20 reveal-elite">
+                <span class="text-elite-gold/60 text-xs tracking-[0.3em] sm:tracking-[0.4em] uppercase block mb-3 sm:mb-4">The Ecosystem</span>
+                <h2 class="responsive-subheading font-serif font-bold mb-4 sm:mb-6">
+                    <span class="platinum-text block">Mariba</span>
+                    <span class="gold-text italic block">Partners</span>
                 </h2>
-                <p class="text-elite-platinum/60 max-w-2xl mx-auto leading-relaxed">
+                <p class="text-elite-platinum/60 max-w-2xl mx-auto leading-relaxed text-sm sm:text-base">
                     Our integrated network of specialized platforms serving the energy, commercial, and training sectors. Members receive preferred access across all properties.
                 </p>
-                <div class="deco-line w-24 mx-auto mt-8"></div>
+                <div class="deco-line w-16 sm:w-24 mx-auto mt-6 sm:mt-8"></div>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 <!-- Solar Connector -->
                 <a href="https://solar.maribamedia.co.za" target="_blank" rel="noopener noreferrer" 
-                   class="partner-card group glass-elite rounded-sm p-8 border border-white/5 block reveal-elite">
-                    <div class="flex items-start justify-between mb-6">
-                        <div class="w-14 h-14 rounded-sm bg-gradient-to-br from-orange-500/20 to-yellow-500/20 flex items-center justify-center border border-orange-500/30">
-                            <i data-lucide="sun" class="w-7 h-7 text-orange-400"></i>
+                   class="partner-card group glass-elite rounded-sm p-6 sm:p-8 border border-white/5 block reveal-elite">
+                    <div class="flex items-start justify-between mb-4 sm:mb-6">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-sm bg-gradient-to-br from-orange-500/20 to-yellow-500/20 flex items-center justify-center border border-orange-500/30">
+                            <i data-lucide="sun" class="w-5 h-5 sm:w-7 sm:h-7 text-orange-400"></i>
                         </div>
-                        <i data-lucide="external-link" class="w-5 h-5 text-elite-platinum/30 group-hover:text-elite-gold transition-colors"></i>
+                        <i data-lucide="external-link" class="w-4 h-4 sm:w-5 sm:h-5 text-elite-platinum/30 group-hover:text-elite-gold transition-colors"></i>
                     </div>
-                    <h3 class="text-xl font-serif font-bold text-white mb-2 group-hover:gold-text transition-colors">Solar Connector</h3>
-                    <p class="text-elite-gold/60 text-xs tracking-widest uppercase mb-4">solar.maribamedia.co.za</p>
-                    <p class="text-elite-platinum/60 text-sm leading-relaxed">
+                    <h3 class="text-lg sm:text-xl font-serif font-bold text-white mb-2 group-hover:gold-text transition-colors">Solar Connector</h3>
+                    <p class="text-elite-gold/60 text-xs tracking-widest uppercase mb-3 sm:mb-4">solar.maribamedia.co.za</p>
+                    <p class="text-elite-platinum/60 text-xs sm:text-sm leading-relaxed">
                         Premium residential and commercial solar installation leads. Connecting certified installers with pre-qualified property owners seeking energy independence.
                     </p>
-                    <div class="mt-6 pt-6 border-t border-white/5 flex items-center gap-2 text-xs text-elite-platinum/40">
+                    <div class="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-white/5 flex items-center gap-2 text-xs text-elite-platinum/40">
                         <i data-lucide="zap" class="w-3 h-3"></i>
                         <span>Energy Sector</span>
                     </div>
@@ -622,19 +704,19 @@
 
                 <!-- Commercial Connector -->
                 <a href="https://commercial.maribamedia.co.za" target="_blank" rel="noopener noreferrer"
-                   class="partner-card group glass-elite rounded-sm p-8 border border-white/5 block reveal-elite" style="transition-delay: 0.1s">
-                    <div class="flex items-start justify-between mb-6">
-                        <div class="w-14 h-14 rounded-sm bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center border border-blue-500/30">
-                            <i data-lucide="building-2" class="w-7 h-7 text-blue-400"></i>
+                   class="partner-card group glass-elite rounded-sm p-6 sm:p-8 border border-white/5 block reveal-elite" style="transition-delay: 0.1s">
+                    <div class="flex items-start justify-between mb-4 sm:mb-6">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-sm bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center border border-blue-500/30">
+                            <i data-lucide="building-2" class="w-5 h-5 sm:w-7 sm:h-7 text-blue-400"></i>
                         </div>
-                        <i data-lucide="external-link" class="w-5 h-5 text-elite-platinum/30 group-hover:text-elite-gold transition-colors"></i>
+                        <i data-lucide="external-link" class="w-4 h-4 sm:w-5 sm:h-5 text-elite-platinum/30 group-hover:text-elite-gold transition-colors"></i>
                     </div>
-                    <h3 class="text-xl font-serif font-bold text-white mb-2 group-hover:gold-text transition-colors">Commercial Connector</h3>
-                    <p class="text-elite-gold/60 text-xs tracking-widest uppercase mb-4">commercial.maribamedia.co.za</p>
-                    <p class="text-elite-platinum/60 text-sm leading-relaxed">
+                    <h3 class="text-lg sm:text-xl font-serif font-bold text-white mb-2 group-hover:gold-text transition-colors">Commercial Connector</h3>
+                    <p class="text-elite-gold/60 text-xs tracking-widest uppercase mb-3 sm:mb-4">commercial.maribamedia.co.za</p>
+                    <p class="text-elite-platinum/60 text-xs sm:text-sm leading-relaxed">
                         Enterprise-grade B2B connections. Facilitating partnerships between service providers and commercial property portfolios, retail chains, and corporate facilities.
                     </p>
-                    <div class="mt-6 pt-6 border-t border-white/5 flex items-center gap-2 text-xs text-elite-platinum/40">
+                    <div class="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-white/5 flex items-center gap-2 text-xs text-elite-platinum/40">
                         <i data-lucide="briefcase" class="w-3 h-3"></i>
                         <span>B2B Division</span>
                     </div>
@@ -642,19 +724,19 @@
 
                 <!-- Energy Funding -->
                 <a href="https://funding.maribamedia.co.za" target="_blank" rel="noopener noreferrer"
-                   class="partner-card group glass-elite rounded-sm p-8 border border-white/5 block reveal-elite" style="transition-delay: 0.2s">
-                    <div class="flex items-start justify-between mb-6">
-                        <div class="w-14 h-14 rounded-sm bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center border border-green-500/30">
-                            <i data-lucide="banknote" class="w-7 h-7 text-green-400"></i>
+                   class="partner-card group glass-elite rounded-sm p-6 sm:p-8 border border-white/5 block reveal-elite" style="transition-delay: 0.2s">
+                    <div class="flex items-start justify-between mb-4 sm:mb-6">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-sm bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center border border-green-500/30">
+                            <i data-lucide="banknote" class="w-5 h-5 sm:w-7 sm:h-7 text-green-400"></i>
                         </div>
-                        <i data-lucide="external-link" class="w-5 h-5 text-elite-platinum/30 group-hover:text-elite-gold transition-colors"></i>
+                        <i data-lucide="external-link" class="w-4 h-4 sm:w-5 sm:h-5 text-elite-platinum/30 group-hover:text-elite-gold transition-colors"></i>
                     </div>
-                    <h3 class="text-xl font-serif font-bold text-white mb-2 group-hover:gold-text transition-colors">Energy Funding</h3>
-                    <p class="text-elite-gold/60 text-xs tracking-widest uppercase mb-4">funding.maribamedia.co.za</p>
-                    <p class="text-elite-platinum/60 text-sm leading-relaxed">
+                    <h3 class="text-lg sm:text-xl font-serif font-bold text-white mb-2 group-hover:gold-text transition-colors">Energy Funding</h3>
+                    <p class="text-elite-gold/60 text-xs tracking-widest uppercase mb-3 sm:mb-4">funding.maribamedia.co.za</p>
+                    <p class="text-elite-platinum/60 text-xs sm:text-sm leading-relaxed">
                         Specialized financing solutions for energy projects. Connecting qualified borrowers with private lenders and green energy investment vehicles.
                     </p>
-                    <div class="mt-6 pt-6 border-t border-white/5 flex items-center gap-2 text-xs text-elite-platinum/40">
+                    <div class="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-white/5 flex items-center gap-2 text-xs text-elite-platinum/40">
                         <i data-lucide="landmark" class="w-3 h-3"></i>
                         <span>Financial Services</span>
                     </div>
@@ -662,19 +744,19 @@
 
                 <!-- Water Connector -->
                 <a href="https://waterbackup.maribamedia.co.za" target="_blank" rel="noopener noreferrer"
-                   class="partner-card group glass-elite rounded-sm p-8 border border-white/5 block reveal-elite" style="transition-delay: 0.3s">
-                    <div class="flex items-start justify-between mb-6">
-                        <div class="w-14 h-14 rounded-sm bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center border border-cyan-500/30">
-                            <i data-lucide="droplets" class="w-7 h-7 text-cyan-400"></i>
+                   class="partner-card group glass-elite rounded-sm p-6 sm:p-8 border border-white/5 block reveal-elite" style="transition-delay: 0.3s">
+                    <div class="flex items-start justify-between mb-4 sm:mb-6">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-sm bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center border border-cyan-500/30">
+                            <i data-lucide="droplets" class="w-5 h-5 sm:w-7 sm:h-7 text-cyan-400"></i>
                         </div>
-                        <i data-lucide="external-link" class="w-5 h-5 text-elite-platinum/30 group-hover:text-elite-gold transition-colors"></i>
+                        <i data-lucide="external-link" class="w-4 h-4 sm:w-5 sm:h-5 text-elite-platinum/30 group-hover:text-elite-gold transition-colors"></i>
                     </div>
-                    <h3 class="text-xl font-serif font-bold text-white mb-2 group-hover:gold-text transition-colors">Water Connector</h3>
-                    <p class="text-elite-gold/60 text-xs tracking-widest uppercase mb-4">waterbackup.maribamedia.co.za</p>
-                    <p class="text-elite-platinum/60 text-sm leading-relaxed">
+                    <h3 class="text-lg sm:text-xl font-serif font-bold text-white mb-2 group-hover:gold-text transition-colors">Water Connector</h3>
+                    <p class="text-elite-gold/60 text-xs tracking-widest uppercase mb-3 sm:mb-4">waterbackup.maribamedia.co.za</p>
+                    <p class="text-elite-platinum/60 text-xs sm:text-sm leading-relaxed">
                         Backup water systems and filtration solutions. Premium leads for borehole drilling, rainwater harvesting, and whole-home water security installations.
                     </p>
-                    <div class="mt-6 pt-6 border-t border-white/5 flex items-center gap-2 text-xs text-elite-platinum/40">
+                    <div class="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-white/5 flex items-center gap-2 text-xs text-elite-platinum/40">
                         <i data-lucide="waves" class="w-3 h-3"></i>
                         <span>Infrastructure</span>
                     </div>
@@ -682,19 +764,19 @@
 
                 <!-- Training OS -->
                 <a href="https://training.maribamedia.co.za" target="_blank" rel="noopener noreferrer"
-                   class="partner-card group glass-elite rounded-sm p-8 border border-white/5 block reveal-elite" style="transition-delay: 0.4s">
-                    <div class="flex items-start justify-between mb-6">
-                        <div class="w-14 h-14 rounded-sm bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center border border-purple-500/30">
-                            <i data-lucide="graduation-cap" class="w-7 h-7 text-purple-400"></i>
+                   class="partner-card group glass-elite rounded-sm p-6 sm:p-8 border border-white/5 block reveal-elite" style="transition-delay: 0.4s">
+                    <div class="flex items-start justify-between mb-4 sm:mb-6">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-sm bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center border border-purple-500/30">
+                            <i data-lucide="graduation-cap" class="w-5 h-5 sm:w-7 sm:h-7 text-purple-400"></i>
                         </div>
-                        <i data-lucide="external-link" class="w-5 h-5 text-elite-platinum/30 group-hover:text-elite-gold transition-colors"></i>
+                        <i data-lucide="external-link" class="w-4 h-4 sm:w-5 sm:h-5 text-elite-platinum/30 group-hover:text-elite-gold transition-colors"></i>
                     </div>
-                    <h3 class="text-xl font-serif font-bold text-white mb-2 group-hover:gold-text transition-colors">Training OS</h3>
-                    <p class="text-elite-gold/60 text-xs tracking-widest uppercase mb-4">training.maribamedia.co.za</p>
-                    <p class="text-elite-platinum/60 text-sm leading-relaxed">
+                    <h3 class="text-lg sm:text-xl font-serif font-bold text-white mb-2 group-hover:gold-text transition-colors">Training OS</h3>
+                    <p class="text-elite-gold/60 text-xs tracking-widest uppercase mb-3 sm:mb-4">training.maribamedia.co.za</p>
+                    <p class="text-elite-platinum/60 text-xs sm:text-sm leading-relaxed">
                         Professional development platform for sales teams and call center operations. Certification programs and performance optimization tools for member firms.
                     </p>
-                    <div class="mt-6 pt-6 border-t border-white/5 flex items-center gap-2 text-xs text-elite-platinum/40">
+                    <div class="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-white/5 flex items-center gap-2 text-xs text-elite-platinum/40">
                         <i data-lucide="book-open" class="w-3 h-3"></i>
                         <span>Education</span>
                     </div>
@@ -702,26 +784,26 @@
 
                 <!-- Energy Mixer -->
                 <a href="https://energy.maribamedia.co.za" target="_blank" rel="noopener noreferrer"
-                   class="partner-card group glass-elite rounded-sm p-8 border border-white/5 block reveal-elite" style="transition-delay: 0.5s">
-                    <div class="flex items-start justify-between mb-6">
-                        <div class="w-14 h-14 rounded-sm bg-gradient-to-br from-yellow-500/20 to-orange-500/20 flex items-center justify-center border border-yellow-500/30">
-                            <i data-lucide="plug-zap" class="w-7 h-7 text-yellow-400"></i>
+                   class="partner-card group glass-elite rounded-sm p-6 sm:p-8 border border-white/5 block reveal-elite" style="transition-delay: 0.5s">
+                    <div class="flex items-start justify-between mb-4 sm:mb-6">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-sm bg-gradient-to-br from-yellow-500/20 to-orange-500/20 flex items-center justify-center border border-yellow-500/30">
+                            <i data-lucide="plug-zap" class="w-5 h-5 sm:w-7 sm:h-7 text-yellow-400"></i>
                         </div>
-                        <i data-lucide="external-link" class="w-5 h-5 text-elite-platinum/30 group-hover:text-elite-gold transition-colors"></i>
+                        <i data-lucide="external-link" class="w-4 h-4 sm:w-5 sm:h-5 text-elite-platinum/30 group-hover:text-elite-gold transition-colors"></i>
                     </div>
-                    <h3 class="text-xl font-serif font-bold text-white mb-2 group-hover:gold-text transition-colors">Energy Mixer</h3>
-                    <p class="text-elite-gold/60 text-xs tracking-widest uppercase mb-4">energy.maribamedia.co.za</p>
-                    <p class="text-elite-platinum/60 text-sm leading-relaxed">
+                    <h3 class="text-lg sm:text-xl font-serif font-bold text-white mb-2 group-hover:gold-text transition-colors">Energy Mixer</h3>
+                    <p class="text-elite-gold/60 text-xs tracking-widest uppercase mb-3 sm:mb-4">energy.maribamedia.co.za</p>
+                    <p class="text-elite-platinum/60 text-xs sm:text-sm leading-relaxed">
                         Networking platform for energy sector stakeholders. Exclusive events, deal flow sharing, and partnership opportunities for vetted industry participants.
                     </p>
-                    <div class="mt-6 pt-6 border-t border-white/5 flex items-center gap-2 text-xs text-elite-platinum/40">
+                    <div class="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-white/5 flex items-center gap-2 text-xs text-elite-platinum/40">
                         <i data-lucide="users" class="w-3 h-3"></i>
                         <span>Networking</span>
                     </div>
                 </a>
             </div>
 
-            <div class="mt-16 text-center reveal-elite">
+            <div class="mt-12 sm:mt-16 text-center reveal-elite">
                 <p class="text-elite-platinum/40 text-sm italic">
                     Mariba Media partners receive cross-platform benefits and unified billing
                 </p>
@@ -730,77 +812,77 @@
     </section>
 
     <!-- Process Section -->
-    <section id="how-it-works" class="relative py-32 md:py-40">
+    <section id="how-it-works" class="relative py-16 sm:py-24 lg:py-32 xl:py-40 safe-left safe-right">
         <div class="absolute inset-0 bg-elite-black"></div>
         <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-elite-gold/30 to-transparent"></div>
         
-        <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
-            <div class="text-center mb-24 reveal-elite">
-                <span class="text-elite-gold/60 text-xs tracking-[0.4em] uppercase block mb-4">Admissions</span>
-                <h2 class="text-4xl md:text-6xl font-serif font-bold mb-6">
-                    <span class="platinum-text">The</span>
-                    <span class="gold-text italic"> Process</span>
+        <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16 lg:mb-24 reveal-elite">
+                <span class="text-elite-gold/60 text-xs tracking-[0.3em] sm:tracking-[0.4em] uppercase block mb-3 sm:mb-4">Admissions</span>
+                <h2 class="responsive-subheading font-serif font-bold mb-4 sm:mb-6">
+                    <span class="platinum-text block">The</span>
+                    <span class="gold-text italic block">Process</span>
                 </h2>
-                <div class="deco-line w-24 mx-auto mt-8"></div>
+                <div class="deco-line w-16 sm:w-24 mx-auto mt-6 sm:mt-8"></div>
             </div>
 
             <div class="relative">
                 <!-- Connecting Line -->
                 <div class="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-elite-gold/20 to-transparent hidden lg:block"></div>
 
-                <div class="grid md:grid-cols-4 gap-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
                     <!-- Step 1 -->
                     <div class="relative reveal-elite">
-                        <div class="glass-elite rounded-sm p-8 border border-white/5 relative z-10 hover:border-elite-gold/30 transition-colors">
-                            <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-elite-black border border-elite-gold/50 rounded-full flex items-center justify-center">
+                        <div class="glass-elite rounded-sm p-6 sm:p-8 border border-white/5 relative z-10 hover:border-elite-gold/30 transition-colors">
+                            <div class="absolute -top-3 sm:-top-4 left-1/2 -translate-x-1/2 w-6 h-6 sm:w-8 sm:h-8 bg-elite-black border border-elite-gold/50 rounded-full flex items-center justify-center">
                                 <span class="text-elite-gold text-xs font-bold">01</span>
                             </div>
-                            <div class="pt-4 text-center">
-                                <i data-lucide="file-text" class="w-8 h-8 text-elite-gold/60 mx-auto mb-4"></i>
-                                <h3 class="text-lg font-serif font-bold text-white mb-2">Application</h3>
-                                <p class="text-elite-platinum/50 text-sm">Submit firm credentials and service capabilities</p>
+                            <div class="pt-6 sm:pt-8 text-center">
+                                <i data-lucide="file-text" class="w-6 h-6 sm:w-8 sm:h-8 text-elite-gold/60 mx-auto mb-3 sm:mb-4"></i>
+                                <h3 class="text-base sm:text-lg font-serif font-bold text-white mb-2">Application</h3>
+                                <p class="text-elite-platinum/50 text-xs sm:text-sm">Submit firm credentials and service capabilities</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Step 2 -->
                     <div class="relative reveal-elite" style="transition-delay: 0.15s">
-                        <div class="glass-elite rounded-sm p-8 border border-white/5 relative z-10 hover:border-elite-gold/30 transition-colors">
-                            <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-elite-black border border-elite-gold/50 rounded-full flex items-center justify-center">
+                        <div class="glass-elite rounded-sm p-6 sm:p-8 border border-white/5 relative z-10 hover:border-elite-gold/30 transition-colors">
+                            <div class="absolute -top-3 sm:-top-4 left-1/2 -translate-x-1/2 w-6 h-6 sm:w-8 sm:h-8 bg-elite-black border border-elite-gold/50 rounded-full flex items-center justify-center">
                                 <span class="text-elite-gold text-xs font-bold">02</span>
                             </div>
-                            <div class="pt-4 text-center">
-                                <i data-lucide="search" class="w-8 h-8 text-elite-gold/60 mx-auto mb-4"></i>
-                                <h3 class="text-lg font-serif font-bold text-white mb-2">Vetting</h3>
-                                <p class="text-elite-platinum/50 text-sm">Background verification and reference checks</p>
+                            <div class="pt-6 sm:pt-8 text-center">
+                                <i data-lucide="search" class="w-6 h-6 sm:w-8 sm:h-8 text-elite-gold/60 mx-auto mb-3 sm:mb-4"></i>
+                                <h3 class="text-base sm:text-lg font-serif font-bold text-white mb-2">Vetting</h3>
+                                <p class="text-elite-platinum/50 text-xs sm:text-sm">Background verification and reference checks</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Step 3 -->
                     <div class="relative reveal-elite" style="transition-delay: 0.3s">
-                        <div class="glass-elite rounded-sm p-8 border border-white/5 relative z-10 hover:border-elite-gold/30 transition-colors">
-                            <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-elite-black border border-elite-gold/50 rounded-full flex items-center justify-center">
+                        <div class="glass-elite rounded-sm p-6 sm:p-8 border border-white/5 relative z-10 hover:border-elite-gold/30 transition-colors">
+                            <div class="absolute -top-3 sm:-top-4 left-1/2 -translate-x-1/2 w-6 h-6 sm:w-8 sm:h-8 bg-elite-black border border-elite-gold/50 rounded-full flex items-center justify-center">
                                 <span class="text-elite-gold text-xs font-bold">03</span>
                             </div>
-                            <div class="pt-4 text-center">
-                                <i data-lucide="handshake" class="w-8 h-8 text-elite-gold/60 mx-auto mb-4"></i>
-                                <h3 class="text-lg font-serif font-bold text-white mb-2">Onboarding</h3>
-                                <p class="text-elite-platinum/50 text-sm">Integration and call flow configuration</p>
+                            <div class="pt-6 sm:pt-8 text-center">
+                                <i data-lucide="handshake" class="w-6 h-6 sm:w-8 sm:h-8 text-elite-gold/60 mx-auto mb-3 sm:mb-4"></i>
+                                <h3 class="text-base sm:text-lg font-serif font-bold text-white mb-2">Onboarding</h3>
+                                <p class="text-elite-platinum/50 text-xs sm:text-sm">Integration and call flow configuration</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Step 4 -->
                     <div class="relative reveal-elite" style="transition-delay: 0.45s">
-                        <div class="glass-elite rounded-sm p-8 border border-white/5 relative z-10 hover:border-elite-gold/30 transition-colors">
-                            <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-elite-black border border-elite-gold/50 rounded-full flex items-center justify-center">
+                        <div class="glass-elite rounded-sm p-6 sm:p-8 border border-white/5 relative z-10 hover:border-elite-gold/30 transition-colors">
+                            <div class="absolute -top-3 sm:-top-4 left-1/2 -translate-x-1/2 w-6 h-6 sm:w-8 sm:h-8 bg-elite-black border border-elite-gold/50 rounded-full flex items-center justify-center">
                                 <span class="text-elite-gold text-xs font-bold">04</span>
                             </div>
-                            <div class="pt-4 text-center">
-                                <i data-lucide="crown" class="w-8 h-8 text-elite-gold/60 mx-auto mb-4"></i>
-                                <h3 class="text-lg font-serif font-bold text-white mb-2">Membership</h3>
-                                <p class="text-elite-platinum/50 text-sm">Receive qualified calls within 24 hours</p>
+                            <div class="pt-6 sm:pt-8 text-center">
+                                <i data-lucide="crown" class="w-6 h-6 sm:w-8 sm:h-8 text-elite-gold/60 mx-auto mb-3 sm:mb-4"></i>
+                                <h3 class="text-base sm:text-lg font-serif font-bold text-white mb-2">Membership</h3>
+                                <p class="text-elite-platinum/50 text-xs sm:text-sm">Receive qualified calls within 24 hours</p>
                             </div>
                         </div>
                     </div>
@@ -810,74 +892,74 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="relative py-32 md:py-40 bg-elite-navy">
+    <section id="contact" class="relative py-16 sm:py-24 lg:py-32 xl:py-40 bg-elite-navy safe-left safe-right">
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(212,175,55,0.05)_0%,_transparent_70%)]"></div>
         
-        <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-8">
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="glass-elite rounded-sm p-1 border border-elite-gold/20 reveal-elite">
-                <div class="bg-elite-black/50 p-12 md:p-16">
-                    <div class="text-center mb-12">
-                        <span class="text-elite-gold/60 text-xs tracking-[0.4em] uppercase block mb-4">Inquiries</span>
-                        <h2 class="text-4xl md:text-5xl font-serif font-bold mb-6">
-                            <span class="platinum-text">Request an</span>
-                            <span class="gold-text italic"> Invitation</span>
+                <div class="bg-elite-black/50 p-6 sm:p-8 lg:p-12 xl:p-16">
+                    <div class="text-center mb-8 sm:mb-12">
+                        <span class="text-elite-gold/60 text-xs tracking-[0.3em] sm:tracking-[0.4em] uppercase block mb-3 sm:mb-4">Inquiries</span>
+                        <h2 class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-serif font-bold mb-4 sm:mb-6">
+                            <span class="platinum-text block">Request an</span>
+                            <span class="gold-text italic block">Invitation</span>
                         </h2>
-                        <p class="text-elite-platinum/60 max-w-xl mx-auto">
+                        <p class="text-elite-platinum/60 max-w-xl mx-auto text-sm sm:text-base">
                             Membership is limited and by application only. Submit your details for consideration by our admissions team.
                         </p>
                     </div>
 
-                    <div class="grid md:grid-cols-2 gap-12 items-center">
-                        <div class="space-y-8">
-                            <div class="flex items-center gap-6">
-                                <div class="w-16 h-16 rounded-sm border border-elite-gold/20 flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="mail" class="w-6 h-6 text-elite-gold"></i>
+                    <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+                        <div class="space-y-6 sm:space-y-8">
+                            <div class="flex items-center gap-4 sm:gap-6">
+                                <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-sm border border-elite-gold/20 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="mail" class="w-5 h-5 sm:w-6 sm:h-6 text-elite-gold"></i>
                                 </div>
                                 <div>
                                     <div class="text-xs text-elite-platinum/40 tracking-widest uppercase mb-1">Email</div>
-                                    <a href="mailto:victor@maribamedia.co.za" class="text-white font-serif text-lg link-elite">victor@maribamedia.co.za</a>
+                                    <a href="mailto:victor@maribamedia.co.za" class="text-white font-serif text-base sm:text-lg link-elite">victor@maribamedia.co.za</a>
                                 </div>
                             </div>
 
-                            <div class="flex items-center gap-6">
-                                <div class="w-16 h-16 rounded-sm border border-elite-gold/20 flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="phone" class="w-6 h-6 text-elite-gold"></i>
+                            <div class="flex items-center gap-4 sm:gap-6">
+                                <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-sm border border-elite-gold/20 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="phone" class="w-5 h-5 sm:w-6 sm:h-6 text-elite-gold"></i>
                                 </div>
                                 <div>
                                     <div class="text-xs text-elite-platinum/40 tracking-widest uppercase mb-1">Private Line</div>
-                                    <a href="tel:+27766473499" class="text-white font-serif text-lg link-elite">+27 (0) 76 647 3499</a>
+                                    <a href="tel:+27766473499" class="text-white font-serif text-base sm:text-lg link-elite">+27 (0) 76 647 3499</a>
                                 </div>
                             </div>
 
-                            <div class="flex items-center gap-6">
-                                <div class="w-16 h-16 rounded-sm border border-elite-gold/20 flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="map-pin" class="w-6 h-6 text-elite-gold"></i>
+                            <div class="flex items-center gap-4 sm:gap-6">
+                                <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-sm border border-elite-gold/20 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="map-pin" class="w-5 h-5 sm:w-6 sm:h-6 text-elite-gold"></i>
                                 </div>
                                 <div>
                                     <div class="text-xs text-elite-platinum/40 tracking-widest uppercase mb-1">Availability</div>
-                                    <p class="text-white font-serif text-lg">Mon-Fri, 9AM-5PM SAST</p>
+                                    <p class="text-white font-serif text-base sm:text-lg">Mon-Fri, 9AM-5PM SAST</p>
                                 </div>
                             </div>
 
-                            <div class="pt-8 border-t border-white/10">
-                                <p class="text-elite-platinum/40 text-sm italic mb-4">"Quality over quantity. Every call is an opportunity."</p>
+                            <div class="pt-6 sm:pt-8 border-t border-white/10">
+                                <p class="text-elite-platinum/40 text-sm italic mb-3 sm:mb-4">"Quality over quantity. Every call is an opportunity."</p>
                                 <p class="text-elite-gold text-xs tracking-widest uppercase">— The Mariba Standard</p>
                             </div>
                         </div>
 
-                        <div class="glass-elite rounded-sm p-8 border border-white/5">
-                            <div class="flex items-center gap-4 mb-8">
-                                <div class="w-12 h-12 rounded-sm bg-gradient-to-br from-elite-gold to-yellow-600 flex items-center justify-center">
-                                    <i data-lucide="calendar" class="w-6 h-6 text-elite-black"></i>
+                        <div class="glass-elite rounded-sm p-4 sm:p-6 lg:p-8 border border-white/5">
+                            <div class="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+                                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-sm bg-gradient-to-br from-elite-gold to-yellow-600 flex items-center justify-center">
+                                    <i data-lucide="calendar" class="w-5 h-5 sm:w-6 sm:h-6 text-elite-black"></i>
                                 </div>
                                 <div>
-                                    <h3 class="text-lg font-bold text-white font-serif">Schedule Consultation</h3>
+                                    <h3 class="text-base sm:text-lg font-bold text-white font-serif">Schedule Consultation</h3>
                                     <p class="text-xs text-elite-platinum/50">Private 30-minute session</p>
                                 </div>
                             </div>
                             
                             <!-- Cal.com Calendar -->
-                            <div class="rounded-sm overflow-hidden bg-white" style="height: 450px;">
+                            <div class="rounded-sm overflow-hidden bg-white h-64 sm:h-80 lg:h-96 xl:h-[450px]">
                                 <div style="width:100%;height:100%;" id="my-cal-inline-south-africa"></div>
                             </div>
                             <script type="text/javascript">
@@ -900,39 +982,39 @@
     </section>
 
     <!-- Footer -->
-    <footer class="relative bg-elite-black border-t border-elite-gold/10 pt-20 pb-12">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+    <footer class="relative bg-elite-black border-t border-elite-gold/10 pt-12 sm:pt-16 lg:pt-20 pb-8 sm:pb-12 safe-left safe-right">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 mb-12 sm:mb-16">
                 <!-- Brand -->
                 <div class="lg:col-span-2">
-                    <a href="#home" class="flex items-center gap-4 mb-6">
-                        <div class="bg-gradient-to-br from-elite-gold to-yellow-600 p-3 rounded-sm">
-                            <i data-lucide="crown" class="w-6 h-6 text-elite-black"></i>
+                    <a href="#home" class="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                        <div class="bg-gradient-to-br from-elite-gold to-yellow-600 p-2 sm:p-3 rounded-sm">
+                            <i data-lucide="crown" class="w-4 h-4 sm:w-6 sm:h-6 text-elite-black"></i>
                         </div>
                         <div>
-                            <span class="text-2xl font-serif italic font-bold text-white">Mariba<span class="gold-text">Media</span></span>
+                            <span class="text-xl sm:text-2xl font-serif italic font-bold text-white">Mariba<span class="gold-text">Media</span></span>
                         </div>
                     </a>
-                    <p class="text-elite-platinum/40 text-sm leading-relaxed mb-6 max-w-md font-light">
+                    <p class="text-elite-platinum/40 text-sm leading-relaxed mb-4 sm:mb-6 max-w-md font-light">
                         An exclusive performance network for elite service providers. By invitation only.
                     </p>
-                    <div class="flex gap-4">
-                        <a href="https://www.facebook.com/people/Mariba-Media-Pty-Ltd/61576915266105/" target="_blank" class="w-10 h-10 rounded-sm border border-white/10 flex items-center justify-center text-elite-platinum/50 hover:text-elite-gold hover:border-elite-gold/30 transition-all">
-                            <i data-lucide="facebook" class="w-4 h-4"></i>
+                    <div class="flex gap-3 sm:gap-4">
+                        <a href="https://www.facebook.com/people/Mariba-Media-Pty-Ltd/61576915266105/" target="_blank" class="w-8 h-8 sm:w-10 sm:h-10 rounded-sm border border-white/10 flex items-center justify-center text-elite-platinum/50 hover:text-elite-gold hover:border-elite-gold/30 transition-all">
+                            <i data-lucide="facebook" class="w-3 h-3 sm:w-4 sm:h-4"></i>
                         </a>
-                        <a href="https://www.youtube.com/@TV-Mariba" target="_blank" class="w-10 h-10 rounded-sm border border-white/10 flex items-center justify-center text-elite-platinum/50 hover:text-red-400 hover:border-red-400/30 transition-all">
-                            <i data-lucide="youtube" class="w-4 h-4"></i>
+                        <a href="https://www.youtube.com/@TV-Mariba" target="_blank" class="w-8 h-8 sm:w-10 sm:h-10 rounded-sm border border-white/10 flex items-center justify-center text-elite-platinum/50 hover:text-red-400 hover:border-red-400/30 transition-all">
+                            <i data-lucide="youtube" class="w-3 h-3 sm:w-4 sm:h-4"></i>
                         </a>
-                        <a href="https://www.linkedin.com/company/mariba-media?_l=en_US" target="_blank" class="w-10 h-10 rounded-sm border border-white/10 flex items-center justify-center text-elite-platinum/50 hover:text-blue-400 hover:border-blue-400/30 transition-all">
-                            <i data-lucide="linkedin" class="w-4 h-4"></i>
+                        <a href="https://www.linkedin.com/company/mariba-media?_l=en_US" target="_blank" class="w-8 h-8 sm:w-10 sm:h-10 rounded-sm border border-white/10 flex items-center justify-center text-elite-platinum/50 hover:text-blue-400 hover:border-blue-400/30 transition-all">
+                            <i data-lucide="linkedin" class="w-3 h-3 sm:w-4 sm:h-4"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Sectors -->
                 <div>
-                    <h5 class="text-xs font-bold text-elite-gold tracking-[0.3em] uppercase mb-6">Verticals</h5>
-                    <ul class="space-y-4">
+                    <h5 class="text-xs font-bold text-elite-gold tracking-[0.2em] sm:tracking-[0.3em] uppercase mb-4 sm:mb-6">Verticals</h5>
+                    <ul class="space-y-3 sm:space-y-4">
                         <li><a href="#sectors" class="text-elite-platinum/50 hover:text-white text-sm transition-colors">Home Services</a></li>
                         <li><a href="#sectors" class="text-elite-platinum/50 hover:text-white text-sm transition-colors">Professional</a></li>
                         <li><a href="#sectors" class="text-elite-platinum/50 hover:text-white text-sm transition-colors">Senior Care</a></li>
@@ -941,8 +1023,8 @@
 
                 <!-- Partners -->
                 <div>
-                    <h5 class="text-xs font-bold text-elite-gold tracking-[0.3em] uppercase mb-6">Ecosystem</h5>
-                    <ul class="space-y-4">
+                    <h5 class="text-xs font-bold text-elite-gold tracking-[0.2em] sm:tracking-[0.3em] uppercase mb-4 sm:mb-6">Ecosystem</h5>
+                    <ul class="space-y-3 sm:space-y-4">
                         <li><a href="https://solar.maribamedia.co.za" target="_blank" class="text-elite-platinum/50 hover:text-white text-sm transition-colors flex items-center gap-2">Solar Connector <i data-lucide="external-link" class="w-3 h-3"></i></a></li>
                         <li><a href="https://commercial.maribamedia.co.za" target="_blank" class="text-elite-platinum/50 hover:text-white text-sm transition-colors flex items-center gap-2">Commercial <i data-lucide="external-link" class="w-3 h-3"></i></a></li>
                         <li><a href="https://funding.maribamedia.co.za" target="_blank" class="text-elite-platinum/50 hover:text-white text-sm transition-colors flex items-center gap-2">Energy Funding <i data-lucide="external-link" class="w-3 h-3"></i></a></li>
@@ -951,7 +1033,7 @@
                 </div>
             </div>
 
-            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="border-t border-white/5 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
                 <p class="text-elite-platinum/30 text-xs tracking-wider">
                     © 2025 Mariba Media. All rights reserved.
                 </p>
@@ -963,11 +1045,11 @@
     </footer>
 
     <!-- WhatsApp Widget -->
-    <div class="fixed bottom-8 right-8 z-50">
+    <div class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 lg:bottom-8 lg:right-8 z-50 safe-right safe-bottom">
         <a href="https://wa.me/27766473499?text=I%20would%20like%20to%20inquire%20about%20Mariba%20Media%20membership." 
            target="_blank" 
-           class="group flex items-center justify-center w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-full shadow-2xl shadow-green-500/30 hover:scale-110 transition-transform duration-300 border border-white/10">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
+           class="group flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-full shadow-2xl shadow-green-500/30 hover:scale-110 active:scale-95 transition-transform duration-300 border border-white/10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" sm:width="24" sm:height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
                 <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
             </svg>
         </a>
@@ -986,9 +1068,22 @@
             menu.classList.toggle('hidden');
             const isOpen = !menu.classList.contains('hidden');
             btn.innerHTML = isOpen 
-                ? '<i data-lucide="x" class="w-6 h-6"></i>' 
-                : '<i data-lucide="menu" class="w-6 h-6"></i>';
+                ? '<i data-lucide="x" class="w-5 h-5 sm:w-6 sm:h-6"></i>' 
+                : '<i data-lucide="menu" class="w-5 h-5 sm:w-6 sm:h-6"></i>';
             lucide.createIcons();
+            
+            // Prevent body scroll when menu is open
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        });
+
+        // Close mobile menu when clicking links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                btn.innerHTML = '<i data-lucide="menu" class="w-5 h-5 sm:w-6 sm:h-6"></i>';
+                lucide.createIcons();
+                document.body.style.overflow = '';
+            });
         });
 
         // Smooth Scroll
@@ -997,8 +1092,12 @@
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    menu.classList.add('hidden');
+                    const offset = 80; // Account for fixed navbar
+                    const targetPosition = target.offsetTop - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
                 }
             });
         });
@@ -1006,7 +1105,7 @@
         // Scroll Reveal Animation
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
+            rootMargin: '0px 0px -50px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -1033,6 +1132,18 @@
                 navbar.classList.remove('shadow-elite-gold/5');
             }
         });
+
+        // Touch device detection
+        const isTouchDevice = () => {
+            return (('ontouchstart' in window) ||
+                   (navigator.maxTouchPoints > 0) ||
+                   (navigator.msMaxTouchPoints > 0));
+        };
+
+        // Add touch-specific classes
+        if (isTouchDevice()) {
+            document.body.classList.add('touch-device');
+        }
     </script>
 </body>
 </html>
