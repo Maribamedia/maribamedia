@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mariba Media | Pay Per Call Network · Home Services · Insurance · Group Benefits</title>
-    <meta name="description" content="Pay Per Call Network engineered for scale: exclusive inbound calls for Home Services, Insurance, and Group Employee Benefits. Plus institutional capital and partner brands.">
+    <title>Mariba Media | Capital Advisory & Business Development · Pay‑Per‑Call · Debt · Equity</title>
+    <meta name="description" content="Capital Advisory & Business Development Network. Pay‑Per‑Call Infrastructure, debt & equity, global structured funding for Home Services, Insurance, Group Benefits.">
     
     <!-- Favicon (SVG chevron) -->
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M30 70 L50 30 L70 70' stroke='%232563eb' stroke-width='14' fill='none' stroke-linejoin='round'/%3E%3C/svg%3E">
@@ -51,6 +51,8 @@
         background: linear-gradient(135deg, #3b82f6 0%, #0ea5e9 50%, #2563eb 100%); 
         -webkit-background-clip: text; 
         -webkit-text-fill-color: transparent; 
+        background-clip: text;
+        text-fill-color: transparent;
       }
 
       .btn-institutional { 
@@ -72,8 +74,14 @@
       .glass-card { 
         background: rgba(15, 23, 42, 0.6); 
         backdrop-filter: blur(16px); 
+        -webkit-backdrop-filter: blur(16px);
         border: 1px solid rgba(255, 255, 255, 0.05); 
-        transition: all 0.4s ease;
+        transition: all 0.4s ease, transform 0.3s ease;
+      }
+
+      .glass-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(59, 130, 246, 0.3);
       }
       
       .reveal { opacity: 0; transform: translateY(30px); transition: all 1s cubic-bezier(0.22, 1, 0.36, 1); }
@@ -105,28 +113,36 @@
         white-space: nowrap;
         box-shadow: 0 4px 12px rgba(0,0,0,0.4);
       }
+
+      /* Smooth pulse for status indicator */
+      @keyframes softPulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+      }
+      .animate-soft-pulse {
+        animation: softPulse 2.5s ease-in-out infinite;
+      }
     </style>
 </head>
 <body class="antialiased bg-grid">
 
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 z-50 bg-brand-dark/95 backdrop-blur-xl border-b border-brand-border/30">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex justify-between items-center">
             <a href="#" class="flex items-center gap-3">
                 <div class="bg-brand-cobalt p-1.5 rounded-sm shadow-lg shadow-brand-cobalt/20">
                     <svg width="22" height="22" viewBox="0 0 100 100" fill="none"><path d="M30 70 L50 30 L70 70" stroke="white" stroke-width="14" stroke-linejoin="round"/></svg>
                 </div>
                 <span class="text-xl font-heading font-extrabold tracking-tight text-white uppercase italic">MARIBA<span class="text-brand-electric">MEDIA</span></span>
             </a>
-            <div class="hidden md:flex items-center gap-8">
-                <a href="#network" class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-brand-electric">Network</a>
-                <a href="#delivery" class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-brand-electric">Delivery</a>
-                <a href="#verticals" class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-brand-electric">Verticals</a>
-                <a href="#methodology" class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-brand-electric">Methodology</a>
-                <a href="#bpo" class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-brand-electric">BPO</a>
-                <a href="#capital" class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-brand-electric">Capital</a>
-                <a href="#ecosystem" class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-brand-electric">Brands</a>
-                <a href="#contact" class="btn-institutional px-7 py-2.5 rounded-sm text-[10px]">Request Audit</a>
+            <div class="hidden md:flex items-center gap-6 lg:gap-8">
+                <a href="#network" class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-brand-electric transition-colors">Pay‑Per‑Call</a>
+                <a href="#delivery" class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-brand-electric transition-colors">Delivery</a>
+                <a href="#verticals" class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-brand-electric transition-colors">Verticals</a>
+                <a href="#capital" class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-brand-electric transition-colors">Capital</a>
+                <a href="#bpo" class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-brand-electric transition-colors">BPO</a>
+                <a href="#ecosystem" class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-brand-electric transition-colors">Brands</a>
+                <a href="#contact" class="btn-institutional px-6 lg:px-7 py-2.5 rounded-sm text-[10px]">Request Strategy</a>
             </div>
         </div>
     </nav>
@@ -135,63 +151,62 @@
     <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,_rgba(37,99,235,0.12)_0%,_transparent_50%)]"></div>
         
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 py-20">
             <div class="max-w-4xl reveal">
                 <div class="inline-flex items-center gap-3 mb-8 px-4 py-2 border border-brand-cobalt/30 bg-brand-cobalt/10 rounded-sm">
-                    <span class="w-2 h-2 rounded-full bg-brand-electric animate-pulse"></span>
-                    <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-brand-electric">Pay Per Call Network · Home Services · Insurance · Group Benefits</span>
+                    <span class="w-2 h-2 rounded-full bg-brand-electric animate-soft-pulse"></span>
+                    <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-brand-electric">Capital Advisory · Business Development · Pay‑Per‑Call Infrastructure</span>
                 </div>
                 
-                <h1 class="text-6xl md:text-8xl font-heading font-extrabold tracking-tighter leading-[0.9] mb-8 text-white uppercase italic">
-                    PAY PER CALL <br/> <span class="blue-gradient">NETWORK.</span>
+                <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-extrabold tracking-tighter leading-[0.95] mb-8 text-white uppercase italic">
+                    ENGINEERING<br/><span class="blue-gradient">SCALABLE GROWTH.</span>
                 </h1>
                 
-                <p class="text-xl text-slate-400 font-light leading-relaxed max-w-2xl mb-8">
-                    Mariba Media connects <span class="text-white font-semibold">Home Services</span>, <span class="text-white font-semibold">Insurance</span>, and <span class="text-white font-semibold">Group Employee Benefits</span> providers with high‑intent inbound callers actively looking for services. 
-                    Every call is <span class="text-white">exclusive, verified, and delivered in real‑time</span>. 
-                    <span class="text-brand-electric font-bold">Pay only for qualified calls that meet your criteria.</span>
+                <p class="text-lg sm:text-xl text-slate-400 font-light leading-relaxed max-w-2xl mb-8">
+                    Mariba Media is a <span class="text-white font-semibold">capital advisory and business development network</span> that fuses <span class="text-white font-semibold">pay‑per‑call infrastructure</span> with <span class="text-white font-semibold">debt & equity</span> and <span class="text-white font-semibold">global structured funding</span>. 
+                    We architect growth for Home Services, Insurance, and Group Benefits enterprises — combining exclusive customer acquisition with institutional capital.
                 </p>
                 
                 <div class="flex flex-col sm:flex-row gap-6">
-                    <a href="https://teams.live.com/l/invite/FEANX1m2N4P8-rhHAg?v=g1" class="btn-institutional px-10 py-5 rounded-sm text-xs flex items-center gap-4">
-                        Request Call Allocation Audit <i data-lucide="bar-chart-3" class="w-4 h-4"></i>
+                    <a href="https://teams.live.com/l/invite/FEANX1m2N4P8-rhHAg?v=g1" class="btn-institutional px-10 py-5 rounded-sm text-xs flex items-center gap-4 justify-center">
+                        Schedule Capital Advisory Session <i data-lucide="briefcase" class="w-4 h-4"></i>
                     </a>
                     <div class="flex flex-col justify-center border-l border-brand-border pl-6">
-                        <span class="text-[10px] font-black uppercase tracking-widest text-brand-slate italic">Pay Per Call</span>
-                        <span class="text-sm font-bold text-white tracking-tight">Inbound Calls · Warm Transfers · Qualified Appointments</span>
+                        <span class="text-[10px] font-black uppercase tracking-widest text-brand-slate italic">One Network</span>
+                        <span class="text-sm font-bold text-white tracking-tight">Pay‑Per‑Call · Debt · Equity · Structured Funding</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Network Overview (Core) -->
+    <!-- Pay‑Per‑Call Infrastructure (formerly Network) -->
     <section id="network" class="py-32 bg-brand-dark overflow-hidden border-b border-brand-border/20">
-        <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="text-center mb-24 reveal">
-                <h2 class="blue-gradient font-heading font-bold uppercase tracking-[0.4em] text-xs mb-4">Core Network</h2>
-                <h3 class="text-4xl font-heading font-extrabold text-white uppercase italic tracking-tight">Pay Per Call · Performance‑Based</h3>
+                <h2 class="blue-gradient font-heading font-bold uppercase tracking-[0.4em] text-xs mb-4">Core Infrastructure</h2>
+                <h3 class="text-4xl font-heading font-extrabold text-white uppercase italic tracking-tight">Pay‑Per‑Call · Performance‑Based</h3>
             </div>
 
-            <div class="max-w-4xl mx-auto glass-card p-12 reveal border-brand-border/20">
+            <div class="max-w-4xl mx-auto glass-card p-10 sm:p-12 reveal border-brand-border/20">
                 <div class="grid md:grid-cols-2 gap-10 items-start">
                     <div>
                         <div class="w-14 h-14 bg-brand-cobalt/10 border border-brand-cobalt/20 flex items-center justify-center mb-6">
                             <i data-lucide="phone-call" class="w-7 h-7 text-brand-electric"></i>
                         </div>
-                        <h4 class="text-2xl font-bold text-white mb-4 uppercase italic">Pay Per Qualified Call</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">You only pay when we deliver a call that matches your vertical, geography, and intent criteria. No monthly minimums, no guesswork — just performance.</p>
+                        <h4 class="text-2xl font-bold text-white mb-4 uppercase italic">Exclusive Inbound Calls</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Our pay‑per‑call engine delivers high‑intent customers directly to your business. You pay only for qualified calls that match your vertical, geography, and intent criteria.</p>
                         <ul class="space-y-3">
-                            <li class="flex items-start gap-2 text-slate-300 text-sm"><i data-lucide="check-circle" class="w-4 h-4 text-brand-electric mt-0.5"></i> <span>Home Services: plumbing, HVAC, roofing, electricians, remodeling</span></li>
-                            <li class="flex items-start gap-2 text-slate-300 text-sm"><i data-lucide="check-circle" class="w-4 h-4 text-brand-electric mt-0.5"></i> <span>Insurance: auto, home, life, health, final expense</span></li>
-                            <li class="flex items-start gap-2 text-slate-300 text-sm"><i data-lucide="check-circle" class="w-4 h-4 text-brand-electric mt-0.5"></i> <span>Group Benefits: health plans, dental, vision, retirement enrollment</span></li>
-                            <li class="flex items-start gap-2 text-slate-300 text-sm"><i data-lucide="check-circle" class="w-4 h-4 text-brand-electric mt-0.5"></i> <span>Exclusive, real‑time delivery — no recycled leads</span></li>
+                            <li class="flex items-start gap-2 text-slate-300 text-sm"><i data-lucide="check-circle" class="w-4 h-4 text-brand-electric mt-0.5 flex-shrink-0"></i> <span>Home Services: plumbing, HVAC, roofing, electricians</span></li>
+                            <li class="flex items-start gap-2 text-slate-300 text-sm"><i data-lucide="check-circle" class="w-4 h-4 text-brand-electric mt-0.5 flex-shrink-0"></i> <span>Insurance: auto, home, life, health, final expense</span></li>
+                            <li class="flex items-start gap-2 text-slate-300 text-sm"><i data-lucide="check-circle" class="w-4 h-4 text-brand-electric mt-0.5 flex-shrink-0"></i> <span>Group Benefits: health plans, dental, vision, retirement</span></li>
+                            <li class="flex items-start gap-2 text-slate-300 text-sm"><i data-lucide="check-circle" class="w-4 h-4 text-brand-electric mt-0.5 flex-shrink-0"></i> <span>Exclusive, real‑time delivery — no recycled leads</span></li>
                         </ul>
                     </div>
                     <div class="border-l border-brand-border/30 pl-8">
                         <div class="bg-brand-navy/40 p-6 rounded-sm">
-                            <p class="text-xs font-bold uppercase tracking-wider text-brand-electric mb-3">The Network Model</p>
-                            <p class="text-white font-light leading-relaxed">Inbound callers are screened for service need, location, and purchase intent. Our compliance team verifies consumer consent and ensures every call is exclusive to your business. Pay only for calls that connect and qualify.</p>
+                            <p class="text-xs font-bold uppercase tracking-wider text-brand-electric mb-3">Network Model</p>
+                            <p class="text-white font-light leading-relaxed">Inbound callers are screened for service need, location, and purchase intent. Every call is exclusive to your business, compliance‑verified, and routed instantly.</p>
                             <div class="mt-6 pt-4 border-t border-brand-border/20">
                                 <span class="text-brand-electric font-mono text-sm font-black">Per Call · Per Transfer · Per Appointment</span>
                             </div>
@@ -205,85 +220,84 @@
         </div>
     </section>
 
-    <!-- Delivery Section -->
+    <!-- Delivery Models -->
     <section id="delivery" class="py-32 bg-brand-dark/50 border-y border-brand-border/20">
-        <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="text-center mb-20 reveal">
                 <h2 class="blue-gradient font-heading font-bold uppercase tracking-[0.4em] text-xs mb-4">How We Deliver</h2>
-                <h3 class="text-4xl font-heading font-extrabold text-white uppercase italic tracking-tight">Inbounds · Transfers · Qualified</h3>
-                <p class="text-slate-400 max-w-2xl mx-auto mt-4">Flexible delivery models for Home Services, Insurance, and Group Benefits — all with strict compliance.</p>
+                <h3 class="text-4xl font-heading font-extrabold text-white uppercase italic tracking-tight">Inbounds · Transfers · Qualified Appointments</h3>
+                <p class="text-slate-400 max-w-2xl mx-auto mt-4">Flexible call‑delivery models engineered for conversion.</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8 reveal">
-                <div class="glass-card p-8 border-brand-border/10 hover:border-brand-cobalt/30 transition-all">
+                <div class="glass-card p-8 border-brand-border/10 hover:border-brand-cobalt/30 transition-all flex flex-col">
                     <div class="w-12 h-12 bg-brand-cobalt/10 border border-brand-cobalt/20 flex items-center justify-center mb-6">
                         <i data-lucide="phone-incoming" class="w-6 h-6 text-brand-electric"></i>
                     </div>
                     <h4 class="text-xl font-bold text-white mb-3 uppercase italic">Inbound Calls</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Direct calls from consumers actively searching for your service. Every call is screened for location and need before routing to your team.</p>
-                    <ul class="text-slate-500 text-[10px] font-semibold uppercase tracking-wider space-y-2 mb-6">
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Direct calls from consumers actively searching for your service. Each call is verified for location and intent before routing.</p>
+                    <ul class="text-slate-500 text-[10px] font-semibold uppercase tracking-wider space-y-2 mb-6 flex-grow">
                         <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Live answer routing</li>
                         <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Multi‑point qualification</li>
                         <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Exclusive to one provider</li>
                     </ul>
-                    <a href="https://teams.live.com/l/invite/FEANX1m2N4P8-rhHAg?v=g1" class="text-[10px] font-bold text-brand-electric uppercase tracking-widest hover:underline flex items-center gap-2">Get Inbound Calls <i data-lucide="chevron-right" class="w-3 h-3"></i></a>
+                    <a href="https://teams.live.com/l/invite/FEANX1m2N4P8-rhHAg?v=g1" class="text-[10px] font-bold text-brand-electric uppercase tracking-widest hover:underline flex items-center gap-2 mt-auto">Get Inbound Calls <i data-lucide="chevron-right" class="w-3 h-3"></i></a>
                 </div>
 
-                <div class="glass-card p-8 border-brand-border/10 hover:border-brand-cobalt/30 transition-all">
+                <div class="glass-card p-8 border-brand-border/10 hover:border-brand-cobalt/30 transition-all flex flex-col">
                     <div class="w-12 h-12 bg-brand-cobalt/10 border border-brand-cobalt/20 flex items-center justify-center mb-6">
                         <i data-lucide="users" class="w-6 h-6 text-brand-electric"></i>
                     </div>
                     <h4 class="text-xl font-bold text-white mb-3 uppercase italic">Warm Transfers</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Our trained agents briefly qualify the caller and then hand off a live, interested consumer directly to your representative.</p>
-                    <ul class="text-slate-500 text-[10px] font-semibold uppercase tracking-wider space-y-2 mb-6">
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Our agents briefly qualify the caller and then hand off a live, interested consumer directly to your representative.</p>
+                    <ul class="text-slate-500 text-[10px] font-semibold uppercase tracking-wider space-y-2 mb-6 flex-grow">
                         <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Human‑verified intent</li>
                         <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Seamless handoff</li>
                         <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Zero dropped calls</li>
                     </ul>
-                    <a href="https://teams.live.com/l/invite/FEANX1m2N4P8-rhHAg?v=g1" class="text-[10px] font-bold text-brand-electric uppercase tracking-widest hover:underline flex items-center gap-2">Activate Transfers <i data-lucide="chevron-right" class="w-3 h-3"></i></a>
+                    <a href="https://teams.live.com/l/invite/FEANX1m2N4P8-rhHAg?v=g1" class="text-[10px] font-bold text-brand-electric uppercase tracking-widest hover:underline flex items-center gap-2 mt-auto">Activate Transfers <i data-lucide="chevron-right" class="w-3 h-3"></i></a>
                 </div>
 
-                <div class="glass-card p-8 border-brand-border/10 hover:border-brand-cobalt/30 transition-all">
+                <div class="glass-card p-8 border-brand-border/10 hover:border-brand-cobalt/30 transition-all flex flex-col">
                     <div class="w-12 h-12 bg-brand-cobalt/10 border border-brand-cobalt/20 flex items-center justify-center mb-6">
                         <i data-lucide="check-circle" class="w-6 h-6 text-brand-electric"></i>
                     </div>
                     <h4 class="text-xl font-bold text-white mb-3 uppercase italic">Qualified Appointments</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-4">We schedule confirmed appointments for high‑consideration services (insurance, group benefits). Only pay for attended meetings.</p>
-                    <ul class="text-slate-500 text-[10px] font-semibold uppercase tracking-wider space-y-2 mb-6">
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">We schedule confirmed appointments for high‑consideration services. Pay only for attended meetings.</p>
+                    <ul class="text-slate-500 text-[10px] font-semibold uppercase tracking-wider space-y-2 mb-6 flex-grow">
                         <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Double‑confirmed timeslots</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Pre‑screened for eligibility</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Pre‑screened eligibility</li>
                         <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Pay per attended appointment</li>
                     </ul>
-                    <a href="https://teams.live.com/l/invite/FEANX1m2N4P8-rhHAg?v=g1" class="text-[10px] font-bold text-brand-electric uppercase tracking-widest hover:underline flex items-center gap-2">Schedule Appointments <i data-lucide="chevron-right" class="w-3 h-3"></i></a>
+                    <a href="https://teams.live.com/l/invite/FEANX1m2N4P8-rhHAg?v=g1" class="text-[10px] font-bold text-brand-electric uppercase tracking-widest hover:underline flex items-center gap-2 mt-auto">Schedule Appointments <i data-lucide="chevron-right" class="w-3 h-3"></i></a>
                 </div>
             </div>
 
             <div class="mt-16 text-center reveal">
                 <div class="inline-flex items-center gap-3 px-6 py-3 bg-brand-navy/50 border border-brand-cobalt/30 rounded-sm">
                     <i data-lucide="shield" class="w-5 h-5 text-brand-electric"></i>
-                    <span class="text-xs font-bold uppercase tracking-widest text-slate-300">All calls exclusive, DNC‑scrubbed, TCPA‑compliant — built for US regulatory standards.</span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-slate-300">Exclusive, DNC‑scrubbed, TCPA‑compliant — built for US regulatory standards.</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Verticals We Serve -->
+    <!-- Verticals -->
     <section id="verticals" class="py-32 bg-brand-dark relative overflow-hidden border-b border-brand-border/20">
-        <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="text-center mb-20 reveal">
                 <h2 class="blue-gradient font-heading font-bold uppercase tracking-[0.4em] text-xs mb-4">Verticals We Serve</h2>
                 <h3 class="text-4xl font-heading font-extrabold text-white uppercase italic tracking-tight">Home · Insurance · Benefits</h3>
-                <p class="text-slate-400 max-w-2xl mx-auto mt-4">Three high‑demand verticals powered by our pay‑per‑call infrastructure.</p>
+                <p class="text-slate-400 max-w-2xl mx-auto mt-4">Three high‑demand verticals powered by our growth infrastructure.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
-                <!-- Home Services -->
                 <div class="glass-card p-8 border-brand-border/10 hover:border-brand-cobalt/30 transition-all flex flex-col">
                     <div class="w-12 h-12 bg-brand-cobalt/10 border border-brand-cobalt/20 flex items-center justify-center mb-6">
                         <i data-lucide="wrench" class="w-6 h-6 text-brand-electric"></i>
                     </div>
                     <h4 class="text-xl font-bold text-white mb-2 uppercase italic">Home Services</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Plumbing, HVAC, roofing, electrical, remodeling, pest control, and more. Inbound calls from homeowners ready to hire.</p>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Plumbing, HVAC, roofing, electrical, remodeling, pest control. Calls from homeowners ready to hire.</p>
                     <ul class="text-slate-500 text-[10px] font-semibold uppercase tracking-wider space-y-2 mb-6 flex-grow">
                         <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Immediate job requests</li>
                         <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Geo‑targeted by zip/city</li>
@@ -291,13 +305,12 @@
                     </ul>
                 </div>
 
-                <!-- Insurance -->
                 <div class="glass-card p-8 border-brand-border/10 hover:border-brand-cobalt/30 transition-all flex flex-col">
                     <div class="w-12 h-12 bg-brand-cobalt/10 border border-brand-cobalt/20 flex items-center justify-center mb-6">
                         <i data-lucide="shield" class="w-6 h-6 text-brand-electric"></i>
                     </div>
                     <h4 class="text-xl font-bold text-white mb-2 uppercase italic">Insurance</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Auto, home, life, health, and final expense. High‑intent callers actively seeking coverage and quotes.</p>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Auto, home, life, health, final expense. High‑intent callers actively seeking coverage.</p>
                     <ul class="text-slate-500 text-[10px] font-semibold uppercase tracking-wider space-y-2 mb-6 flex-grow">
                         <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Licensed agent transfers</li>
                         <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Quote‑ready consumers</li>
@@ -305,13 +318,12 @@
                     </ul>
                 </div>
 
-                <!-- Group Benefits -->
                 <div class="glass-card p-8 border-brand-border/10 hover:border-brand-cobalt/30 transition-all flex flex-col">
                     <div class="w-12 h-12 bg-brand-cobalt/10 border border-brand-cobalt/20 flex items-center justify-center mb-6">
                         <i data-lucide="users" class="w-6 h-6 text-brand-electric"></i>
                     </div>
                     <h4 class="text-xl font-bold text-white mb-2 uppercase italic">Group Employee Benefits</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Health, dental, vision, and retirement plan enrollment calls. Connect with HR decision‑makers and employees.</p>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Health, dental, vision, retirement plans. Connect with HR decision‑makers and employees during open enrollment.</p>
                     <ul class="text-slate-500 text-[10px] font-semibold uppercase tracking-wider space-y-2 mb-6 flex-grow">
                         <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Open enrollment volume</li>
                         <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Decision‑maker transfers</li>
@@ -322,92 +334,17 @@
         </div>
     </section>
 
-    <!-- Methodology Section -->
-    <section id="methodology" class="py-32 bg-brand-dark/50 border-b border-brand-border/20">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-20 items-center reveal">
-                <div>
-                    <h2 class="text-brand-electric font-heading font-bold uppercase tracking-[0.4em] text-xs mb-6">The Methodology</h2>
-                    <h3 class="text-4xl font-heading font-extrabold text-white mb-8 tracking-tight uppercase italic leading-none">Quality‑First <br/> Call Supply Chain.</h3>
-                    <p class="text-slate-400 font-light leading-relaxed mb-8">
-                        Our call generation and delivery infrastructure is designed for high‑conversion, exclusive distribution. Every caller is <span class="text-white">verified for location, intent, and consent</span> in real time. We only deliver calls that meet your specific filters — no spam, no recycled leads.
-                    </p>
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="p-6 border border-brand-border/10 bg-brand-navy/30">
-                            <span class="block text-brand-electric text-3xl font-black mb-2 italic">99%</span>
-                            <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Call completion rate</span>
-                        </div>
-                        <div class="p-6 border border-brand-border/10 bg-brand-navy/30">
-                            <span class="block text-brand-electric text-3xl font-black mb-2 italic">100%</span>
-                            <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Exclusive distribution</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="space-y-4">
-                    <div class="p-8 glass-card">
-                        <h4 class="text-white font-bold uppercase text-[11px] tracking-widest mb-3 flex items-center gap-3">
-                            <i data-lucide="shield-check" class="w-4 h-4 text-brand-electric"></i> Real‑Time Verification
-                        </h4>
-                        <p class="text-slate-500 text-xs font-light">Every caller's phone number, location, and stated need are validated before the call is routed to you. No fake leads.</p>
-                    </div>
-                    <div class="p-8 glass-card">
-                        <h4 class="text-white font-bold uppercase text-[11px] tracking-widest mb-3 flex items-center gap-3">
-                            <i data-lucide="zap" class="w-4 h-4 text-brand-electric"></i> Low‑Latency Routing
-                        </h4>
-                        <p class="text-slate-500 text-xs font-light">Calls connect in under two seconds. Our infrastructure ensures zero dropped calls and immediate agent pickup.</p>
-                    </div>
-                    <div class="p-8 glass-card">
-                        <h4 class="text-white font-bold uppercase text-[11px] tracking-widest mb-3 flex items-center gap-3">
-                            <i data-lucide="scale" class="w-4 h-4 text-brand-electric"></i> Compliance & Consent
-                        </h4>
-                        <p class="text-slate-500 text-xs font-light">All campaigns are TCPA‑ and DNC‑compliant. Full consent verification and audit trail for every call delivered.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- BPO / Scalable Call Center Network -->
-    <section id="bpo" class="py-32 bg-brand-dark/50 border-y border-brand-border/20">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-16 items-center reveal">
-                <div>
-                    <h2 class="text-brand-electric font-heading font-bold uppercase tracking-[0.4em] text-xs mb-6">Scalable BPO</h2>
-                    <h3 class="text-4xl font-heading font-extrabold text-white mb-8 tracking-tight uppercase italic leading-none">Call Center <br/> Capacity on Demand.</h3>
-                    <p class="text-slate-400 text-lg leading-relaxed mb-6">Need to handle overflow, after‑hours, or seasonal spikes? Our vetted BPO partners provide trained agents for <span class="text-white font-bold">Home Services, Insurance, and Group Benefits</span> verticals — ready to integrate with your campaign.</p>
-                    <ul class="space-y-3">
-                        <li class="flex items-center gap-3 text-slate-300"><i data-lucide="headphones" class="w-5 h-5 text-brand-electric"></i> Trained for pay‑per‑call qualification</li>
-                        <li class="flex items-center gap-3 text-slate-300"><i data-lucide="shield-check" class="w-5 h-5 text-brand-electric"></i> TCPA/DNC certified operations</li>
-                        <li class="flex items-center gap-3 text-slate-300"><i data-lucide="bar-chart" class="w-5 h-5 text-brand-electric"></i> Flexible seat allocation & performance billing</li>
-                    </ul>
-                    <div class="mt-8">
-                        <a href="https://teams.live.com/l/invite/FEANX1m2N4P8-rhHAg?v=g1" class="btn-institutional px-8 py-4 rounded-sm text-xs inline-flex items-center gap-3">Contract BPO Capacity <i data-lucide="external-link" class="w-4 h-4"></i></a>
-                    </div>
-                </div>
-                <div class="glass-card p-10">
-                    <div class="flex items-start gap-4">
-                        <i data-lucide="headphones" class="w-8 h-8 text-brand-electric"></i>
-                        <div>
-                            <p class="text-white font-bold text-xl mb-2 italic">"Ready‑to‑deploy call center agents"</p>
-                            <p class="text-slate-400 text-sm">Our BPO network scales from 10 to 500+ seats, with deep experience in high‑intent call handling for service and insurance verticals. Seamless integration with your existing tech stack.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Capital & Infrastructure -->
+    <!-- Capital Advisory & Structured Funding (moved up, replaces methodology as primary capital section) -->
     <section id="capital" class="py-32 bg-brand-dark overflow-hidden border-b border-brand-border/20">
-        <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="text-center mb-20 reveal">
-                <h2 class="blue-gradient font-heading font-bold uppercase tracking-[0.4em] text-xs mb-4">Institutional Access</h2>
-                <h3 class="text-4xl font-heading font-extrabold text-white uppercase italic tracking-tight">Capital & Infrastructure</h3>
-                <p class="text-slate-400 max-w-2xl mx-auto mt-4">Mariba Media also serves as a holding group for high‑level capital deployment, providing institutional financing channels consolidated into one access point.</p>
+                <h2 class="blue-gradient font-heading font-bold uppercase tracking-[0.4em] text-xs mb-4">Capital Advisory</h2>
+                <h3 class="text-4xl font-heading font-extrabold text-white uppercase italic tracking-tight">Debt · Equity · Global Structured Funding</h3>
+                <p class="text-slate-400 max-w-2xl mx-auto mt-4">Institutional capital solutions that fuel business development and expansion.</p>
             </div>
 
-            <div class="max-w-3xl mx-auto reveal">
-                <div class="glass-card p-10 border-brand-border/10 hover:border-brand-cobalt/30 transition-all">
+            <div class="max-w-4xl mx-auto reveal">
+                <div class="glass-card p-10 sm:p-12 border-brand-border/10 hover:border-brand-cobalt/30 transition-all">
                     <div class="w-14 h-14 bg-brand-cobalt/10 border border-brand-cobalt/20 flex items-center justify-center mb-6">
                         <i data-lucide="landmark" class="w-7 h-7 text-brand-electric"></i>
                     </div>
@@ -416,7 +353,7 @@
                     <div class="space-y-6 text-slate-400 text-sm leading-relaxed">
                         <div>
                             <h5 class="text-white font-semibold uppercase tracking-wider mb-1">IPP Financing</h5>
-                            <p>Equity and debt financing for Independent Power Producers worldwide. Billion‑dollar fund managers provide project finance and expansion capital for scalable infrastructure growth.</p>
+                            <p>Equity and debt for Independent Power Producers worldwide. Billion‑dollar fund managers provide project finance and expansion capital for scalable infrastructure.</p>
                         </div>
                         <div>
                             <h5 class="text-white font-semibold uppercase tracking-wider mb-1">Purchase Order Funding</h5>
@@ -424,7 +361,7 @@
                         </div>
                         <div>
                             <h5 class="text-white font-semibold uppercase tracking-wider mb-1">Strategic Equity & Debt Financing</h5>
-                            <p>Across all major industries, we connect investors with vetted opportunities: book‑of‑business acquisitions, licensing rights, and mineral rights financing.</p>
+                            <p>Across all major industries, we connect investors with vetted opportunities: book‑of‑business acquisitions, licensing rights, mineral rights financing, and more.</p>
                         </div>
                     </div>
 
@@ -438,9 +375,84 @@
         </div>
     </section>
 
+    <!-- Methodology / Business Development Engine -->
+    <section id="methodology" class="py-32 bg-brand-dark/50 border-b border-brand-border/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center reveal">
+                <div>
+                    <h2 class="text-brand-electric font-heading font-bold uppercase tracking-[0.4em] text-xs mb-6">Business Development Engine</h2>
+                    <h3 class="text-4xl font-heading font-extrabold text-white mb-8 tracking-tight uppercase italic leading-none">Quality‑First<br/>Growth Infrastructure.</h3>
+                    <p class="text-slate-400 font-light leading-relaxed mb-8">
+                        Our methodology integrates <span class="text-white">pay‑per‑call customer acquisition</span> with structured capital deployment. We identify high‑opportunity verticals, deploy call capacity, and match businesses with the right debt or equity funding to scale.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="p-6 border border-brand-border/10 bg-brand-navy/30">
+                            <span class="block text-brand-electric text-3xl font-black mb-2 italic">99%</span>
+                            <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Call completion rate</span>
+                        </div>
+                        <div class="p-6 border border-brand-border/10 bg-brand-navy/30">
+                            <span class="block text-brand-electric text-3xl font-black mb-2 italic">$1B+</span>
+                            <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Capital under advisory</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="p-8 glass-card">
+                        <h4 class="text-white font-bold uppercase text-[11px] tracking-widest mb-3 flex items-center gap-3">
+                            <i data-lucide="shield-check" class="w-4 h-4 text-brand-electric"></i> Real‑Time Verification
+                        </h4>
+                        <p class="text-slate-500 text-xs font-light">Every caller's phone number, location, and stated need are validated before routing — no fake leads.</p>
+                    </div>
+                    <div class="p-8 glass-card">
+                        <h4 class="text-white font-bold uppercase text-[11px] tracking-widest mb-3 flex items-center gap-3">
+                            <i data-lucide="zap" class="w-4 h-4 text-brand-electric"></i> Low‑Latency Routing
+                        </h4>
+                        <p class="text-slate-500 text-xs font-light">Calls connect in under two seconds. Zero dropped calls and immediate agent pickup.</p>
+                    </div>
+                    <div class="p-8 glass-card">
+                        <h4 class="text-white font-bold uppercase text-[11px] tracking-widest mb-3 flex items-center gap-3">
+                            <i data-lucide="scale" class="w-4 h-4 text-brand-electric"></i> Compliance & Consent
+                        </h4>
+                        <p class="text-slate-500 text-xs font-light">TCPA‑ and DNC‑compliant. Full consent verification and audit trail for every call.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BPO / Scalable Call Center -->
+    <section id="bpo" class="py-32 bg-brand-dark/50 border-y border-brand-border/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center reveal">
+                <div>
+                    <h2 class="text-brand-electric font-heading font-bold uppercase tracking-[0.4em] text-xs mb-6">Scalable BPO</h2>
+                    <h3 class="text-4xl font-heading font-extrabold text-white mb-8 tracking-tight uppercase italic leading-none">Call Center<br/>Capacity on Demand.</h3>
+                    <p class="text-slate-400 text-lg leading-relaxed mb-6">Need to handle overflow, after‑hours, or seasonal spikes? Our vetted BPO partners provide trained agents for <span class="text-white font-bold">Home Services, Insurance, and Group Benefits</span> — ready to integrate with your campaign.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-slate-300"><i data-lucide="headphones" class="w-5 h-5 text-brand-electric flex-shrink-0"></i> Trained for pay‑per‑call qualification</li>
+                        <li class="flex items-center gap-3 text-slate-300"><i data-lucide="shield-check" class="w-5 h-5 text-brand-electric flex-shrink-0"></i> TCPA/DNC certified operations</li>
+                        <li class="flex items-center gap-3 text-slate-300"><i data-lucide="bar-chart" class="w-5 h-5 text-brand-electric flex-shrink-0"></i> Flexible seat allocation & performance billing</li>
+                    </ul>
+                    <div class="mt-8">
+                        <a href="https://teams.live.com/l/invite/FEANX1m2N4P8-rhHAg?v=g1" class="btn-institutional px-8 py-4 rounded-sm text-xs inline-flex items-center gap-3">Contract BPO Capacity <i data-lucide="external-link" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+                <div class="glass-card p-10">
+                    <div class="flex items-start gap-4">
+                        <i data-lucide="headphones" class="w-8 h-8 text-brand-electric flex-shrink-0"></i>
+                        <div>
+                            <p class="text-white font-bold text-xl mb-2 italic">"Ready‑to‑deploy call center agents"</p>
+                            <p class="text-slate-400 text-sm">Our BPO network scales from 10 to 500+ seats, with deep experience in high‑intent call handling for service and insurance verticals. Seamless integration with your existing tech stack.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Ecosystem: Partner Brands -->
     <section id="ecosystem" class="py-32 bg-brand-dark relative overflow-hidden border-b border-brand-border/20">
-        <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="text-center mb-20 reveal">
                 <h2 class="blue-gradient font-heading font-bold uppercase tracking-[0.4em] text-xs mb-4">Our Partner Brands</h2>
                 <h3 class="text-4xl font-heading font-extrabold text-white uppercase italic tracking-tight">Solar · Commercial · Benefits</h3>
@@ -478,7 +490,7 @@
                     <a href="https://commercial.maribamedia.co.za/" target="_blank" class="btn-institutional px-6 py-3 rounded-sm text-[10px] flex items-center justify-center gap-2 mt-auto">Explore Commercial Solar <i data-lucide="external-link" class="w-3 h-3"></i></a>
                 </div>
 
-                <!-- Lone Star Benefits Trust (Updated) -->
+                <!-- Lone Star Benefits Trust -->
                 <div class="glass-card p-8 border-brand-border/10 hover:border-brand-cobalt/30 transition-all flex flex-col">
                     <div class="w-12 h-12 bg-brand-cobalt/10 border border-brand-cobalt/20 flex items-center justify-center mb-6">
                         <i data-lucide="building-2" class="w-6 h-6 text-brand-electric"></i>
@@ -499,31 +511,31 @@
 
     <!-- Contact Section -->
     <section id="contact" class="py-32 bg-brand-dark overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative">
             <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-cobalt/10 blur-[120px]"></div>
             
-            <div class="bg-brand-navy/50 p-12 md:p-24 border border-brand-border/30 rounded-sm reveal">
-                <div class="grid lg:grid-cols-2 gap-20">
+            <div class="bg-brand-navy/50 p-8 sm:p-12 md:p-16 lg:p-24 border border-brand-border/30 rounded-sm reveal">
+                <div class="grid lg:grid-cols-2 gap-16 lg:gap-20">
                     <div>
-                        <h2 class="text-4xl md:text-6xl font-heading font-extrabold text-white tracking-tighter mb-8 uppercase italic leading-[0.9]">
-                            Request <br/> <span class="text-brand-electric">Call Allocation <br/> Audit.</span>
+                        <h2 class="text-4xl sm:text-5xl md:text-6xl font-heading font-extrabold text-white tracking-tighter mb-8 uppercase italic leading-[0.9]">
+                            Let’s Engineer<br/><span class="text-brand-electric">Your Growth.</span>
                         </h2>
                         <p class="text-slate-400 text-lg mb-12 font-light">
-                            Call inventory for high‑demand verticals is limited. We work exclusively with established businesses that can handle a minimum of 50 qualified calls per day. Secure your allocation now.
+                            Whether you need exclusive inbound calls, capital advisory, or a full business development roadmap — start with a confidential strategy session.
                         </p>
                         
                         <div class="space-y-10">
                             <div class="flex items-center gap-6">
                                 <div class="w-14 h-14 rounded-sm border border-brand-border flex items-center justify-center text-brand-electric"><i data-lucide="mail" class="w-6 h-6"></i></div>
                                 <div>
-                                    <p class="text-[10px] font-bold text-brand-slate uppercase tracking-widest">Network Partnerships</p>
+                                    <p class="text-[10px] font-bold text-brand-slate uppercase tracking-widest">Direct Inquiries</p>
                                     <p class="text-white font-bold text-lg">victor@maribamedia.co.za</p>
                                 </div>
                             </div>
                             <div class="flex items-center gap-6">
                                 <div class="w-14 h-14 rounded-sm border border-brand-border flex items-center justify-center text-brand-electric"><i data-lucide="phone" class="w-6 h-6"></i></div>
                                 <div>
-                                    <p class="text-[10px] font-bold text-brand-slate uppercase tracking-widest">Executive Inquiry</p>
+                                    <p class="text-[10px] font-bold text-brand-slate uppercase tracking-widest">Executive Line</p>
                                     <p class="text-white font-bold text-lg">+27 (0) 76 647 3499</p>
                                 </div>
                             </div>
@@ -531,12 +543,12 @@
 
                         <div class="mt-12">
                             <a href="https://teams.live.com/l/invite/FEANX1m2N4P8-rhHAg?v=g1" class="btn-institutional px-10 py-5 rounded-sm text-xs flex items-center justify-center gap-4 w-full md:w-auto">
-                                Schedule Infrastructure Audit <i data-lucide="calendar" class="w-4 h-4"></i>
+                                Schedule Strategy Session <i data-lucide="calendar" class="w-4 h-4"></i>
                             </a>
                         </div>
                     </div>
 
-                    <div class="bg-brand-dark/80 p-1 border border-brand-border/40">
+                    <div class="bg-brand-dark/80 p-1 border border-brand-border/40 rounded-sm overflow-hidden">
                         <div style="width:100%; height:550px; overflow-y: auto;" id="my-cal-inline"></div>
                         <script type="text/javascript">
                           (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
@@ -555,7 +567,7 @@
 
     <!-- Footer -->
     <footer class="py-12 bg-brand-dark border-t border-brand-border/20">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-8">
             <div class="flex items-center gap-3">
                 <div class="bg-brand-cobalt p-1 rounded-sm shadow-sm">
                     <svg width="18" height="18" viewBox="0 0 100 100" fill="none"><path d="M30 70 L50 30 L70 70" stroke="white" stroke-width="14" stroke-linejoin="round"/></svg>
@@ -563,7 +575,7 @@
                 <span class="text-xs font-heading font-black text-white uppercase tracking-widest italic">MARIBA<span class="text-brand-electric">MEDIA</span></span>
             </div>
             
-            <p class="text-[10px] font-bold text-slate-700 uppercase tracking-[0.5em]">Pay Per Call Network · Capital · Partner Brands © 2026</p>
+            <p class="text-[10px] font-bold text-slate-700 uppercase tracking-[0.5em]">Capital Advisory · Business Development · Pay‑Per‑Call · Partner Brands © 2026</p>
             
             <div class="flex gap-6 items-center flex-wrap justify-center">
                 <span class="text-[9px] text-brand-electric uppercase tracking-wider">Home Services</span>
@@ -580,7 +592,7 @@
 
     <!-- WhatsApp Widget -->
     <div class="fixed bottom-6 right-6 z-[60]">
-        <a href="https://wa.me/27766473499?text=I%20am%20enquiring%20about%20Pay%20Per%20Call%20Network%20and%20partner%20solutions%20at%20Mariba%20Media." 
+        <a href="https://wa.me/27766473499?text=I%20am%20enquiring%20about%20Capital%20Advisory%20and%20Pay%20Per%20Call%20Network%20solutions%20at%20Mariba%20Media." 
            target="_blank" 
            class="whatsapp-minimal flex items-center justify-center w-14 h-14 rounded-full shadow-2xl transition-transform hover:scale-105 active:scale-95 group">
             <svg class="w-7 h-7 text-white fill-current" viewBox="0 0 24 24">
@@ -598,7 +610,7 @@
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
-        }, { threshold: 0.1 });
+        }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
