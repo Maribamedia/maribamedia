@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mariba Media | Capital Access Network · Debt, Equity, PO Funding, Asset‑Backed & Bridging Finance for All Sectors</title>
-    <meta name="description" content="Business Development Network providing one core access point: Project developers get debt, equity, PO funding, asset‑backed financing, and property bridging finance. One network, guaranteed outcomes.">
+    <title>Mariba Media | Capital Access Network · Debt, Equity, PO Funding, Asset‑Backed & Bridging Finance</title>
+    <meta name="description" content="Institutional capital access for transaction-ready projects. Debt, equity, purchase order funding, asset-backed and bridging finance across all sectors. One network. One outcome.">
     
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M30 70 L50 30 L70 70' stroke='%232563eb' stroke-width='14' fill='none' stroke-linejoin='round'/%3E%3C/svg%3E">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3Cfilter id='g'%3E%3CfeGaussianBlur stdDeviation='2.5' result='c'/%3E%3CfeMerge%3E%3CfeMergeNode in='c'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Cpath d='M30 72 L50 28 L70 72' stroke='%230ea5e9' stroke-width='10' fill='none' stroke-linejoin='round' filter='url(%23g)'/%3E%3Cpath d='M30 72 L50 28 L70 72' stroke='%2338bdf8' stroke-width='4' fill='none' stroke-linejoin='round'/%3E%3C/svg%3E">
     
     <script src="https://cdn.tailwindcss.com"></script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -25,13 +25,13 @@
             },
             colors: {
               brand: {
-                dark: '#020617',
-                navy: '#0f172a',
-                cobalt: '#2563eb',
-                electric: '#3b82f6',
-                cyan: '#0ea5e9',
+                dark: '#02040a',
+                navy: '#0a0f1e',
+                cobalt: '#0ea5e9',
+                electric: '#38bdf8',
+                cyan: '#22d3ee',
                 slate: '#64748b',
-                border: 'rgba(59, 130, 246, 0.2)'
+                border: 'rgba(14, 165, 233, 0.15)'
               }
             }
           }
@@ -40,129 +40,211 @@
     </script>
     
     <style>
-      body { background-color: #020617; color: #f1f5f9; font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+      body { 
+        background-color: #02040a; 
+        color: #f1f5f9; 
+        font-family: 'Inter', sans-serif; 
+        -webkit-font-smoothing: antialiased; 
+      }
       .font-heading { font-family: 'Plus Jakarta Sans', sans-serif; }
       
       .blue-gradient { 
-        background: linear-gradient(135deg, #3b82f6 0%, #0ea5e9 50%, #2563eb 100%); 
+        background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 40%, #0284c7 100%); 
         -webkit-background-clip: text; 
         -webkit-text-fill-color: transparent; 
         background-clip: text;
-        text-fill-color: transparent;
       }
 
       .btn-institutional { 
-        background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); 
+        position: relative;
+        background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%); 
         color: #fff; 
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
         font-weight: 700; 
         text-transform: uppercase; 
         letter-spacing: 1.5px;
-        box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.3);
+        box-shadow: 0 0 20px rgba(14, 165, 233, 0.25), 0 4px 14px 0 rgba(2, 132, 199, 0.3);
+        overflow: hidden;
+      }
+      
+      .btn-institutional::before {
+        content: '';
+        position: absolute;
+        top: 0; left: -100%;
+        width: 100%; height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+        transition: left 0.6s ease;
+      }
+      
+      .btn-institutional:hover::before {
+        left: 100%;
       }
       
       .btn-institutional:hover { 
         transform: translateY(-2px); 
-        box-shadow: 0 8px 25px rgba(37, 99, 235, 0.5); 
-        filter: brightness(1.1); 
+        box-shadow: 0 0 30px rgba(14, 165, 233, 0.4), 0 8px 25px rgba(2, 132, 199, 0.4); 
       }
 
       .glass-card { 
-        background: rgba(15, 23, 42, 0.6); 
-        backdrop-filter: blur(16px); 
-        -webkit-backdrop-filter: blur(16px);
-        border: 1px solid rgba(255, 255, 255, 0.05); 
+        background: rgba(10, 15, 30, 0.7); 
+        backdrop-filter: blur(20px); 
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(14, 165, 233, 0.08); 
         transition: all 0.4s ease, transform 0.3s ease;
       }
 
       .glass-card:hover {
         transform: translateY(-4px);
-        border-color: rgba(59, 130, 246, 0.3);
+        border-color: rgba(14, 165, 233, 0.25);
+        box-shadow: 0 0 40px rgba(14, 165, 233, 0.08);
       }
       
       .reveal { opacity: 0; transform: translateY(30px); transition: all 1s cubic-bezier(0.22, 1, 0.36, 1); }
       .reveal.active { opacity: 1; transform: translateY(0); }
       
       .bg-grid {
-        background-size: 50px 50px;
-        background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                          linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+        background-size: 60px 60px;
+        background-image: 
+          linear-gradient(to right, rgba(14, 165, 233, 0.03) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(14, 165, 233, 0.03) 1px, transparent 1px);
+      }
+
+      .logo-glow {
+        filter: drop-shadow(0 0 8px rgba(14, 165, 233, 0.6)) drop-shadow(0 0 20px rgba(14, 165, 233, 0.3));
+      }
+      
+      .hero-logo-watermark {
+        position: absolute;
+        opacity: 0.04;
+        pointer-events: none;
+        filter: drop-shadow(0 0 40px rgba(14, 165, 233, 0.5));
       }
 
       .whatsapp-minimal {
-        background-color: #2563eb;
-        transition: background-color 0.2s ease, transform 0.2s ease;
-        box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+        background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+        transition: all 0.3s ease;
+        box-shadow: 0 0 20px rgba(14, 165, 233, 0.3);
       }
       .whatsapp-minimal:hover {
-        background-color: #1d4ed8;
-        transform: scale(1.05);
+        transform: scale(1.08);
+        box-shadow: 0 0 30px rgba(14, 165, 233, 0.5);
       }
       .whatsapp-tooltip {
-        background: #1e293b;
-        color: #f8fafc;
-        border: 1px solid #2563eb40;
+        background: #0a0f1e;
+        color: #e0f2fe;
+        border: 1px solid rgba(14, 165, 233, 0.3);
         font-size: 10px;
         font-weight: 700;
         letter-spacing: 0.1em;
         text-transform: uppercase;
         white-space: nowrap;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.5);
       }
 
       @keyframes softPulse {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0.5; }
+        0%, 100% { opacity: 1; box-shadow: 0 0 10px rgba(14, 165, 233, 0.4); }
+        50% { opacity: 0.6; box-shadow: 0 0 20px rgba(14, 165, 233, 0.2); }
       }
       .animate-soft-pulse {
-        animation: softPulse 2.5s ease-in-out infinite;
+        animation: softPulse 3s ease-in-out infinite;
+      }
+      
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+      }
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+      
+      .section-divider {
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.3), transparent);
+      }
+      
+      .nav-glass {
+        background: rgba(2, 4, 10, 0.85);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(14, 165, 233, 0.1);
+      }
+      
+      .glow-text {
+        text-shadow: 0 0 20px rgba(14, 165, 233, 0.3);
+      }
+      
+      .tag-pill {
+        background: rgba(14, 165, 233, 0.08);
+        border: 1px solid rgba(14, 165, 233, 0.2);
       }
     </style>
 </head>
 <body class="antialiased bg-grid">
 
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-brand-dark/95 backdrop-blur-xl border-b border-brand-border/30">
+    <nav class="fixed top-0 left-0 right-0 z-50 nav-glass">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex justify-between items-center">
-            <a href="#" class="flex items-center gap-3">
-                <div class="bg-brand-cobalt p-1.5 rounded-sm shadow-lg shadow-brand-cobalt/20">
-                    <svg width="22" height="22" viewBox="0 0 100 100" fill="none"><path d="M30 70 L50 30 L70 70" stroke="white" stroke-width="14" stroke-linejoin="round"/></svg>
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="relative">
+                    <svg width="32" height="32" viewBox="0 0 100 100" fill="none" class="logo-glow transition-transform duration-500 group-hover:scale-110">
+                        <defs>
+                            <linearGradient id="logoGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#0284c7;stop-opacity:1" />
+                                <stop offset="50%" style="stop-color:#0ea5e9;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#38bdf8;stop-opacity:1" />
+                            </linearGradient>
+                            <filter id="logoGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        <path d="M28 74 L50 26 L72 74" stroke="url(#logoGrad)" stroke-width="12" fill="none" stroke-linejoin="round" filter="url(#logoGlow)" opacity="0.6"/>
+                        <path d="M28 74 L50 26 L72 74" stroke="url(#logoGrad)" stroke-width="5" fill="none" stroke-linejoin="round"/>
+                    </svg>
                 </div>
                 <span class="text-xl font-heading font-extrabold tracking-tight text-white uppercase italic">MARIBA<span class="text-brand-electric">MEDIA</span></span>
             </a>
             <div class="hidden md:flex items-center gap-6 lg:gap-8">
-                <a href="#capital" class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-brand-electric transition-colors">Capital Solutions</a>
-                <a href="https://funding.maribamedia.co.za" target="_blank" class="btn-institutional px-6 lg:px-7 py-2.5 rounded-sm text-[10px]">Get Funded</a>
+                <a href="#capital" class="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-brand-electric transition-colors duration-300">Capital Solutions</a>
+                <a href="#methodology" class="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-brand-electric transition-colors duration-300">How It Works</a>
+                <a href="https://funding.maribamedia.co.za" target="_blank" class="btn-institutional px-6 lg:px-8 py-2.5 rounded-sm text-[10px]">Get Funded</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero – Single focused message -->
+    <!-- Hero -->
     <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,_rgba(37,99,235,0.12)_0%,_transparent_50%)]"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,_rgba(14,165,233,0.1)_0%,_transparent_55%)]"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] hero-logo-watermark animate-float">
+            <svg viewBox="0 0 100 100" fill="none" class="w-full h-full">
+                <path d="M28 74 L50 26 L72 74" stroke="#0ea5e9" stroke-width="2" fill="none" stroke-linejoin="round"/>
+            </svg>
+        </div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 py-20">
             <div class="max-w-4xl reveal">
-                <div class="inline-flex items-center gap-3 mb-8 px-4 py-2 border border-brand-cobalt/30 bg-brand-cobalt/10 rounded-sm">
+                <div class="inline-flex items-center gap-3 mb-8 px-5 py-2.5 tag-pill rounded-sm">
                     <span class="w-2 h-2 rounded-full bg-brand-electric animate-soft-pulse"></span>
-                    <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-brand-electric">Capital Access Network · Debt, Equity & PO Funding</span>
+                    <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-brand-electric">Capital Access Network · All Sectors</span>
                 </div>
                 
-                <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-extrabold tracking-tighter leading-[0.95] mb-8 text-white uppercase italic">
+                <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-extrabold tracking-tighter leading-[0.95] mb-8 text-white uppercase italic glow-text">
                     CAPITAL<br/><span class="blue-gradient">GUARANTEED.</span>
                 </h1>
                 
-                <p class="text-lg sm:text-xl text-slate-400 font-light leading-relaxed max-w-2xl mb-8">
-                    For <span class="text-white font-semibold">project developers</span> across all sectors, we provide direct access to institutional <span class="text-white font-semibold">debt, equity, and purchase order funding</span>. 
-                    One network, one outcome: your deal closed. No sales pitches, no middle‑men – just performance‑based capital placement when you're transaction‑ready.
+                <p class="text-lg sm:text-xl text-slate-400 font-light leading-relaxed max-w-2xl mb-10">
+                    For <span class="text-white font-medium">project developers</span> across every sector, we provide direct access to institutional <span class="text-white font-medium">debt, equity, and purchase order funding</span>. 
+                    One network. One outcome: your deal closed. No pitches, no middlemen — performance-based capital placement for transaction-ready projects.
                 </p>
                 
-                <div class="flex flex-col sm:flex-row gap-6">
+                <div class="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
                     <a href="https://funding.maribamedia.co.za" target="_blank" class="btn-institutional px-10 py-5 rounded-sm text-xs flex items-center gap-4 justify-center">
                         Access Capital Now <i data-lucide="landmark" class="w-4 h-4"></i>
                     </a>
                     <div class="flex flex-col justify-center border-l border-brand-border pl-6">
-                        <span class="text-[10px] font-black uppercase tracking-widest text-brand-slate italic">Requirements‑Based</span>
+                        <span class="text-[10px] font-black uppercase tracking-widest text-brand-slate italic">Requirements-Based</span>
                         <span class="text-sm font-bold text-white tracking-tight">Vetted projects only</span>
                     </div>
                 </div>
@@ -170,103 +252,112 @@
         </div>
     </section>
 
-    <!-- Capital Access – The Core Offering -->
-    <section id="capital" class="py-32 bg-brand-dark overflow-hidden border-b border-brand-border/20">
+    <div class="section-divider max-w-4xl mx-auto"></div>
+
+    <!-- Capital Access -->
+    <section id="capital" class="py-32 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="text-center mb-24 reveal">
+                <div class="flex justify-center mb-6">
+                    <svg width="40" height="40" viewBox="0 0 100 100" fill="none" class="logo-glow opacity-60">
+                        <path d="M28 74 L50 26 L72 74" stroke="url(#logoGrad)" stroke-width="4" fill="none" stroke-linejoin="round"/>
+                    </svg>
+                </div>
                 <h2 class="blue-gradient font-heading font-bold uppercase tracking-[0.4em] text-xs mb-4">Capital Access</h2>
-                <h3 class="text-4xl font-heading font-extrabold text-white uppercase italic tracking-tight">Debt, Equity & PO Funding — All Sectors</h3>
-                <p class="text-slate-400 max-w-2xl mx-auto mt-4">We connect transaction‑ready projects with institutional funders. If you have a viable deal and the right documentation, we integrate the capital to close it.</p>
+                <h3 class="text-4xl sm:text-5xl font-heading font-extrabold text-white uppercase italic tracking-tight">Debt, Equity & PO Funding — All Sectors</h3>
+                <p class="text-slate-400 max-w-2xl mx-auto mt-6 text-lg font-light">We connect transaction-ready projects with institutional funders. If you have a viable deal and the right documentation, we integrate the capital to close it.</p>
             </div>
 
-            <!-- Main Guarantee + Requirements -->
-            <div class="max-w-4xl mx-auto glass-card p-10 sm:p-12 reveal border-brand-border/20">
-                <div class="grid md:grid-cols-2 gap-10 items-start">
+            <!-- Main Guarantee -->
+            <div class="max-w-4xl mx-auto glass-card p-10 sm:p-14 reveal">
+                <div class="grid md:grid-cols-2 gap-12 items-start">
                     <div>
-                        <div class="w-14 h-14 bg-brand-cobalt/10 border border-brand-cobalt/20 flex items-center justify-center mb-6">
-                            <i data-lucide="landmark" class="w-7 h-7 text-brand-electric"></i>
+                        <div class="w-14 h-14 bg-brand-cobalt/10 border border-brand-cobalt/20 flex items-center justify-center mb-6 rounded-sm">
+                            <svg width="28" height="28" viewBox="0 0 100 100" fill="none">
+                                <path d="M28 74 L50 26 L72 74" stroke="#38bdf8" stroke-width="6" fill="none" stroke-linejoin="round"/>
+                            </svg>
                         </div>
                         <h4 class="text-2xl font-bold text-white mb-4 uppercase italic">The Capital Guarantee</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">We place institutional funding for projects that meet readiness criteria. No upfront fees, no speculative pitches — our network earns when your deal closes. Access spans debt, equity, purchase order finance, asset‑backed, and bridging solutions across every sector.</p>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">We place institutional funding for projects that meet readiness criteria. No upfront fees, no speculative pitches — our network earns when your deal closes. Access spans debt, equity, purchase order finance, asset-backed, and bridging solutions across every sector.</p>
                         <ul class="space-y-3">
-                            <li class="flex items-start gap-2 text-slate-300 text-sm"><i data-lucide="check-circle" class="w-4 h-4 text-brand-electric mt-0.5 flex-shrink-0"></i> <span>Energy, infrastructure, manufacturing, mining, more</span></li>
-                            <li class="flex items-start gap-2 text-slate-300 text-sm"><i data-lucide="check-circle" class="w-4 h-4 text-brand-electric mt-0.5 flex-shrink-0"></i> <span>Project finance, growth equity, working capital</span></li>
-                            <li class="flex items-start gap-2 text-slate-300 text-sm"><i data-lucide="check-circle" class="w-4 h-4 text-brand-electric mt-0.5 flex-shrink-0"></i> <span>Direct to vetted institutional funders</span></li>
-                            <li class="flex items-start gap-2 text-slate-300 text-sm"><i data-lucide="check-circle" class="w-4 h-4 text-brand-electric mt-0.5 flex-shrink-0"></i> <span>Performance‑aligned: we close, we earn</span></li>
+                            <li class="flex items-start gap-3 text-slate-300 text-sm"><i data-lucide="check-circle" class="w-4 h-4 text-brand-electric mt-0.5 flex-shrink-0"></i> <span>Energy, infrastructure, manufacturing, mining, technology, agriculture</span></li>
+                            <li class="flex items-start gap-3 text-slate-300 text-sm"><i data-lucide="check-circle" class="w-4 h-4 text-brand-electric mt-0.5 flex-shrink-0"></i> <span>Project finance, growth equity, working capital, acquisition capital</span></li>
+                            <li class="flex items-start gap-3 text-slate-300 text-sm"><i data-lucide="check-circle" class="w-4 h-4 text-brand-electric mt-0.5 flex-shrink-0"></i> <span>Direct to vetted institutional funders — no broker chains</span></li>
+                            <li class="flex items-start gap-3 text-slate-300 text-sm"><i data-lucide="check-circle" class="w-4 h-4 text-brand-electric mt-0.5 flex-shrink-0"></i> <span>Performance-aligned: we close, we earn</span></li>
                         </ul>
                     </div>
                     <div class="border-l border-brand-border/30 pl-8">
-                        <div class="bg-brand-navy/40 p-6 rounded-sm">
-                            <p class="text-xs font-bold uppercase tracking-wider text-brand-electric mb-3">What's Required</p>
-                            <p class="text-white font-light leading-relaxed">Your project must be transaction‑ready. That means feasibility studies, offtake agreements, confirmed purchase orders, asset valuations, or bridging exit documentation. Our integration is designed for serious developers, not tire‑kickers.</p>
+                        <div class="bg-brand-navy/40 p-6 rounded-sm border border-brand-border/20">
+                            <p class="text-xs font-bold uppercase tracking-wider text-brand-electric mb-3 flex items-center gap-2">
+                                <i data-lucide="shield" class="w-3 h-3"></i> What's Required
+                            </p>
+                            <p class="text-white font-light leading-relaxed text-sm">Your project must be transaction-ready. That means feasibility studies, offtake agreements, confirmed purchase orders, asset valuations, or bridging exit documentation. Our integration is designed for serious developers, not tire-kickers.</p>
                             <div class="mt-6 pt-4 border-t border-brand-border/20">
-                                <span class="text-brand-electric font-mono text-sm font-black">You prepare the deal — we bring the capital</span>
+                                <span class="text-brand-electric font-mono text-sm font-black tracking-tight">You prepare the deal — we bring the capital</span>
                             </div>
                         </div>
                         <div class="mt-6 flex gap-4">
-                            <a href="https://funding.maribamedia.co.za" target="_blank" class="text-[10px] font-bold text-brand-electric uppercase tracking-widest hover:underline flex items-center gap-2">Get Capital Access <i data-lucide="chevron-right" class="w-3 h-3"></i></a>
+                            <a href="https://funding.maribamedia.co.za" target="_blank" class="text-[10px] font-bold text-brand-electric uppercase tracking-widest hover:underline flex items-center gap-2 group">
+                                Get Capital Access <i data-lucide="chevron-right" class="w-3 h-3 transition-transform group-hover:translate-x-1"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Capital Types – Four sub‑cards -->
+            <!-- Capital Types -->
             <div class="mt-20 grid md:grid-cols-2 gap-8 reveal max-w-5xl mx-auto">
-                <!-- Debt & Equity -->
-                <div class="glass-card p-8 border-brand-border/10 hover:border-brand-cobalt/30 transition-all flex flex-col">
-                    <div class="w-12 h-12 bg-brand-cobalt/10 border border-brand-cobalt/20 flex items-center justify-center mb-6">
+                <div class="glass-card p-8 border-brand-border/10 hover:border-brand-cobalt/30 transition-all flex flex-col group">
+                    <div class="w-12 h-12 bg-brand-cobalt/10 border border-brand-cobalt/20 flex items-center justify-center mb-6 rounded-sm group-hover:bg-brand-cobalt/20 transition-colors">
                         <i data-lucide="building-2" class="w-6 h-6 text-brand-electric"></i>
                     </div>
                     <h4 class="text-xl font-bold text-white mb-3 uppercase italic">Debt & Equity → Projects Financed</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Institutional capital for independent power producers, infrastructure, manufacturing. Requires feasibility study and offtake agreements.</p>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Institutional capital for independent power producers, infrastructure, manufacturing, and growth enterprises. Requires feasibility study and offtake agreements.</p>
                     <ul class="text-slate-500 text-[10px] font-semibold uppercase tracking-wider space-y-2 mb-6 flex-grow">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Billion‑dollar funders</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Global deployment</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Scalable structures</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Billion-dollar funders</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Global deployment capability</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Scalable capital structures</li>
                     </ul>
                     <a href="https://funding.maribamedia.co.za" target="_blank" class="btn-institutional px-6 py-3 rounded-sm text-[10px] flex items-center justify-center gap-2 mt-auto">Explore Debt & Equity <i data-lucide="external-link" class="w-3 h-3"></i></a>
                 </div>
 
-                <!-- PO Funding -->
-                <div class="glass-card p-8 border-brand-border/10 hover:border-brand-cobalt/30 transition-all flex flex-col">
-                    <div class="w-12 h-12 bg-brand-cobalt/10 border border-brand-cobalt/20 flex items-center justify-center mb-6">
+                <div class="glass-card p-8 border-brand-border/10 hover:border-brand-cobalt/30 transition-all flex flex-col group">
+                    <div class="w-12 h-12 bg-brand-cobalt/10 border border-brand-cobalt/20 flex items-center justify-center mb-6 rounded-sm group-hover:bg-brand-cobalt/20 transition-colors">
                         <i data-lucide="package" class="w-6 h-6 text-brand-electric"></i>
                     </div>
                     <h4 class="text-xl font-bold text-white mb-3 uppercase italic">PO Funding → Contracts Fulfilled</h4>
                     <p class="text-slate-400 text-sm leading-relaxed mb-4">Working capital for South African enterprises with confirmed purchase orders. Unlock inventory and deliver without cashflow bottlenecks.</p>
                     <ul class="text-slate-500 text-[10px] font-semibold uppercase tracking-wider space-y-2 mb-6 flex-grow">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Fast approval</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Supply chain liquidity</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Prerequisite: credible PO</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Fast-track approval process</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Supply chain liquidity injection</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Prerequisite: credible, verifiable PO</li>
                     </ul>
                     <a href="https://funding.maribamedia.co.za" target="_blank" class="btn-institutional px-6 py-3 rounded-sm text-[10px] flex items-center justify-center gap-2 mt-auto">Get PO Funding <i data-lucide="external-link" class="w-3 h-3"></i></a>
                 </div>
 
-                <!-- Asset Backed Financing -->
-                <div class="glass-card p-8 border-brand-border/10 hover:border-brand-cobalt/30 transition-all flex flex-col">
-                    <div class="w-12 h-12 bg-brand-cobalt/10 border border-brand-cobalt/20 flex items-center justify-center mb-6">
+                <div class="glass-card p-8 border-brand-border/10 hover:border-brand-cobalt/30 transition-all flex flex-col group">
+                    <div class="w-12 h-12 bg-brand-cobalt/10 border border-brand-cobalt/20 flex items-center justify-center mb-6 rounded-sm group-hover:bg-brand-cobalt/20 transition-colors">
                         <i data-lucide="warehouse" class="w-6 h-6 text-brand-electric"></i>
                     </div>
                     <h4 class="text-xl font-bold text-white mb-3 uppercase italic">Asset‑Backed → Working Capital</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Leverage paid‑up fixed assets (property, equipment, inventory) as collateral to raise working capital without selling the asset. Ideal for growth or stabilising operations.</p>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Leverage paid-up fixed assets — property, equipment, inventory — as collateral to raise working capital without selling the asset. Ideal for growth or stabilising operations.</p>
                     <ul class="text-slate-500 text-[10px] font-semibold uppercase tracking-wider space-y-2 mb-6 flex-grow">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Property‑backed facilities</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Loan‑to‑value up to 60%</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Property-backed facilities</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Loan-to-value up to 60%</li>
                         <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Funding in 12–14 days</li>
                         <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Flexible use of funds</li>
                     </ul>
                     <a href="https://funding.maribamedia.co.za" target="_blank" class="btn-institutional px-6 py-3 rounded-sm text-[10px] flex items-center justify-center gap-2 mt-auto">Explore Asset‑Backed <i data-lucide="external-link" class="w-3 h-3"></i></a>
                 </div>
 
-                <!-- Property Bridging Finance -->
-                <div class="glass-card p-8 border-brand-border/10 hover:border-brand-cobalt/30 transition-all flex flex-col">
-                    <div class="w-12 h-12 bg-brand-cobalt/10 border border-brand-cobalt/20 flex items-center justify-center mb-6">
+                <div class="glass-card p-8 border-brand-border/10 hover:border-brand-cobalt/30 transition-all flex flex-col group">
+                    <div class="w-12 h-12 bg-brand-cobalt/10 border border-brand-cobalt/20 flex items-center justify-center mb-6 rounded-sm group-hover:bg-brand-cobalt/20 transition-colors">
                         <i data-lucide="clock" class="w-6 h-6 text-brand-electric"></i>
                     </div>
                     <h4 class="text-xl font-bold text-white mb-3 uppercase italic">Bridging Finance → Gaps Closed</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Short‑term capital to unlock cash tied up in property transactions. Advance up to 80% of sale proceeds while the transfer process completes.</p>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Short-term capital to unlock cash tied up in property transactions. Advance up to 80% of sale proceeds while the transfer process completes.</p>
                     <ul class="text-slate-500 text-[10px] font-semibold uppercase tracking-wider space-y-2 mb-6 flex-grow">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Up to 80% advance</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Up to 80% advance on proceeds</li>
                         <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Funding in 3–5 days</li>
                         <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> Attorney exit guarantee</li>
                         <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-brand-electric"></i> No upfront fees</li>
@@ -277,49 +368,59 @@
         </div>
     </section>
 
-    <!-- How the Capital Network Works -->
-    <section id="methodology" class="py-32 bg-brand-dark/50 border-y border-brand-border/20">
+    <div class="section-divider max-w-4xl mx-auto"></div>
+
+    <!-- How It Works -->
+    <section id="methodology" class="py-32 bg-brand-dark/30">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center reveal">
                 <div>
-                    <h2 class="text-brand-electric font-heading font-bold uppercase tracking-[0.4em] text-xs mb-6">The Network Engine</h2>
-                    <h3 class="text-4xl font-heading font-extrabold text-white mb-8 tracking-tight uppercase italic leading-none">Direct Access,<br/>No Middle‑Men.</h3>
-                    <p class="text-slate-400 font-light leading-relaxed mb-8">
+                    <div class="flex items-center gap-3 mb-6">
+                        <svg width="24" height="24" viewBox="0 0 100 100" fill="none" class="logo-glow">
+                            <path d="M28 74 L50 26 L72 74" stroke="#38bdf8" stroke-width="5" fill="none" stroke-linejoin="round"/>
+                        </svg>
+                        <h2 class="text-brand-electric font-heading font-bold uppercase tracking-[0.4em] text-xs">The Network Engine</h2>
+                    </div>
+                    <h3 class="text-4xl sm:text-5xl font-heading font-extrabold text-white mb-8 tracking-tight uppercase italic leading-none">Direct Access.<br/>No Middle‑Men.</h3>
+                    <p class="text-slate-400 font-light leading-relaxed mb-8 text-lg">
                         Our capital integration network connects vetted projects directly to institutional funders. We don't shop your deal around — we match it with the right capital source based on sector, size, and structure. The result: faster closes, aligned incentives, and a guaranteed outcome when your documentation is in order.
                     </p>
                     <div class="grid grid-cols-2 gap-6">
-                        <div class="p-6 border border-brand-border/10 bg-brand-navy/30">
+                        <div class="p-6 border border-brand-border/10 bg-brand-navy/30 rounded-sm hover:border-brand-cobalt/30 transition-colors">
                             <span class="block text-brand-electric text-3xl font-black mb-2 italic">All Sectors</span>
                             <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Capital deployed</span>
                         </div>
-                        <div class="p-6 border border-brand-border/10 bg-brand-navy/30">
+                        <div class="p-6 border border-brand-border/10 bg-brand-navy/30 rounded-sm hover:border-brand-cobalt/30 transition-colors">
                             <span class="block text-brand-electric text-3xl font-black mb-2 italic">Institutional</span>
                             <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Funder network</span>
                         </div>
                     </div>
                 </div>
                 <div class="space-y-4">
-                    <div class="p-8 glass-card">
+                    <div class="p-8 glass-card rounded-sm border-l-2 border-l-brand-cobalt/50">
                         <h4 class="text-white font-bold uppercase text-[11px] tracking-widest mb-3 flex items-center gap-3">
-                            <i data-lucide="file-check" class="w-4 h-4 text-brand-electric"></i> Vetted Documentation
+                            <span class="w-6 h-6 rounded-full bg-brand-cobalt/20 flex items-center justify-center text-brand-electric text-xs font-black">1</span>
+                            Vetted Documentation
                         </h4>
-                        <p class="text-slate-500 text-xs font-light">Your feasibility study, POs, asset valuations, or bridging exit docs are reviewed upfront. Only ready deals enter the network.</p>
+                        <p class="text-slate-500 text-xs font-light leading-relaxed">Your feasibility study, POs, asset valuations, or bridging exit docs are reviewed upfront. Only ready deals enter the network.</p>
                     </div>
-                    <div class="p-8 glass-card">
+                    <div class="p-8 glass-card rounded-sm border-l-2 border-l-brand-cobalt/50">
                         <h4 class="text-white font-bold uppercase text-[11px] tracking-widest mb-3 flex items-center gap-3">
-                            <i data-lucide="handshake" class="w-4 h-4 text-brand-electric"></i> Direct Fund Matching
+                            <span class="w-6 h-6 rounded-full bg-brand-cobalt/20 flex items-center justify-center text-brand-electric text-xs font-black">2</span>
+                            Direct Fund Matching
                         </h4>
-                        <p class="text-slate-500 text-xs font-light">We pair your project with institutional funders actively deploying in your sector — no broad auctions.</p>
+                        <p class="text-slate-500 text-xs font-light leading-relaxed">We pair your project with institutional funders actively deploying in your sector — no broad auctions, no wasted time.</p>
                     </div>
-                    <div class="p-8 glass-card">
+                    <div class="p-8 glass-card rounded-sm border-l-2 border-l-brand-cobalt/50">
                         <h4 class="text-white font-bold uppercase text-[11px] tracking-widest mb-3 flex items-center gap-3">
-                            <i data-lucide="scale" class="w-4 h-4 text-brand-electric"></i> Performance‑Based Close
+                            <span class="w-6 h-6 rounded-full bg-brand-cobalt/20 flex items-center justify-center text-brand-electric text-xs font-black">3</span>
+                            Performance‑Based Close
                         </h4>
-                        <p class="text-slate-500 text-xs font-light">We earn when your deal closes. Aligned incentives from start to funding.</p>
+                        <p class="text-slate-500 text-xs font-light leading-relaxed">We earn when your deal closes. Aligned incentives from first contact to final funding. No upfront costs.</p>
                     </div>
                 </div>
             </div>
-            <div class="mt-12 text-center reveal">
+            <div class="mt-16 text-center reveal">
                 <a href="https://funding.maribamedia.co.za" target="_blank" class="btn-institutional px-10 py-4 rounded-sm text-xs inline-flex items-center gap-3">
                     Start Your Funding Journey <i data-lucide="external-link" class="w-4 h-4"></i>
                 </a>
@@ -327,34 +428,46 @@
         </div>
     </section>
 
-    <!-- Contact – One clear call to action for capital -->
-    <section id="contact" class="py-32 bg-brand-dark overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative">
-            <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-cobalt/10 blur-[120px]"></div>
-            
+    <div class="section-divider max-w-4xl mx-auto"></div>
+
+    <!-- Contact -->
+    <section id="contact" class="py-32 overflow-hidden relative">
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-cobalt/10 blur-[120px]"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-brand-cobalt/5 blur-[120px]"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
             <div class="bg-brand-navy/50 p-8 sm:p-12 md:p-16 lg:p-24 border border-brand-border/30 rounded-sm reveal">
                 <div class="grid lg:grid-cols-2 gap-16 lg:gap-20">
                     <div>
+                        <div class="flex items-center gap-3 mb-6">
+                            <svg width="32" height="32" viewBox="0 0 100 100" fill="none" class="logo-glow">
+                                <path d="M28 74 L50 26 L72 74" stroke="url(#logoGrad)" stroke-width="5" fill="none" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
                         <h2 class="text-4xl sm:text-5xl md:text-6xl font-heading font-extrabold text-white tracking-tighter mb-8 uppercase italic leading-[0.9]">
-                            Your Capital<br/><span class="text-brand-electric">Starts Here.</span>
+                            Your Capital<br/><span class="text-brand-electric glow-text">Starts Here.</span>
                         </h2>
-                        <p class="text-slate-400 text-lg mb-12 font-light">
+                        <p class="text-slate-400 text-lg mb-12 font-light leading-relaxed">
                             If your project is ready, we'll integrate the capital to close it. Book a session — we'll review your documentation and map the funding path. No pitches, only performance.
                         </p>
                         
                         <div class="space-y-10">
-                            <div class="flex items-center gap-6">
-                                <div class="w-14 h-14 rounded-sm border border-brand-border flex items-center justify-center text-brand-electric"><i data-lucide="mail" class="w-6 h-6"></i></div>
+                            <div class="flex items-center gap-6 group">
+                                <div class="w-14 h-14 rounded-sm border border-brand-border flex items-center justify-center text-brand-electric group-hover:border-brand-cobalt/50 group-hover:bg-brand-cobalt/10 transition-all">
+                                    <i data-lucide="mail" class="w-6 h-6"></i>
+                                </div>
                                 <div>
                                     <p class="text-[10px] font-bold text-brand-slate uppercase tracking-widest">Direct Inquiry</p>
-                                    <p class="text-white font-bold text-lg">victor@maribamedia.co.za</p>
+                                    <p class="text-white font-bold text-lg tracking-tight">victor@maribamedia.co.za</p>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-6">
-                                <div class="w-14 h-14 rounded-sm border border-brand-border flex items-center justify-center text-brand-electric"><i data-lucide="phone" class="w-6 h-6"></i></div>
+                            <div class="flex items-center gap-6 group">
+                                <div class="w-14 h-14 rounded-sm border border-brand-border flex items-center justify-center text-brand-electric group-hover:border-brand-cobalt/50 group-hover:bg-brand-cobalt/10 transition-all">
+                                    <i data-lucide="phone" class="w-6 h-6"></i>
+                                </div>
                                 <div>
                                     <p class="text-[10px] font-bold text-brand-slate uppercase tracking-widest">Executive Line</p>
-                                    <p class="text-white font-bold text-lg">+27 (0) 76 647 3499</p>
+                                    <p class="text-white font-bold text-lg tracking-tight">+27 (0) 76 647 3499</p>
                                 </div>
                             </div>
                         </div>
@@ -387,32 +500,39 @@
     <footer class="py-12 bg-brand-dark border-t border-brand-border/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-8">
             <div class="flex items-center gap-3">
-                <div class="bg-brand-cobalt p-1 rounded-sm shadow-sm">
-                    <svg width="18" height="18" viewBox="0 0 100 100" fill="none"><path d="M30 70 L50 30 L70 70" stroke="white" stroke-width="14" stroke-linejoin="round"/></svg>
+                <div class="relative">
+                    <svg width="24" height="24" viewBox="0 0 100 100" fill="none" class="logo-glow">
+                        <path d="M28 74 L50 26 L72 74" stroke="url(#logoGrad)" stroke-width="5" fill="none" stroke-linejoin="round"/>
+                    </svg>
                 </div>
                 <span class="text-xs font-heading font-black text-white uppercase tracking-widest italic">MARIBA<span class="text-brand-electric">MEDIA</span></span>
             </div>
             
-            <p class="text-[10px] font-bold text-slate-700 uppercase tracking-[0.5em]">Capital Access Network · Debt, Equity & PO Funding · All Sectors © 2026</p>
+            <p class="text-[10px] font-bold text-slate-700 uppercase tracking-[0.5em]">Capital Access Network · All Sectors · Debt, Equity & PO Funding © 2026</p>
             
             <div class="flex gap-6 items-center flex-wrap justify-center">
                 <span class="text-[9px] text-brand-electric uppercase tracking-wider">Debt & Equity</span>
-                <span class="text-[9px] text-slate-500">|</span>
+                <span class="text-[9px] text-slate-600">·</span>
                 <span class="text-[9px] text-brand-electric uppercase tracking-wider">PO Funding</span>
-                <span class="text-[9px] text-slate-500">|</span>
-                <span class="text-[9px] text-brand-electric uppercase tracking-wider">Asset‑Backed Financing</span>
-                <span class="text-[9px] text-slate-500">|</span>
+                <span class="text-[9px] text-slate-600">·</span>
+                <span class="text-[9px] text-brand-electric uppercase tracking-wider">Asset‑Backed</span>
+                <span class="text-[9px] text-slate-600">·</span>
                 <span class="text-[9px] text-brand-electric uppercase tracking-wider">Property Bridging</span>
-                <span class="text-[9px] text-slate-500">|</span>
+                <span class="text-[9px] text-slate-600">·</span>
                 <span class="text-[9px] text-brand-electric uppercase tracking-wider">All Sectors</span>
                 <p class="text-[9px] text-slate-700 font-bold uppercase tracking-tighter ml-2">Reg: 2024 / 132788 / 07</p>
             </div>
         </div>
 
-        <!-- Legal Disclaimer – POPIA, FICA, Indemnity -->
+        <!-- Legal Disclaimer -->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-8 pt-6 border-t border-brand-border/10">
             <div class="text-[10px] text-slate-600 leading-relaxed space-y-3">
-                <p class="font-bold text-slate-500 uppercase tracking-wider">Disclaimer & Compliance</p>
+                <p class="font-bold text-slate-500 uppercase tracking-wider flex items-center gap-2">
+                    <svg width="12" height="12" viewBox="0 0 100 100" fill="none" class="opacity-50">
+                        <path d="M28 74 L50 26 L72 74" stroke="#38bdf8" stroke-width="8" fill="none" stroke-linejoin="round"/>
+                    </svg>
+                    Disclaimer & Compliance
+                </p>
                 <p>
                     <strong>Mariba Media</strong> (Reg: 2024/132788/07) is an independent third‑party capital access consultant. We do not hold, process, or transact any funds. All funding is provided solely by accredited institutional partners within our private network. We pre‑screen candidates and route transaction‑ready projects; we are not accountants, tax practitioners, or financial advisors. We provide only access to our network and no other services.
                 </p>
