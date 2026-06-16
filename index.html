@@ -665,35 +665,27 @@
     <section id="contact" class="py-32 overflow-hidden relative scroll-mt-24">
         <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-cobalt/10 blur-[120px]"></div>
         <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-brand-cobalt/5 blur-[120px]"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-            <div class="bg-brand-navy/50 p-8 sm:p-12 md:p-16 lg:p-24 border border-brand-border/30 rounded-sm reveal-animate">
-                <div class="grid lg:grid-cols-2 gap-16 lg:gap-20">
-                    <div>
-                        <div class="flex items-center gap-3 mb-6"><svg width="32" height="32" viewBox="0 0 100 100" fill="none" class="logo-glow"><path d="M28 74 L50 26 L72 74" stroke="url(#logoGrad)" stroke-width="5" fill="none" stroke-linejoin="round"/></svg></div>
-                        <h2 class="text-4xl sm:text-5xl md:text-6xl font-heading font-extrabold text-white tracking-tighter mb-8 uppercase italic leading-[0.9]">Your Capital<br/><span class="text-brand-electric glow-text">Starts Here.</span></h2>
-                        <p class="text-slate-400 text-base md:text-lg mb-12 font-light">If your project needs funding, submit it through our network. No fee, no obligation, no advice — just a simple, regulated path to the capital your business needs.</p>
-                        <div class="space-y-10">
-                            <div class="flex items-center gap-6 group"><div class="w-14 h-14 rounded-sm border border-brand-border flex items-center justify-center text-brand-electric group-hover:border-brand-cobalt/50"><i data-lucide="mail" class="w-6 h-6"></i></div><div><p class="text-[10px] font-bold text-brand-slate uppercase tracking-widest">Direct Inquiry</p><p class="text-white font-bold text-lg tracking-tight">victor@maribamedia.co.za</p></div></div>
-                            <div class="flex items-center gap-6 group"><div class="w-14 h-14 rounded-sm border border-brand-border flex items-center justify-center text-brand-electric group-hover:border-brand-cobalt/50"><i data-lucide="phone" class="w-6 h-6"></i></div><div><p class="text-[10px] font-bold text-brand-slate uppercase tracking-widest">Executive Line</p><p class="text-white font-bold text-lg tracking-tight">+27 (0) 76 647 3499</p></div></div>
-                        </div>
-                        <div class="mt-12"><a href="https://funding.maribamedia.co.za" target="_blank" class="btn-institutional px-10 py-5 rounded-sm text-xs flex items-center justify-center gap-4 w-full md:w-auto">Submit Your Deal <i data-lucide="landmark" class="w-4 h-4"></i></a></div>
-                    </div>
-                    <!-- Cal.com embed unchanged -->
-                    <div class="bg-brand-dark/80 p-1 border border-brand-border/40 rounded-sm overflow-hidden" style="height: 550px;">
-                        <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-discovery-session"></div>
-                        <script type="text/javascript">
-                          (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-Cal("init", "discovery-session", {origin:"https://app.cal.com"});
-                          Cal.ns["discovery-session"]("inline", {
-                            elementOrSelector:"#my-cal-inline-discovery-session",
-                            config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
-                            calLink: "partner-discovery/discovery-session",
-                          });
-                          Cal.ns["discovery-session"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
-                        </script>
-                    </div>
-                </div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-white uppercase italic tracking-tight mb-6 reveal-animate">
+                Book a Discovery Session
+            </h2>
+            <p class="text-slate-400 text-base md:text-lg font-light max-w-2xl mx-auto mb-12 reveal-animate">
+                Pick a time that works for you. A member of our team will reach out to discuss your funding needs and how we can connect you to our lender network.
+            </p>
+            <div class="bg-brand-dark/80 p-1 border border-brand-border/40 rounded-sm overflow-hidden reveal-animate" style="height: 650px;">
+                <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-discovery-session"></div>
             </div>
+            <!-- Cal.com embed script -->
+            <script type="text/javascript">
+              (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+              Cal("init", "discovery-session", {origin:"https://app.cal.com"});
+              Cal.ns["discovery-session"]("inline", {
+                elementOrSelector:"#my-cal-inline-discovery-session",
+                config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+                calLink: "partner-discovery/discovery-session",
+              });
+              Cal.ns["discovery-session"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+            </script>
         </div>
     </section>
 
