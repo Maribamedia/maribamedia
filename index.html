@@ -54,7 +54,13 @@
             --shadow-primary-lg: 0 8px 32px rgba(30, 58, 138, 0.28);
         }
 
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
         html {
             background: #ffffff;
@@ -76,10 +82,22 @@
             font-size: 16px;
         }
 
-        a { color: inherit; text-decoration: none; transition: color var(--transition-fast); }
-        img { max-width: 100%; height: auto; display: block; }
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
 
-        .wrap { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .wrap {
+            width: min(var(--max), calc(100% - 48px));
+            margin: 0 auto;
+        }
 
         .logo-lockup {
             display: inline-flex;
@@ -88,7 +106,11 @@
             min-width: 0;
             flex-shrink: 0;
         }
-        .mariba-mark { flex: 0 0 auto; width: 36px; height: 36px; }
+        .mariba-mark {
+            flex: 0 0 auto;
+            width: 36px;
+            height: 36px;
+        }
         .wordmark {
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-weight: 800;
@@ -100,7 +122,9 @@
 
         .nav {
             position: fixed;
-            top: 0; left: 0; right: 0;
+            top: 0;
+            left: 0;
+            right: 0;
             z-index: 50;
             border-bottom: 1px solid transparent;
             background: rgba(255, 255, 255, 0.88);
@@ -165,7 +189,9 @@
             box-shadow: var(--shadow-primary-lg);
             background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
         }
-        .button:active { transform: translateY(0) scale(0.98); }
+        .button:active {
+            transform: translateY(0) scale(0.98);
+        }
         .button.secondary {
             background: rgba(255, 255, 255, 0.9);
             color: var(--primary);
@@ -207,7 +233,10 @@
             transition: background var(--transition-fast), transform var(--transition-fast), border-color var(--transition-fast);
             flex-shrink: 0;
         }
-        .mobile-toggle:hover { background: var(--surface-2); border-color: var(--outline); }
+        .mobile-toggle:hover {
+            background: var(--surface-2);
+            border-color: var(--outline);
+        }
         .mobile-panel {
             display: none;
             padding: 16px 24px 24px;
@@ -222,8 +251,14 @@
             animation: slideDown 320ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }
         @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-12px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(-12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         .mobile-panel a {
             padding: 0.7rem 1rem;
@@ -233,8 +268,15 @@
             font-weight: 500;
             font-size: 0.95rem;
         }
-        .mobile-panel a:hover { background: rgba(30, 58, 138, 0.05); color: var(--primary); }
-        .mobile-panel .button { width: 100%; margin-top: 6px; justify-content: center; }
+        .mobile-panel a:hover {
+            background: rgba(30, 58, 138, 0.05);
+            color: var(--primary);
+        }
+        .mobile-panel .button {
+            width: 100%;
+            margin-top: 6px;
+            justify-content: center;
+        }
 
         .hero {
             position: relative;
@@ -289,7 +331,10 @@
             transform: translateY(28px);
         }
         @keyframes fadeInUp {
-            to { opacity: 1; transform: translateY(0); }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         .hero-visual {
             position: relative;
@@ -307,9 +352,11 @@
         }
         .network-graphic .center-node {
             position: absolute;
-            top: 50%; left: 50%;
+            top: 50%;
+            left: 50%;
             transform: translate(-50%, -50%);
-            width: 90px; height: 90px;
+            width: 90px;
+            height: 90px;
             border-radius: 999px;
             background: linear-gradient(135deg, #1e3a8a, #3b82f6);
             box-shadow: var(--shadow-primary-lg);
@@ -322,22 +369,43 @@
             text-align: center;
             line-height: 1.2;
             z-index: 3;
-            border: 3px solid rgba(255,255,255,0.9);
+            border: 3px solid rgba(255, 255, 255, 0.9);
         }
         .network-graphic .orbit {
             position: absolute;
-            top: 50%; left: 50%;
+            top: 50%;
+            left: 50%;
             transform: translate(-50%, -50%);
             border: 1.5px dashed rgba(30, 58, 138, 0.15);
             border-radius: 999px;
         }
-        .network-graphic .orbit-1 { width: 160px; height: 160px; animation: spin 24s linear infinite; }
-        .network-graphic .orbit-2 { width: 260px; height: 260px; animation: spin 32s linear infinite reverse; }
-        .network-graphic .orbit-3 { width: 360px; height: 360px; animation: spin 40s linear infinite; }
-        @keyframes spin { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(360deg); } }
+        .network-graphic .orbit-1 {
+            width: 160px;
+            height: 160px;
+            animation: spin 24s linear infinite;
+        }
+        .network-graphic .orbit-2 {
+            width: 260px;
+            height: 260px;
+            animation: spin 32s linear infinite reverse;
+        }
+        .network-graphic .orbit-3 {
+            width: 360px;
+            height: 360px;
+            animation: spin 40s linear infinite;
+        }
+        @keyframes spin {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
         .network-graphic .lender-node {
             position: absolute;
-            width: 52px; height: 52px;
+            width: 52px;
+            height: 52px;
             border-radius: 999px;
             background: #fff;
             border: 2px solid rgba(30, 58, 138, 0.12);
@@ -353,7 +421,8 @@
             z-index: 2;
         }
 
-        .eyebrow, .section-kicker {
+        .eyebrow,
+        .section-kicker {
             margin: 0 0 0.85rem;
             color: var(--primary);
             font-family: 'Geist', 'Inter', sans-serif;
@@ -362,7 +431,10 @@
             letter-spacing: 0.1em;
             text-transform: uppercase;
         }
-        h1, h2, h3, h4 {
+        h1,
+        h2,
+        h3,
+        h4 {
             font-family: 'Plus Jakarta Sans', sans-serif;
             margin: 0;
             letter-spacing: -0.02em;
@@ -388,14 +460,17 @@
             line-height: 1.7;
             font-weight: 450;
         }
-        .hero-actions, .center-actions {
+        .hero-actions,
+        .center-actions {
             display: flex;
             justify-content: flex-start;
             align-items: center;
             flex-wrap: wrap;
             gap: 0.85rem;
         }
-        .center-actions { justify-content: center; }
+        .center-actions {
+            justify-content: center;
+        }
         .hero-note {
             display: flex;
             justify-content: flex-start;
@@ -406,7 +481,9 @@
             font-size: 0.85rem;
             font-weight: 450;
         }
-        .hero-note span.sep { color: var(--outline); }
+        .hero-note span.sep {
+            color: var(--outline);
+        }
 
         .trust-bar {
             position: relative;
@@ -428,7 +505,10 @@
             text-align: center;
             transition: transform var(--transition-base), box-shadow var(--transition-base);
         }
-        .trust-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+        .trust-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
         .trust-card .stat {
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 2rem;
@@ -443,7 +523,9 @@
             font-weight: 500;
         }
 
-        .network-section { background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%); }
+        .network-section {
+            background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+        }
         .lender-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -463,7 +545,8 @@
             border-color: rgba(30, 58, 138, 0.15);
         }
         .lender-type .type-icon {
-            width: 48px; height: 48px;
+            width: 48px;
+            height: 48px;
             border-radius: 12px;
             background: var(--primary-container);
             color: var(--primary);
@@ -471,10 +554,20 @@
             place-items: center;
             margin-bottom: 1.25rem;
         }
-        .lender-type h4 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--ink); }
-        .lender-type p { font-size: 0.9rem; color: var(--on-surface-variant); line-height: 1.6; }
+        .lender-type h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--ink);
+        }
+        .lender-type p {
+            font-size: 0.9rem;
+            color: var(--on-surface-variant);
+            line-height: 1.6;
+        }
 
-        .testimonial-section { background: var(--surface-1); }
+        .testimonial-section {
+            background: var(--surface-1);
+        }
         .testimonial-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -489,11 +582,15 @@
             transition: all var(--transition-base);
             position: relative;
         }
-        .testimonial-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
         .testimonial-card::before {
             content: """;
             position: absolute;
-            top: 1.5rem; right: 1.5rem;
+            top: 1.5rem;
+            right: 1.5rem;
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 4rem;
             line-height: 1;
@@ -519,7 +616,8 @@
             gap: 0.75rem;
         }
         .testimonial-card .author-avatar {
-            width: 40px; height: 40px;
+            width: 40px;
+            height: 40px;
             border-radius: 999px;
             background: linear-gradient(135deg, #1e3a8a, #3b82f6);
             display: grid;
@@ -530,10 +628,19 @@
             font-size: 0.85rem;
             flex-shrink: 0;
         }
-        .testimonial-card .author-name { font-weight: 600; font-size: 0.9rem; color: var(--ink); }
-        .testimonial-card .author-role { font-size: 0.8rem; color: var(--on-surface-muted); }
+        .testimonial-card .author-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--ink);
+        }
+        .testimonial-card .author-role {
+            font-size: 0.8rem;
+            color: var(--on-surface-muted);
+        }
 
-        .faq-section { background: #fff; }
+        .faq-section {
+            background: #fff;
+        }
         .faq-list {
             max-width: 800px;
             margin: 0 auto;
@@ -547,8 +654,13 @@
             overflow: hidden;
             transition: box-shadow var(--transition-fast);
         }
-        .faq-item:hover { box-shadow: var(--shadow-sm); }
-        .faq-item.active { border-color: rgba(30, 58, 138, 0.15); box-shadow: var(--shadow-md); }
+        .faq-item:hover {
+            box-shadow: var(--shadow-sm);
+        }
+        .faq-item.active {
+            border-color: rgba(30, 58, 138, 0.15);
+            box-shadow: var(--shadow-md);
+        }
         .faq-question {
             width: 100%;
             display: flex;
@@ -570,20 +682,31 @@
             color: var(--primary);
             flex-shrink: 0;
         }
-        .faq-item.active .faq-question .icon { transform: rotate(180deg); }
+        .faq-item.active .faq-question .icon {
+            transform: rotate(180deg);
+        }
         .faq-answer {
             max-height: 0;
             overflow: hidden;
             transition: max-height 400ms cubic-bezier(0.22, 1, 0.36, 1), padding 400ms cubic-bezier(0.22, 1, 0.36, 1);
             padding: 0 1.5rem;
         }
-        .faq-item.active .faq-answer { max-height: 300px; padding: 0 1.5rem 1.25rem; }
-        .faq-answer p { color: var(--on-surface-variant); font-size: 0.95rem; line-height: 1.7; }
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 0 1.5rem 1.25rem;
+        }
+        .faq-answer p {
+            color: var(--on-surface-variant);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
 
         .sticky-cta {
             display: none;
             position: fixed;
-            bottom: 0; left: 0; right: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
             z-index: 55;
             padding: 0.75rem 1rem;
             background: rgba(255, 255, 255, 0.95);
@@ -591,7 +714,10 @@
             border-top: 1px solid var(--hairline);
             box-shadow: 0 -4px 20px rgba(10, 15, 28, 0.06);
         }
-        .sticky-cta .button { width: 100%; justify-content: center; }
+        .sticky-cta .button {
+            width: 100%;
+            justify-content: center;
+        }
 
         .image-panel {
             position: relative;
@@ -606,7 +732,8 @@
         }
         .image-panel img {
             display: block;
-            width: 100%; height: 100%;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
             transition: transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
         }
@@ -618,10 +745,14 @@
             z-index: 1;
             pointer-events: none;
         }
-        .image-panel:hover img { transform: scale(1.06); }
+        .image-panel:hover img {
+            transform: scale(1.06);
+        }
         .showcase-copy {
             position: absolute;
-            left: 2rem; right: 2rem; bottom: 2rem;
+            left: 2rem;
+            right: 2rem;
+            bottom: 2rem;
             z-index: 2;
         }
         .showcase-copy strong {
@@ -642,7 +773,8 @@
             text-shadow: 0 1px 10px rgba(255, 255, 255, 0.9);
         }
 
-        .glass-panel, .card {
+        .glass-panel,
+        .card {
             border: 1px solid rgba(30, 58, 138, 0.07);
             background: rgba(255, 255, 255, 0.82);
             backdrop-filter: blur(16px);
@@ -651,7 +783,10 @@
             transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
             border-radius: var(--radius);
         }
-        .card { padding: 2.2rem; border-radius: var(--radius); }
+        .card {
+            padding: 2.2rem;
+            border-radius: var(--radius);
+        }
         .card:hover {
             transform: translateY(-5px);
             border-color: rgba(30, 58, 138, 0.16);
@@ -683,9 +818,15 @@
             opacity: 0.06;
             mix-blend-mode: luminosity;
         }
-        .contrast-band .section-kicker { color: rgba(255, 255, 255, 0.7); }
-        .contrast-band .section-title { color: #ffffff; }
-        .contrast-band .section-copy { color: rgba(255, 255, 255, 0.85); }
+        .contrast-band .section-kicker {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .contrast-band .section-title {
+            color: #ffffff;
+        }
+        .contrast-band .section-copy {
+            color: rgba(255, 255, 255, 0.85);
+        }
         .pathway {
             display: grid;
             grid-template-columns: 0.85fr 1.15fr;
@@ -694,8 +835,14 @@
             position: relative;
             z-index: 1;
         }
-        .pathway .section-head { margin: 0; text-align: left; }
-        .pathway-flow { display: grid; gap: 0.85rem; }
+        .pathway .section-head {
+            margin: 0;
+            text-align: left;
+        }
+        .pathway-flow {
+            display: grid;
+            gap: 0.85rem;
+        }
         .flow-card {
             display: grid;
             grid-template-columns: 50px 1fr;
@@ -717,7 +864,8 @@
         .flow-card span {
             display: grid;
             place-items: center;
-            width: 50px; height: 50px;
+            width: 50px;
+            height: 50px;
             border: 1px solid rgba(255, 255, 255, 0.25);
             border-radius: 999px;
             background: rgba(255, 255, 255, 0.1);
@@ -727,24 +875,46 @@
             font-size: 0.85rem;
             flex-shrink: 0;
         }
-        .flow-card h3 { color: #fff; font-size: 1.08rem; margin-bottom: 0.3rem; font-weight: 700; }
-        .flow-card p { margin: 0; color: rgba(255, 255, 255, 0.82); font-size: 0.9rem; line-height: 1.55; }
+        .flow-card h3 {
+            color: #fff;
+            font-size: 1.08rem;
+            margin-bottom: 0.3rem;
+            font-weight: 700;
+        }
+        .flow-card p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 0.9rem;
+            line-height: 1.55;
+        }
 
         section {
             position: relative;
             padding: var(--section) 0;
             scroll-margin-top: 100px;
         }
-        .light-section { background: var(--surface-1); color: var(--on-surface); }
-        .light-section .section-kicker { color: var(--primary); }
-        .section-head { max-width: 860px; margin: 0 auto 3.5rem; text-align: center; }
+        .light-section {
+            background: var(--surface-1);
+            color: var(--on-surface);
+        }
+        .light-section .section-kicker {
+            color: var(--primary);
+        }
+        .section-head {
+            max-width: 860px;
+            margin: 0 auto 3.5rem;
+            text-align: center;
+        }
         .section-title {
             color: var(--ink);
             font-size: clamp(1.9rem, 4.5vw, 3rem);
             line-height: 1.12;
             font-weight: 800;
         }
-        .light-section .section-title, .light-section h3 { color: var(--ink); }
+        .light-section .section-title,
+        .light-section h3 {
+            color: var(--ink);
+        }
         .section-copy {
             max-width: 720px;
             margin: 1rem auto 0;
@@ -754,17 +924,37 @@
             font-weight: 450;
         }
 
-        .grid { display: grid; gap: 1.25rem; }
-        .steps { grid-template-columns: repeat(4, 1fr); }
-        .solutions { grid-template-columns: repeat(3, 1fr); }
-        .mini-grid { grid-template-columns: repeat(4, 1fr); }
-        .energy-grid, .commit-grid { grid-template-columns: repeat(2, 1fr); }
-        .invoice-grid { grid-template-columns: repeat(3, 1fr); }
+        .grid {
+            display: grid;
+            gap: 1.25rem;
+        }
+        .steps {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        .solutions {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .mini-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        .energy-grid,
+        .commit-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .invoice-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
 
-        .step-card { min-height: 260px; position: relative; overflow: hidden; padding: 2rem; }
+        .step-card {
+            min-height: 260px;
+            position: relative;
+            overflow: hidden;
+            padding: 2rem;
+        }
         .number {
             position: absolute;
-            right: 1rem; top: -0.4rem;
+            right: 1rem;
+            top: -0.4rem;
             color: rgba(30, 58, 138, 0.06);
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 5rem;
@@ -773,20 +963,29 @@
             transition: color 400ms ease;
             pointer-events: none;
         }
-        .card:hover .number { color: rgba(30, 58, 138, 0.13); }
-        .card h3, .card h4 {
+        .card:hover .number {
+            color: rgba(30, 58, 138, 0.13);
+        }
+        .card h3,
+        .card h4 {
             color: var(--ink);
             font-size: 1.2rem;
             line-height: 1.25;
             font-weight: 700;
             margin-bottom: 0.85rem;
         }
-        .card p { margin: 0; color: var(--on-surface-variant); line-height: 1.65; font-size: 0.93rem; }
+        .card p {
+            margin: 0;
+            color: var(--on-surface-variant);
+            line-height: 1.65;
+            font-size: 0.93rem;
+        }
 
         .icon-box {
             display: inline-grid;
             place-items: center;
-            width: 48px; height: 48px;
+            width: 48px;
+            height: 48px;
             margin-bottom: 1.25rem;
             border: 1px solid rgba(30, 58, 138, 0.1);
             border-radius: 999px;
@@ -794,9 +993,16 @@
             color: var(--primary);
             transition: transform var(--transition-base), background var(--transition-base);
         }
-        .card:hover .icon-box { transform: scale(1.08) rotate(-3deg); background: rgba(30, 58, 138, 0.08); }
+        .card:hover .icon-box {
+            transform: scale(1.08) rotate(-3deg);
+            background: rgba(30, 58, 138, 0.08);
+        }
 
-        .solution-card { display: flex; flex-direction: column; min-height: 100%; }
+        .solution-card {
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+        }
         .solution-toolbar {
             display: flex;
             justify-content: center;
@@ -820,13 +1026,24 @@
             transition: all var(--transition-fast);
             white-space: nowrap;
         }
-        .filter-button:hover { border-color: var(--primary); color: var(--primary); background: rgba(30, 58, 138, 0.04); transform: translateY(-1px); }
-        .filter-button.is-active {
-            color: #fff; border-color: var(--primary); background: var(--primary);
-            transform: translateY(-1px); box-shadow: var(--shadow-primary);
+        .filter-button:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: rgba(30, 58, 138, 0.04);
+            transform: translateY(-1px);
         }
-        .solution-card.is-hidden { display: none; }
-        .solution-card ul, .plain-list {
+        .filter-button.is-active {
+            color: #fff;
+            border-color: var(--primary);
+            background: var(--primary);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-primary);
+        }
+        .solution-card.is-hidden {
+            display: none;
+        }
+        .solution-card ul,
+        .plain-list {
             display: grid;
             gap: 0.6rem;
             margin: 1.1rem 0 1.5rem;
@@ -834,7 +1051,8 @@
             list-style: none;
             color: var(--on-surface-variant);
         }
-        .solution-card li, .plain-list li {
+        .solution-card li,
+        .plain-list li {
             display: flex;
             gap: 0.5rem;
             align-items: flex-start;
@@ -865,14 +1083,20 @@
         .text-link::after {
             content: "";
             position: absolute;
-            bottom: 0; left: 0;
-            width: 0; height: 1.5px;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1.5px;
             background: var(--primary);
             transition: width var(--transition-base);
             border-radius: 2px;
         }
-        .text-link:hover { gap: 0.6rem; }
-        .text-link:hover::after { width: 100%; }
+        .text-link:hover {
+            gap: 0.6rem;
+        }
+        .text-link:hover::after {
+            width: 100%;
+        }
 
         .promise-band {
             max-width: 960px;
@@ -891,10 +1115,21 @@
             list-style: none;
             color: var(--on-surface-variant);
         }
-        .promise-band li { display: flex; gap: 0.65rem; align-items: flex-start; font-size: 0.9rem; }
-        .promise-band strong { color: var(--on-surface); font-weight: 600; }
+        .promise-band li {
+            display: flex;
+            gap: 0.65rem;
+            align-items: flex-start;
+            font-size: 0.9rem;
+        }
+        .promise-band strong {
+            color: var(--on-surface);
+            font-weight: 600;
+        }
 
-        .mini-card { min-height: 170px; padding: 1.6rem; }
+        .mini-card {
+            min-height: 170px;
+            padding: 1.6rem;
+        }
         .energy-panel {
             border-radius: var(--radius);
             padding: 3rem;
@@ -915,7 +1150,7 @@
             inset: 0;
             z-index: -1;
             background: linear-gradient(105deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 42%, rgba(255, 255, 255, 0.3) 100%),
-                        url("https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1800&q=80") center right/cover;
+                url("https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1800&q=80") center right/cover;
         }
         .doc-box {
             border: 1px solid rgba(30, 58, 138, 0.08);
@@ -925,11 +1160,20 @@
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
         }
-        .doc-box h4 { margin-bottom: 1rem; font-size: 1rem; }
-        .doc-box .plain-list { gap: 0.5rem; }
-        .doc-box .plain-list li { font-size: 0.85rem; }
+        .doc-box h4 {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        .doc-box .plain-list {
+            gap: 0.5rem;
+        }
+        .doc-box .plain-list li {
+            font-size: 0.85rem;
+        }
 
-        .invoice-section { background: linear-gradient(180deg, #ffffff 0%, #f8faff 100%); }
+        .invoice-section {
+            background: linear-gradient(180deg, #ffffff 0%, #f8faff 100%);
+        }
         .invoice-visual {
             display: grid;
             grid-template-columns: minmax(280px, 0.65fr) minmax(0, 1fr);
@@ -937,7 +1181,9 @@
             align-items: stretch;
             margin-bottom: 2rem;
         }
-        .invoice-visual .image-panel { min-height: 380px; }
+        .invoice-visual .image-panel {
+            min-height: 380px;
+        }
         .invoice-board {
             display: grid;
             gap: 0.75rem;
@@ -955,17 +1201,32 @@
             background: rgba(255, 255, 255, 0.9);
             transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
         }
-        .invoice-row:hover { transform: translateX(3px); box-shadow: var(--shadow-sm); border-color: rgba(30, 58, 138, 0.14); }
+        .invoice-row:hover {
+            transform: translateX(3px);
+            box-shadow: var(--shadow-sm);
+            border-color: rgba(30, 58, 138, 0.14);
+        }
         .invoice-row .material-symbols-outlined {
             display: grid;
             place-items: center;
-            width: 42px; height: 42px;
+            width: 42px;
+            height: 42px;
             border-radius: 999px;
             background: rgba(30, 58, 138, 0.05);
             color: var(--primary);
         }
-        .invoice-row strong { display: block; color: var(--ink); font-size: 0.9rem; font-weight: 600; }
-        .invoice-row small { display: block; color: var(--on-surface-variant); font-size: 0.8rem; margin-top: 0.1rem; }
+        .invoice-row strong {
+            display: block;
+            color: var(--ink);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .invoice-row small {
+            display: block;
+            color: var(--on-surface-variant);
+            font-size: 0.8rem;
+            margin-top: 0.1rem;
+        }
         .invoice-row em {
             color: var(--primary);
             font-family: 'Geist', 'Inter', sans-serif;
@@ -977,8 +1238,16 @@
             white-space: nowrap;
         }
 
-        .split-section { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 3.5rem; align-items: center; }
-        .commit-card { border-left: 3px solid var(--primary); padding: 1.8rem 2rem; }
+        .split-section {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 3.5rem;
+            align-items: center;
+        }
+        .commit-card {
+            border-left: 3px solid var(--primary);
+            padding: 1.8rem 2rem;
+        }
 
         .contact-card {
             max-width: 880px;
@@ -1012,7 +1281,8 @@
             gap: 1.25rem;
             margin-bottom: 2.5rem;
         }
-        .footer-meta, .footer-links {
+        .footer-meta,
+        .footer-links {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem 1.25rem;
@@ -1022,8 +1292,14 @@
             letter-spacing: 0.06em;
             text-transform: uppercase;
         }
-        .footer-links a { color: var(--primary); transition: opacity var(--transition-fast); font-weight: 600; }
-        .footer-links a:hover { opacity: 0.7; }
+        .footer-links a {
+            color: var(--primary);
+            transition: opacity var(--transition-fast);
+            font-weight: 600;
+        }
+        .footer-links a:hover {
+            opacity: 0.7;
+        }
         .legal {
             border-top: 1px solid var(--hairline);
             padding-top: 2rem;
@@ -1032,16 +1308,25 @@
             font-size: 0.84rem;
             line-height: 1.7;
         }
-        .legal strong { color: var(--on-surface); font-weight: 600; }
-        .legal a { color: var(--primary); text-decoration: underline; text-underline-offset: 3px; }
+        .legal strong {
+            color: var(--on-surface);
+            font-weight: 600;
+        }
+        .legal a {
+            color: var(--primary);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
 
         .whatsapp {
             position: fixed;
-            right: 1.5rem; bottom: 1.5rem;
+            right: 1.5rem;
+            bottom: 1.5rem;
             z-index: 60;
             display: grid;
             place-items: center;
-            width: 56px; height: 56px;
+            width: 56px;
+            height: 56px;
             border-radius: 999px;
             background: linear-gradient(135deg, #1e3a8a 0%, #172554 100%);
             box-shadow: var(--shadow-primary-lg);
@@ -1049,50 +1334,147 @@
             animation: floatIn 800ms cubic-bezier(0.22, 1, 0.36, 1) 1.2s both;
         }
         @keyframes floatIn {
-            from { opacity: 0; transform: translateY(18px) scale(0.85); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
+            from {
+                opacity: 0;
+                transform: translateY(18px) scale(0.85);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
         }
-        .whatsapp:hover { transform: scale(1.08) rotate(-4deg); box-shadow: 0 14px 44px rgba(30, 58, 138, 0.4); }
-        .whatsapp svg { width: 26px; height: 26px; fill: white; }
+        .whatsapp:hover {
+            transform: scale(1.08) rotate(-4deg);
+            box-shadow: 0 14px 44px rgba(30, 58, 138, 0.4);
+        }
+        .whatsapp svg {
+            width: 26px;
+            height: 26px;
+            fill: white;
+        }
 
-        .reveal { opacity: 0; transform: translateY(28px); transition: opacity 750ms cubic-bezier(0.22, 1, 0.36, 1), transform 750ms cubic-bezier(0.22, 1, 0.36, 1); }
-        .reveal.in-view { opacity: 1; transform: translateY(0); }
-        .slide-in-left { opacity: 0; transform: translateX(-36px); transition: opacity 800ms cubic-bezier(0.22, 1, 0.36, 1), transform 800ms cubic-bezier(0.22, 1, 0.36, 1); }
-        .slide-in-left.in-view { opacity: 1; transform: translateX(0); }
-        .scale-in { opacity: 0; transform: scale(0.96); transition: opacity 650ms ease, transform 650ms cubic-bezier(0.22, 1, 0.36, 1); }
-        .scale-in.in-view { opacity: 1; transform: scale(1); }
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 750ms cubic-bezier(0.22, 1, 0.36, 1), transform 750ms cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-36px);
+            transition: opacity 800ms cubic-bezier(0.22, 1, 0.36, 1), transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .slide-in-left.in-view {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.96);
+            transition: opacity 650ms ease, transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .scale-in.in-view {
+            opacity: 1;
+            transform: scale(1);
+        }
 
         @media (prefers-reduced-motion: no-preference) {
-            .flow-card:nth-child(1) { transition-delay: 0ms; }
-            .flow-card:nth-child(2) { transition-delay: 90ms; }
-            .flow-card:nth-child(3) { transition-delay: 180ms; }
-            .steps .card:nth-child(1) { transition-delay: 0ms; }
-            .steps .card:nth-child(2) { transition-delay: 80ms; }
-            .steps .card:nth-child(3) { transition-delay: 160ms; }
-            .steps .card:nth-child(4) { transition-delay: 240ms; }
-            .card, .button, .whatsapp { will-change: transform; }
+            .flow-card:nth-child(1) {
+                transition-delay: 0ms;
+            }
+            .flow-card:nth-child(2) {
+                transition-delay: 90ms;
+            }
+            .flow-card:nth-child(3) {
+                transition-delay: 180ms;
+            }
+            .steps .card:nth-child(1) {
+                transition-delay: 0ms;
+            }
+            .steps .card:nth-child(2) {
+                transition-delay: 80ms;
+            }
+            .steps .card:nth-child(3) {
+                transition-delay: 160ms;
+            }
+            .steps .card:nth-child(4) {
+                transition-delay: 240ms;
+            }
+            .card,
+            .button,
+            .whatsapp {
+                will-change: transform;
+            }
         }
 
         @media (max-width: 1120px) {
-            .nav-links a:not(.button) { display: none; }
-            .solutions { grid-template-columns: repeat(2, 1fr); }
-            .steps, .mini-grid, .trust-inner, .lender-grid, .testimonial-grid { grid-template-columns: repeat(2, 1fr); }
-            .pathway, .invoice-visual { grid-template-columns: 1fr; }
-            .energy-panel.feature { grid-template-columns: 1fr; }
-            .split-section { grid-template-columns: 1fr; gap: 2.5rem; }
-            .pathway { gap: 2.5rem; }
-            .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
-            .hero-visual { display: none; }
+            .nav-links a:not(.button) {
+                display: none;
+            }
+            .solutions {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .steps,
+            .mini-grid,
+            .trust-inner,
+            .lender-grid,
+            .testimonial-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .pathway,
+            .invoice-visual {
+                grid-template-columns: 1fr;
+            }
+            .energy-panel.feature {
+                grid-template-columns: 1fr;
+            }
+            .split-section {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .pathway {
+                gap: 2.5rem;
+            }
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .hero-visual {
+                display: none;
+            }
         }
         @media (max-width: 860px) {
-            :root { --section: 5rem; --section-sm: 3.5rem; --nav-height: 68px; }
-            .wrap { width: min(100% - 32px, var(--max)); }
-            .nav-inner { height: var(--nav-height); gap: 10px; }
-            .logo-lockup { gap: 8px; }
-            .mariba-mark { width: 30px; height: 30px; }
-            .wordmark { font-size: 0.9rem; }
-            .nav-links { display: none; }
-            .mobile-toggle { display: grid; }
+            :root {
+                --section: 5rem;
+                --section-sm: 3.5rem;
+                --nav-height: 68px;
+            }
+            .wrap {
+                width: min(100% - 32px, var(--max));
+            }
+            .nav-inner {
+                height: var(--nav-height);
+                gap: 10px;
+            }
+            .logo-lockup {
+                gap: 8px;
+            }
+            .mariba-mark {
+                width: 30px;
+                height: 30px;
+            }
+            .wordmark {
+                font-size: 0.9rem;
+            }
+            .nav-links {
+                display: none;
+            }
+            .mobile-toggle {
+                display: grid;
+            }
             .hero {
                 min-height: auto;
                 padding-top: 7rem;
@@ -1101,63 +1483,375 @@
             }
             .hero::before {
                 background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.94)),
-                            url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=85") center/cover;
+                    url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=85") center/cover;
             }
-            .hero-content { margin: 0 auto; width: 100%; padding: clamp(1.5rem, 5vw, 2.5rem); }
-            .hero-actions { justify-content: center; }
-            .hero-note { justify-content: center; }
-            .steps, .solutions, .mini-grid, .energy-grid, .commit-grid, .invoice-grid, .energy-panel.feature, .split-section, .promise-band ul, .invoice-row, .trust-inner, .lender-grid, .testimonial-grid { grid-template-columns: 1fr; }
-            .image-panel, .invoice-visual .image-panel { min-height: 260px; }
-            .pathway { gap: 2rem; }
-            .energy-panel, .contact-card { padding: 2rem; }
-            .promise-band { padding: 1.5rem; }
-            .promise-band ul { grid-template-columns: 1fr; }
-            .invoice-row { grid-template-columns: 42px 1fr; }
-            .invoice-row em { grid-column: 1/-1; justify-self: start; padding-left: 0; }
-            .section-head { margin-bottom: 2.5rem; }
-            .sticky-cta { display: block; }
-            .whatsapp { bottom: 5rem; }
+            .hero-content {
+                margin: 0 auto;
+                width: 100%;
+                padding: clamp(1.5rem, 5vw, 2.5rem);
+            }
+            .hero-actions {
+                justify-content: center;
+            }
+            .hero-note {
+                justify-content: center;
+            }
+            .steps,
+            .solutions,
+            .mini-grid,
+            .energy-grid,
+            .commit-grid,
+            .invoice-grid,
+            .energy-panel.feature,
+            .split-section,
+            .promise-band ul,
+            .invoice-row,
+            .trust-inner,
+            .lender-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+            .image-panel,
+            .invoice-visual .image-panel {
+                min-height: 260px;
+            }
+            .pathway {
+                gap: 2rem;
+            }
+            .energy-panel,
+            .contact-card {
+                padding: 2rem;
+            }
+            .promise-band {
+                padding: 1.5rem;
+            }
+            .promise-band ul {
+                grid-template-columns: 1fr;
+            }
+            .invoice-row {
+                grid-template-columns: 42px 1fr;
+            }
+            .invoice-row em {
+                grid-column: 1/-1;
+                justify-self: start;
+                padding-left: 0;
+            }
+            .section-head {
+                margin-bottom: 2.5rem;
+            }
+            .sticky-cta {
+                display: block;
+            }
+            .whatsapp {
+                bottom: 5rem;
+            }
         }
         @media (max-width: 560px) {
-            h1 { font-size: clamp(2rem, 9vw, 2.6rem); line-height: 1.08; }
-            .wrap { width: min(100% - 22px, var(--max)); }
-            .nav-inner { height: 62px; }
-            .wordmark { font-size: 0.8rem; letter-spacing: 0; }
-            .mariba-mark { width: 26px; height: 26px; }
-            .mobile-toggle { width: 38px; height: 38px; flex: 0 0 38px; }
-            .hero { padding-top: 6rem; }
-            .hero-content { padding: 1.2rem; }
-            .eyebrow { font-size: 0.62rem; }
-            .lead { margin: 1rem 0 1.5rem; font-size: 0.9rem; }
-            .hero-actions { align-items: stretch; flex-direction: column; }
-            .hero-actions .button { width: 100%; justify-content: center; }
-            .hero-note { display: grid; justify-content: center; gap: 0.35rem; text-align: center; }
-            .hero-note span.sep { display: none; }
-            .card { padding: 1.4rem; }
-            .showcase-copy { left: 1rem; right: 1rem; bottom: 1rem; }
-            .cal-frame { height: 480px; }
-            .section-title { font-size: clamp(1.6rem, 7vw, 2.2rem); }
-            .flow-card { grid-template-columns: 1fr; text-align: center; }
-            .flow-card span { margin: 0 auto; }
-            .section-kicker { font-size: 0.65rem; }
-            .solution-toolbar { gap: 0.4rem; }
-            .filter-button { font-size: 0.65rem; padding: 0 0.85rem; min-height: 36px; }
-            .energy-panel.feature { padding: 1.5rem; }
-            .doc-box { padding: 1.2rem; }
-            .contact-card { padding: 1.5rem; }
-            .promise-band { padding: 1.2rem; }
-            .footer { padding: 2.5rem 0 1.5rem; }
-            .whatsapp { width: 48px; height: 48px; right: 1rem; bottom: 5rem; }
-            .whatsapp svg { width: 22px; height: 22px; }
-            .trust-card { padding: 1.4rem 1rem; }
-            .trust-card .stat { font-size: 1.6rem; }
-            .testimonial-card { padding: 1.5rem; }
-            .faq-question { padding: 1rem 1.25rem; font-size: 0.9rem; }
-            .faq-item.active .faq-answer { padding: 0 1.25rem 1rem; }
+            h1 {
+                font-size: clamp(2rem, 9vw, 2.6rem);
+                line-height: 1.08;
+            }
+            .wrap {
+                width: min(100% - 22px, var(--max));
+            }
+            .nav-inner {
+                height: 62px;
+            }
+            .wordmark {
+                font-size: 0.8rem;
+                letter-spacing: 0;
+            }
+            .mariba-mark {
+                width: 26px;
+                height: 26px;
+            }
+            .mobile-toggle {
+                width: 38px;
+                height: 38px;
+                flex: 0 0 38px;
+            }
+            .hero {
+                padding-top: 6rem;
+            }
+            .hero-content {
+                padding: 1.2rem;
+            }
+            .eyebrow {
+                font-size: 0.62rem;
+            }
+            .lead {
+                margin: 1rem 0 1.5rem;
+                font-size: 0.9rem;
+            }
+            .hero-actions {
+                align-items: stretch;
+                flex-direction: column;
+            }
+            .hero-actions .button {
+                width: 100%;
+                justify-content: center;
+            }
+            .hero-note {
+                display: grid;
+                justify-content: center;
+                gap: 0.35rem;
+                text-align: center;
+            }
+            .hero-note span.sep {
+                display: none;
+            }
+            .card {
+                padding: 1.4rem;
+            }
+            .showcase-copy {
+                left: 1rem;
+                right: 1rem;
+                bottom: 1rem;
+            }
+            .cal-frame {
+                height: 480px;
+            }
+            .section-title {
+                font-size: clamp(1.6rem, 7vw, 2.2rem);
+            }
+            .flow-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .flow-card span {
+                margin: 0 auto;
+            }
+            .section-kicker {
+                font-size: 0.65rem;
+            }
+            .solution-toolbar {
+                gap: 0.4rem;
+            }
+            .filter-button {
+                font-size: 0.65rem;
+                padding: 0 0.85rem;
+                min-height: 36px;
+            }
+            .energy-panel.feature {
+                padding: 1.5rem;
+            }
+            .doc-box {
+                padding: 1.2rem;
+            }
+            .contact-card {
+                padding: 1.5rem;
+            }
+            .promise-band {
+                padding: 1.2rem;
+            }
+            .footer {
+                padding: 2.5rem 0 1.5rem;
+            }
+            .whatsapp {
+                width: 48px;
+                height: 48px;
+                right: 1rem;
+                bottom: 5rem;
+            }
+            .whatsapp svg {
+                width: 22px;
+                height: 22px;
+            }
+            .trust-card {
+                padding: 1.4rem 1rem;
+            }
+            .trust-card .stat {
+                font-size: 1.6rem;
+            }
+            .testimonial-card {
+                padding: 1.5rem;
+            }
+            .faq-question {
+                padding: 1rem 1.25rem;
+                font-size: 0.9rem;
+            }
+            .faq-item.active .faq-answer {
+                padding: 0 1.25rem 1rem;
+            }
         }
         @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.001ms !important; }
-            .reveal, .slide-in-left, .scale-in, .hero-content { opacity: 1; transform: none; }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: 0.001ms !important;
+            }
+            .reveal,
+            .slide-in-left,
+            .scale-in,
+            .hero-content {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        /* ===== Logistics & Commodities Section Styles ===== */
+        .logistics-section {
+            background: linear-gradient(180deg, #ffffff 0%, #faf9f6 100%);
+        }
+        .logistics-section .section-kicker {
+            color: var(--primary);
+        }
+        .logistics-section .section-title {
+            color: var(--ink);
+        }
+        .logistics-feature-panel {
+            display: grid;
+            grid-template-columns: 1fr 0.85fr;
+            gap: 2.5rem;
+            align-items: stretch;
+            margin-bottom: 2.5rem;
+            border-radius: var(--radius);
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid rgba(30, 58, 138, 0.08);
+            box-shadow: var(--shadow-lg), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+            overflow: hidden;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            position: relative;
+            isolation: isolate;
+        }
+        .logistics-feature-panel::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background: linear-gradient(105deg, rgba(255, 255, 255, 0.97) 0%, rgba(255, 255, 255, 0.88) 38%, rgba(255, 255, 255, 0.3) 100%),
+                url("https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1800&q=80") center right/cover;
+        }
+        .logistics-feature-content {
+            padding: clamp(1.8rem, 3vw, 3rem);
+        }
+        .logistics-feature-content h3 {
+            font-size: clamp(1.3rem, 2vw, 1.8rem);
+            margin-bottom: 0.75rem;
+            color: var(--ink);
+        }
+        .logistics-feature-content p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--on-surface-variant);
+            margin-bottom: 1.25rem;
+        }
+        .logistics-feature-content .button {
+            margin-top: 0.5rem;
+        }
+        .logistics-doc-box {
+            padding: clamp(1.5rem, 2.5vw, 2.2rem);
+            border-left: 1px solid rgba(30, 58, 138, 0.06);
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .logistics-doc-box h4 {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            color: var(--ink);
+            font-weight: 700;
+        }
+        .logistics-doc-box .plain-list li {
+            font-size: 0.82rem;
+            color: var(--on-surface-variant);
+        }
+        .logistics-tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1.25rem 0 1rem;
+        }
+        .logistics-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 0.45rem 1rem;
+            border-radius: 999px;
+            background: rgba(30, 58, 138, 0.06);
+            border: 1px solid rgba(30, 58, 138, 0.1);
+            color: var(--primary);
+            font-family: 'Geist', 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+        .logistics-tag .material-symbols-outlined {
+            font-size: 0.85rem;
+        }
+        .network-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 2.5rem;
+            padding: 2rem 2.5rem;
+            border-radius: var(--radius);
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.04) 0%, rgba(30, 58, 138, 0.01) 100%);
+            border: 1px solid rgba(30, 58, 138, 0.07);
+        }
+        .network-strip-item {
+            text-align: center;
+            padding: 1.2rem 1rem;
+            border-radius: var(--radius-sm);
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(30, 58, 138, 0.06);
+            transition: all var(--transition-fast);
+        }
+        .network-strip-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-sm);
+            border-color: rgba(30, 58, 138, 0.14);
+        }
+        .network-strip-item .material-symbols-outlined {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .network-strip-item strong {
+            display: block;
+            font-family: 'Geist', 'Inter', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--ink);
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            margin-bottom: 0.25rem;
+        }
+        .network-strip-item small {
+            font-size: 0.75rem;
+            color: var(--on-surface-muted);
+            line-height: 1.4;
+            display: block;
+        }
+        @media (max-width: 1120px) {
+            .logistics-feature-panel {
+                grid-template-columns: 1fr;
+            }
+            .logistics-doc-box {
+                border-left: none;
+                border-top: 1px solid rgba(30, 58, 138, 0.06);
+            }
+            .network-strip {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 560px) {
+            .network-strip {
+                grid-template-columns: 1fr;
+                padding: 1.2rem;
+            }
+            .logistics-feature-content {
+                padding: 1.2rem;
+            }
+            .logistics-doc-box {
+                padding: 1.2rem;
+            }
         }
     </style>
 </head>
@@ -1181,6 +1875,7 @@
                 <a href="#network">Our Network</a>
                 <a href="#funding">Growth Capital</a>
                 <a href="#invoice">Invoice Liquidity</a>
+                <a href="#logistics">Logistics &amp; Commodities</a>
                 <a href="#energy">Energy &amp; Solar</a>
                 <a href="#how">How It Works</a>
                 <a class="button" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Apply Now</a>
@@ -1193,6 +1888,7 @@
             <a href="#network">Our Network</a>
             <a href="#funding">Growth Capital</a>
             <a href="#invoice">Invoice Liquidity</a>
+            <a href="#logistics">Logistics &amp; Commodities</a>
             <a href="#energy">Energy &amp; Solar</a>
             <a href="#how">How It Works</a>
             <a class="button" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Apply Now</a>
@@ -1368,6 +2064,7 @@
                     <button class="filter-button is-active" type="button" data-filter="all">All</button>
                     <button class="filter-button" type="button" data-filter="working-capital">Working Capital</button>
                     <button class="filter-button" type="button" data-filter="asset">Asset Finance</button>
+                    <button class="filter-button" type="button" data-filter="logistics">Logistics &amp; Commodities</button>
                     <button class="filter-button" type="button" data-filter="energy">Energy &amp; Solar</button>
                 </div>
                 <div class="grid solutions">
@@ -1458,6 +2155,51 @@
                             <li><span class="material-symbols-outlined">check</span> Long-term ROI</li>
                         </ul>
                         <a class="text-link" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Submit C&amp;I Solar <span class="material-symbols-outlined">arrow_forward</span></a>
+                    </article>
+                    <!-- NEW: Logistics & Commodities cards -->
+                    <article class="card solution-card reveal" data-category="logistics">
+                        <span class="icon-box"><span class="material-symbols-outlined">local_shipping</span></span>
+                        <h3>COD Load Funding</h3>
+                        <p>Working capital for cash-on-delivery loads. Fuel advances, load confirmations, and supplier payments facilitated through our partner network.</p>
+                        <ul>
+                            <li><span class="material-symbols-outlined">check</span> Fuel advances for COD routes</li>
+                            <li><span class="material-symbols-outlined">check</span> Load confirmation support</li>
+                            <li><span class="material-symbols-outlined">check</span> Repayment from delivery invoice</li>
+                        </ul>
+                        <a class="text-link" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Submit COD Load <span class="material-symbols-outlined">arrow_forward</span></a>
+                    </article>
+                    <article class="card solution-card reveal" data-category="logistics">
+                        <span class="icon-box"><span class="material-symbols-outlined">oil_barrel</span></span>
+                        <h3>Fuel Trade Finance</h3>
+                        <p>Finance for bulk fuel procurement, storage, and depot-to-depot transactions. Advances against verified fuel supply agreements.</p>
+                        <ul>
+                            <li><span class="material-symbols-outlined">check</span> Bulk fuel procurement advances</li>
+                            <li><span class="material-symbols-outlined">check</span> Storage &amp; depot financing</li>
+                            <li><span class="material-symbols-outlined">check</span> Fuel station working capital</li>
+                        </ul>
+                        <a class="text-link" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Submit Fuel Trade <span class="material-symbols-outlined">arrow_forward</span></a>
+                    </article>
+                    <article class="card solution-card reveal" data-category="logistics">
+                        <span class="icon-box"><span class="material-symbols-outlined">agriculture</span></span>
+                        <h3>Agricultural Commodity Finance</h3>
+                        <p>Seasonal crop finance, input financing for seed and fertiliser, and harvest advances for grain, maize, citrus, and livestock.</p>
+                        <ul>
+                            <li><span class="material-symbols-outlined">check</span> Seasonal crop &amp; input finance</li>
+                            <li><span class="material-symbols-outlined">check</span> Harvest advances &amp; silo receipts</li>
+                            <li><span class="material-symbols-outlined">check</span> Livestock &amp; dairy working capital</li>
+                        </ul>
+                        <a class="text-link" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Submit Agri Finance <span class="material-symbols-outlined">arrow_forward</span></a>
+                    </article>
+                    <article class="card solution-card reveal" data-category="logistics">
+                        <span class="icon-box"><span class="material-symbols-outlined">diamond</span></span>
+                        <h3>Ore &amp; Mineral Trade Finance</h3>
+                        <p>Trade finance for chrome, manganese, coal, iron ore, and other minerals. Assay-backed financing and logistics funding.</p>
+                        <ul>
+                            <li><span class="material-symbols-outlined">check</span> Assay-backed export advances</li>
+                            <li><span class="material-symbols-outlined">check</span> Mine-to-port logistics funding</li>
+                            <li><span class="material-symbols-outlined">check</span> Ore trade facilitation</li>
+                        </ul>
+                        <a class="text-link" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Submit Ore Trade <span class="material-symbols-outlined">arrow_forward</span></a>
                     </article>
                 </div>
                 <div class="glass-panel promise-band reveal">
@@ -1568,6 +2310,136 @@
                 </div>
                 <div class="center-actions" style="margin-top:2.5rem;">
                     <a class="button" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Apply for Invoice Liquidity</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== UPDATED: Logistics & Commodities Section (cross-border removed) ===== -->
+        <section class="logistics-section" id="logistics">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <p class="section-kicker">Logistics &amp; Commodities</p>
+                    <h2 class="section-title">COD Loads. Trade Finance. Commodity Facilitation.</h2>
+                    <p class="section-copy">Mariba Media facilitates cash-on-delivery loads, structured trade transactions, and commodity finance for fuel, agriculture and ores. Through our internal network of vetted transporters and approved suppliers, we connect you to the right mandate holder for your logistical and trade finance requirements.</p>
+                </div>
+
+                <!-- Feature Panel -->
+                <article class="logistics-feature-panel reveal">
+                    <div class="logistics-feature-content">
+                        <h3>One Facilitation Layer for Your Entire Logistics &amp; Trade Cycle</h3>
+                        <p>From fuel advances for COD loads to ore transactions, we operate as a pure facilitator — connecting your requirements to the capital partners and supply-chain partners who hold the relevant exclusive mandates. No brokerage, no markup, no interference. Just direct access to the financing, transport and supplier networks you need to move goods and close transactions.</p>
+                        <p>Whether you're a transporter needing a fuel advance, a fuel distributor seeking trade finance, an agricultural cooperative looking for seasonal crop funding, or a mining operation requiring ore trade facilitation — your submission is connected unchanged to the partner who specialises in your commodity or logistics type.</p>
+                        <div class="logistics-tag-row">
+                            <span class="logistics-tag"><span class="material-symbols-outlined">local_shipping</span> COD Loads</span>
+                            <span class="logistics-tag"><span class="material-symbols-outlined">currency_exchange</span> Trade Finance</span>
+                            <span class="logistics-tag"><span class="material-symbols-outlined">oil_barrel</span> Fuel</span>
+                            <span class="logistics-tag"><span class="material-symbols-outlined">agriculture</span> Agriculture</span>
+                            <span class="logistics-tag"><span class="material-symbols-outlined">diamond</span> Ores &amp; Minerals</span>
+                        </div>
+                        <p><a class="button" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Submit a Logistics Enquiry</a></p>
+                    </div>
+                    <div class="logistics-doc-box">
+                        <h4>What You'll Need to Provide</h4>
+                        <ul class="plain-list">
+                            <li><span class="material-symbols-outlined">description</span> Load confirmation / booking reference (COD loads)</li>
+                            <li><span class="material-symbols-outlined">description</span> Fuel volume, delivery point, and depot details</li>
+                            <li><span class="material-symbols-outlined">description</span> Agricultural commodity spec (crop, tonnage, season)</li>
+                            <li><span class="material-symbols-outlined">description</span> Ore assay certificates and export permits</li>
+                            <li><span class="material-symbols-outlined">description</span> Transporter compliance (operating permits, insurance)</li>
+                            <li><span class="material-symbols-outlined">description</span> Supplier/buyer agreements and commercial terms</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Trade Finance Grid (3 cards) -->
+                <div class="grid invoice-grid" style="margin-bottom:1.25rem;">
+                    <article class="card mini-card reveal">
+                        <span class="icon-box"><span class="material-symbols-outlined">oil_barrel</span></span>
+                        <h3>Fuel Trade Finance</h3>
+                        <p>Working capital for fuel procurement, bulk purchases, storage facility financing, and depot-to-depot transactions. Partners in our network specialise in diesel, petrol, jet fuel, and LPG — offering advances against verified fuel supply agreements, storage receipts, or delivery confirmations.</p>
+                        <ul class="plain-list">
+                            <li><span class="material-symbols-outlined">check</span> Bulk fuel procurement advances</li>
+                            <li><span class="material-symbols-outlined">check</span> Storage &amp; depot financing</li>
+                            <li><span class="material-symbols-outlined">check</span> Fuel station working capital</li>
+                        </ul>
+                    </article>
+                    <article class="card mini-card reveal">
+                        <span class="icon-box"><span class="material-symbols-outlined">agriculture</span></span>
+                        <h3>Agricultural Commodity Finance</h3>
+                        <p>Seasonal crop finance, input financing for seed, fertiliser and equipment, and harvest advances for grain, maize, citrus, and livestock. Partners with agricultural mandates review your production history, offtake agreements, and silo receipts directly.</p>
+                        <ul class="plain-list">
+                            <li><span class="material-symbols-outlined">check</span> Seasonal crop &amp; input finance</li>
+                            <li><span class="material-symbols-outlined">check</span> Harvest advances &amp; silo receipts</li>
+                            <li><span class="material-symbols-outlined">check</span> Livestock &amp; dairy working capital</li>
+                        </ul>
+                    </article>
+                    <article class="card mini-card reveal">
+                        <span class="icon-box"><span class="material-symbols-outlined">diamond</span></span>
+                        <h3>Ore &amp; Mineral Trade Finance</h3>
+                        <p>Facilitation of trade transactions for chrome, manganese, coal, iron ore, and other minerals. Partners provide assay-backed financing, export pre-shipment advances, and logistics funding for mine-to-port movements. Assay certificates and export permits are required.</p>
+                        <ul class="plain-list">
+                            <li><span class="material-symbols-outlined">check</span> Assay-backed export advances</li>
+                            <li><span class="material-symbols-outlined">check</span> Mine-to-port logistics funding</li>
+                            <li><span class="material-symbols-outlined">check</span> Ore trade facilitation</li>
+                        </ul>
+                    </article>
+                </div>
+
+                <!-- COD Loads & Transactions Grid (2 cards) -->
+                <div class="grid energy-grid">
+                    <article class="card energy-panel reveal">
+                        <span class="icon-box"><span class="material-symbols-outlined">local_shipping</span></span>
+                        <h3>COD Load Facilitation</h3>
+                        <p>We facilitate cash-on-delivery loads across South Africa's major routes and regions. Our internal network of vetted transporters and fuel suppliers enables us to connect transporters with load providers, secure fuel advances for COD routes, and support route planning. The capital partner handles the financial side; the transporter keeps operational control.</p>
+                        <ul class="plain-list">
+                            <li><span class="material-symbols-outlined">check</span> Verified transporter network</li>
+                            <li><span class="material-symbols-outlined">check</span> Fuel advances for COD routes</li>
+                            <li><span class="material-symbols-outlined">check</span> Load confirmation support</li>
+                            <li><span class="material-symbols-outlined">check</span> Compliance checks</li>
+                        </ul>
+                        <p style="margin-top:1.25rem;"><a class="text-link" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Submit COD Load Enquiry <span class="material-symbols-outlined">arrow_forward</span></a></p>
+                    </article>
+                    <article class="card energy-panel reveal">
+                        <span class="icon-box"><span class="material-symbols-outlined">currency_exchange</span></span>
+                        <h3>Secure Trade Transactions</h3>
+                        <p>Structured facilitation for commodity transactions — fuel, agricultural produce, and ores. We connect your transaction documents to the partner with the relevant trade finance mandate. From letters of intent to final delivery, the partner engages directly with you on terms, pricing, and verification. No intermediaries, no markup.</p>
+                        <ul class="plain-list">
+                            <li><span class="material-symbols-outlined">check</span> Transaction structuring support</li>
+                            <li><span class="material-symbols-outlined">check</span> Partner verification &amp; vetting</li>
+                            <li><span class="material-symbols-outlined">check</span> Document exchange facilitation</li>
+                            <li><span class="material-symbols-outlined">check</span> End-to-end trade cycle connection</li>
+                        </ul>
+                        <p style="margin-top:1.25rem;"><a class="text-link" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Submit Transaction Enquiry <span class="material-symbols-outlined">arrow_forward</span></a></p>
+                    </article>
+                </div>
+
+                <!-- Internal Network Strip -->
+                <div class="network-strip reveal">
+                    <div class="network-strip-item">
+                        <span class="material-symbols-outlined">local_shipping</span>
+                        <strong>Transporters</strong>
+                        <small>Vetted national &amp; local fleets</small>
+                    </div>
+                    <div class="network-strip-item">
+                        <span class="material-symbols-outlined">oil_barrel</span>
+                        <strong>Fuel Suppliers</strong>
+                        <small>Depots, bulk &amp; retail fuel partners</small>
+                    </div>
+                    <div class="network-strip-item">
+                        <span class="material-symbols-outlined">agriculture</span>
+                        <strong>Agri Partners</strong>
+                        <small>Cooperatives, silo operators, input suppliers</small>
+                    </div>
+                    <div class="network-strip-item">
+                        <span class="material-symbols-outlined">diamond</span>
+                        <strong>Ore Traders</strong>
+                        <small>Mining operations &amp; mineral exporters</small>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="center-actions" style="margin-top:2.5rem;">
+                    <a class="button" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Submit Your Logistics &amp; Commodity Enquiry</a>
                 </div>
             </div>
         </section>
@@ -1774,7 +2646,7 @@
                     <span>Reg: 2024/132788/07</span>
                 </div>
                 <div class="footer-links">
-                    <span>PO Funding</span><span>Term Loans</span><span>IPP &amp; Solar</span><span>Invoice Liquidity</span>
+                    <span>PO Funding</span><span>Term Loans</span><span>IPP &amp; Solar</span><span>Invoice Liquidity</span><span>Logistics &amp; Commodities</span>
                     <a href="https://docs.google.com/document/d/e/2PACX-1vSKThzvKajjN-efGt5NTGDiQouH8I0nHkGlIncQ1JQg9nEYhFVn_vxGD4iwAUbOVoZo4vsv5eD1Y4tp/pub" target="_blank" rel="noopener">Privacy Policy</a>
                     <a href="https://docs.google.com/document/d/e/2PACX-1vS7PuOW7aEjVgPTcC6kowJds7K29rO9MRtCS_BSDP-mxT4gyObQLJ5reFxNMpw3wTOQ5DCpRwdeTxOH/pub" target="_blank" rel="noopener">Complaints Framework</a>
                     <a href="https://docs.google.com/document/d/e/2PACX-1vR2XEfLanhT5Lpww8Q1rWFqgzk-u-gPbLCt_ASbB1Ku5mz4Ku2z6VS7oPQlJ7C1HFYNxqtR8MjdMSPZ/pub" target="_blank" rel="noopener">Website Terms</a>
