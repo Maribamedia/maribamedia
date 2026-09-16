@@ -299,13 +299,16 @@ img { max-width: 100%; height: auto; display: block; }
 .mobile-panel a:hover { background: var(--surface-2); color: var(--navy); }
 .mobile-panel .button { width: 100%; margin-top: 8px; justify-content: center; }
 
-/* ---------- Hero ---------- */
+/* =========================================================
+   HERO — FULLY CENTERED
+   ========================================================= */
 .hero {
   position: relative;
   min-height: 92vh;
   display: flex;
-  align-items: flex-end;
-  padding: 160px 0 72px;
+  align-items: center;
+  justify-content: center;
+  padding: 160px 0 96px;
   overflow: hidden;
   isolation: isolate;
   background: var(--navy-deep);
@@ -329,39 +332,45 @@ img { max-width: 100%; height: auto; display: block; }
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(180deg, rgba(7,20,38,0.72) 0%, rgba(7,20,38,0.55) 40%, rgba(7,20,38,0.88) 100%),
-    linear-gradient(270deg, rgba(7,20,38,0.9) 0%, rgba(7,20,38,0.4) 55%, rgba(7,20,38,0.2) 100%);
-}
-.hero-grid {
-  display: grid;
-  grid-template-columns: 0.85fr 1.35fr;
-  gap: 60px;
-  align-items: flex-end;
-  width: 100%;
+    linear-gradient(180deg, rgba(7,20,38,0.75) 0%, rgba(7,20,38,0.55) 40%, rgba(7,20,38,0.9) 100%),
+    radial-gradient(circle at 50% 40%, rgba(7,20,38,0.35), rgba(7,20,38,0.75));
 }
 
-/* Right-aligned hero content */
-.hero-content {
-  max-width: 680px;
-  margin-left: auto;
-  text-align: right;
-  color: #fff;
+.hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  gap: 56px;
 }
+
+.hero-content {
+  max-width: 820px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .hero-eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 24px;
-  padding: 7px 8px 7px 14px;
+  margin-bottom: 28px;
+  padding: 8px 18px 8px 10px;
   border-radius: 999px;
   background: rgba(255,255,255,0.08);
   border: 1px solid rgba(255,255,255,0.15);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  color: rgba(255,255,255,0.9);
+  color: rgba(255,255,255,0.92);
   font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   animation: fadeUp 800ms 100ms var(--ease) both;
 }
@@ -377,12 +386,15 @@ img { max-width: 100%; height: auto; display: block; }
   0%, 100% { box-shadow: 0 0 0 4px rgba(74,222,128,0.2); }
   50% { box-shadow: 0 0 0 7px rgba(74,222,128,0.08); }
 }
+
 .hero h1 {
   color: #fff;
-  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-size: clamp(2.2rem, 5.5vw, 4rem);
   line-height: 1.05;
   font-weight: 800;
   letter-spacing: -0.035em;
+  max-width: 900px;
+  margin: 0 auto;
   animation: fadeUp 800ms 200ms var(--ease) both;
 }
 .hero h1 em {
@@ -392,61 +404,73 @@ img { max-width: 100%; height: auto; display: block; }
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .hero-lead {
-  margin: 24px 0 36px auto;
-  max-width: 580px;
+  margin: 28px auto 40px;
+  max-width: 680px;
   color: rgba(255,255,255,0.78);
-  font-size: clamp(0.98rem, 1.3vw, 1.1rem);
+  font-size: clamp(1rem, 1.3vw, 1.12rem);
   line-height: 1.7;
   font-weight: 400;
   animation: fadeUp 800ms 300ms var(--ease) both;
 }
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
   animation: fadeUp 800ms 400ms var(--ease) both;
 }
+.hero-actions .button {
+  min-height: 50px;
+  padding: 0 1.8rem;
+  font-size: 0.88rem;
+}
+
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Hero stats — now on the LEFT */
+/* ---------- Hero stats — 4-across, centered ---------- */
 .hero-stats {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1px;
-  background: rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.1);
   border: 1px solid rgba(255,255,255,0.12);
   border-radius: var(--radius);
   overflow: hidden;
+  max-width: 920px;
+  width: 100%;
   animation: fadeUp 800ms 500ms var(--ease) both;
-  backdrop-filter: blur(8px);
-  align-self: flex-end;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 .hero-stat {
-  padding: 24px 22px;
-  background: rgba(11,31,58,0.55);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  padding: 26px 22px;
+  background: rgba(11,31,58,0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   transition: background var(--t);
+  text-align: center;
 }
 .hero-stat:hover { background: rgba(37,99,235,0.35); }
 .hero-stat .num {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 1.75rem;
+  font-size: 1.9rem;
   font-weight: 800;
   color: #fff;
   line-height: 1;
   letter-spacing: -0.03em;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 .hero-stat .lbl {
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   font-weight: 500;
-  color: rgba(255,255,255,0.65);
+  color: rgba(255,255,255,0.62);
   letter-spacing: 0.02em;
   line-height: 1.35;
 }
@@ -1128,25 +1152,6 @@ section.tight { padding: 80px 0; }
 @media (max-width: 1080px) {
   .nav-links a:not(.button) { display: none; }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
-  .hero-grid { grid-template-columns: 1fr; gap: 40px; align-items: flex-start; }
-  .hero-content {
-    order: 1;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 720px;
-  }
-  .hero-lead {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .hero-actions { justify-content: center; }
-  .hero-stats {
-    order: 2;
-    max-width: 520px;
-    margin: 0 auto;
-    align-self: center;
-  }
   .steps { grid-template-columns: repeat(2, 1fr); }
   .transporter-card { grid-template-columns: 1fr; }
   .transporter-img { min-height: 320px; }
@@ -1168,9 +1173,10 @@ section.tight { padding: 80px 0; }
   section.tight { padding: 56px 0; }
   .section-head { margin-bottom: 40px; }
 
-  .hero { min-height: auto; padding: 120px 0 56px; }
-  .hero-grid { grid-template-columns: 1fr; }
-  .hero-stats { grid-template-columns: repeat(2, 1fr); }
+  .hero { min-height: auto; padding: 120px 0 64px; }
+  .hero-inner { gap: 40px; }
+  .hero h1 { font-size: clamp(2rem, 7vw, 2.8rem); }
+  .hero-lead { font-size: 0.98rem; margin: 24px auto 32px; }
 
   .grid-3, .grid-2 { grid-template-columns: 1fr; }
   .steps { grid-template-columns: 1fr; }
@@ -1192,14 +1198,15 @@ section.tight { padding: 80px 0; }
    ========================================================= */
 @media (max-width: 560px) {
   .wrap { width: min(100% - 24px, var(--max)); }
-  .hero { padding: 104px 0 48px; }
-  .hero h1 { font-size: clamp(1.85rem, 8.5vw, 2.5rem); }
+  .hero { padding: 108px 0 56px; }
+  .hero-inner { gap: 32px; }
+  .hero h1 { font-size: clamp(1.85rem, 8.5vw, 2.4rem); }
   .hero-lead { font-size: 0.92rem; margin: 20px auto 28px; }
-  .hero-actions { flex-direction: column; align-items: stretch; justify-content: center; }
-  .hero-actions .button { width: 100%; }
-  .hero-stats { grid-template-columns: repeat(2, 1fr); max-width: 100%; }
-  .hero-stat { padding: 18px 16px; }
-  .hero-stat .num { font-size: 1.4rem; }
+  .hero-actions { flex-direction: column; align-items: stretch; width: 100%; max-width: 320px; margin: 0 auto; }
+  .hero-actions .button { width: 100%; min-height: 46px; }
+  .hero-stats { grid-template-columns: repeat(2, 1fr); }
+  .hero-stat { padding: 18px 14px; }
+  .hero-stat .num { font-size: 1.45rem; }
   .hero-stat .lbl { font-size: 0.68rem; }
 
   .section-title { font-size: clamp(1.5rem, 7vw, 2rem); }
@@ -1298,48 +1305,51 @@ section.tight { padding: 80px 0; }
 
 <main id="top">
 
-  <!-- HERO — stats left, content right-aligned -->
+  <!-- HERO — fully centered -->
   <header class="hero">
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="hero-overlay" aria-hidden="true"></div>
-    <div class="wrap hero-grid">
 
-      <!-- Stats LEFT -->
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <div class="num">12</div>
-          <div class="lbl">Specialist partner types</div>
+    <div class="wrap">
+      <div class="hero-inner">
+
+        <!-- Centered content block -->
+        <div class="hero-content">
+          <span class="hero-eyebrow">
+            <span class="dot"></span>
+            Bespoke Aggregator Network
+          </span>
+          <h1>The right specialist for every <em>funding requirement.</em></h1>
+          <p class="hero-lead">
+            Mariba Media connects South African businesses to a vetted network of specialist turnkey funding partners — from fully funded solar and borehole water to IPP project finance, bulk diesel and working capital. One enquiry. The right partner. No upfront cost.
+          </p>
+          <div class="hero-actions">
+            <a class="button light" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Submit Your Enquiry</a>
+            <a class="button ghost-light" href="#how">How It Works</a>
+          </div>
         </div>
-        <div class="hero-stat">
-          <div class="num">R100M+</div>
-          <div class="lbl">Maximum business finance</div>
+
+        <!-- Centered stats row -->
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="num">12</div>
+            <div class="lbl">Specialist partner types</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num">R100M+</div>
+            <div class="lbl">Maximum business finance</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num">70%</div>
+            <div class="lbl">Solar cost savings</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num">30-day</div>
+            <div class="lbl">Diesel credit terms</div>
+          </div>
         </div>
-        <div class="hero-stat">
-          <div class="num">70%</div>
-          <div class="lbl">Solar cost savings</div>
-        </div>
-        <div class="hero-stat">
-          <div class="num">30-day</div>
-          <div class="lbl">Diesel credit terms</div>
-        </div>
+
       </div>
-
-      <!-- Content RIGHT (aligned to header + footer edge) -->
-      <div class="hero-content">
-        <span class="hero-eyebrow">
-          <span class="dot"></span>
-          Bespoke Aggregator Network
-        </span>
-        <h1>The right specialist for every <em>funding requirement.</em></h1>
-        <p class="hero-lead">
-          Mariba Media connects South African businesses to a vetted network of specialist turnkey funding partners — from fully funded solar and borehole water to IPP project finance, bulk diesel and working capital. One enquiry. The right partner. No upfront cost.
-        </p>
-        <div class="hero-actions">
-          <a class="button light" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Submit Your Enquiry</a>
-          <a class="button ghost-light" href="#how">How It Works</a>
-        </div>
-      </div>
-
     </div>
   </header>
 
