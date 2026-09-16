@@ -24,6 +24,9 @@
   --blue-bright: #3B82F6;
   --blue-soft: #EFF6FF;
   --blue-50: #F8FAFF;
+  --green: #16A34A;
+  --green-bright: #4ADE80;
+  --green-soft: #DCFCE7;
 
   --surface: #FFFFFF;
   --surface-1: #FAFBFC;
@@ -112,7 +115,6 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--navy);
   white-space: nowrap;
 }
-.wordmark.light { color: #fff; }
 
 /* ---------- Scroll Progress ---------- */
 .scroll-progress {
@@ -360,7 +362,7 @@ img { max-width: 100%; height: auto; display: block; }
   width: 6px;
   height: 6px;
   border-radius: 999px;
-  background: #4ADE80;
+  background: var(--green-bright);
   box-shadow: 0 0 0 4px rgba(74,222,128,0.2);
   animation: pulse 2s ease-in-out infinite;
 }
@@ -859,7 +861,7 @@ section.tight { padding: 80px 0; }
   line-height: 1.6;
 }
 
-/* ---------- TRANSPORTER CARD (NEW) ---------- */
+/* ---------- TRANSPORTER CARD ---------- */
 .transporter-section {
   margin-top: 64px;
 }
@@ -961,7 +963,7 @@ section.tight { padding: 80px 0; }
 }
 .transporter-body h3 em {
   font-style: normal;
-  color: #4ADE80;
+  color: var(--green-bright);
 }
 .transporter-body > p {
   color: rgba(255,255,255,0.72);
@@ -997,7 +999,7 @@ section.tight { padding: 80px 0; }
   height: 36px;
   border-radius: 10px;
   background: rgba(74,222,128,0.12);
-  color: #4ADE80;
+  color: var(--green-bright);
   flex-shrink: 0;
 }
 .perk-icon .material-symbols-outlined { font-size: 19px; }
@@ -1111,7 +1113,9 @@ section.tight { padding: 80px 0; }
 }
 .reveal.in-view { opacity: 1; transform: translateY(0); }
 
-/* ---------- Responsive ---------- */
+/* =========================================================
+   RESPONSIVE — TABLET LANDSCAPE / SMALL DESKTOP
+   ========================================================= */
 @media (max-width: 1080px) {
   .nav-links a:not(.button) { display: none; }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
@@ -1119,9 +1123,13 @@ section.tight { padding: 80px 0; }
   .hero-stats { max-width: 480px; }
   .steps { grid-template-columns: repeat(2, 1fr); }
   .transporter-card { grid-template-columns: 1fr; }
-  .transporter-img { min-height: 300px; }
+  .transporter-img { min-height: 320px; }
+  .transporter-body { padding: 40px 36px; }
 }
 
+/* =========================================================
+   RESPONSIVE — TABLET PORTRAIT
+   ========================================================= */
 @media (max-width: 860px) {
   :root { --nav-h: 64px; }
   .wrap { width: min(100% - 32px, var(--max)); }
@@ -1153,6 +1161,9 @@ section.tight { padding: 80px 0; }
   .footer { padding-bottom: 90px; }
 }
 
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
 @media (max-width: 560px) {
   .wrap { width: min(100% - 24px, var(--max)); }
   .hero { padding: 104px 0 48px; }
@@ -1188,6 +1199,9 @@ section.tight { padding: 80px 0; }
   .footer { padding: 48px 0 24px; }
 }
 
+/* =========================================================
+   RESPONSIVE — SMALL MOBILE
+   ========================================================= */
 @media (max-width: 380px) {
   .hero-stat .num { font-size: 1.25rem; }
   .industries { grid-template-columns: 1fr; }
@@ -1234,6 +1248,7 @@ section.tight { padding: 80px 0; }
       <a href="#water">Water</a>
       <a href="#ipp">IPP Funding</a>
       <a href="#diesel">Diesel</a>
+      <a href="#transporters">Transporters</a>
       <a href="#finance">Business Finance</a>
       <a href="#how">Process</a>
       <a class="button" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Apply Now</a>
@@ -1315,7 +1330,7 @@ section.tight { padding: 80px 0; }
 
       <div class="grid grid-3" id="solarGrid">
         <article class="card solution-card reveal" data-category="commercial">
-          <img class="card-img" src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&w=1200&q=80" alt="Commercial rooftop solar installation" loading="lazy" />
+          <img class="card-img" src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&w=1200&q=80" alt="Commercial rooftop solar installation on a factory building" loading="lazy" />
           <div class="card-body">
             <span class="card-icon"><span class="material-symbols-outlined">factory</span></span>
             <h3>Commercial &amp; Industrial Solar</h3>
@@ -1330,7 +1345,7 @@ section.tight { padding: 80px 0; }
         </article>
 
         <article class="card solution-card reveal" data-category="commercial">
-          <img class="card-img" src="https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&w=1200&q=80" alt="Sectional title residential solar" loading="lazy" />
+          <img class="card-img" src="https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&w=1200&q=80" alt="Residential solar panels on a sectional title roof" loading="lazy" />
           <div class="card-body">
             <span class="card-icon"><span class="material-symbols-outlined">home_work</span></span>
             <h3>Sectional Title Solar</h3>
@@ -1345,7 +1360,7 @@ section.tight { padding: 80px 0; }
         </article>
 
         <article class="card solution-card reveal" data-category="agricultural">
-          <img class="card-img" src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1200&q=80" alt="Agricultural solar installation on a farm" loading="lazy" />
+          <img class="card-img" src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1200&q=80" alt="Agricultural solar installation powering a farm" loading="lazy" />
           <div class="card-body">
             <span class="card-icon"><span class="material-symbols-outlined">agriculture</span></span>
             <h3>Agricultural Solar</h3>
@@ -1360,7 +1375,7 @@ section.tight { padding: 80px 0; }
         </article>
 
         <article class="card solution-card reveal" data-category="financing">
-          <img class="card-img" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80" alt="Solar portfolio refinancing meeting" loading="lazy" />
+          <img class="card-img" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80" alt="Business team reviewing solar portfolio refinancing documents" loading="lazy" />
           <div class="card-body">
             <span class="card-icon"><span class="material-symbols-outlined">account_balance</span></span>
             <h3>Solar Portfolio Refinancing</h3>
@@ -1375,7 +1390,7 @@ section.tight { padding: 80px 0; }
         </article>
 
         <article class="card solution-card reveal" data-category="financing">
-          <img class="card-img" src="https://images.unsplash.com/photo-1545209463-e2825498edbf?auto=format&fit=crop&w=1200&q=80" alt="Rent-to-own solar panels installed on a residential roof" loading="lazy" />
+          <img class="card-img" src="https://images.unsplash.com/photo-1545209463-e2825498edbf?auto=format&fit=crop&w=1200&q=80" alt="Rent-to-own solar panels installed on a home roof" loading="lazy" />
           <div class="card-body">
             <span class="card-icon"><span class="material-symbols-outlined">payments</span></span>
             <h3>Rent-to-Own Solar</h3>
@@ -1390,7 +1405,7 @@ section.tight { padding: 80px 0; }
         </article>
 
         <article class="card solution-card reveal" data-category="financing">
-          <img class="card-img" src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1200&q=80" alt="Power purchase agreement solar farm" loading="lazy" />
+          <img class="card-img" src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1200&q=80" alt="Large scale solar farm under a power purchase agreement" loading="lazy" />
           <div class="card-body">
             <span class="card-icon"><span class="material-symbols-outlined">bolt</span></span>
             <h3>Power Purchase Agreements (PPA)</h3>
@@ -1417,7 +1432,7 @@ section.tight { padding: 80px 0; }
       </div>
       <div class="grid grid-2">
         <div class="card reveal">
-          <img class="card-img" src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=80" alt="Borehole water infrastructure and extraction equipment" loading="lazy" />
+          <img class="card-img" src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=1200&q=80" alt="Water treatment and filtration infrastructure for borehole water solutions" loading="lazy" />
           <div class="card-body">
             <span class="card-icon"><span class="material-symbols-outlined">water_drop</span></span>
             <h3>Borehole Water Purchase Agreements</h3>
@@ -1432,7 +1447,7 @@ section.tight { padding: 80px 0; }
           </div>
         </div>
         <div class="card reveal">
-          <img class="card-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="Smart electricity and water metering dashboard" loading="lazy" />
+          <img class="card-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="Smart electricity and water metering analytics dashboard" loading="lazy" />
           <div class="card-body">
             <span class="card-icon"><span class="material-symbols-outlined">electric_meter</span></span>
             <h3>Smart Metering &amp; Energy Management</h3>
@@ -1460,7 +1475,7 @@ section.tight { padding: 80px 0; }
       </div>
       <div class="grid grid-2">
         <div class="card reveal">
-          <img class="card-img" src="https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=1200&q=80" alt="Utility-scale solar and wind IPP project" loading="lazy" />
+          <img class="card-img" src="https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=1200&q=80" alt="Utility-scale solar and wind IPP renewable energy project" loading="lazy" />
           <div class="card-body">
             <span class="card-icon"><span class="material-symbols-outlined">solar_power</span></span>
             <h3>Utility-Scale Solar &amp; Wind</h3>
@@ -1475,7 +1490,7 @@ section.tight { padding: 80px 0; }
           </div>
         </div>
         <div class="card reveal">
-          <img class="card-img" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80" alt="IPP project documentation and due diligence meeting" loading="lazy" />
+          <img class="card-img" src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80" alt="Project documentation and due diligence review for IPP funding" loading="lazy" />
           <div class="card-body">
             <span class="card-icon"><span class="material-symbols-outlined">description</span></span>
             <h3>Standard Documentation Required</h3>
@@ -1493,7 +1508,7 @@ section.tight { padding: 80px 0; }
     </div>
   </section>
 
-  <!-- DIESEL -->
+  <!-- DIESEL + TRANSPORTERS -->
   <section id="diesel" style="background:var(--surface-1);">
     <div class="wrap">
       <div class="section-head reveal">
@@ -1501,30 +1516,19 @@ section.tight { padding: 80px 0; }
         <h2 class="section-title">Bulk diesel supply with 30-day credit terms.</h2>
         <p class="section-copy">Wholesale bulk diesel on 30-day credit terms with on-site tank installation for qualifying contract clients across South Africa. We supply, install and refill — you pay on 30-day terms.</p>
       </div>
-      <div class="grid grid-2">
+      <div class="grid" style="grid-template-columns:1fr;max-width:720px;margin:0 auto;">
         <div class="card reveal">
-          <img class="card-img" src="https://images.unsplash.com/photo-1516216628859-9bccecab13ca?auto=format&fit=crop&w=1200&q=80" alt="Bulk diesel storage tank on site" loading="lazy" />
+          <img class="card-img" src="https://images.unsplash.com/photo-1516216628859-9bccecab13ca?auto=format&fit=crop&w=1200&q=80" alt="Bulk diesel storage tank installed on an industrial site" loading="lazy" />
           <div class="card-body">
             <span class="card-icon"><span class="material-symbols-outlined">local_shipping</span></span>
             <h3>On-Site Tank Installation Included</h3>
-            <p>We install, maintain and service 23,000L or 46,000L storage tanks at your site. SANS 10131 compliant equipment.</p>
+            <p>We install, maintain and service 23,000L or 46,000L storage tanks at your site. SANS 10131 compliant equipment. Low-sulphur, refinery-backed diesel delivered on 30-day payment terms.</p>
             <ul class="list">
               <li><span class="material-symbols-outlined">check</span> 23,000L — large construction, mining camps</li>
               <li><span class="material-symbols-outlined">check</span> 46,000L — major industrial sites, mines</li>
-              <li><span class="material-symbols-outlined">check</span> Proactive monitoring &amp; automatic refill</li>
-            </ul>
-          </div>
-        </div>
-        <div class="card reveal">
-          <img class="card-img" src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=1200&q=80" alt="Diesel fuel delivery on account" loading="lazy" />
-          <div class="card-body">
-            <span class="card-icon"><span class="material-symbols-outlined">gas_meter</span></span>
-            <h3>EN590 Diesel Delivered on Account</h3>
-            <p>Low-sulphur, refinery-backed diesel scheduled to your site and invoiced on 30-day payment terms. Ideal for mining, construction and agricultural operations.</p>
-            <ul class="list">
               <li><span class="material-symbols-outlined">check</span> 30-day payment terms for qualified clients</li>
               <li><span class="material-symbols-outlined">check</span> Minimum 40,000 litres/month</li>
-              <li><span class="material-symbols-outlined">check</span> No upfront cash-flow strain</li>
+              <li><span class="material-symbols-outlined">check</span> Proactive monitoring &amp; automatic refill</li>
             </ul>
           </div>
         </div>
@@ -1542,7 +1546,7 @@ section.tight { padding: 80px 0; }
         <a class="button ghost" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Request a Quote</a>
       </div>
 
-      <!-- NEW TRANSPORTER SECTION -->
+      <!-- TRANSPORTERS NETWORK -->
       <div class="transporter-section" id="transporters">
         <div class="transporter-divider reveal">
           <span><span class="material-symbols-outlined">local_shipping</span> For Transporters</span>
@@ -1550,7 +1554,7 @@ section.tight { padding: 80px 0; }
 
         <div class="transporter-card reveal">
           <div class="transporter-img">
-            <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1400&q=85" alt="Fleet of trucks on a South African highway" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1400&q=85" alt="Fleet of trucks on a South African highway for the transporter network" loading="lazy" />
             <span class="transporter-badge"><span class="material-symbols-outlined">bolt</span> Now Recruiting</span>
           </div>
           <div class="transporter-body">
@@ -1622,7 +1626,7 @@ section.tight { padding: 80px 0; }
 
       <div class="grid grid-3" id="financeGrid">
         <article class="card solution-card reveal" data-category="loan">
-          <img class="card-img" src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&q=80" alt="Business loan application" loading="lazy" />
+          <img class="card-img" src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=1200&q=80" alt="Financial growth chart representing business loan funding" loading="lazy" />
           <div class="card-body">
             <span class="card-icon"><span class="material-symbols-outlined">business_center</span></span>
             <h3>Business Loan</h3>
@@ -1637,7 +1641,7 @@ section.tight { padding: 80px 0; }
         </article>
 
         <article class="card solution-card reveal" data-category="credit">
-          <img class="card-img" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80" alt="Business line of credit" loading="lazy" />
+          <img class="card-img" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80" alt="Business line of credit and working capital documents" loading="lazy" />
           <div class="card-body">
             <span class="card-icon"><span class="material-symbols-outlined">credit_card</span></span>
             <h3>Line of Credit</h3>
@@ -1652,7 +1656,7 @@ section.tight { padding: 80px 0; }
         </article>
 
         <article class="card solution-card reveal" data-category="invoice">
-          <img class="card-img" src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=1200&q=80" alt="Invoice finance paperwork and business documents" loading="lazy" />
+          <img class="card-img" src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=1200&q=80" alt="Calculator and financial documents representing invoice finance" loading="lazy" />
           <div class="card-body">
             <span class="card-icon"><span class="material-symbols-outlined">receipt_long</span></span>
             <h3>Invoice Finance</h3>
@@ -1667,7 +1671,7 @@ section.tight { padding: 80px 0; }
         </article>
 
         <article class="card solution-card reveal" data-category="credit">
-          <img class="card-img" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80" alt="Trade credit handshake agreement" loading="lazy" />
+          <img class="card-img" src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80" alt="Business handshake for BridgePay trade credit agreement" loading="lazy" />
           <div class="card-body">
             <span class="card-icon"><span class="material-symbols-outlined">sync_alt</span></span>
             <h3>BridgePay Trade Credit</h3>
@@ -1682,7 +1686,7 @@ section.tight { padding: 80px 0; }
         </article>
 
         <article class="card solution-card reveal" data-category="po">
-          <img class="card-img" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80" alt="Purchase order funding logistics" loading="lazy" />
+          <img class="card-img" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80" alt="Purchase order funding logistics and warehouse operations" loading="lazy" />
           <div class="card-body">
             <span class="card-icon"><span class="material-symbols-outlined">local_shipping</span></span>
             <h3>PO Funding</h3>
