@@ -330,22 +330,29 @@ img { max-width: 100%; height: auto; display: block; }
   z-index: -1;
   background:
     linear-gradient(180deg, rgba(7,20,38,0.72) 0%, rgba(7,20,38,0.55) 40%, rgba(7,20,38,0.88) 100%),
-    linear-gradient(90deg, rgba(7,20,38,0.9) 0%, rgba(7,20,38,0.4) 55%, rgba(7,20,38,0.2) 100%);
+    linear-gradient(270deg, rgba(7,20,38,0.9) 0%, rgba(7,20,38,0.4) 55%, rgba(7,20,38,0.2) 100%);
 }
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.3fr 0.9fr;
+  grid-template-columns: 0.85fr 1.35fr;
   gap: 60px;
   align-items: flex-end;
   width: 100%;
 }
-.hero-content { max-width: 680px; color: #fff; }
+
+/* Right-aligned hero content */
+.hero-content {
+  max-width: 680px;
+  margin-left: auto;
+  text-align: right;
+  color: #fff;
+}
 .hero-eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 10px;
   margin-bottom: 24px;
-  padding: 7px 14px 7px 8px;
+  padding: 7px 8px 7px 14px;
   border-radius: 999px;
   background: rgba(255,255,255,0.08);
   border: 1px solid rgba(255,255,255,0.15);
@@ -386,7 +393,7 @@ img { max-width: 100%; height: auto; display: block; }
   -webkit-text-fill-color: transparent;
 }
 .hero-lead {
-  margin: 24px 0 36px;
+  margin: 24px 0 36px auto;
   max-width: 580px;
   color: rgba(255,255,255,0.78);
   font-size: clamp(0.98rem, 1.3vw, 1.1rem);
@@ -397,6 +404,7 @@ img { max-width: 100%; height: auto; display: block; }
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 12px;
   animation: fadeUp 800ms 400ms var(--ease) both;
 }
@@ -405,7 +413,7 @@ img { max-width: 100%; height: auto; display: block; }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Hero stats */
+/* Hero stats — now on the LEFT */
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -416,6 +424,7 @@ img { max-width: 100%; height: auto; display: block; }
   overflow: hidden;
   animation: fadeUp 800ms 500ms var(--ease) both;
   backdrop-filter: blur(8px);
+  align-self: flex-end;
 }
 .hero-stat {
   padding: 24px 22px;
@@ -1120,7 +1129,24 @@ section.tight { padding: 80px 0; }
   .nav-links a:not(.button) { display: none; }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
   .hero-grid { grid-template-columns: 1fr; gap: 40px; align-items: flex-start; }
-  .hero-stats { max-width: 480px; }
+  .hero-content {
+    order: 1;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 720px;
+  }
+  .hero-lead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-actions { justify-content: center; }
+  .hero-stats {
+    order: 2;
+    max-width: 520px;
+    margin: 0 auto;
+    align-self: center;
+  }
   .steps { grid-template-columns: repeat(2, 1fr); }
   .transporter-card { grid-template-columns: 1fr; }
   .transporter-img { min-height: 320px; }
@@ -1168,10 +1194,10 @@ section.tight { padding: 80px 0; }
   .wrap { width: min(100% - 24px, var(--max)); }
   .hero { padding: 104px 0 48px; }
   .hero h1 { font-size: clamp(1.85rem, 8.5vw, 2.5rem); }
-  .hero-lead { font-size: 0.92rem; margin: 20px 0 28px; }
-  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-lead { font-size: 0.92rem; margin: 20px auto 28px; }
+  .hero-actions { flex-direction: column; align-items: stretch; justify-content: center; }
   .hero-actions .button { width: 100%; }
-  .hero-stats { grid-template-columns: repeat(2, 1fr); }
+  .hero-stats { grid-template-columns: repeat(2, 1fr); max-width: 100%; }
   .hero-stat { padding: 18px 16px; }
   .hero-stat .num { font-size: 1.4rem; }
   .hero-stat .lbl { font-size: 0.68rem; }
@@ -1272,25 +1298,13 @@ section.tight { padding: 80px 0; }
 
 <main id="top">
 
-  <!-- HERO -->
+  <!-- HERO — stats left, content right-aligned -->
   <header class="hero">
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="hero-overlay" aria-hidden="true"></div>
     <div class="wrap hero-grid">
-      <div class="hero-content">
-        <span class="hero-eyebrow">
-          <span class="dot"></span>
-          Bespoke Aggregator Network
-        </span>
-        <h1>The right specialist for every <em>funding requirement.</em></h1>
-        <p class="hero-lead">
-          Mariba Media connects South African businesses to a vetted network of specialist turnkey funding partners — from fully funded solar and borehole water to IPP project finance, bulk diesel and working capital. One enquiry. The right partner. No upfront cost.
-        </p>
-        <div class="hero-actions">
-          <a class="button light" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Submit Your Enquiry</a>
-          <a class="button ghost-light" href="#how">How It Works</a>
-        </div>
-      </div>
+
+      <!-- Stats LEFT -->
       <div class="hero-stats">
         <div class="hero-stat">
           <div class="num">12</div>
@@ -1309,6 +1323,23 @@ section.tight { padding: 80px 0; }
           <div class="lbl">Diesel credit terms</div>
         </div>
       </div>
+
+      <!-- Content RIGHT (aligned to header + footer edge) -->
+      <div class="hero-content">
+        <span class="hero-eyebrow">
+          <span class="dot"></span>
+          Bespoke Aggregator Network
+        </span>
+        <h1>The right specialist for every <em>funding requirement.</em></h1>
+        <p class="hero-lead">
+          Mariba Media connects South African businesses to a vetted network of specialist turnkey funding partners — from fully funded solar and borehole water to IPP project finance, bulk diesel and working capital. One enquiry. The right partner. No upfront cost.
+        </p>
+        <div class="hero-actions">
+          <a class="button light" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Submit Your Enquiry</a>
+          <a class="button ghost-light" href="#how">How It Works</a>
+        </div>
+      </div>
+
     </div>
   </header>
 
