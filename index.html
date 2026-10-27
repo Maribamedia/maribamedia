@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Mariba Media — Capital &amp; Infrastructure, Connected</title>
-<meta name="description" content="Mariba Media connects South African businesses to a vetted network of specialist turnkey funding partners. Commercial solar, working capital, invoice finance, purchase order funding, project finance, bulk diesel and borehole water — the essential capital and infrastructure your business runs on." />
+<meta name="description" content="Mariba Media connects South African businesses to a vetted network of specialist funding and infrastructure partners. Commercial solar, working capital, invoice finance, purchase order funding, project finance and agricultural energy — curated connections, performance-based success fees and incentives aligned to your outcome." />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230B1F3A'/%3E%3Cstop offset='100%25' stop-color='%232563EB'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='10' y='10' width='34' height='34' rx='8' fill='url(%23g)' /%3E%3Crect x='56' y='10' width='34' height='34' rx='8' fill='url(%23g)' opacity='0.65' /%3E%3Crect x='10' y='56' width='34' height='34' rx='8' fill='url(%23g)' opacity='0.65' /%3E%3Crect x='56' y='56' width='34' height='34' rx='8' fill='url(%23g)' /%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -505,6 +505,100 @@ section.tight { padding: 80px 0; }
 .service .service-link:hover { gap: 10px; color: var(--blue); }
 .service .service-link .material-symbols-outlined { font-size: 16px; }
 
+/* ---------- Advantage ---------- */
+.advantage-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.advantage-card {
+  padding: 36px 32px;
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  transition: transform var(--t), box-shadow var(--t), border-color var(--t);
+}
+.advantage-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-lg);
+}
+.advantage-card .adv-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--blue-soft);
+  color: var(--blue);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: 0.01em;
+}
+.advantage-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+.advantage-card p {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--ink-3);
+  letter-spacing: -0.003em;
+}
+
+/* ---------- Connection ---------- */
+.connection-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.connection-card {
+  padding: 36px 30px;
+  background: var(--navy);
+  border-radius: var(--radius);
+  color: #fff;
+  transition: transform var(--t), box-shadow var(--t);
+}
+.connection-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-xl);
+}
+.connection-card .conn-label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--blue-bright);
+  margin-bottom: 16px;
+}
+.connection-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+.connection-card p {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  line-height: 1.68;
+  color: rgba(255,255,255,0.68);
+  letter-spacing: -0.003em;
+}
+
 /* ---------- Why it matters ---------- */
 .why-grid {
   display: grid;
@@ -599,6 +693,11 @@ section.tight { padding: 80px 0; }
 }
 
 /* ---------- Testimonials ---------- */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
 .testimonial {
   padding: 36px 32px;
   background: #fff;
@@ -807,6 +906,7 @@ section.tight { padding: 80px 0; }
   .why-grid { grid-template-columns: 1fr; }
   .why-card { border-right: none; border-bottom: 1px solid var(--rule); }
   .why-card:last-child { border-bottom: none; }
+  .connection-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 860px) {
@@ -829,6 +929,8 @@ section.tight { padding: 80px 0; }
   .markets-grid { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: 1fr; }
   .steps { grid-template-columns: 1fr; }
+  .advantage-grid { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
 
   .sticky-cta { display: block; }
   .whatsapp { bottom: 80px; right: 16px; width: 48px; height: 48px; }
@@ -850,6 +952,8 @@ section.tight { padding: 80px 0; }
 
   .market { padding: 28px 24px; }
   .service { padding: 28px 24px; }
+  .advantage-card { padding: 28px 24px; }
+  .connection-card { padding: 28px 24px; }
   .why-card { padding: 36px 24px; }
   .step { padding: 28px 24px; }
 
@@ -901,7 +1005,8 @@ section.tight { padding: 80px 0; }
     <div class="nav-links">
       <a href="#markets">Markets</a>
       <a href="#services">Services</a>
-      <a href="#why">Why It Matters</a>
+      <a href="#advantage">Advantage</a>
+      <a href="#connection">Connection</a>
       <a href="#process">Process</a>
       <a href="#faq">FAQ</a>
       <a class="button" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Tell Us What You Need</a>
@@ -913,7 +1018,8 @@ section.tight { padding: 80px 0; }
   <div id="mobile-menu" class="mobile-panel">
     <a href="#markets">Markets We Serve</a>
     <a href="#services">Our Services</a>
-    <a href="#why">Why It Matters</a>
+    <a href="#advantage">The Advantage</a>
+    <a href="#connection">Demand to Supply</a>
     <a href="#process">How It Works</a>
     <a href="#faq">FAQ</a>
     <a class="button" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Tell Us What You Need</a>
@@ -935,7 +1041,7 @@ section.tight { padding: 80px 0; }
         </span>
         <h1>The capital and infrastructure <em>your business runs on.</em></h1>
         <p class="hero-lead">
-          Mariba Media connects South African businesses to a vetted network of specialist turnkey funding partners. Commercial solar. Working capital. Invoice finance. Purchase order funding. Project finance. Bulk diesel. Borehole water. Solutions that keep operations running, cash flowing and growth moving — built for the way your business actually works.
+          Mariba Media connects South African businesses to a vetted network of specialist funding and infrastructure partners. Commercial solar. Working capital. Invoice finance. Purchase order funding. Project finance. Agricultural energy. Every connection is curated, every fee is performance-based, and every incentive is aligned to your outcome — so operations keep running, cash keeps flowing and growth keeps moving.
         </p>
         <div class="hero-actions">
           <a class="button light" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Tell Us What You Need</a>
@@ -951,7 +1057,7 @@ section.tight { padding: 80px 0; }
       <div class="section-head reveal">
         <span class="kicker">Who We Serve</span>
         <h2 class="section-title">Built for the sectors that keep South Africa running.</h2>
-        <p class="section-copy">Our partners fund and power businesses across the industries that matter most. If your operations depend on energy, cash flow, water or fuel, we can connect you to the specialist who solves it.</p>
+        <p class="section-copy">Our partners fund and power businesses across the industries that matter most. If your operations depend on energy, cash flow or scale, we can connect you to the specialist who solves it.</p>
       </div>
 
       <div class="markets-grid reveal">
@@ -959,7 +1065,7 @@ section.tight { padding: 80px 0; }
         <div class="market">
           <span class="market-icon"><span class="material-symbols-outlined">agriculture</span></span>
           <h3>Agriculture</h3>
-          <p>Solar, irrigation, working capital and borehole water for farms, estates and agri-processing operations.</p>
+          <p>Solar, irrigation and working capital for farms, estates and agri-processing operations.</p>
         </div>
 
         <div class="market">
@@ -988,8 +1094,8 @@ section.tight { padding: 80px 0; }
 
         <div class="market">
           <span class="market-icon"><span class="material-symbols-outlined">local_gas_station</span></span>
-          <h3>Petrol Stations &amp; Fuel</h3>
-          <p>Bulk diesel, solar and equipment finance for fuel retailers and fuel-intensive operations.</p>
+          <h3>Fuel Retail &amp; Forecourts</h3>
+          <p>Solar and equipment finance for fuel retailers and forecourt operators.</p>
         </div>
 
         <div class="market">
@@ -1007,7 +1113,7 @@ section.tight { padding: 80px 0; }
         <div class="market">
           <span class="market-icon"><span class="material-symbols-outlined">local_shipping</span></span>
           <h3>Mining &amp; Logistics</h3>
-          <p>Bulk diesel, purchase order funding and heavy equipment for operators and contractors.</p>
+          <p>Purchase order funding and heavy equipment finance for operators and contractors.</p>
         </div>
 
       </div>
@@ -1020,7 +1126,7 @@ section.tight { padding: 80px 0; }
       <div class="section-head reveal">
         <span class="kicker">What We Connect You To</span>
         <h2 class="section-title">Specialist turnkey funding solutions.</h2>
-        <p class="section-copy">Each partner in our network is a specialist in their field. You deal directly with them — no middlemen, no layered costs, no diluted expertise. We simply make the right introduction.</p>
+        <p class="section-copy">Each partner in our network is a specialist in their field, holding an exclusive mandate. You deal directly with them — no middlemen, no layered costs, no diluted expertise. We make the introduction, and the performance-based fee follows the result.</p>
       </div>
 
       <div class="services-grid reveal">
@@ -1028,65 +1134,123 @@ section.tight { padding: 80px 0; }
         <article class="service">
           <span class="service-icon"><span class="material-symbols-outlined">solar_power</span></span>
           <h3>Commercial &amp; Industrial Solar</h3>
-          <p>Reduce electricity costs without tying up capital. Full site assessment, design, installation and ongoing maintenance — with financing built in.</p>
+          <p>Reduce electricity costs without tying up capital. Full site assessment, design, installation and ongoing maintenance — with financing built in. The benefit is immediate: lower operating costs, predictable energy, and a balance sheet that stays free.</p>
           <a class="service-link" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Enquire <span class="material-symbols-outlined">arrow_forward</span></a>
         </article>
 
         <article class="service">
           <span class="service-icon"><span class="material-symbols-outlined">business_center</span></span>
           <h3>Business Loans</h3>
-          <p>Lump-sum funding for growth, equipment or working capital. Online application, 24-hour decision, funds in your account within hours.</p>
+          <p>Lump-sum funding for growth, equipment or working capital. Online application, 24-hour decision, funds in your account within hours. The benefit is speed: capital in the business when the opportunity is live, not weeks after it has passed.</p>
           <a class="service-link" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Apply <span class="material-symbols-outlined">arrow_forward</span></a>
         </article>
 
         <article class="service">
           <span class="service-icon"><span class="material-symbols-outlined">credit_card</span></span>
           <h3>Line of Credit</h3>
-          <p>Revolving working capital up to R5 million. Draw when you need, repay and re-use. No facility fees, no monthly charges.</p>
+          <p>Revolving working capital up to R5 million. Draw when you need, repay and re-use. No facility fees, no monthly charges. The benefit is flexibility: a capital buffer that moves with your cash cycle instead of against it.</p>
           <a class="service-link" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Enquire <span class="material-symbols-outlined">arrow_forward</span></a>
         </article>
 
         <article class="service">
           <span class="service-icon"><span class="material-symbols-outlined">receipt_long</span></span>
           <h3>Invoice Finance</h3>
-          <p>Turn unpaid invoices into immediate cash. Access up to 100% of invoice value with undisclosed, transparent transactions.</p>
+          <p>Turn unpaid invoices into immediate cash. Access up to 100% of invoice value with undisclosed, transparent transactions. The benefit is liquidity: cash flow unlocked from work already delivered, without adding debt to the balance sheet.</p>
           <a class="service-link" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Enquire <span class="material-symbols-outlined">arrow_forward</span></a>
         </article>
 
         <article class="service">
           <span class="service-icon"><span class="material-symbols-outlined">inventory_2</span></span>
           <h3>Purchase Order Funding</h3>
-          <p>Fulfil confirmed purchase orders without straining cash flow. Supplier costs covered from R250,000. Repayment from the buyer's invoice.</p>
+          <p>Fulfil confirmed purchase orders without straining cash flow. Supplier costs covered from R250,000. Repayment from the buyer's invoice. The benefit is capacity: you can say yes to the order without saying no to your cash flow.</p>
           <a class="service-link" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Enquire <span class="material-symbols-outlined">arrow_forward</span></a>
         </article>
 
         <article class="service">
           <span class="service-icon"><span class="material-symbols-outlined">bolt</span></span>
           <h3>IPP Project Funding</h3>
-          <p>Utility-scale solar and wind, 5 MW–100 MW+. Debt, equity or blended project finance structures for fully developed energy projects.</p>
+          <p>Utility-scale solar and wind, 5 MW–100 MW+. Debt, equity or blended project finance structures for fully developed energy projects. The benefit is scale: projects that move from feasibility to financial close with the right capital structure behind them.</p>
           <a class="service-link" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Submit a project <span class="material-symbols-outlined">arrow_forward</span></a>
         </article>
 
         <article class="service">
           <span class="service-icon"><span class="material-symbols-outlined">eco</span></span>
           <h3>Agricultural Solar</h3>
-          <p>Holistic solar for farms, irrigation, greenhouses and agri-processing. Lower energy costs, stable off-grid power, reduced diesel reliance.</p>
+          <p>Holistic solar for farms, irrigation, greenhouses and agri-processing. Lower energy costs, stable off-grid power and protection from grid volatility. The benefit is resilience: energy that holds through the season and the grid.</p>
           <a class="service-link" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Enquire <span class="material-symbols-outlined">arrow_forward</span></a>
         </article>
 
-        <article class="service">
-          <span class="service-icon"><span class="material-symbols-outlined">local_gas_station</span></span>
-          <h3>Bulk Diesel on 30-Day Credit</h3>
-          <p>Wholesale diesel with on-site tank installation. Minimum 40,000 litres per month. SANS-compliant equipment, 30-day payment terms.</p>
-          <a class="service-link" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Request a quote <span class="material-symbols-outlined">arrow_forward</span></a>
-        </article>
+      </div>
+    </div>
+  </section>
 
-        <article class="service">
-          <span class="service-icon"><span class="material-symbols-outlined">water_drop</span></span>
-          <h3>Borehole Water</h3>
-          <p>Turnkey, risk-free borehole solutions on a shared-savings basis. Exploration, drilling, filtration and ongoing maintenance.</p>
-          <a class="service-link" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Enquire <span class="material-symbols-outlined">arrow_forward</span></a>
-        </article>
+  <!-- ADVANTAGE -->
+  <section id="advantage">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">Aligned by Design</span>
+        <h2 class="section-title">Performance-based. Risk-aware. Incentives that point the same way.</h2>
+        <p class="section-copy">We are not a directory, a broker or a lead generator. Every introduction is curated, every fee is tied to outcome, and every risk is mapped before the connection is made.</p>
+      </div>
+
+      <div class="advantage-grid reveal">
+
+        <div class="advantage-card">
+          <span class="adv-num">01</span>
+          <h3>Performance-Based Success Fees</h3>
+          <p>Your success is the trigger for ours. Success fees are structured against completed transactions, agreed milestones and measurable outcomes — not introductions, not activity, not pipeline. If the connection does not produce a result, there is no success fee.</p>
+        </div>
+
+        <div class="advantage-card">
+          <span class="adv-num">02</span>
+          <h3>Aligned Incentives</h3>
+          <p>Clients, partners and Mariba all sit on the same side of the table. Partners are compensated for delivery. We are compensated for the connection that converts. Fees are disclosed upfront, with no layered costs and no hidden margins. The incentive is simple: close the right deal, cleanly and quickly.</p>
+        </div>
+
+        <div class="advantage-card">
+          <span class="adv-num">03</span>
+          <h3>Risk, Managed Before Connection</h3>
+          <p>Risk does not disappear because a deal is introduced. It is mapped, documented and owned. Before any connection, we screen for mandate fit, capacity to execute, track record and client-first delivery. The partner who carries the risk carries it visibly.</p>
+        </div>
+
+        <div class="advantage-card">
+          <span class="adv-num">04</span>
+          <h3>Curated, Not Crowded</h3>
+          <p>You are not added to a list. You are matched to the specialist whose mandate fits your requirement — one introduction, not a scattergun. Curated connections mean less noise, faster decisions and better execution.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONNECTION -->
+  <section id="connection" style="background:var(--paper-2);">
+    <div class="wrap">
+      <div class="section-head center reveal">
+        <span class="kicker">Demand Meets Supply</span>
+        <h2 class="section-title">We connect the need to the specialist who can answer it.</h2>
+        <p class="section-copy">Most businesses do not lack ambition. They lack access — to the funder whose mandate matches their deal, the installer who can execute at their site, the structure that fits their cash flow. Mariba Media is the connective layer between demand and supply.</p>
+      </div>
+
+      <div class="connection-grid reveal">
+
+        <div class="connection-card">
+          <span class="conn-label">Demand</span>
+          <h3>Your requirement, qualified.</h3>
+          <p>You tell us what you need — the energy bill, the unpaid invoices, the confirmed order, the project. We frame it as a clear demand signal: scope, timing, ticket size and the outcome required.</p>
+        </div>
+
+        <div class="connection-card">
+          <span class="conn-label">Supply</span>
+          <h3>The partner with the exclusive mandate.</h3>
+          <p>We route that signal to the specialist partner who holds the exclusive mandate in that field — not a marketplace, not a bidding war. One qualified demand signal, one capable supply partner.</p>
+        </div>
+
+        <div class="connection-card">
+          <span class="conn-label">Result</span>
+          <h3>Exclusive business. Curated outcomes.</h3>
+          <p>Partners get exclusive access to qualified demand. Clients get a matched opportunity with a partner who can execute. The result is measurable — revenue generated, operations transformed, outcomes that show up in the business.</p>
+        </div>
 
       </div>
     </div>
@@ -1098,7 +1262,7 @@ section.tight { padding: 80px 0; }
       <div class="section-head reveal">
         <span class="kicker">The Gap We Bridge</span>
         <h2 class="section-title">Capital and infrastructure are not luxuries. They are the cost of staying open.</h2>
-        <p class="section-copy">Every business runs on something — power, cash flow, water, fuel. When one of those breaks down, operations stop. When access to capital is slow or unclear, growth stalls. We exist to close that gap.</p>
+        <p class="section-copy">Every business runs on something — power, cash flow, access. When one of those breaks down, operations stop. When access to capital is slow or unclear, growth stalls. We exist to close that gap.</p>
       </div>
 
       <div class="why-grid reveal">
@@ -1106,19 +1270,19 @@ section.tight { padding: 80px 0; }
         <div class="why-card">
           <span class="why-num">01</span>
           <h3>Energy</h3>
-          <p>Rising tariffs and unreliable supply are eating margins. For most businesses, solar is no longer a sustainability goal. It is an operating cost decision — and the right partner can make it capex-free.</p>
+          <p>Rising tariffs and unreliable supply erode margins. Solar is no longer a sustainability goal. It is an operating cost decision — and the right connection makes it capex-free, fast and measurable.</p>
         </div>
 
         <div class="why-card">
           <span class="why-num">02</span>
           <h3>Cash Flow</h3>
-          <p>Unpaid invoices. Confirmed orders you cannot fund. Working capital that dries up at the worst possible moment. These are the quiet killers of growing businesses — and they all have a specialist solution.</p>
+          <p>Unpaid invoices. Confirmed orders you cannot fund. Working capital that dries up at the wrong moment. These are the quiet killers of growing businesses — and each one has a specialist solution.</p>
         </div>
 
         <div class="why-card">
           <span class="why-num">03</span>
-          <h3>Water &amp; Fuel</h3>
-          <p>Water security is now a board-level issue. Fuel logistics can make or break a contract. Both are essential to operations. Both can be solved — with the right partner and the right structure.</p>
+          <h3>Scale &amp; Resilience</h3>
+          <p>Growth does not fail because of ambition. It fails when access to capital and infrastructure is slow, unclear or mismatched. The right connection turns a stall into a step change.</p>
         </div>
 
       </div>
@@ -1131,24 +1295,24 @@ section.tight { padding: 80px 0; }
       <div class="section-head center reveal">
         <span class="kicker">How It Works</span>
         <h2 class="section-title">One conversation. The right specialist.</h2>
-        <p class="section-copy">You do not need to know which funder, installer or lender fits your situation. That is what we are here for. Tell us what you need. We will tell you if there is a specialist who can help.</p>
+        <p class="section-copy">You do not need to know which funder, installer or lender fits your situation. That is what we are here for. Tell us what you need. We will tell you if there is a specialist who can help — and connect you if there is.</p>
       </div>
 
       <div class="steps reveal">
         <div class="step">
           <span class="step-num">01</span>
           <h3>Tell Us What You Need</h3>
-          <p>Describe the problem — the energy bill, the unpaid invoices, the confirmed order, the water supply. Share whatever standard documents you have. No obligation.</p>
+          <p>Describe the need — the energy bill, the unpaid invoices, the confirmed order, the project. Share whatever standard documents you have. No obligation, no cost.</p>
         </div>
         <div class="step">
           <span class="step-num">02</span>
-          <h3>We Connect You to a Specialist</h3>
-          <p>We match your need to a vetted partner whose mandate fits — a funder, installer or lender with a proven track record in your sector and your deal size.</p>
+          <h3>We Curate the Connection</h3>
+          <p>We match your requirement to the partner whose mandate fits — screened for track record, capacity to execute and client-first delivery. One qualified introduction, not a scattergun.</p>
         </div>
         <div class="step">
           <span class="step-num">03</span>
-          <h3>You Deal Directly With Them</h3>
-          <p>All terms, due diligence and delivery are between you and the partner. We stay out of the way. You get the specialist; they get the relationship.</p>
+          <h3>You Deal Directly With the Specialist</h3>
+          <p>All terms, due diligence and delivery are between you and the partner. We stay out of the way. The success fee is performance-based — earned when the connection produces a result.</p>
         </div>
       </div>
     </div>
@@ -1161,7 +1325,7 @@ section.tight { padding: 80px 0; }
         <span class="kicker">Client Stories</span>
         <h2 class="section-title">Businesses that trusted the connection.</h2>
       </div>
-      <div class="services-grid" style="grid-template-columns:repeat(3,1fr);">
+      <div class="testimonials-grid">
         <div class="testimonial reveal">
           <div class="stars">★★★★★</div>
           <blockquote>"We reduced our farm's energy costs by over 50% with the fully funded solar solution. No upfront costs, no maintenance worries — the partner handled everything."</blockquote>
@@ -1222,7 +1386,7 @@ section.tight { padding: 80px 0; }
             <span class="material-symbols-outlined">expand_more</span>
           </button>
           <div class="faq-a">
-            <p>We serve businesses across agriculture, construction, retail and e-commerce, manufacturing, commercial property, petrol stations and fuel, medical practices, security, and mining and logistics. If your operations depend on energy, cash flow, water or fuel, we can connect you to a specialist who solves it.</p>
+            <p>We serve businesses across agriculture, construction, retail and e-commerce, manufacturing, commercial property, fuel retail, medical practices, security, and mining and logistics. If your operations depend on energy, cash flow or scale, we can connect you to a specialist who solves it.</p>
           </div>
         </div>
         <div class="faq-item reveal">
@@ -1232,6 +1396,24 @@ section.tight { padding: 80px 0; }
           </button>
           <div class="faq-a">
             <p>For most core services — business loans, invoice finance, purchase order funding, lines of credit and commercial solar — we can identify the right specialist within 24 to 48 hours of receiving a complete enquiry. IPP project funding is a longer cycle, typically measured in weeks rather than days.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span>How are your fees structured?</span>
+            <span class="material-symbols-outlined">expand_more</span>
+          </button>
+          <div class="faq-a">
+            <p>Success fees are performance-based and tied to completed transactions or agreed milestones. Fees are disclosed upfront. No result, no success fee. Partners are compensated for delivery; we are compensated for the connection that converts. The incentive is aligned with your outcome.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span>How do you manage risk?</span>
+            <span class="material-symbols-outlined">expand_more</span>
+          </button>
+          <div class="faq-a">
+            <p>Risk is screened before any introduction — mandate fit, track record, capacity to execute and client-first delivery. The partner who carries the risk carries it visibly, and all due diligence remains with them. Mariba does not hide or absorb risk; we make it visible before the connection is made.</p>
           </div>
         </div>
         <div class="faq-item reveal">
@@ -1274,8 +1456,7 @@ section.tight { padding: 80px 0; }
       <div class="cta-actions">
         <a class="button light" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Solar &amp; Finance Enquiry</a>
         <a class="button ghost-light" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">IPP Project Screening</a>
-        <a class="button ghost-light" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Diesel &amp; Water Enquiry</a>
-        <a class="button whatsapp-btn" href="https://wa.me/27766473499?text=Hi%2C%20I'd%20like%20to%20speak%20to%20someone%20about%20solar%2C%20finance%2C%20water%20or%20fuel%20for%20my%20business." target="_blank" rel="noopener">
+        <a class="button whatsapp-btn" href="https://wa.me/27766473499?text=Hi%2C%20I'd%20like%20to%20speak%20to%20someone%20about%20solar%2C%20finance%20or%20funding%20for%20my%20business." target="_blank" rel="noopener">
           <span class="material-symbols-outlined">chat</span> WhatsApp Us
         </a>
       </div>
@@ -1317,8 +1498,8 @@ section.tight { padding: 80px 0; }
         <a href="#services">PO Funding</a><span>·</span>
         <a href="#services">IPP Funding</a><span>·</span>
         <a href="#services">Agricultural Solar</a><span>·</span>
-        <a href="#services">Bulk Diesel</a><span>·</span>
-        <a href="#services">Borehole Water</a><span>·</span>
+        <a href="#advantage">The Advantage</a><span>·</span>
+        <a href="#connection">Demand to Supply</a><span>·</span>
         <a href="https://funding.maribamedia.co.za" target="_blank" rel="noopener" class="highlight">Start a Conversation</a>
         <a href="#faq">FAQ</a>
       </div>
@@ -1327,7 +1508,7 @@ section.tight { padding: 80px 0; }
       <p><strong>Disclaimer &amp; Compliance</strong></p>
       <p><strong>Mariba Media</strong> (Reg: 2024/132788/07) connects South African businesses to a network of specialist partners. Mariba Media does not hold, process or transact any funds. It does not provide financial advice, intermediary services or any other regulated financial service as defined in the Financial Advisory and Intermediary Services Act (FAIS Act, 37 of 2002). All financial services are rendered solely by the regulated partners within the network.</p>
       <p>Mariba Media's function is to accept client project information and connect that information unchanged to the relevant partner with the exclusive mandate. No curation, feasibility review, recommendation or filtering of any kind is performed by Mariba Media. All funding terms, credit decisions and due diligence are the exclusive responsibility of the partner that engages with the client. No funding outcome is guaranteed.</p>
-      <p>Solar, water, IPP funding, bulk diesel and business finance services are delivered by our specialist partners, each of which is a licensed credit provider or authorised financial services provider. Mariba Media does not participate in any installation, maintenance or credit decision.</p>
+      <p>Solar, IPP funding and business finance services are delivered by our specialist partners, each of which is a licensed credit provider or authorised financial services provider. Mariba Media does not participate in any installation, maintenance or credit decision.</p>
       <p><em>Last updated: 2026. All rights reserved.</em></p>
     </div>
   </div>
@@ -1339,7 +1520,7 @@ section.tight { padding: 80px 0; }
 </div>
 
 <!-- WhatsApp -->
-<a class="whatsapp" href="https://wa.me/27766473499?text=Hi%2C%20I'd%20like%20to%20speak%20to%20someone%20about%20solar%2C%20finance%2C%20water%20or%20fuel%20for%20my%20business." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+<a class="whatsapp" href="https://wa.me/27766473499?text=Hi%2C%20I'd%20like%20to%20speak%20to%20someone%20about%20solar%2C%20finance%20or%20funding%20for%20my%20business." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.031 6.062c-3.411 0-6.188 2.777-6.188 6.189 0 1.21.377 2.336 1.019 3.273l-.656 2.393 2.45-.64c.905.515 1.95.815 3.064.815 3.411 0 6.188-2.777 6.188-6.189 0-3.412-2.777-6.189-6.188-6.189zM15.523 14.854c-.216.608-1.246 1.107-1.712 1.147-.466.04-1.045.205-3.045-.63-2.001-.837-3.214-2.883-3.314-3.018-.1-.135-.853-1.134-.853-2.162 0-1.028.535-1.534.724-1.737.189-.203.411-.253.548-.253.136 0 .273 0 .393.006.126.006.297-.047.466.36.17.406.58 1.414.631 1.516.051.101.085.22.017.356-.068.135-.102.22-.203.339-.101.118-.213.265-.304.356-.101.101-.203.21-.085.412.119.202.527.871 1.131 1.408.777.691 1.43.906 1.633 1.008.203.101.321.085.44-.051.118-.135.514-.601.65-.806.135-.203.271-.169.456-.101.186.068 1.177.555 1.38.657.203.101.339.152.389.237.05.084.05.49-.166 1.098z"/></svg>
 </a>
 
