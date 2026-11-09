@@ -1,1600 +1,972 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Mariba Media — Capital &amp; Infrastructure, Connected</title>
-<meta name="description" content="Mariba Media connects South African businesses to a vetted network of specialist funding and infrastructure partners. Commercial solar, working capital, invoice finance, purchase order funding, project finance and agricultural energy — curated connections, performance-based success fees and incentives aligned to your outcome." />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230B1F3A'/%3E%3Cstop offset='100%25' stop-color='%232563EB'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='10' y='10' width='34' height='34' rx='8' fill='url(%23g)' /%3E%3Crect x='56' y='10' width='34' height='34' rx='8' fill='url(%23g)' opacity='0.65' /%3E%3Crect x='10' y='56' width='34' height='34' rx='8' fill='url(%23g)' opacity='0.65' /%3E%3Crect x='56' y='56' width='34' height='34' rx='8' fill='url(%23g)' /%3E%3C/svg%3E" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;450;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
-<script>
-  window.origami = window.origami || function () { (origami.q = origami.q || []).push(arguments) };
-</script>
-<script async src="https://origami-web-visitors.com/v1/o.js" data-key="og_pk_4CfRLQphPRlZaHdb7wzMOQ"></script>
-<style>
-:root {
-  --ink: #0A0F1C;
-  --ink-2: #1E293B;
-  --ink-3: #475569;
-  --ink-4: #64748B;
-  --ink-5: #94A3B8;
-
-  --navy: #0B1F3A;
-  --navy-deep: #071426;
-  --blue: #2563EB;
-  --blue-bright: #3B82F6;
-  --blue-soft: #EFF6FF;
-  --green: #16A34A;
-  --green-bright: #4ADE80;
-  --green-soft: #DCFCE7;
-
-  --paper: #FDFBF7;
-  --paper-2: #F7F4EF;
-
-  --surface: #FFFFFF;
-  --surface-2: #F1F5F9;
-
-  --border: #E7ECF2;
-  --border-strong: #D6DEE8;
-  --rule: #E3DCD2;
-
-  --radius-lg: 24px;
-  --radius: 18px;
-  --radius-sm: 12px;
-  --radius-xs: 8px;
-
-  --shadow-xs: 0 1px 2px rgba(10,15,28,0.04);
-  --shadow-sm: 0 1px 3px rgba(10,15,28,0.05), 0 1px 2px rgba(10,15,28,0.03);
-  --shadow-md: 0 4px 12px rgba(10,15,28,0.05), 0 2px 4px rgba(10,15,28,0.03);
-  --shadow-lg: 0 12px 32px rgba(10,15,28,0.08), 0 4px 8px rgba(10,15,28,0.04);
-  --shadow-xl: 0 24px 64px rgba(10,15,28,0.12), 0 8px 16px rgba(10,15,28,0.05);
-
-  --max: 1240px;
-  --max-narrow: 880px;
-  --nav-h: 72px;
-
-  --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --t-fast: 200ms var(--ease);
-  --t: 340ms var(--ease);
-  --t-slow: 600ms var(--ease);
-
-  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-accent: 'Instrument Serif', Georgia, 'Times New Roman', serif;
-}
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 96px; }
-
-body {
-  font-family: var(--font-body);
-  font-size: 16.5px;
-  line-height: 1.7;
-  color: var(--ink);
-  background: var(--paper);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
-  text-rendering: optimizeLegibility;
-  font-feature-settings: "ss01" 1, "cv02" 1, "cv11" 1;
-}
-
-h1, h2, h3, h4 {
-  font-family: var(--font-display);
-  letter-spacing: -0.025em;
-  line-height: 1.1;
-  color: var(--ink);
-  font-weight: 700;
-}
-
-a { color: inherit; text-decoration: none; }
-img { max-width: 100%; height: auto; display: block; }
-
-.wrap { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
-.wrap-narrow { width: min(var(--max-narrow), calc(100% - 48px)); margin: 0 auto; }
-
-/* ---------- Logo ---------- */
-.logo-lockup {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  transition: transform var(--t-fast);
-}
-.logo-lockup:hover { transform: translateY(-1px); }
-.mariba-mark { width: 34px; height: 34px; flex: 0 0 auto; }
-.wordmark {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1rem;
-  letter-spacing: 0.02em;
-  color: var(--navy);
-  white-space: nowrap;
-}
-
-/* ---------- Scroll Progress ---------- */
-.scroll-progress {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  z-index: 80;
-  pointer-events: none;
-  background: transparent;
-}
-.scroll-progress-bar {
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(90deg, var(--navy), var(--blue));
-  transition: width 100ms linear;
-}
-
-/* ---------- Nav ---------- */
-.nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 60;
-  background: rgba(253,251,247,0.82);
-  backdrop-filter: blur(20px) saturate(1.8);
-  -webkit-backdrop-filter: blur(20px) saturate(1.8);
-  border-bottom: 1px solid transparent;
-  transition: border-color var(--t), background var(--t), box-shadow var(--t);
-}
-.nav.scrolled {
-  background: rgba(253,251,247,0.96);
-  border-bottom-color: var(--rule);
-  box-shadow: var(--shadow-sm);
-}
-.nav-inner {
-  height: var(--nav-h);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-}
-.nav-links { display: flex; align-items: center; gap: 4px; }
-.nav-links a:not(.button) {
-  padding: 8px 12px;
-  border-radius: 8px;
-  font-family: var(--font-body);
-  font-size: 0.78rem;
-  font-weight: 500;
-  color: var(--ink-3);
-  transition: color var(--t-fast), background var(--t-fast);
-  white-space: nowrap;
-  letter-spacing: 0.005em;
-}
-.nav-links a:not(.button):hover { color: var(--navy); background: var(--paper-2); }
-
-/* ---------- Buttons ---------- */
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  min-height: 44px;
-  padding: 0 1.4rem;
-  border-radius: 999px;
-  border: 1.5px solid transparent;
-  background: var(--navy);
-  color: #fff;
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.8rem;
-  letter-spacing: 0.01em;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: transform var(--t-fast), background var(--t-fast), box-shadow var(--t-fast), border-color var(--t-fast);
-  box-shadow: 0 2px 8px rgba(11,31,58,0.18);
-}
-.button:hover { transform: translateY(-2px); background: var(--blue); box-shadow: 0 8px 24px rgba(37,99,235,0.28); }
-.button:active { transform: translateY(0); }
-
-.button.ghost { background: transparent; color: var(--navy); border-color: var(--border-strong); box-shadow: none; }
-.button.ghost:hover { background: var(--paper-2); border-color: var(--navy); box-shadow: var(--shadow-sm); }
-
-.button.light { background: #fff; color: var(--navy); box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-.button.light:hover { background: var(--blue-soft); color: var(--blue); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
-
-.button.ghost-light {
-  background: rgba(255,255,255,0.08);
-  color: #fff;
-  border-color: rgba(255,255,255,0.25);
-  box-shadow: none;
-  backdrop-filter: blur(8px);
-}
-.button.ghost-light:hover { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.5); transform: translateY(-2px); }
-
-.button.whatsapp-btn { background: #25D366; box-shadow: 0 4px 14px rgba(37,211,102,0.35); }
-.button.whatsapp-btn:hover { background: #1DA851; box-shadow: 0 8px 24px rgba(37,211,102,0.45); }
-
-/* ---------- Mobile toggle ---------- */
-.mobile-toggle {
-  display: none;
-  place-items: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: #fff;
-  color: var(--ink);
-  cursor: pointer;
-  transition: background var(--t-fast), border-color var(--t-fast);
-  flex-shrink: 0;
-}
-.mobile-toggle:hover { background: var(--paper-2); border-color: var(--border-strong); }
-.mobile-toggle .material-symbols-outlined { font-size: 22px; }
-
-.mobile-panel {
-  display: none;
-  padding: 12px 24px 24px;
-  border-top: 1px solid var(--rule);
-  background: rgba(253,251,247,0.98);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  max-height: 80vh;
-  overflow-y: auto;
-}
-.mobile-panel.open { display: grid; gap: 2px; animation: panelIn 300ms var(--ease) both; }
-@keyframes panelIn { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
-.mobile-panel a {
-  padding: 12px 14px;
-  border-radius: var(--radius-xs);
-  font-family: var(--font-body);
-  font-size: 0.88rem;
-  font-weight: 500;
-  color: var(--ink-2);
-  transition: background var(--t-fast), color var(--t-fast);
-}
-.mobile-panel a:hover { background: var(--paper-2); color: var(--navy); }
-.mobile-panel .button { width: 100%; margin-top: 8px; justify-content: center; }
-
-/* =========================================================
-   HERO
-   ========================================================= */
-.hero {
-  position: relative;
-  padding: 168px 0 96px;
-  background: var(--navy-deep);
-  overflow: hidden;
-  isolation: isolate;
-}
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  background-image: url("https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=2400&q=85");
-  background-size: cover;
-  background-position: center 45%;
-  opacity: 0.22;
-}
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(180deg, rgba(7,20,38,0.92) 0%, rgba(7,20,38,0.82) 50%, rgba(7,20,38,0.96) 100%);
-}
-
-.hero-content { max-width: 780px; color: #fff; }
-
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 32px;
-  padding: 7px 16px 7px 10px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.12);
-  color: rgba(255,255,255,0.78);
-  font-family: var(--font-body);
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  animation: fadeUp 800ms 100ms var(--ease) both;
-}
-.hero-eyebrow .dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 999px;
-  background: var(--green-bright);
-  box-shadow: 0 0 0 4px rgba(74,222,128,0.2);
-  animation: pulse 2s ease-in-out infinite;
-}
-@keyframes pulse {
-  0%, 100% { box-shadow: 0 0 0 4px rgba(74,222,128,0.2); }
-  50% { box-shadow: 0 0 0 7px rgba(74,222,128,0.08); }
-}
-
-.hero h1 {
-  color: #fff;
-  font-family: var(--font-display);
-  font-size: clamp(2.4rem, 5.2vw, 4.2rem);
-  line-height: 1.03;
-  font-weight: 700;
-  letter-spacing: -0.035em;
-  margin-bottom: 28px;
-  animation: fadeUp 800ms 200ms var(--ease) both;
-}
-.hero h1 em {
-  font-family: var(--font-accent);
-  font-style: italic;
-  font-weight: 400;
-  font-size: 1.06em;
-  letter-spacing: -0.01em;
-  background: linear-gradient(120deg, #93C5FD 0%, #60A5FA 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.hero-lead {
-  max-width: 660px;
-  color: rgba(255,255,255,0.72);
-  font-family: var(--font-body);
-  font-size: clamp(1rem, 1.25vw, 1.1rem);
-  line-height: 1.72;
-  font-weight: 400;
-  margin-bottom: 40px;
-  letter-spacing: -0.003em;
-  animation: fadeUp 800ms 300ms var(--ease) both;
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 14px;
-  animation: fadeUp 800ms 400ms var(--ease) both;
-}
-.hero-actions .button { min-height: 48px; padding: 0 1.7rem; font-size: 0.84rem; }
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ---------- Sections ---------- */
-section { position: relative; padding: 120px 0; scroll-margin-top: 96px; }
-section.tight { padding: 80px 0; }
-
-.section-head { max-width: 760px; margin-bottom: 64px; }
-.section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
-
-.kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 18px;
-  color: var(--blue);
-  font-family: var(--font-body);
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-.kicker::before { content: ""; width: 24px; height: 1.5px; background: var(--blue); border-radius: 2px; }
-.section-head.center .kicker::before { display: none; }
-
-.section-title {
-  font-family: var(--font-display);
-  font-size: clamp(1.9rem, 3.6vw, 2.8rem);
-  line-height: 1.08;
-  font-weight: 700;
-  color: var(--ink);
-  letter-spacing: -0.028em;
-}
-.section-copy {
-  margin-top: 22px;
-  color: var(--ink-3);
-  font-family: var(--font-body);
-  font-size: 1rem;
-  line-height: 1.72;
-  font-weight: 400;
-  max-width: 640px;
-  letter-spacing: -0.003em;
-}
-.section-head.center .section-copy { margin-left: auto; margin-right: auto; }
-
-.rule { height: 1px; background: var(--rule); margin: 0; border: none; }
-
-/* ---------- Markets ---------- */
-.markets-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  border-top: 1px solid var(--rule);
-  border-left: 1px solid var(--rule);
-}
-.market {
-  padding: 36px 32px;
-  border-right: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-  background: #fff;
-  transition: background var(--t-fast);
-}
-.market:hover { background: var(--paper-2); }
-.market .market-icon {
-  display: inline-grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: var(--blue-soft);
-  color: var(--blue);
-  margin-bottom: 20px;
-}
-.market .market-icon .material-symbols-outlined { font-size: 22px; }
-.market h3 {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: var(--ink);
-  letter-spacing: -0.02em;
-}
-.market p {
-  font-family: var(--font-body);
-  font-size: 0.88rem;
-  line-height: 1.65;
-  color: var(--ink-3);
-  letter-spacing: -0.003em;
-}
-
-/* ---------- Services ---------- */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-.service {
-  display: flex;
-  flex-direction: column;
-  padding: 32px 28px;
-  background: #fff;
-  border: 1px solid var(--rule);
-  border-radius: var(--radius);
-  transition: transform var(--t), box-shadow var(--t), border-color var(--t);
-}
-.service:hover {
-  transform: translateY(-3px);
-  border-color: var(--border-strong);
-  box-shadow: var(--shadow-lg);
-}
-.service .service-icon {
-  display: inline-grid;
-  place-items: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 11px;
-  background: var(--blue-soft);
-  color: var(--blue);
-  margin-bottom: 18px;
-  transition: background var(--t-fast), color var(--t-fast);
-}
-.service:hover .service-icon { background: var(--blue); color: #fff; }
-.service .service-icon .material-symbols-outlined { font-size: 21px; }
-.service h3 {
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: var(--ink);
-  letter-spacing: -0.02em;
-  line-height: 1.3;
-}
-.service p {
-  font-family: var(--font-body);
-  font-size: 0.86rem;
-  line-height: 1.65;
-  color: var(--ink-3);
-  margin-bottom: 18px;
-  flex: 1;
-  letter-spacing: -0.003em;
-}
-.service .service-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-body);
-  font-size: 0.74rem;
-  font-weight: 600;
-  color: var(--navy);
-  transition: gap var(--t-fast), color var(--t-fast);
-}
-.service .service-link:hover { gap: 10px; color: var(--blue); }
-.service .service-link .material-symbols-outlined { font-size: 16px; }
-
-/* ---------- Advantage ---------- */
-.advantage-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-.advantage-card {
-  padding: 36px 32px;
-  background: #fff;
-  border: 1px solid var(--rule);
-  border-radius: var(--radius);
-  transition: transform var(--t), box-shadow var(--t), border-color var(--t);
-}
-.advantage-card:hover {
-  transform: translateY(-3px);
-  border-color: var(--border-strong);
-  box-shadow: var(--shadow-lg);
-}
-.advantage-card .adv-num {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: var(--blue-soft);
-  color: var(--blue);
-  font-family: var(--font-display);
-  font-size: 0.85rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  letter-spacing: 0.01em;
-}
-.advantage-card h3 {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: var(--ink);
-  letter-spacing: -0.02em;
-  line-height: 1.3;
-}
-.advantage-card p {
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  line-height: 1.7;
-  color: var(--ink-3);
-  letter-spacing: -0.003em;
-}
-
-/* ---------- Connection ---------- */
-.connection-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-.connection-card {
-  padding: 36px 30px;
-  background: var(--navy);
-  border-radius: var(--radius);
-  color: #fff;
-  transition: transform var(--t), box-shadow var(--t);
-}
-.connection-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-xl);
-}
-.connection-card .conn-label {
-  display: inline-block;
-  font-family: var(--font-body);
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--blue-bright);
-  margin-bottom: 16px;
-}
-.connection-card h3 {
-  font-family: var(--font-display);
-  font-size: 1.12rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 10px;
-  letter-spacing: -0.02em;
-  line-height: 1.3;
-}
-.connection-card p {
-  font-family: var(--font-body);
-  font-size: 0.88rem;
-  line-height: 1.68;
-  color: rgba(255,255,255,0.68);
-  letter-spacing: -0.003em;
-}
-
-/* ---------- Why it matters ---------- */
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-}
-.why-card {
-  padding: 44px 36px;
-  border-right: 1px solid var(--rule);
-}
-.why-card:last-child { border-right: none; }
-.why-card .why-num {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: var(--navy);
-  color: #fff;
-  font-family: var(--font-display);
-  font-size: 0.85rem;
-  font-weight: 700;
-  margin-bottom: 22px;
-  letter-spacing: 0.01em;
-}
-.why-card h3 {
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-  color: var(--ink);
-  letter-spacing: -0.025em;
-}
-.why-card p {
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  line-height: 1.7;
-  color: var(--ink-3);
-  letter-spacing: -0.003em;
-}
-
-/* ---------- Steps ---------- */
-.steps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-.step {
-  padding: 36px 28px;
-  background: #fff;
-  border: 1px solid var(--rule);
-  border-radius: var(--radius);
-  transition: transform var(--t), box-shadow var(--t), border-color var(--t);
-}
-.step:hover {
-  transform: translateY(-3px);
-  border-color: var(--blue);
-  box-shadow: var(--shadow-md);
-}
-.step-num {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background: var(--navy);
-  color: #fff;
-  font-family: var(--font-display);
-  font-size: 0.8rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  letter-spacing: 0.01em;
-}
-.step h3 {
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: var(--ink);
-  letter-spacing: -0.02em;
-}
-.step p {
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  line-height: 1.7;
-  color: var(--ink-3);
-  letter-spacing: -0.003em;
-}
-
-/* ---------- Testimonials ---------- */
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-.testimonial {
-  padding: 36px 32px;
-  background: #fff;
-  border: 1px solid var(--rule);
-  border-radius: var(--radius);
-  transition: transform var(--t), box-shadow var(--t), border-color var(--t);
-}
-.testimonial:hover {
-  transform: translateY(-4px);
-  border-color: var(--border-strong);
-  box-shadow: var(--shadow-lg);
-}
-.testimonial .stars {
-  color: #F59E0B;
-  font-size: 0.9rem;
-  letter-spacing: 2px;
-  margin-bottom: 16px;
-}
-.testimonial blockquote {
-  font-family: var(--font-accent);
-  font-size: 1.08rem;
-  line-height: 1.55;
-  color: var(--ink-2);
-  margin-bottom: 24px;
-  font-style: italic;
-  letter-spacing: -0.005em;
-}
-.testimonial .author { display: flex; align-items: center; gap: 12px; }
-.testimonial .avatar {
-  width: 42px;
-  height: 42px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--navy), var(--blue));
-  color: #fff;
-  display: grid;
-  place-items: center;
-  font-family: var(--font-display);
-  font-size: 0.78rem;
-  font-weight: 700;
-  flex-shrink: 0;
-  letter-spacing: 0.02em;
-}
-.testimonial .name { font-family: var(--font-body); font-size: 0.82rem; font-weight: 600; color: var(--ink); }
-.testimonial .role { font-family: var(--font-body); font-size: 0.72rem; color: var(--ink-4); }
-
-/* ---------- FAQ ---------- */
-.faq-list { max-width: 780px; margin: 0 auto; display: grid; gap: 0; border-top: 1px solid var(--rule); }
-.faq-item { border-bottom: 1px solid var(--rule); background: transparent; overflow: hidden; }
-.faq-item.active { background: var(--paper-2); }
-.faq-q {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 22px 4px;
-  background: none;
-  border: none;
-  font-family: var(--font-body);
-  font-size: 0.98rem;
-  font-weight: 500;
-  color: var(--ink);
-  cursor: pointer;
-  text-align: left;
-  transition: color var(--t-fast);
-  letter-spacing: -0.005em;
-}
-.faq-q:hover { color: var(--blue); }
-.faq-q .material-symbols-outlined {
-  font-size: 22px;
-  color: var(--ink-4);
-  flex-shrink: 0;
-  transition: transform var(--t), color var(--t);
-}
-.faq-item.active .faq-q .material-symbols-outlined { transform: rotate(180deg); color: var(--blue); }
-.faq-a {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 400ms var(--ease), padding 400ms var(--ease);
-  padding: 0 4px;
-}
-.faq-item.active .faq-a { max-height: 380px; padding: 0 4px 24px; }
-.faq-a p { font-size: 0.92rem; line-height: 1.72; color: var(--ink-3); letter-spacing: -0.003em; }
-.faq-a a { color: var(--blue); font-weight: 600; }
-
-/* ---------- CTA / Contact ---------- */
-.cta-section {
-  background: var(--navy-deep);
-  color: #fff;
-  padding: 110px 0;
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-}
-.cta-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(37,99,235,0.2), transparent 40%),
-    radial-gradient(circle at 80% 80%, rgba(59,130,246,0.12), transparent 40%);
-}
-.cta-inner { text-align: center; max-width: 760px; margin: 0 auto; }
-.cta-section .section-title { color: #fff; }
-.cta-section .section-copy { color: rgba(255,255,255,0.65); margin-left: auto; margin-right: auto; }
-.cta-actions {
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-.cta-note {
-  margin-top: 28px;
-  font-family: var(--font-body);
-  font-size: 0.76rem;
-  color: rgba(255,255,255,0.4);
-  line-height: 1.6;
-}
-
-/* ---------- Footer ---------- */
-.footer { background: var(--paper-2); border-top: 1px solid var(--rule); padding: 72px 0 36px; }
-.footer-top { display: grid; grid-template-columns: 1fr; gap: 28px; margin-bottom: 48px; }
-.footer-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 20px;
-  font-family: var(--font-body);
-  font-size: 0.74rem;
-  color: var(--ink-4);
-}
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 20px;
-  font-family: var(--font-body);
-  font-size: 0.74rem;
-  color: var(--ink-3);
-}
-.footer-links a { color: var(--ink-3); transition: color var(--t-fast); }
-.footer-links a:hover { color: var(--blue); }
-.footer-links span { color: var(--ink-5); }
-.footer-links a.highlight { color: var(--blue); font-weight: 600; }
-
-.legal {
-  padding-top: 36px;
-  border-top: 1px solid var(--rule);
-  max-width: 920px;
-  color: var(--ink-4);
-  font-family: var(--font-body);
-  font-size: 0.72rem;
-  line-height: 1.8;
-}
-.legal strong { color: var(--ink-2); font-weight: 600; display: block; margin-bottom: 6px; }
-.legal p { margin-bottom: 12px; }
-.legal a { color: var(--blue); text-decoration: underline; text-underline-offset: 2px; }
-
-/* ---------- Floating elements ---------- */
-.whatsapp {
-  position: fixed;
-  right: 24px;
-  bottom: 24px;
-  z-index: 55;
-  display: grid;
-  place-items: center;
-  width: 54px;
-  height: 54px;
-  border-radius: 999px;
-  background: #25D366;
-  box-shadow: 0 8px 24px rgba(37,211,102,0.35);
-  transition: transform var(--t), box-shadow var(--t);
-}
-.whatsapp:hover { transform: scale(1.08); box-shadow: 0 12px 32px rgba(37,211,102,0.45); }
-.whatsapp svg { width: 26px; height: 26px; fill: #fff; }
-
-.sticky-cta {
-  display: none;
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  z-index: 50;
-  padding: 10px 16px;
-  background: rgba(253,251,247,0.96);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-top: 1px solid var(--rule);
-  box-shadow: 0 -4px 20px rgba(10,15,28,0.06);
-}
-.sticky-cta .button { width: 100%; justify-content: center; }
-
-/* ---------- Reveal ---------- */
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 700ms var(--ease), transform 700ms var(--ease);
-}
-.reveal.in-view { opacity: 1; transform: translateY(0); }
-
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
-@media (max-width: 1080px) {
-  .nav-links a:not(.button) { display: none; }
-  .markets-grid { grid-template-columns: repeat(2, 1fr); }
-  .services-grid { grid-template-columns: repeat(2, 1fr); }
-  .why-grid { grid-template-columns: 1fr; }
-  .why-card { border-right: none; border-bottom: 1px solid var(--rule); }
-  .why-card:last-child { border-bottom: none; }
-  .connection-grid { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 860px) {
-  :root { --nav-h: 64px; }
-  .wrap { width: min(100% - 32px, var(--max)); }
-  .wrap-narrow { width: min(100% - 32px, var(--max-narrow)); }
-  .nav-links { display: none; }
-  .mobile-toggle { display: grid; }
-  .wordmark { font-size: 0.92rem; }
-  .mariba-mark { width: 30px; height: 30px; }
-
-  section { padding: 72px 0; }
-  section.tight { padding: 56px 0; }
-  .section-head { margin-bottom: 40px; }
-
-  .hero { padding: 120px 0 64px; }
-  .hero h1 { font-size: clamp(2rem, 7vw, 2.8rem); }
-  .hero-lead { font-size: 0.94rem; margin-bottom: 32px; }
-
-  .markets-grid { grid-template-columns: 1fr; }
-  .services-grid { grid-template-columns: 1fr; }
-  .steps { grid-template-columns: 1fr; }
-  .advantage-grid { grid-template-columns: 1fr; }
-  .testimonials-grid { grid-template-columns: 1fr; }
-
-  .sticky-cta { display: block; }
-  .whatsapp { bottom: 80px; right: 16px; width: 48px; height: 48px; }
-  .whatsapp svg { width: 22px; height: 22px; }
-  .footer { padding-bottom: 90px; }
-}
-
-@media (max-width: 560px) {
-  .wrap { width: min(100% - 24px, var(--max)); }
-  .wrap-narrow { width: min(100% - 24px, var(--max-narrow)); }
-  .hero { padding: 108px 0 56px; }
-  .hero h1 { font-size: clamp(1.8rem, 8vw, 2.4rem); }
-  .hero-lead { font-size: 0.9rem; }
-  .hero-actions { flex-direction: column; align-items: stretch; width: 100%; max-width: 320px; }
-  .hero-actions .button { width: 100%; min-height: 46px; }
-
-  .section-title { font-size: clamp(1.6rem, 7vw, 2.1rem); }
-  .section-copy { font-size: 0.94rem; }
-
-  .market { padding: 28px 24px; }
-  .service { padding: 28px 24px; }
-  .advantage-card { padding: 28px 24px; }
-  .connection-card { padding: 28px 24px; }
-  .why-card { padding: 36px 24px; }
-  .step { padding: 28px 24px; }
-
-  .testimonial { padding: 24px 20px; }
-  .faq-q { padding: 18px 0; font-size: 0.94rem; }
-  .faq-item.active .faq-a { padding: 0 0 20px; }
-
-  .cta-section { padding: 72px 0; }
-  .footer { padding: 48px 0 24px; }
-}
-
-@media (max-width: 380px) {
-  .button { font-size: 0.74rem; padding: 0 1.1rem; min-height: 42px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
-    scroll-behavior: auto !important;
-  }
-  .reveal { opacity: 1; transform: none; }
-}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mariba Media — Capital &amp; Infrastructure, Connected</title>
+  <meta name="description" content="Mariba Media connects South African businesses to a vetted network of specialist funding and infrastructure partners. Commercial solar, working capital, invoice finance, purchase order funding, project finance and agricultural energy." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230B1F3A'/%3E%3Cstop offset='100%25' stop-color='%232563EB'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='10' y='10' width='34' height='34' rx='8' fill='url(%23g)' /%3E%3Crect x='56' y='10' width='34' height='34' rx='8' fill='url(%23g)' opacity='0.65' /%3E%3Crect x='10' y='56' width='34' height='34' rx='8' fill='url(%23g)' opacity='0.65' /%3E%3Crect x='56' y='56' width='34' height='34' rx='8' fill='url(%23g)' /%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ------------------------------------------------------------
+       DESIGN TOKENS
+    ------------------------------------------------------------ */
+    :root {
+      --paper: #faf9f5;
+      --paper-2: #ffffff;
+      --ink: #0A0F1C;
+      --ink-2: #1E293B;
+      --sub: #475569;
+      --mute: #64748B;
+      --navy: #0B1F3A;
+      --navy-deep: #071426;
+      --blue: #2563EB;
+      --blue-bright: #3B82F6;
+      --blue-soft: #EFF6FF;
+      --green: #16A34A;
+      --green-bright: #4ADE80;
+      --green-soft: #DCFCE7;
+      --rule: #E3DCD2;
+      --rule-2: #ece9e0;
+
+      --serif: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+      --sans: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      --tight: "Inter Tight", "Inter", -apple-system, sans-serif;
+      --mono: "JetBrains Mono", "SF Mono", Menlo, monospace;
+
+      --gutter: 32px;
+      --max: 1320px;
+      --max-narrow: 880px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 84px; }
+    body {
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--ink);
+      background: var(--paper);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-feature-settings: "kern" 1, "liga" 1, "ss01" 1;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 2px; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+    .wrap-narrow { max-width: var(--max-narrow); margin: 0 auto; padding: 0 var(--gutter); }
+
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--sub);
+    }
+    .eyebrow.accent { color: var(--blue); }
+    .u {
+      background-image: linear-gradient(currentColor, currentColor);
+      background-size: 100% 1px;
+      background-position: 0 100%;
+      background-repeat: no-repeat;
+    }
+    .u:hover { color: var(--blue); }
+
+    h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; letter-spacing: -.012em; }
+    h2.t { font-size: clamp(38px, 4.2vw, 60px); line-height: 1.02; margin: 0 0 22px; }
+    .lede { font-size: 18px; line-height: 1.6; color: var(--ink-2); margin: 0; max-width: 54ch; }
+
+    /* ------------------------------------------------------------
+       SCROLL PROGRESS
+    ------------------------------------------------------------ */
+    .scroll-progress {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      z-index: 80;
+      pointer-events: none;
+      background: transparent;
+    }
+    .scroll-progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--navy), var(--blue));
+      transition: width 100ms linear;
+    }
+
+    /* ------------------------------------------------------------
+       MASTHEAD
+    ------------------------------------------------------------ */
+    .mast {
+      border-bottom: 1px solid var(--rule);
+      background: rgba(250,249,245,.92);
+      backdrop-filter: blur(14px) saturate(1.2);
+      -webkit-backdrop-filter: blur(14px) saturate(1.2);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .mast .wrap {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      height: 64px;
+    }
+    .wordmark {
+      font-family: var(--tight);
+      font-weight: 600;
+      font-size: 17px;
+      letter-spacing: -.01em;
+    }
+    .wordmark em {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--blue);
+      font-size: 20px;
+      margin-right: 1px;
+    }
+    .mast-mid {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--sub);
+      text-align: center;
+    }
+    .mast-right {
+      text-align: right;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 28px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .mast-right a:not(.button-outline) { color: var(--sub); transition: color .15s; }
+    .mast-right a:not(.button-outline):hover { color: var(--ink); }
+
+    .button-outline {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: .65rem 1.25rem;
+      border: 1px solid var(--rule);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--ink);
+      transition: background .2s, border-color .2s, color .2s;
+      white-space: nowrap;
+    }
+    .button-outline:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+    .button-fill {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: .8rem 1.6rem;
+      border: 1px solid var(--navy);
+      border-radius: 999px;
+      background: var(--navy);
+      color: #fff;
+      transition: background .2s, transform .2s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .button-fill:hover { background: var(--blue); border-color: var(--blue); transform: translateY(-1px); }
+
+    .button-ghost {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: .8rem 1.6rem;
+      border: 1px solid var(--rule);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--ink);
+      transition: background .2s, border-color .2s;
+    }
+    .button-ghost:hover { background: var(--paper-2); border-color: var(--ink); }
+
+    .mobile-toggle {
+      display: none;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      border: 1px solid var(--rule);
+      background: var(--paper-2);
+      color: var(--ink);
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    /* ------------------------------------------------------------
+       HERO
+    ------------------------------------------------------------ */
+    .hero {
+      padding: 112px 0 64px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .hero-eyebrow { margin: 0 0 26px; color: var(--blue); }
+    .hero h1 {
+      font-family: var(--serif);
+      font-weight: 400;
+      margin: 0 0 30px;
+      font-size: clamp(46px, 7.4vw, 108px);
+      line-height: .96;
+      letter-spacing: -.015em;
+      max-width: 1180px;
+    }
+    .hero h1 i { font-style: italic; color: var(--blue); }
+    .hero-row {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 48px;
+      align-items: end;
+    }
+    .hero p {
+      font-size: 20px;
+      line-height: 1.5;
+      color: var(--ink-2);
+      max-width: 50ch;
+      margin: 0;
+    }
+    .hero-links {
+      display: flex;
+      gap: 28px;
+      justify-content: flex-end;
+      font-size: 15px;
+      font-weight: 500;
+      flex-wrap: wrap;
+    }
+
+    .strip {
+      list-style: none;
+      margin: 60px 0 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--rule);
+    }
+    .strip li { padding: 22px 24px 0 0; display: flex; flex-direction: column; gap: 4px; }
+    .strip li + li { border-left: 1px solid var(--rule); padding-left: 24px; }
+    .strip .fig {
+      font-family: var(--tight);
+      font-weight: 600;
+      font-size: 38px;
+      line-height: 1;
+      letter-spacing: -.03em;
+      font-variant-numeric: tabular-nums;
+    }
+    .strip .cap { font-size: 13px; color: var(--sub); line-height: 1.4; }
+
+    /* ------------------------------------------------------------
+       SECTION SHELL
+    ------------------------------------------------------------ */
+    section { padding: 88px 0; }
+    section.tight { padding: 64px 0; }
+    .section-head { max-width: 760px; margin-bottom: 48px; }
+    .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+    .section-head .eyebrow { display: block; margin-bottom: 14px; }
+
+    /* ------------------------------------------------------------
+       MARKETS WALL
+    ------------------------------------------------------------ */
+    .wall {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+    }
+    .stone {
+      background: var(--paper-2);
+      padding: 30px 28px 34px;
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      transition: background .2s;
+    }
+    .stone:hover { background: var(--paper); }
+    .stone .stone-top { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 44px; }
+    .stone .stone-top .kind {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--blue);
+    }
+    .stone .stone-top .num { font-family: var(--mono); font-size: 10px; letter-spacing: .12em; color: var(--mute); }
+    .stone h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(24px, 2.2vw, 30px); line-height: 1.05; margin: 0 0 12px; letter-spacing: -.01em; }
+    .stone p { font-size: 14px; line-height: 1.55; color: var(--sub); margin: 0; max-width: 32ch; }
+
+    /* ------------------------------------------------------------
+       SERVICES
+    ------------------------------------------------------------ */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+    }
+    .service-card {
+      background: var(--paper-2);
+      padding: 34px 28px 36px;
+      display: flex;
+      flex-direction: column;
+      transition: background .2s;
+    }
+    .service-card:hover { background: var(--paper); }
+    .service-card .num { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; color: var(--blue); margin-bottom: 22px; }
+    .service-card h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(22px, 2vw, 28px); line-height: 1.08; margin: 0 0 12px; }
+    .service-card p { font-size: 14px; line-height: 1.6; color: var(--sub); margin: 0 0 22px; flex: 1; }
+    .service-card .link { font-size: 14px; font-weight: 500; color: var(--ink); display: inline-flex; align-items: center; gap: 6px; transition: gap .2s, color .2s; }
+    .service-card .link:hover { gap: 10px; color: var(--blue); }
+
+    /* ------------------------------------------------------------
+       ADVANTAGE
+    ------------------------------------------------------------ */
+    .advantage-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+    }
+    .adv-card { background: var(--paper-2); padding: 40px 36px 44px; transition: background .2s; }
+    .adv-card:hover { background: var(--paper); }
+    .adv-card .num {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 52px;
+      line-height: 1;
+      letter-spacing: -.02em;
+      color: var(--rule-2);
+      margin-bottom: 18px;
+    }
+    .adv-card h3 { font-family: var(--serif); font-weight: 400; font-size: 26px; line-height: 1.1; margin: 0 0 10px; }
+    .adv-card p { font-size: 15px; line-height: 1.65; color: var(--sub); margin: 0; }
+
+    /* ------------------------------------------------------------
+       WHY
+    ------------------------------------------------------------ */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--rule);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+    .why-card { background: var(--paper); padding: 44px 32px 48px; }
+    .why-card .num { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; color: var(--mute); margin-bottom: 20px; }
+    .why-card h3 { font-family: var(--serif); font-weight: 400; font-size: 28px; line-height: 1.05; margin: 0 0 10px; }
+    .why-card p { font-size: 15px; line-height: 1.65; color: var(--sub); margin: 0; }
+
+    /* ------------------------------------------------------------
+       CONNECTION
+    ------------------------------------------------------------ */
+    .connection-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+    }
+    .conn-card { background: var(--paper-2); padding: 40px 32px 44px; display: flex; flex-direction: column; }
+    .conn-card .label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 18px;
+    }
+    .conn-card h3 { font-family: var(--serif); font-weight: 400; font-size: 26px; line-height: 1.08; margin: 0 0 12px; }
+    .conn-card p { font-size: 15px; line-height: 1.65; color: var(--sub); margin: 0; }
+
+    /* ------------------------------------------------------------
+       PROCESS
+    ------------------------------------------------------------ */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+    }
+    .step { background: var(--paper-2); padding: 40px 30px 44px; }
+    .step .num {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 64px;
+      line-height: .9;
+      letter-spacing: -.03em;
+      color: var(--blue-soft);
+      margin-bottom: 18px;
+    }
+    .step h3 { font-family: var(--serif); font-weight: 400; font-size: 24px; line-height: 1.1; margin: 0 0 10px; }
+    .step p { font-size: 15px; line-height: 1.65; color: var(--sub); margin: 0; }
+
+    /* ------------------------------------------------------------
+       TESTIMONIALS
+    ------------------------------------------------------------ */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+    }
+    .testimonial {
+      background: var(--paper-2);
+      padding: 34px 30px 38px;
+      display: flex;
+      flex-direction: column;
+    }
+    .testimonial .stars { color: #F59E0B; font-size: 14px; letter-spacing: 2px; margin-bottom: 16px; }
+    .testimonial blockquote {
+      font-family: var(--serif);
+      font-size: 21px;
+      line-height: 1.35;
+      color: var(--ink-2);
+      margin: 0 0 26px;
+      font-style: italic;
+    }
+    .testimonial .author { display: flex; align-items: center; gap: 12px; margin-top: auto; }
+    .testimonial .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: var(--navy);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .05em;
+      flex-shrink: 0;
+    }
+    .testimonial .name { font-size: 14px; font-weight: 600; }
+    .testimonial .role { font-size: 12px; color: var(--sub); }
+
+    /* ------------------------------------------------------------
+       FAQ
+    ------------------------------------------------------------ */
+    .faq-list { max-width: 780px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid var(--rule); }
+    .faq-q {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 22px 0;
+      background: none;
+      border: none;
+      font-family: var(--sans);
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--ink);
+      cursor: pointer;
+      text-align: left;
+      transition: color .15s;
+    }
+    .faq-q:hover { color: var(--blue); }
+    .faq-q .icon { font-size: 20px; color: var(--mute); transition: transform .3s, color .2s; }
+    .faq-item.active .faq-q .icon { transform: rotate(180deg); color: var(--blue); }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .4s ease, padding .4s ease;
+      padding: 0;
+    }
+    .faq-item.active .faq-a { max-height: 400px; padding: 0 0 24px; }
+    .faq-a p { font-size: 15px; line-height: 1.7; color: var(--sub); margin: 0; }
+    .faq-a a { color: var(--blue); font-weight: 600; }
+
+    /* ------------------------------------------------------------
+       CTA
+    ------------------------------------------------------------ */
+    .cta-section {
+      background: var(--navy-deep);
+      color: #fff;
+      padding: 110px 0;
+      text-align: center;
+    }
+    .cta-section .eyebrow { color: var(--blue-bright); display: block; margin-bottom: 18px; }
+    .cta-section h2 { color: #fff; margin-bottom: 18px; }
+    .cta-section p { color: rgba(255,255,255,.65); max-width: 56ch; margin: 0 auto 40px; }
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .cta-note {
+      margin-top: 28px;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .1em;
+      color: rgba(255,255,255,.4);
+      line-height: 1.6;
+    }
+
+    /* ------------------------------------------------------------
+       FOOTER
+    ------------------------------------------------------------ */
+    .footer {
+      background: var(--paper-2);
+      border-top: 1px solid var(--rule);
+      padding: 64px 0 36px;
+    }
+    .footer-top { display: flex; flex-direction: column; gap: 24px; margin-bottom: 48px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 10px 24px; font-size: 13px; color: var(--sub); }
+    .footer-links a { color: var(--sub); transition: color .15s; }
+    .footer-links a:hover { color: var(--blue); }
+    .footer-links .dot { color: var(--mute); }
+    .legal {
+      padding-top: 32px;
+      border-top: 1px solid var(--rule);
+      max-width: 920px;
+      font-size: 12px;
+      line-height: 1.8;
+      color: var(--mute);
+    }
+    .legal strong { color: var(--ink-2); font-weight: 600; display: block; margin-bottom: 6px; }
+    .legal p { margin-bottom: 12px; }
+    .legal a { color: var(--blue); text-decoration: underline; text-underline-offset: 2px; }
+
+    /* ------------------------------------------------------------
+       FLOATING
+    ------------------------------------------------------------ */
+    .whatsapp {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 55;
+      display: grid;
+      place-items: center;
+      width: 52px;
+      height: 52px;
+      border-radius: 999px;
+      background: #25D366;
+      box-shadow: 0 6px 20px rgba(37,211,102,.3);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .whatsapp:hover { transform: scale(1.06); box-shadow: 0 10px 28px rgba(37,211,102,.4); }
+    .whatsapp svg { width: 24px; height: 24px; fill: #fff; }
+
+    .sticky-cta {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 50;
+      padding: 10px 16px;
+      background: rgba(250,249,245,.96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-top: 1px solid var(--rule);
+    }
+    .sticky-cta .button-fill { width: 100%; justify-content: center; }
+
+    /* ------------------------------------------------------------
+       REVEAL (progressive enhancement — visible by default)
+    ------------------------------------------------------------ */
+    html.js .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    html.js .reveal.in-view { opacity: 1; transform: translateY(0); }
+
+    /* ------------------------------------------------------------
+       RESPONSIVE
+    ------------------------------------------------------------ */
+    @media (max-width: 1080px) {
+      .mast .wrap { grid-template-columns: 1fr auto; }
+      .mast-mid { display: none; }
+      .mast-right a:not(.button-outline) { display: none; }
+      .wall { grid-template-columns: repeat(2, 1fr); }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .advantage-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .connection-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 860px) {
+      :root { --gutter: 20px; }
+      .hero { padding: 84px 0 48px; }
+      .hero h1 { font-size: clamp(38px, 9vw, 60px); }
+      .hero-row { grid-template-columns: 1fr; gap: 28px; }
+      .hero-links { justify-content: flex-start; }
+      .strip { grid-template-columns: 1fr 1fr; margin-top: 40px; }
+      .strip li { padding: 16px 16px 16px 0; }
+      .strip li + li { padding-left: 16px; }
+      .strip li:nth-child(odd) { border-left: 0; padding-left: 0; }
+      .strip .fig { font-size: 30px; }
+
+      section { padding: 64px 0; }
+      .wall { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+
+      .mobile-toggle { display: grid; }
+      .sticky-cta { display: block; }
+      .whatsapp { bottom: 80px; right: 16px; width: 46px; height: 46px; }
+      .whatsapp svg { width: 20px; height: 20px; }
+      .footer { padding-bottom: 90px; }
+    }
+
+    @media (max-width: 560px) {
+      .hero h1 { font-size: clamp(34px, 10vw, 48px); }
+      .hero p { font-size: 17px; }
+      .strip { grid-template-columns: 1fr; }
+      .strip li { border-left: 0 !important; padding-left: 0 !important; border-top: 1px solid var(--rule); padding-top: 16px; }
+      .strip li:first-child { border-top: 0; padding-top: 0; }
+      .section-head { margin-bottom: 32px; }
+      .stone, .service-card, .adv-card, .why-card, .conn-card, .step, .testimonial { padding-left: 20px; padding-right: 20px; }
+      .adv-card .num { font-size: 42px; }
+      .step .num { font-size: 52px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .001ms !important;
+        scroll-behavior: auto !important;
+      }
+      html.js .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
-<div class="scroll-progress" aria-hidden="true"><div class="scroll-progress-bar" id="progressBar"></div></div>
+  <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress-bar" id="progressBar"></div></div>
 
-<!-- Navigation -->
-<nav class="nav" aria-label="Main navigation">
-  <div class="wrap nav-inner">
-    <a class="logo-lockup" href="#top" aria-label="Mariba Media home">
-      <svg class="mariba-mark" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-        <defs>
-          <linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#0B1F3A"/>
-            <stop offset="100%" stop-color="#2563EB"/>
-          </linearGradient>
-        </defs>
-        <rect x="10" y="10" width="34" height="34" rx="8" fill="url(#lg1)"/>
-        <rect x="56" y="10" width="34" height="34" rx="8" fill="url(#lg1)" opacity="0.65"/>
-        <rect x="10" y="56" width="34" height="34" rx="8" fill="url(#lg1)" opacity="0.65"/>
-        <rect x="56" y="56" width="34" height="34" rx="8" fill="url(#lg1)"/>
-      </svg>
-      <span class="wordmark">MARIBA MEDIA</span>
-    </a>
-    <div class="nav-links">
-      <a href="#markets">Markets</a>
-      <a href="#services">Services</a>
-      <a href="#advantage">Advantage</a>
-      <a href="#connection">Connection</a>
-      <a href="#process">Process</a>
-      <a href="#faq">FAQ</a>
-      <a class="button" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Tell Us What You Need</a>
-    </div>
-    <button class="mobile-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-      <span class="material-symbols-outlined">menu</span>
-    </button>
-  </div>
-  <div id="mobile-menu" class="mobile-panel">
-    <a href="#markets">Markets We Serve</a>
-    <a href="#services">Our Services</a>
-    <a href="#advantage">The Advantage</a>
-    <a href="#connection">Demand to Supply</a>
-    <a href="#process">How It Works</a>
-    <a href="#faq">FAQ</a>
-    <a class="button" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Tell Us What You Need</a>
-  </div>
-</nav>
-
-<main id="top">
-
-  <!-- HERO -->
-  <header class="hero">
-    <div class="hero-bg" aria-hidden="true"></div>
-    <div class="hero-overlay" aria-hidden="true"></div>
-
+  <!-- MASTHEAD -->
+  <header class="mast">
     <div class="wrap">
-      <div class="hero-content">
-        <span class="hero-eyebrow">
-          <span class="dot"></span>
-          Capital &amp; Infrastructure, Connected
-        </span>
-        <h1>The capital and infrastructure <em>your business runs on.</em></h1>
-        <p class="hero-lead">
-          Mariba Media connects South African businesses to a vetted network of specialist funding and infrastructure partners. Commercial solar. Working capital. Invoice finance. Purchase order funding. Project finance. Agricultural energy. Every connection is curated, every fee is performance-based, and every incentive is aligned to your outcome — so operations keep running, cash keeps flowing and growth keeps moving.
-        </p>
-        <div class="hero-actions">
-          <a class="button light" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Tell Us What You Need</a>
-          <a class="button ghost-light" href="#services">Explore Services</a>
-        </div>
-      </div>
+      <a class="wordmark" href="#top" aria-label="Mariba Media home">MARIBA<em>·</em>MEDIA</a>
+      <div class="mast-mid">Capital &amp; Infrastructure, Connected</div>
+      <nav class="mast-right" aria-label="Primary">
+        <a href="#markets" class="u">Markets</a>
+        <a href="#services" class="u">Services</a>
+        <a href="#process" class="u">Process</a>
+        <a class="button-outline" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Tell Us What You Need</a>
+        <button class="mobile-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">☰</button>
+      </nav>
+    </div>
+    <div id="mobile-menu" style="display:none; padding: 12px 20px 24px; border-top: 1px solid var(--rule); background: var(--paper);">
+      <a href="#markets" style="display:block; padding: 12px 0; font-size: 15px; border-bottom: 1px solid var(--rule-2);">Markets</a>
+      <a href="#services" style="display:block; padding: 12px 0; font-size: 15px; border-bottom: 1px solid var(--rule-2);">Services</a>
+      <a href="#advantage" style="display:block; padding: 12px 0; font-size: 15px; border-bottom: 1px solid var(--rule-2);">Advantage</a>
+      <a href="#connection" style="display:block; padding: 12px 0; font-size: 15px; border-bottom: 1px solid var(--rule-2);">Connection</a>
+      <a href="#process" style="display:block; padding: 12px 0; font-size: 15px; border-bottom: 1px solid var(--rule-2);">Process</a>
+      <a href="#faq" style="display:block; padding: 12px 0; font-size: 15px; border-bottom: 1px solid var(--rule-2);">FAQ</a>
+      <a class="button-fill" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener" style="width:100%; justify-content:center; margin-top:16px;">Tell Us What You Need</a>
     </div>
   </header>
 
-  <!-- MARKETS -->
-  <section id="markets">
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="eyebrow accent hero-eyebrow">Capital &amp; Infrastructure, Connected</div>
+        <h1>The capital and infrastructure <i>your business runs on.</i></h1>
+        <div class="hero-row">
+          <p>Mariba Media connects South African businesses to a vetted network of specialist funding and infrastructure partners. Commercial solar. Working capital. Invoice finance. Purchase order funding. Project finance. Agricultural energy. Every connection is curated, every fee is performance-based, and every incentive is aligned to your outcome — so operations keep running, cash keeps flowing and growth keeps moving.</p>
+          <div class="hero-links">
+            <a class="u" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Tell Us What You Need →</a>
+            <a class="u" href="#services">Explore Services</a>
+          </div>
+        </div>
+        <ul class="strip">
+          <li><span class="fig">R250k+</span><span class="cap">PO funding from</span></li>
+          <li><span class="fig">100%</span><span class="cap">Invoice value unlocked</span></li>
+          <li><span class="fig">5–100 MW</span><span class="cap">IPP project scale</span></li>
+          <li><span class="fig">24–48h</span><span class="cap">To the right specialist</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- MARKETS -->
+    <section id="markets">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow accent">Who We Serve</span>
+          <h2 class="t">Built for the sectors that keep South Africa running.</h2>
+          <p class="lede">Our partners fund and power businesses across the industries that matter most. If your operations depend on energy, cash flow or scale, we can connect you to the specialist who solves it.</p>
+        </div>
+        <div class="wall reveal">
+          <div class="stone"><div class="stone-top"><span class="kind">Agriculture</span><span class="num">01</span></div><h3>Agriculture</h3><p>Solar, irrigation and working capital for farms, estates and agri-processing operations.</p></div>
+          <div class="stone"><div class="stone-top"><span class="kind">Construction</span><span class="num">02</span></div><h3>Construction</h3><p>Project finance, equipment funding and purchase order funding for contractors and developers.</p></div>
+          <div class="stone"><div class="stone-top"><span class="kind">Retail &amp; E-commerce</span><span class="num">03</span></div><h3>Retail &amp; E-commerce</h3><p>Working capital, invoice finance and commercial solar for stores, warehouses and online sellers.</p></div>
+          <div class="stone"><div class="stone-top"><span class="kind">Manufacturing</span><span class="num">04</span></div><h3>Manufacturing</h3><p>Energy, purchase order funding and lines of credit for producers, processors and industrial operators.</p></div>
+          <div class="stone"><div class="stone-top"><span class="kind">Commercial Property</span><span class="num">05</span></div><h3>Commercial Property</h3><p>Capex-free solar and infrastructure for landlords, estates and property portfolios.</p></div>
+          <div class="stone"><div class="stone-top"><span class="kind">Fuel Retail &amp; Forecourts</span><span class="num">06</span></div><h3>Fuel Retail &amp; Forecourts</h3><p>Solar and equipment finance for fuel retailers and forecourt operators.</p></div>
+          <div class="stone"><div class="stone-top"><span class="kind">Medical Practices</span><span class="num">07</span></div><h3>Medical Practices</h3><p>Equipment finance, working capital and solar for clinics, hospitals and specialist practices.</p></div>
+          <div class="stone"><div class="stone-top"><span class="kind">Security</span><span class="num">08</span></div><h3>Security</h3><p>Asset finance and working capital for security operators, guarding companies and monitoring firms.</p></div>
+          <div class="stone"><div class="stone-top"><span class="kind">Mining &amp; Logistics</span><span class="num">09</span></div><h3>Mining &amp; Logistics</h3><p>Purchase order funding and heavy equipment finance for operators and contractors.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" style="background:var(--paper-2); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow accent">What We Connect You To</span>
+          <h2 class="t">Specialist turnkey funding solutions.</h2>
+          <p class="lede">Each partner in our network is a specialist in their field, holding an exclusive mandate. You deal directly with them — no middlemen, no layered costs, no diluted expertise. We make the introduction, and the performance-based fee follows the result.</p>
+        </div>
+        <div class="services-grid reveal">
+          <article class="service-card"><span class="num">01</span><h3>Commercial &amp; Industrial Solar</h3><p>Reduce electricity costs without tying up capital. Full site assessment, design, installation and ongoing maintenance — with financing built in.</p><a class="link" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Enquire →</a></article>
+          <article class="service-card"><span class="num">02</span><h3>Business Loans</h3><p>Lump-sum funding for growth, equipment or working capital. Online application, 24-hour decision, funds in your account within hours.</p><a class="link" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Apply →</a></article>
+          <article class="service-card"><span class="num">03</span><h3>Line of Credit</h3><p>Revolving working capital up to R5 million. Draw when you need, repay and re-use. No facility fees, no monthly charges.</p><a class="link" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Enquire →</a></article>
+          <article class="service-card"><span class="num">04</span><h3>Invoice Finance</h3><p>Turn unpaid invoices into immediate cash. Access up to 100% of invoice value with undisclosed, transparent transactions.</p><a class="link" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Enquire →</a></article>
+          <article class="service-card"><span class="num">05</span><h3>Purchase Order Funding</h3><p>Fulfil confirmed purchase orders without straining cash flow. Supplier costs covered from R250,000. Repayment from the buyer's invoice.</p><a class="link" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Enquire →</a></article>
+          <article class="service-card"><span class="num">06</span><h3>IPP Project Funding</h3><p>Utility-scale solar and wind, 5 MW–100 MW+. Debt, equity or blended project finance structures for fully developed energy projects.</p><a class="link" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Submit a project →</a></article>
+          <article class="service-card"><span class="num">07</span><h3>Agricultural Solar</h3><p>Holistic solar for farms, irrigation, greenhouses and agri-processing. Lower energy costs, stable off-grid power and protection from grid volatility.</p><a class="link" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Enquire →</a></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADVANTAGE -->
+    <section id="advantage">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow accent">Aligned by Design</span>
+          <h2 class="t">Performance-based. Risk-aware. Incentives that point the same way.</h2>
+          <p class="lede">We are not a directory, a broker or a lead generator. Every introduction is curated, every fee is tied to outcome, and every risk is mapped before the connection is made.</p>
+        </div>
+        <div class="advantage-grid reveal">
+          <div class="adv-card"><div class="num">01</div><h3>Performance-Based Success Fees</h3><p>Your success is the trigger for ours. Success fees are structured against completed transactions, agreed milestones and measurable outcomes — not introductions, not activity, not pipeline. If the connection does not produce a result, there is no success fee.</p></div>
+          <div class="adv-card"><div class="num">02</div><h3>Aligned Incentives</h3><p>Clients, partners and Mariba all sit on the same side of the table. Partners are compensated for delivery. We are compensated for the connection that converts. Fees are disclosed upfront, with no layered costs and no hidden margins.</p></div>
+          <div class="adv-card"><div class="num">03</div><h3>Risk, Managed Before Connection</h3><p>Risk does not disappear because a deal is introduced. It is mapped, documented and owned. Before any connection, we screen for mandate fit, capacity to execute, track record and client-first delivery.</p></div>
+          <div class="adv-card"><div class="num">04</div><h3>Curated, Not Crowded</h3><p>You are not added to a list. You are matched to the specialist whose mandate fits your requirement — one introduction, not a scattergun. Curated connections mean less noise, faster decisions and better execution.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONNECTION -->
+    <section id="connection" style="background:var(--paper-2); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <span class="eyebrow accent">Demand Meets Supply</span>
+          <h2 class="t">We connect the need to the specialist who can answer it.</h2>
+          <p class="lede">Most businesses do not lack ambition. They lack access — to the funder whose mandate matches their deal, the installer who can execute at their site, the structure that fits their cash flow. Mariba Media is the connective layer between demand and supply.</p>
+        </div>
+        <div class="connection-grid reveal">
+          <div class="conn-card"><span class="label">Demand</span><h3>Your requirement, qualified.</h3><p>You tell us what you need — the energy bill, the unpaid invoices, the confirmed order, the project. We frame it as a clear demand signal: scope, timing, ticket size and the outcome required.</p></div>
+          <div class="conn-card"><span class="label">Supply</span><h3>The partner with the exclusive mandate.</h3><p>We route that signal to the specialist partner who holds the exclusive mandate in that field — not a marketplace, not a bidding war. One qualified demand signal, one capable supply partner.</p></div>
+          <div class="conn-card"><span class="label">Result</span><h3>Exclusive business. Curated outcomes.</h3><p>Partners get exclusive access to qualified demand. Clients get a matched opportunity with a partner who can execute. The result is measurable — revenue generated, operations transformed, outcomes that show up in the business.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY IT MATTERS -->
+    <section id="why">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow accent">The Gap We Bridge</span>
+          <h2 class="t">Capital and infrastructure are not luxuries. They are the cost of staying open.</h2>
+          <p class="lede">Every business runs on something — power, cash flow, access. When one of those breaks down, operations stop. When access to capital is slow or unclear, growth stalls. We exist to close that gap.</p>
+        </div>
+        <div class="why-grid reveal">
+          <div class="why-card"><div class="num">01</div><h3>Energy</h3><p>Rising tariffs and unreliable supply erode margins. Solar is no longer a sustainability goal. It is an operating cost decision — and the right connection makes it capex-free, fast and measurable.</p></div>
+          <div class="why-card"><div class="num">02</div><h3>Cash Flow</h3><p>Unpaid invoices. Confirmed orders you cannot fund. Working capital that dries up at the wrong moment. These are the quiet killers of growing businesses — and each one has a specialist solution.</p></div>
+          <div class="why-card"><div class="num">03</div><h3>Scale &amp; Resilience</h3><p>Growth does not fail because of ambition. It fails when access to capital and infrastructure is slow, unclear or mismatched. The right connection turns a stall into a step change.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process" style="background:var(--paper-2); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <span class="eyebrow accent">How It Works</span>
+          <h2 class="t">One conversation. The right specialist.</h2>
+          <p class="lede">You do not need to know which funder, installer or lender fits your situation. That is what we are here for. Tell us what you need. We will tell you if there is a specialist who can help — and connect you if there is.</p>
+        </div>
+        <div class="steps reveal">
+          <div class="step"><div class="num">01</div><h3>Tell Us What You Need</h3><p>Describe the need — the energy bill, the unpaid invoices, the confirmed order, the project. Share whatever standard documents you have. No obligation, no cost.</p></div>
+          <div class="step"><div class="num">02</div><h3>We Curate the Connection</h3><p>We match your requirement to the partner whose mandate fits — screened for track record, capacity to execute and client-first delivery. One qualified introduction, not a scattergun.</p></div>
+          <div class="step"><div class="num">03</div><h3>You Deal Directly With the Specialist</h3><p>All terms, due diligence and delivery are between you and the partner. We stay out of the way. The success fee is performance-based — earned when the connection produces a result.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section>
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <span class="eyebrow accent">Client Stories</span>
+          <h2 class="t">Businesses that trusted the connection.</h2>
+        </div>
+        <div class="testimonials-grid reveal">
+          <div class="testimonial"><div class="stars">★★★★★</div><blockquote>“We reduced our farm's energy costs by over 50% with the fully funded solar solution. No upfront costs, no maintenance worries — the partner handled everything.”</blockquote><div class="author"><div class="avatar">AF</div><div><div class="name">Afgri Partner Farmer</div><div class="role">Grain &amp; Livestock — Free State</div></div></div></div>
+          <div class="testimonial"><div class="stars">★★★★★</div><blockquote>“Our commercial building switched to a PPA and we saw savings from month one. The team managed the entire installation and ongoing maintenance.”</blockquote><div class="author"><div class="avatar">PM</div><div><div class="name">Property Manager</div><div class="role">Commercial Portfolio — Johannesburg</div></div></div></div>
+          <div class="testimonial"><div class="stars">★★★★★</div><blockquote>“Got approved for a R2M line of credit in under 24 hours. No paperwork, no hidden costs. The Mariba connection made it seamless.”</blockquote><div class="author"><div class="avatar">DK</div><div><div class="name">David K.</div><div class="role">Factory Operations — Durban</div></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" style="background:var(--paper-2); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);">
+      <div class="wrap-narrow">
+        <div class="section-head center reveal">
+          <span class="eyebrow accent">Common Questions</span>
+          <h2 class="t">What you need to know.</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item reveal"><button class="faq-q" type="button" aria-expanded="false"><span>Who are the specialist partners?</span><span class="icon">▾</span></button><div class="faq-a"><p>Our network is made up of vetted specialist funders, installers and lenders — each with an exclusive mandate in their field. Every partner is selected for track record, capacity to execute and client-first delivery. We do not name them publicly; we connect your enquiry to the partner with the exact mandate for your requirement.</p></div></div>
+          <div class="faq-item reveal"><button class="faq-q" type="button" aria-expanded="false"><span>What industries do you serve?</span><span class="icon">▾</span></button><div class="faq-a"><p>We serve businesses across agriculture, construction, retail and e-commerce, manufacturing, commercial property, fuel retail, medical practices, security, and mining and logistics. If your operations depend on energy, cash flow or scale, we can connect you to a specialist who solves it.</p></div></div>
+          <div class="faq-item reveal"><button class="faq-q" type="button" aria-expanded="false"><span>How long does it take to be connected?</span><span class="icon">▾</span></button><div class="faq-a"><p>For most core services — business loans, invoice finance, purchase order funding, lines of credit and commercial solar — we can identify the right specialist within 24 to 48 hours of receiving a complete enquiry. IPP project funding is a longer cycle, typically measured in weeks rather than days.</p></div></div>
+          <div class="faq-item reveal"><button class="faq-q" type="button" aria-expanded="false"><span>How are your fees structured?</span><span class="icon">▾</span></button><div class="faq-a"><p>Success fees are performance-based and tied to completed transactions or agreed milestones. Fees are disclosed upfront. No result, no success fee. Partners are compensated for delivery; we are compensated for the connection that converts. The incentive is aligned with your outcome.</p></div></div>
+          <div class="faq-item reveal"><button class="faq-q" type="button" aria-expanded="false"><span>How do you manage risk?</span><span class="icon">▾</span></button><div class="faq-a"><p>Risk is screened before any introduction — mandate fit, track record, capacity to execute and client-first delivery. The partner who carries the risk carries it visibly, and all due diligence remains with them. Mariba does not hide or absorb risk; we make it visible before the connection is made.</p></div></div>
+          <div class="faq-item reveal"><button class="faq-q" type="button" aria-expanded="false"><span>Do I deal with Mariba or the partner?</span><span class="icon">▾</span></button><div class="faq-a"><p>You deal directly with the partner from the first introduction. Mariba makes the connection and then steps out of the way. All discussions, terms, due diligence and delivery are between you and the specialist.</p></div></div>
+          <div class="faq-item reveal"><button class="faq-q" type="button" aria-expanded="false"><span>What do I need to get started?</span><span class="icon">▾</span></button><div class="faq-a"><p>Simply tell us what you need and share whatever standard documents you have. For solar: 12 months of utility bills, generator details if applicable, site address. For finance: basic business information, the funding amount and the purpose. For IPP: executive summary, site location, PPA structure and EIA status.</p></div></div>
+          <div class="faq-item reveal"><button class="faq-q" type="button" aria-expanded="false"><span>Do you guarantee funding?</span><span class="icon">▾</span></button><div class="faq-a"><p>No. All funding terms, credit decisions and due diligence are the exclusive responsibility of the partner that engages with you. We connect you to the right specialist; the specialist makes the decision. No funding outcome is guaranteed.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" id="contact">
+      <div class="wrap">
+        <span class="eyebrow">Start a Conversation</span>
+        <h2 class="t">Tell us what your business needs.</h2>
+        <p>One conversation. We will tell you if there is a specialist who can help — and connect you if there is.</p>
+        <div class="cta-actions">
+          <a class="button-fill" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Solar &amp; Finance Enquiry</a>
+          <a class="button-ghost" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener" style="border-color:rgba(255,255,255,.25); color:#fff;">IPP Project Screening</a>
+          <a class="button-fill" href="https://wa.me/27766473499?text=Hi%2C%20I'd%20like%20to%20speak%20to%20someone%20about%20solar%2C%20finance%20or%20funding%20for%20my%20business." target="_blank" rel="noopener" style="background:#25D366; border-color:#25D366;">WhatsApp Us</a>
+        </div>
+        <p class="cta-note">Solar documentation: 12 months utility bill, generator details (if applicable), site address and contact info.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
     <div class="wrap">
-      <div class="section-head reveal">
-        <span class="kicker">Who We Serve</span>
-        <h2 class="section-title">Built for the sectors that keep South Africa running.</h2>
-        <p class="section-copy">Our partners fund and power businesses across the industries that matter most. If your operations depend on energy, cash flow or scale, we can connect you to the specialist who solves it.</p>
+      <div class="footer-top">
+        <a class="wordmark" href="#top" aria-label="Mariba Media home">MARIBA<em>·</em>MEDIA</a>
+        <div class="footer-links">
+          <a href="#markets">Markets</a><span class="dot">·</span>
+          <a href="#services">C&amp;I Solar</a><span class="dot">·</span>
+          <a href="#services">Business Loans</a><span class="dot">·</span>
+          <a href="#services">Line of Credit</a><span class="dot">·</span>
+          <a href="#services">Invoice Finance</a><span class="dot">·</span>
+          <a href="#services">PO Funding</a><span class="dot">·</span>
+          <a href="#services">IPP Funding</a><span class="dot">·</span>
+          <a href="#services">Agricultural Solar</a><span class="dot">·</span>
+          <a href="#advantage">The Advantage</a><span class="dot">·</span>
+          <a href="#connection">Demand to Supply</a><span class="dot">·</span>
+          <a href="#faq">FAQ</a>
+        </div>
       </div>
-
-      <div class="markets-grid reveal">
-
-        <div class="market">
-          <span class="market-icon"><span class="material-symbols-outlined">agriculture</span></span>
-          <h3>Agriculture</h3>
-          <p>Solar, irrigation and working capital for farms, estates and agri-processing operations.</p>
-        </div>
-
-        <div class="market">
-          <span class="market-icon"><span class="material-symbols-outlined">construction</span></span>
-          <h3>Construction</h3>
-          <p>Project finance, equipment funding and purchase order funding for contractors and developers.</p>
-        </div>
-
-        <div class="market">
-          <span class="market-icon"><span class="material-symbols-outlined">shopping_cart</span></span>
-          <h3>Retail &amp; E-commerce</h3>
-          <p>Working capital, invoice finance and commercial solar for stores, warehouses and online sellers.</p>
-        </div>
-
-        <div class="market">
-          <span class="market-icon"><span class="material-symbols-outlined">factory</span></span>
-          <h3>Manufacturing</h3>
-          <p>Energy, purchase order funding and lines of credit for producers, processors and industrial operators.</p>
-        </div>
-
-        <div class="market">
-          <span class="market-icon"><span class="material-symbols-outlined">apartment</span></span>
-          <h3>Commercial Property</h3>
-          <p>Capex-free solar and infrastructure for landlords, estates and property portfolios.</p>
-        </div>
-
-        <div class="market">
-          <span class="market-icon"><span class="material-symbols-outlined">local_gas_station</span></span>
-          <h3>Fuel Retail &amp; Forecourts</h3>
-          <p>Solar and equipment finance for fuel retailers and forecourt operators.</p>
-        </div>
-
-        <div class="market">
-          <span class="market-icon"><span class="material-symbols-outlined">local_hospital</span></span>
-          <h3>Medical Practices</h3>
-          <p>Equipment finance, working capital and solar for clinics, hospitals and specialist practices.</p>
-        </div>
-
-        <div class="market">
-          <span class="market-icon"><span class="material-symbols-outlined">security</span></span>
-          <h3>Security</h3>
-          <p>Asset finance and working capital for security operators, guarding companies and monitoring firms.</p>
-        </div>
-
-        <div class="market">
-          <span class="market-icon"><span class="material-symbols-outlined">local_shipping</span></span>
-          <h3>Mining &amp; Logistics</h3>
-          <p>Purchase order funding and heavy equipment finance for operators and contractors.</p>
-        </div>
-
+      <div class="legal">
+        <p><strong>Disclaimer &amp; Compliance</strong></p>
+        <p><strong>Mariba Media</strong> (Reg: 2024/132788/07) connects South African businesses to a network of specialist partners. Mariba Media does not hold, process or transact any funds. It does not provide financial advice, intermediary services or any other regulated financial service as defined in the Financial Advisory and Intermediary Services Act (FAIS Act, 37 of 2002). All financial services are rendered solely by the regulated partners within the network.</p>
+        <p>Mariba Media's function is to accept client project information and connect that information unchanged to the relevant partner with the exclusive mandate. No curation, feasibility review, recommendation or filtering of any kind is performed by Mariba Media. All funding terms, credit decisions and due diligence are the exclusive responsibility of the partner that engages with the client. No funding outcome is guaranteed.</p>
+        <p>Solar, IPP funding and business finance services are delivered by our specialist partners, each of which is a licensed credit provider or authorised financial services provider. Mariba Media does not participate in any installation, maintenance or credit decision.</p>
+        <p><em>Last updated: 2026. All rights reserved.</em></p>
       </div>
     </div>
-  </section>
+  </footer>
 
-  <!-- SERVICES -->
-  <section id="services" style="background:var(--paper-2);">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="kicker">What We Connect You To</span>
-        <h2 class="section-title">Specialist turnkey funding solutions.</h2>
-        <p class="section-copy">Each partner in our network is a specialist in their field, holding an exclusive mandate. You deal directly with them — no middlemen, no layered costs, no diluted expertise. We make the introduction, and the performance-based fee follows the result.</p>
-      </div>
-
-      <div class="services-grid reveal">
-
-        <article class="service">
-          <span class="service-icon"><span class="material-symbols-outlined">solar_power</span></span>
-          <h3>Commercial &amp; Industrial Solar</h3>
-          <p>Reduce electricity costs without tying up capital. Full site assessment, design, installation and ongoing maintenance — with financing built in. The benefit is immediate: lower operating costs, predictable energy, and a balance sheet that stays free.</p>
-          <a class="service-link" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Enquire <span class="material-symbols-outlined">arrow_forward</span></a>
-        </article>
-
-        <article class="service">
-          <span class="service-icon"><span class="material-symbols-outlined">business_center</span></span>
-          <h3>Business Loans</h3>
-          <p>Lump-sum funding for growth, equipment or working capital. Online application, 24-hour decision, funds in your account within hours. The benefit is speed: capital in the business when the opportunity is live, not weeks after it has passed.</p>
-          <a class="service-link" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Apply <span class="material-symbols-outlined">arrow_forward</span></a>
-        </article>
-
-        <article class="service">
-          <span class="service-icon"><span class="material-symbols-outlined">credit_card</span></span>
-          <h3>Line of Credit</h3>
-          <p>Revolving working capital up to R5 million. Draw when you need, repay and re-use. No facility fees, no monthly charges. The benefit is flexibility: a capital buffer that moves with your cash cycle instead of against it.</p>
-          <a class="service-link" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Enquire <span class="material-symbols-outlined">arrow_forward</span></a>
-        </article>
-
-        <article class="service">
-          <span class="service-icon"><span class="material-symbols-outlined">receipt_long</span></span>
-          <h3>Invoice Finance</h3>
-          <p>Turn unpaid invoices into immediate cash. Access up to 100% of invoice value with undisclosed, transparent transactions. The benefit is liquidity: cash flow unlocked from work already delivered, without adding debt to the balance sheet.</p>
-          <a class="service-link" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Enquire <span class="material-symbols-outlined">arrow_forward</span></a>
-        </article>
-
-        <article class="service">
-          <span class="service-icon"><span class="material-symbols-outlined">inventory_2</span></span>
-          <h3>Purchase Order Funding</h3>
-          <p>Fulfil confirmed purchase orders without straining cash flow. Supplier costs covered from R250,000. Repayment from the buyer's invoice. The benefit is capacity: you can say yes to the order without saying no to your cash flow.</p>
-          <a class="service-link" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Enquire <span class="material-symbols-outlined">arrow_forward</span></a>
-        </article>
-
-        <article class="service">
-          <span class="service-icon"><span class="material-symbols-outlined">bolt</span></span>
-          <h3>IPP Project Funding</h3>
-          <p>Utility-scale solar and wind, 5 MW–100 MW+. Debt, equity or blended project finance structures for fully developed energy projects. The benefit is scale: projects that move from feasibility to financial close with the right capital structure behind them.</p>
-          <a class="service-link" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Submit a project <span class="material-symbols-outlined">arrow_forward</span></a>
-        </article>
-
-        <article class="service">
-          <span class="service-icon"><span class="material-symbols-outlined">eco</span></span>
-          <h3>Agricultural Solar</h3>
-          <p>Holistic solar for farms, irrigation, greenhouses and agri-processing. Lower energy costs, stable off-grid power and protection from grid volatility. The benefit is resilience: energy that holds through the season and the grid.</p>
-          <a class="service-link" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Enquire <span class="material-symbols-outlined">arrow_forward</span></a>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ADVANTAGE -->
-  <section id="advantage">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="kicker">Aligned by Design</span>
-        <h2 class="section-title">Performance-based. Risk-aware. Incentives that point the same way.</h2>
-        <p class="section-copy">We are not a directory, a broker or a lead generator. Every introduction is curated, every fee is tied to outcome, and every risk is mapped before the connection is made.</p>
-      </div>
-
-      <div class="advantage-grid reveal">
-
-        <div class="advantage-card">
-          <span class="adv-num">01</span>
-          <h3>Performance-Based Success Fees</h3>
-          <p>Your success is the trigger for ours. Success fees are structured against completed transactions, agreed milestones and measurable outcomes — not introductions, not activity, not pipeline. If the connection does not produce a result, there is no success fee.</p>
-        </div>
-
-        <div class="advantage-card">
-          <span class="adv-num">02</span>
-          <h3>Aligned Incentives</h3>
-          <p>Clients, partners and Mariba all sit on the same side of the table. Partners are compensated for delivery. We are compensated for the connection that converts. Fees are disclosed upfront, with no layered costs and no hidden margins. The incentive is simple: close the right deal, cleanly and quickly.</p>
-        </div>
-
-        <div class="advantage-card">
-          <span class="adv-num">03</span>
-          <h3>Risk, Managed Before Connection</h3>
-          <p>Risk does not disappear because a deal is introduced. It is mapped, documented and owned. Before any connection, we screen for mandate fit, capacity to execute, track record and client-first delivery. The partner who carries the risk carries it visibly.</p>
-        </div>
-
-        <div class="advantage-card">
-          <span class="adv-num">04</span>
-          <h3>Curated, Not Crowded</h3>
-          <p>You are not added to a list. You are matched to the specialist whose mandate fits your requirement — one introduction, not a scattergun. Curated connections mean less noise, faster decisions and better execution.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CONNECTION -->
-  <section id="connection" style="background:var(--paper-2);">
-    <div class="wrap">
-      <div class="section-head center reveal">
-        <span class="kicker">Demand Meets Supply</span>
-        <h2 class="section-title">We connect the need to the specialist who can answer it.</h2>
-        <p class="section-copy">Most businesses do not lack ambition. They lack access — to the funder whose mandate matches their deal, the installer who can execute at their site, the structure that fits their cash flow. Mariba Media is the connective layer between demand and supply.</p>
-      </div>
-
-      <div class="connection-grid reveal">
-
-        <div class="connection-card">
-          <span class="conn-label">Demand</span>
-          <h3>Your requirement, qualified.</h3>
-          <p>You tell us what you need — the energy bill, the unpaid invoices, the confirmed order, the project. We frame it as a clear demand signal: scope, timing, ticket size and the outcome required.</p>
-        </div>
-
-        <div class="connection-card">
-          <span class="conn-label">Supply</span>
-          <h3>The partner with the exclusive mandate.</h3>
-          <p>We route that signal to the specialist partner who holds the exclusive mandate in that field — not a marketplace, not a bidding war. One qualified demand signal, one capable supply partner.</p>
-        </div>
-
-        <div class="connection-card">
-          <span class="conn-label">Result</span>
-          <h3>Exclusive business. Curated outcomes.</h3>
-          <p>Partners get exclusive access to qualified demand. Clients get a matched opportunity with a partner who can execute. The result is measurable — revenue generated, operations transformed, outcomes that show up in the business.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY IT MATTERS -->
-  <section id="why">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="kicker">The Gap We Bridge</span>
-        <h2 class="section-title">Capital and infrastructure are not luxuries. They are the cost of staying open.</h2>
-        <p class="section-copy">Every business runs on something — power, cash flow, access. When one of those breaks down, operations stop. When access to capital is slow or unclear, growth stalls. We exist to close that gap.</p>
-      </div>
-
-      <div class="why-grid reveal">
-
-        <div class="why-card">
-          <span class="why-num">01</span>
-          <h3>Energy</h3>
-          <p>Rising tariffs and unreliable supply erode margins. Solar is no longer a sustainability goal. It is an operating cost decision — and the right connection makes it capex-free, fast and measurable.</p>
-        </div>
-
-        <div class="why-card">
-          <span class="why-num">02</span>
-          <h3>Cash Flow</h3>
-          <p>Unpaid invoices. Confirmed orders you cannot fund. Working capital that dries up at the wrong moment. These are the quiet killers of growing businesses — and each one has a specialist solution.</p>
-        </div>
-
-        <div class="why-card">
-          <span class="why-num">03</span>
-          <h3>Scale &amp; Resilience</h3>
-          <p>Growth does not fail because of ambition. It fails when access to capital and infrastructure is slow, unclear or mismatched. The right connection turns a stall into a step change.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESS -->
-  <section id="process" style="background:var(--paper-2);">
-    <div class="wrap">
-      <div class="section-head center reveal">
-        <span class="kicker">How It Works</span>
-        <h2 class="section-title">One conversation. The right specialist.</h2>
-        <p class="section-copy">You do not need to know which funder, installer or lender fits your situation. That is what we are here for. Tell us what you need. We will tell you if there is a specialist who can help — and connect you if there is.</p>
-      </div>
-
-      <div class="steps reveal">
-        <div class="step">
-          <span class="step-num">01</span>
-          <h3>Tell Us What You Need</h3>
-          <p>Describe the need — the energy bill, the unpaid invoices, the confirmed order, the project. Share whatever standard documents you have. No obligation, no cost.</p>
-        </div>
-        <div class="step">
-          <span class="step-num">02</span>
-          <h3>We Curate the Connection</h3>
-          <p>We match your requirement to the partner whose mandate fits — screened for track record, capacity to execute and client-first delivery. One qualified introduction, not a scattergun.</p>
-        </div>
-        <div class="step">
-          <span class="step-num">03</span>
-          <h3>You Deal Directly With the Specialist</h3>
-          <p>All terms, due diligence and delivery are between you and the partner. We stay out of the way. The success fee is performance-based — earned when the connection produces a result.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section>
-    <div class="wrap">
-      <div class="section-head center reveal">
-        <span class="kicker">Client Stories</span>
-        <h2 class="section-title">Businesses that trusted the connection.</h2>
-      </div>
-      <div class="testimonials-grid">
-        <div class="testimonial reveal">
-          <div class="stars">★★★★★</div>
-          <blockquote>"We reduced our farm's energy costs by over 50% with the fully funded solar solution. No upfront costs, no maintenance worries — the partner handled everything."</blockquote>
-          <div class="author">
-            <div class="avatar">AF</div>
-            <div>
-              <div class="name">Afgri Partner Farmer</div>
-              <div class="role">Grain &amp; Livestock — Free State</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial reveal">
-          <div class="stars">★★★★★</div>
-          <blockquote>"Our commercial building switched to a PPA and we saw savings from month one. The team managed the entire installation and ongoing maintenance."</blockquote>
-          <div class="author">
-            <div class="avatar">PM</div>
-            <div>
-              <div class="name">Property Manager</div>
-              <div class="role">Commercial Portfolio — Johannesburg</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial reveal">
-          <div class="stars">★★★★★</div>
-          <blockquote>"Got approved for a R2M line of credit in under 24 hours. No paperwork, no hidden costs. The Mariba connection made it seamless."</blockquote>
-          <div class="author">
-            <div class="avatar">DK</div>
-            <div>
-              <div class="name">David K.</div>
-              <div class="role">Factory Operations — Durban</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" style="background:var(--paper-2);">
-    <div class="wrap-narrow">
-      <div class="section-head center reveal">
-        <span class="kicker">Common Questions</span>
-        <h2 class="section-title">What you need to know.</h2>
-      </div>
-      <div class="faq-list">
-        <div class="faq-item reveal">
-          <button class="faq-q" type="button" aria-expanded="false">
-            <span>Who are the specialist partners?</span>
-            <span class="material-symbols-outlined">expand_more</span>
-          </button>
-          <div class="faq-a">
-            <p>Our network is made up of vetted specialist funders, installers and lenders — each with an exclusive mandate in their field. Every partner is selected for track record, capacity to execute and client-first delivery. We do not name them publicly; we connect your enquiry to the partner with the exact mandate for your requirement.</p>
-          </div>
-        </div>
-        <div class="faq-item reveal">
-          <button class="faq-q" type="button" aria-expanded="false">
-            <span>What industries do you serve?</span>
-            <span class="material-symbols-outlined">expand_more</span>
-          </button>
-          <div class="faq-a">
-            <p>We serve businesses across agriculture, construction, retail and e-commerce, manufacturing, commercial property, fuel retail, medical practices, security, and mining and logistics. If your operations depend on energy, cash flow or scale, we can connect you to a specialist who solves it.</p>
-          </div>
-        </div>
-        <div class="faq-item reveal">
-          <button class="faq-q" type="button" aria-expanded="false">
-            <span>How long does it take to be connected?</span>
-            <span class="material-symbols-outlined">expand_more</span>
-          </button>
-          <div class="faq-a">
-            <p>For most core services — business loans, invoice finance, purchase order funding, lines of credit and commercial solar — we can identify the right specialist within 24 to 48 hours of receiving a complete enquiry. IPP project funding is a longer cycle, typically measured in weeks rather than days.</p>
-          </div>
-        </div>
-        <div class="faq-item reveal">
-          <button class="faq-q" type="button" aria-expanded="false">
-            <span>How are your fees structured?</span>
-            <span class="material-symbols-outlined">expand_more</span>
-          </button>
-          <div class="faq-a">
-            <p>Success fees are performance-based and tied to completed transactions or agreed milestones. Fees are disclosed upfront. No result, no success fee. Partners are compensated for delivery; we are compensated for the connection that converts. The incentive is aligned with your outcome.</p>
-          </div>
-        </div>
-        <div class="faq-item reveal">
-          <button class="faq-q" type="button" aria-expanded="false">
-            <span>How do you manage risk?</span>
-            <span class="material-symbols-outlined">expand_more</span>
-          </button>
-          <div class="faq-a">
-            <p>Risk is screened before any introduction — mandate fit, track record, capacity to execute and client-first delivery. The partner who carries the risk carries it visibly, and all due diligence remains with them. Mariba does not hide or absorb risk; we make it visible before the connection is made.</p>
-          </div>
-        </div>
-        <div class="faq-item reveal">
-          <button class="faq-q" type="button" aria-expanded="false">
-            <span>Do I deal with Mariba or the partner?</span>
-            <span class="material-symbols-outlined">expand_more</span>
-          </button>
-          <div class="faq-a">
-            <p>You deal directly with the partner from the first introduction. Mariba makes the connection and then steps out of the way. All discussions, terms, due diligence and delivery are between you and the specialist.</p>
-          </div>
-        </div>
-        <div class="faq-item reveal">
-          <button class="faq-q" type="button" aria-expanded="false">
-            <span>What do I need to get started?</span>
-            <span class="material-symbols-outlined">expand_more</span>
-          </button>
-          <div class="faq-a">
-            <p>Simply tell us what you need and share whatever standard documents you have. For solar: 12 months of utility bills, generator details if applicable, site address. For finance: basic business information, the funding amount and the purpose. For IPP: executive summary, site location, PPA structure and EIA status.</p>
-          </div>
-        </div>
-        <div class="faq-item reveal">
-          <button class="faq-q" type="button" aria-expanded="false">
-            <span>Do you guarantee funding?</span>
-            <span class="material-symbols-outlined">expand_more</span>
-          </button>
-          <div class="faq-a">
-            <p>No. All funding terms, credit decisions and due diligence are the exclusive responsibility of the partner that engages with you. We connect you to the right specialist; the specialist makes the decision. No funding outcome is guaranteed.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta-section" id="contact">
-    <div class="wrap cta-inner">
-      <span class="kicker" style="color:#60A5FA;">Start a Conversation</span>
-      <h2 class="section-title">Tell us what your business needs.</h2>
-      <p class="section-copy">One conversation. We will tell you if there is a specialist who can help — and connect you if there is.</p>
-      <div class="cta-actions">
-        <a class="button light" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Solar &amp; Finance Enquiry</a>
-        <a class="button ghost-light" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">IPP Project Screening</a>
-        <a class="button whatsapp-btn" href="https://wa.me/27766473499?text=Hi%2C%20I'd%20like%20to%20speak%20to%20someone%20about%20solar%2C%20finance%20or%20funding%20for%20my%20business." target="_blank" rel="noopener">
-          <span class="material-symbols-outlined">chat</span> WhatsApp Us
-        </a>
-      </div>
-      <p class="cta-note">Solar documentation: 12 months utility bill, generator details (if applicable), site address and contact info.</p>
-    </div>
-  </section>
-</main>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="wrap">
-    <div class="footer-top">
-      <a class="logo-lockup" href="#top" aria-label="Mariba Media home">
-        <svg class="mariba-mark" width="28" height="28" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-          <defs>
-            <linearGradient id="lg2" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#0B1F3A"/>
-              <stop offset="100%" stop-color="#2563EB"/>
-            </linearGradient>
-          </defs>
-          <rect x="10" y="10" width="34" height="34" rx="8" fill="url(#lg2)"/>
-          <rect x="56" y="10" width="34" height="34" rx="8" fill="url(#lg2)" opacity="0.65"/>
-          <rect x="10" y="56" width="34" height="34" rx="8" fill="url(#lg2)" opacity="0.65"/>
-          <rect x="56" y="56" width="34" height="34" rx="8" fill="url(#lg2)"/>
-        </svg>
-        <span class="wordmark">MARIBA MEDIA</span>
-      </a>
-      <div class="footer-meta">
-        <span>Capital &amp; Infrastructure, Connected</span>
-        <span>© 2026</span>
-        <span>Reg: 2024/132788/07</span>
-      </div>
-      <div class="footer-links">
-        <a href="#markets">Markets</a><span>·</span>
-        <a href="#services">C&amp;I Solar</a><span>·</span>
-        <a href="#services">Business Loans</a><span>·</span>
-        <a href="#services">Line of Credit</a><span>·</span>
-        <a href="#services">Invoice Finance</a><span>·</span>
-        <a href="#services">PO Funding</a><span>·</span>
-        <a href="#services">IPP Funding</a><span>·</span>
-        <a href="#services">Agricultural Solar</a><span>·</span>
-        <a href="#advantage">The Advantage</a><span>·</span>
-        <a href="#connection">Demand to Supply</a><span>·</span>
-        <a href="https://funding.maribamedia.co.za" target="_blank" rel="noopener" class="highlight">Start a Conversation</a>
-        <a href="#faq">FAQ</a>
-      </div>
-    </div>
-    <div class="legal">
-      <p><strong>Disclaimer &amp; Compliance</strong></p>
-      <p><strong>Mariba Media</strong> (Reg: 2024/132788/07) connects South African businesses to a network of specialist partners. Mariba Media does not hold, process or transact any funds. It does not provide financial advice, intermediary services or any other regulated financial service as defined in the Financial Advisory and Intermediary Services Act (FAIS Act, 37 of 2002). All financial services are rendered solely by the regulated partners within the network.</p>
-      <p>Mariba Media's function is to accept client project information and connect that information unchanged to the relevant partner with the exclusive mandate. No curation, feasibility review, recommendation or filtering of any kind is performed by Mariba Media. All funding terms, credit decisions and due diligence are the exclusive responsibility of the partner that engages with the client. No funding outcome is guaranteed.</p>
-      <p>Solar, IPP funding and business finance services are delivered by our specialist partners, each of which is a licensed credit provider or authorised financial services provider. Mariba Media does not participate in any installation, maintenance or credit decision.</p>
-      <p><em>Last updated: 2026. All rights reserved.</em></p>
-    </div>
+  <!-- Sticky mobile CTA -->
+  <div class="sticky-cta">
+    <a class="button-fill" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Tell Us What You Need</a>
   </div>
-</footer>
 
-<!-- Sticky mobile CTA -->
-<div class="sticky-cta">
-  <a class="button" href="https://funding.maribamedia.co.za" target="_blank" rel="noopener">Tell Us What You Need</a>
-</div>
+  <!-- WhatsApp -->
+  <a class="whatsapp" href="https://wa.me/27766473499?text=Hi%2C%20I'd%20like%20to%20speak%20to%20someone%20about%20solar%2C%20finance%20or%20funding%20for%20my%20business." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.031 6.062c-3.411 0-6.188 2.777-6.188 6.189 0 1.21.377 2.336 1.019 3.273l-.656 2.393 2.45-.64c.905.515 1.95.815 3.064.815 3.411 0 6.188-2.777 6.188-6.189 0-3.412-2.777-6.189-6.188-6.189zM15.523 14.854c-.216.608-1.246 1.107-1.712 1.147-.466.04-1.045.205-3.045-.63-2.001-.837-3.214-2.883-3.314-3.018-.1-.135-.853-1.134-.853-2.162 0-1.028.535-1.534.724-1.737.189-.203.411-.253.548-.253.136 0 .273 0 .393.006.126.006.297-.047.466.36.17.406.58 1.414.631 1.516.051.101.085.22.017.356-.068.135-.102.22-.203.339-.101.118-.213.265-.304.356-.101.101-.203.21-.085.412.119.202.527.871 1.131 1.408.777.691 1.43.906 1.633 1.008.203.101.321.085.44-.051.118-.135.514-.601.65-.806.135-.203.271-.169.456-.101.186.068 1.177.555 1.38.657.203.101.339.152.389.237.05.084.05.49-.166 1.098z"/></svg>
+  </a>
 
-<!-- WhatsApp -->
-<a class="whatsapp" href="https://wa.me/27766473499?text=Hi%2C%20I'd%20like%20to%20speak%20to%20someone%20about%20solar%2C%20finance%20or%20funding%20for%20my%20business." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.031 6.062c-3.411 0-6.188 2.777-6.188 6.189 0 1.21.377 2.336 1.019 3.273l-.656 2.393 2.45-.64c.905.515 1.95.815 3.064.815 3.411 0 6.188-2.777 6.188-6.189 0-3.412-2.777-6.189-6.188-6.189zM15.523 14.854c-.216.608-1.246 1.107-1.712 1.147-.466.04-1.045.205-3.045-.63-2.001-.837-3.214-2.883-3.314-3.018-.1-.135-.853-1.134-.853-2.162 0-1.028.535-1.534.724-1.737.189-.203.411-.253.548-.253.136 0 .273 0 .393.006.126.006.297-.047.466.36.17.406.58 1.414.631 1.516.051.101.085.22.017.356-.068.135-.102.22-.203.339-.101.118-.213.265-.304.356-.101.101-.203.21-.085.412.119.202.527.871 1.131 1.408.777.691 1.43.906 1.633 1.008.203.101.321.085.44-.051.118-.135.514-.601.65-.806.135-.203.271-.169.456-.101.186.068 1.177.555 1.38.657.203.101.339.152.389.237.05.084.05.49-.166 1.098z"/></svg>
-</a>
-
-<script>
-(function() {
-  // Mobile menu
-  var toggle = document.querySelector(".mobile-toggle");
-  var panel = document.getElementById("mobile-menu");
-  if (toggle && panel) {
-    toggle.addEventListener("click", function() {
-      var open = panel.classList.toggle("open");
-      toggle.setAttribute("aria-expanded", String(open));
-      var icon = toggle.querySelector(".material-symbols-outlined");
-      if (icon) icon.textContent = open ? "close" : "menu";
-    });
-    panel.querySelectorAll("a").forEach(function(link) {
-      link.addEventListener("click", function() {
-        panel.classList.remove("open");
-        toggle.setAttribute("aria-expanded", "false");
-        var icon = toggle.querySelector(".material-symbols-outlined");
-        if (icon) icon.textContent = "menu";
-      });
-    });
-  }
-
-  // FAQ
-  document.querySelectorAll(".faq-item").forEach(function(item) {
-    var q = item.querySelector(".faq-q");
-    q.addEventListener("click", function() {
-      var active = item.classList.contains("active");
-      document.querySelectorAll(".faq-item").forEach(function(i) {
-        i.classList.remove("active");
-        i.querySelector(".faq-q").setAttribute("aria-expanded", "false");
-      });
-      if (!active) {
-        item.classList.add("active");
-        q.setAttribute("aria-expanded", "true");
+  <script>
+    (function() {
+      // Mobile menu
+      var toggle = document.querySelector(".mobile-toggle");
+      var panel = document.getElementById("mobile-menu");
+      if (toggle && panel) {
+        toggle.addEventListener("click", function() {
+          var open = panel.style.display === "block";
+          panel.style.display = open ? "none" : "block";
+          toggle.setAttribute("aria-expanded", String(!open));
+          toggle.textContent = open ? "☰" : "✕";
+        });
+        panel.querySelectorAll("a").forEach(function(link) {
+          link.addEventListener("click", function() {
+            panel.style.display = "none";
+            toggle.setAttribute("aria-expanded", "false");
+            toggle.textContent = "☰";
+          });
+        });
       }
-    });
-  });
 
-  // Reveal on scroll
-  var revealEls = document.querySelectorAll(".reveal");
-  if ("IntersectionObserver" in window) {
-    var io = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("in-view");
-          io.unobserve(entry.target);
-        }
+      // FAQ
+      document.querySelectorAll(".faq-item").forEach(function(item) {
+        var q = item.querySelector(".faq-q");
+        q.addEventListener("click", function() {
+          var isActive = item.classList.contains("active");
+          document.querySelectorAll(".faq-item").forEach(function(i) {
+            i.classList.remove("active");
+            i.querySelector(".faq-q").setAttribute("aria-expanded", "false");
+          });
+          if (!isActive) {
+            item.classList.add("active");
+            q.setAttribute("aria-expanded", "true");
+          }
+        });
       });
-    }, { threshold: 0.08, rootMargin: "0px 0px -40px 0px" });
-    revealEls.forEach(function(el) { io.observe(el); });
-  } else {
-    revealEls.forEach(function(el) { el.classList.add("in-view"); });
-  }
 
-  // Nav scroll + progress
-  var nav = document.querySelector(".nav");
-  var bar = document.getElementById("progressBar");
-  function onScroll() {
-    if (window.scrollY > 12) nav.classList.add("scrolled");
-    else nav.classList.remove("scrolled");
-    var docH = document.documentElement.scrollHeight - window.innerHeight;
-    var p = docH > 0 ? (window.scrollY / docH) * 100 : 0;
-    if (bar) bar.style.width = p + "%";
-  }
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
-})();
-</script>
+      // Reveal on scroll
+      var revealEls = document.querySelectorAll(".reveal");
+      if ("IntersectionObserver" in window) {
+        var io = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in-view");
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.05, rootMargin: "0px 0px -30px 0px" });
+        revealEls.forEach(function(el) { io.observe(el); });
+      } else {
+        revealEls.forEach(function(el) { el.classList.add("in-view"); });
+      }
+
+      // Scroll progress
+      var bar = document.getElementById("progressBar");
+      function onScroll() {
+        var docH = document.documentElement.scrollHeight - window.innerHeight;
+        var p = docH > 0 ? (window.scrollY / docH) * 100 : 0;
+        if (bar) bar.style.width = p + "%";
+      }
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
 </body>
 </html>
